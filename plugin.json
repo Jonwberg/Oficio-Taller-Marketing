@@ -1,0 +1,23 @@
+{
+  "name": "oficio-taller-marketing",
+  "version": "1.0.0",
+  "description": "Autonomous marketing agent system for Oficio Taller",
+  "agents": [
+    ".claude/agents/arquitecto.md",
+    ".claude/agents/valentina.md",
+    ".claude/agents/lucia.md",
+    ".claude/agents/marco.md",
+    ".claude/agents/sofia.md",
+    ".claude/agents/diego.md",
+    ".claude/agents/ileana.md",
+    ".claude/agents/canal.md",
+    ".claude/agents/rafael.md",
+    ".claude/agents/carmen.md"
+  ],
+  "skills": [
+    ".claude/skills/run-campaign.md",
+    ".claude/skills/architect-intake.md",
+    ".claude/skills/quarterly-review.md",
+    ".claude/skills/approve-campaign.md"
+  ]
+}

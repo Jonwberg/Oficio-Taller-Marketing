@@ -1,0 +1,101 @@
+{
+  "period": "",
+  "generated_at": "",
+  "generated_by": "Rafael",
+  "instagram": {
+    "followers_start": 0,
+    "followers_end": 0,
+    "follower_delta": 0,
+    "posts_published": 0,
+    "avg_likes_per_post": 0,
+    "avg_saves_per_post": 0,
+    "avg_reach_per_post": 0,
+    "avg_shares_per_post": 0,
+    "saves_to_follower_ratio": 0,
+    "top_posts": [
+      {
+        "post_description": "",
+        "platform": "instagram",
+        "saves": 0,
+        "reach": 0,
+        "comments": 0,
+        "campaign_id": "",
+        "content_theme": ""
+      }
+    ],
+    "inquiry_from_instagram": 0,
+    "right_fit_inquiries_from_instagram": 0,
+    "misaligned_inquiries_from_instagram": 0
+  },
+  "youtube": {
+    "subscribers_start": 0,
+    "subscribers_end": 0,
+    "subscriber_delta": 0,
+    "videos_published": 0,
+    "total_views": 0,
+    "avg_watch_time_percent": 0,
+    "top_videos": [
+      {
+        "title": "",
+        "views": 0,
+        "avg_watch_time_percent": 0,
+        "campaign_id": "",
+        "content_theme": ""
+      }
+    ],
+    "referral_inquiries_from_youtube": 0,
+    "right_fit_inquiries_from_youtube": 0
+  },
+  "website": {
+    "avg_session_duration_seconds": 0,
+    "total_sessions": 0,
+    "project_page_visits": {},
+    "contact_form_submissions": 0,
+    "right_fit_submissions": 0
+  },
+  "campaigns": {
+    "total_run": 0,
+    "by_priority": {
+      "habitar_series": 0,
+      "territorio_weekly": 0,
+      "proceso_reels": 0,
+      "website_pages": 0,
+      "conversion": 0
+    },
+    "campaign_records": [
+      {
+        "campaign_id": "",
+        "priority": "",
+        "published_at": "",
+        "platforms": [],
+        "qualified_inquiries_attributed": 0,
+        "top_performing_post": "",
+        "notes": ""
+      }
+    ]
+  },
+  "inquiries": {
+    "total": 0,
+    "quality_scores": {
+      "score_3_right_fit": 0,
+      "score_2_possible": 0,
+      "score_1_misaligned": 0
+    },
+    "consultations_booked": 0,
+    "projects_closed": 0,
+    "revenue_confirmed": 0,
+    "inquiry_to_consultation_rate": 0,
+    "consultation_to_close_rate": 0
+  },
+  "top_performing_themes": [],
+  "underperforming_themes": [],
+  "misaligned_attention_sources": [],
+  "high_engagement_zero_inquiry_flags": [],
+  "quarter_over_quarter": {
+    "saves_delta_percent": 0,
+    "qualified_inquiry_delta_percent": 0,
+    "subscriber_delta_percent": 0,
+    "revenue_delta_percent": 0
+  },
+  "rafael_notes": ""
+}

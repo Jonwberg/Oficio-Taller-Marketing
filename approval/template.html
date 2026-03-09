@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oficio Taller — {{ project_name }}</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sand: #f5f2ec;
+      --warm-white: #faf8f4;
+      --ink: #1c1c1a;
+      --ink-light: #5a5750;
+      --rule: #d8d2c8;
+      --accent: #b5956a;
+      --accent-light: #e8dfd2;
+      --reject-bg: #2a2520;
+    }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background: var(--sand);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    .site-header {
+      padding: 2rem 2.5rem 1.5rem;
+      border-bottom: 1px solid var(--rule);
+      background: var(--warm-white);
+    }
+
+    .studio-name {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 0.4rem;
+    }
+
+    .project-title {
+      font-size: 1.75rem;
+      font-weight: normal;
+      line-height: 1.2;
+    }
+
+    .campaign-meta {
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--ink-light);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    /* ── Layout ── */
+    .page-body {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 6rem;
+    }
+
+    /* ── Section ── */
+    .section {
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── Summary ── */
+    .summary-text {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--ink);
+    }
+
+    /* ── Copy blocks ── */
+    .copy-block {
+      background: var(--warm-white);
+      border-left: 3px solid var(--accent);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .copy-platform {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      margin-bottom: 0.75rem;
+    }
+
+    .copy-es {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      white-space: pre-wrap;
+      color: var(--ink);
+    }
+
+    .copy-separator {
+      color: var(--rule);
+      margin: 0.75rem 0;
+      font-size: 0.9rem;
+    }
+
+    .copy-en {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      white-space: pre-wrap;
+      color: var(--ink-light);
+    }
+
+    /* ── Visual notes ── */
+    .visual-note {
+      background: var(--accent-light);
+      padding: 0.9rem 1.25rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    .visual-note strong {
+      display: block;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.35rem;
+    }
+
+    /* ── Schedule ── */
+    .schedule-row {
+      display: flex;
+      gap: 1.5rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.88rem;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      align-items: baseline;
+    }
+
+    .schedule-row:last-child { border-bottom: none; }
+
+    .schedule-date {
+      min-width: 110px;
+      color: var(--ink-light);
+    }
+
+    .schedule-platform {
+      min-width: 100px;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .schedule-type { color: var(--ink); }
+
+    /* ── Approval zone ── */
+    .approval-zone {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--ink);
+      color: #fff;
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      z-index: 100;
+    }
+
+    .approval-prompt {
+      font-size: 0.85rem;
+      color: #b0a898;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    .approval-actions {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn {
+      padding: 0.6rem 1.5rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      border: none;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      transition: opacity 0.15s;
+    }
+
+    .btn:hover { opacity: 0.85; }
+
+    .btn-approve {
+      background: var(--accent);
+      color: var(--ink);
+    }
+
+    .btn-reject {
+      background: transparent;
+      color: #fff;
+      border: 1px solid #5a5750;
+    }
+
+    /* ── Rejection panel ── */
+    .rejection-panel {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--reject-bg);
+      color: #fff;
+      padding: 1.5rem 2rem;
+      z-index: 200;
+    }
+
+    .rejection-panel label {
+      display: block;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #b0a898;
+      margin-bottom: 0.6rem;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    .rejection-panel textarea {
+      width: 100%;
+      background: #1a1610;
+      border: 1px solid #3a3530;
+      color: #fff;
+      padding: 0.75rem 1rem;
+      font-family: 'Georgia', serif;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    .rejection-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+      justify-content: flex-end;
+    }
+
+    .btn-cancel {
+      background: transparent;
+      color: #b0a898;
+      border: 1px solid #3a3530;
+    }
+
+    .btn-send-rejection {
+      background: #8a3030;
+      color: #fff;
+    }
+
+    /* ── Confirmation ── */
+    .confirmation {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(28, 28, 26, 0.96);
+      color: #fff;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      z-index: 300;
+    }
+
+    .confirmation.visible { display: flex; }
+
+    .confirmation-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .confirmation-title {
+      font-size: 1.2rem;
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    .confirmation-sub {
+      font-size: 0.85rem;
+      color: #b0a898;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="studio-name">Oficio Taller — Revisión de Campaña</div>
+    <h1 class="project-title">{{ project_name }}</h1>
+    <div class="campaign-meta">
+      ID: {{ campaign_id }} &nbsp;·&nbsp; Preparado por Valentina &nbsp;·&nbsp; {{ created_date }}
+    </div>
+  </header>
+
+  <main class="page-body">
+
+    <!-- Summary -->
+    <section class="section">
+      <div class="section-label">Resumen de Valentina</div>
+      <p class="summary-text">{{ campaign_summary }}</p>
+    </section>
+
+    <!-- Copy -->
+    <section class="section">
+      <div class="section-label">Copy por Plataforma</div>
+      {% for post in posts %}
+      <div class="copy-block">
+        <div class="copy-platform">{{ post.platform | upper }} — {{ post.post_type | replace('_', ' ') | upper }} — Secuencia {{ post.sequence }}</div>
+        {% if post.youtube_title_es %}
+        <div class="copy-es"><strong>Título ES:</strong> {{ post.youtube_title_es }}</div>
+        <div class="copy-en"><strong>Title EN:</strong> {{ post.youtube_title_en }}</div>
+        <div class="copy-separator">—</div>
+        {% endif %}
+        <div class="copy-es">{{ post.copy_es }}</div>
+        <div class="copy-separator">—</div>
+        <div class="copy-en">{{ post.copy_en }}</div>
+        {% if post.hashtags %}
+        <div class="copy-en" style="margin-top:0.5rem; color:#9a9088; font-size:0.8rem;">{{ post.hashtags | join(' ') }}</div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </section>
+
+    <!-- Visual Plan -->
+    <section class="section">
+      <div class="section-label">Plan Visual</div>
+      {% for post in visual_posts %}
+      <div class="visual-note">
+        <strong>{{ post.platform | upper }} — Secuencia {{ post.sequence }}</strong>
+        {{ post.framing_notes }}
+        {% if post.edit_notes %}
+        <div style="margin-top:0.4rem; color:#7a6e64;">{{ post.edit_notes }}</div>
+        {% endif %}
+        {% if post.flags %}
+        {% for flag in post.flags %}
+        <div style="margin-top:0.5rem; color:#b05030; font-size:0.8rem;">⚑ {{ flag }}</div>
+        {% endfor %}
+        {% endif %}
+      </div>
+      {% endfor %}
+    </section>
+
+    <!-- Schedule -->
+    <section class="section">
+      <div class="section-label">Calendario de Publicación</div>
+      {% for item in schedule %}
+      <div class="schedule-row">
+        <span class="schedule-date">{{ item.publish_date }}</span>
+        <span class="schedule-platform">{{ item.platform }}</span>
+        <span class="schedule-type">{{ item.post_type | replace('_', ' ') }}</span>
+      </div>
+      {% endfor %}
+    </section>
+
+  </main>
+
+  <!-- Fixed approval bar -->
+  <div class="approval-zone" id="approval-zone">
+    <span class="approval-prompt">¿Apruebas esta campaña para publicación?</span>
+    <div class="approval-actions">
+      <button class="btn btn-reject" onclick="showRejection()">Rechazar con notas</button>
+      <button class="btn btn-approve" onclick="approve()">Aprobar campaña</button>
+    </div>
+  </div>
+
+  <!-- Rejection panel -->
+  <div class="rejection-panel" id="rejection-panel">
+    <label>Notas para el equipo</label>
+    <textarea id="ceo-notes" placeholder="Describe qué necesita revisión..."></textarea>
+    <div class="rejection-actions">
+      <button class="btn btn-cancel" onclick="hideRejection()">Cancelar</button>
+      <button class="btn btn-send-rejection" onclick="reject()">Enviar rechazo</button>
+    </div>
+  </div>
+
+  <!-- Confirmation overlay -->
+  <div class="confirmation" id="confirmation">
+    <div class="confirmation-icon" id="conf-icon">✓</div>
+    <div class="confirmation-title" id="conf-title"></div>
+    <div class="confirmation-sub" id="conf-sub"></div>
+  </div>
+
+  <script>
+    const CAMPAIGN_ID = "{{ campaign_id }}";
+
+    function approve() {
+      send("approved", "");
+    }
+
+    function showRejection() {
+      document.getElementById("rejection-panel").style.display = "block";
+      document.getElementById("approval-zone").style.display = "none";
+    }
+
+    function hideRejection() {
+      document.getElementById("rejection-panel").style.display = "none";
+      document.getElementById("approval-zone").style.display = "flex";
+    }
+
+    function reject() {
+      const notes = document.getElementById("ceo-notes").value.trim();
+      if (!notes) {
+        document.getElementById("ceo-notes").style.borderColor = "#8a3030";
+        document.getElementById("ceo-notes").focus();
+        return;
+      }
+      send("rejected", notes);
+    }
+
+    function send(decision, notes) {
+      fetch("/decision", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          campaign_id: CAMPAIGN_ID,
+          decision: decision,
+          notes: notes,
+          decided_at: new Date().toISOString()
+        })
+      }).then(() => {
+        const conf = document.getElementById("confirmation");
+        const icon = document.getElementById("conf-icon");
+        const title = document.getElementById("conf-title");
+        const sub = document.getElementById("conf-sub");
+
+        if (decision === "approved") {
+          icon.textContent = "✓";
+          icon.style.color = "#b5956a";
+          title.textContent = "Campaña aprobada.";
+          sub.textContent = "El equipo ha sido notificado. Canal comenzará la publicación.";
+        } else {
+          icon.textContent = "✗";
+          icon.style.color = "#c05040";
+          title.textContent = "Rechazo registrado.";
+          sub.textContent = "Valentina revisará tus notas y coordinará las correcciones necesarias.";
+        }
+
+        conf.classList.add("visible");
+      }).catch(() => {
+        alert("Error al enviar la decisión. Por favor intenta de nuevo.");
+      });
+    }
+  </script>
+
+</body>
+</html>

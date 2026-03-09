@@ -1,0 +1,21 @@
+{
+  "project_name": "",
+  "location": "",
+  "year": "",
+  "type": "residential",
+  "architects": [],
+  "collaborators": [],
+  "sensory_thesis": "",
+  "climate_context": "",
+  "materials_used": [],
+  "emotional_intent": "",
+  "site_observations": "",
+  "client_story": "",
+  "assets": {
+    "photos": [],
+    "video_files": [],
+    "process_images": []
+  },
+  "target_platforms": ["instagram", "youtube", "website"],
+  "priority": 1
+}

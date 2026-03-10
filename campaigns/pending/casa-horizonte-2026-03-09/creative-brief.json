@@ -1,0 +1,60 @@
+{
+  "campaign_id": "casa-horizonte-2026-03-09",
+  "campaign_name": "El hilo del horizonte / The Thread of the Horizon",
+
+  "single_message": "Casa Horizonte is the first house Oficio Taller has designed around a condition most people only ever pass through — the specific, irreversible feeling of standing at the edge of water and needing, physically, to keep looking.",
+
+  "for_sofia": {
+    "anchor_post": "The anchor is a single image — or a paired image set (one rain, one sun) — from the Cerritos site documentation that shows the horizon line as the absolute organizing element of the frame: sky and sea dissolving into each other, no building yet visible. The sensory thesis text (in full or in a precise excerpt) runs with it. This is the thesis post. Everything else orbits it.",
+    "supporting_content": "Three to four supporting posts surround the anchor: (1) a process post that shows a site visit moment — wind, light condition, the scrub-and-sand edge — documenting how the team reads the site before a line is drawn; (2) a literary reference post, one of the five references deployed visually with minimal copy (the Williams or second Solnit passage is the strongest candidate — see Diego's brief); (3) a 'what the project asks of the house' post that moves from thesis to architecture — this is where a plan detail, a section sketch, or an early render fragment can appear in context; (4) a short Reel or Story that uses the rain documentation — not polished, close to the raw footage — to show that the horizon in grey is as central to the project as the horizon in gold.",
+    "cadence": "This is a phase-1 campaign for an in-process project. The cadence should feel deliberate, not frequent. Four to five posts over three to four weeks is appropriate. Each post needs room to breathe before the next arrives. This is not a launch sequence with escalating frequency — it is a slow, sustained argument about a specific way of seeing. The anchor drops first. Wait at least five days before the next post.",
+    "platform_priority": "Instagram primary. YouTube secondary — if a process film is ready, it is the deepest articulation of the thesis and should go on YouTube with a link from Instagram Stories or a dedicated grid post. Website receives the permanent record after the Instagram sequence completes.",
+    "scheduling_to_avoid": "Do not schedule into a holiday or long-weekend moment when travel-aspirational content is spiking on Mexican or U.S. platforms — the project will get read as 'dream escape' content and attract the wrong audience. Do not cluster multiple posts in a single week at launch. Do not post the render content early or as a standalone — renders appear only in the 'what the project asks of the house' supporting post, in context, not as the headline."
+  },
+
+  "for_diego": {
+    "register": "The Spanish must reach the register of the sensory thesis itself — contemplative, precise, unhurried. Not poetic in an ornamental sense. Precise in the way field notes are precise. The architects wrote 'un hilo que a veces se nota fácilmente y otras no tanto' — that is the register: a person describing something they have looked at for a long time and are still looking at. Copy that sounds like it is trying to be beautiful has already failed.",
+    "tone": "Serious without being cold. Personal without being confessional. The voice of someone who has stood at this site and is telling you exactly what they saw, and why it matters.",
+    "what_the_spanish_must_do": "The Spanish copy must name the horizon as a condition of inhabiting, not as a visual feature. The distinction is architectural and it is the entire campaign: a view is something you look at; a condition is something you live inside. The Spanish should make this felt, not explained. Use the second-person singular ('si miras dos veces, no es el mismo') not the declarative first-person. The reader should feel addressed, not lectured.",
+    "how_english_relates": "English runs alongside or below Spanish as a second voice, not a translation. The English should be slightly more interior — closer to the emotional register of the Solnit passages — while the Spanish carries the architectural precision. They are not the same sentence in two languages. They are two sides of the same thought. The English caption for the anchor post can open with a phrase from the second Solnit passage ('the blue of distance') as a key, not a quote — let it become the studio's language, not a citation.",
+    "phrases_to_avoid": [
+      "ocean views / vistas al mar",
+      "dream home / casa de ensueño",
+      "Baja escape / escapada en Baja",
+      "luxury / lujo",
+      "panoramic / panorámica",
+      "investment / inversión",
+      "getaway / retiro",
+      "resort-style / estilo resort",
+      "where the sea meets the sky (this phrase is visual cliché — say something true instead)"
+    ],
+    "how_to_use_the_literary_references": "The five literary references are the conceptual scaffolding of the project, not decoration. Use them as register calibration, not as quotes to post. Do not post any reference as a standalone quote graphic. If a reference appears in copy, it is woven in — paraphrased into the studio's voice or attributed briefly and without academic weight. The Williams line ('I must have developed my need to see the horizon') and the second Solnit passage ('the blue of distance') are the two most useful for copy register. The Celas and Moller references are better as internal calibration — they tell you how the architects are thinking, not what to post. The first Solnit passage ('the places that made you') is load-bearing for the Habitar series frame and should inform how the project is positioned within the series, not deployed as caption copy.",
+    "habitar_series_frame": "This project is Casa Horizonte's entry into the Habitar series. The series is about inhabiting — the act of making a place yours over time, of being shaped by where you live. The copy must hold this without naming it directly. 'Habitar' is not a word that needs to appear in every post, but the concept of inhabiting-as-choosing, of a house as a relationship with its landscape, must be present in every piece of copy."
+  },
+
+  "for_ileana": {
+    "what_photos_must_show": "The site condition at its most honest: the horizon line as a physical fact, the dissolving edge where sky and sea become the same blue, the scale of the landscape against any human element. Both weather conditions are required — the rain documentation from January–February 2023 is as important as the sun documentation. The grey horizon is not a lesser image; it is proof of the thesis. Show the site as a place you have to reckon with, not one you simply enjoy.",
+    "what_photos_must_not_show": "Lifestyle staging of any kind. People in hammocks, in pools, on terraces with wine glasses. Anything that positions the site as a resort or a destination. Polished photography that flattens the landscape into background. The horizon cropped out of frame. The site photographed as though it is a setting for something else — it is not a setting, it is the subject.",
+    "cover_asset": "The cover asset — the image that introduces this project to someone who has not seen it — must be the horizon line in full: sky and sea at the threshold where they dissolve. No building. No render. No architectural element in the foreground. The project has not yet been built; the cover asset communicates what it will be built to give. If the site photographs allow it, the strongest cover is the horizon in partial cloud cover — grey-blue, luminous, neither fully clear nor fully overcast — because it is the least aspirational and the most specific.",
+    "how_to_use_renders": "Renders appear once, in the supporting post that moves from thesis to architecture ('what the project asks of the house'). They are not the lead image in that post — they appear after a site photograph, in context, as a translation of the thesis into built form. Do not use renders as standalone images. Do not use renders as the first image in a carousel. If the renders are not yet strong enough to carry this contextual weight, omit them from phase 1 entirely and save for the phase 2 completion campaign.",
+    "visual_sequence_as_scroll": "As someone scrolls the grid or a Story sequence, the visual argument should feel like approaching the site: first the landscape in full, the horizon dominant; then the human scale arrives (a figure at the site, a material detail, a sketch); then the architectural answer to the thesis (the section, the plan fragment, the render in context). The sequence moves from landscape to architecture, not the other way. The grid should never open with a render.",
+    "color_and_light": "The palette of the site is the palette of the campaign: salt-bleached sand, dry coastal scrub, the specific blue-grey of the Pacific at Cerritos, the white of overcast sky before a rain. Do not color-grade the photographs toward warmth or gold-hour saturation. The site is not Tulum. Do not treat it like Tulum.",
+    "subfolders_for_reference": "Photos are in Drive folder 15up6gEubZUDpoJqv5qCp_Mu2LOntMn-- under 08. PUBLICACIONES. Subfolders 1 and 1B are the likely source for site condition photography. Renders are in the RENDERS subfolder. Use with the constraint above."
+  },
+
+  "creative_risks": [
+    "If Ileana selects only the best-light, most saturated photographs from the site documentation, the campaign will read as aspirational coastal lifestyle content and attract the wrong audience. The grey and rain images are not fallbacks — they are required.",
+    "If Diego writes copy that explains the sensory thesis rather than inhabiting its register, the campaign will feel like an architectural statement rather than an invitation. The copy should never need to say 'the architects believed...' — it should speak from inside the belief.",
+    "If Sofía posts the render early or as a standalone, the campaign's credibility with Segment 3 (the craft admirers who know what a pre-completion render looks like) collapses. The render must be contextualized or withheld.",
+    "If the anchor post is delayed or buried in the sequence — if supporting content goes up before the thesis is planted — the remaining posts will have no center and will read as disconnected project photography.",
+    "If any post uses location-as-destination framing (Cerritos as a place to visit, the Pacific coast as escape), the suppressed audience (Luxury Tourist, Instagram Architect) floods in and the signal from Segment 1 becomes unreadable in the noise."
+  ],
+
+  "what_this_is_not": [
+    "This is not a project announcement. It is the opening of an argument about what a house can ask of you.",
+    "This is not a luxury residential campaign. There is no mention of comfort, amenity, lifestyle, or status.",
+    "This is not a Baja California destination piece. Cerritos is named once, in context, as a site condition — not as a selling point.",
+    "This is not a render campaign. The project is en construcción; the visual material is the site and the process, not the finished visualization.",
+    "This is not a campaign about views. A view is something you possess. This project is about something that possesses you."
+  ]
+}

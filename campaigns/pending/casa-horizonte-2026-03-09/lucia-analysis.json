@@ -1,0 +1,54 @@
+{
+  "campaign_id": "casa-horizonte-2026-03-09",
+  "analyst": "Lucía",
+  "analysis_date": "2026-03-09",
+
+  "primary_segment": {
+    "segment": "Segment 1 — El que Habita / The Place-Dweller",
+    "why": "Casa Horizonte is built entirely around the act of inhabiting a specific landscape condition — not designing a house that sits on a site, but designing a house that makes the horizon a lived, daily experience. The sensory thesis is not about form or materials; it is about what it means to look outward, to let a place mark you, to accept that the view is never the same twice. This is precisely the language of Segment 1: the person who chooses where to live based on light, landscape, and the quality of daily life in a place. The literary references — Solnit on place as memory, Williams on the need to see the horizon, Moller on silence as landscape — all speak to someone who already understands that a house is not a building but a relationship with where it stands. The project's emotional intent ('a house that gives you the horizon as a living condition, not a view') maps directly onto Segment 1's core desire: 'I want to wake up and feel like I'm still outside.'"
+  },
+
+  "secondary_segment": {
+    "segment": "Segment 3 — El Aficionado al Oficio / The Craft Admirer",
+    "why": "The conceptual rigor of the sensory thesis — the horizon as organizing element, the literary scaffolding, the attention to how light, sky, and sea dissolve at distance — will speak to architects, designers, and serious design thinkers who follow the studio for the quality of the thinking behind the work. The project is still en construcción, which makes process documentation particularly valuable for this segment. They will engage with the question of how a conceptual thesis ('the horizon as a living condition') gets translated into built decisions. This segment does not commission but elevates reputation and generates referrals."
+  },
+
+  "value_language": [
+    "The way the light comes in at 6am",
+    "Something that has a relationship with the landscape",
+    "I want to wake up and feel like I'm still outside",
+    "Materials that age well, that tell the story of the place",
+    "I want it to feel like it grew there"
+  ],
+
+  "emotional_hook": "The right person for this campaign is someone who has stood at the edge of water and felt the horizon pull at them — not as a view to photograph but as a condition they want to live inside — and this project is the first time they will have seen a house built entirely around that feeling.",
+
+  "what_to_avoid": {
+    "audiences_to_suppress": [
+      "The Luxury Tourist — Cerritos is a recognizable, aspirational Pacific coast location; beautiful horizon photography will attract lifestyle engagement from people who respond to 'dream home in Baja' framing. This is noise. Do not frame the location as destination or escape.",
+      "The Instagram Architect — The site's dramatic sky-meets-sea imagery is high-contrast and visually arresting. Content cut for visual impact alone will attract followers who engage with image quality, not spatial quality. Engagement metrics will spike but signal nothing.",
+      "The Flipper / Developer — Do not use language that implies investment, value appreciation, or Cerritos as an emerging market. The project's en construcción status could attract developer interest if framed wrong."
+    ],
+    "language_to_suppress": [
+      "Any framing of the horizon as 'views' or 'ocean views' — this reduces the conceptual thesis to a real estate feature",
+      "Aspirational lifestyle copy ('imagine waking up to this', 'your Baja escape')",
+      "Location-as-status language ('Cerritos, one of Baja's most sought-after coastal destinations')",
+      "Render-forward presentation — the project's strength is the site condition and the sensory thesis, not polished visualizations"
+    ]
+  },
+
+  "signal_score": {
+    "score": 3,
+    "scale": "1 (low) to 3 (high)",
+    "reasoning": "Casa Horizonte scores maximum conversion potential for the following reasons: (1) The sensory thesis is among the strongest in the studio's documented work — it is specific, literary, and rooted in a physical condition that a particular kind of person will recognize immediately and feel seen by. (2) The literary references (Solnit, Williams, Moller) are not decorative — they map precisely onto the emotional territory of Segment 1, and any person in that segment who encounters this content will recognize the thinking as aligned with their own. (3) The project is residential, site-specific, and coast-fronting — exactly the conditions that draw Segment 1 inquiries. (4) The en construcción status is a genuine asset: it allows process documentation that will attract both Segment 1 (who ask about process before portfolio) and Segment 3 (who value seeing how a thesis becomes a building). The primary risk is not low conversion from the right audience — it is dilution by the wrong one if the visual material is deployed without the sensory thesis as its anchor."
+  },
+
+  "notes": [
+    "The sensory thesis was written by the Oficio Taller team, not extracted from a client interview — this is a strength, not a gap. It means Marco can build the creative brief directly from this language without needing to translate client vocabulary. The thesis already speaks in the studio's voice.",
+    "The two Solnit passages are load-bearing for this campaign. 'The blue of distance' passage is the most precise single articulation of the project's emotional intent and should inform how Marco writes the brief's core copy. Do not paraphrase it — use it as a reference for register and precision.",
+    "The en construcción status suggests a two-phase campaign opportunity: (1) a process-focused launch that documents the site condition and the thesis, anchored for Segment 3 and seeding Segment 1; (2) a completion campaign when the house is built, anchored for Segment 1 with direct inquiry conversion as the goal. For FY27 Habitar series positioning, phase 1 is appropriate now.",
+    "The site was documented in both rain and sun (January–February 2023). Both conditions are relevant to the thesis — the horizon in rain is not the same as the horizon in sun, which is exactly the point the thesis makes. Marco should brief the visual editor to treat both weather conditions as equally valid, not to select only for 'beautiful' sun footage.",
+    "client_story is empty in the brief. This is not a problem for the Habitar series framing — the series is about inhabiting, not about the client. The campaign does not need a client narrative to work. The site and the thesis are sufficient.",
+    "Platforms: Instagram and YouTube are the right primary channels for this project. Instagram for the image-as-thesis moment (the horizon line, the rain-and-sun conditions, the dissolving sky). YouTube for the longer-form process film where the sensory thesis can be spoken and shown together. Website for the permanent record. Prioritize in that order for this campaign."
+  ]
+}

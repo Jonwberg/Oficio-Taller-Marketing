@@ -1,0 +1,83 @@
+{
+  "campaign_id": "casa-horizonte-2026-03-09",
+  "valentina_brand_verdict": "approved",
+  "review_date": "2026-03-09",
+
+  "checklist_results": {
+    "voice": {
+      "result": "pass",
+      "note": "No forbidden vocabulary found in Spanish or English across all six posts, YouTube description, or website text; every sensory detail is traceable to brief.json sensory_thesis, climate_context, or site_observations; tone is quiet, unhurried, and present-tense throughout; zero exclamation marks."
+    },
+    "completeness": {
+      "result": "pass",
+      "note": "Spanish and English copy are complete for all six planned posts (Instagram 1, 2, 4, 5; YouTube 3; website 6), specific publish dates are set for all sequences (2026-03-11 through 2026-04-07), and every strategy post has a corresponding copy entry and visual plan entry — asset gaps are flagged by name, not papered over."
+    },
+    "brand_fit": {
+      "result": "pass",
+      "note": "Casa Horizonte is used correctly throughout and never replaced with generic description; Cerritos, Baja California Sur, México is named precisely in all copy; all collaborators from brief.json (Mariana de la Garza, Iván Zúñiga, Brenda Landeros) are credited in YouTube description and website text; every post places the reader inside the space rather than in front of it; no CTA appears anywhere, consistent with Priority 1 atmospheric framing."
+    },
+    "bilingual_integrity": {
+      "result": "pass",
+      "note": "Spanish is written first in all copy fields and all bilingual documents; the English is written from inside the experience rather than translated from the Spanish (sequence 2 EN is the clearest proof); the word habitar is handled exactly as voice.md prescribes — left in Spanish within the English text where 'inhabit' is insufficient; YouTube title follows the required Oficio Taller | Project Name | Sensory Subtitle format."
+    },
+    "ceo_package": {
+      "result": "pass_with_open_manual_actions",
+      "note": "approval-package.json generated and complete; approval page HTML, WhatsApp message draft, and asset accessibility confirmation are open manual actions for Canal after this package is approved — they depend on the package existing and are not inputs to this review."
+    }
+  },
+
+  "revision_notes": [],
+
+  "campaign_summary": "Casa Horizonte is an in-process residential project by Oficio Taller on the Pacific coast at Cerritos, Baja California Sur — a site documented in both rain and sun in January and February 2023 and organized entirely around the horizon as a condition of living rather than a view to possess. The campaign is Phase 1 of a two-phase Habitar series entry: it does not announce a completed house; it opens an argument about what a house can ask of you when the horizon is its organizing principle. The primary audience is Segment 1 — people who choose where to live based on the quality of a place, who already understand what it means to need to keep looking — and the secondary audience is the architecture and design community who follow Oficio Taller for the quality of their thinking. Six posts are planned across Instagram (four), YouTube (one, contingent on rain footage confirmation), and the studio's Cargo website (one permanent record), deployed over four weeks at a deliberately slow cadence. The sensory thesis that anchors the campaign was written by the Oficio Taller team themselves, which is not a gap — it means the campaign speaks in the studio's own voice from the first post.",
+
+  "key_flags_for_ceo": [
+    {
+      "flag": "VIDEO ASSET UNCONFIRMED — YouTube sequence is contingent",
+      "detail": "Sequence 3 (YouTube process film, 2026-03-21) is the campaign's deepest articulation of the sensory thesis and cannot be fulfilled with still photography. The video_files array in assets.json is empty. The architects must check folders 10. OTROS and 09. CONSTRUCCIÓN in Drive for rain documentation footage from January–February 2023. If footage is not confirmed before 2026-03-11, the YouTube slot moves to a later phase and the Instagram literary reference post (sequence 4) moves forward one position. This decision needs to be made before launch."
+    },
+    {
+      "flag": "MULTIPLE SUBFOLDER DRIVE IDs MISSING — asset selection cannot be finalized",
+      "detail": "Only subfolder 1B (rain day, Jan 2023) has a confirmed Drive ID. Subfolders 1, 2, 2B, 3, 4, 5, and 6 all have null IDs. Frame selection for the anchor post's sun-condition carousel image (sequence 1), the process carousel's closing frame (sequence 2), the literary reference post image (sequence 4), and the thesis-to-architecture opening frame (sequence 5) cannot be finalized until the architects open at minimum subfolders 1B, 2B, and one of subfolders 3–6. The anchor post cannot publish on 2026-03-11 until this review is complete."
+    },
+    {
+      "flag": "ARCHITECTURAL DRAWINGS NOT IN CONFIRMED ASSET POOL",
+      "detail": "Sequence 5 (thesis-to-architecture carousel, 2026-03-31) requires a clean plan or section sketch as the second carousel frame. The process_images array in assets.json is empty. A drawing export must be sourced from the project archive before this post can be scheduled. Without it, sequence 5 runs as site photograph only — the copy still lands, but the visual argument from condition to form cannot be made."
+    },
+    {
+      "flag": "RENDER QUALITY UNCONFIRMED — renders conditionally withheld from Phase 1",
+      "detail": "The RENDERS folder exists and has a confirmed Drive ID. However, no individual render has been reviewed for quality. The creative brief is explicit: a render that reads as aspirational lifestyle visualization is more damaging than no render. Diego and Ileana must conduct a joint quality review before sequence 5 is scheduled. If the render does not pass, sequence 5 runs as site photograph plus drawing only, and the render is held for the Phase 2 completion campaign."
+    },
+    {
+      "flag": "PROJECT IS EN CONSTRUCCIÓN — no completion date exists",
+      "detail": "Casa Horizonte is an in-process project. Phase 1 is correctly framed as a process campaign for the Habitar series. Phase 2 (completion campaign with built photography as the primary asset) is a future campaign. No completion date should be published, referenced, or implied in any post."
+    }
+  ],
+
+  "launch_readiness": {
+    "confirmed_ready_to_publish": [
+      "All copy — Spanish and English — for sequences 1, 2, 4, 5, 6 is complete, reviewed, and approved",
+      "YouTube description (sequence 3) is complete and approved",
+      "Website text (sequence 6) is complete and approved",
+      "Hashtag sets for all Instagram posts are confirmed and brand-compliant",
+      "Project credits are confirmed accurate against brief.json for all platforms",
+      "Campaign strategy, cadence, and publish dates are confirmed (2026-03-11 through 2026-04-07)",
+      "Subfolder 1B (rain day, Jan 2023, drive ID 149gTqaZPgKA63e4FhpkdglUn0mVw3Wtw) is confirmed accessible for anchor post and process post image selection",
+      "RENDERS folder (drive ID 1jjr9cnjWVHtfW3CeS_RxB81YjHRyISQy) is confirmed accessible for quality review"
+    ],
+    "requires_manual_action_before_any_post_can_go_live": [
+      "Ileana must open subfolder 1B and identify the anchor cover frame (widest unobstructed horizon, rain condition, grey-blue sky, no building) — this is the single prerequisite for sequence 1 publishing on 2026-03-11",
+      "Subfolder 2B Drive ID must be confirmed by the architects before the sun-condition carousel frame for sequence 1 can be selected — if subfolder 2B cannot be confirmed in time, Canal and Ileana must decide before 2026-03-11 whether to run sequence 1 as a single rain-condition image or hold the carousel format",
+      "Video footage from the January–February 2023 Cerritos rain documentation must be located in 10. OTROS or 09. CONSTRUCCIÓN and assessed for upload readiness before sequence 3 can be confirmed — this assessment must happen before 2026-03-11 so the schedule can be adjusted if needed",
+      "Subfolders 3–6 (Oct 2023) — at least one Drive ID must be confirmed and opened for review before sequence 5's opening site frame can be selected",
+      "Architectural drawing (plan or section sketch) must be exported cleanly from the project archive before sequence 5 can be scheduled for 2026-03-31",
+      "Diego and Ileana must conduct a joint render quality review before sequence 5 is scheduled — this review must happen with full-size files, not thumbnails",
+      "Canal must confirm Playwright automation is configured for the Cargo CMS post before 2026-04-07",
+      "Approval page HTML must be generated and locally served after this package is approved",
+      "WhatsApp message draft with correct approval URL must be prepared for CEO delivery"
+    ]
+  },
+
+  "estimated_timeline": "The campaign launches 2026-03-11 with the anchor post on Instagram — the sensory thesis and the horizon as a living condition. The process post follows on 2026-03-17 (six days later). The YouTube film, if footage is confirmed, publishes 2026-03-21; if not, that slot is held and the literary reference post advances. The literary reference post is scheduled 2026-03-25. The thesis-to-architecture post, the most asset-dependent of the sequence, publishes 2026-03-31. The Cargo website page goes live 2026-04-07 — one week after the final Instagram post, once the full social sequence is complete and a coherent record exists for anyone arriving via search or link. Total campaign duration from anchor post to website publication: 27 days. Post-campaign success window closes 2026-04-11 (30 days from launch), at which point Lucía assesses the four signal metrics defined in strategy.json.",
+
+  "valentina_recommendation": "Approve with noted conditions. The campaign is ready to publish in copy, strategy, register, and bilingual form — every word Diego wrote holds to the standard, and Ileana's visual plan is honest and precise about what is confirmed and what is not. I am not sending this back. What I am flagging for the CEO is not a quality problem; it is an asset readiness problem that the team already knows about and has documented fully. The campaign cannot launch on 2026-03-11 unless Ileana opens subfolder 1B and confirms the anchor frame before that date — that is the only hard dependency for the first post. The video footage question, the subfolder ID gaps, and the render review are real and must be resolved on the schedule Ileana has specified, but none of them block the anchor post from going live as planned. My recommendation: approve the package now, authorize Canal to begin the subfolder 1B review immediately, and hold the YouTube sequence slot as a contingency until footage is confirmed. Do not wait for all asset gaps to close before approving — the gaps are known, documented, and manageable. The copy is ready. The thinking is honest. The campaign sounds like architects."
+}

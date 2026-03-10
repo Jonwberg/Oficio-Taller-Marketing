@@ -1,0 +1,208 @@
+{
+  "campaign_id": "casa-horizonte-2026-03-09",
+  "visual_director": "Ileana",
+  "date_written": "2026-03-09",
+  "date_revised": "2026-03-09",
+  "revision_notes": "Revised after direct viewing of 8 key photos from Drive. Specific filenames now assigned to sequences 1, 2, and 4 where confirmed photos are strong. Unviewed photos referenced by filename with architect review requests. Sequence 3 (YouTube) remains contingent — no video confirmed.",
+
+  "posts": [
+    {
+      "sequence": 1,
+      "platform": "instagram",
+      "post_type": "anchor — single image or carousel (rain first, sun second)",
+      "publish_date": "2026-03-11",
+      "cover_asset": "_DSC1551.JPG — CONFIRMED VIEWED. Low-angle dry golden-brown scrub against grey overcast sky, horizon line cutting the frame in half. Rain day, January 2023. Expose for the sky. Do not correct toward warmth. This is the anchor cover.",
+      "asset_order": [
+        "_DSC1551.JPG — FRAME 1 (COVER): rain-condition horizon frame. Grey overcast sky, dry scrub, horizon as dividing line. No building, no architectural element. The grey-blue luminosity is the image. Confirmed viewed — strong anchor candidate.",
+        "_DSC2062.JPG — FRAME 2 (SUN): CONFIRMED VIEWED. Construction stakes in ground, Pacific as blue strip on right horizon, mountains left, sky dominant. October 2023. NOTE: this frame introduces the stakes (construction has begun) — it reads as continuation of the same thesis in different weather and season. If the carousel logic requires a frame with no built element at all, substitute a sun-day horizon frame from subfolder 2B (not yet confirmed — see flags). If the stakes read as landscape rather than architecture at this scale, this frame works. Ileana to confirm on final review.",
+        "_DSC2083.JPG — OPTIONAL FRAME 3: CONFIRMED VIEWED. Sand dune, tall coastal scrub lit by warm late sun, Pacific barely visible left as dark-blue strip, sky pale blue. February 2023. Use only if carousel runs to three frames and a closer vegetation-scale frame is needed between the wide horizon and the sun anchor. Do not use as cover."
+      ],
+      "framing_notes": "Landscape orientation for all frames. The horizon line must sit in the upper half of the frame — do not center it; let the sea carry the weight of the lower two-thirds so the dissolving upper edge reads as the subject, not the boundary. No architectural element, no scrub silhouetted against sky unless it reads as landscape texture rather than built edge. For the rain frame (cover): expose for the sky, not the sand — the grey-blue luminosity of the overcast Pacific is the image. Do not correct the color toward warmth. Do not sharpen or add contrast. If the frame contains a figure, it must be incidental and small — scale only, never mood staging. For the sun frame: same compositional constraint. Do not select the most saturated image in the folder. The thesis is a condition, not a destination — avoid any frame that reads as aspirational coastal photography. Both frames must be cropped identically or near-identically so the carousel transition from rain to sun is a single sustained look at the same threshold, not two different photographs of two different places.",
+      "flags": [
+        "CONFIRMED: _DSC1551.JPG is viewed and approved as the rain-condition cover asset for this anchor. No further architect confirmation required for this selection.",
+        "CONDITIONAL: _DSC2062.JPG (construction stakes, October 2023) is confirmed viewed and strong. It is proposed as the sun-condition second frame. However, the stakes may introduce a built element that conflicts with the 'no architectural element' instruction. Ileana must decide on final review whether the stakes read as landscape-scale markers or as built elements. If stakes are disqualifying, this frame must be replaced.",
+        "UNCONFIRMED SUN-DAY FALLBACK: If _DSC2062.JPG is disqualified for the second frame, the ideal replacement is a sun-day wide horizon frame from subfolder 2B (sun day, Feb 2023) — but subfolder 2B has no confirmed drive ID. Architects must confirm subfolder 2B access and pull a candidate before the post is scheduled if _DSC2062.JPG is rejected.",
+        "Do not post this anchor until both frames have been reviewed by Ileana and Diego together and the caption copy is confirmed final. Hold the post rather than publish a placeholder."
+      ]
+    },
+    {
+      "sequence": 2,
+      "platform": "instagram",
+      "post_type": "process post — site visit documentation, grid carousel",
+      "publish_date": "2026-03-17",
+      "cover_asset": "_DSC1551.JPG is already used as the sequence 1 anchor cover — do not repeat. Cover for sequence 2 should be a site-edge frame distinct from the anchor: _DSC2083.JPG (sand dune, coastal scrub, Pacific left) is the preferred opening frame IF it was not used in sequence 1 carousel. If _DSC2083.JPG was used in sequence 1, the cover falls to an unviewed frame from subfolder 1B — architects must confirm a candidate (see flags).",
+      "asset_order": [
+        "_DSC2083.JPG — FRAME 1 (COVER, conditional): CONFIRMED VIEWED. Sand dune, tall coastal scrub lit warm, Pacific barely visible left. This is the site edge — the threshold between scrub, sand, and sea. Use only if not already used in sequence 1 carousel. Strong opening for a site-reading post.",
+        "_DSC1551.JPG — DO NOT REPEAT if used as sequence 1 cover. If sequence 1 ran as a single rain image (not carousel), then _DSC1551.JPG may appear here as frame 2, carrying the rain condition into the process narrative.",
+        "_DSC1580.JPG — FRAME 2 or 3: CONFIRMED VIEWED. Hand holding small yellow flower found on site, sand and dry vegetation in background. Intimate, ground-level. This is the moment of close attention — the team reading the site at the scale of what grows there. Moves the carousel from landscape to detail. January 2023.",
+        "_DSC1697.JPG — FRAME 3 or 4: CONFIRMED VIEWED. Native coastal scrub close-up, green rounded leaves with small red berries, backlit. Site ecology at intimate scale. Continues the close-reading movement of the carousel — what the site holds, not what it looks like from distance. January 2023.",
+        "_DSC1849.JPG — FRAME 4 or 5: CONFIRMED VIEWED. Site looking inland, Sierra de la Laguna mountains on horizon, blue sky. This reverses the direction of the gaze — the house will live between two horizons, ocean behind and mountains ahead. Use as a closing frame to complete the spatial orientation of the site-reading sequence. February 2023.",
+        "UNVIEWED CANDIDATES from subfolder 1B (rain documentation) — if the carousel needs 1–2 additional frames showing the team at the site edge in rain condition, architects should open subfolder 1B (drive ID: 149gTqaZPgKA63e4FhpkdglUn0mVw3Wtw) and identify frames from: _DSC1556.JPG, _DSC1573.JPG, _DSC1585.JPG, _DSC1651.JPG, _DSC1657.JPG, _DSC1683.JPG. ARCHITECT REQUEST: Pull 2–3 candidates from this set that show the scrub-sand-sea threshold or the team reading the site (figures small, facing away). Ileana must review before confirming any unviewed frame."
+      ],
+      "framing_notes": "This carousel documents the act of reading a site, not the beauty of the site. The opening frame should feel like arriving: landscape scale, the edge legible, weather present. Subsequent frames move progressively closer — from the wide site edge to the detail of the ground, the texture of the scrub, the color of the sand under rain. The final frame (if a sun-day image is included) should be the same compositional view as the rain frames — same horizon line position, same landscape proportions — so the series reads as sustained observation of one place over time, not a tour of picturesque moments. Do not select any frame that foregrounds a tripod, camera bag, or equipment. Do not select any frame that shows the team posing or looking at the camera. If figures appear, they must be small, facing away, incidental to the landscape's scale. No color correction toward warmth. No sharpening of horizon detail.",
+      "flags": [
+        "CONFIRMED VIEWED: _DSC2083.JPG, _DSC1580.JPG, _DSC1697.JPG, _DSC1849.JPG are all confirmed viewed and strong for this carousel. Asset order above is a proposal — Ileana confirms final sequence after reviewing in-layout.",
+        "CONDITIONAL COVER: _DSC2083.JPG is the preferred cover only if not used in sequence 1. The two carousels must not open with the same frame. Confirm sequence 1 final asset list before locking this cover.",
+        "UNVIEWED RAIN FRAMES NEEDED: The carousel should include at least one frame from the rain documentation that shows the site edge in grey/overcast condition, not just the sunny close-up details. _DSC1556.JPG, _DSC1573.JPG, _DSC1585.JPG, _DSC1651.JPG, _DSC1657.JPG, _DSC1683.JPG are all January 2023, unviewed. ARCHITECT REQUEST: Open subfolder 1B (drive ID: 149gTqaZPgKA63e4FhpkdglUn0mVw3Wtw) and identify 2–3 frames from this set showing the site edge or team-at-site in rain condition.",
+        "Rain images in this post are required, not optional. If the unviewed subfolder 1B review yields fewer than 2 strong frames meeting the above criteria, flag immediately — the post should not proceed with only sun-day or detail photography.",
+        "Subfolder 2B (sun day, Feb 2023) has no confirmed drive ID. If a sun-day closing frame is needed for this carousel as a final beat, architects must confirm subfolder 2B access."
+      ]
+    },
+    {
+      "sequence": 3,
+      "platform": "youtube",
+      "post_type": "process film — short documentary, rain site documentation footage",
+      "publish_date": "2026-03-21",
+      "cover_asset": null,
+      "asset_order": [],
+      "framing_notes": "No visual asset selection can be made for this post. The post requires video footage from the Cerritos rain documentation, which has not been confirmed in assets.json. If footage is located and confirmed ready, the YouTube thumbnail should use a still frame from the film itself — the grey-Pacific horizon, rain condition — consistent with the cover logic established in sequence 1. Do not create a custom thumbnail from the still photography pool; the thumbnail must be a frame from the film.",
+      "flags": [
+        "CONTINGENT — DO NOT SCHEDULE: No video files are confirmed in assets.json. The video_files array is empty. This post cannot proceed until video footage from the January–February 2023 Cerritos rain documentation is located and confirmed in an uploadable state.",
+        "assets.json notes suggest checking 10. OTROS (modified Aug 2025) and 09. CONSTRUCCIÓN (modified Jun 2024) for construction progress footage — architects must check these folders specifically for rain documentation video from the Jan–Feb 2023 site visits.",
+        "If footage is not found or requires significant post-production that is not complete, this sequence slot is held and sequence 4 (Instagram literary reference post) moves to the sequence 3 publish date (2026-03-21). YouTube shifts to a later phase.",
+        "If the slot is held, the publish dates for sequences 4 and 5 should be recalculated to maintain the 4–7 day spacing logic from strategy.json.",
+        "No still photograph from the confirmed asset pool can substitute for video footage in this YouTube post."
+      ]
+    },
+    {
+      "sequence": 4,
+      "platform": "instagram",
+      "post_type": "literary reference post — single image, grid",
+      "publish_date": "2026-03-25",
+      "cover_asset": "_DSC1792.JPG — CONFIRMED VIEWED. Coastal scrub heavily backlit against dark background, single tiny purple flower on a pale branch. Very moody, dark, contemplative. Strong literary register. February 2023. This is the image for the Williams or Solnit register — the bodily need to look, the blue of distance. It earns its stillness.",
+      "asset_order": [
+        "_DSC1792.JPG — SINGLE IMAGE: CONFIRMED VIEWED. Backlit scrub, single purple flower, dark moody background. Literary register is precise — this is not a site survey image, it is an image of attention. Of standing still for a long time before pressing the shutter. Do not crop. Do not correct toward warmth. Do not sharpen. The darkness is the image. February 2023."
+      ],
+      "framing_notes": "Single image post. The image carries the full weight of the copy's bodily register — the need to look outward, the direction the body remembers. _DSC1792.JPG is confirmed as a strong candidate: it is close, intimate, and moody — noticeably different in composition from the wide-horizon anchor (sequence 1) and from the ground-level detail frames of the process carousel (sequence 2). This image should feel close to the site's physical particulars rather than surveying from distance. The dark background and backlit subject place the viewer inside the vegetation rather than outside looking at it — the body is already at the edge. No figure needed. The color palette remains consistent: no warm correction, no contrast boost. The moody darkness is found, not constructed.",
+      "flags": [
+        "CONFIRMED: _DSC1792.JPG is viewed and approved as the primary candidate for this sequence. No further architect confirmation required for this selection.",
+        "COPY DEPENDENCY: Diego must decide whether the anchor post (sequence 1) leaned into the Solnit distance register or the Williams bodily-need register before Ileana confirms _DSC1792.JPG as the final image for this post. The image can carry either register — but the copy written for this post must be resolved first. If the anchor opened with Williams ('the need to look'), then Solnit's 'blue of distance' belongs here and the image works. If the anchor opened with Solnit's distance register, then Williams' bodily need is the calibration here and the image still works. The image is not register-contingent — but confirm copy direction before scheduling.",
+        "DO NOT USE: _DSC1792.JPG must not appear in sequences 1 or 2 carousel. It is reserved for this post. Confirm it has not been pulled for any prior use.",
+        "ALTERNATIVE if _DSC1792.JPG is disqualified for any reason: _DSC1501.JPG (dry golden grasses close-up, ground level, sun day, August 2023) is a potential fallback — confirmed viewed, intimate scale, ground-level attention — but its sun-day palette and golden warmth are a different register from the literary darkness of _DSC1792.JPG. It is a weaker candidate for this post but a viable one. Ileana to confirm if needed."
+      ]
+    },
+    {
+      "sequence": 5,
+      "platform": "instagram",
+      "post_type": "thesis-to-architecture carousel — site photo first, section sketch or plan fragment second, render last (conditional)",
+      "publish_date": "2026-03-31",
+      "cover_asset": "_DSC2062.JPG is the preferred opening frame for this carousel IF it was not used in sequence 1 (construction stakes, October 2023, horizon present, site before house). If _DSC2062.JPG was used in sequence 1, the opening frame for this carousel should come from subfolders 3–6 (Oct 2023, drive IDs not yet confirmed) or fall back to _DSC1849.JPG (site looking inland, mountains on horizon, blue sky) if not used in sequence 2.",
+      "asset_order": [
+        "_DSC2062.JPG — FRAME 1 (conditional, preferred): CONFIRMED VIEWED. Construction stakes in ground, Pacific on right horizon, mountains left, golden scrub, sky dominant. October 2023. This frame shows the thesis becoming architectural action — the stakes mark the beginning of the house. The horizon is already present as the organizing element. Use only if not already used in sequence 1. If used here, it works as the opening argument: this is what the site gives.",
+        "_DSC1849.JPG — FRAME 1 (fallback if _DSC2062.JPG is used in sequence 1): CONFIRMED VIEWED. Site looking inland, mountains on horizon, blue sky. February 2023. Shows the site's double orientation — the horizon not only toward the Pacific but toward the sierra. Use only if not already used in sequence 2.",
+        "PLAN OR SECTION SKETCH — FRAME 2: ARCHITECTURAL DRAWING — not confirmed in assets.json. Must be sourced separately from the project drawing archive. ARCHITECT REQUEST: Provide a clean export of the plan and/or section sketch. Minimum 1080px on the short axis. Studio graphic language, no revision notes, no dimension overlays. The horizon axis should be legible in the drawing. Confirm filename and Drive location once exported.",
+        "RENDER — FRAME 3 (conditional only): RENDERS subfolder (drive ID: 1jjr9cnjWVHtfW3CeS_RxB81YjHRyISQy). Appears last in carousel, only if the joint render quality review (Diego and Ileana together, full-size files) confirms it reads as a translation of the sensory thesis into form — not as a photorealistic visualization of a desirable house. If not confirmed, carousel runs as site photograph + sketch only.",
+        "UNVIEWED CANDIDATES for consideration if stronger Oct 2023 frame needed: _DSC2066.JPG (Oct 2023, not yet viewed — ARCHITECT REQUEST: confirm content. If this shows site with stakes or early construction in a wider or cleaner horizon frame than _DSC2062.JPG, it may be preferred here)."
+      ],
+      "framing_notes": "The carousel's visual argument is: this is what the site gives — this is what the architecture receives — this is how it answers. The opening site photograph must show the horizon as a spatial and organizing presence, not as scenery. A frame from Oct 2023 (subfolders 3–6 or root pool Oct frames) may show a later stage of site understanding — preferred if available and not used in sequence 1. The plan or section sketch should be photographed or exported cleanly — not a phone snap of a paper drawing, but a legible architectural document rendered in the studio's graphic language. The render (if included) must be reviewed by Ileana and Diego together before it enters the carousel: it must read as a translation of the thesis into form, not as a photorealistic visualization of a desirable house. If the render foregrounds comfort, pool, terrace, or any lifestyle element, it does not pass. If the render's compositional logic does not rhyme with the site photographs (horizon line position, landscape proportion, palette), it does not pass. If the render passes, it appears last — never first, never before the site photograph. If it does not pass, the carousel runs as site photograph + sketch only, and the copy still lands.",
+      "flags": [
+        "CONFIRMED VIEWS: _DSC2062.JPG and _DSC1849.JPG are both confirmed viewed and available for the opening site photograph of this carousel. The choice between them depends on whether _DSC2062.JPG was used in sequence 1 and whether _DSC1849.JPG was used in sequence 2 — confirm prior sequence asset lists before locking this selection.",
+        "ARCHITECTURAL DRAWINGS NOT IN ASSETS: process_images array in assets.json is empty. Sequence 5 requires a plan or section fragment as the second carousel frame. This must be sourced from the project drawing archive — it is not in the confirmed asset pool. This is the single most critical unresolved dependency for this post.",
+        "RENDER QUALITY UNCONFIRMED: The RENDERS folder exists (drive ID confirmed) but no individual render filenames or quality assessment is available. Diego and Ileana must conduct a render quality review before sequence 5 is scheduled. This review cannot be delegated or done asynchronously from thumbnails.",
+        "UNVIEWED CANDIDATE: _DSC2066.JPG is October 2023, not yet viewed. If it shows a wider or cleaner horizon frame than _DSC2062.JPG with the construction stakes, architects should open it for Ileana to review as a potential alternative opening frame.",
+        "Subfolders 3, 4, 5, and 6 (Oct 2023) have no confirmed drive IDs — if accessible, an Oct 2023 frame from these subfolders is preferred over the root pool for this post. Architects must provide access if possible.",
+        "Do not publish this post until the drawing and render decisions are resolved. This post has the highest asset dependency of any post in the campaign."
+      ]
+    },
+    {
+      "sequence": 6,
+      "platform": "website",
+      "post_type": "project page — permanent record, Cargo CMS, automated via Playwright",
+      "publish_date": "2026-04-07",
+      "cover_asset": "_DSC1551.JPG — the rain-condition anchor cover confirmed for sequence 1. The visitor arriving via search or link must encounter the same thesis image that opened the campaign.",
+      "asset_order": [
+        "hero image: _DSC1551.JPG — same rain-condition horizon frame used as sequence 1 cover asset. CONFIRMED VIEWED.",
+        "site documentation gallery: curated selection from confirmed viewed frames plus any unviewed frames approved after architect review. Rain-first sequencing: _DSC1551.JPG, then other rain/overcast frames confirmed from subfolder 1B review, then sun-condition frames (_DSC2083.JPG, _DSC2062.JPG, _DSC1849.JPG). Close-reading detail frames follow: _DSC1580.JPG, _DSC1697.JPG, _DSC1501.JPG, _DSC1792.JPG. 6–10 total frames. No frame that was not selected and approved for one of the campaign posts may appear here.",
+        "plan or section sketch: same drawing used in sequence 5 carousel (if confirmed)",
+        "render: same render used in sequence 5 (if it passed quality review), or omitted",
+        "YouTube embed: link to sequence 3 film (if posted and live by 2026-04-07)"
+      ],
+      "framing_notes": "The website page receives the complete visual record assembled across the campaign. The hero image is confirmed as _DSC1551.JPG — the anchor. The gallery should be sequenced rain-first, following the same logic as the campaign: grey-blue, overcast, then sun, then site detail. No lifestyle or destination imagery. The plan/section sketch and render (if used in sequence 5) appear in the same order as the sequence 5 carousel: site photo — drawing — render. If the YouTube film is live, it should be embedded or linked early in the page, not buried below the gallery. Do not use any image on the website page that was not selected and approved for one of the campaign posts.",
+      "flags": [
+        "The website page depends on the completion of all prior sequences — no visual asset list can be finalized until sequences 1 through 5 are resolved.",
+        "If the YouTube film (sequence 3) is not posted by 2026-04-07, the website page should still publish without it — do not delay the website for an unresolved video asset.",
+        "If the render was omitted from sequence 5, it must also be omitted from the website page — do not introduce the render for the first time on the website.",
+        "Confirm with the automation engineer that Playwright can access the confirmed Drive URLs for the final approved assets before the automated post is triggered."
+      ]
+    }
+  ],
+
+  "global_flags": [
+    "NO VIDEO CONFIRMED: The video_files array in assets.json is empty. Sequence 3 (YouTube process film) is the campaign's deepest articulation of the sensory thesis and cannot be fulfilled with still photography. The architects must check folders 10. OTROS and 09. CONSTRUCCIÓN in Drive for rain documentation footage from January–February 2023. This is the single most urgent asset gap in the campaign.",
+    "CONFIRMED VIEWED PHOTOS (8): _DSC2062.JPG, _DSC2083.JPG, _DSC1551.JPG, _DSC1580.JPG, _DSC1697.JPG, _DSC1792.JPG, _DSC1849.JPG, _DSC1501.JPG. These are now assigned to specific sequence positions in this plan. No further architect confirmation required for these selections — only Ileana's final review at layout stage.",
+    "UNVIEWED PHOTOS IN ASSET POOL (17): _DSC1556.JPG, _DSC1573.JPG, _DSC1585.JPG, _DSC1651.JPG, _DSC1657.JPG, _DSC1683.JPG, _DSC1807.JPG, _DSC1817.JPG, _DSC1824.JPG, _DSC1855.JPG, _DSC1871.JPG, _DSC1949.JPG, _DSC1959.JPG, _DSC1991.JPG, _DSC2031.JPG, _DSC2066.JPG, _DSC2084.JPG, _DSC2086.JPG. None of these may be used as a primary cover asset. They may be used as supporting carousel frames only after Ileana has viewed them. The most critical unviewed files for this plan are the January 2023 rain-condition frames (_DSC1556, _DSC1573, _DSC1585, _DSC1651, _DSC1657, _DSC1683) needed for sequence 2 rain content, and _DSC2066.JPG (Oct 2023) as a potential alternative for sequence 5.",
+    "SUBFOLDER DRIVE IDs INCOMPLETE: Only subfolder 1B has a confirmed drive ID. Subfolders 1, 2, 2B, 3, 4, 5, and 6 all have null drive IDs or null URLs in assets.json. Frame selection for sequences 2, 4, and 5 cannot be fully finalized until at least subfolder 1B is opened for the unviewed rain frames.",
+    "ARCHITECTURAL DRAWINGS NOT IN ASSETS: The process_images array in assets.json is empty. Sequence 5 requires a plan or section sketch as the second carousel frame. This must be sourced from the project drawing archive.",
+    "RENDER QUALITY UNCONFIRMED: The RENDERS folder exists (drive ID confirmed) but no individual render filenames or quality assessment is available. Diego and Ileana must conduct a render quality review before sequence 5 is scheduled.",
+    "SEQUENCE DEPENDENCY CHAIN: Sequences 2, 4, and 5 each depend on asset decisions made for sequence 1. Specifically: if _DSC2062.JPG is used in sequence 1 carousel, it cannot be used as the opening frame of sequence 5 — the fallback must be identified before sequence 1 is finalized. Begin sequence 1 asset confirmation immediately."
+  ],
+
+  "asset_recommendations": [
+    {
+      "priority": "urgent",
+      "folder": "subfolder 1B (drive ID: 149gTqaZPgKA63e4FhpkdglUn0mVw3Wtw)",
+      "request": "Open subfolder 1B and pull all frames for review. Specifically: identify 2–3 frames from _DSC1556.JPG, _DSC1573.JPG, _DSC1585.JPG, _DSC1651.JPG, _DSC1657.JPG, _DSC1683.JPG that show the scrub-sand-sea threshold or the site edge in rain condition — figures small and facing away if present, no equipment. These are the required rain frames for sequence 2. Confirm filenames of the best candidates so Ileana can view and approve them.",
+      "reason": "_DSC1551.JPG (confirmed viewed) is the anchor cover — it cannot also serve as the primary process-post documentation of the site visit. Sequence 2 needs at least one additional rain frame from subfolder 1B that shows the team reading the site at the edge. None of the remaining January 2023 frames have been viewed."
+    },
+    {
+      "priority": "urgent",
+      "folder": "10. OTROS and/or 09. CONSTRUCCIÓN",
+      "request": "Check both folders for any video files — specifically footage recorded during the January–February 2023 site documentation visits to Cerritos. File names, durations, and rough quality assessment (is the footage usable as-is, or does it require significant editing?). Even unedited raw clips are useful if the site audio (wind, surf) is clean and the horizon is in frame.",
+      "reason": "Sequence 3 (YouTube process film) cannot proceed without confirmed video footage. The video_files array in assets.json is empty. This must be assessed before the campaign launch date of 2026-03-11."
+    },
+    {
+      "priority": "high",
+      "folder": "subfolder 2B (sun day, Feb 2023)",
+      "request": "Confirm Drive ID or URL for subfolder 2B. If _DSC2062.JPG (construction stakes, Oct 2023) is rejected as the sun-condition second frame for sequence 1, the replacement must come from subfolder 2B — a wide horizon frame, no building, no stakes, sun condition. Same compositional criteria as _DSC1551.JPG but in clear or lightly overcast light.",
+      "reason": "Subfolder 2B has no confirmed drive ID. This is only urgent if _DSC2062.JPG is disqualified from sequence 1. Ileana will confirm the stakes question on first review."
+    },
+    {
+      "priority": "high",
+      "folder": "_DSC2066.JPG — single file review",
+      "request": "Open _DSC2066.JPG (drive file ID: 1DNJVBV-fB4zyksaBvjq4f2yuH41t6jR1) and describe its content. Is it a wider or cleaner horizon frame than _DSC2062.JPG? Does it show the construction stakes? What is the light condition? This file is October 2023 and may be an alternative to _DSC2062.JPG for the sequence 5 opening frame.",
+      "reason": "_DSC2066.JPG is the only other October 2023 file in the root pool besides _DSC2062.JPG and _DSC2083.JPG. If it provides a cleaner wide-horizon frame from the same documentation session, it may be preferred for sequence 5."
+    },
+    {
+      "priority": "high",
+      "folder": "subfolders 3, 4, 5, or 6 (Oct 2023)",
+      "request": "Confirm Drive ID or URL for at least one of subfolders 3–6. Looking for an Oct 2023 site frame showing the horizon as a spatial organizing element for the sequence 5 opening image. If the root pool Oct 2023 frames (_DSC2062.JPG, _DSC2066.JPG) are already assigned to earlier sequences, access to at least one of these subfolders is critical.",
+      "reason": "Subfolders 3–6 all have null drive IDs. Oct 2023 is the latest confirmed documentation date and is the preferred source for the sequence 5 opening frame."
+    },
+    {
+      "priority": "high",
+      "folder": "project drawing archive (not currently in Drive folder 15up6gEubZUDpoJqv5qCp_Mu2LOntMn--)",
+      "request": "Provide a clean export of the plan and/or section sketch for sequence 5. Export at minimum 1080px on the short axis, studio graphic language, no revision notes, no dimension overlays. The horizon axis should be legible in the drawing. Confirm filename and Drive location once exported.",
+      "reason": "No process images or architectural drawings are in the confirmed asset pool. Sequence 5 cannot proceed without this."
+    },
+    {
+      "priority": "medium",
+      "folder": "RENDERS subfolder (drive ID: 1jjr9cnjWVHtfW3CeS_RxB81YjHRyISQy)",
+      "request": "Share render files or representative full-size exports for a joint quality review with Diego and Ileana. Specifically: does any render foreground the horizon as the organizing element of the composition, consistent with the thesis? Is the palette consistent with the site photography (blue-grey Pacific, no tropical warmth)? Is the render at a stage of completion that could carry the weight of four prior posts without reading as photorealistic lifestyle visualization?",
+      "reason": "The creative-brief.json guidance is explicit: renders are withheld from phase 1 if quality is insufficient. A render that reads as aspirational visualization is more damaging to the campaign's credibility than no render at all. This review must happen in person or via shared screen — not from thumbnails."
+    }
+  ],
+
+  "confirmed_asset_summary": {
+    "confirmed_viewed": [
+      { "filename": "_DSC1551.JPG", "assigned_to": "sequence 1 cover (rain anchor)", "status": "confirmed" },
+      { "filename": "_DSC2062.JPG", "assigned_to": "sequence 1 frame 2 (sun, conditional) or sequence 5 frame 1 (opening site photo, conditional)", "status": "confirmed viewed, assignment conditional on sequence 1 decision" },
+      { "filename": "_DSC2083.JPG", "assigned_to": "sequence 1 optional frame 3 or sequence 2 cover (conditional)", "status": "confirmed viewed, assignment conditional on sequence 1 scope" },
+      { "filename": "_DSC1580.JPG", "assigned_to": "sequence 2 carousel frame (ground-level detail)", "status": "confirmed" },
+      { "filename": "_DSC1697.JPG", "assigned_to": "sequence 2 carousel frame (vegetation close-up)", "status": "confirmed" },
+      { "filename": "_DSC1849.JPG", "assigned_to": "sequence 2 closing frame or sequence 5 opening frame (fallback)", "status": "confirmed viewed, assignment conditional on prior sequence decisions" },
+      { "filename": "_DSC1792.JPG", "assigned_to": "sequence 4 single image (literary register)", "status": "confirmed" },
+      { "filename": "_DSC1501.JPG", "assigned_to": "sequence 4 fallback or sequence 2 supplementary (not primary)", "status": "confirmed viewed, not primary assignment" }
+    ],
+    "unviewed_critical": [
+      { "filename": "_DSC1556.JPG", "needed_for": "sequence 2 rain frame candidate", "action_required": "architect review" },
+      { "filename": "_DSC1573.JPG", "needed_for": "sequence 2 rain frame candidate", "action_required": "architect review" },
+      { "filename": "_DSC1585.JPG", "needed_for": "sequence 2 rain frame candidate", "action_required": "architect review" },
+      { "filename": "_DSC1651.JPG", "needed_for": "sequence 2 rain frame candidate", "action_required": "architect review" },
+      { "filename": "_DSC1657.JPG", "needed_for": "sequence 2 rain frame candidate", "action_required": "architect review" },
+      { "filename": "_DSC1683.JPG", "needed_for": "sequence 2 rain frame candidate", "action_required": "architect review" },
+      { "filename": "_DSC2066.JPG", "needed_for": "sequence 5 opening frame candidate (Oct 2023)", "action_required": "architect review" }
+    ]
+  },
+
+  "render_recommendation": "Renders should appear in this campaign only under the following conditions, all of which must be true simultaneously: (1) the render quality review (Diego and Ileana together, full-size files) confirms that at least one render reads as a translation of the sensory thesis into architectural form — horizon as organizing axis, palette consistent with the site photography, no lifestyle or amenity emphasis; (2) the render appears as the third and final frame in the sequence 5 carousel, after the site photograph and after the plan or section sketch — never as a standalone image, never as the lead frame, never in any other sequence position; (3) the render does not appear on the website page until it has been used in sequence 5 — the website receives the campaign's visual logic, it does not debut new material. If these conditions cannot all be confirmed before sequence 5's publish date of 2026-03-31, the render is omitted from phase 1 entirely. The campaign's argument is complete without the render — sequence 5's copy works from site photograph to sketch alone. The render is an addition to a complete argument, not a required element."
+}

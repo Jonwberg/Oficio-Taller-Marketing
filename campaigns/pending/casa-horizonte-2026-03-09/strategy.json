@@ -1,0 +1,75 @@
+{
+  "campaign_id": "casa-horizonte-2026-03-09",
+  "campaign_name": "El hilo del horizonte / The Thread of the Horizon",
+  "launch_date": "2026-03-11",
+  "total_duration_weeks": 4,
+
+  "posts": [
+    {
+      "sequence": 1,
+      "platform": "instagram",
+      "post_type": "anchor image post — single image or paired set (rain / sun), grid",
+      "publish_date": "2026-03-11",
+      "title_or_concept": "The sensory thesis — the horizon as a living condition, not a view. The horizon line as the absolute organizing element of the project, sky and sea dissolving into each other. Full or excerpted sensory thesis text runs as caption. This is the frame. Every subsequent post points back to this one.",
+      "depends_on_sequence": null,
+      "notes": "Canal posts manually. This is the single most important post in the campaign — do not rush it or treat it as a draft. Ileana should select the strongest site image from subfolders 1 or 1B: horizon in full, no building, no render, preferably in partial cloud cover. If using a paired set, rain goes first in the carousel — grey-blue, luminous — then sun. Caption opens in English with a phrase in the register of 'the blue of distance' (not a quotation, the studio's own language). Spanish follows as the architectural voice. Full sensory thesis text or a precise excerpt — never paraphrased into explanation. Do not post the next piece for a minimum of five days."
+    },
+    {
+      "sequence": 2,
+      "platform": "instagram",
+      "post_type": "process post — site visit documentation, grid carousel",
+      "publish_date": "2026-03-17",
+      "title_or_concept": "How the team reads a site before a line is drawn. Wind, light condition, the edge where scrub meets sand meets Pacific. The site as something that must be reckoned with, not enjoyed. January–February 2023 documentation — rain images are not secondary here, they are required.",
+      "depends_on_sequence": 1,
+      "notes": "Canal posts manually. This post lands six days after the anchor — enough room for the thesis to settle. The anchor established what the horizon is; this post shows the moment of encounter. Copy stays in second-person singular and field-note register. No explanatory language about the architects or the project process in general — just the specific, irreversible sensation of standing at that edge. Do not use any image that reads as lifestyle documentation. No people staging the site. Figures, if present, are incidental to scale, not to mood."
+    },
+    {
+      "sequence": 3,
+      "platform": "youtube",
+      "post_type": "process film — short documentary, rain site documentation footage",
+      "publish_date": "2026-03-21",
+      "title_or_concept": "The horizon in grey. Short film using the rain documentation footage from Cerritos — not polished, close to raw, the grey Pacific as thesis confirmation. The grey horizon is not a lesser image; it is proof that the condition holds in all weather. This is the deepest articulation of the sensory thesis.",
+      "depends_on_sequence": 1,
+      "notes": "Canal posts manually to YouTube. This is contingent on the rain documentation footage being in a state ready for upload — if the footage requires significant post-production that is not completed, this slot can be held and the Instagram literary reference post (sequence 4) moves to sequence 3 instead, with YouTube shifting to a later phase. Assuming footage is ready: keep edits minimal. The sound of the site — wind, surf — is the score. No music over it. Duration: 2–4 minutes maximum. Once live on YouTube, Canal posts a dedicated grid post or Story on Instagram linking to it (this is a separate manual action, not a separate sequence number). Do not repost the YouTube link within 48 hours of sequence 2 — spacing matters."
+    },
+    {
+      "sequence": 4,
+      "platform": "instagram",
+      "post_type": "literary reference post — single image with integrated copy, grid",
+      "publish_date": "2026-03-25",
+      "title_or_concept": "One literary reference woven into the studio's own voice. The Williams line ('I must have developed my need to see the horizon, to look outward as far and wide as possible') or the second Solnit passage ('the blue of distance') — not posted as a quote graphic, woven into caption as calibration. The image carries the weight; the copy names the need.",
+      "depends_on_sequence": 1,
+      "notes": "Canal posts manually. Four days after the YouTube film, eleven days after the process post. The sequence is now: thesis → encounter → evidence in motion → the need named in language. This post does not introduce a new idea — it sharpens what was already planted. Diego should decide between Williams and Solnit based on which copy direction he has developed for the anchor: if the anchor leaned into distance (Solnit register), use Williams here to introduce the bodily, physical need. If the anchor opened with need (Williams register), use Solnit's 'blue of distance' here as the deepening. The reference is never attributed with academic weight. One image from site documentation, horizon present, selected by Ileana to match the register of the reference used."
+    },
+    {
+      "sequence": 5,
+      "platform": "instagram",
+      "post_type": "thesis-to-architecture post — carousel (site photo first, then section sketch or plan fragment, render last if used), grid",
+      "publish_date": "2026-03-31",
+      "title_or_concept": "What the project asks of the house. The move from sensory thesis to architectural answer — how the horizon condition becomes a plan, a section, a form. Render appears here only, after a site photograph, in context, as translation. If renders are not yet strong enough to carry this weight, they are omitted entirely from phase 1.",
+      "depends_on_sequence": 4,
+      "notes": "Canal posts manually. This is the only post in the campaign where architectural drawings or renders may appear, and only in the sequence: site photograph first, plan or section sketch second, render last (and only if render quality is sufficient — Diego and Ileana make this call together before scheduling). The carousel tells the argument: this is what the site gives; this is what the architecture receives; this is how it answers. Copy moves from the register of the sensory thesis toward architectural precision — but never into technical description. The Habitar series frame is present here without being named directly: inhabiting as choosing, the house as a relationship with its landscape."
+    },
+    {
+      "sequence": 6,
+      "platform": "website",
+      "post_type": "project page — permanent record, Cargo CMS, automated via Playwright",
+      "publish_date": "2026-04-07",
+      "title_or_concept": "Casa Horizonte project page. The permanent record that receives the Instagram sequence. Full project information: sensory thesis, site documentation, process images, architectural drawings (and render if used in sequence 5), project credits, Habitar series tag. This is the document that outlasts the campaign.",
+      "depends_on_sequence": 5,
+      "notes": "This post can be automated via Playwright once content is assembled. Publish one week after the final Instagram post — the Instagram sequence must be complete before the website page goes live, so that anyone who finds the project page via search or link has a complete argument to land in, not a page that races ahead of the social record. The website page should include the full sensory thesis text (not excerpted), all project credits from brief.json, the Habitar series context, and a note that the project is en construcción. Do not include a project completion date. Do not include pricing, area, or amenity language of any kind. If the YouTube film is live, embed it or link it from the project page."
+    }
+  ],
+
+  "platform_rationale": {
+    "instagram": "Instagram carries the argument. It is the primary platform because the campaign's thesis — the horizon as a condition of inhabiting, not a view — requires a sequential visual logic that can be controlled post by post on a grid. Instagram's grid is not a feed, it is an accumulation: each post adds to a visible record that a new visitor encounters in reverse. This means the anchor image, which drops first, becomes the permanent introduction to this project for anyone arriving late. The cadence is slow and intentional — five to seven days between posts — because the campaign is not trying to accumulate attention, it is trying to establish a register. The wrong audience will self-select out when no lifestyle imagery appears. The right audience — architects, designers, the culturally precise — will return to the grid because the argument rewards return visits.",
+
+    "youtube": "YouTube carries the evidence. A still photograph can document the horizon; a film can make you hear and feel it. The rain documentation footage, if posted without heavy production, is the most honest proof of the sensory thesis: the horizon holds in grey, the condition is not weather-dependent, the house is not a fair-weather proposition. YouTube is secondary in this campaign because the video material may not yet be in final form — but if it is ready, it is the single deepest articulation of what Casa Horizonte is about and deserves its own sequence position rather than being treated as a cross-post asset. It is linked from Instagram but lives on YouTube as a standalone document, which means it can surface in search for people who are not following Oficio Taller and who encounter the project through its subject matter — the Pacific coast, coastal architecture, landscape and habitation.",
+
+    "website": "The website receives the permanent record. It is not part of the campaign's argument-building sequence — by the time the website page publishes, the argument has already been made on Instagram. The website's role is to be the document that outlasts the campaign: complete, searchable, properly credited, connected to the Habitar series. It is also the destination for anyone who encounters a reference to Oficio Taller through press, word of mouth, or search, and arrives wanting to understand what the studio does. The Cargo CMS automation via Playwright makes the website the one platform where Canal does not need to perform a manual posting action, which means it can be held to the end of the sequence without creating a scheduling bottleneck."
+  },
+
+  "scheduling_logic": "The sequence follows a single rule drawn from the creative brief: the anchor drops first, and everything else orbits it. The anchor (sequence 1) launches on 2026-03-11 — two days after intake to allow Canal time to confirm the final image selection and caption with Ileana and Diego. Nothing publishes until the thesis is planted. The process post (sequence 2) waits six days — the minimum the brief specifies is five — because the anchor needs room to accumulate its first round of engagement and to reach new followers organically before the argument moves forward. The YouTube film (sequence 3) arrives four days later, mid-week, building on the process post's documentation register and deepening it from still to motion. Four days after that, the literary reference post (sequence 4) lands — this spacing prevents the campaign from feeling compressed in its final week. The thesis-to-architecture post (sequence 5) waits six days from the literary reference, ensuring the render (if used) enters a context where four prior posts have established what it is an answer to, not a debut image. The website page (sequence 6) publishes one week after the final Instagram post, timed to allow the Instagram sequence to complete and create a coherent record before the permanent page is indexed. Gaps between posts (4–7 days) respect both the creative brief's 'deliberate, not frequent' cadence and the practical 24–48 hour manual posting window on Instagram and YouTube — no post is scheduled so close to the previous that a one-day posting delay on Canal's end causes a cascade problem. The website, automated via Playwright, is scheduled last and carries no manual dependency risk.",
+
+  "what_success_looks_like": "At 30 days post-launch (by 2026-04-11), success is measured on four specific signals, not general engagement volume. First, follower growth from Segment 1 (architects, designers, culturally precise practitioners) — measurable by reviewing new followers' profile types and the accounts that save or share the anchor post. If the anchor post's save rate is above 8% of impressions, the right audience is engaging. Second, zero shares of any post to a travel, lifestyle, or real estate aggregator account — if this happens, the framing has failed and copy needs immediate review. Third, the process post (sequence 2) and the thesis-to-architecture post (sequence 5) should each generate direct messages or comments that engage with the architectural argument, not with the location. At least two substantive comments per post (not emoji responses) from profiles that are not bots is the minimum signal that the argument is landing. Fourth, the YouTube film (sequence 3), if posted, should reach 200 views within 30 days with an average watch time above 60% — this indicates the film is holding an audience that came for the content, not for ambient browsing. The website project page (sequence 6), once live, should begin returning search traffic for Oficio Taller within 30 days. One inbound inquiry — a message, an email, a contact form submission — referencing Casa Horizonte or the Habitar series by name within 30 days of the anchor post is the single most meaningful metric of all: it means someone found the project, understood what it was about, and reached out because of that understanding."
+}

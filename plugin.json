@@ -18,6 +18,13 @@
     ".claude/skills/run-campaign.md",
     ".claude/skills/architect-intake.md",
     ".claude/skills/quarterly-review.md",
-    ".claude/skills/approve-campaign.md"
+    ".claude/skills/approve-campaign.md",
+    ".claude/skills/legal-review.md",
+    ".claude/skills/tax-advisory.md",
+    ".claude/skills/fpa-advisory.md",
+    ".claude/skills/coo-advisory.md",
+    ".claude/skills/controller-advisory.md",
+    ".claude/skills/cfo-advisory.md",
+    ".claude/skills/finance-ops-advisory.md"
   ]
 }

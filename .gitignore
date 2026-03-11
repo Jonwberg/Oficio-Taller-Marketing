@@ -6,3 +6,4 @@ playwright-browsers/
 approval/pages/*.html
 campaigns/published/*/assets/
 *.log
+publisher/bin/

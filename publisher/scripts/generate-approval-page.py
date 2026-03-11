@@ -13,6 +13,7 @@ Usage:
 """
 
 import json
+import re
 import sys
 import http.server
 import threading
@@ -64,10 +65,53 @@ def generate_page(campaign_id: str) -> Path:
     strategy       = load_json(campaign_dir / "strategy.json")
     visual         = load_json(campaign_dir / "visual-plan.json")
     approval_pkg   = load_json(campaign_dir / "approval-package.json")
+    assets         = load_json(campaign_dir / "assets.json")
 
-    # Align copy and visual posts by sequence for easier template rendering
-    posts = copy_data.get("posts", [])
-    visual_posts = visual.get("posts", [])
+    # Set of locally downloaded filenames for existence check
+    local_photos_dir = campaign_dir / "photos"
+    local_photos = {p.name for p in local_photos_dir.glob("*.JPG")} | {p.name for p in local_photos_dir.glob("*.jpg")} if local_photos_dir.exists() else set()
+
+    # Build filename → drive_file_id lookup (kept for reference / future use)
+    photo_ids = {
+        p["filename"]: p["drive_file_id"]
+        for p in assets.get("photos", [])
+        if p.get("drive_file_id")
+    }
+
+    # Relative path from approval/pages/ to the photos directory
+    photos_base = f"../../campaigns/pending/{campaign_id}/photos"
+
+    def extract_filename(value: str) -> str:
+        """Pull the first _DSC*.JPG (or similar) filename from a cover_asset string."""
+        if not value:
+            return ""
+        m = re.search(r'_DSC\d+\.JPG', value, re.IGNORECASE)
+        return m.group(0) if m else value.strip()
+
+    # Merge copy posts and visual posts by sequence number
+    copy_by_seq = {p["sequence"]: p for p in copy_data.get("posts", [])}
+    visual_by_seq = {p["sequence"]: p for p in visual.get("posts", [])}
+    all_seqs = sorted(set(copy_by_seq) | set(visual_by_seq))
+
+    combined_posts = []
+    for seq in all_seqs:
+        cp = copy_by_seq.get(seq, {})
+        vp = visual_by_seq.get(seq, {})
+        combined_posts.append({
+            "sequence": seq,
+            "platform": cp.get("platform") or vp.get("platform", ""),
+            "post_type": cp.get("post_type") or vp.get("post_type", ""),
+            "copy_es": cp.get("copy_es", ""),
+            "copy_en": cp.get("copy_en", ""),
+            "hashtags": cp.get("hashtags", []),
+            "youtube_title_es": cp.get("youtube_title_es", ""),
+            "youtube_title_en": cp.get("youtube_title_en", ""),
+            "framing_notes": vp.get("framing_notes", ""),
+            "edit_notes": vp.get("edit_notes", ""),
+            "flags": vp.get("flags", []),
+            "cover_asset": extract_filename(vp.get("cover_asset", "")),
+            "asset_order": [extract_filename(f) for f in vp.get("asset_order", []) if extract_filename(f)],
+        })
 
     template_text = TEMPLATE_PATH.read_text(encoding="utf-8")
     template = Template(template_text)
@@ -77,8 +121,10 @@ def generate_page(campaign_id: str) -> Path:
         project_name=brief.get("project_name") or approval_pkg.get("project_name", campaign_id),
         created_date=datetime.now().strftime("%d %b %Y"),
         campaign_summary=approval_pkg.get("campaign_summary", "Sin resumen disponible."),
-        posts=posts,
-        visual_posts=visual_posts,
+        combined_posts=combined_posts,
+        photo_ids=photo_ids,
+        photos_base=photos_base,
+        local_photos=local_photos,
         schedule=strategy.get("post_sequence", []),
     )
 

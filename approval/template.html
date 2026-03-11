@@ -124,11 +124,73 @@
       color: var(--ink-light);
     }
 
+    /* ── Post card ── */
+    .post-card {
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .post-card:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .post-header {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      margin-bottom: 1rem;
+    }
+
+    /* ── Photo strip ── */
+    .photo-strip {
+      margin-bottom: 1.25rem;
+    }
+
+    .photo-cover {
+      width: 100%;
+      max-height: 480px;
+      object-fit: cover;
+      display: block;
+      background: var(--accent-light);
+    }
+
+    .photo-thumbnails {
+      display: flex;
+      gap: 4px;
+      margin-top: 4px;
+    }
+
+    .photo-thumb {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: var(--accent-light);
+    }
+
+    .photo-missing {
+      width: 100%;
+      height: 200px;
+      background: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: var(--ink-light);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.08em;
+    }
+
     /* ── Visual notes ── */
     .visual-note {
       background: var(--accent-light);
       padding: 0.9rem 1.25rem;
-      margin-bottom: 0.75rem;
+      margin-top: 0.75rem;
       font-size: 0.88rem;
       line-height: 1.6;
       font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -329,42 +391,72 @@
       <p class="summary-text">{{ campaign_summary }}</p>
     </section>
 
-    <!-- Copy -->
+    <!-- Posts — copy + photos together -->
     <section class="section">
-      <div class="section-label">Copy por Plataforma</div>
-      {% for post in posts %}
-      <div class="copy-block">
-        <div class="copy-platform">{{ post.platform | upper }} — {{ post.post_type | replace('_', ' ') | upper }} — Secuencia {{ post.sequence }}</div>
-        {% if post.youtube_title_es %}
-        <div class="copy-es"><strong>Título ES:</strong> {{ post.youtube_title_es }}</div>
-        <div class="copy-en"><strong>Title EN:</strong> {{ post.youtube_title_en }}</div>
-        <div class="copy-separator">—</div>
-        {% endif %}
-        <div class="copy-es">{{ post.copy_es }}</div>
-        <div class="copy-separator">—</div>
-        <div class="copy-en">{{ post.copy_en }}</div>
-        {% if post.hashtags %}
-        <div class="copy-en" style="margin-top:0.5rem; color:#9a9088; font-size:0.8rem;">{{ post.hashtags | join(' ') }}</div>
-        {% endif %}
-      </div>
-      {% endfor %}
-    </section>
+      <div class="section-label">Secuencias</div>
+      {% for post in combined_posts %}
+      <div class="post-card">
 
-    <!-- Visual Plan -->
-    <section class="section">
-      <div class="section-label">Plan Visual</div>
-      {% for post in visual_posts %}
-      <div class="visual-note">
-        <strong>{{ post.platform | upper }} — Secuencia {{ post.sequence }}</strong>
-        {{ post.framing_notes }}
-        {% if post.edit_notes %}
-        <div style="margin-top:0.4rem; color:#7a6e64;">{{ post.edit_notes }}</div>
+        <div class="post-header">{{ post.platform | upper }} — {{ post.post_type | replace('_', ' ') | upper }} — Secuencia {{ post.sequence }}</div>
+
+        <!-- Photos -->
+        {% if post.cover_asset %}
+          {% if post.cover_asset in local_photos %}
+          <div class="photo-strip">
+            <img class="photo-cover"
+                 src="{{ photos_base }}/{{ post.cover_asset }}"
+                 alt="{{ post.cover_asset }}"
+                 loading="lazy">
+            {% set additional = post.asset_order | reject("equalto", post.cover_asset) | list %}
+            {% if additional %}
+            <div class="photo-thumbnails">
+              {% for fname in additional %}
+                {% if fname in local_photos %}
+                <img class="photo-thumb"
+                     src="{{ photos_base }}/{{ fname }}"
+                     alt="{{ fname }}"
+                     loading="lazy">
+                {% endif %}
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+          {% else %}
+          <div class="photo-strip">
+            <div class="photo-missing">{{ post.cover_asset }} — not yet downloaded</div>
+          </div>
+          {% endif %}
         {% endif %}
-        {% if post.flags %}
-        {% for flag in post.flags %}
-        <div style="margin-top:0.5rem; color:#b05030; font-size:0.8rem;">⚑ {{ flag }}</div>
-        {% endfor %}
+
+        <!-- Copy -->
+        <div class="copy-block">
+          {% if post.youtube_title_es %}
+          <div class="copy-es"><strong>Título ES:</strong> {{ post.youtube_title_es }}</div>
+          <div class="copy-en"><strong>Title EN:</strong> {{ post.youtube_title_en }}</div>
+          <div class="copy-separator">—</div>
+          {% endif %}
+          <div class="copy-es">{{ post.copy_es }}</div>
+          <div class="copy-separator">—</div>
+          <div class="copy-en">{{ post.copy_en }}</div>
+          {% if post.hashtags %}
+          <div style="margin-top:0.5rem; color:#9a9088; font-size:0.8rem;">{{ post.hashtags | join(' ') }}</div>
+          {% endif %}
+        </div>
+
+        <!-- Visual direction -->
+        {% if post.framing_notes %}
+        <div class="visual-note">
+          <strong>Dirección visual</strong>
+          {{ post.framing_notes }}
+          {% if post.edit_notes %}
+          <div style="margin-top:0.4rem; color:#7a6e64;">{{ post.edit_notes }}</div>
+          {% endif %}
+          {% for flag in post.flags %}
+          <div style="margin-top:0.5rem; color:#b05030; font-size:0.8rem;">⚑ {{ flag }}</div>
+          {% endfor %}
+        </div>
         {% endif %}
+
       </div>
       {% endfor %}
     </section>

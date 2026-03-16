@@ -1,0 +1,43 @@
+{
+  "test_case_id": "TC-002",
+  "scenario": "Casa Vista",
+  "project_type": "residential_in_development",
+  "inbound_channel": "professional_contact",
+  "inbound_message": "Buenas tardes, me recomendaron con ustedes. Tengo un lote en un fraccionamiento privado en San José del Cabo y quiero construir mi casa. Hay reglamento de construcción del fraccionamiento.",
+  "lead_name": "Patricia Reyes",
+  "location": "San José del Cabo, BCS — fraccionamiento privado",
+  "site_area_sqm": 1200,
+  "total_programmed_sqm": 337,
+  "program": {
+    "bedrooms": { "qty": 4, "avg_size_sqm": 20 },
+    "bathrooms": { "qty": 4, "avg_size_sqm": 9 },
+    "kitchen": { "qty": 1, "size_sqm": 25 },
+    "dining_living": { "qty": 1, "size_sqm": 55 },
+    "family_room": { "qty": 1, "size_sqm": 30 },
+    "office": { "qty": 1, "size_sqm": 15 },
+    "pool": { "qty": 1, "size_sqm": 40 },
+    "terrace": { "qty": 2, "size_sqm": 20 },
+    "service_areas": { "qty": 1, "size_sqm": 16 }
+  },
+  "special_features": ["pool", "solar", "smart_home"],
+  "hoa_details": {
+    "name": "Residencial Vista del Mar",
+    "style_restrictions": "contemporary only, no flat roofs over 2 floors",
+    "material_restrictions": "natural stone and stucco only on facade",
+    "height_limit_m": 7
+  },
+  "budget_range_usd": { "min": 400000, "max": 700000 },
+  "site_conditions": "slight slope, no hydrology concerns",
+  "client_profile": "design_engaged",
+  "expected_outcome": "full_activation",
+  "architect_response": "approve",
+  "payment_schedule": [
+    { "milestone": "contract_signed", "percentage": 40, "amount_usd": 27200 },
+    { "milestone": "concept_approved", "percentage": 30, "amount_usd": 20400 },
+    { "milestone": "executive_plans_approved", "percentage": 30, "amount_usd": 20400 }
+  ],
+  "total_architecture_fee_usd": 68000,
+  "tax_jurisdiction": "Mexico",
+  "currency": "USD",
+  "rfc": "TEST-RFC-002"
+}

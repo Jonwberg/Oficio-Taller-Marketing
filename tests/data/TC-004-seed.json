@@ -1,0 +1,40 @@
+{
+  "test_case_id": "TC-004",
+  "scenario": "Centro de Salud",
+  "project_type": "commercial_health_center",
+  "inbound_channel": "whatsapp",
+  "inbound_message": "Buenos días, somos un grupo médico que quiere construir una clínica privada en La Paz. Necesitamos consultorios, área de urgencias, laboratorio y farmacia. Aprox 1,500m². Presupuesto de $1.8M USD.",
+  "lead_name": "Dra. Carmen Valdez",
+  "location": "La Paz, BCS",
+  "site_area_sqm": 3500,
+  "total_programmed_sqm": 1500,
+  "program": {
+    "consultorios": { "qty": 10, "avg_size_sqm": 20 },
+    "urgencias": { "qty": 1, "size_sqm": 120 },
+    "laboratorio": { "qty": 1, "size_sqm": 80 },
+    "farmacia": { "qty": 1, "size_sqm": 60 },
+    "recepcion_sala_espera": { "qty": 1, "size_sqm": 150 },
+    "rayos_x": { "qty": 1, "size_sqm": 40 },
+    "enfermeria": { "qty": 1, "size_sqm": 60 },
+    "administracion": { "qty": 1, "size_sqm": 80 },
+    "sanitarios": { "qty": 4, "avg_size_sqm": 15 },
+    "estacionamiento": { "qty": 1, "size_sqm": 400 },
+    "circulacion_corredores": { "qty": 1, "size_sqm": 250 }
+  },
+  "special_features": ["medical_gas_systems", "specialized_hvac", "backup_generator"],
+  "health_authority": "COFEPRIS",
+  "budget_range_usd": { "min": 1000000, "max": 3000000 },
+  "site_conditions": "flat urban lot, municipal services available",
+  "client_profile": "design_engaged",
+  "expected_outcome": "full_activation",
+  "architect_response": "approve",
+  "payment_schedule": [
+    { "milestone": "contract_signed", "percentage": 40, "amount_usd": 86400 },
+    { "milestone": "concept_approved", "percentage": 30, "amount_usd": 64800 },
+    { "milestone": "executive_plans_approved", "percentage": 30, "amount_usd": 64800 }
+  ],
+  "total_architecture_fee_usd": 216000,
+  "tax_jurisdiction": "Mexico",
+  "currency": "USD",
+  "rfc": "TEST-RFC-004"
+}

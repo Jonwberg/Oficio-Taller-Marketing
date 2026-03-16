@@ -1,0 +1,37 @@
+{
+  "test_case_id": "TC-003",
+  "scenario": "Wellness Retreat",
+  "project_type": "commercial_hotel",
+  "inbound_channel": "gmail",
+  "inbound_message": "Hello, I'm developing a boutique wellness hotel in Todos Santos and am looking for an architectural firm. The project is approx 3,000sqm including 20 casitas, spa, restaurant, and pool. Budget around $3.5M USD.",
+  "lead_name": "James Hartwell",
+  "location": "Todos Santos, BCS",
+  "site_area_sqm": 12000,
+  "total_programmed_sqm": 3000,
+  "program": {
+    "casitas": { "qty": 20, "avg_size_sqm": 60 },
+    "spa": { "qty": 1, "size_sqm": 300 },
+    "restaurant": { "qty": 1, "size_sqm": 250 },
+    "reception_lobby": { "qty": 1, "size_sqm": 150 },
+    "pool_deck": { "qty": 1, "size_sqm": 400 },
+    "staff_quarters": { "qty": 1, "size_sqm": 120 },
+    "back_of_house": { "qty": 1, "size_sqm": 200 },
+    "parking": { "qty": 1, "size_sqm": 320 },
+    "circulacion_areas": { "qty": 1, "size_sqm": 60 }
+  },
+  "special_features": ["pool", "solar", "greywater_recycling", "av_system"],
+  "budget_range_usd": { "min": 2000000, "max": 5000000 },
+  "site_conditions": "rolling terrain, seasonal arroyo on south boundary",
+  "client_profile": "design_engaged",
+  "expected_outcome": "full_activation",
+  "architect_response": "approve",
+  "payment_schedule": [
+    { "milestone": "contract_signed", "percentage": 40, "amount_usd": 168000 },
+    { "milestone": "concept_approved", "percentage": 30, "amount_usd": 126000 },
+    { "milestone": "executive_plans_approved", "percentage": 30, "amount_usd": 126000 }
+  ],
+  "total_architecture_fee_usd": 420000,
+  "tax_jurisdiction": "Mexico",
+  "currency": "USD",
+  "rfc": "TEST-RFC-003"
+}

@@ -1,0 +1,39 @@
+{
+  "test_case_id": "TC-005",
+  "scenario": "Biblioteca Municipal",
+  "project_type": "public_civic",
+  "inbound_channel": "gmail",
+  "inbound_message": "Estimados, el Municipio de Los Cabos está convocando firmas de arquitectura para el diseño de una nueva biblioteca pública de 2,000m². Presupuesto aprobado: $1.5M USD. El proyecto debe cumplir con los lineamientos de obra pública.",
+  "lead_name": "Arq. Roberto Salinas — Dirección de Obras Públicas",
+  "location": "Cabo San Lucas, BCS",
+  "site_area_sqm": 5000,
+  "total_programmed_sqm": 2000,
+  "program": {
+    "sala_lectura_adultos": { "qty": 1, "size_sqm": 400 },
+    "sala_lectura_infantil": { "qty": 1, "size_sqm": 200 },
+    "acervo_cerrado": { "qty": 1, "size_sqm": 300 },
+    "sala_computo": { "qty": 1, "size_sqm": 150 },
+    "sala_usos_multiples": { "qty": 1, "size_sqm": 200 },
+    "administracion": { "qty": 1, "size_sqm": 150 },
+    "sanitarios": { "qty": 4, "avg_size_sqm": 30 },
+    "vestibulo": { "qty": 1, "size_sqm": 200 },
+    "estacionamiento": { "qty": 1, "size_sqm": 250 },
+    "bodega": { "qty": 1, "size_sqm": 30 }
+  },
+  "special_features": ["solar", "accessibility_compliance", "civic_art_space"],
+  "procurement_type": "obra_publica",
+  "budget_range_usd": { "min": 800000, "max": 2000000 },
+  "site_conditions": "flat municipal land, no hydrology concerns",
+  "client_profile": "institutional",
+  "expected_outcome": "full_activation",
+  "architect_response": "approve",
+  "payment_schedule": [
+    { "milestone": "contract_signed", "percentage": 40, "amount_usd": 72000 },
+    { "milestone": "concept_approved", "percentage": 30, "amount_usd": 54000 },
+    { "milestone": "executive_plans_approved", "percentage": 30, "amount_usd": 54000 }
+  ],
+  "total_architecture_fee_usd": 180000,
+  "tax_jurisdiction": "Mexico",
+  "currency": "USD",
+  "rfc": "TEST-RFC-005"
+}

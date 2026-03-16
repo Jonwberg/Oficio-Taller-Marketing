@@ -50,7 +50,7 @@ For all other TC-IDs, run segments A through J in order. Each segment depends on
 4. Wait for segment-B-execution-complete.json
 5. Continue through segment=J
 
-If any segment writes a schema-fail.json: stop execution, report the failure, do not continue downstream segments.
+If any segment writes a schema-fail.json: stop execution at that segment (do not continue downstream segments). Then proceed to dispatch the Gap Analysis Agent — it will include the schema failure in its Critical Findings report.
 
 ## Dispatch Gap Analysis Agent
 
@@ -58,7 +58,7 @@ After all segments complete (or after TC-007 single-segment run), dispatch:
 - subagent_type: test-gap-analysis
 - Provide: run_id, tc_id
 
-Wait for gap analysis to complete (run-summary.md and gap-analysis.md exist in results directory).
+Wait for gap analysis to complete. Completion is confirmed when `tests/results/[run_id]/run-summary.md` exists. For TC-007 runs, `gap-analysis.md` is intentionally not produced — the run-summary.md alone is sufficient.
 
 ## Print pass/fail summary
 

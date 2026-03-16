@@ -18,9 +18,9 @@ If either argument is missing, respond:
 
 ## Pre-flight checks
 
-1. Verify `tests/data/[tc_id]-seed.json` exists. If not: "Seed data not found for [tc_id]"
-2. Verify `tests/cases/[tc_id]-*.md` exists. If not: "Test case definition not found for [tc_id]"
-3. Verify the segment letter is valid (A–J). If not: "Invalid segment. Use A–J."
+1. Verify `tests/data/[tc_id]-seed.json` exists. If not: report "Seed data not found for [tc_id]" and stop.
+2. Verify `tests/cases/[tc_id]-*.md` exists. If not: report "Test case definition not found for [tc_id]" and stop.
+3. Verify the segment letter is valid (A–J). If not: report "Invalid segment. Use A–J." and stop.
 
 ## Generate run_id
 
@@ -43,18 +43,16 @@ Use the Agent tool to dispatch the test-execution agent:
 
 The Execution Agent dispatches the Decision Gate Agent (subagent_type: test-decision-gate) internally for each deliverable in the segment. Scorecards are written by the Decision Gate Agent before the Execution Agent writes execution-complete.json.
 
-## Wait for completion
+## Wait for completion and check for failures
 
-After the Execution Agent completes, read `tests/results/[run_id]/[segment]-execution-complete.json` to confirm it finished.
+After the Execution Agent returns, check for results in this order:
 
-## Check for schema failure
+1. Check whether `tests/results/[run_id]/[segment]-schema-fail.json` exists.
+   - If it exists: read the file to extract `missing` fields. Report: "Schema validation failed for segment [letter]. Missing fields: [list]. No scorecard was produced." Stop — do not print a summary.
 
-Before reading scorecards, check whether `tests/results/[run_id]/[segment]-schema-fail.json` exists.
-
-If it exists:
-- Read the file to extract `missing` fields
-- Report: "Schema validation failed for segment [letter]. Missing fields: [list]. No scorecard was produced."
-- Stop. Do not print a summary.
+2. Check whether `tests/results/[run_id]/[segment]-execution-complete.json` exists.
+   - If it exists: proceed to print summary.
+   - If neither file exists: report "Execution agent did not produce a result for segment [letter]. The production agent may have failed to respond." Stop.
 
 ## Print focused summary
 
@@ -67,7 +65,7 @@ Segment [letter] results:
   Agent: [name]    Deliverable: [type]    Score: [avg]/5.0    [PASS/FAIL]
   ...
 
-Celia routing: [OK / FAILED at gate DG-XX]
+Routing (Celia/Vera): [OK / FAILED at gate DG-XX]
 
 Overall: [PASS / FAIL]
 ```

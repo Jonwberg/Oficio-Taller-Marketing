@@ -195,57 +195,51 @@ def create_subtask(parent_gid: str, name: str, fields: dict) -> str:
 
 
 if __name__ == "__main__":
-    cmd = sys.argv[1] if len(sys.argv) > 1 else None
+    import sys
 
-    if cmd == "create_task":
-        project_gid, section, name, fields_json, tag = sys.argv[2:7]
-        fields = json.loads(fields_json) if fields_json != "{}" else {}
-        gid = create_task(project_gid, section, name, fields, tag)
-        print(gid)
+    def _parse_args(argv):
+        """Parse --key value pairs from argv, returning a dict."""
+        kwargs = {}
+        i = 0
+        while i < len(argv):
+            if argv[i].startswith("--"):
+                key = argv[i][2:]
+                value = argv[i + 1] if i + 1 < len(argv) else ""
+                # Try to decode JSON for complex values (dicts, lists)
+                try:
+                    value = json.loads(value)
+                except (json.JSONDecodeError, TypeError):
+                    pass
+                kwargs[key] = value
+                i += 2
+            else:
+                i += 1
+        return kwargs
 
-    elif cmd == "complete_task":
-        task_gid = sys.argv[2]
-        comment = " ".join(sys.argv[3:]) if len(sys.argv) > 3 else None
-        complete_task(task_gid, comment)
-        print("ok")
-
-    elif cmd == "update_field":
-        task_gid, field_name, value = sys.argv[2], sys.argv[3], sys.argv[4]
-        update_field(task_gid, field_name, value)
-        print("ok")
-
-    elif cmd == "add_comment":
-        task_gid, agent_name = sys.argv[2], sys.argv[3]
-        body = " ".join(sys.argv[4:])
-        story_gid = add_comment(task_gid, agent_name, body)
-        print(story_gid)
-
-    elif cmd == "get_task":
-        task_gid = sys.argv[2]
-        import json as _json
-        print(_json.dumps(get_task(task_gid)))
-
-    elif cmd == "complete_task" and "--task_id" in sys.argv:
-        # named arg form: python asana_client.py complete_task --task_id X --comment Y
-        import argparse
-        parser = argparse.ArgumentParser()
-        parser.add_argument("--task_id")
-        parser.add_argument("--comment", default=None)
-        args, _ = parser.parse_known_args(sys.argv[2:])
-        complete_task(args.task_id, args.comment)
-        print("ok")
-
-    elif cmd == "create_subtask":
-        import argparse
-        parser = argparse.ArgumentParser()
-        parser.add_argument("--parent_id")
-        parser.add_argument("--name")
-        parser.add_argument("--fields", default="{}")
-        args, _ = parser.parse_known_args(sys.argv[2:])
-        fields = json.loads(args.fields)
-        gid = create_subtask(args.parent_id, args.name, fields)
-        print(gid)
-
-    else:
-        print(f"Unknown command: {cmd}", file=sys.stderr)
+    if len(sys.argv) < 2:
+        print("Usage: python asana_client.py <function_name> [--key value ...]")
         sys.exit(1)
+
+    cmd = sys.argv[1]
+    kwargs = _parse_args(sys.argv[2:])
+
+    fn_map = {
+        "create_project": create_project,
+        "create_task": create_task,
+        "complete_task": complete_task,
+        "update_field": update_field,
+        "get_field": get_field,
+        "add_comment": add_comment,
+        "get_task": get_task,
+        "create_dependency": create_dependency,
+        "create_subtask": create_subtask,
+        "move_task": move_task,
+    }
+
+    if cmd not in fn_map:
+        print(f"Unknown command: {cmd}")
+        sys.exit(1)
+
+    result = fn_map[cmd](**kwargs)
+    if result is not None:
+        print(json.dumps(result) if isinstance(result, (dict, list)) else result)

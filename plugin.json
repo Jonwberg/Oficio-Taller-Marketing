@@ -15,7 +15,10 @@
     ".claude/agents/carmen.md",
     "tests/agents/test-execution.md",
     "tests/agents/test-decision-gate.md",
-    "tests/agents/test-gap-analysis.md"
+    "tests/agents/test-gap-analysis.md",
+    ".claude/agents/entrega/lupe.md",
+    ".claude/agents/entrega/celia.md",
+    ".claude/agents/entrega/elena.md"
   ],
   "skills": [
     ".claude/skills/run-campaign.md",
@@ -31,6 +34,7 @@
     ".claude/skills/finance-ops-advisory.md",
     ".claude/skills/log-inquiry.md",
     "tests/skills/test-segment.md",
-    "tests/skills/test-full-run.md"
+    "tests/skills/test-full-run.md",
+    ".claude/skills/resume-project.md"
   ]
 }

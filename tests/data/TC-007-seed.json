@@ -1,0 +1,23 @@
+{
+  "test_case_id": "TC-007",
+  "scenario": "Edge — Bad Lead",
+  "project_type": null,
+  "inbound_channel": "instagram",
+  "inbound_message": "Hola! Soy representante de una empresa de marketing digital. Podemos aumentar tus seguidores en Instagram por solo $99 USD al mes. Contáctanos en www.seguidores-fake.com",
+  "lead_name": "unknown",
+  "location": null,
+  "site_area_sqm": null,
+  "total_programmed_sqm": null,
+  "program": null,
+  "special_features": [],
+  "budget_range_usd": null,
+  "site_conditions": null,
+  "client_profile": "spam",
+  "expected_outcome": "discarded_at_screening",
+  "architect_response": null,
+  "payment_schedule": null,
+  "total_architecture_fee_usd": null,
+  "tax_jurisdiction": null,
+  "currency": null,
+  "rfc": null
+}

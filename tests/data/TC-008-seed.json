@@ -1,0 +1,38 @@
+{
+  "test_case_id": "TC-008",
+  "scenario": "Edge — Site Complications",
+  "project_type": "commercial_hotel",
+  "inbound_channel": "gmail",
+  "inbound_message": "Good morning, I have a 15,000sqm property in East Cape with a small stream running through it. Interested in building a boutique hotel — 15 rooms, restaurant, infinity pool. Budget $2.5M USD.",
+  "lead_name": "David Chen",
+  "location": "East Cape, BCS",
+  "site_area_sqm": 15000,
+  "total_programmed_sqm": 2000,
+  "program": {
+    "rooms": { "qty": 15, "avg_size_sqm": 55 },
+    "restaurant": { "qty": 1, "size_sqm": 200 },
+    "pool_deck": { "qty": 1, "size_sqm": 300 },
+    "reception": { "qty": 1, "size_sqm": 100 },
+    "back_of_house": { "qty": 1, "size_sqm": 150 },
+    "staff": { "qty": 1, "size_sqm": 80 },
+    "spa": { "qty": 1, "size_sqm": 200 },
+    "circulation": { "qty": 1, "size_sqm": 145 }
+  },
+  "special_features": ["infinity_pool", "solar", "greywater_recycling"],
+  "budget_range_usd": { "min": 1500000, "max": 4000000 },
+  "site_conditions": "steep slope on west side, stream running through northeast corner — hydrology study required",
+  "hydrology_risk": "stream proximity requires setback analysis and possible retention basin",
+  "activation_blocker": "hydrologic study pending — estimated 6 weeks",
+  "client_profile": "design_engaged",
+  "expected_outcome": "activation_delayed_by_hydrology",
+  "architect_response": "approve",
+  "payment_schedule": [
+    { "milestone": "contract_signed", "percentage": 40, "amount_usd": 120000 },
+    { "milestone": "concept_approved", "percentage": 30, "amount_usd": 90000 },
+    { "milestone": "executive_plans_approved", "percentage": 30, "amount_usd": 90000 }
+  ],
+  "total_architecture_fee_usd": 300000,
+  "tax_jurisdiction": "Mexico",
+  "currency": "USD",
+  "rfc": "TEST-RFC-008"
+}

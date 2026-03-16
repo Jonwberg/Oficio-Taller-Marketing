@@ -1,0 +1,39 @@
+{
+  "test_case_id": "TC-006",
+  "scenario": "Edge — Budget Mismatch",
+  "project_type": "standalone_residential",
+  "inbound_channel": "instagram",
+  "inbound_message": "Hola, quiero una casa de 3 recámaras con alberca en Los Cabos. Mi presupuesto es de $200,000 USD.",
+  "lead_name": "Miguel Torres",
+  "location": "Los Cabos, BCS",
+  "site_area_sqm": 800,
+  "total_programmed_sqm": 216,
+  "program": {
+    "bedrooms": { "qty": 3, "avg_size_sqm": 18 },
+    "bathrooms": { "qty": 3, "avg_size_sqm": 8 },
+    "kitchen": { "qty": 1, "size_sqm": 18 },
+    "dining_living": { "qty": 1, "size_sqm": 40 },
+    "pool": { "qty": 1, "size_sqm": 35 },
+    "patio": { "qty": 1, "size_sqm": 30 },
+    "service_areas": { "qty": 1, "size_sqm": 15 }
+  },
+  "special_features": ["pool"],
+  "budget_range_usd": { "min": 150000, "max": 200000 },
+  "site_conditions": "flat, no hydrology concerns",
+  "client_profile": "budget_constrained",
+  "expected_outcome": "budget_misalignment_then_redesign",
+  "contractor_pricing_usd": 380000,
+  "redesign_scope": "remove pool, reduce living area to 160sqm",
+  "feedback_type": "scope_reduction",
+  "redesigned_contractor_pricing_usd": 195000,
+  "architect_response": "approve",
+  "payment_schedule": [
+    { "milestone": "contract_signed", "percentage": 40, "amount_usd": 12000 },
+    { "milestone": "concept_approved", "percentage": 30, "amount_usd": 9000 },
+    { "milestone": "executive_plans_approved", "percentage": 30, "amount_usd": 9000 }
+  ],
+  "total_architecture_fee_usd": 30000,
+  "tax_jurisdiction": "Mexico",
+  "currency": "USD",
+  "rfc": "TEST-RFC-006"
+}

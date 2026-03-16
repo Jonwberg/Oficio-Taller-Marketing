@@ -1,0 +1,37 @@
+{
+  "test_case_id": "TC-001",
+  "scenario": "Casa Moderna",
+  "project_type": "standalone_residential",
+  "inbound_channel": "instagram",
+  "inbound_message": "Hola, estoy buscando un arquitecto para diseñar mi casa en Los Cabos. Tengo un terreno de 2,500m² y quisiera algo moderno con piscina y terraza.",
+  "lead_name": "Carlos Mendoza",
+  "location": "Los Cabos, Baja California Sur",
+  "site_area_sqm": 2500,
+  "total_programmed_sqm": 250,
+  "program": {
+    "bedrooms": { "qty": 3, "avg_size_sqm": 18 },
+    "bathrooms": { "qty": 3, "avg_size_sqm": 8 },
+    "kitchen": { "qty": 1, "size_sqm": 20 },
+    "dining_living": { "qty": 1, "size_sqm": 45 },
+    "office": { "qty": 1, "size_sqm": 12 },
+    "pool": { "qty": 1, "size_sqm": 35 },
+    "patio": { "qty": 1, "size_sqm": 40 },
+    "rooftop_terrace": { "qty": 1, "size_sqm": 5 },
+    "service_areas": { "qty": 1, "size_sqm": 15 }
+  },
+  "special_features": ["pool", "rooftop_terrace", "solar"],
+  "budget_range_usd": { "min": 300000, "max": 500000 },
+  "site_conditions": "flat, no hydrology concerns",
+  "client_profile": "design_engaged",
+  "expected_outcome": "full_activation",
+  "architect_response": "approve",
+  "payment_schedule": [
+    { "milestone": "contract_signed", "percentage": 40, "amount_usd": 21600 },
+    { "milestone": "concept_approved", "percentage": 30, "amount_usd": 16200 },
+    { "milestone": "executive_plans_approved", "percentage": 30, "amount_usd": 16200 }
+  ],
+  "total_architecture_fee_usd": 54000,
+  "tax_jurisdiction": "Mexico",
+  "currency": "USD",
+  "rfc": "TEST-RFC-001"
+}

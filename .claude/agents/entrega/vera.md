@@ -180,7 +180,7 @@ These reminders run if Vera is re-dispatched to check status (she does not poll 
 
 ### Step 1: Verify legal review is approved
 
-Read legal-review.json. Check `approval_status`. If not `approved`: log warning and stop — cannot send to architect with open legal flags.
+Read legal-review.json. Check `approval_status`. If `requires_revision`: log warning and stop — cannot send to architect with blocking legal flags. If `approved` or `approved_with_advisory`: proceed.
 
 ### Step 2: Assemble proposal package summary
 

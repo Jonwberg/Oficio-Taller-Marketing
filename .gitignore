@@ -1,6 +1,7 @@
 __pycache__/
 *.pyc
 .env
+token.json
 node_modules/
 playwright-browsers/
 approval/pages/*.html

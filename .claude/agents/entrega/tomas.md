@@ -132,6 +132,8 @@ Update state.json:
 }
 ```
 
+Before dispatching Vera, check state.json `awaiting_gate`. If already `DG-04`, log a warning: 'DG-04 already pending for [project_id] — not re-dispatching Vera.' Stop.
+
 Dispatch Vera via Agent tool with:
 - project_id
 - mode: "architect_sow_review"

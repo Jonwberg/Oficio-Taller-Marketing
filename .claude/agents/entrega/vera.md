@@ -53,6 +53,8 @@ Read state.json. Check:
 
 **If all conditions met (both flags true AND no pending gate):**
 
+Read `area-program.json`. Set N = count of items in the `spaces` array.
+
 Read `projects/[project_id]/area-program.json` and `projects/[project_id]/cost-basis.json` to populate the DG-03 email.
 
 Send DG-03 review request:
@@ -245,6 +247,8 @@ Same 24h/48h reminder and escalation logic as DG-04 (re-run Vera in DG-05 mode t
 ## Protocol
 
 ### Step 1: Check all three activation conditions
+
+Note: `site_data_complete` (set by Sol) ≠ `site_docs_complete` (set by human operator). `site_docs_complete` becomes `true` only when a human operator confirms that all documents from Sol's required_documents list have been physically received. Run Vera in `activation_check` mode after the operator sets this field manually in state.json.
 
 From state.json:
 - `contract_signed`: true?

@@ -62,6 +62,7 @@ Allocate architecture_fee across phases proportionally (typical split: Phase 1: 
   "amount": 0,
   "payment_instructions": "Bank transfer to Oficio Taller. Bank: [BANK_NAME]. CLABE: [CLABE from environment or config]. Reference: [project_id].",
   "currency": "[MXN or USD — from scope-of-work.json]",
+  "total": 0,
   "line_items": [
     {
       "phase": "Phase 1 — Conceptual Design",
@@ -73,7 +74,8 @@ Allocate architecture_fee across phases proportionally (typical split: Phase 1: 
 }
 ```
 
-Note: `milestone_name` captures the FIRST payment milestone. All milestones are described in `line_items`.
+Note: `total` = sum of all `line_items[].amount` values.
+`milestone_name` captures the FIRST payment milestone. All milestones are described in `line_items`.
 `payment_instructions` must be specific — include bank name and CLABE/account details from env or config. If not configured, use placeholder `"[CLABE — TO BE CONFIGURED IN .env]"`.
 
 Write to: `projects/[project_id]/budget.json`
@@ -85,6 +87,8 @@ python entrega/asana_client.py complete_task \
   --task_id [tasks.budget from state.json] \
   --comment "Budget complete. Total architecture fees: [sum of line_items]. Currency: [currency]."
 ```
+
+If Asana unavailable: log `ASANA_UNAVAILABLE: would complete budget task for [project_id]` and continue.
 
 Dispatch Renata via Agent tool with:
 - project_id
@@ -141,6 +145,8 @@ python entrega/asana_client.py complete_task \
   --task_id [tasks.budget_alignment from state.json] \
   --comment "Budget alignment: contractor=[contractor_total], client=[client_budget], variance=[variance_pct]%."
 ```
+
+If Asana unavailable: log `ASANA_UNAVAILABLE: would complete budget alignment task for [project_id]` and continue.
 
 Send DG-09 review request to Marcela:
 ```bash

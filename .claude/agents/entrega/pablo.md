@@ -98,7 +98,7 @@ python entrega/asana_client.py complete_task \
 Update state.json:
 ```json
 {
-  "project_state": "active_in_progress"
+  "project_state": "schedule_complete"
 }
 ```
 

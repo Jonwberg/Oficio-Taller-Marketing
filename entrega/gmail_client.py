@@ -5,6 +5,7 @@ Handles all email operations: Marcela review gates and client-facing communicati
 Reads GMAIL_CREDENTIALS_PATH from environment.
 
 First-run OAuth: will open browser for consent. Session saved to token.json beside credentials.
+IMPORTANT: token.json (written beside credentials) contains a live OAuth token — never commit it.
 
 Usage from agent bash call:
     python entrega/gmail_client.py send_review_request <to> <subject> <body>
@@ -15,7 +16,6 @@ Usage from agent bash call:
 
 import os
 import sys
-import json
 import base64
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -60,10 +60,6 @@ def _build_message(to: str, subject: str, body: str, thread_id: str = None) -> d
     msg["To"] = to
     msg["From"] = SENDER
     msg["Subject"] = subject
-    if thread_id:
-        msg["In-Reply-To"] = thread_id
-        msg["References"] = thread_id
-
     msg.attach(MIMEText(body, "plain", "utf-8"))
 
     raw = base64.urlsafe_b64encode(msg.as_bytes()).decode()
@@ -103,21 +99,17 @@ def read_latest_reply(thread_id: str) -> str | None:
     A reply exists only when len(messages) >= 2.
     """
     service = _get_service()
-    results = service.users().messages().list(
-        userId=SENDER,
-        q=f"threadId:{thread_id}"
+    thread = service.users().threads().get(
+        userId=SENDER, id=thread_id, format="full"
     ).execute()
 
-    messages = results.get("messages", [])
+    messages = thread.get("messages", [])
     if len(messages) < 2:
         return None
 
-    # Get the latest message (last in list = most recent)
-    latest_id = messages[-1]["id"]
-    msg = service.users().messages().get(
-        userId=SENDER, id=latest_id, format="full"
-    ).execute()
-    return _decode_body(msg["payload"]) or None
+    # Latest message is last in the thread's message list
+    latest_msg = messages[-1]
+    return _decode_body(latest_msg["payload"]) or None
 
 
 def send_reminder(thread_id: str, to: str, body: str) -> None:

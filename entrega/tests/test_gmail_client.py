@@ -24,17 +24,14 @@ def make_mock_service(thread_id="thread_abc", message_text="Approve"):
         "threadId": thread_id
     }
 
-    # list returns messages for the thread
+    # threads().get() returns thread with messages list
     encoded = base64.urlsafe_b64encode(message_text.encode()).decode()
-    service.users().messages().list().execute.return_value = {
-        "messages": [{"id": "msg_001", "threadId": thread_id}, {"id": "msg_002", "threadId": thread_id}]
-    }
-    service.users().messages().get().execute.return_value = {
-        "id": "msg_002",
-        "threadId": thread_id,
-        "payload": {
-            "body": {"data": encoded}
-        }
+    service.users().threads().get().execute.return_value = {
+        "id": thread_id,
+        "messages": [
+            {"id": "msg_001", "threadId": thread_id, "payload": {"body": {"data": ""}}},
+            {"id": "msg_002", "threadId": thread_id, "payload": {"body": {"data": encoded}}}
+        ]
     }
     return service
 
@@ -69,7 +66,7 @@ def test_read_latest_reply_returns_message_text():
 
 def test_read_latest_reply_returns_none_when_no_messages():
     mock_service = make_mock_service()
-    mock_service.users().messages().list().execute.return_value = {"messages": []}
+    mock_service.users().threads().get().execute.return_value = {"id": "thread_empty", "messages": []}
     with patch.object(gmail, "_get_service", return_value=mock_service):
         text = gmail.read_latest_reply("thread_empty")
     assert text is None
@@ -77,8 +74,9 @@ def test_read_latest_reply_returns_none_when_no_messages():
 def test_read_latest_reply_returns_none_when_only_original_message():
     """1 message = only the original send, no reply yet — should return None."""
     mock_service = make_mock_service()
-    mock_service.users().messages().list().execute.return_value = {
-        "messages": [{"id": "msg_001", "threadId": "thread_abc"}]
+    mock_service.users().threads().get().execute.return_value = {
+        "id": "thread_abc",
+        "messages": [{"id": "msg_001", "threadId": "thread_abc", "payload": {"body": {"data": ""}}}]
     }
     with patch.object(gmail, "_get_service", return_value=mock_service):
         text = gmail.read_latest_reply("thread_abc")

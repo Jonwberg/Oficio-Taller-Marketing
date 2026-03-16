@@ -65,6 +65,7 @@ Before writing: if `projects/[project_id]/invoice.json` already exists, copy it 
 Write to: `projects/[project_id]/invoice.json`
 
 After successful write: delete `projects/[project_id]/invoice-previous.json` if it exists.
+If write fails: retain `invoice-previous.json` and log WRITE_FAILED — do not delete the backup. Re-dispatch Controller to retry.
 
 Note: Each invoice generation overwrites the previous invoice.json. The running_total field tracks cumulative billing history.
 

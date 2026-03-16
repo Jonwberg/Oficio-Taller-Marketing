@@ -236,7 +236,7 @@ Create `tests/data/TC-002-seed.json`:
   "lead_name": "Patricia Reyes",
   "location": "San José del Cabo, BCS — fraccionamiento privado",
   "site_area_sqm": 1200,
-  "total_programmed_sqm": 320,
+  "total_programmed_sqm": 337,
   "program": {
     "bedrooms": { "qty": 4, "avg_size_sqm": 20 },
     "bathrooms": { "qty": 4, "avg_size_sqm": 9 },
@@ -294,7 +294,8 @@ Create `tests/data/TC-003-seed.json`:
     "pool_deck": { "qty": 1, "size_sqm": 400 },
     "staff_quarters": { "qty": 1, "size_sqm": 120 },
     "back_of_house": { "qty": 1, "size_sqm": 200 },
-    "parking": { "qty": 1, "size_sqm": 320 }
+    "parking": { "qty": 1, "size_sqm": 320 },
+    "circulacion_areas": { "qty": 1, "size_sqm": 60 }
   },
   "special_features": ["pool", "solar", "greywater_recycling", "av_system"],
   "budget_range_usd": { "min": 2000000, "max": 5000000 },
@@ -338,7 +339,8 @@ Create `tests/data/TC-004-seed.json`:
     "enfermeria": { "qty": 1, "size_sqm": 60 },
     "administracion": { "qty": 1, "size_sqm": 80 },
     "sanitarios": { "qty": 4, "avg_size_sqm": 15 },
-    "estacionamiento": { "qty": 1, "size_sqm": 400 }
+    "estacionamiento": { "qty": 1, "size_sqm": 400 },
+    "circulacion_corredores": { "qty": 1, "size_sqm": 250 }
   },
   "special_features": ["medical_gas_systems", "specialized_hvac", "backup_generator"],
   "health_authority": "COFEPRIS",
@@ -382,7 +384,8 @@ Create `tests/data/TC-005-seed.json`:
     "administracion": { "qty": 1, "size_sqm": 150 },
     "sanitarios": { "qty": 4, "avg_size_sqm": 30 },
     "vestibulo": { "qty": 1, "size_sqm": 200 },
-    "estacionamiento": { "qty": 1, "size_sqm": 250 }
+    "estacionamiento": { "qty": 1, "size_sqm": 250 },
+    "bodega": { "qty": 1, "size_sqm": 30 }
   },
   "special_features": ["solar", "accessibility_compliance", "civic_art_space"],
   "procurement_type": "obra_publica",
@@ -414,7 +417,7 @@ Create `tests/cases/TC-002-casa-vista.md`:
 **Seed data:** `tests/data/TC-002-seed.json`
 
 ## Scenario
-Patricia Reyes — referral contact — wants a 320sqm home in a private
+Patricia Reyes — referral contact — wants a 337sqm home in a private
 residential development in San José del Cabo. The development has strict
 covenants: contemporary style only, natural stone/stucco facade, 7m height
 limit.
@@ -424,6 +427,17 @@ limit.
 - SOW includes HOA coordination clause and covenant review clause
 - hoa_details from seed data referenced in scope
 - Area program respects height limit implications for massing
+
+## Expected Flow
+- **Segment A:** Lupe qualifies lead, Celia routes to Elena (DG-01 approve), Elena sends intro email
+- **Segment B:** Elena sends discovery questionnaire, Ana conducts discovery call, Sol completes site readiness (no hydrology concerns)
+- **Segment C:** Ana produces area program (337sqm, residential_in_development), Ana produces cost basis, Tomás produces SOW with HOA coordination clause
+- **Segment D:** Legal review (Alejandra), Proposal generation (Bruno), client communication (communication logged)
+- **Segment E:** Concept design (Andrés), Celia routes DG-07 to Felipe (approve)
+- **Segment F:** Architectural design (Felipe), engineering (Emilio), budget alignment (Bruno)
+- **Segment G:** Executive plans (Hugo), contractor bid comparison (Ofelia — multiple bids)
+- **Segment H:** Construction oversight or close (Vera), controller invoice (Controller), tax filing (Tax)
+- **Segments I–J:** Standard completion
 
 ## Expected Final State
 closed
@@ -492,6 +506,7 @@ level. Compliance with obra pública guidelines required.
 - Tomás applies `public_civic` template with civic procurement and public bidding clauses
 - Client is institutional — fit assessment adjusts for organizational decision-making (not individual)
 - Permit process expected to be longer (public project)
+- Segment I (bid comparison): Ofelia must collect a minimum of two formal bids per obra pública procurement rules (`procurement_type: "obra_publica"` in seed); single-bid outcome must be flagged as a Marcela decision gate rather than accepted as standard result
 
 ## Expected Final State
 closed
@@ -500,7 +515,7 @@ closed
 - [ ] **Step 6: Commit**
 
 ```bash
-git add tests/data/ tests/cases/
+git add tests/data/TC-002-seed.json tests/data/TC-003-seed.json tests/data/TC-004-seed.json tests/data/TC-005-seed.json tests/cases/TC-002-casa-vista.md tests/cases/TC-003-wellness-retreat.md tests/cases/TC-004-centro-salud.md tests/cases/TC-005-biblioteca-municipal.md
 git commit -m "feat: add TC-002 through TC-005 test cases and seed data"
 ```
 
@@ -525,7 +540,7 @@ Create `tests/data/TC-006-seed.json`:
   "lead_name": "Miguel Torres",
   "location": "Los Cabos, BCS",
   "site_area_sqm": 800,
-  "total_programmed_sqm": 220,
+  "total_programmed_sqm": 216,
   "program": {
     "bedrooms": { "qty": 3, "avg_size_sqm": 18 },
     "bathrooms": { "qty": 3, "avg_size_sqm": 8 },
@@ -542,6 +557,7 @@ Create `tests/data/TC-006-seed.json`:
   "expected_outcome": "budget_misalignment_then_redesign",
   "contractor_pricing_usd": 380000,
   "redesign_scope": "remove pool, reduce living area to 160sqm",
+  "feedback_type": "scope_reduction",
   "redesigned_contractor_pricing_usd": 195000,
   "architect_response": "approve",
   "payment_schedule": [
@@ -605,7 +621,9 @@ Create `tests/data/TC-008-seed.json`:
     "pool_deck": { "qty": 1, "size_sqm": 300 },
     "reception": { "qty": 1, "size_sqm": 100 },
     "back_of_house": { "qty": 1, "size_sqm": 150 },
-    "staff": { "qty": 1, "size_sqm": 80 }
+    "staff": { "qty": 1, "size_sqm": 80 },
+    "spa": { "qty": 1, "size_sqm": 200 },
+    "circulation": { "qty": 1, "size_sqm": 145 }
   },
   "special_features": ["infinity_pool", "solar", "greywater_recycling"],
   "budget_range_usd": { "min": 1500000, "max": 4000000 },
@@ -638,7 +656,7 @@ Create `tests/cases/TC-006-edge-budget-mismatch.md`:
 **Seed data:** `tests/data/TC-006-seed.json`
 
 ## Scenario
-Miguel Torres wants a 220sqm house with pool in Los Cabos on a $200K budget.
+Miguel Torres wants a 216sqm house with pool in Los Cabos on a $200K budget.
 Contractor pricing at Segment G comes in at $380K — nearly double the budget.
 Bruno recommends redesign: remove pool, reduce to 160sqm. After redesign,
 contractor pricing at $195K aligns with budget.
@@ -721,7 +739,7 @@ Expected: `8` and `8`
 - [ ] **Step 6: Commit**
 
 ```bash
-git add tests/data/ tests/cases/
+git add tests/data/TC-006-seed.json tests/data/TC-007-seed.json tests/data/TC-008-seed.json tests/cases/TC-006-edge-budget-mismatch.md tests/cases/TC-007-edge-bad-lead.md tests/cases/TC-008-edge-site-complications.md
 git commit -m "feat: add TC-006 through TC-008 edge case test cases and seed data"
 ```
 
@@ -773,7 +791,9 @@ Required fields: source_channel, category, received_at, summary, status
 1: Task missing or significantly delayed
 
 **Decision Readiness (1–5)**
-N/A for lead record — this deliverable feeds Marcela's review, not a standalone decision
+5: Lead record provides sufficient structured data for Marcela's review (all required fields populated, quality signal clear)
+3: Most fields present but one supporting field missing or unclear
+1: Core qualifying fields absent — Marcela cannot make an informed decision
 
 ## Auto-Fail Conditions
 - No Asana task created
@@ -869,6 +889,11 @@ Required fields: sent_to, sent_at, project_type_question, budget_question, timel
 3: Sent within 48h
 1: Sent after 48h or not at all
 
+**Language (1–5)**
+5: Questionnaire language matches the client's communication language exactly (Spanish if inbound was Spanish; English if inbound was English)
+3: Mostly correct language but one phrase or question in wrong language
+1: Questionnaire sent in entirely wrong language when client language is clearly identifiable from inbound message
+
 **Decision Readiness (1–5)**
 5: Questionnaire will produce responses that allow Elena to prepare a complete fit assessment
 3: Most questions are useful; one or two gaps in coverage
@@ -878,6 +903,7 @@ Required fields: sent_to, sent_at, project_type_question, budget_question, timel
 - Questionnaire sent to wrong contact (not the inbound lead)
 - Budget question absent
 - Project type not addressed
+- Questionnaire sent in wrong language when client language is unambiguously identified from inbound message
 ```
 
 - [ ] **Step 4: Create client-fit-assessment rubric**
@@ -938,7 +964,7 @@ Expected: 4 files listed.
 - [ ] **Step 6: Commit**
 
 ```bash
-git add tests/rubrics/
+git add tests/rubrics/lead-record.md tests/rubrics/lead-summary.md tests/rubrics/discovery-questionnaire.md tests/rubrics/client-fit-assessment.md
 git commit -m "feat: add lead and discovery rubrics"
 ```
 
@@ -1141,7 +1167,7 @@ Required sections: scope_phases, payment_schedule, responsibilities_matrix, excl
 **Completeness (1–5)**
 5: All 20 checklist items present and complete; correct project-type-specific clauses applied
 3: 17–19 items present; project-type clause missing or incomplete
-1: Any of items 1, 2, 3, 13, 15, 16 missing (critical sections)
+1: Any of the 20 items missing — note: any missing item also triggers auto-fail (see below); score-1 reflects the quality severity for critical items (1, 2, 3, 13, 15, 16)
 
 **Accuracy (1–5)**
 5: Deliverables per phase match the production pipeline exactly; responsibilities name real parties
@@ -1272,6 +1298,7 @@ Required sections: scope_summary, budget_detail, timeline_phases, process_narrat
 - English language version missing
 - Placeholder text present
 - Budget does not match Bruno's figures
+- SOW section materially modifies or omits deliverables from Tomás's approved scope (additions or removals that were not approved)
 ```
 
 - [ ] **Step 7: Create client-communication rubric**
@@ -1333,7 +1360,7 @@ Expected: `11` (4 from Task 5 + 7 from this task)
 - [ ] **Step 9: Commit**
 
 ```bash
-git add tests/rubrics/
+git add tests/rubrics/area-program.md tests/rubrics/cost-basis.md tests/rubrics/site-readiness-report.md tests/rubrics/scope-of-work.md tests/rubrics/legal-review.md tests/rubrics/proposal.md tests/rubrics/client-communication.md
 git commit -m "feat: add pre-scope and scope quality rubrics"
 ```
 
@@ -1765,7 +1792,7 @@ Required: all 11 payload fields present; timestamp in ISO-8601
 1: Comment dropped or replaced with generic text
 
 **State Sync (1–5)**
-5: Asana fields updated correctly: decision_status, project_state (except Pass to Agent at DG-07), assigned_agent
+5: Asana fields updated correctly: decision_status and assigned_agent updated; for Pass to Agent at DG-07 specifically: actively verify project_state remains concept_in_progress (must not change — any other value is a failure)
 3: Two of three fields updated
 1: Asana not updated
 
@@ -1798,7 +1825,7 @@ Expected: `20`
 - [ ] **Step 11: Commit**
 
 ```bash
-git add tests/rubrics/
+git add tests/rubrics/concept-review.md tests/rubrics/architectural-design.md tests/rubrics/engineering-package.md tests/rubrics/budget-alignment.md tests/rubrics/executive-plans.md tests/rubrics/bid-comparison.md tests/rubrics/controller-invoice.md tests/rubrics/tax-filing.md tests/rubrics/celia-decision-routing.md
 git commit -m "feat: add all 20 quality rubrics"
 ```
 
@@ -1875,7 +1902,7 @@ After all agents in the segment complete, write `tests/results/[run_id]/[segment
 | G | 13–14 | Emilio (engineering) → Bruno (budget alignment) → Celia (DG-09) |
 | H | 15–16 | Hugo (executive plans) → Celia (DG-10) |
 | I | 17–18 | Ofelia (bidding) → Celia (DG-11) → Paco (permitting) |
-| J | 19–20 | Vera (construction tracking) → Controller (invoice per milestone) → Tax (filing at close) |
+| J | 19–20 | Vera (construction tracking + optional supervision + project close) → Controller (invoice per milestone) → Tax (filing at close) |
 
 ## Schema Validation Rules
 
@@ -1898,6 +1925,7 @@ After all agents in the segment complete, write `tests/results/[run_id]/[segment
 **Bid Comparison (Ofelia — Segment I):** bids (array), recommendation, recommendation_rationale
 **Controller Invoice (Controller — Segment J):** project_name, client_name, milestone_name, amount, due_date, payment_instructions, currency, running_total
 **Tax Filing (Tax — Segment J):** rfc, revenue_amount, tax_jurisdiction, filing_period, cfdi_reference, deductibles
+**Celia Decision Routing (Celia — all Marcela gates DG-01 through DG-03, DG-06 through DG-12):** project_id, phase, review_item, reviewed_by, decision, comment, timestamp, source_channel, next_action, route_to, sync_to_asana
 
 ## TC-007 Special Handling
 
@@ -2050,7 +2078,7 @@ Dispatch simulated reply to Vera and confirm the correct downstream action fires
 ### Step 4: Write scorecard
 Write `tests/results/[run_id]/segment-[letter]-architect-gate-scorecard.json` with the same schema as Marcela gate scorecard, substituting `celia_routing_correct` → `vera_routing_correct` and `celia_routing_notes` → `vera_routing_notes`.
 
-## Routing Table — Marcela Gates
+## Routing Table — Marcela Gates (DG-04 and DG-05 handled by Architect Email Gate Protocol above)
 
 | Gate | Approve → | Reject → | Pass to Agent → |
 |---|---|---|---|

@@ -71,7 +71,7 @@ After all agents in the segment complete, write `tests/results/[run_id]/[segment
 
 **Lead Record (Lupe — Segment A):** source_channel, category, received_at, summary, status
 **Lead Summary (Lupe — Segment B):** project_name, source_channel, raw_message, initial_assessment, recommended_action
-**Discovery Questionnaire (Elena — Segment B):** sent_to, sent_at, project_type_question, budget_question, timeline_question, location_question
+**Discovery Questionnaire (Elena — Segment B):** sent_to, sent_at, project_type_question, budget_question, timeline_question, location_question, special_requirements_question, design_style_question, site_ownership_question
 **Client Fit Assessment (Elena — Segment B):** meeting_notes, assessment_dimensions, recommendation, rationale
 **Area Program (Ana — Segment C):** spaces (array), total_sqm, assumptions
 **Cost Basis (Ana — Segment C):** cost_per_sqm, base_construction_cost, architecture_fee_pct, architecture_fee, engineering_allowance, contingency_pct, total_estimate, assumptions

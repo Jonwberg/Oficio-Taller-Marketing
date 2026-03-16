@@ -27,7 +27,7 @@ Look in `tests/results/` for any directory matching `*-[tc_id]*` (e.g., both `20
 For each segment (A–J):
 - Calculate average score across all quality dimensions
 - Identify any auto-fail triggers
-- Identify which dimensions scored lowest (completeness, accuracy, clarity, state_sync, timing, decision_readiness)
+- Identify which dimensions scored lowest (read all keys from the scores object — dimension names vary by rubric)
 - Flag segments with average < 3.0 as failing
 - For any segment with no scorecard: check whether `[segment]-schema-fail.json` exists in the run directory. If found, flag that segment as **Schema Failure** in Critical Findings of gap-analysis.md (section: Critical Findings), including the missing fields from the schema-fail file.
 
@@ -87,7 +87,7 @@ Write `tests/results/[run_id]/gap-analysis.md` with one GAP entry per failing fi
 ---
 
 ### GAP-[ID]: [Short Title]
-Segment: [letter] | Phase: [number] | Agent: [name]
+Segment: [letter] | Phase: [letter] | Agent: [name]
 Severity: [Critical | High | Medium | Low]
 Score: [average]/5.0
 

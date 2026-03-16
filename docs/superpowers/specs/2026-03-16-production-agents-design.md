@@ -263,7 +263,7 @@ Implementers must use the rubric's Required fields as the authoritative JSON sch
 | `project-schedule.json` | *(rubric TBD — see open items)* | phases (array), milestone_dates, dependencies |
 | `concept-review.json` | `concept-review.md` | deliverables_checklist (includes: 3d_model, renders, material_direction, color_direction, space_arrangement), presentation_milestone, review_notes |
 | `architectural-design.json` | `architectural-design.md` | design_set_status, concept_reflection_confirmed, area_program_compliance, structural_coordination_notes |
-| `engineering-package.json` | `engineering-package.md` | systems_status (object with required: electrical, lighting, water; conditional: irrigation, solar, av — only include if in scope), conditional_systems, all_inputs_confirmed, conflicts_resolved |
+| `engineering-package.json` | `engineering-package.md` | systems_status (object with required: structural, electrical, lighting, water; conditional: irrigation, solar, av — only include if in scope), conditional_systems, all_inputs_confirmed, conflicts_resolved |
 | `budget-alignment.json` | `budget-alignment.md` | contractor_pricing_source, contractor_total, client_budget, variance_amount, variance_pct, recommendation |
 | `executive-plans.json` | `executive-plans.md` | plan_set_components (array, min 3 items), engineering_integration_confirmed, conflicts_resolved, client_signoff_milestone |
 | `bid-comparison.json` | `bid-comparison.md` | bids (array with contractor, total, line_items, timeline, notes), recommendation, recommendation_rationale |
@@ -274,7 +274,7 @@ Implementers must use the rubric's Required fields as the authoritative JSON sch
 
 **Note on `concept-review.json`:** `deliverables_checklist` uses `space_arrangement` (not "spatial intent") and includes `color_direction`. Both are required by the rubric.
 
-**Note on `engineering-package.json`:** `systems_status` must include `electrical`, `lighting`, `water` as always-required keys. `irrigation`, `solar`, `av` are conditional — only include if the project scope includes them. This prevents false failures on projects where these systems are not in scope.
+**Note on `engineering-package.json`:** `systems_status` must include `structural`, `electrical`, `lighting`, `water` as always-required keys. `irrigation`, `solar`, `av` are conditional — only include if the project scope includes them. The `av` key covers both sound and AV systems (per system design). This prevents false failures on projects where these systems are not in scope.
 
 ---
 
@@ -378,7 +378,7 @@ Tomás reads the matching template + `area-program.json` + `cost-basis.json` to 
 
 **Felipe** — After DG-07 approval: manages architectural design set development. Writes `architectural-design.json`. Triggers DG-08.
 
-**Emilio** — After DG-08 approval: coordinates structural and all systems engineering. `systems_status` includes always-required systems (`electrical`, `lighting`, `water`) plus conditional systems only if in project scope (`irrigation`, `solar`, `av`). Writes `engineering-package.json`. Dispatches Bruno (budget alignment mode).
+**Emilio** — After DG-08 approval: coordinates structural and all systems engineering. `systems_status` includes always-required systems (`structural`, `electrical`, `lighting`, `water`) plus conditional systems only if in project scope (`irrigation`, `solar`, `av` — where `av` covers both sound and AV). Writes `engineering-package.json`. Dispatches Bruno (budget alignment mode).
 
 **Hugo** — After DG-09 approval: coordinates Fase Ejecutiva. Writes `executive-plans.json` with `plan_set_components` (minimum 3 items). Triggers DG-10.
 

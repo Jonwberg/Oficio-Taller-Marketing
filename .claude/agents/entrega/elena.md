@@ -95,7 +95,7 @@ After receiving questionnaire responses (or seed data), document the first meeti
 }
 ```
 
-You will embed meeting notes in the fit assessment.
+Do not write this as a separate file. Use the fields above to populate the `meeting_notes` text in Step 6's `client-fit-assessment.json`: summarize the meeting_type, duration_minutes, agenda, and conducted_at as the opening line of the `meeting_notes` string, followed by the client's actual responses.
 
 ## Step 6: Write client-fit-assessment.json
 
@@ -185,7 +185,26 @@ Capture thread_id. Update state.json:
 - `awaiting_gate`: `"DG-02"`
 - `review_thread_id`: `"[DG-02 thread_id]"`
 
-## Step 8: Update Asana
+If Gmail is unavailable: log `GMAIL_UNAVAILABLE: would send DG-02 review request for [project_id]` and use `"GMAIL_UNAVAILABLE"` as the thread_id. Continue.
+
+## Step 8: Create Asana fit gate task
+
+```bash
+python entrega/asana_client.py create_task --project_id [asana_project_id from state.json] --section "Gates" --name "DG-02 Fit Review — [client_name]" --tag gate
+```
+
+Capture returned task_id. Update state.json:
+```json
+{
+  "tasks": {
+    "fit_gate": "[returned task_id]"
+  }
+}
+```
+
+If Asana is unavailable: log `ASANA_UNAVAILABLE: would create fit gate task for [project_id]` and use `"ASANA_UNAVAILABLE"` as the task_id. Continue.
+
+## Step 9: Update Asana decision status
 
 ```bash
 python entrega/asana_client.py update_field \

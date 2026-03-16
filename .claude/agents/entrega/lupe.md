@@ -163,7 +163,10 @@ Update state.json:
 {
   "project_state": "awaiting_decision",
   "awaiting_gate": "DG-01",
-  "review_thread_id": "[thread_id from Step 7]"
+  "review_thread_id": "[thread_id from Step 7]",
+  "tasks": {
+    "lead_review_gate": "[same task_id stored in tasks.lead_intake in Step 5 — this is the lead task Celia references at DG-01]"
+  }
 }
 ```
 

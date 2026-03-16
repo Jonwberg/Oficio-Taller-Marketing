@@ -189,8 +189,9 @@ If Asana is unavailable: log `ASANA_UNAVAILABLE: would update decision_status fo
 - reject → read `state.json.revision_count`:
   - < 3 → dispatch **Rosa** with revision context; increment revision_count in state.json
   - ≥ 3 → send escalation email to Marcela:
+    Read `review_thread_id` from state.json. Substitute it into the command below.
     ```bash
-    python entrega/gmail_client.py send_escalation --thread [review_thread_id] --to "$MARCELA_EMAIL" --body "Client has requested [revision_count] revisions. Max (3) reached. Escalating for your decision."
+    python entrega/gmail_client.py send_escalation --thread "[review_thread_id from state.json]" --to "$MARCELA_EMAIL" --body "Client has requested [revision_count] revisions. Max (3) reached. Escalating for your decision."
     ```
 - pass_to_agent → dispatch **Rosa** (continue with client)
 

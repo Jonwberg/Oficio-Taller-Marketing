@@ -90,6 +90,8 @@ python entrega/gmail_client.py send_review_request \
   --body "[email body below]"
 ```
 
+If Gmail unavailable: log GMAIL_UNAVAILABLE — gate [DG-07] review request not sent. Pipeline paused. Re-dispatch Andrés when Gmail connectivity is restored to retry.
+
 Email body:
 ```
 Project: [client_name] — [project_type]
@@ -132,3 +134,5 @@ If Asana unavailable: log `ASANA_UNAVAILABLE` and continue.
 - Pass to Agent → Celia dispatches Andrés to continue autonomously; `project_state` MUST remain `concept_in_progress` — do NOT advance state
 
 **CRITICAL:** If you are re-dispatched after a "Pass to Agent" decision, do NOT update `project_state` away from `concept_in_progress`. Changing this field on Pass to Agent is an auto-fail.
+
+**Re-dispatch behavior:** When re-dispatched, check your dispatch context for `decision_type`. If `decision_type: 'pass_to_agent'`: do NOT update `project_state`, proceed autonomously. If `decision_type: 'reject'` or field is absent: normal revision mode.

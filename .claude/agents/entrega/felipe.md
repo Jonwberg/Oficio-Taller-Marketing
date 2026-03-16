@@ -81,6 +81,8 @@ python entrega/gmail_client.py send_review_request \
   --body "[email body below]"
 ```
 
+If Gmail unavailable: log GMAIL_UNAVAILABLE — gate [DG-08] review request not sent. Pipeline paused. Re-dispatch Felipe when Gmail connectivity is restored to retry.
+
 Email body:
 ```
 Project: [client_name] — [project_type]

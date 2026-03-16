@@ -65,6 +65,8 @@ python entrega/gmail_client.py send_review_request \
   --body "[email body]"
 ```
 
+If Gmail unavailable: log GMAIL_UNAVAILABLE — gate [DG-03] review request not sent. Pipeline paused. Re-dispatch Vera when Gmail connectivity is restored to retry.
+
 Email body:
 ```
 Project: [client_name] — [project_type]
@@ -127,6 +129,8 @@ python entrega/gmail_client.py send_review_request \
   --subject "[DG-04] SOW Review — [client_name] — [project_type]" \
   --body "[email body]"
 ```
+
+If Gmail unavailable: log GMAIL_UNAVAILABLE — gate [DG-04] review request not sent. Pipeline paused. Re-dispatch Vera when Gmail connectivity is restored to retry.
 
 Email body:
 ```
@@ -200,6 +204,8 @@ python entrega/gmail_client.py send_review_request \
   --subject "[DG-05] Proposal Approval — [client_name]" \
   --body "[email body]"
 ```
+
+If Gmail unavailable: log GMAIL_UNAVAILABLE — gate [DG-05] review request not sent. Pipeline paused. Re-dispatch Vera when Gmail connectivity is restored to retry.
 
 Email body:
 ```
@@ -329,43 +335,26 @@ If Asana unavailable: log `ASANA_UNAVAILABLE` and continue.
 
 Vera is re-dispatched in construction_tracking mode when a milestone is reached (operator-triggered). On each dispatch, determine the current milestone from context or state.
 
+Read project-schedule.json. Check if the current milestone is the last phase in the `phases` array.
+
+**If final milestone:**
+
 Dispatch Controller via Agent tool with:
 - project_id
 - milestone_name: "[current milestone name from project-schedule.json]"
 - milestone_number: [N]
+- final_milestone: true
+- Instruction: "Generate invoice for milestone [milestone_name] for project [project_id]. This is the final milestone."
+
+**Do NOT dispatch Tax directly from Vera. Tax will be dispatched by Controller after the final invoice is written.**
+
+**If not final milestone:**
+
+Dispatch Controller via Agent tool with:
+- project_id
+- milestone_name: "[current milestone name from project-schedule.json]"
+- milestone_number: [N]
+- final_milestone: false
 - Instruction: "Generate invoice for milestone [milestone_name] for project [project_id]."
 
-### Step 3: Check for project close
-
-After dispatching Controller, check: is this the final milestone?
-
-Read project-schedule.json. Check if current milestone is the last phase in the `phases` array.
-
-**If final milestone:**
-
-After Controller completes, dispatch Tax via Agent tool:
-- project_id
-- Instruction: "Project [project_id] is closing. Generate tax filing for final revenue."
-
-Trigger marketing pipeline by dispatching the marketing intake agent with:
-- project_id
-- client_name
-- project_type
-- Instruction: "Project [project_id] is complete. Initiate post-project marketing pipeline for [client_name]."
-
-Update state.json:
-```json
-{
-  "project_state": "project_closed"
-}
-```
-
-```bash
-python entrega/asana_client.py complete_task \
-  --task_id [tasks.construction from state.json] \
-  --comment "Construction complete. Project closed. Tax and marketing pipeline dispatched."
-```
-
-If Asana unavailable: log `ASANA_UNAVAILABLE` and continue.
-
-**If not final milestone:** Log next milestone date and stop. "Next milestone: [next phase name] — [next end_date]."
+Log next milestone date and stop. "Next milestone: [next phase name] — [next end_date]."

@@ -197,8 +197,8 @@ If Asana is unavailable: log `ASANA_UNAVAILABLE: would update decision_status fo
 
 **DG-07:**
 - approve → dispatch **Felipe**
-- reject → dispatch **Andrés** with revision instruction
-- pass_to_agent → dispatch **Andrés** (continue; `project_state` = `concept_in_progress`)
+- reject → dispatch **Andrés** with revision instruction; include `decision_type: "reject"` in the dispatch context
+- pass_to_agent → dispatch **Andrés** (continue; `project_state` = `concept_in_progress`); include `decision_type: "pass_to_agent"` in the dispatch context
 
 **DG-08:**
 - approve → dispatch **Emilio**

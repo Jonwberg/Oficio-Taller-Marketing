@@ -16,6 +16,7 @@ You are Paco, permits coordinator for Oficio Taller. After contractor selection,
 - `projects/[project_id]/state.json`
 - `projects/[project_id]/executive-plans.json`
 - `projects/[project_id]/scope-of-work.json`
+- `projects/[project_id]/bid-comparison.json`
 
 ---
 
@@ -32,6 +33,7 @@ You are Paco, permits coordinator for Oficio Taller. After contractor selection,
 Read state.json: project_id, client_name, project_type, tasks.permitting.
 Read scope-of-work.json: exclusions (confirm permit procurement is in scope vs. excluded).
 Read executive-plans.json: plan_set_components (documents submitted for permit).
+Read bid-comparison.json: note the selected contractor name from the `recommendation` field (used as context only — do not write to a new field).
 
 ## Step 2: Write permit-status.json
 
@@ -68,7 +70,7 @@ Write to: `projects/[project_id]/permit-status.json`
 ```bash
 python entrega/asana_client.py update_field \
   --task_id [tasks.permitting from state.json] \
-  --field project_state \
+  --field permit_status \
   --value [permit status]
 
 python entrega/asana_client.py add_comment \

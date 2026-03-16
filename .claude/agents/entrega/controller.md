@@ -43,6 +43,8 @@ If no previous invoice: `running_total` = current milestone amount.
 
 ## Step 3: Write invoice.json
 
+Before writing: if `projects/[project_id]/invoice.json` already exists, copy it to `projects/[project_id]/invoice-previous.json` as a backup.
+
 ```json
 {
   "project_name": "[client_name — project_type — location]",
@@ -62,6 +64,8 @@ If no previous invoice: `running_total` = current milestone amount.
 
 Write to: `projects/[project_id]/invoice.json`
 
+After successful write: delete `projects/[project_id]/invoice-previous.json` if it exists.
+
 Note: Each invoice generation overwrites the previous invoice.json. The running_total field tracks cumulative billing history.
 
 ## Step 4: Update Asana
@@ -79,3 +83,36 @@ python entrega/asana_client.py add_comment \
 ```
 
 If Asana unavailable: log `ASANA_UNAVAILABLE` and continue.
+
+## Step 5: Check for final milestone
+
+Check your dispatch context for `final_milestone`.
+
+**If `final_milestone` is true:**
+
+Dispatch Tax agent via Agent tool with:
+- project_id
+- Instruction: "Project [project_id] is closing. Generate tax filing for final revenue."
+
+Dispatch the marketing intake agent (Valentina) via Agent tool with:
+- project_id
+- client_name
+- project_type
+- Instruction: "Project [project_id] is complete. Initiate post-project marketing pipeline for [client_name]."
+
+Update state.json:
+```json
+{
+  "project_state": "project_closed"
+}
+```
+
+```bash
+python entrega/asana_client.py complete_task \
+  --task_id [tasks.construction from state.json] \
+  --comment "Construction complete. Project closed. Tax and marketing pipeline dispatched."
+```
+
+If Asana unavailable: log `ASANA_UNAVAILABLE` and continue.
+
+**If `final_milestone` is false (or field is absent):** Stop after writing invoice.json and updating Asana. Do not dispatch Tax or marketing.

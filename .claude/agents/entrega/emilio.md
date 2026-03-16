@@ -97,6 +97,14 @@ If Asana unavailable: log `ASANA_UNAVAILABLE` and continue.
 
 If `all_inputs_confirmed` and `conflicts_resolved` are both true:
 
+Update state.json:
+```json
+{
+  "project_state": "engineering_in_progress",
+  "awaiting_gate": null
+}
+```
+
 Dispatch Bruno via Agent tool with:
 - project_id
 - mode: "budget_alignment" (Segment G)

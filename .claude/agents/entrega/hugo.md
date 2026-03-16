@@ -82,6 +82,8 @@ python entrega/gmail_client.py send_review_request \
   --body "[email body below]"
 ```
 
+If Gmail unavailable: log GMAIL_UNAVAILABLE — gate [DG-10] review request not sent. Pipeline paused. Re-dispatch Hugo when Gmail connectivity is restored to retry.
+
 Email body:
 ```
 Project: [client_name] — [project_type]
@@ -120,3 +122,5 @@ python entrega/asana_client.py update_field \
 - Approve → Celia dispatches Ofelia
 - Reject → Celia dispatches Hugo to revise (routes to Felipe or Emilio per `feedback_type` in decision-event.json if the issue is design or engineering)
 - Pass to Agent → Celia dispatches Ofelia (same as Approve)
+
+**Note on DG-10 routing:** At DG-10, "Pass to Agent" is equivalent to Approve — executive plans are complete and the project advances to the bidding phase. Celia should dispatch Ofelia. This differs from DG-07/DG-08 where Pass to Agent routes back to the same agent for autonomous revision.

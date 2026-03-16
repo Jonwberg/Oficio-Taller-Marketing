@@ -74,6 +74,16 @@ def test_read_latest_reply_returns_none_when_no_messages():
         text = gmail.read_latest_reply("thread_empty")
     assert text is None
 
+def test_read_latest_reply_returns_none_when_only_original_message():
+    """1 message = only the original send, no reply yet — should return None."""
+    mock_service = make_mock_service()
+    mock_service.users().messages().list().execute.return_value = {
+        "messages": [{"id": "msg_001", "threadId": "thread_abc"}]
+    }
+    with patch.object(gmail, "_get_service", return_value=mock_service):
+        text = gmail.read_latest_reply("thread_abc")
+    assert text is None
+
 # ── send_reminder ────────────────────────────────────────────────────────────
 
 def test_send_reminder_replies_on_same_thread():

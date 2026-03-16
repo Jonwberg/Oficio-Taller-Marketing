@@ -179,9 +179,9 @@ def test_create_subtask_returns_gid(requests_mock):
 
 def test_move_task_posts_to_add_project(requests_mock):
     requests_mock.post(
-        "https://app.asana.com/api/1.0/tasks/task_xyz/addProject",
+        "https://app.asana.com/api/1.0/sections/sec_new/addTask",
         json={"data": {}}
     )
     asana.move_task("task_xyz", "sec_new")
     body = requests_mock.last_request.json()
-    assert body["data"]["section"] == "sec_new"
+    assert body["data"]["task"] == "task_xyz"

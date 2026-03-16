@@ -71,9 +71,6 @@ def create_task(project_gid: str, section_name: str, name: str, fields: dict, ta
             "notes": f"Agent: {tag}\n\n" + json.dumps(fields, indent=2, ensure_ascii=False),
         }
     }
-    if fields:
-        payload["data"]["custom_fields"] = fields
-
     resp = requests.post(f"{ASANA_BASE}/tasks", headers=_headers(), json=payload)
     resp.raise_for_status()
     return resp.json()["data"]["gid"]
@@ -91,8 +88,8 @@ def complete_task(task_gid: str, comment: str = None) -> None:
 
 def move_task(task_gid: str, section_gid: str) -> None:
     """Move a task to a different section."""
-    payload = {"data": {"section": section_gid}}
-    resp = requests.post(f"{ASANA_BASE}/tasks/{task_gid}/addProject", headers=_headers(), json=payload)
+    payload = {"data": {"task": task_gid}}
+    resp = requests.post(f"{ASANA_BASE}/sections/{section_gid}/addTask", headers=_headers(), json=payload)
     resp.raise_for_status()
 
 
@@ -195,8 +192,6 @@ def create_subtask(parent_gid: str, name: str, fields: dict) -> str:
 
 
 if __name__ == "__main__":
-    import sys
-
     def _parse_args(argv):
         """Parse --key value pairs from argv, returning a dict."""
         kwargs = {}
@@ -241,5 +236,7 @@ if __name__ == "__main__":
         sys.exit(1)
 
     result = fn_map[cmd](**kwargs)
-    if result is not None:
+    if result is None:
+        print("NULL")
+    else:
         print(json.dumps(result) if isinstance(result, (dict, list)) else result)

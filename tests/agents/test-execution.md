@@ -30,7 +30,14 @@ Run each production agent in sequence for the segment, using the Segment-to-Agen
 3. Write raw output to `tests/results/[run_id]/[segment]-[agent-name]-raw.md`
 4. Validate output schema (required fields — see Schema Validation section)
 5. If schema fails: write `{ "schema_fail": true, "missing": ["field1"] }` to `tests/results/[run_id]/[segment]-schema-fail.json` and stop the segment
-6. If schema passes: pass output to Decision Gate Agent (subagent_type: test-decision-gate)
+6. If schema passes: pass output to Decision Gate Agent (subagent_type: test-decision-gate). Provide these inputs explicitly:
+   - `run_id`: current run_id
+   - `segment`: current segment letter
+   - `gate_id`: the DG-XX gate for this deliverable (see Segment-to-Agent Mapping)
+   - `deliverable`: the raw agent output
+   - `deliverable_type`: the rubric name (e.g., lead-summary, area-program, scope-of-work)
+   - `gate_type`: "marcela" for Marcela gates; "architect_email" for DG-04 and DG-05
+   - `tc_id`: current test case ID
 
 ### Step 3: Write segment completion record
 After all agents in the segment complete, write `tests/results/[run_id]/[segment]-execution-complete.json`:

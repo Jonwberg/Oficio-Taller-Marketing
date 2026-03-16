@@ -34,9 +34,9 @@ If any auto-fail condition from the rubric is triggered, mark auto_fail: true re
 Sum all scored dimensions and divide by count.
 
 ### Step 5: Determine decision
+- **DG-07 exception (Concept Design — full run only):** Check this FIRST. If gate_id = DG-07, always simulate **Pass to Agent** regardless of score. Do not apply the score threshold below. Expected Celia behavior: project_state remains concept_in_progress (no change); only assigned_agent updates.
 - If average ≥ 3.0 AND no auto-fail: **Approve**
 - If average < 3.0 OR auto-fail: **Reject** with specific revision notes citing the rubric dimensions that failed
-- **DG-07 exception (Concept Design — full run only):** Simulate **Pass to Agent** instead of Approve or Reject. Expected Celia behavior: project_state remains concept_in_progress (no change); only assigned_agent updates.
 
 ### Step 6: Dispatch simulated decision to Celia
 Send the following to the Celia production agent:
@@ -68,18 +68,13 @@ Write `tests/results/[run_id]/segment-[letter]-[deliverable_type]-scorecard.json
 {
   "run_id": "[run_id]",
   "segment": "[letter]",
-  "phase": "[segment letter — canonical vocabulary]",
+  "phase": "[single uppercase letter — A through J, matching the segment value above]",
   "gate_id": "[DG-XX]",
   "gate_type": "marcela",
   "agent_tested": "[agent name]",
   "deliverable": "[deliverable_type]",
   "scores": {
-    "completeness": 0,
-    "accuracy": 0,
-    "clarity": 0,
-    "state_sync": 0,
-    "timing": 0,
-    "decision_readiness": 0
+    "[dimension_name]": 0
   },
   "average_score": 0.0,
   "auto_fail": false,
@@ -92,6 +87,7 @@ Write `tests/results/[run_id]/segment-[letter]-[deliverable_type]-scorecard.json
   "passed": true
 }
 ```
+Note: The `scores` object must include one key per quality dimension in the rubric. Most rubrics have 6 dimensions, but some have more (e.g., discovery-questionnaire has 7, client-communication has 8). Read the rubric to determine the exact set of dimensions to score. The average is computed by dividing the sum of all scores by the number of dimensions scored (not always 6).
 
 ## Architect Email Gate Protocol (DG-04, DG-05)
 
@@ -111,7 +107,29 @@ Read `architect_response` field from seed data:
 Dispatch simulated reply to Vera and confirm the correct downstream action fires.
 
 ### Step 4: Write scorecard
-Write `tests/results/[run_id]/segment-[letter]-architect-gate-scorecard.json` with the same schema as Marcela gate scorecard, substituting `celia_routing_correct` → `vera_routing_correct` and `celia_routing_notes` → `vera_routing_notes`.
+Write `tests/results/[run_id]/segment-[letter]-architect-gate-scorecard.json`:
+```json
+{
+  "run_id": "[run_id]",
+  "segment": "[letter]",
+  "phase": "[single uppercase letter — A through J]",
+  "gate_id": "[DG-04 or DG-05]",
+  "gate_type": "architect_email",
+  "agent_tested": "Vera",
+  "deliverable": "[scope-of-work or proposal]",
+  "scores": {},
+  "average_score": null,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "[approve | flag | no_response_24h | no_response_48h]",
+  "decision_commentary": "[architect reply and what Vera did]",
+  "vera_routing_correct": true,
+  "vera_routing_notes": "[what Vera routed to — correct or incorrect]",
+  "payload_fields_verified": null,
+  "passed": true
+}
+```
+Note: `scores` is empty and `average_score` is null for architect email gates — these gates are evaluated pass/fail on routing correctness only, not scored dimensions.
 
 ## Routing Table — Marcela Gates (DG-04 and DG-05 handled by Architect Email Gate Protocol above)
 

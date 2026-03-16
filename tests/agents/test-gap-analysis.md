@@ -18,8 +18,10 @@ You are the Test Gap Analysis Agent. After a full test run completes, you read a
 Read all `*-scorecard.json` files from `tests/results/[run_id]/`.
 Group by `phase` field (segment letter A–J).
 
+If no scorecard files exist: check whether `TC-007-segment-A-spam-confirmed.json` is present in the run directory. If it is, this is a valid TC-007 spam-discard run — write a run-summary noting "TC-007: lead discarded at Segment A, no downstream processing — PASS" and stop. Do not produce a gap analysis report for TC-007. If no scorecards and no spam-confirmed file: flag as framework error and stop.
+
 ### Step 2: Check for prior run
-Look in `tests/results/` for any directory matching `*-[tc_id]` with a date earlier than today. If found, load its scorecards for comparison.
+Look in `tests/results/` for any directory matching `*-[tc_id]*` (e.g., both `2026-03-14-TC-001` and `2026-03-14-TC-001-segment-B`) with a date earlier than today. If found, load its scorecards for comparison. Prefer the most recent prior full run (matching `YYYY-MM-DD-[tc_id]` exactly) over segment-scoped runs for baseline comparison.
 
 ### Step 3: Aggregate scores per segment
 For each segment (A–J):
@@ -27,6 +29,7 @@ For each segment (A–J):
 - Identify any auto-fail triggers
 - Identify which dimensions scored lowest (completeness, accuracy, clarity, state_sync, timing, decision_readiness)
 - Flag segments with average < 3.0 as failing
+- For any segment with no scorecard: check whether `[segment]-schema-fail.json` exists in the run directory. If found, flag that segment as **Schema Failure** in Critical Findings of gap-analysis.md (section: Critical Findings), including the missing fields from the schema-fail file.
 
 ### Step 4: Check Celia routing
 Identify any scorecard where `celia_routing_correct: false` or `vera_routing_correct: false`.

@@ -27,7 +27,15 @@
     ".claude/agents/entrega/renata.md",
     ".claude/agents/entrega/legal.md",
     ".claude/agents/entrega/rosa.md",
-    ".claude/agents/entrega/pablo.md"
+    ".claude/agents/entrega/pablo.md",
+    ".claude/agents/entrega/andres.md",
+    ".claude/agents/entrega/felipe.md",
+    ".claude/agents/entrega/emilio.md",
+    ".claude/agents/entrega/hugo.md",
+    ".claude/agents/entrega/ofelia.md",
+    ".claude/agents/entrega/paco.md",
+    ".claude/agents/entrega/controller.md",
+    ".claude/agents/entrega/tax.md"
   ],
   "skills": [
     ".claude/skills/run-campaign.md",

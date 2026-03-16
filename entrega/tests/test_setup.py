@@ -73,7 +73,7 @@ def test_decisiones_project_has_correct_sections(monkeypatch, tmp_path):
     monkeypatch.setattr("setup._get_workspace_gid", lambda t: "ws_test")
     monkeypatch.setattr("setup._create_custom_field", lambda n, t, w: f"gid_{n}")
     ws_setup.run(dry_run=False, team_gid="team_test")
-    assert "Approve" in section_map["Decisiones"] or "Decisions" in section_map["Decisiones"]
+    assert "Approve" in section_map["Decisiones"]
 
 
 def test_run_writes_custom_field_map(monkeypatch, tmp_path):

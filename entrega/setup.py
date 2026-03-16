@@ -75,8 +75,11 @@ PERMANENT_PROJECTS = [
 
 def _create_custom_field(name: str, field_type: str, workspace_gid: str) -> str:
     """Create a workspace-level custom field. Returns GID."""
+    pat = os.environ.get("ASANA_PAT")
+    if not pat:
+        raise EnvironmentError("ASANA_PAT environment variable not set")
     headers = {
-        "Authorization": f"Bearer {os.environ['ASANA_PAT']}",
+        "Authorization": f"Bearer {pat}",
         "Content-Type": "application/json",
     }
     payload = {
@@ -93,7 +96,10 @@ def _create_custom_field(name: str, field_type: str, workspace_gid: str) -> str:
 
 def _get_workspace_gid(team_gid: str) -> str:
     """Resolve workspace GID from team GID."""
-    headers = {"Authorization": f"Bearer {os.environ['ASANA_PAT']}"}
+    pat = os.environ.get("ASANA_PAT")
+    if not pat:
+        raise EnvironmentError("ASANA_PAT environment variable not set")
+    headers = {"Authorization": f"Bearer {pat}"}
     resp = requests.get(f"{ASANA_BASE}/teams/{team_gid}", headers=headers)
     resp.raise_for_status()
     return resp.json()["data"]["organization"]["gid"]

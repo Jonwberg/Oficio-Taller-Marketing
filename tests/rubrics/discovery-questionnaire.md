@@ -3,7 +3,7 @@
 **Deliverable:** Questionnaire sent to lead after Marcela approval (Segment B)
 
 ## Schema (Execution Agent validates — pass/fail)
-Required fields: sent_to, sent_at, project_type_question, budget_question, timeline_question, location_question
+Required fields: sent_to, sent_at, project_type_question, budget_question, timeline_question, location_question, special_requirements_question, design_style_question, site_ownership_question
 
 ## Quality Dimensions (Decision Gate Agent scores 1–5)
 

@@ -40,3 +40,5 @@ Required fields: bids (array with contractor, total, line_items, timeline, notes
 ## Auto-Fail Conditions
 - Single bid treated as final selection without routing to Marcela as a decision
 - Comparison matrix absent
+
+> Exception: a single bid is acceptable if explicitly flagged and escalated to Marcela as a decision with documented context explaining why only one bid was received. This does not trigger auto-fail.

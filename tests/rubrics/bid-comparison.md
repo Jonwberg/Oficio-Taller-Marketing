@@ -28,9 +28,9 @@ Required fields: bids (array with contractor, total, line_items, timeline, notes
 1: No state update
 
 **Timing (1–5)**
-5: Bids collected and comparison produced within expected window after executive plans approved
-3: Minor delay in collecting bids
-1: Significant delay or only one bid collected without documented attempt for more
+5: Comparison produced after executive plans are approved; at least two bids collected before matrix is presented to Marcela
+3: Minor delay in collecting bids; comparison exists before Marcela is asked to decide
+1: Single bid treated as complete; comparison not produced before Marcela is asked to decide
 
 **Decision Readiness (1–5)**
 5: Marcela can select a contractor with confidence from this document

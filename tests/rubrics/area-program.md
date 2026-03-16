@@ -28,9 +28,9 @@ Required fields: spaces (array with name, qty, size_sqm per entry), total_sqm, a
 1: No Asana update
 
 **Timing (1–5)**
-5: Area program delivered within expected window after fit approval
-3: Minor delay
-1: Not delivered or excessive delay
+5: Area program delivered before any downstream scope or cost work begins; no downstream agent has been invoked without it
+3: Minor lag but area program exists before Marcela's DG-03 review
+1: Not delivered before DG-03 or not delivered at all
 
 **Decision Readiness (1–5)**
 5: Assumptions documented where client input was incomplete; Marcela can review with full context

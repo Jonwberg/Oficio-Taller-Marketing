@@ -32,8 +32,8 @@ Required fields: project_name, client_name, milestone_name, amount, due_date, pa
 3: Minor delay (24–48h)
 1: Significant delay or invoice not issued
 
-**Decision Readiness (1–5)**
-N/A — Controller invoice is outbound to client; no human decision gate
+**Decision Readiness**
+N/A — Controller invoice is outbound to client; no human decision gate. Average score is calculated over 5 dimensions.
 
 ## Auto-Fail Conditions
 - Invoice amount differs from Bruno's payment schedule

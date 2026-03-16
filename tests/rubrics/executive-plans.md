@@ -28,9 +28,9 @@ Required fields: plan_set_components (cross_sections, full_plan_book, technical_
 1: No state update
 
 **Timing (1–5)**
-5: Executive plans produced within expected window after budget alignment
-3: Minor delay
-1: Significant delay or plans not produced
+5: Executive plans produced after budget alignment approval and before Ofelia begins bidding; no bidding begins without it
+3: Minor delay but plans exist before bidding phase starts
+1: Plans not produced before bidding phase or not produced at all
 
 **Decision Readiness (1–5)**
 5: Marcela can approve and hand off to Ofelia for bidding immediately

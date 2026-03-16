@@ -28,9 +28,9 @@ Required fields: deliverables_checklist (3d_model, renders, material_direction, 
 1: No state update
 
 **Timing (1–5)**
-5: Concept package ready within expected window after project activation
-3: Minor delay
-1: Significant delay or concept not produced
+5: Concept package confirmed ready before DG-07 Marcela review is invoked; no review dispatched without complete package
+3: Minor lag but package exists when review is invoked
+1: Significant deliverables missing when DG-07 fires, or concept not produced at all
 
 **Decision Readiness (1–5)**
 5: Marcela can approve or reject the concept with the information in this package

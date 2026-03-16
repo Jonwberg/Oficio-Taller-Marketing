@@ -31,7 +31,7 @@ Required: all 11 payload fields present; timestamp in ISO-8601
 1: Comment dropped or replaced with generic text
 
 **State Sync (1–5)**
-5: Asana fields updated correctly: decision_status and assigned_agent updated; for Pass to Agent at DG-07 specifically: actively verify project_state remains concept_in_progress (must not change — any other value is a failure)
+5: Asana fields updated correctly: decision_status and assigned_agent updated; for Pass to Agent at DG-07: confirm project_state = concept_in_progress (unchanged)
 3: Two of three fields updated
 1: Asana not updated
 
@@ -52,3 +52,4 @@ Required: all 11 payload fields present; timestamp in ISO-8601
 - Reviewer comment dropped
 - Any of the 11 required payload fields missing
 - route_to field missing (routed_to is wrong field name — see note above)
+- Pass to Agent at DG-07 changes project_state away from concept_in_progress (state must not change — any other value is a failure)

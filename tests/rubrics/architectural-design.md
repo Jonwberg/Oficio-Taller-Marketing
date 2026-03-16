@@ -28,9 +28,9 @@ Required fields: design_set_status, concept_reflection_confirmed, area_program_c
 1: No state update
 
 **Timing (1–5)**
-5: Architectural design delivered within expected window after concept approval
-3: Minor delay
-1: Significant delay or design not produced
+5: Architectural design delivered after concept approval and before Emilio begins engineering; no engineering work begins without it
+3: Minor delay but design exists before engineering starts
+1: Not delivered before engineering phase or not produced at all
 
 **Decision Readiness (1–5)**
 5: Marcela can approve and hand off to Emilio immediately

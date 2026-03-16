@@ -39,7 +39,7 @@ Required sections: scope_phases, payment_schedule, responsibilities_matrix, excl
 **Completeness (1–5)**
 5: All 20 checklist items present and complete; correct project-type-specific clauses applied
 3: 17–19 items present; project-type clause missing or incomplete
-1: Any of the 20 items missing — note: any missing item also triggers auto-fail (see below); score-1 reflects the quality severity for critical items (1, 2, 3, 13, 15, 16)
+1: Any of the 20 items missing
 
 **Accuracy (1–5)**
 5: Deliverables per phase match the production pipeline exactly; responsibilities name real parties
@@ -57,9 +57,9 @@ Required sections: scope_phases, payment_schedule, responsibilities_matrix, excl
 1: No Asana update
 
 **Timing (1–5)**
-5: SOW produced within expected window after area program and cost basis confirmed
-3: Minor delay
-1: Not produced or excessive delay
+5: SOW produced after area program and cost basis are confirmed and before architect SOW review email is sent
+3: Minor delay but SOW exists before Vera sends the DG-04 architect email
+1: Not produced before DG-04 fires or not produced at all
 
 **Decision Readiness (1–5)**
 5: Architect reviewer can approve or flag specific sections immediately

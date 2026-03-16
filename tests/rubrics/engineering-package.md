@@ -28,9 +28,9 @@ Required fields: systems_status (structural, electrical, lighting, water), condi
 1: No state update
 
 **Timing (1–5)**
-5: Engineering package complete within expected window after architectural design approval
-3: Minor delay (external consultant timeline is acceptable reason)
-1: Package declared incomplete or significantly delayed without documented reason
+5: Package complete before Bruno begins contractor pricing; no budget alignment begins without confirmed engineering package
+3: Minor delay (external consultant timeline is acceptable reason); package exists before DG-09
+1: Package declared incomplete when DG-09 fires, or significantly delayed without documented reason
 
 **Decision Readiness (1–5)**
 5: Bruno can proceed to contractor pricing immediately

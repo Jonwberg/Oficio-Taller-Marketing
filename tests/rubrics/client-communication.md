@@ -22,6 +22,16 @@ Required fields: channel, message_body, project_reference, status (draft — awa
 3: Next step implied but not explicit
 1: Client cannot determine what to do from this message
 
+**Channel (1–5)**
+5: Correct channel used per project communication preference (WhatsApp for conversational updates; email for formal deliverables and proposals)
+3: Channel works but does not match project communication preference
+1: Wrong channel used (e.g. email when client relationship is WhatsApp-primary and no deliverable is attached)
+
+**Brand Voice (1–5)**
+5: Professional, warm, and design-engaged — matches Oficio Taller brand voice; no cold form-letter language
+3: Professional but generic or slightly cold; missing warmth
+1: Off-brand tone — either too casual, too bureaucratic, or sterile
+
 **State Sync (1–5)**
 5: Message in draft status — Marcela approval required before send; Asana status updated after approval
 3: Draft but Asana not updated

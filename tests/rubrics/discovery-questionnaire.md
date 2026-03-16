@@ -7,6 +7,8 @@ Required fields: sent_to, sent_at, project_type_question, budget_question, timel
 
 ## Quality Dimensions (Decision Gate Agent scores 1–5)
 
+> Note: This rubric has 7 quality dimensions. When calculating the average score, divide by 7 (not 6).
+
 **Completeness (1–5)**
 5: Covers all 8 required topics: project type, approximate size, site location, budget range, desired timeline, special requirements, design style preferences, site ownership status
 3: 6–7 topics covered, one minor omission

@@ -1,6 +1,6 @@
 # Rubric: Lead Record
 **Agent:** Lupe
-**Deliverable:** Asana lead task created on inbound message receipt
+**Deliverable:** Asana lead task created on inbound message receipt (Segment A)
 
 ## Schema (Execution Agent validates — pass/fail)
 Required fields: source_channel, category, received_at, summary, status
@@ -28,9 +28,9 @@ Required fields: source_channel, category, received_at, summary, status
 1: No Asana task created
 
 **Timing (1–5)**
-5: Task created within expected window after inbound message receipt
-3: Minor delay but task exists
-1: Task missing or significantly delayed
+5: Task created in the same session as inbound message receipt; no gap between arrival and record creation
+3: Task exists but creation timestamp shows a gap (different session or delayed processing)
+1: Task missing or created after downstream agents have already been invoked
 
 **Decision Readiness (1–5)**
 5: Lead record provides sufficient structured data for Marcela's review (all required fields populated, quality signal clear)

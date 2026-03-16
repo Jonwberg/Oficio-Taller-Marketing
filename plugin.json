@@ -12,7 +12,10 @@
     ".claude/agents/ileana.md",
     ".claude/agents/canal.md",
     ".claude/agents/rafael.md",
-    ".claude/agents/carmen.md"
+    ".claude/agents/carmen.md",
+    "tests/agents/test-execution.md",
+    "tests/agents/test-decision-gate.md",
+    "tests/agents/test-gap-analysis.md"
   ],
   "skills": [
     ".claude/skills/run-campaign.md",
@@ -25,6 +28,9 @@
     ".claude/skills/coo-advisory.md",
     ".claude/skills/controller-advisory.md",
     ".claude/skills/cfo-advisory.md",
-    ".claude/skills/finance-ops-advisory.md"
+    ".claude/skills/finance-ops-advisory.md",
+    ".claude/skills/log-inquiry.md",
+    "tests/skills/test-segment.md",
+    "tests/skills/test-full-run.md"
   ]
 }

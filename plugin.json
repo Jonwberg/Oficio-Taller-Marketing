@@ -18,7 +18,16 @@
     "tests/agents/test-gap-analysis.md",
     ".claude/agents/entrega/lupe.md",
     ".claude/agents/entrega/celia.md",
-    ".claude/agents/entrega/elena.md"
+    ".claude/agents/entrega/elena.md",
+    ".claude/agents/entrega/ana.md",
+    ".claude/agents/entrega/sol.md",
+    ".claude/agents/entrega/vera.md",
+    ".claude/agents/entrega/tomas.md",
+    ".claude/agents/entrega/bruno.md",
+    ".claude/agents/entrega/renata.md",
+    ".claude/agents/entrega/legal.md",
+    ".claude/agents/entrega/rosa.md",
+    ".claude/agents/entrega/pablo.md"
   ],
   "skills": [
     ".claude/skills/run-campaign.md",

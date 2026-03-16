@@ -169,7 +169,7 @@ When human team members join, real Asana seats are added alongside agents cleanl
 
 ## 4. Data Model
 
-### Project state model — 38 states
+### Project state model — 47 states
 
 ```text
 lead_received
@@ -263,7 +263,8 @@ status (new / reviewing / responded / qualified / discarded)
 ```
 project_id, phase, review_item, reviewed_by,
 decision (approve / reject / pass_to_agent),
-comment, source_channel, timestamp, routed_to
+comment, source_channel, timestamp,
+next_action, route_to, sync_to_asana
 ```
 
 **Performance tasks (Alma):**

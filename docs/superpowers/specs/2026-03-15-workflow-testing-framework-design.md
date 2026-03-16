@@ -117,6 +117,8 @@ tests/
 │   ├── budget-alignment.md
 │   ├── executive-plans.md
 │   ├── bid-comparison.md
+│   ├── controller-invoice.md
+│   ├── tax-filing.md
 │   └── celia-decision-routing.md
 │
 ├── agents/                             # Runtime — 3 test agents
@@ -174,9 +176,7 @@ tests/
 | G | 13–14 | Emilio → Bruno → Celia |
 | H | 15–16 | Hugo → Celia |
 | I | 17–18 | Ofelia → Celia → Paco |
-| J | 19–20 | Vera (construction tracking + optional supervision + project close) |
-
-**Note on Segment J:** Controller (final invoice) and Tax (project revenue filing) outputs require financial seed data not included in the standard TC-series seeds. Testing of Controller and Tax outputs is deferred to a dedicated financial test segment to be defined when those agents are built.
+| J | 19–20 | Vera (construction tracking + optional supervision + project close) → Controller (final invoice) → Tax (project revenue filing) |
 
 **Note on Segment C site data:** Sol's site readiness output is validated as a Vera-managed status update — not a Marcela/Celia decision gate. The Execution Agent validates Sol's output schema and Vera's Asana field update (`site_data_pending` → `site_data_complete`). There is no Celia routing event for site data readiness.
 
@@ -617,7 +617,33 @@ The most critical pre-activation deliverable. All 20 required items must be pres
 
 ---
 
-### 8.18 Celia Decision Routing (`celia-decision-routing.md`) — all Marcela gates
+### 8.18 Controller Invoice (`controller-invoice.md`) — Controller
+
+**Quality dimensions:**
+- Invoice issued at the correct milestone trigger event — not before the milestone is confirmed by Vera
+- Invoice amount exactly matches the amount in Bruno's payment schedule for that milestone
+- Invoice contains all required fields: project name, client name, milestone description, amount, due date, payment instructions, currency
+- Issued promptly after trigger — no unreasonable delay between milestone confirmation and invoice creation
+- Running total of invoiced vs. total contract value calculated and included
+
+**Auto-fail:** Invoice amount differs from Bruno's payment schedule, issued before milestone trigger confirmed, payment instructions absent.
+
+---
+
+### 8.19 Tax Filing (`tax-filing.md`) — Tax
+
+**Quality dimensions:**
+- Revenue amount matches the cumulative total of Controller's invoiced amounts for the project
+- Correct tax jurisdiction applied (Mexico — IVA 16% standard unless project-specific exception applies)
+- Filing period correct — quarterly or annual per filing schedule, not early or late
+- All required filing documents complete: RFC, CFDI reference, project revenue declaration
+- Any deductible project expenses documented with amounts
+
+**Auto-fail:** Revenue amount does not match Controller's invoiced total, jurisdiction missing, RFC absent.
+
+---
+
+### 8.20 Celia Decision Routing (`celia-decision-routing.md`) — all Marcela gates
 
 **Quality dimensions:**
 - Decision parsed correctly: Approve / Reject / Pass to Agent
@@ -744,7 +770,16 @@ All seed data files follow the production naming conventions. The `architect_res
   "site_conditions": "flat, no hydrology concerns",
   "client_profile": "design_engaged",
   "expected_outcome": "full_activation",
-  "architect_response": "approve"
+  "architect_response": "approve",
+  "payment_schedule": [
+    { "milestone": "contract_signed", "percentage": 40, "amount_usd": 21600 },
+    { "milestone": "concept_approved", "percentage": 30, "amount_usd": 16200 },
+    { "milestone": "executive_plans_approved", "percentage": 30, "amount_usd": 16200 }
+  ],
+  "total_architecture_fee_usd": 54000,
+  "tax_jurisdiction": "Mexico",
+  "currency": "USD",
+  "rfc": "TEST-RFC-001"
 }
 ```
 
@@ -776,7 +811,7 @@ All seed data files follow the production naming conventions. The `architect_res
 | No rubric for Felipe or Emilio | `architectural-design.md` and `engineering-package.md` added to rubrics directory and Section 8 |
 | Pass to Agent had no enforcement mechanism | Assigned as fixed test point at DG-07 on every full run — deterministic and regression-comparable |
 | `phase` scorecard field had no defined vocabulary | Canonical value defined as segment letter (A–J) |
-| Controller and Tax in Segment J with no rubrics or seed data | Scoped out of standard test runs — deferred to dedicated financial test segment |
+| Controller and Tax in Segment J with no rubrics or seed data | Rubrics added (Sections 8.18, 8.19); financial fields added to seed data format; Segment J updated to include both agents |
 | TC-001 seed data program items summed to 245 sqm, not 250 | Added `rooftop_terrace: 5 sqm` to program block — sum now equals 250 sqm |
 | Project type naming inconsistency | Standardized to production naming: `standalone_residential`, `residential_in_development`, `commercial_hotel`, `commercial_health_center`, `public_civic` |
 

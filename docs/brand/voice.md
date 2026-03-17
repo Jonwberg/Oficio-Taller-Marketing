@@ -1,5 +1,5 @@
 # Oficio Taller — Brand Voice Reference
-**Version:** 1.0 — March 2026
+**Version:** 1.1 — March 2026
 **For:** Diego (copywriter), Valentina (CMO review), all Materia Pod agents
 
 ---
@@ -32,6 +32,33 @@ This paragraph is the voice. Everything that follows is how to use it.
 
 ---
 
+## La Fundadora — Marcela González Veloz
+
+Understanding Marcela is prerequisite to writing for the studio. The voice is not an invention — it is her.
+
+**Who she is:**
+Architect, mother, highly sensitive observer. Her practice is guided by a deep love of nature, attentiveness to site and territory, fascination with light, shadow, atmosphere, color, and materiality, and a genuine interest in the daily life of the people she works with. She rejects speed, ego, and empty architecture.
+
+**Her central convictions:**
+- Architecture must listen before it proposes
+- Inhabiting is a profound act
+- Design must not be born from the architect's ego
+- Territory must be respected, not dominated
+- The rhythm of the process matters as much as the result
+- Architecture can and should be more human, more sensitive, more feminine, more collaborative, more conscious
+
+**What she refuses to do:**
+- Destroy nature for profitability
+- Work from urgency
+- Make architecture as an authorial gesture
+- Separate emotion from design
+- Treat a project as primarily a financial transaction
+
+**How this shapes the writing:**
+Diego writes for a studio whose founder believes the process is as valuable as the finished space — that clients should feel heard, seen, cared for, and part of making something. Every caption, description, or campaign piece should be consistent with this. If it reads like promotion, it fails. If it reads like an honest observation from someone who loves the territory, it is right.
+
+---
+
 ## Tone
 
 **Quiet.** The writing should not compete with the architecture for attention. It should open a door, not perform an entrance.
@@ -43,6 +70,10 @@ This paragraph is the voice. Everything that follows is how to use it.
 **Never promotional.** No exclamation marks. No calls to react, share, or follow. The work speaks; the caption accompanies.
 
 **Unhurried.** Long sentences slow the reader down. Short sentences stop them. Use both deliberately. Never rush toward a point.
+
+**Brand personality in three words:** Sensible. Humana. Consciente. (Sensitive. Human. Conscious.)
+
+The brand should never read as: pretentious, inaccessible, esoteric, decorative, elitist, overly technical, overly commercial, or "instagrammable without substance."
 
 ---
 
@@ -109,6 +140,22 @@ habitar · territorio · atmósfera · umbral · materialidad · oficio · talle
 
 **English:**
 inhabit · territory · atmosphere · threshold · materiality · craft · labor · the local · sensation · belonging · continuity · landscape · climate · vegetation · topography · light · shadow · texture · silence · ritual · place
+
+### Frases núcleo — strategic tone anchors
+
+These are not taglines. They are the strategic ideas behind how the brand speaks. When writing feels off, return to these:
+
+- *Escuchar antes de proponer.*
+- *Diseñamos desde la vida, no desde el ego.*
+- *La arquitectura como acto de cuidado.*
+- *Cada proyecto es una historia que se habita.*
+- *El proceso es tan importante como el espacio.*
+- *Arquitectura que nace del lugar y vuelve a él.*
+
+In English:
+- *We don't design houses. We help people inhabit a place — and a new chapter of their lives.*
+
+---
 
 ### Words that do not belong
 
@@ -246,6 +293,29 @@ When in doubt, return to these primary sources:
 - **The mission statement and guiding principles** provided by the architects — treat these as the constitution; everything else is secondary
 
 When Valentina reviews content and something feels off, the question to ask is: *"Does this sound like something the architects would say, or does it sound like something a marketing team would say?"* If it sounds like marketing, it needs to be rewritten until it sounds like architecture.
+
+---
+
+---
+
+## Content Filter — Before Any Post, Caption, or Description Is Finalized
+
+Ask: does this content show at least one of the following?
+
+- escucha / listening
+- territorio / territory
+- cuidado / care
+- proceso / process
+- vida cotidiana / daily life
+- emoción / emotion
+- naturaleza / nature
+- materia / material
+- tiempo / time
+- relación humana / human relationship
+- observación / observation
+- atmósfera / atmosphere
+
+If it shows none of these, it does not belong to the brand. This is not a taste test — it is a values test.
 
 ---
 

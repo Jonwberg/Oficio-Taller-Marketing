@@ -1,7 +1,7 @@
 # Oficio Taller — Audience Segments
 
 **For:** Lucía (audience intelligence), Marco (creative brief), Carmen (learning loop)
-**Updated:** March 2026 — baseline. Update after each quarterly Pulso review.
+**Updated:** March 2026 — v1.1. Update after each quarterly Pulso review.
 
 ---
 
@@ -116,6 +116,82 @@ Architects, interior designers, students, craftspeople, and serious design enthu
 
 **Value to the studio:**
 Not primary lead source but critical for reputation and referral. Content that resonates with this segment elevates the studio's standing in the professional community.
+
+---
+
+## Segment 4 — El Cliente Extranjero / The International Client
+
+**Who they are:**
+Primarily American (35–70), economically established, professionally accomplished, and in a deliberate life transition — choosing to build in or relocate to Mexico. They are not drawn by investment returns. They are drawn by slowness, authenticity, beauty, and meaning. More sensitive than ostentatious. More interested in coherence than loud luxury.
+
+**Common professions:** chefs, therapists, dentists, technology specialists, entrepreneurs, financiers, coaches.
+
+**What they're really looking for:**
+They are not just building a house. They are landing a life dream — often a bridge between the life they left and the life they want to inhabit now.
+
+**What they value:**
+- A sensitive, reliable guide through a country and process they don't fully know
+- Trustworthy accompaniment through the full arc of design and construction
+- Deep reading of territory and local context
+- Integration of local craft, materials, and culture — not as decoration but as substance
+- Architecture that is rooted, serene, and connected to its environment
+
+**Fears specific to this segment:**
+- Not understanding permits, timelines, or construction processes in Mexico
+- Not being able to articulate what they want to feel
+- Not being truly heard
+- Losing control without having trust
+- The architect imposing their own vision
+- Nature becoming decorative rather than structural to the project
+- Everything accelerating and losing meaning
+- Nobody caring for the invisible details
+
+**Language they use:**
+- "We want to slow down"
+- "We don't want it to look like it was imported"
+- "We want it to feel like it belongs there"
+- "How does working in Mexico actually work?"
+- "We want someone we can trust completely"
+- "We've been thinking about this for years"
+
+**How they decide:**
+Not primarily on portfolio. First on human and emotional alignment — then they validate rationally. They observe *how* you do things more than what you say about yourself. Content that shows process, care, and genuine observation builds more trust than polished final images.
+
+**Green flags in an inquiry:**
+- Describes the land or territory in detail
+- References a life transition (retirement, career change, family shift)
+- Has been following the studio for months
+- Asks about process and relationship, not just cost and timeline
+
+**Red flags:**
+- First question is about cost per square meter
+- Describes the project primarily through resale or rental income
+- Wants a fast timeline above all else
+
+---
+
+## Client Psychology — Shared Across Segments 1, 2, and 4
+
+These emotional realities underlie most genuine inquiries. Understanding them helps every agent frame the right message.
+
+**What they carry (the real pain):**
+- "I've lived fast for too long"
+- "I don't want to repeat that rhythm in my home"
+- "I don't want to impose something foreign on the place"
+- "I don't want a cold or generic process"
+- "I'm afraid of damaging the nature of the site"
+- "This project matters too much to resolve superficially"
+
+**What they want deeply:**
+- A slower, more coherent life
+- A house that reflects who they are now — not who they were
+- A real relationship with nature and territory
+- A space that accompanies their way of living
+- Calm. Truth. Beauty without artifice.
+- Something that ages with dignity.
+
+**What they value most when choosing a studio:**
+confianza · tiempo · cuidado · autenticidad · presencia · silencio · coherencia · sensibilidad · personalización
 
 ---
 

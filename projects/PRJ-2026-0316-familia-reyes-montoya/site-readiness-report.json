@@ -1,0 +1,25 @@
+{
+  "required_documents": [
+    {
+      "name": "topographic_survey",
+      "label": "Levantamiento Topográfico",
+      "rationale": "Required for all projects — establishes site boundaries, levels, and contours. Coastal flat-to-sloping site of 3,000 sqm at 1:500 or 1:200 scale. Client confirms no prior survey has been conducted.",
+      "received": false
+    },
+    {
+      "name": "coastal_zone_permit",
+      "label": "Permiso de Zona Federal Marítimo Terrestre (ZOFEMAT)",
+      "rationale": "Required for coastal Pacific sites in Mexico. Cerritos, BCS is within the federal coastal zone — any construction within or adjacent to the ZOFEMAT boundary requires a permit or non-affectation certificate from SEMARNAT. Client is aware this permit will be required.",
+      "received": false
+    },
+    {
+      "name": "wind_load_study",
+      "label": "Estudio de Cargas de Viento",
+      "rationale": "Required due to strong prevailing coastal Pacific winds noted in site conditions. Wind load study informs structural design, roofing systems, glazing specifications, and coastal-grade material selection. Required before structural engineering can begin in Segment G.",
+      "received": false
+    }
+  ],
+  "request_sent_at": "2026-03-16T12:00:00-07:00",
+  "current_status": "documents_requested",
+  "blockers": []
+}

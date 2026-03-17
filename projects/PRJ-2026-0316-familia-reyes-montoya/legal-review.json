@@ -1,0 +1,15 @@
+{
+  "reviewed_by": "Legal",
+  "reviewed_at": "2026-03-16T14:30:00-07:00",
+  "ip_rights_status": "clear",
+  "compliance_flags": [],
+  "approval_status": "approved",
+  "review_notes": {
+    "ip_and_usage_rights": "Proposal and SOW confirm Oficio Taller retains ownership of architectural drawings until full payment is received; client is granted use rights for the specific project. This is established implicitly through the phase-payment structure (40/30/30) and the payment trigger language in payment_schedule. No conflicting IP claims identified.",
+    "esignature_validity": "SOW project_type_clauses includes 'esignature' clause citing NOM-151-SCFI. Electronic signature clause is present and correctly references applicable Mexican federal law. Valid for contract execution.",
+    "project_type_compliance": "project_type_clauses contains all four required standalone_residential clauses: residential_standard, client_changes, site_conditions, esignature. No HOA, hospitality, health authority, or public procurement clauses present — correct for this project type.",
+    "coastal_site_provisions": "Coastal zone permit and wind load study are documented as client responsibilities in exclusions. Design-driven change orders triggered by site condition discovery are covered by the site_conditions clause. No liability gap identified.",
+    "collaborator_coordination": "TBD landscape and interior design collaborators are referenced in both SOW and proposal. Coordination responsibility assigned to Oficio Taller; contract is between client and collaborator. No IP conflict from coordination language.",
+    "currency_and_payment": "USD currency and payment schedule are consistently stated across SOW, budget, and proposal. CLABE placeholder in payment_instructions is appropriate at this stage — must be replaced with real CLABE before contract is sent to client."
+  }
+}

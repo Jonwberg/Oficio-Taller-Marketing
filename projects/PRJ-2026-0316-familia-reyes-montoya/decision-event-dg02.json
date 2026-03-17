@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0316-familia-reyes-montoya",
+  "phase": "DG-02",
+  "review_item": "client-fit-assessment",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": null,
+  "timestamp": "2026-03-16T12:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "Dispatch Ana (area program + cost basis) and Sol (site readiness) in parallel",
+  "route_to": "Ana, Sol",
+  "sync_to_asana": true
+}

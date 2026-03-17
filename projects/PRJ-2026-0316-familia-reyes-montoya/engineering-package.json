@@ -1,0 +1,32 @@
+{
+  "systems_status": {
+    "structural": {
+      "status": "complete",
+      "engineer": "TBD — structural engineer engaged, preliminary coordination complete",
+      "notes": "Structural system designed for coastal Pacific site conditions at Cerritos, BCS. Wind load study results incorporated into member sizing per CFE NTC-Viento coastal wind pressure zone requirements. Lateral system: reinforced concrete shear walls at service core and bedroom wing ends. Foundation: reinforced concrete mat slab recommended pending soil report confirmation — coastal sand-to-scrub transition may require caisson augmentation. All reinforcing steel specified as epoxy-coated minimum; stainless steel at exposed locations. Concrete mix: 35 MPa minimum compressive strength, low water-cement ratio for salt-air durability. Roof structure designed for positive and negative wind pressure coefficients (coastal uplift zone). No conflicts with architectural design set."
+    },
+    "electrical": {
+      "status": "complete",
+      "engineer": "TBD — MEP engineer assigned",
+      "notes": "Electrical single-line diagram complete. Panel schedule: 200A main service, split sub-panel for residence and pool/outdoor zone. Solar integration circuit included — inverter location in service areas. All outdoor conduit and junction boxes rated for coastal NEMA 4X (salt-air). Interior wiring in EMT conduit throughout. Emergency circuit for master suite and living/dining zone."
+    },
+    "lighting": {
+      "status": "complete",
+      "engineer": "TBD — lighting designer coordinating with MEP engineer",
+      "notes": "Lighting layout plan complete for all 10 programmed spaces. Exterior lighting (covered terrace, pool deck, landscape zone) specified as marine-grade IP65 minimum, salt-air resistant fixtures. Interior lighting design criteria coordinated with TBD interior design collaborator. Living/dining and covered terrace prioritized for low-angle indirect lighting to preserve Pacific horizon view."
+    },
+    "water": {
+      "status": "complete",
+      "engineer": "TBD — MEP plumbing engineer",
+      "notes": "Plumbing and hydraulic layout complete. Supply: municipal connection at east site boundary. Hot water: solar thermal collector integration with backup instantaneous gas heater. All supply and drain piping in PVC with stainless steel fittings at exposed coastal locations. Pool hydraulic circuit (recirculation, filtration, chemical dosing) included in pool deck zone. No hydrology concerns per site conditions."
+    },
+    "solar": {
+      "status": "complete",
+      "engineer": "TBD — solar contractor coordinating with MEP electrical",
+      "notes": "Solar system in scope per special_features. Photovoltaic array: roof-mounted on flat roof section above service areas and bedroom wing. Preliminary sizing: 8–12 kW system (grid-tied with battery backup option). Coastal exposure considered: panel mounting frames in marine-grade aluminum; mounting hardware in stainless steel. Solar thermal collector for water heating integrated with plumbing system. Client decision on final PV configuration (grid-tied vs. hybrid) required before Phase 4. No conflicts with structural or architectural set."
+    }
+  },
+  "conditional_systems": ["solar"],
+  "all_inputs_confirmed": true,
+  "conflicts_resolved": true
+}

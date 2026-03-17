@@ -1,0 +1,13 @@
+{
+  "submitted_at": "2026-03-18T09:00:00-07:00",
+  "jurisdiction": "Municipio de Los Cabos — Dirección de Desarrollo Urbano y Ecología / SEMARNAT Delegación BCS (Zona Federal Marítimo Terrestre)",
+  "status": "approved",
+  "corrections": [
+    {
+      "received_at": "2026-04-02T14:30:00-07:00",
+      "description": "SEMARNAT Delegación BCS requires corrected site plan showing the coastal zone setback line measured from the mean high tide line (MHTL) to the construction footprint boundary. Current submission uses property boundary as reference point. Resubmission must include: (1) topographic survey overlay showing MHTL datum and ZOFEMAT boundary delineation; (2) revised site plan with setback distance measured from MHTL; (3) certified engineer's statement confirming minimum 20m setback compliance per Ley Federal del Mar and NOM-022-SEMARNAT-2003.",
+      "resolved": true
+    }
+  ],
+  "approved_at": "2026-04-28T11:15:00-07:00"
+}

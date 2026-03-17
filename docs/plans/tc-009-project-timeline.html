@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa Horizonte — PRJ-2026-0316 — Project Timeline</title>
+<style>
+  :root {
+    --bg:         #0d1117;
+    --surface:    #161b22;
+    --surface2:   #1e2530;
+    --surface3:   #252d3a;
+    --border:     #2a3344;
+    --border2:    #3a4558;
+    --text:       #e6edf3;
+    --text-muted: #7d8fa8;
+    --text-dim:   #4a5568;
+    --pass:       #2ea043;
+    --pass-bg:    #0d2818;
+    --pass-text:  #56d364;
+
+    /* Agent colors */
+    --lupe:       #ef5350;   /* coral-red */
+    --celia:      #ffa726;   /* amber */
+    --elena:      #42a5f5;   /* sky blue */
+    --ana:        #66bb6a;   /* mint */
+    --sol:        #81c784;   /* sage */
+    --vera:       #ab47bc;   /* purple */
+    --tomas:      #ff7043;   /* orange */
+    --bruno:      #26a69a;   /* teal */
+    --renata:     #ec407a;   /* pink */
+    --legal:      #ef5350;   /* red */
+    --rosa:       #f48fb1;   /* rose */
+    --pablo:      #d4e157;   /* lime */
+    --andres:     #7e57c2;   /* violet */
+    --felipe:     #00bcd4;   /* cyan */
+    --emilio:     #78909c;   /* slate */
+    --hugo:       #1565c0;   /* navy */
+    --ofelia:     #ffd54f;   /* gold */
+    --paco:       #8d6e63;   /* olive */
+    --controller: #43a047;   /* emerald */
+    --tax:        #fff176;   /* yellow */
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  /* ── PAGE HEADER ─────────────────────────────────────────────── */
+  .page-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 28px 40px 24px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .page-header-left {}
+  .project-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .project-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+  .project-subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 6px;
+  }
+  .project-subtitle span {
+    color: var(--text);
+    font-weight: 500;
+  }
+  .header-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  .pass-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--pass-bg);
+    border: 1.5px solid var(--pass);
+    color: var(--pass-text);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 6px 14px;
+    border-radius: 6px;
+  }
+  .pass-dot {
+    width: 8px; height: 8px;
+    background: var(--pass-text);
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .header-detail {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: right;
+  }
+  .header-detail strong { color: var(--text); }
+
+  /* ── SECTION TITLE ───────────────────────────────────────────── */
+  .section-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 20px 40px 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* ── SWIM LANES ──────────────────────────────────────────────── */
+  .swim-lanes {
+    padding: 0 40px 32px;
+  }
+
+  .lane-header-row {
+    display: grid;
+    grid-template-columns: 60px 180px 1fr 220px 100px;
+    gap: 0;
+    padding: 10px 0 8px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 0;
+  }
+  .lane-header-row .col-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    padding: 0 12px;
+  }
+
+  .lane {
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    margin-bottom: 0;
+  }
+  .lane:last-child { border-bottom: none; }
+  .lane:hover { background: var(--surface2); }
+
+  .lane-row {
+    display: grid;
+    grid-template-columns: 60px 180px 1fr 220px 100px;
+    gap: 0;
+    min-height: 52px;
+    align-items: stretch;
+  }
+
+  .lane-cell {
+    padding: 12px 12px;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .lane-cell:last-child { border-right: none; }
+
+  /* Segment label cell */
+  .cell-seg {
+    align-items: center;
+  }
+  .seg-badge {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 800;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  /* Name cell */
+  .seg-name {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.3;
+  }
+  .seg-gate {
+    margin-top: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .gate-chip {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: #1a2035;
+    border: 1px solid #2e3f60;
+    color: #7b9ccc;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  /* Main content cell */
+  .cell-main {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 12px 16px;
+  }
+
+  .agents-block {
+    flex-shrink: 0;
+    width: 200px;
+  }
+  .agents-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    margin-bottom: 5px;
+  }
+  .agent-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .agent-chip {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 12px;
+    color: #000;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+    opacity: 0.92;
+  }
+
+  .content-block {
+    flex: 1;
+    min-width: 0;
+  }
+  .content-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    margin-bottom: 5px;
+  }
+  .content-text {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+  .content-text strong { color: var(--text); }
+
+  /* Deliverables cell */
+  .cell-deliverables {}
+  .deliv-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    margin-bottom: 6px;
+  }
+  .deliv-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .deliv-list li {
+    font-size: 11px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    line-height: 1.4;
+  }
+  .deliv-list li::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--border2);
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  .deliv-list li code {
+    font-family: "SF Mono", "Fira Code", "Cascadia Code", monospace;
+    font-size: 10px;
+    background: #1a1f2e;
+    padding: 1px 4px;
+    border-radius: 3px;
+    color: #8bacd4;
+    border: 1px solid #2a3548;
+  }
+
+  /* Status cell */
+  .cell-status {
+    align-items: center;
+  }
+  .status-pass {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--pass-bg);
+    border: 1px solid var(--pass);
+    color: var(--pass-text);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 3px 9px;
+    border-radius: 4px;
+  }
+
+  /* ── PARALLEL SEGMENT C ──────────────────────────────────────── */
+  .lane-parallel {
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .lane-parallel:hover { background: var(--surface2); }
+
+  .lane-parallel-header {
+    display: grid;
+    grid-template-columns: 60px 180px 1fr 220px 100px;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .parallel-tracks {
+    display: grid;
+    grid-template-columns: 60px 180px 1fr 220px 100px;
+    grid-template-rows: auto auto auto;
+    border-bottom: 0;
+  }
+
+  .parallel-seg-cell {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    border-right: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+  }
+  .parallel-name-cell {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    border-right: 1px solid var(--border);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .parallel-status-cell {
+    grid-column: 5;
+    grid-row: 1 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+  }
+
+  .parallel-track {
+    grid-column: 3;
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    border-bottom: 1px dashed var(--border);
+    min-height: 52px;
+  }
+  .parallel-track:last-child {
+    border-bottom: none;
+  }
+
+  .parallel-track-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    display: inline-block;
+    width: fit-content;
+  }
+  .track-ana  { background: #1a2e1a; color: var(--ana);  border: 1px solid #2a4a2a; }
+  .track-sol  { background: #1c2e1c; color: var(--sol);  border: 1px solid #2a4a2a; }
+  .track-vera { background: #23162a; color: var(--vera); border: 1px solid #3a2550; }
+
+  .parallel-merge-row {
+    grid-column: 3 / 5;
+    background: #1a1320;
+    border-top: 2px solid var(--vera);
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .parallel-merge-row strong { color: var(--vera); }
+
+  .merge-arrow {
+    color: var(--vera);
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  /* ── MILESTONE STRIP ─────────────────────────────────────────── */
+  .milestone-section {
+    padding: 0 40px 40px;
+  }
+  .milestone-scroll {
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+  .milestone-track {
+    min-width: 1100px;
+    position: relative;
+    padding: 40px 20px 20px;
+  }
+  .milestone-line {
+    position: absolute;
+    top: 55px;
+    left: 20px;
+    right: 20px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--border2), var(--border), var(--border2));
+  }
+  .milestone-nodes {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+  }
+  .milestone-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    position: relative;
+  }
+  .m-dot {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    border: 2px solid;
+    background: var(--bg);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 10px;
+  }
+  .m-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text);
+    text-align: center;
+    line-height: 1.3;
+    max-width: 90px;
+  }
+  .m-sub {
+    font-size: 10px;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 3px;
+    max-width: 90px;
+    line-height: 1.3;
+  }
+  .m-amount {
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 4px;
+    text-align: center;
+  }
+  .milestone-node.financial .m-dot  { border-color: var(--controller); }
+  .milestone-node.financial .m-amount { color: var(--controller); }
+  .milestone-node.financial .m-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px; height: 6px;
+    background: var(--controller);
+    border-radius: 50%;
+  }
+  .milestone-node.gate .m-dot  { border-color: var(--vera); }
+  .milestone-node.gate .m-label { color: var(--vera); }
+  .milestone-node.gate .m-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px; height: 6px;
+    background: var(--vera);
+    border-radius: 50%;
+  }
+  .milestone-node.event .m-dot  { border-color: var(--elena); }
+  .milestone-node.event .m-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px; height: 6px;
+    background: var(--elena);
+    border-radius: 50%;
+  }
+  .milestone-node.permit .m-dot  { border-color: var(--paco); }
+  .milestone-node.permit .m-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px; height: 6px;
+    background: var(--paco);
+    border-radius: 50%;
+  }
+  .milestone-node.close .m-dot  { border-color: var(--tax); }
+  .milestone-node.close .m-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px; height: 6px;
+    background: var(--tax);
+    border-radius: 50%;
+  }
+
+  .milestone-legend {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+  .legend-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    border: 2px solid;
+    flex-shrink: 0;
+  }
+
+  /* ── SUMMARY STATS ────────────────────────────────────────────── */
+  .stats-section {
+    padding: 0 40px 40px;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px;
+  }
+  .stat-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-dim);
+    margin-bottom: 6px;
+  }
+  .stat-value {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .stat-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+  .stat-card.highlight {
+    border-color: var(--pass);
+    background: var(--pass-bg);
+  }
+  .stat-card.highlight .stat-value { color: var(--pass-text); }
+
+  /* ── AGENT COLOR LEGEND ──────────────────────────────────────── */
+  .agent-legend-section {
+    padding: 0 40px 40px;
+  }
+  .agent-legend-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* ── FOOTER ──────────────────────────────────────────────────── */
+  .page-footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: var(--text-dim);
+  }
+
+  /* ── HELPERS ─────────────────────────────────────────────────── */
+  .seg-color-a { background: #1e3354; }
+  .seg-color-b { background: #2a1e3d; }
+  .seg-color-c { background: #1e3327; }
+  .seg-color-d { background: #33241a; }
+  .seg-color-e { background: #1e2e3d; }
+  .seg-color-f { background: #31204a; }
+  .seg-color-g { background: #1a3130; }
+  .seg-color-h { background: #102040; }
+  .seg-color-i { background: #2a2a12; }
+  .seg-color-j { background: #1a2e1a; }
+
+  .seg-text-a { color: #6ea8d8; }
+  .seg-text-b { color: #b48ae0; }
+  .seg-text-c { color: #6ecc8a; }
+  .seg-text-d { color: #e0a06e; }
+  .seg-text-e { color: #6eaad8; }
+  .seg-text-f { color: #a880e0; }
+  .seg-text-g { color: #50c0b8; }
+  .seg-text-h { color: #4080cc; }
+  .seg-text-i { color: #c8c840; }
+  .seg-text-j { color: #66bb6a; }
+
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0 40px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════════
+     PAGE HEADER
+══════════════════════════════════════════════════════════════ -->
+<header class="page-header">
+  <div class="page-header-left">
+    <div class="project-eyebrow">Test Case TC-009 &nbsp;·&nbsp; Standalone Residential &nbsp;·&nbsp; Sistema de Agentes — Oficio Taller</div>
+    <h1 class="project-title">Casa Horizonte — PRJ-2026-0316</h1>
+    <div class="project-subtitle">
+      Client: <span>Familia Reyes-Montoya</span> &nbsp;·&nbsp;
+      Site: <span>Cerritos, Baja California Sur, México</span> &nbsp;·&nbsp;
+      320 m² / 3,000 m² site &nbsp;·&nbsp; Pacific-facing coastal
+    </div>
+  </div>
+  <div class="header-meta">
+    <div class="pass-badge"><span class="pass-dot"></span> OVERALL PASS</div>
+    <div class="header-detail">
+      Run ID: <strong>2026-03-16-TC-009</strong><br>
+      Date: <strong>2026-03-16</strong><br>
+      Segments: <strong>10 / 10 PASS</strong><br>
+      TC Checks: <strong>37 / 37 PASS</strong>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════════════════════
+     SWIM LANES
+══════════════════════════════════════════════════════════════ -->
+<div class="section-title">Swim-Lane Project View — Segments A through J</div>
+
+<div class="swim-lanes">
+
+  <!-- Column headers -->
+  <div class="lane-header-row">
+    <div class="col-label" style="padding-left:16px;">Seg</div>
+    <div class="col-label">Phase / Gate</div>
+    <div class="col-label" style="padding-left:16px;">Agents &amp; Key Output</div>
+    <div class="col-label">Deliverables</div>
+    <div class="col-label" style="text-align:center;">Status</div>
+  </div>
+
+  <!-- ── SEGMENT A ──────────────────────────────────────────────── -->
+  <div class="lane">
+    <div class="lane-row">
+      <div class="lane-cell cell-seg">
+        <div class="seg-badge seg-color-a seg-text-a">A</div>
+      </div>
+      <div class="lane-cell">
+        <div class="seg-name">Lead Intake</div>
+        <div class="seg-gate">
+          <span class="gate-chip">DG-01</span>
+        </div>
+      </div>
+      <div class="lane-cell cell-main">
+        <div class="agents-block">
+          <div class="agents-label">Agents</div>
+          <div class="agent-chips">
+            <span class="agent-chip" style="background:var(--lupe);">Lupe</span>
+          </div>
+        </div>
+        <div class="content-block">
+          <div class="content-label">Key Output</div>
+          <div class="content-text">
+            Lupe classifies the Instagram inquiry as <strong>project_inquiry</strong>, creates the lead record, writes the DG-01 review email to Marcela, and routes to Elena for discovery. Client profile flagged as <strong>design-engaged</strong> — describes horizon as a lived condition, not a view.
+          </div>
+        </div>
+      </div>
+      <div class="lane-cell">
+        <div class="deliv-label">Deliverables</div>
+        <ul class="deliv-list">
+          <li><code>lead-record.json</code></li>
+        </ul>
+      </div>
+      <div class="lane-cell cell-status">
+        <span class="status-pass"><span class="pass-dot"></span> PASS</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SEGMENT B ──────────────────────────────────────────────── -->
+  <div class="lane">
+    <div class="lane-row">
+      <div class="lane-cell cell-seg">
+        <div class="seg-badge seg-color-b seg-text-b">B</div>
+      </div>
+      <div class="lane-cell">
+        <div class="seg-name">Discovery &amp; Fit</div>
+        <div class="seg-gate">
+          <span class="gate-chip">DG-01</span>
+          <span class="gate-chip">DG-02</span>
+        </div>
+      </div>
+      <div class="lane-cell cell-main">
+        <div class="agents-block">
+          <div class="agents-label">Agents</div>
+          <div class="agent-chips">
+            <span class="agent-chip" style="background:var(--lupe);">Lupe</span>
+            <span class="agent-chip" style="background:var(--celia);">Celia</span>
+            <span class="agent-chip" style="background:var(--elena);">Elena</span>
+          </div>
+        </div>
+        <div class="content-block">
+          <div class="content-label">Key Output</div>
+          <div class="content-text">
+            Celia dispatches DG-01 (lead intake gate) and DG-02 (fit gate). Elena sends the client questionnaire and schedules the discovery call.
+            Fit approved: design-engaged client, realistic budget of <strong>$600K–$900K USD</strong>, coastal BCS site confirmed. Client open to landscape and interior design referrals.
+          </div>
+        </div>
+      </div>
+      <div class="lane-cell">
+        <div class="deliv-label">Deliverables</div>
+        <ul class="deliv-list">
+          <li>DG-01 gate email (Celia)</li>
+          <li>DG-02 fit gate (Celia)</li>
+          <li>Client questionnaire (Elena)</li>
+        </ul>
+      </div>
+      <div class="lane-cell cell-status">
+        <span class="status-pass"><span class="pass-dot"></span> PASS</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SEGMENT C — PARALLEL ───────────────────────────────────── -->
+  <div class="lane-parallel">
+    <div class="parallel-tracks">
+
+      <!-- Seg label (spans all rows) -->
+      <div class="parallel-seg-cell" style="border-right: 1px solid var(--border);">
+        <div class="seg-badge seg-color-c seg-text-c">C</div>
+      </div>
+
+      <!-- Name (spans all rows) -->
+      <div class="parallel-name-cell" style="border-right: 1px solid var(--border);">
+        <div class="seg-name">Site &amp; Area Program</div>
+        <div class="seg-gate" style="margin-top:6px;">
+          <span class="gate-chip">DG-03</span>
+        </div>
+        <div style="margin-top:10px; font-size:10px; color:var(--text-dim); line-height:1.4;">
+          Ana and Sol run in<br>parallel — both must<br>complete before Vera<br>can send DG-03.
+        </div>
+      </div>
+
+      <!-- Track 1: Ana -->
+      <div class="parallel-track" style="grid-column:3; border-bottom: 1px dashed var(--border);">
+        <div class="lane-cell cell-main" style="border-right:1px solid var(--border);">
+          <div class="agents-block">
+            <div class="agents-label">Track 1</div>
+            <div class="agent-chips">
+              <span class="agent-chip" style="background:var(--ana); color:#111;">Ana</span>
+            </div>
+            <div style="margin-top:6px;">
+              <span class="parallel-track-label track-ana">Area Program</span>
+            </div>
+          </div>
+          <div class="content-block">
+            <div class="content-label">Key Output</div>
+            <div class="content-text">
+              Ana produces the <strong>area program</strong>: 10 spaces totaling 320 sqm. Linear arrangement: service east → bedrooms → studio → living/dining → covered terrace → pool deck west. Master suite (45 m²) oriented to Pacific. Sets <code>area_program_complete: true</code>.
+            </div>
+          </div>
+        </div>
+        <div class="lane-cell">
+          <ul class="deliv-list">
+            <li><code>area-program.json</code></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Track 2: Sol -->
+      <div class="parallel-track" style="grid-column:3;">
+        <div class="lane-cell cell-main" style="border-right:1px solid var(--border);">
+          <div class="agents-block">
+            <div class="agents-label">Track 2</div>
+            <div class="agent-chips">
+              <span class="agent-chip" style="background:var(--sol); color:#111;">Sol</span>
+            </div>
+            <div style="margin-top:6px;">
+              <span class="parallel-track-label track-sol">Site Readiness</span>
+            </div>
+          </div>
+          <div class="content-block">
+            <div class="content-label">Key Output</div>
+            <div class="content-text">
+              Sol submits site readiness request — flags <strong>coastal_zone_permit</strong> and <strong>wind_load_study</strong> as required documents. Sets <code>site_data_complete: true</code>. <code>site_docs_complete</code> remains null until operator manually confirms document receipt.
+            </div>
+          </div>
+        </div>
+        <div class="lane-cell">
+          <ul class="deliv-list">
+            <li>Site readiness request</li>
+            <li>Required docs flagged</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Merge row: Vera -->
+      <div class="parallel-merge-row" style="grid-column:3/5; border-top: 2px solid var(--vera);">
+        <span class="merge-arrow">⬡</span>
+        <div>
+          <strong>Vera</strong> — site_status_update &amp; DG-03 gate &nbsp;·&nbsp;
+          Vera waits until both <code>area_program_complete</code> AND <code>site_data_complete</code> are true AND <code>awaiting_gate</code> is null before dispatching DG-03 (Scope Cost Basis Gate). Celia sends DG-03 email to Marcela.
+        </div>
+      </div>
+
+      <!-- Status (spans all rows) -->
+      <div class="parallel-status-cell">
+        <span class="status-pass"><span class="pass-dot"></span> PASS</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── SEGMENT D ──────────────────────────────────────────────── -->
+  <div class="lane">
+    <div class="lane-row">
+      <div class="lane-cell cell-seg">
+        <div class="seg-badge seg-color-d seg-text-d">D</div>
+      </div>
+      <div class="lane-cell">
+        <div class="seg-name">Scope / Budget / Proposal / Legal</div>
+        <div class="seg-gate">
+          <span class="gate-chip">DG-04</span>
+          <span class="gate-chip">DG-05</span>
+          <span class="gate-chip">DG-06</span>
+        </div>
+      </div>
+      <div class="lane-cell cell-main">
+        <div class="agents-block">
+          <div class="agents-label">Agents</div>
+          <div class="agent-chips">
+            <span class="agent-chip" style="background:var(--tomas);">Tomás</span>
+            <span class="agent-chip" style="background:var(--vera); color:#fff;">Vera</span>
+            <span class="agent-chip" style="background:var(--celia);">Celia</span>
+            <span class="agent-chip" style="background:var(--bruno); color:#fff;">Bruno</span>
+            <span class="agent-chip" style="background:var(--renata); color:#fff;">Renata</span>
+            <span class="agent-chip" style="background:var(--legal);">Legal</span>
+            <span class="agent-chip" style="background:var(--rosa);">Rosa</span>
+          </div>
+        </div>
+        <div class="content-block">
+          <div class="content-label">Key Output</div>
+          <div class="content-text">
+            Tomás generates SOW using the <strong>standalone_residential template</strong> (6 phases, 40/30/30 payment schedule). Bruno calculates cost basis: MXN 21,500/m², construction est. MXN 8.7M — confirms budget viability at $90K USD architecture fee. Renata writes bilingual proposal. Legal reviews. Rosa sends DG-06 client proposal email. Vera dispatches DG-04 (SOW review) and DG-05 (proposal review) to Marcela via Celia.
+          </div>
+        </div>
+      </div>
+      <div class="lane-cell">
+        <div class="deliv-label">Deliverables</div>
+        <ul class="deliv-list">
+          <li><code>scope-of-work.json</code></li>
+          <li><code>cost-basis.json</code></li>
+          <li><code>budget.json</code></li>
+          <li><code>proposal.json</code></li>
+          <li>DG-04, DG-05, DG-06 gates</li>
+        </ul>
+      </div>
+      <div class="lane-cell cell-status">
+        <span class="status-pass"><span class="pass-dot"></span> PASS</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SEGMENT E ──────────────────────────────────────────────── -->
+  <div class="lane">
+    <div class="lane-row">
+      <div class="lane-cell cell-seg">
+        <div class="seg-badge seg-color-e seg-text-e">E</div>
+      </div>
+      <div class="lane-cell">
+        <div class="seg-name">Activation &amp; Scheduling</div>
+        <div class="seg-gate">
+          <span class="gate-chip">Activation</span>
+        </div>
+      </div>
+      <div class="lane-cell cell-main">
+        <div class="agents-block">
+          <div class="agents-label">Agents</div>
+          <div class="agent-chips">
+            <span class="agent-chip" style="background:var(--vera); color:#fff;">Vera</span>
+            <span class="agent-chip" style="background:var(--pablo); color:#111;">Pablo</span>
+          </div>
+        </div>
+        <div class="content-block">
+          <div class="content-label">Key Output</div>
+          <div class="content-text">
+            Vera confirms all three activation prerequisites are met: <code>contract_signed</code>, <code>deposit_confirmed</code> ($36K M1), and <code>site_docs_complete</code> — then dispatches Pablo. Pablo builds the full 6-phase project schedule starting 2026-03-16. <strong>Coastal permit lead time</strong> (8–16 wks) is explicitly included as a Phase 6 critical path dependency. Permitting runs parallel to Phase 4 executive plans.
+          </div>
+        </div>
+      </div>
+      <div class="lane-cell">
+        <div class="deliv-label">Deliverables</div>
+        <ul class="deliv-list">
+          <li><code>project-schedule.json</code></li>
+          <li>6 phase milestone dates</li>
+          <li>Dependency graph</li>
+        </ul>
+      </div>
+      <div class="lane-cell cell-status">
+        <span class="status-pass"><span class="pass-dot"></span> PASS</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SEGMENT F ──────────────────────────────────────────────── -->
+  <div class="lane">
+    <div class="lane-row">
+      <div class="lane-cell cell-seg">
+        <div class="seg-badge seg-color-f seg-text-f">F</div>
+      </div>
+      <div class="lane-cell">
+        <div class="seg-name">Concept &amp; Architectural Design</div>
+        <div class="seg-gate">
+          <span class="gate-chip">DG-07</span>
+          <span class="gate-chip">DG-08</span>
+        </div>
+      </div>
+      <div class="lane-cell cell-main">
+        <div class="agents-block">
+          <div class="agents-label">Agents</div>
+          <div class="agent-chips">
+            <span class="agent-chip" style="background:var(--andres); color:#fff;">Andrés</span>
+            <span class="agent-chip" style="background:var(--celia);">Celia</span>
+            <span class="agent-chip" style="background:var(--felipe); color:#111;">Felipe</span>
+          </div>
+        </div>
+        <div class="content-block">
+          <div class="content-label">Key Output</div>
+          <div class="content-text">
+            Andrés produces concept package: single-story linear bar on east-west <strong>horizon axis</strong>, board-formed concrete, teak decking, salt-air palette. DG-07 first rejected (terrace/pool transition unclear) — revised with defined threshold step-down zone, then approved. Felipe produces architectural drawings with <strong>wind/salt-air material notes</strong> and structural coordination for coastal wind load. DG-08 approved. All 10 programmed spaces confirmed at approved sizes.
+          </div>
+        </div>
+      </div>
+      <div class="lane-cell">
+        <div class="deliv-label">Deliverables</div>
+        <ul class="deliv-list">
+          <li><code>concept-review.json</code></li>
+          <li><code>architectural-design.json</code></li>
+          <li>DG-07 (revision cycle)</li>
+          <li>DG-08 gate</li>
+          <li>4 render views</li>
+        </ul>
+      </div>
+      <div class="lane-cell cell-status">
+        <span class="status-pass"><span class="pass-dot"></span> PASS</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SEGMENT G ──────────────────────────────────────────────── -->
+  <div class="lane">
+    <div class="lane-row">
+      <div class="lane-cell cell-seg">
+        <div class="seg-badge seg-color-g seg-text-g">G</div>
+      </div>
+      <div class="lane-cell">
+        <div class="seg-name">Engineering &amp; Budget Alignment</div>
+        <div class="seg-gate">
+          <span class="gate-chip">DG-09</span>
+        </div>
+      </div>
+      <div class="lane-cell cell-main">
+        <div class="agents-block">
+          <div class="agents-label">Agents</div>
+          <div class="agent-chips">
+            <span class="agent-chip" style="background:var(--emilio);">Emilio</span>
+            <span class="agent-chip" style="background:var(--bruno); color:#fff;">Bruno</span>
+            <span class="agent-chip" style="background:var(--celia);">Celia</span>
+          </div>
+        </div>
+        <div class="content-block">
+          <div class="content-label">Key Output</div>
+          <div class="content-text">
+            Emilio produces full engineering package: structural (wind load per CFE NTC-Viento, epoxy-coated rebar, 35 MPa concrete, mat slab), electrical (NEMA 4X coastal-rated), lighting (marine-grade IP65), water/hydraulic, and <strong>solar (PV 8–12kW grid-tied)</strong> — solar confirmed in scope per special_features. Bruno confirms budget alignment: contractor est. $795K vs. client $750K budget (6% variance), recommends proceed.
+          </div>
+        </div>
+      </div>
+      <div class="lane-cell">
+        <div class="deliv-label">Deliverables</div>
+        <ul class="deliv-list">
+          <li><code>engineering-package.json</code></li>
+          <li><code>budget-alignment.json</code></li>
+          <li>DG-09 gate (Celia)</li>
+          <li>5 systems: struct, elec, lighting, water, solar</li>
+        </ul>
+      </div>
+      <div class="lane-cell cell-status">
+        <span class="status-pass"><span class="pass-dot"></span> PASS</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SEGMENT H ──────────────────────────────────────────────── -->
+  <div class="lane">
+    <div class="lane-row">
+      <div class="lane-cell cell-seg">
+        <div class="seg-badge seg-color-h seg-text-h">H</div>
+      </div>
+      <div class="lane-cell">
+        <div class="seg-name">Executive Plans</div>
+        <div class="seg-gate">
+          <span class="gate-chip">DG-10</span>
+        </div>
+      </div>
+      <div class="lane-cell cell-main">
+        <div class="agents-block">
+          <div class="agents-label">Agents</div>
+          <div class="agent-chips">
+            <span class="agent-chip" style="background:var(--hugo); color:#fff;">Hugo</span>
+            <span class="agent-chip" style="background:var(--celia);">Celia</span>
+          </div>
+        </div>
+        <div class="content-block">
+          <div class="content-label">Key Output</div>
+          <div class="content-text">
+            Hugo produces the fully coordinated construction drawing set: architectural, structural, MEP, <strong>coastal zone compliance drawings</strong> (ZOFEMAT setback line confirmed), wind load structural set, solar PV layout, detail sheets (salt-air resistant assemblies), and finish/specifications package. Engineering integration confirmed, all conflicts resolved. M3 client approval milestone ($27K). Celia dispatches DG-10.
+          </div>
+        </div>
+      </div>
+      <div class="lane-cell">
+        <div class="deliv-label">Deliverables</div>
+        <ul class="deliv-list">
+          <li><code>executive-plans.json</code></li>
+          <li>DG-10 gate (Celia)</li>
+          <li>8-component plan set</li>
+          <li>ZOFEMAT compliance set</li>
+        </ul>
+      </div>
+      <div class="lane-cell cell-status">
+        <span class="status-pass"><span class="pass-dot"></span> PASS</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SEGMENT I ──────────────────────────────────────────────── -->
+  <div class="lane">
+    <div class="lane-row">
+      <div class="lane-cell cell-seg">
+        <div class="seg-badge seg-color-i seg-text-i">I</div>
+      </div>
+      <div class="lane-cell">
+        <div class="seg-name">Bidding, Contractor &amp; Permitting</div>
+        <div class="seg-gate">
+          <span class="gate-chip">DG-11</span>
+          <span class="gate-chip">Permit</span>
+        </div>
+      </div>
+      <div class="lane-cell cell-main">
+        <div class="agents-block">
+          <div class="agents-label">Agents</div>
+          <div class="agent-chips">
+            <span class="agent-chip" style="background:var(--ofelia); color:#111;">Ofelia</span>
+            <span class="agent-chip" style="background:var(--celia);">Celia</span>
+            <span class="agent-chip" style="background:var(--paco);">Paco</span>
+            <span class="agent-chip" style="background:var(--vera); color:#fff;">Vera</span>
+          </div>
+        </div>
+        <div class="content-block">
+          <div class="content-label">Key Output</div>
+          <div class="content-text">
+            Ofelia collects 2 bids: <strong>Constructora del Pacífico $798K</strong> (52 wks, integrated solar) vs. Edificaciones Costeras BCS $772K (58 wks, no solar team). Constructora del Pacífico selected for coastal track record and timeline. DG-11 dispatched. Paco submits coastal zone permit — SEMARNAT requests correction (ZOFEMAT setback from mean high tide line), resolved, <strong>permit approved 2026-04-28</strong>. Vera dispatched on permit approval.
+          </div>
+        </div>
+      </div>
+      <div class="lane-cell">
+        <div class="deliv-label">Deliverables</div>
+        <ul class="deliv-list">
+          <li><code>bid-comparison.json</code></li>
+          <li><code>permit-status.json</code></li>
+          <li>DG-11 gate (Celia)</li>
+          <li>Bid matrix (2 contractors)</li>
+          <li>Correction cycle + approval</li>
+        </ul>
+      </div>
+      <div class="lane-cell cell-status">
+        <span class="status-pass"><span class="pass-dot"></span> PASS</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SEGMENT J ──────────────────────────────────────────────── -->
+  <div class="lane">
+    <div class="lane-row">
+      <div class="lane-cell cell-seg">
+        <div class="seg-badge seg-color-j seg-text-j">J</div>
+      </div>
+      <div class="lane-cell">
+        <div class="seg-name">Construction, Invoicing &amp; Close</div>
+        <div class="seg-gate">
+          <span class="gate-chip">M1–M3</span>
+          <span class="gate-chip">Close</span>
+        </div>
+      </div>
+      <div class="lane-cell cell-main">
+        <div class="agents-block">
+          <div class="agents-label">Agents</div>
+          <div class="agent-chips">
+            <span class="agent-chip" style="background:var(--vera); color:#fff;">Vera</span>
+            <span class="agent-chip" style="background:var(--controller); color:#fff;">Controller</span>
+            <span class="agent-chip" style="background:var(--tax); color:#111;">Tax</span>
+          </div>
+        </div>
+        <div class="content-block">
+          <div class="content-label">Key Output</div>
+          <div class="content-text">
+            Vera tracks construction. Controller invoices at each milestone: M1 $36K (contract), M2 $27K (concept approved), M3 $27K (executive plans) — running total <strong>$90K USD</strong>. Note: M2 write failure encountered and recovered: backup retained, WRITE_FAILED logged, re-dispatch triggered, retry succeeded, backup deleted. Controller dispatches Tax on M3 (final milestone). Tax files: RFC TEST-RFC-009, revenue $90K USD, <strong>IVA 16% Mexico</strong>, filing period 2026-03. State → <strong>project_closed</strong>.
+          </div>
+        </div>
+      </div>
+      <div class="lane-cell">
+        <div class="deliv-label">Deliverables</div>
+        <ul class="deliv-list">
+          <li><code>invoice.json</code> (M3 — $27K)</li>
+          <li><code>tax-filing.json</code></li>
+          <li>M1 invoice ($36K)</li>
+          <li>M2 invoice ($27K, retry)</li>
+          <li>project_closed state</li>
+        </ul>
+      </div>
+      <div class="lane-cell cell-status">
+        <span class="status-pass"><span class="pass-dot"></span> PASS</span>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /swim-lanes -->
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════════════════════
+     MILESTONE STRIP
+══════════════════════════════════════════════════════════════ -->
+<div class="section-title">Milestone Timeline — Key Financial &amp; Decision Events</div>
+
+<div class="milestone-section">
+  <div class="milestone-scroll">
+    <div class="milestone-track">
+      <div class="milestone-line"></div>
+      <div class="milestone-nodes">
+
+        <div class="milestone-node event">
+          <div class="m-dot"></div>
+          <div class="m-label">Lead Received</div>
+          <div class="m-sub">Instagram inquiry<br>Seg. A</div>
+        </div>
+
+        <div class="milestone-node gate">
+          <div class="m-dot"></div>
+          <div class="m-label">DG-01 / DG-02</div>
+          <div class="m-sub">Fit approved<br>design-engaged<br>Seg. B</div>
+        </div>
+
+        <div class="milestone-node gate">
+          <div class="m-dot"></div>
+          <div class="m-label">DG-03</div>
+          <div class="m-sub">Scope cost basis<br>approved<br>Seg. C→D</div>
+        </div>
+
+        <div class="milestone-node financial">
+          <div class="m-dot"></div>
+          <div class="m-label">Contract Signed</div>
+          <div class="m-sub">+ Deposit</div>
+          <div class="m-amount">$36K M1</div>
+        </div>
+
+        <div class="milestone-node gate">
+          <div class="m-dot"></div>
+          <div class="m-label">DG-04 / DG-05 / DG-06</div>
+          <div class="m-sub">SOW &amp; Proposal<br>gates cleared<br>Seg. D</div>
+        </div>
+
+        <div class="milestone-node event">
+          <div class="m-dot"></div>
+          <div class="m-label">Schedule Built</div>
+          <div class="m-sub">Pablo — 6 phases<br>coastal permit in<br>critical path · Seg. E</div>
+        </div>
+
+        <div class="milestone-node gate">
+          <div class="m-dot"></div>
+          <div class="m-label">DG-07</div>
+          <div class="m-sub">Concept approved<br>after revision cycle<br>Seg. F</div>
+        </div>
+
+        <div class="milestone-node gate">
+          <div class="m-dot"></div>
+          <div class="m-label">DG-08 / DG-09</div>
+          <div class="m-sub">Arch design &amp;<br>Engineering cleared<br>Seg. F &amp; G</div>
+        </div>
+
+        <div class="milestone-node financial">
+          <div class="m-dot"></div>
+          <div class="m-label">M2 Invoice</div>
+          <div class="m-sub">Concept approved</div>
+          <div class="m-amount">$27K (→$63K)</div>
+        </div>
+
+        <div class="milestone-node gate">
+          <div class="m-dot"></div>
+          <div class="m-label">DG-10</div>
+          <div class="m-sub">Executive plans<br>approved<br>Seg. H</div>
+        </div>
+
+        <div class="milestone-node gate">
+          <div class="m-dot"></div>
+          <div class="m-label">DG-11</div>
+          <div class="m-sub">Constructora del<br>Pacífico selected<br>Seg. I</div>
+        </div>
+
+        <div class="milestone-node permit">
+          <div class="m-dot"></div>
+          <div class="m-label">Permit Approved</div>
+          <div class="m-sub">SEMARNAT correction<br>resolved<br>2026-04-28</div>
+        </div>
+
+        <div class="milestone-node financial">
+          <div class="m-dot"></div>
+          <div class="m-label">M3 Invoice</div>
+          <div class="m-sub">Executive plans</div>
+          <div class="m-amount">$27K (→$90K)</div>
+        </div>
+
+        <div class="milestone-node close">
+          <div class="m-dot"></div>
+          <div class="m-label">Tax Filed</div>
+          <div class="m-sub">IVA 16% Mexico<br>RFC TEST-RFC-009</div>
+        </div>
+
+        <div class="milestone-node close">
+          <div class="m-dot"></div>
+          <div class="m-label">Project Closed</div>
+          <div class="m-sub">project_closed<br>state · Seg. J</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="milestone-legend">
+    <div class="legend-item">
+      <div class="legend-dot" style="border-color:var(--elena);"></div>
+      Project Event
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="border-color:var(--vera);"></div>
+      Gate (DG-XX via Celia)
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="border-color:var(--controller);"></div>
+      Financial Milestone (Controller invoice)
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="border-color:var(--paco);"></div>
+      Permit Event
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="border-color:var(--tax);"></div>
+      Project Close / Tax
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════════════════════
+     SUMMARY STATS
+══════════════════════════════════════════════════════════════ -->
+<div class="section-title">Summary Metrics</div>
+
+<div class="stats-section">
+  <div class="stats-grid">
+
+    <div class="stat-card">
+      <div class="stat-label">Total Segments</div>
+      <div class="stat-value">10</div>
+      <div class="stat-sub">A through J — all PASS</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-label">Gates Cleared</div>
+      <div class="stat-value">11</div>
+      <div class="stat-sub">DG-01 through DG-11</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-label">Total Agents Dispatched</div>
+      <div class="stat-value">20+</div>
+      <div class="stat-sub">Lupe · Celia · Elena · Ana · Sol · Vera · Tomás · Bruno · Renata · Legal · Rosa · Pablo · Andrés · Felipe · Emilio · Hugo · Ofelia · Paco · Controller · Tax</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-label">TC-009 Specific Checks</div>
+      <div class="stat-value">37</div>
+      <div class="stat-sub">37 / 37 PASS — clean run</div>
+    </div>
+
+    <div class="stat-card highlight">
+      <div class="stat-label">Architecture Fee</div>
+      <div class="stat-value">$90,000</div>
+      <div class="stat-sub">USD · Fixed fee · 40/30/30 schedule</div>
+    </div>
+
+    <div class="stat-card highlight">
+      <div class="stat-label">IVA (16%)</div>
+      <div class="stat-value">$14,400</div>
+      <div class="stat-sub">USD · Mexico jurisdiction · Tax filed 2026-03</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-label">Contractor Selected</div>
+      <div class="stat-value" style="font-size:14px; font-weight:700; line-height:1.3;">Constructora del Pacífico</div>
+      <div class="stat-sub">$798K USD · 52 weeks · DG-11 cleared</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-label">Final Project State</div>
+      <div class="stat-value" style="font-size:15px; font-weight:700; color:var(--pass-text);">project_closed</div>
+      <div class="stat-sub">awaiting_gate: null · segment_j_complete: true</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-label">Project Type</div>
+      <div class="stat-value" style="font-size:14px; font-weight:700;">standalone_residential</div>
+      <div class="stat-sub">SOW template applied · no mixed clauses</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-label">Program Area</div>
+      <div class="stat-value">320 m²</div>
+      <div class="stat-sub">10 spaces · 3,000 m² site · Cerritos BCS</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-label">Deliverable Files</div>
+      <div class="stat-value">13</div>
+      <div class="stat-sub">JSON artifacts across all segments</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-label">Permit Corrections</div>
+      <div class="stat-value">1</div>
+      <div class="stat-sub">SEMARNAT ZOFEMAT setback — resolved &amp; approved 2026-04-28</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════════════════════
+     AGENT COLOR LEGEND
+══════════════════════════════════════════════════════════════ -->
+<div class="section-title">Agent Reference — Color Index</div>
+
+<div class="agent-legend-section">
+  <div class="agent-legend-grid">
+    <span class="agent-chip" style="background:var(--lupe); font-size:12px; padding:4px 12px;">Lupe — coral · Lead intake, routing</span>
+    <span class="agent-chip" style="background:var(--celia); font-size:12px; padding:4px 12px; color:#111;">Celia — amber · All Marcela gates (DG-01–DG-11)</span>
+    <span class="agent-chip" style="background:var(--elena); font-size:12px; padding:4px 12px;">Elena — sky blue · Discovery &amp; client comms</span>
+    <span class="agent-chip" style="background:var(--ana); color:#111; font-size:12px; padding:4px 12px;">Ana — mint · Area program</span>
+    <span class="agent-chip" style="background:var(--sol); color:#111; font-size:12px; padding:4px 12px;">Sol — sage · Site readiness</span>
+    <span class="agent-chip" style="background:var(--vera); font-size:12px; padding:4px 12px;">Vera — purple · Pipeline orchestration</span>
+    <span class="agent-chip" style="background:var(--tomas); font-size:12px; padding:4px 12px; color:#111;">Tomás — orange · Scope of work</span>
+    <span class="agent-chip" style="background:var(--bruno); font-size:12px; padding:4px 12px;">Bruno — teal · Budget &amp; cost basis</span>
+    <span class="agent-chip" style="background:var(--renata); font-size:12px; padding:4px 12px;">Renata — pink · Proposal writing</span>
+    <span class="agent-chip" style="background:var(--legal); font-size:12px; padding:4px 12px;">Legal — red · Legal review</span>
+    <span class="agent-chip" style="background:var(--rosa); font-size:12px; padding:4px 12px; color:#111;">Rosa — rose · Client proposal comms</span>
+    <span class="agent-chip" style="background:var(--pablo); color:#111; font-size:12px; padding:4px 12px;">Pablo — lime · Project scheduling</span>
+    <span class="agent-chip" style="background:var(--andres); font-size:12px; padding:4px 12px;">Andrés — violet · Conceptual design</span>
+    <span class="agent-chip" style="background:var(--felipe); color:#111; font-size:12px; padding:4px 12px;">Felipe — cyan · Architectural drawings</span>
+    <span class="agent-chip" style="background:var(--emilio); font-size:12px; padding:4px 12px;">Emilio — slate · Engineering package</span>
+    <span class="agent-chip" style="background:var(--hugo); font-size:12px; padding:4px 12px;">Hugo — navy · Executive plans</span>
+    <span class="agent-chip" style="background:var(--ofelia); color:#111; font-size:12px; padding:4px 12px;">Ofelia — gold · Contractor bidding</span>
+    <span class="agent-chip" style="background:var(--paco); font-size:12px; padding:4px 12px;">Paco — olive · Permitting</span>
+    <span class="agent-chip" style="background:var(--controller); font-size:12px; padding:4px 12px;">Controller — emerald · Invoicing</span>
+    <span class="agent-chip" style="background:var(--tax); color:#111; font-size:12px; padding:4px 12px;">Tax — yellow · Tax filing</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════════ -->
+<footer class="page-footer">
+  <div>Oficio Taller — Sistema de Agentes &nbsp;·&nbsp; TC-009 Casa Horizonte &nbsp;·&nbsp; PRJ-2026-0316-familia-reyes-montoya</div>
+  <div>Generated 2026-03-16 &nbsp;·&nbsp; Run 2026-03-16-TC-009 &nbsp;·&nbsp; <strong style="color:var(--pass-text);">PASS</strong></div>
+</footer>
+
+</body>
+</html>

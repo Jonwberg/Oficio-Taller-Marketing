@@ -1,0 +1,230 @@
+{
+  "scope_phases": [
+    {
+      "phase_number": 1,
+      "phase_name": "Conceptual Design",
+      "deliverables": [
+        "Parti diagram and design narrative (1–2 pages)",
+        "Preliminary floor plan sketches (1:200 scale minimum)",
+        "Site placement / orientation concept — horizon-axis orientation documented",
+        "3D conceptual massing model",
+        "Material and color direction board (preliminary) — salt-air and wind-resistant material palette",
+        "Space arrangement diagram showing all 10 programmed spaces (320 sqm total)"
+      ],
+      "duration_weeks": "3–5",
+      "notes": "Coastal Pacific site conditions inform all conceptual decisions. Horizon-as-living-condition design intent drives site placement and orientation. Wind load study required before construction phase."
+    },
+    {
+      "phase_number": 2,
+      "phase_name": "Architectural Design",
+      "deliverables": [
+        "Floor plans all levels (1:100 scale)",
+        "Elevations all four facades (1:100)",
+        "Building sections minimum 2 (1:100)",
+        "Roof plan",
+        "Site plan with property boundaries, setbacks, access, parking (3,000 sqm site, Cerritos, BCS)",
+        "Interior design criteria document — includes coordination notes for TBD interior design collaborator",
+        "Window and door schedule",
+        "Preliminary structural coordination sketch — coastal wind load requirements noted"
+      ],
+      "duration_weeks": "6–8",
+      "notes": "Structural engineer joins this phase. Coastal wind load study results (when received) inform structural preliminary coordination. Pool deck placement determined based on solar orientation and wind study."
+    },
+    {
+      "phase_number": 3,
+      "phase_name": "Engineering Coordination",
+      "deliverables": [
+        "Structural engineering drawings integrated with architectural set — wind load requirements for coastal BCS site incorporated",
+        "Electrical single-line diagram and panel schedules",
+        "Lighting layout plan with fixture specifications",
+        "Plumbing and hydraulic layout",
+        "Irrigation plan included — coastal native scrub-to-sand transition zone (27 sqm landscape zone)",
+        "Solar systems layout — solar is in scope per special features; client decision on final configuration required by end of Phase 2",
+        "Foundation plan and details — coastal conditions may require enhanced foundation spec pending wind load study",
+        "Landscape architecture coordination: in scope via TBD collaborator; Oficio Taller coordinates referral and integration"
+      ],
+      "duration_weeks": "4–6",
+      "notes": "Wind load study results must be received before structural drawings are finalized. Coastal zone permit application is a parallel prerequisite for Phase 6."
+    },
+    {
+      "phase_number": 4,
+      "phase_name": "Executive Plans",
+      "deliverables": [
+        "Fully coordinated construction drawing set (architectural + structural + MEP)",
+        "Detail sheets: wall sections, stairs, roof details, openings — salt-air resistant materials specified",
+        "Finish schedule (all surfaces, all rooms) — coastal-grade material specifications",
+        "Door and window schedule with specifications — wind load rated per coastal BCS requirements",
+        "Built-in furniture drawings (kitchen, closets, built-in shelving)",
+        "Technical specifications document"
+      ],
+      "duration_weeks": "4–6"
+    },
+    {
+      "phase_number": 5,
+      "phase_name": "Contractor Bidding",
+      "deliverables": [
+        "Bid package preparation (executive plans + spec document sent to minimum 2 contractors)",
+        "Bid comparison matrix (contractor name, total, key line items, timeline, notes)",
+        "Recommendation with rationale",
+        "Local contractor cost validation against current BCS coastal residential benchmarks"
+      ],
+      "duration_weeks": "3–4",
+      "notes": "Minimum 2 bids required. Local contractor experience with coastal construction and salt-air material handling is an evaluation criterion."
+    },
+    {
+      "phase_number": 6,
+      "phase_name": "Permitting",
+      "deliverables": [
+        "Building permit application package (architectural plans + structural calculations + forms)",
+        "Coastal zone permit application — Municipio de Los Cabos / SEMARNAT zone permit for Pacific-facing site in Cerritos, BCS",
+        "Submission to municipal authority (Municipio de Los Cabos)",
+        "Tracking and correction management until building permit issued",
+        "Wind load study submission to structural authority if required"
+      ],
+      "duration_weeks": "4–16 (coastal zone permit may extend timeline)",
+      "notes": "Coastal zone permit (Zona Federal Marítimo Terrestre / SEMARNAT) adds lead time. Timeline is authority-dependent. Permit corrections may require additional submissions. This is a critical path dependency for construction start."
+    }
+  ],
+  "payment_schedule": [
+    {
+      "milestone": "M1",
+      "name": "Contract Signing",
+      "percentage": 40,
+      "amount": 36000,
+      "currency": "USD",
+      "trigger_event": "Signed SOW + first payment received"
+    },
+    {
+      "milestone": "M2",
+      "name": "Concept Design Approved",
+      "percentage": 30,
+      "amount": 27000,
+      "currency": "USD",
+      "trigger_event": "Client written approval of Phase 1 conceptual design"
+    },
+    {
+      "milestone": "M3",
+      "name": "Executive Plans Approved",
+      "percentage": 30,
+      "amount": 27000,
+      "currency": "USD",
+      "trigger_event": "Executive plans package approved by client"
+    }
+  ],
+  "responsibilities_matrix": [
+    {
+      "deliverable": "Conceptual design",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Client"
+    },
+    {
+      "deliverable": "Architectural drawings",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Client"
+    },
+    {
+      "deliverable": "Structural calculations (wind load, coastal conditions)",
+      "responsible_party": "Structural engineer",
+      "reviewed_by": "Oficio Taller coordinates"
+    },
+    {
+      "deliverable": "MEP engineering",
+      "responsible_party": "MEP engineers",
+      "reviewed_by": "Oficio Taller coordinates"
+    },
+    {
+      "deliverable": "Solar system design",
+      "responsible_party": "Solar contractor / MEP engineer (Oficio Taller coordinates)",
+      "reviewed_by": "Oficio Taller + Client"
+    },
+    {
+      "deliverable": "Landscape coordination",
+      "responsible_party": "TBD landscape collaborator (Oficio Taller refers and coordinates)",
+      "reviewed_by": "Oficio Taller + Client"
+    },
+    {
+      "deliverable": "Interior design coordination",
+      "responsible_party": "TBD interior design collaborator (Oficio Taller refers and coordinates)",
+      "reviewed_by": "Oficio Taller + Client"
+    },
+    {
+      "deliverable": "Executive plans set",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Client + engineers"
+    },
+    {
+      "deliverable": "Bid package",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Client selects contractor"
+    },
+    {
+      "deliverable": "Permit application — building permit",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Municipio de Los Cabos"
+    },
+    {
+      "deliverable": "Permit application — coastal zone permit",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "SEMARNAT / coastal authority"
+    },
+    {
+      "deliverable": "Topographic survey",
+      "responsible_party": "Client (required document — not included in Oficio Taller scope)",
+      "reviewed_by": "Oficio Taller reviews on receipt"
+    },
+    {
+      "deliverable": "Wind load study",
+      "responsible_party": "Client (required document — not included in Oficio Taller scope)",
+      "reviewed_by": "Oficio Taller reviews on receipt; informs structural engineering"
+    },
+    {
+      "deliverable": "Payment milestone sign-off",
+      "responsible_party": "Client",
+      "reviewed_by": "Oficio Taller invoices"
+    }
+  ],
+  "exclusions": [
+    "Structural, electrical, plumbing, and civil engineering fees — client contracts engineers directly; Oficio Taller coordinates only",
+    "Permit fees, municipal taxes, SEMARNAT coastal zone fees, or government charges of any kind",
+    "Contractor selection or construction contracts — Oficio Taller recommends via bid comparison; client decides",
+    "Furniture, art, décor, or movable equipment not shown in built-in furniture drawings",
+    "Topographic survey — required before construction; client responsibility to provide",
+    "Wind load study — required for structural engineering; client responsibility to procure",
+    "Legal review of property title, Zona Federal Marítimo Terrestre boundaries, or easements",
+    "Construction cost guarantees — budget estimates are preliminary; final cost determined by contractor bids",
+    "Independent landscape architecture services — Oficio Taller will coordinate with TBD collaborator but landscape design fees are separate",
+    "Independent interior design services — Oficio Taller will coordinate with TBD collaborator but interior design fees are separate",
+    "Pool construction management — pool structure design is included in architectural scope; pool contractor and equipment are client responsibility",
+    "Hydrologic or soil study, if required by municipal authority — client responsibility"
+  ],
+  "revision_assumptions": {
+    "phase_1": "2 rounds of client revision included. Each additional round billed at MXN 8,000/day.",
+    "phase_2": "2 rounds of client revision included. Each additional round billed at MXN 10,000/day.",
+    "phase_3": "1 round of structural coordination revision included. Changes driven by client program additions are billed additionally.",
+    "phase_4": "1 round of coordination revision included. Client changes after executive plan approval require a change order.",
+    "phase_5": "Bid comparison matrix is a single deliverable; contractor selection is client decision.",
+    "phase_6": "Permit corrections required by authority are managed within scope. Redesign work triggered by permit corrections that require architectural changes will be scoped as a change order."
+  },
+  "project_type_clauses": [
+    {
+      "clause": "residential_standard",
+      "title": "Standard Residential Scope",
+      "text": "This project is a private standalone residential building on an individually owned lot. All design decisions are made exclusively between the client and Oficio Taller unless otherwise noted. No HOA, covenant, or third-party design review applies unless disclosed by the client before contract signing."
+    },
+    {
+      "clause": "client_changes",
+      "title": "Client-Initiated Program Changes",
+      "text": "Changes to the approved program requested by the client after a phase milestone has been approved will be scoped and billed as a change order. Oficio Taller will not absorb rework costs from client-initiated changes."
+    },
+    {
+      "clause": "site_conditions",
+      "title": "Site Condition Discovery",
+      "text": "Design is based on information provided by the client and publicly available municipal records. If site conditions discovered during construction (soil, utilities, encroachments) require design changes, these will be scoped as a change order."
+    },
+    {
+      "clause": "esignature",
+      "title": "Electronic Signature",
+      "text": "This document is valid when signed electronically by the client and an authorized Oficio Taller representative. Electronic signatures carry the same legal weight as physical signatures under Mexican federal law (NOM-151-SCFI)."
+    }
+  ]
+}

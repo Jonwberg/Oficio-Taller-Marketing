@@ -1,0 +1,23 @@
+{
+  "meeting_notes": "Video call, 60 minutes, conducted 2026-03-16T10:00:00-07:00. Agenda: review questionnaire answers, understand project vision, assess fit. Responses from seed data (test mode).\n\nClient responses (verbatim from seed data):\n- Project type: Casa habitación — residencia de descanso con uso permanente eventual. El terreno es propio, ubicado en Cerritos, BCS, frente al Pacífico, aprox. 3,000m². Programa deseado: recámara master, dos recámaras adicionales, sala-comedor, cocina, estudio, terraza cubierta, deck de alberca, áreas de servicio, zona de paisaje. Superficie total programada: 320m².\n- Budget: Presupuesto de construcción entre $600,000 y $900,000 USD. Honorarios de diseño y coordinación contemplados adicionalmente.\n- Timeline: Terreno escriturado y libre de gravámenes. Sin levantamiento topográfico previo. Objetivo de inicio de diseño: segundo semestre 2026. Sin fecha límite rígida de entrega.\n- Site: Terreno costero, plano a ligeramente inclinado, frente a Pacífico. Sin estudios técnicos previos. Sin permisos gestionados aún — cliente sabe que se requerirá permiso de zona costera.\n- Special requirements: Alberca, sistema solar, coordinación de interiorismo y paisaje (cliente abierto a recomendaciones del estudio). Materiales resistentes a salinidad deseados. Ventilación natural prioritaria.\n- Design style: 'Queremos que la casa no imponga al paisaje — que lo reciba. El horizonte no es la vista, es el habitante principal del proyecto.' Referencias mencionadas: arquitectura vernácula costera, Tadao Ando (uso de luz y horizonte), materiales naturales (madera tratada, piedra local, concreto aparente). Abiertos a explorar con el equipo.\n- Site ownership: Sí, escriturado, libre de gravámenes. Primera vez que se realizará estudio técnico formal.\n\nAssessment: Client demonstrates exceptional design literacy and a clearly formed spatial vision. Budget is well-matched to program. Site conditions are known and client is prepared for permitting process. No red flags in communication — open, curious, collaborative.",
+  "assessment_dimensions": {
+    "design_engagement": {
+      "score": 5,
+      "evidence": "Client articulates the project as a spatial condition ('el horizonte es el habitante principal'), cites Tadao Ando by name, references vernacular coastal architecture and specific materials. Original inbound message demonstrated the same literacy: 'un equipo que entienda el lugar antes de trazar una línea.' This is a design-literate client who will be a genuine collaborator."
+    },
+    "budget_realism": {
+      "score": 5,
+      "evidence": "Budget of $600K–$900K USD for a 320m² coastal residence with pool, solar, and landscape/interior coordination is realistic and appropriate for the program and coastal Baja location. Architecture fee of $90K USD (per seed data) is within standard range. No budget-program mismatch."
+    },
+    "scope_clarity": {
+      "score": 5,
+      "evidence": "Program is fully defined: 10 spaces totaling 320m² confirmed. Site is owned and documented. Special features (pool, solar, landscape, interior coordination) named explicitly. Client is aware of coastal permit requirement. Timeline is flexible but realistic for permit lead times. No major decisions pending."
+    },
+    "collaborative_style": {
+      "score": 5,
+      "evidence": "Client asks thoughtful questions, is open to studio recommendations for interiors and landscape, and frames the project as a shared exploration ('abiertos a explorar con el equipo'). Inbound message selected Oficio Taller explicitly for site understanding, not price. No controlling or adversarial indicators."
+    }
+  },
+  "recommendation": "proceed",
+  "rationale": "All four fit dimensions score 5/5. The client's design engagement is exceptional — spatial language and architectural references confirm a collaborative, idea-led working relationship. Budget of $600K–$900K USD fully supports the 320m² coastal program including pool, solar, and coordination services. No red flags were identified. This project is aligned with Oficio Taller's scope, culture, and capacity."
+}

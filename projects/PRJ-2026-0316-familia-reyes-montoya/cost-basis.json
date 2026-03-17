@@ -1,0 +1,21 @@
+{
+  "cost_per_sqm": 21500,
+  "base_construction_cost": 6880000,
+  "architecture_fee_pct": 12,
+  "architecture_fee": 825600,
+  "engineering_allowance": 206400,
+  "contingency_pct": 10,
+  "total_estimate": 8703200,
+  "assumptions": [
+    "PRELIMINARY ESTIMATE — not for client communication without Marcela review. All figures in MXN.",
+    "Cost per sqm basis: MXN 21,500/sqm — midpoint of standalone_residential range (MXN 18,000–25,000/sqm) for coastal Baja California Sur location. Coastal premium included in midpoint selection; high-end finish and salt-resistant materials will push toward the upper range at detailed budget stage.",
+    "base_construction_cost = 320 sqm × MXN 21,500/sqm = MXN 6,880,000.",
+    "Architecture fee: MXN 825,600 (12% of base construction cost). Note: seed data specifies architecture fee of $90,000 USD. At approximate exchange rate of 17.5 MXN/USD, $90K USD ≈ MXN 1,575,000 — significantly higher than the 12% formula yields. Seed data architecture fee of $90,000 USD is the client-agreed fixed fee per the payment schedule (40/30/30: $36K/$27K/$27K). The MXN figure here reflects the construction cost benchmark; architecture fee in client-facing documents should use the $90,000 USD fixed figure.",
+    "Engineering allowance: MXN 206,400 (3% of base construction cost). Coastal site may require additional structural engineering for wind load compliance — this allowance should be revisited after wind load study is received.",
+    "Contingency: 10% applied to sum of base construction + architecture fee + engineering allowance (MXN 7,912,000 × 0.10 = MXN 791,200).",
+    "total_estimate = MXN 6,880,000 + MXN 825,600 + MXN 206,400 + MXN 791,200 = MXN 8,703,200.",
+    "USD comparison at 17.5 MXN/USD: MXN 8,703,200 ÷ 17.5 ≈ $497,325 USD construction estimate (excluding $90K USD architecture fee). Combined total ≈ $587,325 USD — within the client's $600K–$900K USD budget range at current exchange. Budget alignment is viable.",
+    "Topographic survey and wind load study not yet received — foundation system type and structural upgrades for coastal wind loads may affect final construction cost. Estimate should be updated at Segment G with Emilio's engineering package.",
+    "Pool, solar system, and landscape/interior coordination costs are not included in this construction estimate baseline. These will be scoped separately at concept phase."
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "bids": [
+    {
+      "contractor": "Constructora del Pacífico, S.A. de C.V.",
+      "total": 798000,
+      "currency": "USD",
+      "line_items": [
+        { "scope": "Civil and structural work", "amount": 285000 },
+        { "scope": "Architectural finishes — coastal-grade materials (salt-air resistant, stainless hardware)", "amount": 198000 },
+        { "scope": "MEP — electrical (NEMA 4X coastal-rated outdoor), plumbing including pool circuit", "amount": 112000 },
+        { "scope": "Solar system — PV array 10 kW grid-tied, marine-grade aluminum frames, solar thermal", "amount": 68000 },
+        { "scope": "Foundation — mat slab with caisson contingency, epoxy-coated reinforcing", "amount": 85000 },
+        { "scope": "Pool deck construction and pool hydraulics", "amount": 50000 }
+      ],
+      "timeline": "52 weeks",
+      "notes": "Los Cabos residential specialist. 8 completed coastal residences in BCS including 2 in Cerritos. Familiar with ZOFEMAT setback requirements and municipal permitting process in Municipio de Los Cabos. Coastal premium for salt-air resistant materials and marine-grade hardware already included in bid. Minor contingency for caisson augmentation if soil report requires. Timeline assumes permit approval within 16-week window."
+    },
+    {
+      "contractor": "Edificaciones Costeras BCS, S. de R.L.",
+      "total": 772000,
+      "currency": "USD",
+      "line_items": [
+        { "scope": "Civil and structural work", "amount": 272000 },
+        { "scope": "Architectural finishes — coastal-grade materials", "amount": 188000 },
+        { "scope": "MEP — electrical, plumbing, pool hydraulics", "amount": 108000 },
+        { "scope": "Solar system — PV 10 kW, solar thermal integration", "amount": 65000 },
+        { "scope": "Foundation — mat slab, coastal specification", "amount": 80000 },
+        { "scope": "Pool deck and pool hydraulics", "amount": 59000 }
+      ],
+      "timeline": "58 weeks",
+      "notes": "BCS coastal construction firm established 2011. Portfolio includes 5 Pacific-facing coastal residences in Cerritos and East Cape. Deep familiarity with SEMARNAT coastal zone permit process and ZOFEMAT setback compliance. Lower total bid but 6-week longer timeline. Coastal-grade material sourcing from established BCS suppliers. Qualification: does not have a dedicated solar installation team — solar subcontractor required, which introduces coordination risk."
+    }
+  ],
+  "recommendation": "Constructora del Pacífico, S.A. de C.V.",
+  "recommendation_rationale": "Constructora del Pacífico is recommended over Edificaciones Costeras BCS on the basis of track record, timeline, and scope integration — not price alone. Although their bid is $26,000 higher ($798K vs. $772K), Constructora del Pacífico's 8-project coastal BCS portfolio (including 2 Cerritos residences) demonstrates direct site-condition familiarity. Their 52-week timeline is 6 weeks faster than Edificaciones, which is material given the coastal permit critical path. Critically, Constructora del Pacífico has an integrated solar installation capability — no subcontractor dependency — reducing coordination risk for the solar PV and thermal systems in scope. Both bids exceed client budget of $750K by 6.4% (Constructora) and 2.9% (Edificaciones); Marcela should note this delta in the approval decision. Coastal construction experience was confirmed as a mandatory evaluation criterion per Phase 5 scope-of-work.json."
+}

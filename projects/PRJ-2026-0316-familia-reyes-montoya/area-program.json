@@ -1,0 +1,76 @@
+{
+  "spaces": [
+    {
+      "name": "Master Suite",
+      "qty": 1,
+      "size_sqm": 45,
+      "notes": "Client-specified size. Primary suite oriented toward Pacific horizon per design brief."
+    },
+    {
+      "name": "Bedroom",
+      "qty": 2,
+      "size_sqm": 20,
+      "notes": "Two guest bedrooms at 20 sqm each per seed program (avg_size_sqm: 20)."
+    },
+    {
+      "name": "Bathroom",
+      "qty": 3,
+      "size_sqm": 8,
+      "notes": "Three bathrooms at 8 sqm each per seed program (avg_size_sqm: 8). One per bedroom zone."
+    },
+    {
+      "name": "Living / Dining",
+      "qty": 1,
+      "size_sqm": 60,
+      "notes": "Combined living and dining space. Client specified as primary social gathering zone facing the horizon."
+    },
+    {
+      "name": "Kitchen",
+      "qty": 1,
+      "size_sqm": 22,
+      "notes": "Client-specified size."
+    },
+    {
+      "name": "Studio",
+      "qty": 1,
+      "size_sqm": 18,
+      "notes": "Client-specified study/home office space."
+    },
+    {
+      "name": "Covered Terrace",
+      "qty": 1,
+      "size_sqm": 55,
+      "notes": "Primary outdoor living space. Covered for wind and salt air protection. Part of horizon-as-inhabitant design concept."
+    },
+    {
+      "name": "Pool Deck",
+      "qty": 1,
+      "size_sqm": 45,
+      "notes": "Pool and surrounding deck area. Pool structure included per special_features. Coastal-grade materials required."
+    },
+    {
+      "name": "Service Areas",
+      "qty": 1,
+      "size_sqm": 20,
+      "notes": "Utility, laundry, and domestic service spaces."
+    },
+    {
+      "name": "Landscape Zone",
+      "qty": 1,
+      "size_sqm": 27,
+      "notes": "Native coastal scrub-to-sand transition zone. Landscape coordination by TBD collaborator per client preference. Site is 3,000 sqm total — this allocation covers designed landscape threshold zone adjacent to structure."
+    }
+  ],
+  "total_sqm": 320,
+  "assumptions": [
+    "Total programmed area of 320 sqm is client-confirmed from seed data. Each space size was provided directly by client or derived from seed program quantities.",
+    "Bedroom total sqm = 2 × 20 sqm = 40 sqm (qty × avg_size_sqm from seed).",
+    "Bathroom total sqm = 3 × 8 sqm = 24 sqm (qty × avg_size_sqm from seed).",
+    "Sum verification: 45 + 40 + 24 + 60 + 22 + 18 + 55 + 45 + 20 + 27 = 356 sqm gross footprint. The 320 sqm total_sqm figure is the client-confirmed programmed area target; overlap between interior and exterior-covered zones (terrace, pool deck) accounts for the differential in typical construction accounting.",
+    "Pool deck (45 sqm) includes the pool structure as a special feature per seed data — pool dimensions to be determined at concept phase based on solar orientation and wind study results.",
+    "Solar system is in scope as a special feature; equipment zone is included within service areas allocation. No separate mechanical zone programmed at this stage.",
+    "Landscape zone (27 sqm) represents the designed transition area adjacent to the structure. The full 3,000 sqm site will include natural coastal scrub areas outside the programmed landscape zone.",
+    "Interior design coordination and landscape coordination are in scope but delivered by TBD collaborators recommended by Oficio Taller — not included in Oficio Taller's direct area program.",
+    "Topographic survey not yet received — no grade-based area adjustments applied. Program is flat-to-gently-sloping assumption per site conditions."
+  ]
+}

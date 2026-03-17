@@ -1,0 +1,185 @@
+{
+  "project_id": "PRJ-2026-0316-familia-reyes-montoya",
+  "project_state": "schedule_complete",
+  "client_name": "Familia Reyes-Montoya",
+  "project_type": "standalone_residential",
+  "schedule_created": "2026-03-16",
+  "schedule_start_date": "2026-03-16",
+  "total_programmed_sqm": 320,
+  "site_area_sqm": 3000,
+  "site_conditions": "coastal Pacific-facing, Cerritos BCS, strong prevailing wind, salt air, native scrub to sand transition",
+  "phases": [
+    {
+      "phase_number": 1,
+      "phase_name": "Conceptual Design",
+      "start_date": "2026-03-16",
+      "end_date": "2026-04-17",
+      "duration_weeks": 4,
+      "deliverables": [
+        "Parti diagram and design narrative (1–2 pages)",
+        "Preliminary floor plan sketches (1:200 scale minimum)",
+        "Site placement / orientation concept — horizon-axis orientation documented",
+        "3D conceptual massing model",
+        "Material and color direction board (preliminary) — salt-air and wind-resistant material palette",
+        "Space arrangement diagram showing all 10 programmed spaces (320 sqm total)"
+      ],
+      "milestone": "M2_concept_approved — client written approval of Phase 1 conceptual design",
+      "payment_trigger": "M2 — 30% ($27,000 USD) due on client approval of conceptual design",
+      "notes": "Coastal Pacific site conditions inform all conceptual decisions. Horizon-as-living-condition design intent drives site placement and orientation. Wind load study must be available or in process before Phase 2 structural coordination begins."
+    },
+    {
+      "phase_number": 2,
+      "phase_name": "Architectural Design",
+      "start_date": "2026-04-20",
+      "end_date": "2026-06-12",
+      "duration_weeks": 7,
+      "deliverables": [
+        "Floor plans all levels (1:100 scale)",
+        "Elevations all four facades (1:100)",
+        "Building sections minimum 2 (1:100)",
+        "Roof plan",
+        "Site plan with property boundaries, setbacks, access, parking (3,000 sqm site, Cerritos, BCS)",
+        "Interior design criteria document — includes coordination notes for TBD interior design collaborator",
+        "Window and door schedule",
+        "Preliminary structural coordination sketch — coastal wind load requirements noted"
+      ],
+      "milestone": "Phase 2 architectural drawings approved internally — advance to engineering",
+      "notes": "Structural engineer joins this phase. Coastal wind load study results inform preliminary structural coordination. Pool deck placement determined based on solar orientation and wind study. Client solar configuration decision required by end of Phase 2."
+    },
+    {
+      "phase_number": 3,
+      "phase_name": "Engineering Coordination",
+      "start_date": "2026-06-15",
+      "end_date": "2026-07-24",
+      "duration_weeks": 6,
+      "deliverables": [
+        "Structural engineering drawings integrated with architectural set — wind load requirements for coastal BCS site incorporated",
+        "Electrical single-line diagram and panel schedules",
+        "Lighting layout plan with fixture specifications",
+        "Plumbing and hydraulic layout",
+        "Irrigation plan — coastal native scrub-to-sand transition zone (27 sqm landscape zone)",
+        "Solar systems layout — solar in scope per special features; client configuration decision confirmed by Phase 2 close",
+        "Foundation plan and details — coastal conditions may require enhanced foundation spec per wind load study",
+        "Landscape architecture coordination with TBD collaborator"
+      ],
+      "milestone": "Engineering coordination package complete — advance to executive plans",
+      "notes": "Wind load study results must be received before structural drawings are finalized. Coastal zone permit application runs in parallel as a prerequisite for Phase 6 (construction). If wind load study is delayed, structural drawings may require revision — flagged as schedule risk."
+    },
+    {
+      "phase_number": 4,
+      "phase_name": "Executive Plans",
+      "start_date": "2026-07-27",
+      "end_date": "2026-09-04",
+      "duration_weeks": 6,
+      "deliverables": [
+        "Fully coordinated construction drawing set (architectural + structural + MEP)",
+        "Detail sheets: wall sections, stairs, roof details, openings — salt-air resistant materials specified",
+        "Finish schedule (all surfaces, all rooms) — coastal-grade material specifications",
+        "Door and window schedule with specifications — wind load rated per coastal BCS requirements",
+        "Built-in furniture drawings (kitchen, closets, built-in shelving)",
+        "Technical specifications document"
+      ],
+      "milestone": "M3_executive_plans_approved — client written approval of executive plans package; final payment trigger",
+      "payment_trigger": "M3 — 30% ($27,000 USD) due on client approval of executive plans",
+      "notes": "Executive plans are the final deliverable for client payment milestone M3. Coastal-grade material specs and wind load rated components documented throughout."
+    },
+    {
+      "phase_number": 5,
+      "phase_name": "Contractor Bidding",
+      "start_date": "2026-09-07",
+      "end_date": "2026-10-02",
+      "duration_weeks": 4,
+      "deliverables": [
+        "Bid package preparation (executive plans + spec document sent to minimum 2 contractors)",
+        "Bid comparison matrix (contractor name, total, key line items, timeline, notes)",
+        "Recommendation with rationale",
+        "Local contractor cost validation against current BCS coastal residential benchmarks"
+      ],
+      "milestone": "Contractor selected by client — advance to permitting and construction start",
+      "notes": "Minimum 2 bids required. Local contractor experience with coastal construction and salt-air material handling is an evaluation criterion. Contractor selection is client decision. This phase runs parallel to Phase 6 permitting submissions."
+    },
+    {
+      "phase_number": 6,
+      "phase_name": "Permitting",
+      "start_date": "2026-07-27",
+      "end_date": "2026-12-11",
+      "duration_weeks": "19 (estimated — authority-dependent; coastal zone permit may extend timeline)",
+      "deliverables": [
+        "Building permit application package (architectural plans + structural calculations + forms)",
+        "Coastal zone permit application — Municipio de Los Cabos / SEMARNAT zone permit for Pacific-facing site in Cerritos, BCS",
+        "Submission to municipal authority (Municipio de Los Cabos)",
+        "Tracking and correction management until building permit issued",
+        "Wind load study submission to structural authority if required"
+      ],
+      "milestone": "M4_permits_obtained — all permits issued; construction cleared to begin",
+      "coastal_permit_dependency": {
+        "permit_type": "Zona Federal Marítimo Terrestre (ZOFEMAT) / SEMARNAT coastal zone permit",
+        "authority": "SEMARNAT + Municipio de Los Cabos",
+        "estimated_lead_time_weeks": "8–16",
+        "critical_path_impact": "Coastal zone permit approval is a hard prerequisite for construction start. Construction cannot begin (Segment I close) until this permit is issued. The permit lead time is the primary schedule risk for this project. A buffer of 8–16 weeks after executive plans are complete is built into the schedule to account for coastal zone permit processing, potential corrections cycles, and authority review.",
+        "corrections_risk": "Permit may cycle through pending_corrections before final approval — each corrections cycle adds 2–4 weeks. Paco tracks permit_status in Asana (not project_state).",
+        "segment_i_note": "Segment I cannot close and construction cannot begin until coastal zone permit status is 'approved'. This permit lead time adds buffer before Segment I can close."
+      },
+      "notes": "Permitting phase starts concurrent with Executive Plans phase (Phase 4) to maximize parallel processing. Coastal zone permit is the critical path dependency for construction start. This phase is authority-dependent and its end date is an estimate. Timeline is subject to SEMARNAT and municipal review cycles."
+    }
+  ],
+  "milestone_dates": {
+    "M1_contract_signing": "2026-03-16",
+    "M2_concept_approved": "2026-04-17",
+    "M3_executive_plans_approved": "2026-09-04",
+    "M4_permits_obtained": "2026-12-11",
+    "M5_construction_admin_final": "2027-06-30"
+  },
+  "dependencies": {
+    "phase_1": "activation_complete (contract_signed + deposit_confirmed + site_docs_complete all true)",
+    "phase_2": "phase_1_complete — concept design approved by client (M2)",
+    "phase_3": "phase_2_complete — architectural drawings approved; wind load study must be available for structural integration",
+    "phase_4": "phase_3_complete — engineering coordination package complete",
+    "phase_5": "phase_4_complete — executive plans approved; bid package ready",
+    "phase_6_start": "phase_4_start — permitting submissions begin concurrent with executive plans phase (parallel track)",
+    "construction_start": "phase_5_complete AND phase_6_complete (coastal_zone_permit_approved) — BOTH contractor selected and ALL permits obtained before construction begins",
+    "coastal_zone_permit": "coastal_zone_permit_approved is a hard blocker for construction start; coastal permit lead time of 8–16 weeks adds buffer before Segment I can close",
+    "segment_i_close": "coastal_zone_permit must be status='approved' before Segment I can close and construction authorization issued"
+  },
+  "asana_subtasks": [
+    {
+      "task_name": "Phase 1: Conceptual Design",
+      "due_date": "2026-04-17",
+      "status": "ASANA_UNAVAILABLE — would create subtask under tasks.schedule"
+    },
+    {
+      "task_name": "Phase 2: Architectural Design",
+      "due_date": "2026-06-12",
+      "status": "ASANA_UNAVAILABLE — would create subtask under tasks.schedule"
+    },
+    {
+      "task_name": "Phase 3: Engineering Coordination",
+      "due_date": "2026-07-24",
+      "status": "ASANA_UNAVAILABLE — would create subtask under tasks.schedule"
+    },
+    {
+      "task_name": "Phase 4: Executive Plans",
+      "due_date": "2026-09-04",
+      "status": "ASANA_UNAVAILABLE — would create subtask under tasks.schedule"
+    },
+    {
+      "task_name": "Phase 5: Contractor Bidding",
+      "due_date": "2026-10-02",
+      "status": "ASANA_UNAVAILABLE — would create subtask under tasks.schedule"
+    },
+    {
+      "task_name": "Phase 6: Permitting (incl. Coastal Zone Permit)",
+      "due_date": "2026-12-11",
+      "status": "ASANA_UNAVAILABLE — would create subtask under tasks.schedule"
+    }
+  ],
+  "schedule_notes": [
+    "Total design-to-permit timeline: approximately 9 months (March 2026 – December 2026).",
+    "Construction phase (Segment J) estimated to begin January 2027 pending permit approvals.",
+    "Estimated construction duration for 320 sqm coastal residential: 12–18 months. Construction admin final (M5) estimated June 2027.",
+    "The coastal zone permit (ZOFEMAT/SEMARNAT) is the single highest schedule risk. Its lead time is the primary buffer driver before Segment I can close.",
+    "Parallel track: Permitting starts at same time as Phase 4 (Executive Plans) to minimize elapsed time between plan completion and permit approval.",
+    "Solar system configuration decision must be locked by end of Phase 2 to allow engineering coordination to proceed without interruption.",
+    "Wind load study must be received by client and confirmed in state.json before Phase 3 structural drawings are finalized."
+  ]
+}

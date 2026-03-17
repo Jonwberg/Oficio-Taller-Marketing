@@ -1,0 +1,15 @@
+{
+  "plan_set_components": [
+    "Architectural plans — floor plans all levels, elevations all four facades, building sections (min 2), roof plan, site plan with ZOFEMAT coastal zone setback line",
+    "Structural plans — foundation (mat slab with caisson contingency), framing, lateral shear wall layout, wind load connections, roof uplift tie-down details — coastal BCS wind pressure zone per CFE NTC-Viento",
+    "MEP coordination drawings — electrical single-line and panel schedules (200A main, NEMA 4X coastal-rated outdoor), lighting layout (marine-grade IP65 exterior), plumbing and hydraulic layout including pool circuit",
+    "Coastal zone compliance drawings — site plan with ZOFEMAT setback line from Pacific coastal zone boundary, Zona Federal Marítimo Terrestre delineation, buildable footprint confirmed within setback limits",
+    "Wind load structural set — lateral system documentation, roof uplift calculations, wind-load-rated window and door schedule per coastal BCS requirements",
+    "Solar system drawings — PV array layout on flat roof (service areas + bedroom wing), marine-grade aluminum mounting frames, inverter location in service areas, solar thermal collector integration with plumbing",
+    "Detail sheets — wall sections (salt-air resistant assembly specifications), stair details, roof details (positive/negative wind pressure rated), opening details (wind-load-rated frames and seals)",
+    "Finish and specifications package — finish schedule all surfaces all rooms with coastal-grade material specifications; technical specifications document; built-in furniture drawings (kitchen, closets, shelving)"
+  ],
+  "engineering_integration_confirmed": true,
+  "conflicts_resolved": true,
+  "client_signoff_milestone": "M3 — Executive Plans Approved"
+}

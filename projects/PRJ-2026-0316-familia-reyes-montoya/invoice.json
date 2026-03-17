@@ -1,0 +1,10 @@
+{
+  "project_name": "Familia Reyes-Montoya — standalone_residential — Cerritos, BCS, México",
+  "client_name": "Familia Reyes-Montoya",
+  "milestone_name": "M3 — Executive Plans Approved",
+  "amount": 27000,
+  "due_date": "2026-09-04",
+  "payment_instructions": "Bank transfer to Oficio Taller. Bank: [BANK_NAME]. CLABE: [CLABE — TO BE CONFIGURED IN .env]. Reference: PRJ-2026-0316-familia-reyes-montoya-M3.",
+  "currency": "USD",
+  "running_total": 90000
+}

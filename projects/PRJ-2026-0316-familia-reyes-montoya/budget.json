@@ -1,0 +1,90 @@
+{
+  "project_name": "Familia Reyes-Montoya — Standalone Residential — Cerritos, BCS",
+  "client_name": "Familia Reyes-Montoya",
+  "milestone_name": "M1 — Contract Signing",
+  "amount": 36000,
+  "payment_instructions": "Bank transfer to Oficio Taller. Bank: BBVA México. CLABE: [CLABE — TO BE CONFIGURED IN .env]. Reference: PRJ-2026-0316-familia-reyes-montoya.",
+  "currency": "USD",
+  "total": 90000,
+  "line_items": [
+    {
+      "phase": "Phase 1 — Conceptual Design",
+      "description": "Parti diagram, design narrative, preliminary floor plan sketches (1:200), site orientation concept, 3D massing model, material and color direction board — horizon-axis orientation and coastal site conditions documented",
+      "milestone": "M1 — Contract Signing (40%)",
+      "amount": 18000,
+      "currency": "USD",
+      "notes": "Phase 1 fee = 20% of $90,000 total. M1 payment at contract signing covers Phase 1 commencement."
+    },
+    {
+      "phase": "Phase 2 — Architectural Design",
+      "description": "Floor plans (1:100), elevations, sections, roof plan, site plan, interior design criteria document, window and door schedule, preliminary structural coordination with coastal wind load requirements noted",
+      "milestone": "M2 — Concept Design Approved (30%)",
+      "amount": 22500,
+      "currency": "USD",
+      "notes": "Phase 2 fee = 25% of $90,000 total. M2 payment triggered by client approval of Phase 1."
+    },
+    {
+      "phase": "Phase 3 — Engineering Coordination",
+      "description": "Structural engineering coordination (wind load), electrical single-line diagram, lighting layout, plumbing/hydraulic layout, irrigation plan, solar system layout, foundation plan, landscape and interior design coordination with TBD collaborators",
+      "milestone": "M2 — Concept Design Approved (30%)",
+      "amount": 13500,
+      "currency": "USD",
+      "notes": "Phase 3 fee = 15% of $90,000 total. Funded through M2 milestone payment."
+    },
+    {
+      "phase": "Phase 4 — Executive Plans",
+      "description": "Fully coordinated construction drawing set (architectural + structural + MEP), detail sheets, finish schedule with coastal-grade material specs, door/window schedule (wind load rated), built-in furniture drawings, technical specifications document",
+      "milestone": "M3 — Executive Plans Approved (30%)",
+      "amount": 22500,
+      "currency": "USD",
+      "notes": "Phase 4 fee = 25% of $90,000 total. M3 payment triggered by client approval of executive plans."
+    },
+    {
+      "phase": "Phase 5 — Contractor Bidding",
+      "description": "Bid package preparation, bid comparison matrix (min. 2 contractors), recommendation with rationale, local BCS coastal contractor cost validation",
+      "milestone": "M3 — Executive Plans Approved (30%)",
+      "amount": 9000,
+      "currency": "USD",
+      "notes": "Phase 5 fee = 10% of $90,000 total. Covered within M3 payment."
+    },
+    {
+      "phase": "Phase 6 — Permitting",
+      "description": "Building permit application, coastal zone permit application (SEMARNAT/Municipio de Los Cabos), submission and correction management until permit issued",
+      "milestone": "M3 — Executive Plans Approved (30%)",
+      "amount": 4500,
+      "currency": "USD",
+      "notes": "Phase 6 fee = 5% of $90,000 total. Covered within M3 payment. Note: coastal zone permit adds lead time — phase duration authority-dependent."
+    }
+  ],
+  "payment_schedule_summary": [
+    {
+      "milestone": "M1",
+      "name": "Contract Signing",
+      "percentage": 40,
+      "amount": 36000,
+      "currency": "USD",
+      "trigger_event": "Signed SOW + first payment received"
+    },
+    {
+      "milestone": "M2",
+      "name": "Concept Design Approved",
+      "percentage": 30,
+      "amount": 27000,
+      "currency": "USD",
+      "trigger_event": "Client written approval of Phase 1 conceptual design"
+    },
+    {
+      "milestone": "M3",
+      "name": "Executive Plans Approved",
+      "percentage": 30,
+      "amount": 27000,
+      "currency": "USD",
+      "trigger_event": "Executive plans package approved by client"
+    }
+  ],
+  "construction_cost_reference": {
+    "base_construction_cost_mxn": 6880000,
+    "total_estimate_mxn": 8703200,
+    "note": "Construction cost reference from cost-basis.json (MXN). Architecture fee above is the client-agreed fixed fee in USD per seed data. Pool, solar, landscape, and interior design costs are not included in this budget — to be scoped separately."
+  }
+}

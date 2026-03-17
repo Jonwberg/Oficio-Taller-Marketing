@@ -1,0 +1,43 @@
+{
+  "test_case_id": "TC-009",
+  "scenario": "Casa Horizonte",
+  "project_type": "standalone_residential",
+  "inbound_channel": "instagram",
+  "inbound_message": "Hola, tenemos un terreno en Cerritos, BCS — frente al Pacífico, en el borde entre la vegetación de playa y la arena. Queremos construir una casa que viva de cara al horizonte. El sitio es de aprox. 3,000m². Estamos interesados en trabajar con un equipo que entienda el lugar antes de trazar una línea.",
+  "lead_name": "Familia Reyes-Montoya",
+  "location": "Cerritos, Baja California Sur, México",
+  "site_area_sqm": 3000,
+  "total_programmed_sqm": 320,
+  "program": {
+    "master_suite": { "qty": 1, "size_sqm": 45 },
+    "bedrooms": { "qty": 2, "avg_size_sqm": 20 },
+    "bathrooms": { "qty": 3, "avg_size_sqm": 8 },
+    "living_dining": { "qty": 1, "size_sqm": 60 },
+    "kitchen": { "qty": 1, "size_sqm": 22 },
+    "studio": { "qty": 1, "size_sqm": 18 },
+    "covered_terrace": { "qty": 1, "size_sqm": 55 },
+    "pool_deck": { "qty": 1, "size_sqm": 45 },
+    "service_areas": { "qty": 1, "size_sqm": 20 },
+    "landscape_zone": { "qty": 1, "size_sqm": 27 }
+  },
+  "special_features": ["pool", "solar", "landscape_coordination", "interior_design_coordination"],
+  "site_conditions": "coastal Pacific-facing, strong prevailing wind, salt air, native scrub to sand transition, no hydrology concerns, flat to gently sloping",
+  "site_documents_required": ["topographic_survey", "coastal_zone_permit", "wind_load_study"],
+  "collaborators": {
+    "interiorismo": "TBD — client open to recommendation",
+    "paisaje": "TBD — client open to recommendation"
+  },
+  "budget_range_usd": { "min": 600000, "max": 900000 },
+  "client_profile": "design_engaged",
+  "expected_outcome": "full_activation",
+  "architect_response": "approve",
+  "payment_schedule": [
+    { "milestone": "contract_signed", "percentage": 40, "amount_usd": 36000 },
+    { "milestone": "concept_approved", "percentage": 30, "amount_usd": 27000 },
+    { "milestone": "executive_plans_approved", "percentage": 30, "amount_usd": 27000 }
+  ],
+  "total_architecture_fee_usd": 90000,
+  "tax_jurisdiction": "Mexico",
+  "currency": "USD",
+  "rfc": "TEST-RFC-009"
+}

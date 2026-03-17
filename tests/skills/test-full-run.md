@@ -15,7 +15,7 @@ Extract `tc_id` from the command argument.
 If missing, respond:
 > Usage: /test-full-run [TC-ID]
 > Example: /test-full-run TC-001
-> Available: TC-001, TC-002, TC-003, TC-004, TC-005, TC-006, TC-007, TC-008
+> Available: TC-001, TC-002, TC-003, TC-004, TC-005, TC-006, TC-007, TC-008, TC-009
 
 ## Pre-flight checks
 

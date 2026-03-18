@@ -82,13 +82,14 @@ def _create_custom_field(name: str, field_type: str, workspace_gid: str) -> str:
         "Authorization": f"Bearer {pat}",
         "Content-Type": "application/json",
     }
-    payload = {
-        "data": {
-            "name": name,
-            "resource_subtype": field_type,
-            "workspace": workspace_gid,
-        }
+    data = {
+        "name": name,
+        "resource_subtype": field_type,
+        "workspace": workspace_gid,
     }
+    if field_type == "number":
+        data["precision"] = 0
+    payload = {"data": data}
     resp = requests.post(f"{ASANA_BASE}/custom_fields", headers=headers, json=payload)
     resp.raise_for_status()
     return resp.json()["data"]["gid"]

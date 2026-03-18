@@ -9,3 +9,4 @@ campaigns/published/*/assets/
 *.log
 publisher/bin/
 tests/results/
+entrega/gmail-credentials.json

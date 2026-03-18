@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-familia-reyes-montoya",
+  "phase": "DG-11",
+  "review_item": "bid-comparison",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": null,
+  "timestamp": "2026-03-17T18:15:00-07:00",
+  "source_channel": "email",
+  "next_action": "dispatch Paco for permitting; Vera unlocks construction on permit approval",
+  "route_to": "Paco",
+  "sync_to_asana": true
+}

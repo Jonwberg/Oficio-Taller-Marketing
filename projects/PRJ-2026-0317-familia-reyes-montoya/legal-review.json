@@ -1,0 +1,38 @@
+{
+  "project_id": "PRJ-2026-0317-familia-reyes-montoya",
+  "reviewed_at": "2026-03-17T16:00:00-07:00",
+  "reviewed_by": "Legal",
+  "review_items": [
+    {
+      "clause": "residential_standard",
+      "status": "approved",
+      "notes": "Standard clause. No HOA or third-party review bodies identified for this site."
+    },
+    {
+      "clause": "client_changes",
+      "status": "approved",
+      "notes": "Change order language is clear and consistent with Mexican contract law."
+    },
+    {
+      "clause": "site_conditions",
+      "status": "approved",
+      "notes": "Clause adequately covers site condition discovery risk. Coastal zone conditions (SEMARNAT) are a known variable and should be referenced in client communications."
+    },
+    {
+      "clause": "esignature",
+      "status": "approved",
+      "notes": "NOM-151-SCFI reference is current and appropriate. Electronic signature is valid."
+    },
+    {
+      "clause": "coastal_zone_permit_disclosure",
+      "status": "flagged_advisory",
+      "notes": "ADVISORY (non-blocking): The proposal should clearly inform the client that the SEMARNAT coastal zone permit (ZOFEMAT) is a prerequisite for construction — not just a project phase. Recommend adding a plain-language note in the proposal that construction cannot begin without this permit. This is not a blocking condition but protects both parties."
+    }
+  ],
+  "overall_status": "approved_with_advisory",
+  "blocking_issues": [],
+  "advisory_notes": [
+    "Add plain-language note to client proposal clarifying that the SEMARNAT coastal zone permit is a hard prerequisite for construction start — independent of design completion.",
+    "Payment schedule M3 (executive plans approved) triggers at design completion, before permit. Confirm client understands permit processing may extend total timeline by 3-6 months beyond design completion."
+  ]
+}

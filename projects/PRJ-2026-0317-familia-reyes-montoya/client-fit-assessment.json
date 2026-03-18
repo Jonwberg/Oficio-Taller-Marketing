@@ -1,0 +1,23 @@
+{
+  "meeting_notes": "Video call, 60 min, 2026-03-17T20:30:00-07:00. Agenda: review questionnaire answers, understand project vision, assess fit. Responses from seed data (test mode). Client said: 'Queremos una casa que se sienta parte del paisaje costero — materiales naturales, luz cruzada, ventilación natural.' Reference cited: Casa Gilardi de Barragán as precedent for how color and light create atmosphere. Client confirmed site is owned free of encumbrances; no topographic survey or coastal zone permit yet — 'Estamos conscientes de que será necesario.' Budget of $600K–$900K USD mentioned explicitly. Willing to coordinate with landscape and interior design referrals. Assessment: Client demonstrates unusually high design literacy — citing a specific Barragán project and framing the horizon as a spatial condition (not a view) indicates genuine design engagement. Budget range is realistic for 320sqm coastal residential in BCS. Program is specific and program total adds to exactly 320sqm. Collaborative posture is excellent — open to team input and referrals.",
+  "assessment_dimensions": {
+    "design_engagement": {
+      "score": 5,
+      "evidence": "Client referenced Casa Gilardi de Barragán unprompted as a precedent for atmosphere; framed horizon as a lived condition not a scenic backdrop; described specific material palette (madera, piedra local, concreto expuesto) with intent."
+    },
+    "budget_realism": {
+      "score": 5,
+      "evidence": "$600K–$900K USD for 320sqm coastal residential in BCS. Market rate for this program type and location is $500K–$950K USD depending on finish level. Budget meets or exceeds mid-range market rate."
+    },
+    "scope_clarity": {
+      "score": 5,
+      "evidence": "Specific 10-space program summing to 320sqm, confirmed 3,000sqm site with title in hand, no major program decisions pending. Client aware of coastal zone permit and wind load study requirements."
+    },
+    "collaborative_style": {
+      "score": 5,
+      "evidence": "Open to landscape and interior design referrals, receptive to team process, no red flags in communication. Asked about material durability in salt-air environments — indicates genuine curiosity about the design process."
+    }
+  },
+  "recommendation": "proceed",
+  "rationale": "All four dimensions score 5/5. Design engagement is exceptional — a client who references Barragán and conceptualizes the horizon as a spatial condition is rare and well-matched to Oficio Taller's practice. Budget is realistic, scope is clear, and collaborative posture is strong. No risk factors present."
+}

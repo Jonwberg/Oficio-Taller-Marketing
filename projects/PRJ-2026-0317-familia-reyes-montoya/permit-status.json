@@ -1,0 +1,29 @@
+{
+  "submitted_at": "2026-05-05",
+  "jurisdiction": "SEMARNAT — Delegación Baja California Sur / Municipio de Los Cabos",
+  "status": "approved",
+  "corrections": [
+    {
+      "received_at": "2026-07-12",
+      "description": "SEMARNAT correction round 1: Requires updated coastal setback documentation showing exact distance from Zona Federal Maritimo Terrestre (ZOFEMAT) boundary. Topographic survey must be stamped by DRO registered in BCS. Architectural site plan must show distance from mean high-tide line in meters.",
+      "resolved": true,
+      "resolved_at": "2026-07-28",
+      "resolution_notes": "Resubmitted with BCS-registered DRO stamp on topographic survey. Site plan updated with ZOFEMAT boundary distances per SEMARNAT guidelines."
+    },
+    {
+      "received_at": "2026-08-20",
+      "description": "SEMARNAT correction round 2: Requires Environmental Impact Assessment (MIA — Manifestacion de Impacto Ambiental) for construction within 200m of coastline. Project falls within the regulated coastal strip under LGEEPA Article 28.",
+      "resolved": true,
+      "resolved_at": "2026-10-15",
+      "resolution_notes": "MIA prepared by authorized environmental consultant. Assessment concluded: moderate impact with mitigation measures (native scrub revegetation plan, construction waste management, no ground disturbance in ZOFEMAT). MIA approved by SEMARNAT regional delegation."
+    }
+  ],
+  "approved_at": "2026-11-03",
+  "municipal_permit": {
+    "jurisdiction": "Municipio de Los Cabos — Direccion de Desarrollo Urbano",
+    "submitted_at": "2026-09-20",
+    "status": "approved",
+    "approved_at": "2026-10-28",
+    "corrections": []
+  }
+}

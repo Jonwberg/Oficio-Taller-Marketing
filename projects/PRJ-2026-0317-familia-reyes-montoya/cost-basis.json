@@ -1,0 +1,21 @@
+{
+  "cost_per_sqm": 22000,
+  "base_construction_cost": 7832000,
+  "architecture_fee_pct": 12,
+  "architecture_fee": 939840,
+  "engineering_allowance": 234960,
+  "contingency_pct": 10,
+  "total_estimate": 9907480,
+  "assumptions": [
+    "PRELIMINARY ESTIMATE — subject to revision after site documents and program confirmation.",
+    "Cost per sqm: MXN 22,000 — above midpoint of standalone_residential range (MXN 18,000–25,000) due to coastal site premium: salt-air resistant materials, wind-rated glazing, structural uplift requirements, and coastal construction logistics in BCS.",
+    "Total sqm: 356 sqm (all programmed spaces including covered terrace and pool deck — these require full structural design due to coastal wind exposure).",
+    "Base construction cost: 356 sqm × MXN 22,000 = MXN 7,832,000.",
+    "Architecture fee: 12% of base = MXN 939,840 (note: contracted USD fee of $90,000 in seed data takes precedence in contract — this is for internal review alignment only).",
+    "Engineering allowance: 3% of base = MXN 234,960.",
+    "Contingency: 10% of (base + fees + engineering) = MXN 900,680.",
+    "Total estimate: MXN 9,907,480 (~USD 550,000–600,000 at current exchange rates) — within client's stated budget range of USD 600,000–900,000.",
+    "Pool and solar costs not included in base sqm rate — pool structure and solar system to be quantified separately in engineering phase.",
+    "Interior design and landscape coordination are referral services — not included in construction budget."
+  ]
+}

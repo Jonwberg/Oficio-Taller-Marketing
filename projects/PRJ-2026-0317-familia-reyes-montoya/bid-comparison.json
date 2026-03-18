@@ -1,0 +1,40 @@
+{
+  "bids": [
+    {
+      "contractor": "Constructora Pacífico BCS",
+      "total": 8150000,
+      "currency": "MXN",
+      "line_items": [
+        {"scope": "civil work and earthwork", "amount": 650000},
+        {"scope": "structural (concrete frame and foundation)", "amount": 2100000},
+        {"scope": "finishes (all interior and exterior)", "amount": 1800000},
+        {"scope": "MEP (electrical, plumbing, HVAC)", "amount": 980000},
+        {"scope": "pool structure and equipment", "amount": 750000},
+        {"scope": "windows and doors (wind-rated)", "amount": 920000},
+        {"scope": "roofing and waterproofing", "amount": 480000},
+        {"scope": "site work and landscaping (base grade)", "amount": 470000}
+      ],
+      "timeline": "52 weeks",
+      "notes": "Primary recommendation. 12 years coastal residential experience in BCS. Familiar with SEMARNAT compliance requirements. Exclusions: solar system installation (separate specialty contractor), interior design FF&E."
+    },
+    {
+      "contractor": "Ingeniería y Construcción del Sur",
+      "total": 8580000,
+      "currency": "MXN",
+      "line_items": [
+        {"scope": "civil work and earthwork", "amount": 720000},
+        {"scope": "structural", "amount": 2250000},
+        {"scope": "finishes", "amount": 1950000},
+        {"scope": "MEP", "amount": 1050000},
+        {"scope": "pool", "amount": 810000},
+        {"scope": "windows and doors", "amount": 880000},
+        {"scope": "roofing", "amount": 450000},
+        {"scope": "site work", "amount": 470000}
+      ],
+      "timeline": "48 weeks",
+      "notes": "Strong references. Slightly higher cost but shorter timeline. Less prior SEMARNAT/coastal zone permit experience."
+    }
+  ],
+  "recommendation": "Constructora Pacifico BCS",
+  "recommendation_rationale": "Constructora Pacifico BCS recommended. Lower total bid (MXN 8,150,000 vs 8,580,000 — difference of MXN 430,000). Stronger coastal zone permit experience — critical for this SEMARNAT project. Timeline of 52 weeks is within client's expected range. Both bids are below the revised budget estimate of MXN 8,200,000 from budget-alignment.json, confirming the project is budget-aligned."
+}

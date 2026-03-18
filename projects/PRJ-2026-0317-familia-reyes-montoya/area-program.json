@@ -1,0 +1,74 @@
+{
+  "spaces": [
+    {
+      "name": "Master Suite",
+      "qty": 1,
+      "size_sqm": 45,
+      "notes": "Includes master bath and walk-in closet per client profile"
+    },
+    {
+      "name": "Bedroom",
+      "qty": 2,
+      "size_sqm": 20,
+      "notes": "Guest bedrooms, each with private bath access"
+    },
+    {
+      "name": "Bathroom",
+      "qty": 3,
+      "size_sqm": 8,
+      "notes": "Includes master bath (integrated with master suite), 2 guest baths"
+    },
+    {
+      "name": "Living / Dining",
+      "qty": 1,
+      "size_sqm": 60,
+      "notes": "Open plan, oriented to horizon axis per client brief"
+    },
+    {
+      "name": "Kitchen",
+      "qty": 1,
+      "size_sqm": 22,
+      "notes": "Integrated with living/dining zone; coastal ventilation considered"
+    },
+    {
+      "name": "Studio / Home Office",
+      "qty": 1,
+      "size_sqm": 18,
+      "notes": "Private workspace, can double as 4th bedroom"
+    },
+    {
+      "name": "Covered Terrace",
+      "qty": 1,
+      "size_sqm": 55,
+      "notes": "Primary outdoor living zone; extends horizon axis; wind-protected design required"
+    },
+    {
+      "name": "Pool Deck",
+      "qty": 1,
+      "size_sqm": 45,
+      "notes": "Pool included in special_features; deck area for circulation and lounging"
+    },
+    {
+      "name": "Service Areas",
+      "qty": 1,
+      "size_sqm": 20,
+      "notes": "Laundry, storage, mechanical room"
+    },
+    {
+      "name": "Landscape Zone",
+      "qty": 1,
+      "size_sqm": 27,
+      "notes": "Native coastal scrub integration per site conditions; landscape coordination in scope"
+    }
+  ],
+  "total_sqm": 356,
+  "assumptions": [
+    "total_sqm (356 sqm) reflects sum of all programmed spaces including terraces and pool deck. Client stated 'approximately 320 sqm' which likely refers to enclosed built area only (229 sqm enclosed + 127 sqm covered/outdoor = 356 total). Marcela should confirm with client which metric applies to the budget target.",
+    "Covered terrace (55 sqm) and pool deck (45 sqm) treated as billable built area for cost basis due to coastal wind-protection requirements — these will require full structural design, not light pergola construction.",
+    "Bathrooms sized at 8 sqm each — standard for standalone residential; master bath is integrated into master suite count.",
+    "Landscape zone (27 sqm) scoped for native scrub transition design; landscape coordination is in project scope per client brief.",
+    "Interior design coordination in scope per special_features — interior designer TBD at client's choice.",
+    "Pool included in program as pool deck area; pool structure and equipment to be specified in engineering phase.",
+    "Solar installation in scope per special_features — system sizing deferred to engineering phase (Emilio)."
+  ]
+}

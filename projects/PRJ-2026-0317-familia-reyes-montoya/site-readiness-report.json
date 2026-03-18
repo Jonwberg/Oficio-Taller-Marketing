@@ -1,0 +1,22 @@
+{
+  "required_documents": [
+    {
+      "name": "Levantamiento Topográfico (Topographic Survey)",
+      "rationale": "Required for all projects — establishes site boundaries, levels, and contours. Standard 1:500 or 1:200 scale for a 3,000 sqm site.",
+      "received": false
+    },
+    {
+      "name": "Permiso de Zona Federal Marítimo Terrestre / Coastal Zone Permit (SEMARNAT)",
+      "rationale": "Required for coastal Pacific site at scrub-to-sand edge in BCS. Construction in or near the ZOFEMAT requires prior SEMARNAT permit before any ground-break. This is a critical-path item — permit process can take 3–6 months.",
+      "received": false
+    },
+    {
+      "name": "Estudio de Cargas de Viento (Wind Load Study)",
+      "rationale": "Required due to strong prevailing coastal winds documented in site conditions. Will inform structural design for roof systems, glazing, and coastal exposure details. Required by Emilio (engineering) before structural design begins.",
+      "received": false
+    }
+  ],
+  "request_sent_at": "2026-03-17T14:30:00-07:00",
+  "current_status": "documents_requested",
+  "blockers": []
+}

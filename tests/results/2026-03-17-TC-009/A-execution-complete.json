@@ -1,0 +1,56 @@
+{
+  "run_id": "2026-03-17-TC-009",
+  "tc_id": "TC-009",
+  "segment": "A",
+  "agent": "lupe",
+  "project_id": "PRJ-2026-0317-familia-reyes-montoya",
+  "executed_at": "2026-03-17T00:00:00-07:00",
+
+  "classification": {
+    "source_channel": "instagram",
+    "category": "project_inquiry",
+    "status": "new"
+  },
+
+  "asana": {
+    "task_created": true,
+    "task_gid": "1213707386907008",
+    "project_gid": "1213707348711583",
+    "section": "New",
+    "task_completed": true,
+    "decision_status_set": "awaiting (notes fallback)"
+  },
+
+  "gmail": {
+    "dg01_sent": true,
+    "thread_id": "19cfef6d63ede45e",
+    "to": "marcela@oficiotaller.com",
+    "subject": "[DG-01] Lead Review — Familia Reyes-Montoya"
+  },
+
+  "schema_validation": {
+    "required_fields_present": {
+      "source_channel": true,
+      "category": true,
+      "received_at": true,
+      "summary": true,
+      "status": true
+    },
+    "all_required_fields_pass": true,
+    "auto_fail_triggered": false,
+    "result": "PASS"
+  },
+
+  "rubric_notes": {
+    "completeness": "5 — all required fields populated; raw message stored verbatim in lead-record.json",
+    "accuracy": "5 — source_channel=instagram exactly matches inbound platform; category=project_inquiry correctly classified",
+    "clarity": "5 — summary is immediately scannable: project type, location, client name visible",
+    "state_sync": "5 — Asana task created with status=new in New section of Leads project",
+    "timing": "5 — task created in same session as inbound message receipt",
+    "decision_readiness": "5 — all qualifying fields present; design engagement and budget signal clearly noted for Marcela"
+  },
+
+  "pipeline_state": "awaiting_decision",
+  "awaiting_gate": "DG-01",
+  "segment_a_complete": true
+}

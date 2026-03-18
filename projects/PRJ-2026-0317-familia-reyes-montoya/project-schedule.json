@@ -1,0 +1,123 @@
+{
+  "phases": [
+    {
+      "phase_number": 1,
+      "phase_name": "Conceptual Design",
+      "start_date": "2026-03-24",
+      "end_date": "2026-04-28",
+      "duration_weeks": 5,
+      "deliverables": [
+        "Parti diagram and horizon-axis design narrative",
+        "Preliminary floor plan sketches (1:200)",
+        "Site placement / orientation concept",
+        "3D conceptual massing model",
+        "Material and color direction board"
+      ],
+      "milestone": "M2 — Concept Design Client Approval",
+      "payment_trigger": "M2 — USD 27,000 upon client written approval"
+    },
+    {
+      "phase_number": 2,
+      "phase_name": "Architectural Design",
+      "start_date": "2026-04-28",
+      "end_date": "2026-06-23",
+      "duration_weeks": 8,
+      "deliverables": [
+        "Floor plans all levels (1:100)",
+        "Elevations all four facades (1:100)",
+        "Building sections minimum 2 (1:100)",
+        "Roof plan",
+        "Site plan with coastal zone setback line",
+        "Wind-rated window and door schedule",
+        "Pool design coordination",
+        "Solar preliminary layout",
+        "Landscape and interior design coordination criteria"
+      ],
+      "milestone": "Architectural design client approval",
+      "payment_trigger": null
+    },
+    {
+      "phase_number": 3,
+      "phase_name": "Engineering Coordination",
+      "start_date": "2026-06-23",
+      "end_date": "2026-08-04",
+      "duration_weeks": 6,
+      "deliverables": [
+        "Structural engineering drawings (coastal wind load)",
+        "Electrical single-line and panel schedules",
+        "Lighting layout with coastal IP-rated fixtures",
+        "Plumbing and hydraulic layout including pool",
+        "Solar system layout and sizing",
+        "Foundation plan — coastal soil conditions"
+      ],
+      "milestone": "Engineering coordination complete",
+      "payment_trigger": null,
+      "dependencies": ["Wind load study must be received before structural design begins"]
+    },
+    {
+      "phase_number": 4,
+      "phase_name": "Executive Plans",
+      "start_date": "2026-08-04",
+      "end_date": "2026-09-15",
+      "duration_weeks": 6,
+      "deliverables": [
+        "Fully coordinated construction drawing set",
+        "Detail sheets (coastal exposure connections, wall sections)",
+        "Finish schedule (salt-air resistant specifications)",
+        "Technical specifications document"
+      ],
+      "milestone": "M3 — Executive Plans Client Approval",
+      "payment_trigger": "M3 — USD 27,000 upon client written approval"
+    },
+    {
+      "phase_number": 5,
+      "phase_name": "Contractor Bidding",
+      "start_date": "2026-09-15",
+      "end_date": "2026-10-13",
+      "duration_weeks": 4,
+      "deliverables": [
+        "Bid package (executive plans + spec document)",
+        "Bid comparison matrix (minimum 2 contractors)",
+        "Contractor recommendation (BCS coastal experience required)"
+      ],
+      "milestone": "Contractor selected"
+    },
+    {
+      "phase_number": 6,
+      "phase_name": "Permitting",
+      "start_date": "2026-04-28",
+      "end_date": "2026-11-28",
+      "duration_weeks": 30,
+      "deliverables": [
+        "SEMARNAT coastal zone permit application — initiated in parallel with Phase 2",
+        "Municipal building permit (Municipio de Los Cabos) — submitted after executive plans",
+        "Corrections management until all permits issued"
+      ],
+      "milestone": "All permits in hand — CRITICAL PATH",
+      "dependencies": [
+        "SEMARNAT application initiated in parallel starting Phase 2 (2026-04-28)",
+        "Municipal permit application submitted after executive plans approved",
+        "Construction CANNOT begin until both permits are in hand"
+      ],
+      "notes": "SEMARNAT coastal zone permit is the critical path item. Process initiated in Phase 2 in parallel to minimize schedule impact. Estimated SEMARNAT resolution: 3-6 months from application submission. Municipal permit typically 4-8 weeks after executive plans."
+    }
+  ],
+  "milestone_dates": {
+    "M1_contract_signing": "2026-03-24",
+    "M2_concept_approved": "2026-04-28",
+    "M3_executive_plans_approved": "2026-09-15",
+    "M4_all_permits_obtained": "2026-11-28",
+    "construction_start": "2026-12-01"
+  },
+  "dependencies": {
+    "phase_2": "phase_1_complete",
+    "phase_3": "phase_2_complete",
+    "phase_4": "phase_3_complete",
+    "phase_5": "phase_4_complete",
+    "phase_6_municipal": "phase_4_complete",
+    "phase_6_semarnat": "initiated_parallel_with_phase_2",
+    "construction_start": "all_permits_in_hand AND contractor_selected"
+  },
+  "total_design_duration_weeks": 30,
+  "notes": "Phase 6 (SEMARNAT permit) runs in parallel starting Phase 2. Construction timeline (typically 10-18 months for a 356 sqm coastal residence) is not included in this schedule and will be set by the selected contractor."
+}

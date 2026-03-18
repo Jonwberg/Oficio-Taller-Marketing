@@ -1,0 +1,14 @@
+{
+  "plan_set_components": [
+    "Architectural plans — floor plan (1:50), all elevations (1:50), building sections (1:50), roof plan, site plan with coastal setback line",
+    "Structural plans — mat foundation plan and details, reinforced concrete frame framing plan, roof structure with coastal wind uplift connections, pool tank structural details",
+    "MEP coordination drawings — electrical panel schedule and single-line diagram, lighting plan with coastal IP-rated fixture schedule, plumbing/hydraulic layout with pool plumbing",
+    "Solar system drawings — roof panel layout, inverter and battery room plan, feed-in circuit to main panel",
+    "Detail sheets — wall sections (coastal cladding system), roof edge / eave details (wind uplift), opening details (wind-rated glazing installation), pool deck waterproofing details",
+    "Finish schedule — all surfaces with coastal durability specifications (salt-air environment Class C2M minimum for all metal elements)",
+    "Technical specifications document — materials, performance standards, installation requirements, coastal exposure classifications"
+  ],
+  "engineering_integration_confirmed": true,
+  "conflicts_resolved": true,
+  "client_signoff_milestone": "M3 — Executive Plans Approved"
+}

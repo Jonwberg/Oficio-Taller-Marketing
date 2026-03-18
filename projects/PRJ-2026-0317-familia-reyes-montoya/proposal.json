@@ -1,0 +1,49 @@
+{
+  "scope_summary": {
+    "es": "Oficio Taller propone una colaboración completa para el diseño y desarrollo de su residencia en Cerritos, Baja California Sur. Nuestro trabajo abarca seis fases: diseño conceptual, proyecto arquitectónico, coordinación de ingeniería, planos ejecutivos, licitación de contratistas y gestión de trámites.\n\nEl proyecto comprende 356 m² distribuidos en 10 espacios — desde la suite principal orientada hacia el Pacífico hasta la terraza cubierta, deck de alberca, studio y zona de paisaje. La organización del proyecto parte de un principio central: el horizonte como condición habitable, no como vista. Cada espacio se diseña a partir de esta premisa.\n\nNuestro alcance incluye la coordinación de ingeniería estructural (con énfasis en cargas de viento costeras), sistemas MEP, sistema solar, alberca, y la gestión ante SEMARNAT para el permiso de zona federal marítimo terrestre. Coordinamos con el arquitecto de paisaje y el diseñador de interiores que el cliente elija, garantizando que todos los elementos respondan a una misma lógica de proyecto.\n\nImportante: el permiso de zona costera (SEMARNAT) es un trámite independiente del proceso de diseño, con tiempos de resolución de 3 a 6 meses. Este proceso comienza en paralelo con el diseño para minimizar el impacto en el cronograma de construcción.",
+    "en": "Oficio Taller proposes a full-service engagement for the design and delivery of your residence in Cerritos, Baja California Sur. Our scope covers six phases: conceptual design, architectural design, engineering coordination, executive plans, contractor bidding, and permitting.\n\nThe project comprises 356 sqm distributed across 10 spaces — from the Pacific-facing master suite to the covered terrace, pool deck, studio, and landscape zone. The project is organized around a single premise: the horizon as a living condition, not a view. Every space is designed from this idea outward.\n\nOur scope includes coordination of structural engineering (with emphasis on coastal wind loads), MEP systems, solar systems, pool structure, and management of the SEMARNAT coastal zone federal permit. We coordinate with the landscape architect and interior designer of your choosing, ensuring all contributors work from a shared design logic.\n\nImportant: the coastal zone permit (SEMARNAT ZOFEMAT) is a regulatory process independent of design — with typical resolution times of 3 to 6 months. We initiate this process in parallel with design to minimize its impact on your construction timeline."
+  },
+  "budget_detail": {
+    "es": "Honorarios totales de arquitectura: USD $90,000\n\nPor fase:\n- Fase 1 — Diseño Conceptual: USD $18,000\n- Fase 2 — Proyecto Arquitectónico: USD $22,500\n- Fase 3 — Coordinación de Ingeniería: USD $13,500\n- Fase 4 — Planos Ejecutivos: USD $22,500\n- Fase 5 — Licitación: USD $9,000\n- Fase 6 — Trámites: USD $4,500\n\nCalendario de pagos:\n- M1 — Firma del contrato: 40% = USD $36,000\n- M2 — Aprobación del diseño conceptual: 30% = USD $27,000\n- M3 — Aprobación de planos ejecutivos: 30% = USD $27,000\n\nNota: Los honorarios de arquitectura no incluyen honorarios de ingeniería, arquitecto de paisaje, diseñador de interiores, derechos municipales, ni cargos de SEMARNAT. Estos se presupuestan y contratan por separado.",
+    "en": "Total architecture fees: USD $90,000\n\nBy phase:\n- Phase 1 — Conceptual Design: USD $18,000\n- Phase 2 — Architectural Design: USD $22,500\n- Phase 3 — Engineering Coordination: USD $13,500\n- Phase 4 — Executive Plans: USD $22,500\n- Phase 5 — Contractor Bidding: USD $9,000\n- Phase 6 — Permitting: USD $4,500\n\nPayment schedule:\n- M1 — Contract signing: 40% = USD $36,000\n- M2 — Conceptual design approval: 30% = USD $27,000\n- M3 — Executive plans approval: 30% = USD $27,000\n\nNote: Architecture fees do not include engineering fees, landscape architect, interior designer, municipal permit fees, or SEMARNAT charges. These are budgeted and contracted separately.",
+    "total": 90000,
+    "currency": "USD",
+    "line_items_ref": "budget.json"
+  },
+  "timeline_phases": [
+    {
+      "phase": "Phase 1 — Conceptual Design",
+      "duration_weeks": 5,
+      "key_milestone": "Client written approval of conceptual direction"
+    },
+    {
+      "phase": "Phase 2 — Architectural Design",
+      "duration_weeks": 8,
+      "key_milestone": "Client written approval of architectural design"
+    },
+    {
+      "phase": "Phase 3 — Engineering Coordination",
+      "duration_weeks": 6,
+      "key_milestone": "Coordinated engineering set complete"
+    },
+    {
+      "phase": "Phase 4 — Executive Plans",
+      "duration_weeks": 6,
+      "key_milestone": "Client written approval of executive plans"
+    },
+    {
+      "phase": "Phase 5 — Contractor Bidding",
+      "duration_weeks": 4,
+      "key_milestone": "Contractor selected"
+    },
+    {
+      "phase": "Phase 6 — Permitting",
+      "duration_weeks": 20,
+      "key_milestone": "All permits in hand (SEMARNAT + municipal) — critical path"
+    }
+  ],
+  "process_narrative": {
+    "es": "En Oficio Taller trabajamos con un número limitado de proyectos simultáneos para garantizar que cada uno reciba atención completa en cada fase. No delegamos el diseño — el mismo equipo que desarrolla el concepto lleva el proyecto hasta obra.\n\nNuestro proceso se articula en fases formales con hitos de aprobación documentados. Cada fase culmina con una presentación en la que mostramos el trabajo completo, explicamos las decisiones tomadas, y recibimos retroalimentación antes de avanzar. Esto no es un proceso de aprobación burocrática — es la manera en que garantizamos que el proyecto que llega a obra es el proyecto que el cliente aprobó.\n\nLas comunicaciones importantes se registran por escrito. Los acuerdos verbales se confirman por correo. No porque desconfiemos, sino porque un proyecto de esta duración y complejidad merece un registro claro.\n\nEstamos comprometidos con la honestidad sobre plazos y costos. Si un proceso como el permiso de SEMARNAT tiene un rango real de 3 a 6 meses, lo decimos desde el principio — no prometemos tiempos que no controlamos. Lo que sí controlamos es la calidad del trabajo y la velocidad con la que respondemos a cualquier situación que surja.",
+    "en": "At Oficio Taller, we work with a limited number of simultaneous projects to ensure each one receives full attention at every stage. We don't delegate design — the same team that develops the concept carries the project through to construction.\n\nOur process is structured around formal phases with documented approval milestones. Each phase ends with a presentation where we show the complete work, explain the decisions made, and receive feedback before proceeding. This isn't bureaucratic approval — it's how we ensure that what arrives at construction is exactly what the client approved.\n\nImportant communications are recorded in writing. Verbal agreements are confirmed by email. Not because of distrust, but because a project of this duration and complexity deserves a clear record.\n\nWe are committed to honesty about timelines and costs. If a process like the SEMARNAT coastal zone permit has a real range of 3 to 6 months, we say so from the beginning — we don't promise timelines we can't control. What we do control is the quality of the work and how quickly we respond to anything that comes up."
+  }
+}

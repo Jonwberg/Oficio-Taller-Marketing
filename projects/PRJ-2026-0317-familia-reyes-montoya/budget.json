@@ -1,0 +1,47 @@
+{
+  "project_name": "Familia Reyes-Montoya — standalone_residential — Cerritos, BCS",
+  "client_name": "Familia Reyes-Montoya",
+  "milestone_name": "M1 — Contract Signing",
+  "amount": 36000,
+  "payment_instructions": "Bank transfer to Oficio Taller. Bank: [BANK_NAME]. CLABE: [CLABE — TO BE CONFIGURED IN .env]. Reference: PRJ-2026-0317-familia-reyes-montoya.",
+  "currency": "USD",
+  "total": 90000,
+  "line_items": [
+    {
+      "phase": "Phase 1 — Conceptual Design",
+      "description": "Parti diagram, horizon-axis concept, 3D massing, site placement strategy, material direction board",
+      "amount": 18000,
+      "currency": "USD"
+    },
+    {
+      "phase": "Phase 2 — Architectural Design",
+      "description": "Full architectural drawings set, coastal wind-rated specifications, pool design coordination, solar preliminary layout, landscape coordination criteria, interior design criteria",
+      "amount": 22500,
+      "currency": "USD"
+    },
+    {
+      "phase": "Phase 3 — Engineering Coordination",
+      "description": "Structural (wind load), MEP, solar system sizing, pool plumbing/structure, foundation for coastal conditions",
+      "amount": 13500,
+      "currency": "USD"
+    },
+    {
+      "phase": "Phase 4 — Executive Plans",
+      "description": "Fully coordinated construction drawing set, detail sheets, finish schedule, technical specifications",
+      "amount": 22500,
+      "currency": "USD"
+    },
+    {
+      "phase": "Phase 5 — Contractor Bidding",
+      "description": "Bid package preparation, bid comparison matrix, contractor recommendation (minimum 2 bids, BCS coastal experience required)",
+      "amount": 9000,
+      "currency": "USD"
+    },
+    {
+      "phase": "Phase 6 — Permitting",
+      "description": "SEMARNAT coastal zone permit application + municipal building permit (Municipio de Los Cabos); tracking and corrections management",
+      "amount": 4500,
+      "currency": "USD"
+    }
+  ]
+}

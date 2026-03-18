@@ -1,0 +1,119 @@
+{
+  "run_id": "2026-03-17-TC-009",
+  "tc_id": "TC-009",
+  "segment": "B",
+  "project_id": "PRJ-2026-0317-familia-reyes-montoya",
+  "executed_at": "2026-03-17T20:35:00-07:00",
+  "schema_passes": true,
+  "real_api_calls": {
+    "asana": [
+      {
+        "operation": "create_task",
+        "project": "Decisiones",
+        "project_gid": "1213707394759200",
+        "task_name": "DG-01 Lead Review — Familia Reyes-Montoya",
+        "task_gid": "1213707387212379",
+        "section": "Untitled section → moved to Approve",
+        "comment_gid": "1213707395342271"
+      },
+      {
+        "operation": "create_task",
+        "project": "Decisiones",
+        "project_gid": "1213707394759200",
+        "task_name": "DG-02 Fit Review — Familia Reyes-Montoya",
+        "task_gid": "1213707395516777",
+        "section": "Untitled section → moved to Approve",
+        "comment_gid": "1213707828651815"
+      }
+    ],
+    "gmail": [
+      {
+        "operation": "send_client_email",
+        "to": "jon@oficio.mx",
+        "subject": "Cuestionario de Descubrimiento — Oficio Taller",
+        "thread_id": "19cfefe78e98fd60",
+        "purpose": "Elena discovery questionnaire to client"
+      },
+      {
+        "operation": "send_review_request",
+        "to": "jon@oficio.mx",
+        "subject": "[DG-02] Fit Decision — Familia Reyes-Montoya",
+        "thread_id": "19cfefdb3cc4566d",
+        "purpose": "Elena DG-02 review request to Marcela"
+      }
+    ]
+  },
+  "agents_executed": [
+    {
+      "agent": "Lupe",
+      "role": "Segment B — lead summary author",
+      "output_file": "projects/PRJ-2026-0317-familia-reyes-montoya/lead-summary.json",
+      "schema_pass": true,
+      "fields_validated": ["project_name", "source_channel", "raw_message", "initial_assessment", "recommended_action"],
+      "auto_fail_checks": "all clear",
+      "fallbacks": []
+    },
+    {
+      "agent": "Celia",
+      "role": "DG-01 decision routing",
+      "output_file": "projects/PRJ-2026-0317-familia-reyes-montoya/decision-event-dg01.json",
+      "schema_pass": true,
+      "fields_validated": ["project_id", "phase", "review_item", "reviewed_by", "decision", "comment", "timestamp", "source_channel", "next_action", "route_to", "sync_to_asana"],
+      "decision": "approve",
+      "route_to": "Lupe",
+      "route_to_field_correct": true,
+      "asana_task_gid": "1213707387212379",
+      "asana_comment_gid": "1213707395342271",
+      "fallbacks": []
+    },
+    {
+      "agent": "Elena",
+      "role": "Discovery questionnaire + client fit assessment + DG-02 dispatch",
+      "output_files": [
+        "projects/PRJ-2026-0317-familia-reyes-montoya/discovery-questionnaire.json",
+        "projects/PRJ-2026-0317-familia-reyes-montoya/client-fit-assessment.json"
+      ],
+      "schema_pass": true,
+      "questionnaire_fields_validated": ["sent_to", "sent_at", "project_type_question", "budget_question", "timeline_question", "location_question", "special_requirements_question", "design_style_question", "site_ownership_question"],
+      "fit_assessment_fields_validated": ["meeting_notes", "assessment_dimensions", "recommendation", "rationale"],
+      "language_check": "PASS — all questions in Spanish matching inbound Spanish message",
+      "recommendation": "proceed",
+      "average_dimension_score": 5.0,
+      "auto_fail_checks": "all clear",
+      "gmail_questionnaire_thread_id": "19cfefe78e98fd60",
+      "gmail_dg02_thread_id": "19cfefdb3cc4566d",
+      "asana_fit_gate_gid": "1213707395516777",
+      "fallbacks": [
+        "Client reply: seed data used (no live reply in thread — test mode)"
+      ]
+    },
+    {
+      "agent": "Celia",
+      "role": "DG-02 decision routing",
+      "output_file": "projects/PRJ-2026-0317-familia-reyes-montoya/decision-event-dg02.json",
+      "schema_pass": true,
+      "fields_validated": ["project_id", "phase", "review_item", "reviewed_by", "decision", "comment", "timestamp", "source_channel", "next_action", "route_to", "sync_to_asana"],
+      "decision": "approve",
+      "route_to": "Ana, Sol",
+      "route_to_field_correct": true,
+      "parallel_dispatch_correct": true,
+      "asana_task_gid": "1213707395516777",
+      "asana_comment_gid": "1213707828651815",
+      "fallbacks": []
+    }
+  ],
+  "schema_validation": {
+    "lead_summary": { "schema_pass": true, "missing": [] },
+    "decision_event_dg01": { "schema_pass": true, "missing": [], "route_to_field_correct": true },
+    "discovery_questionnaire": { "schema_pass": true, "missing": [] },
+    "client_fit_assessment": { "schema_pass": true, "missing_fields": [], "missing_dimensions": [], "average_dimension_score": 5.0 },
+    "decision_event_dg02": { "schema_pass": true, "missing": [], "route_to_field_correct": true }
+  },
+  "final_project_state": "discovery_complete",
+  "awaiting_gate": null,
+  "segment_B_complete": true,
+  "next_segment": "C",
+  "next_agents": ["Ana", "Sol"],
+  "dispatch_mode": "parallel",
+  "issues": []
+}

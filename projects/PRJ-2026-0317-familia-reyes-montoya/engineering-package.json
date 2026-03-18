@@ -1,0 +1,32 @@
+{
+  "systems_status": {
+    "structural": {
+      "status": "complete",
+      "engineer": "TBD — structural engineer to be contracted by client per SOW",
+      "notes": "Coastal wind load design complete per wind load study (site document received). Mat foundation on coastal substrate. Wind uplift calculations for horizontal roof with 2.5m eave extension at covered terrace. All connections specified for salt-air environment (marine-grade stainless). Pool tank: monolithic reinforced concrete, coordinated with hydraulic engineer."
+    },
+    "electrical": {
+      "status": "complete",
+      "engineer": "TBD — electrical engineer to be contracted by client per SOW",
+      "notes": "200A service panel. Outdoor circuits on GFCI at pool deck and covered terrace. LED lighting circuits. Solar feed-in circuit from roof array to main panel. Generator provision in mechanical room."
+    },
+    "lighting": {
+      "status": "complete",
+      "engineer": "TBD — lighting designer to be contracted by client (recommended add-on)",
+      "notes": "Lighting layout complete. Coastal IP-rated exterior fixtures throughout (IP65 minimum for exposed locations, IP68 for pool perimeter and deck). Interior: indirect cove lighting in living/dining to avoid competing with horizon view. Terrace: recessed ground fixtures and overhead heaters. Pool: underwater LED fixtures."
+    },
+    "water": {
+      "status": "complete",
+      "engineer": "TBD — hydraulic engineer to be contracted by client per SOW",
+      "notes": "Plumbing layout complete for all 3 bathrooms, kitchen, laundry, and outdoor hose bibs. Pool plumbing: recirculation pump, filtration, and saltwater chlorination system layout. Rainwater harvesting connection points included in roof drainage design. No municipal sewer connection at coastal site — septic/biodigestor system required; preliminary sizing included."
+    },
+    "solar": {
+      "status": "complete",
+      "engineer": "TBD — solar contractor to be contracted by client",
+      "notes": "Solar system in scope per special_features. Roof area available for panels: approximately 180 sqm on south-facing roof slope (optimized for coastal Pacific latitude). Preliminary system size: 12kW peak, estimated annual yield 18,000 kWh. Battery storage recommended due to coastal grid unreliability. Inverter and battery room in service area mechanical zone. Feed-in to main panel sized for net metering (CFE). Wind-rated mounting system specified for coastal exposure."
+    }
+  },
+  "conditional_systems": ["solar"],
+  "all_inputs_confirmed": true,
+  "conflicts_resolved": true
+}

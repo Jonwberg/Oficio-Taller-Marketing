@@ -1,0 +1,218 @@
+{
+  "scope_phases": [
+    {
+      "phase_number": 1,
+      "phase_name": "Conceptual Design (Diseño Conceptual)",
+      "deliverables": [
+        "Parti diagram and design narrative emphasizing horizon-axis organization as core design driver",
+        "Preliminary floor plan sketches (1:200 scale minimum) — 10 programmed spaces across 356 sqm total",
+        "Site placement / orientation concept — Pacific-facing horizon axis, wind shelter strategy, scrub-to-sand transition integration",
+        "3D conceptual massing model",
+        "Material and color direction board — coastal palette: salt-air resistant materials, wind-rated glazing, native scrub integration",
+        "Space arrangement diagram showing all 10 programmed spaces"
+      ],
+      "duration_weeks": "4-5"
+    },
+    {
+      "phase_number": 2,
+      "phase_name": "Architectural Design (Proyecto Arquitectónico)",
+      "deliverables": [
+        "Floor plans all levels (1:100 scale)",
+        "Elevations all four facades (1:100) — coastal wind exposure documented",
+        "Building sections minimum 2 (1:100)",
+        "Roof plan with wind load design notes",
+        "Site plan with property boundaries, setbacks, access, coastal zone setback line",
+        "Interior design criteria document (coordination with TBD interior designer)",
+        "Window and door schedule — wind-rated specifications for coastal exposure",
+        "Preliminary structural coordination sketch — wind load study inputs integrated",
+        "Pool design coordination (pool structure in scope — engineering in Phase 3)",
+        "Solar system preliminary layout (in scope per client brief — system sizing in Phase 3)",
+        "Landscape coordination criteria document (landscape architect TBD — coordination in scope)"
+      ],
+      "duration_weeks": "7-8"
+    },
+    {
+      "phase_number": 3,
+      "phase_name": "Engineering Coordination (Coordinación de Ingeniería)",
+      "deliverables": [
+        "Structural engineering drawings — wind load design per estudio de cargas de viento (required site document)",
+        "Electrical single-line diagram and panel schedules",
+        "Lighting layout plan with fixture specifications — coastal IP-rated fixtures specified",
+        "Plumbing and hydraulic layout including pool plumbing",
+        "Solar system layout and sizing (in scope per special_features)",
+        "Foundation plan and details — coastal soil conditions applied",
+        "Pool structural engineering coordination",
+        "Landscape coordination: referral to landscape architect (TBD at client's choice); integration criteria provided by Oficio Taller"
+      ],
+      "duration_weeks": "5-6"
+    },
+    {
+      "phase_number": 4,
+      "phase_name": "Executive Plans (Planos Ejecutivos)",
+      "deliverables": [
+        "Fully coordinated construction drawing set (architectural + structural + MEP)",
+        "Detail sheets: wall sections, roof details, coastal exposure connection details, openings",
+        "Finish schedule (all surfaces — salt-air resistant specifications throughout)",
+        "Door and window schedule with wind-rated specifications",
+        "Built-in furniture drawings (kitchen, closets, built-in shelving)",
+        "Technical specifications document"
+      ],
+      "duration_weeks": "5-6"
+    },
+    {
+      "phase_number": 5,
+      "phase_name": "Contractor Bidding (Licitación)",
+      "deliverables": [
+        "Bid package preparation (executive plans + spec document — minimum 2 contractors)",
+        "Bid comparison matrix (contractor name, total, key line items, timeline, coastal construction experience notes)",
+        "Recommendation with rationale — local BCS contractors with coastal residential experience prioritized"
+      ],
+      "duration_weeks": "3-4"
+    },
+    {
+      "phase_number": 6,
+      "phase_name": "Permitting (Trámites)",
+      "deliverables": [
+        "SEMARNAT coastal zone permit application (Permiso de Zona Federal Marítimo Terrestre) — critical path item; process begins as early as possible",
+        "Municipal building permit application (Municipio de Los Cabos)",
+        "Submission to both authorities",
+        "Tracking and correction management until permits issued"
+      ],
+      "duration_weeks": "16-24 (coastal zone permit SEMARNAT process is critical path)"
+    }
+  ],
+  "payment_schedule": [
+    {
+      "milestone": "M1",
+      "name": "Contract Signing",
+      "percentage": 40,
+      "amount": 36000,
+      "currency": "USD",
+      "trigger_event": "Signed SOW + first payment received"
+    },
+    {
+      "milestone": "M2",
+      "name": "Concept Design Approved",
+      "percentage": 30,
+      "amount": 27000,
+      "currency": "USD",
+      "trigger_event": "Client written approval of Phase 1 conceptual design"
+    },
+    {
+      "milestone": "M3",
+      "name": "Executive Plans Approved",
+      "percentage": 30,
+      "amount": 27000,
+      "currency": "USD",
+      "trigger_event": "Executive plans package approved by client"
+    }
+  ],
+  "responsibilities_matrix": [
+    {
+      "deliverable": "Conceptual design (horizon-axis parti, massing, materials)",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Client"
+    },
+    {
+      "deliverable": "Architectural drawings",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Client"
+    },
+    {
+      "deliverable": "Structural calculations (wind load)",
+      "responsible_party": "Structural engineer",
+      "reviewed_by": "Oficio Taller coordinates"
+    },
+    {
+      "deliverable": "MEP engineering (electrical, plumbing, solar)",
+      "responsible_party": "MEP engineers",
+      "reviewed_by": "Oficio Taller coordinates"
+    },
+    {
+      "deliverable": "Pool structural engineering",
+      "responsible_party": "Structural/pool engineer",
+      "reviewed_by": "Oficio Taller coordinates"
+    },
+    {
+      "deliverable": "Solar system design",
+      "responsible_party": "Solar engineer/contractor",
+      "reviewed_by": "Oficio Taller coordinates"
+    },
+    {
+      "deliverable": "Landscape design",
+      "responsible_party": "Landscape architect (TBD — client selects)",
+      "reviewed_by": "Oficio Taller coordination criteria"
+    },
+    {
+      "deliverable": "Interior design",
+      "responsible_party": "Interior designer (TBD — client selects)",
+      "reviewed_by": "Oficio Taller coordination criteria"
+    },
+    {
+      "deliverable": "Executive plans set",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Client + engineers"
+    },
+    {
+      "deliverable": "Bid package",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Client selects contractor"
+    },
+    {
+      "deliverable": "SEMARNAT coastal zone permit",
+      "responsible_party": "Oficio Taller (Paco)",
+      "reviewed_by": "SEMARNAT / client"
+    },
+    {
+      "deliverable": "Municipal building permit",
+      "responsible_party": "Oficio Taller (Paco)",
+      "reviewed_by": "Municipio de Los Cabos"
+    },
+    {
+      "deliverable": "Payment milestone sign-off",
+      "responsible_party": "Client",
+      "reviewed_by": "Oficio Taller invoices"
+    }
+  ],
+  "exclusions": [
+    "Structural, electrical, plumbing, civil, and solar engineering fees (client contracts engineers directly; Oficio Taller coordinates)",
+    "Permit fees, SEMARNAT charges, municipal taxes, and government charges (client responsibility)",
+    "Contractor selection or construction contracts (Oficio Taller recommends; client decides)",
+    "Furniture, art, décor, or movable equipment not shown in built-in furniture drawings",
+    "Topographic survey — required site document; client provides",
+    "Wind load study — required site document; client provides",
+    "Coastal zone permit (SEMARNAT) — Paco prepares application; client signs and is named applicant",
+    "Landscape architect and interior designer fees (referral services; clients contracts directly)",
+    "Pool contractor selection or construction (Oficio Taller provides engineering coordination and design specs only)",
+    "Construction cost guarantees (estimates are preliminary; final cost determined by contractor bids)",
+    "Construction supervision (Phase 7 — available as added service; not included in base scope)"
+  ],
+  "revision_assumptions": {
+    "phase_1": "2 rounds included. Additional: MXN 8,000/day.",
+    "phase_2": "2 rounds included. Additional: MXN 10,000/day.",
+    "phase_3": "1 round of structural coordination revision included. Client program additions billed additionally.",
+    "phase_4": "1 round of coordination revision included. Client changes after executive plan approval require a change order."
+  },
+  "project_type_clauses": [
+    {
+      "clause": "residential_standard",
+      "title": "Standard Residential Scope",
+      "text": "This project is a private standalone residential building on an individually owned lot. All design decisions are made exclusively between the client and Oficio Taller unless otherwise noted. No HOA, covenant, or third-party design review applies unless disclosed by the client before contract signing."
+    },
+    {
+      "clause": "client_changes",
+      "title": "Client-Initiated Program Changes",
+      "text": "Changes to the approved program requested by the client after a phase milestone has been approved will be scoped and billed as a change order. Oficio Taller will not absorb rework costs from client-initiated changes."
+    },
+    {
+      "clause": "site_conditions",
+      "title": "Site Condition Discovery",
+      "text": "Design is based on information provided by the client and publicly available municipal records. If site conditions discovered during construction (soil, utilities, encroachments) require design changes, these will be scoped as a change order."
+    },
+    {
+      "clause": "esignature",
+      "title": "Electronic Signature",
+      "text": "This document is valid when signed electronically by the client and an authorized Oficio Taller representative. Electronic signatures carry the same legal weight as physical signatures under Mexican federal law (NOM-151-SCFI)."
+    }
+  ]
+}

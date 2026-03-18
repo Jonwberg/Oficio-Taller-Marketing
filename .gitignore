@@ -8,5 +8,5 @@ approval/pages/*.html
 campaigns/published/*/assets/
 *.log
 publisher/bin/
-tests/results/
+# tests/results/ tracked — run history
 entrega/gmail-credentials.json

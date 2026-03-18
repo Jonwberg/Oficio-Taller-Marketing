@@ -38,12 +38,25 @@ Read `state.json` and `lead-summary.json`. Extract:
 
 ## Step 2: Write discovery-questionnaire.json
 
+**Before writing the questionnaire, detect two things from `lead-summary.json`:**
+
+1. **Inbound language** — Was the client's initial message in English or Spanish?
+   - If English: write all question text in English; set `questionnaire_language: "en"`
+   - If Spanish (default): write all question text in Spanish; set `questionnaire_language: "es"`
+
+2. **Project type branch** — Read `project_type` from `state.json`:
+   - `public_civic` → use institutional/government framing (see below)
+   - All other types → use standard residential/commercial framing
+
 The questionnaire has exactly 9 required fields. Write the JSON now (sending comes next):
+
+**Standard branch (residential/commercial):**
 
 ```json
 {
   "sent_to": "[client_email from state.json]",
   "sent_at": "[ISO-8601 current time]",
+  "questionnaire_language": "[es|en]",
   "project_type_question": "¿Qué tipo de proyecto tiene en mente? ¿Casa habitación, ampliación, proyecto interior, desarrollo inmobiliario? ¿Ya tiene terreno o predios definidos?",
   "budget_question": "¿Tiene en mente un presupuesto aproximado total para construcción? ¿Y para los honorarios de diseño y coordinación?",
   "timeline_question": "¿En qué etapa está el proyecto actualmente? ¿Cuándo le gustaría iniciar la fase de diseño? ¿Tiene alguna fecha límite de entrega o de inicio de obra?",
@@ -54,11 +67,30 @@ The questionnaire has exactly 9 required fields. Write the JSON now (sending com
 }
 ```
 
+**Institutional branch (public_civic only):** Use government/institutional framing for all questions:
+
+```json
+{
+  "sent_to": "[client_email from state.json]",
+  "sent_at": "[ISO-8601 current time]",
+  "questionnaire_language": "[es|en]",
+  "project_type_question": "¿Qué tipo de equipamiento o infraestructura pública contempla el proyecto? ¿Cuál es la entidad contratante y el marco normativo aplicable?",
+  "budget_question": "¿Cuál es el presupuesto autorizado para el proyecto? ¿Está sujeto a licitación pública, adjudicación directa, o invitación restringida?",
+  "timeline_question": "¿Cuál es el calendario de ejecución establecido? ¿Existen fechas de entrega comprometidas ante autoridades o ciudadanía?",
+  "location_question": "¿Cuál es la ubicación del predio o inmueble? ¿La propiedad es pública o exige proceso de expropiación o cesión?",
+  "special_requirements_question": "¿El proyecto debe cumplir con normas específicas de accesibilidad universal, IMSS, SEP, SSA u otra normativa sectorial?",
+  "design_style_question": "¿Existen lineamientos de imagen institucional o identidad visual que el proyecto deba respetar?",
+  "site_ownership_question": "¿Existe expediente técnico previo, estudios de suelo, o planos de predios que podamos consultar?"
+}
+```
+
+**English translation:** If `questionnaire_language` is `en`, translate the applicable branch into English before writing to JSON. Use native English — not literal translation.
+
 Write to: `projects/[project_id]/discovery-questionnaire.json`
 
 ## Step 3: Send questionnaire to client
 
-Format as a readable email (not a JSON dump). The questions in Spanish feel natural; write the email body accordingly.
+Format as a readable email (not a JSON dump). Write the email in the `questionnaire_language` detected in Step 2. Questions must feel natural in that language.
 
 ```bash
 python entrega/gmail_client.py send_client_email \

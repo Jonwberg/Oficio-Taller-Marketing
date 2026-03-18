@@ -46,7 +46,7 @@ From the reply text, extract:
 | "Pass to Agent" (any case) | `pass_to_agent` |
 | Ambiguous or unclear | `pass_to_agent` (default) |
 
-**comment** — any text after the decision keyword. Preserve verbatim. null if none.
+**comment** — any text after the decision keyword. **Copy verbatim from the source decision document.** If Marcela's reply contains comment text, it must appear in this field exactly as written — do not paraphrase, summarize, or omit. Set to `null` only when the source document contains no comment text whatsoever (i.e., the reply is a single word: "Approve", "Reject", or "Pass to Agent" with nothing else).
 
 ## Step 2: Write decision-event.json
 
@@ -168,6 +168,8 @@ If Asana is unavailable: log `ASANA_UNAVAILABLE: would update decision_status fo
 - approve → dispatch **Tomás**
 - reject → dispatch **Ana** with revision instruction and Marcela's comment
 - pass_to_agent → dispatch **Tomás** (same as approve)
+
+⚠ **DG-03 routing validation:** On approve or pass_to_agent, `route_to` in decision-event.json MUST be `"Tomás"`. Setting `route_to` to `"Marcela"` or any other agent on DG-03 approve/pass_to_agent is an error. Verify before writing.
 
 **DG-04 (architect gate):**
 - approve → dispatch **Bruno**

@@ -62,12 +62,17 @@ Document the concept deliverables and your assessment:
       "notes": "[floor plan summary — does it match the area program?]"
     }
   },
+  "presentation_date": "[ISO-8601 date the concept was presented to Marcela/client — required]",
   "presentation_milestone": "[M2 — Concept Approved or milestone name from scope-of-work.json]",
-  "review_notes": "[2–3 sentences: overall assessment of concept against approved program. Flag any program deviations. Recommend approval or identify what needs revision.]"
+  "review_notes": "[2–3 sentences written AFTER the presentation has occurred: overall assessment of the presented concept against the approved program. This is a post-presentation record, not a pre-presentation checklist. Flag any program deviations observed during presentation. Recommend approval or identify what needs revision.]"
 }
 ```
 
 **Required deliverables_checklist keys:** `3d_model`, `renders`, `material_direction`, `color_direction`, `space_arrangement` — all five must be present even if a deliverable is pending.
+
+**⚠ AUTO-FAIL CONDITIONS:**
+- `presentation_date` is missing or null — the date the concept was presented is required
+- `review_notes` reads as a pre-presentation checklist or future-tense plan (e.g., "will be presented…") rather than a post-presentation assessment
 
 Write to: `projects/[project_id]/concept-review.json`
 

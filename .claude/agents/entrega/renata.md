@@ -65,10 +65,15 @@ Read all four input files. Extract:
 ```
 
 **Critical requirements:**
-- Both `es` and `en` keys must be present and populated for `scope_summary` and `process_narrative`
-- No placeholder text (e.g., "[TO BE COMPLETED]") anywhere in the document
-- Budget figures must match `budget.json` exactly
-- SOW scope must match `scope-of-work.json` exactly — do not add or remove deliverables
+
+**⚠ AUTO-FAIL CONDITIONS — producing a file with any of these errors is an automatic scoring failure:**
+- `scope_summary.es` or `scope_summary.en` is missing, null, or an empty string
+- `process_narrative.es` or `process_narrative.en` is missing, null, or an empty string
+- Any field contains placeholder text (e.g., "[TO BE COMPLETED]", "[Spanish version]", "[placeholder]")
+- Budget figures in `budget_detail` do not match `budget.json` exactly
+- SOW deliverables in `scope_summary` do not match `scope-of-work.json` scope_phases
+
+**Both languages are non-negotiable.** The proposal is a bilingual client document. A Spanish-only or English-only proposal is incomplete and will fail review. Write both versions for every section before writing the file.
 
 Write to: `projects/[project_id]/proposal.json`
 

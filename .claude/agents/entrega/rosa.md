@@ -56,6 +56,8 @@ Key elements the message must include:
 - Clear description of what the proposal contains
 - Explicit call to action: respond to approve, request revisions, or schedule a call
 
+**⚠ AUTO-FAIL: `status` MUST be `"draft"`.** Setting `status` to `"sent"`, `"delivered"`, or any other value at this step is an automatic scoring failure. The message is not sent to the client until Marcela approves it at DG-06. Writing `"sent"` before DG-06 approval would bypass Marcela's review in production.
+
 Write to: `projects/[project_id]/client-communication.json` with `status: "draft"`
 
 ## Step 3: Send DG-06 review request to Marcela

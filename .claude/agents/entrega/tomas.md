@@ -111,7 +111,21 @@ Note: if seed data provides an explicit payment schedule (e.g. TC-001 payment_sc
 }
 ```
 
-**Critical:** `project_type_clauses` must come from the template verbatim — include all required clauses for the project type. Do not omit or paraphrase.
+**Critical — all 6 top-level fields are required and must be fully populated:**
+
+| Field | Required content |
+|---|---|
+| `scope_phases` | Every phase from the template — minimum 4 phases for standalone_residential, as defined in the template. Each phase must include `phase_number`, `phase_name`, `deliverables` array (all template deliverables listed), and `duration_weeks`. |
+| `payment_schedule` | Every milestone from the template (M1–M5 for standalone_residential). Each milestone must include `milestone`, `name`, `percentage`, `amount` (calculated), `currency`, and `trigger_event`. |
+| `responsibilities_matrix` | All major deliverables listed with `deliverable`, `responsible_party`, and `reviewed_by`. Minimum one row per scope phase. |
+| `exclusions` | All exclusions from the template listed as individual strings. Do not collapse multiple exclusions into one string. |
+| `revision_assumptions` | All four phases (`phase_1` through `phase_4`) must be present with included round count and additional-revision rate from template. |
+| `project_type_clauses` | All clauses from the template `project_type_clauses` section — verbatim. Do not omit or paraphrase any clause. |
+
+**Auto-fail conditions:**
+- Any of the 6 top-level fields is missing or is an empty array/object
+- `payment_schedule` amounts do not sum to the `architecture_fee` from cost-basis.json (within 1% rounding tolerance)
+- `project_type_clauses` is shorter than the template's clause list for this project type
 
 Write to: `projects/[project_id]/scope-of-work.json`
 

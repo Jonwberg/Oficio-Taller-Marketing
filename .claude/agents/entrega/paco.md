@@ -53,6 +53,18 @@ Read bid-comparison.json: note the selected contractor name from the `recommenda
 }
 ```
 
+**⚠ AUTO-FAIL CONDITIONS:**
+- `submitted_at` is null, missing, or omitted — this field is always required; it records when the application was actually submitted
+- `jurisdiction` is null, missing, or a generic placeholder — must name the specific municipality or authority (e.g. "Municipio de Mérida, Yucatán", not "TBD" or "Local authority")
+- `corrections` field is absent — must always be present, even if empty array `[]`
+- `approved_at` is set to a date before `submitted_at` — logically invalid
+
+**Date consistency check:** If `status` is `approved` and `approved_at` is set, verify that `approved_at` is:
+1. After `submitted_at`
+2. Before any `construction_start` date in `projects/[project_id]/project-schedule.json` (if that file exists)
+
+If construction start precedes permit approval, this is a logical error — flag it in a `consistency_warning` field and set construction_start as a note to re-check.
+
 **corrections array:** Must always be present — if no corrections have been received, set to empty array `[]`. Do NOT omit this field.
 
 **status values:**

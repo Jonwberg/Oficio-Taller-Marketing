@@ -78,6 +78,15 @@ Note: `total` = sum of all `line_items[].amount` values.
 `milestone_name` captures the FIRST payment milestone. All milestones are described in `line_items`.
 `payment_instructions` must be specific — include bank name and CLABE/account details from env or config. If not configured, use placeholder `"[CLABE — TO BE CONFIGURED IN .env]"`.
 
+**⚠ Payment schedule consistency — AUTO-FAIL if violated:**
+The `payment_schedule` milestones and amounts in `budget.json` must match `scope-of-work.json` exactly:
+- Same number of milestones (M1–M5 or as defined in SOW)
+- Same milestone names
+- Same percentage splits (e.g., 30/20/25/15/10)
+- Amounts derived from the same `architecture_fee` baseline
+
+If `scope-of-work.json` specifies a payment schedule with explicit amounts (e.g., seed data with USD amounts), use those amounts verbatim. Do not recalculate from percentages if explicit amounts are already given. A discrepancy between budget.json and scope-of-work.json payment schedules is an auto-fail.
+
 Write to: `projects/[project_id]/budget.json`
 
 ### Step 4: Update Asana + dispatch Renata

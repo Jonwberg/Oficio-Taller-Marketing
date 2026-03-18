@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "D",
+  "phase": "D",
+  "gate_id": "DG-06",
+  "gate_type": "marcela",
+  "agent_tested": "Celia",
+  "deliverable": "decision-routing-DG06",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 4,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 4
+  },
+  "score_evidence": {
+    "completeness": "Both dg-06.json and decision-event-DG-06.json present. All 11 payload fields in decision-event-DG-06.json: project_id ✓, phase=DG-06 ✓, review_item=client-proposal ✓, reviewed_by=Marcela ✓, decision=approve ✓, comment=null ✓, timestamp=2026-03-20T09:00:00-07:00 ✓, source_channel=email ✓, next_action=dispatch Legal for contract review; Rosa sends proposal email to client ✓, route_to=Legal ✓, sync_to_asana=true ✓. Score 5.",
+    "accuracy": "Score 4: dg-06.json routes to Vera (contract in progress — dispatch Vera for client activation) while decision-event-DG-06.json routes to Legal (dispatch Legal for contract review). Similar to DG-05, two sub-steps captured under same gate ID. Route_to=Legal in the canonical decision-event file is correct (Legal review happens after client proposal accepted). However, Vera being routed to for 'client activation' in dg-06 is also correct for a different step. Dual routing is functionally correct but creates same ambiguity as DG-05.",
+    "clarity": "Score 4: comment=null. Dual-routing structure creates minor clarity gap. next_action in decision-event is multi-action ('dispatch Legal; Rosa sends proposal email') — this is informative but slightly unconventional for a routing event.",
+    "state_sync": "Score 3 (simulated run — ASANA_UNAVAILABLE). sync_to_asana=true logged.",
+    "timing": "Decision event at 2026-03-20T09:00:00. One day after DG-05 (March 19). Prompt. Score 5.",
+    "decision_readiness": "Score 4: Legal receives project_id, next_action calling for contract review. Context adequate for Legal to begin. Rosa's send step also captured in next_action."
+  },
+  "average_score": 4.17,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "DG-06 routing is functionally correct. Similar dual-routing pattern to DG-05: dg-06 routes to Vera (activation), decision-event-DG-06 routes to Legal (contract review). Both use route_to field. The pattern of two routing files per gate is consistent across all gates — a design feature, not a bug. Minor clarity gap from comment=null and dual next_action.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "dg-06.json: route_to=Vera. decision-event-DG-06.json: route_to=Legal. Both use route_to field. Consistent pattern with DG-05 two-step routing.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

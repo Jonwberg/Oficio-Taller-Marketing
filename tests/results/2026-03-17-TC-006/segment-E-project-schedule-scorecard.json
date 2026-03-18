@@ -1,0 +1,24 @@
+{
+  "run_id": "2026-03-17-TC-006",
+  "segment": "E",
+  "phase": "E",
+  "gate_id": "DG-06",
+  "gate_type": "vera_activation",
+  "agent_tested": "Pablo",
+  "deliverable": "project-schedule",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 4
+  },
+  "average_score": 4.0,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "n/a",
+  "decision_commentary": "Project schedule covers all 6 SOW scope phases as a phases array with start/end dates, durations, and milestone payments linked to trigger events. Milestone dates map covers: contract_signed, concept_approved, design_approved, engineering_complete, executive_plans_approved, permit_approved, construction_start, and construction_complete. Total duration: 18 months — realistic for a 160 sqm coastal residential project. Completeness scored 4: 'dependencies' field is absent from the schema — the rubric requires a dependencies map linking each phase to its predecessor. Phases 4 and 5 run concurrently (both start 2026-06-17), which is correct and noted. Accuracy scored 5: ISO-8601 dates, no dependency inversions, timeline realistic. Clarity scored 4: critical path is not explicitly marked. Timing scored 4: schedule appears to have been produced in the simulated run, but the site_docs_complete field in site-readiness-report is null — activation condition not fully confirmed before schedule production.",
+  "payload_fields_verified": 4,
+  "passed": true,
+  "gap_note": "Dependencies field missing from schema. site_docs_complete is null in site-readiness-report — one of three activation conditions (contract_signed + site_docs_complete + deposit_confirmed) is not confirmed true before schedule was produced."
+}

@@ -1,0 +1,32 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "D",
+  "phase": "D",
+  "gate_id": "DG-04",
+  "gate_type": "marcela",
+  "agent_tested": "Bruno",
+  "deliverable": "budget",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 4,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5
+  },
+  "score_evidence": {
+    "completeness": "All required fields present: project_name, client_name, milestone_name (M1), amount (36000), payment_instructions, currency (USD), line_items (5-entry array). All 5 payment milestones present in line_items array covering all SOW phases. Total field present (180000 USD). Score 5.",
+    "accuracy": "Budget total is $180,000 USD which matches seed data total_architecture_fee_usd exactly. However, note that budget.json is milestone-based (USD fee schedule) not a reconciliation against cost_basis.json MXN total_estimate (72,105,000 MXN). The rubric calls for total of milestone amounts vs total_estimate within 2%. Interpreting: budget.json totals $180,000 USD architecture fee which matches cost-basis note_usd_comparison architecture_fee ($180,000 USD per seed data). The cost_basis total_estimate (72.1M MXN) is the construction + arch + engineering total — budget.json correctly represents only the architecture fee schedule. Score 4 (small ambiguity in reconciliation methodology — costs in different currencies with different scope coverage, but fee total is exact).",
+    "clarity": "Payment instructions present: bank transfer with CLABE placeholder (TO BE CONFIGURED in .env — this is an appropriate placeholder, not missing). Currency explicit (USD). Milestones labeled. Score 4: CLABE placeholder means client cannot pay without one additional step (CLABE configuration), though this is by design for the test environment.",
+    "state_sync": "Score 3 (simulated run — ASANA_UNAVAILABLE). budget_complete state and link to scope-of-work task not confirmed.",
+    "timing": "Budget produced after DG-04 confirmation (scope-of-work approval). Before Renata begins proposal. Score 5."
+  },
+  "average_score": 4.2,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Solid budget deliverable. All 5 milestones present with correct 20/15/20/25/20 percentages totaling $180,000 USD. Architecture fee total matches seed data exactly. Line items cover all SOW phases. CLABE placeholder is expected in test environment. No auto-fail conditions triggered.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Budget feeds directly to Renata (no separate gate per rubric). Correct per segment D flow — Bruno passes to Renata without a Marcela gate on the budget step.",
+  "payload_fields_verified": 7,
+  "passed": true
+}

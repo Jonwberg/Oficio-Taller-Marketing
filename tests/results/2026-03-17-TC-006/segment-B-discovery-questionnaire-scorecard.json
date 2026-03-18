@@ -1,0 +1,25 @@
+{
+  "run_id": "2026-03-17-TC-006",
+  "segment": "B",
+  "phase": "B",
+  "gate_id": "DG-02",
+  "gate_type": "marcela",
+  "agent_tested": "Elena",
+  "deliverable": "discovery-questionnaire",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5,
+    "language": 4,
+    "decision_readiness": 5
+  },
+  "average_score": 4.29,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Questionnaire covers all key topics: project location, site area, site conditions, bedrooms, bathrooms, total sqm, special features, budget, timeline, design style, occupancy, and RFC. Budget and project type questions fully addressed — no auto-fail. Scored 4 on completeness: 'site_ownership_status' not explicitly listed as a separate field (deduced from context). Accuracy is strong — questions are tailored to standalone residential with pool. Language scored 4: responses are stored as structured JSON fields rather than warm conversational questions, though content is correct. State_sync scored 3 per simulated run note. Decision readiness is high — all 8 required topics covered for fit assessment.",
+  "payload_fields_verified": 12,
+  "passed": true
+}

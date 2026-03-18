@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "C",
+  "phase": "C",
+  "gate_id": "DG-03",
+  "gate_type": "marcela",
+  "agent_tested": "Ana",
+  "deliverable": "cost-basis",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 4,
+    "clarity": 3,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 4
+  },
+  "average_score": 4.0,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Completeness scored 5: all eight required fields present — cost_per_sqm=20000, base_construction_cost=5000000, architecture_fee_pct=0.12, architecture_fee=600000, engineering_allowance=250000, contingency_pct=0.05, total_estimate=6162500, assumptions. Accuracy scored 4: base_construction_cost = 250 × 20000 = 5,000,000 MXN — correct. Architecture fee = 5,000,000 × 0.12 = 600,000 — correct. Contingency should be 5% × (5,000,000 + 600,000 + 250,000) = 5% × 5,850,000 = 292,500. Total = 5,000,000 + 600,000 + 250,000 + 292,500 = 6,142,500. The file states 6,162,500 — a difference of 20,000 MXN (~0.3%). This is a minor arithmetic discrepancy in the contingency calculation. Structure is correct; scored 4. Clarity scored 3: document is not explicitly labeled as a 'preliminary estimate' — the field names and assumptions are present but there is no 'preliminary_estimate' label or similar flag; assumptions note 'MXN 20,000/sqm construction cost for Los Cabos standalone residential' is specific but the preliminary status is only implied. State_sync scored 3: simulated run. Timing scored 5: produced concurrently with area program. Decision_readiness scored 4: Marcela can assess general budget feasibility; the missing 'preliminary' label is a minor gap but all key figures are present.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "Celia routing for DG-03 scored separately.",
+  "payload_fields_verified": 8,
+  "passed": true
+}

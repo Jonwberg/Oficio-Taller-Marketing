@@ -1,0 +1,30 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "G",
+  "phase": "G",
+  "gate_id": "DG-09",
+  "gate_type": "celia",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-dg09",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "All 11 required payload fields present: project_id ✓, phase='DG-09' ✓, review_item='budget-alignment' ✓, reviewed_by='Marcela' ✓, decision='approve' ✓, comment (non-null) ✓, timestamp='2026-09-16T09:00:00-07:00' ✓, source_channel='email' ✓, next_action='dispatch Hugo for executive plans' ✓, route_to='Hugo' ✓, sync_to_asana=true ✓.",
+    "accuracy": "Decision='approve' correct. route_to='Hugo' correct — executive plans follow budget alignment approval. Decision type correctly classified.",
+    "clarity": "Score 5: comment is non-null: 'Budget within client range. Proceed to executive plans.' Comment preserved verbatim. Concise and specific.",
+    "state_sync": "Score 3 per simulated run rule — no live Asana.",
+    "timing": "Event at 2026-09-16T09:00:00 — same day as Phase 4 start (Phase 3 ends 2026-09-15, Phase 4 starts 2026-09-16). Perfect timing.",
+    "decision_readiness": "Hugo receives full context including Marcela's confirmation that budget is within range."
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "auto_fail_notes": "route_to='Hugo' correct ✓. All 11 fields present ✓. Comment preserved ✓. No auto-fail triggered.",
+  "passed": true
+}

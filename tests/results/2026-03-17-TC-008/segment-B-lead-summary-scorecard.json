@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "B",
+  "phase": "B",
+  "gate_id": "DG-01",
+  "gate_type": "marcela",
+  "agent_tested": "Lupe",
+  "deliverable": "lead-summary",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "All 5 required fields present: project_name, source_channel, raw_message, initial_assessment, recommended_action. Raw message preserved verbatim. Initial assessment is detailed and substantive.",
+    "accuracy": "Project correctly classified as commercial_hotel. Legitimacy assessment is fully defensible — client has specific program, location, budget, and site details. Stream flagged as hydrologic study trigger — accurate and proactive.",
+    "clarity": "Marcela can approve in under 15 seconds. Project name, channel, raw message, and assessment all immediately clear. Recommended action is 'proceed to discovery' — explicit and unambiguous.",
+    "state_sync": "Score 3 per simulated run rule — no live Asana. Correct fallback behavior documented.",
+    "timing": "Summary produced in same session as lead record creation. No delay.",
+    "decision_readiness": "Recommended action explicit. Assessment includes budget feasibility check (stream/hydrologic flag), program scope, and engagement quality. Marcela has all context needed."
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Excellent lead summary. Hydrologic study requirement surfaced in initial assessment — sets up correct Segment C behavior. All auto-fail conditions clear.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-01 decision-event routes to Lupe (Segment B). next_action correctly states dispatch Lupe for lead summary and Elena dispatch. All 11 payload fields present in decision-event-dg01.json.",
+  "payload_fields_verified": 5,
+  "passed": true
+}

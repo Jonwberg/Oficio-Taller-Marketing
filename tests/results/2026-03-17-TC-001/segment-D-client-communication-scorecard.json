@@ -1,0 +1,27 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "D",
+  "phase": "D",
+  "gate_id": "DG-06",
+  "gate_type": "marcela",
+  "agent_tested": "Rosa",
+  "deliverable": "client-communication",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 3,
+    "state_sync": 3,
+    "timing": 5,
+    "brand_voice": 4,
+    "decision_readiness": 4
+  },
+  "average_score": 4.0,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Completeness scored 4: project_name ('Casa Moderna in Los Cabos'), project_reference ('PRJ-2026-0317-tc001-casa-moderna'), channel, message_body (bilingual), status all present. Message includes project name and context but 'clear action requested' is weak — there is no explicit call to action (e.g., 'please review and let us know if you have questions by X date'). Score 4 rather than 5 for this gap. Accuracy scored 5: message accurately reflects the current state — proposal being sent for client review; no inaccurate or misleading information. Clarity scored 3: the message says 'quedamos a sus órdenes para resolver cualquier duda' / 'we are available to answer any questions' — this implies availability but does not give the client one clear next step (e.g., 'please confirm receipt and share your questions by X date'). Rubric requires one clear next step explicitly stated. State_sync scored 3: status='sent' rather than 'draft' — rubric requires message to be in draft status awaiting Marcela approval before send. In this simulated run context the status reflects the pipeline output but is technically wrong for the pre-approval state. Timing scored 5: produced in correct pipeline order after proposal assembly. Brand_voice scored 4: professional and warm Spanish/English message; 'adjuntamos nuestra propuesta' is appropriate; however the brevity makes it slightly generic — lacks the design-engaged warmth characteristic of Oficio Taller. Decision_readiness scored 4: Marcela can approve in under 60 seconds; one phrase ('quedamos a sus órdenes') could be more specific.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Celia routing at DG-06 scored separately.",
+  "payload_fields_verified": 4,
+  "passed": true
+}

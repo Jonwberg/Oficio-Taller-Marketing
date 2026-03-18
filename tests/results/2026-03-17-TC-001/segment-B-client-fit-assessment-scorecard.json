@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "B",
+  "phase": "B",
+  "gate_id": "DG-02",
+  "gate_type": "marcela",
+  "agent_tested": "Elena",
+  "deliverable": "client-fit-assessment",
+  "scores": {
+    "completeness": 3,
+    "accuracy": 3,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.0,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Completeness scored 3: the rubric requires four specific assessment dimensions — design engagement level, budget realism relative to program, scope clarity, and collaborative working style indicators. The deliverable provides assessment_dimensions with five numeric scores (budget_alignment, site_readiness, decision_clarity, design_engagement, project_feasibility) which cover design engagement and budget realism but do not explicitly address 'collaborative working style indicators' as a named dimension. Three of four rubric-specified dimensions are clearly present; collaborative working style is absent by name. Accuracy scored 3: meeting_notes summarize Elena's interpretation ('Carlos is design-engaged, has a clear vision') without separating what the client said versus Elena's interpretation — rubric requires attribution to be clearly separated; context allows inference but it is not explicitly delineated. Clarity scored 5: recommendation is explicit — 'advance' — no ambiguity; rationale directly references all required supporting data. State_sync scored 3: simulated run — no live Asana update to discovery_completed. Timing scored 5: fit assessment produced in correct pipeline order. Decision_readiness scored 5: any red flags would be documented; Marcela can decide immediately; all assessment scores documented with rationale.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "Celia routing for DG-02 scored separately.",
+  "payload_fields_verified": 4,
+  "passed": true
+}

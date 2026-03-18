@@ -1,0 +1,30 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "B",
+  "phase": "B",
+  "gate_id": "DG-01",
+  "gate_type": "celia",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-dg01",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 3,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "All 11 required payload fields present: project_id ✓, phase='DG-01' ✓, review_item='lead-record' ✓, reviewed_by='Marcela' ✓, decision='approve' ✓, comment=null ✓, timestamp='2026-03-17T09:30:00-07:00' (ISO-8601) ✓, source_channel='email' ✓, next_action='dispatch Lupe (Segment B) — write lead summary and dispatch Elena' ✓, route_to='Lupe' ✓, sync_to_asana=true ✓.",
+    "accuracy": "Decision='approve' correctly parsed. route_to='Lupe' is correct per Segment B routing (Lupe writes lead summary first). Decision type classified correctly as approve.",
+    "clarity": "Score 3: comment=null. Rubric requires reviewer comment preserved verbatim. At DG-01 Marcela provided no comment (clean approve) — null is technically accurate to the decision event. However, a score-5 response would confirm 'no comment provided' rather than null. The null value is acceptable but loses 2 points for missing confirmation.",
+    "state_sync": "Score 3 per simulated run rule — no live Asana. sync_to_asana=true field present.",
+    "timing": "Event timestamp 2026-03-17T09:30:00 is 30 minutes after lead receipt at 09:00. Prompt.",
+    "decision_readiness": "Lupe receives project_id, phase, decision, next_action, and route_to — sufficient context to begin Segment B work immediately."
+  },
+  "average_score": 4.33,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "auto_fail_notes": "route_to field present (not routed_to) ✓. Decision correctly classified (approve) ✓. All 11 payload fields present ✓. No wrong agent assigned ✓. No auto-fail triggered.",
+  "passed": true
+}

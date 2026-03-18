@@ -1,0 +1,35 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "D",
+  "phase": "D",
+  "gate_id": "DG-04",
+  "gate_type": "marcela",
+  "agent_tested": "Tomás",
+  "deliverable": "scope-of-work",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "Score 4: Most of the 20 checklist items present. Checklist review: (1) Conceptual design phase ✓, (2) Architectural design phases ✓, (3) Executive plans ✓, (4) Optional architectural supervision clause — present as Phase 6 Construction Administration but no explicit 'optional' label ✓, (5) Landscape excluded ✓, (6) Structural engineering ✓, (7) Electrical engineering ✓, (8) Lighting design ✓, (9) Water systems ✓, (10) Irrigation — not explicitly mentioned in exclusions or scope (minor gap), (11) Solar systems ✓, (12) Local contractor cost validation — not explicitly planned in SOW (minor gap), (13) Payment schedule ✓ with milestone names, percentages, trigger events ✓, (14) Deliverables per phase ✓, (15) Responsibilities matrix ✓, (16) Exclusions ✓ specific, (17) Revision assumptions ✓ per phase, (18) Timeline ✓, (19) Project-type clauses ✓ commercial_hotel: CH-001 hospitality compliance, CH-002 brand standards, CH-003 MIA, CH-004 hydrologic setback, CH-005 IP rights ✓, (20) E-signature path — not defined (gap). Items 10, 12, 20 are weak or absent — scoring 4 (17-19 items present).",
+    "accuracy": "Deliverables per phase match production pipeline exactly. commercial_hotel template correctly applied with 5 project-type-specific clauses. Responsibilities matrix names real parties. Hydrologic setback clause (CH-004) is particularly well-crafted for TC-008 context.",
+    "clarity": "Client can sign this document with full understanding. All six phases clearly defined. Exclusions are specific and comprehensive. Payment milestones tied to named DG gates.",
+    "state_sync": "Score 3 per simulated run rule — no live Asana.",
+    "timing": "SOW produced after area program and cost basis. Available before DG-04.",
+    "decision_readiness": "Architect reviewer can approve or flag specific sections immediately. DG-04 approves with no comment — indicates no flags found."
+  },
+  "average_score": 4.50,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "auto_fail_notes": "Payment schedule present ✓. Exclusions section present ✓. commercial_hotel project type template applied ✓. No auto-fail conditions triggered. Minor gap on irrigation exclusion and e-signature path does not trigger auto-fail (items present but incomplete vs fully absent).",
+  "decision_simulated": "approve",
+  "decision_commentary": "Strong SOW with correct commercial_hotel template. CH-004 (hydrologic setback compliance) is a TC-008-specific strength — directly addresses the stream constraint and CONAGUA obligations. Minor gaps: irrigation not explicitly addressed, contractor cost validation not formally planned, e-signature path not defined. These are improvable but not blocking.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-04 routes to Bruno for itemized budget. All 11 payload fields present. route_to='Bruno' is correct per segment D flow.",
+  "payload_fields_verified": 6,
+  "passed": true
+}

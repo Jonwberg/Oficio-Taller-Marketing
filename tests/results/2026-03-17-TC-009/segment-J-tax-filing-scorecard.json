@@ -1,0 +1,25 @@
+{
+  "run_id": "2026-03-17-TC-009",
+  "segment": "J",
+  "phase": "Final",
+  "gate_id": null,
+  "gate_type": "vera_auto",
+  "agent_tested": "Tax",
+  "deliverable": "tax-filing",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 4,
+    "clarity": 3,
+    "state_sync": 4,
+    "timing": 5
+  },
+  "average_score": 4.0,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "TC-009 SPECIFIC CHECK: dispatched_by Controller (not Vera) — PASS. Tax filing was triggered at final_milestone. Required fields present: rfc (placeholder — not auto-fail since RFC is environment config), revenue_amount (90,000 USD — matches Controller running_total), tax_jurisdiction (Mexico — IVA 16%), filing_period (2026-11), cfdi_reference (placeholder), deductibles (2 entries, both correctly showing 0 with explanatory notes). Revenue amount matches Controller invoiced total (USD 90,000 = M1 36K + M2 27K + M3 27K confirmed in running_total). Correct tax jurisdiction applied (Mexico IVA 16%). Completeness scored 4: deductibles are documented but both show 0 — technically correct per SOW exclusions (engineering fees and SEMARNAT fees contracted by client), but the 'notes' explain this adequately. Accuracy scored 4: revenue correct, jurisdiction correct, but cfdi_reference is a placeholder rather than an actual CFDI number — production gap. Clarity scored 3: filing is present but both rfc and cfdi_reference are placeholders, making the filing not fully self-contained or traceable to source invoices. State sync scored 4 — Asana GID 1213707912133495 confirmed in state.json (tax_filing task). No auto-fail conditions triggered: revenue matches Controller total, RFC field is present (placeholder not same as absent), no wrong jurisdiction.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "N/A — Tax filing has no Celia gate. Dispatched by Controller at final milestone, not by Vera — correct behavior confirmed.",
+  "payload_fields_verified": 6,
+  "passed": true
+}

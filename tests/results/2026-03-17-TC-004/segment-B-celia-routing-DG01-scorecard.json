@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-004",
+  "segment": "B",
+  "phase": "A",
+  "gate_id": "DG-01",
+  "gate_type": "marcela",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-DG-01",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 11 required payload fields present: project_id, phase='DG-01', review_item='lead-record', reviewed_by='Marcela', decision='approve', comment=null, timestamp='2026-03-17T10:15:00-07:00' (ISO-8601 confirmed), source_channel='email', next_action='Dispatch Lupe Segment B — write lead-summary.json and dispatch Elena', route_to='Lupe', sync_to_asana=true. Decision parsed correctly as 'approve'. Route_to='Lupe' is correct — Lupe handles Segment B lead summary. next_action describes correct downstream action. comment=null acceptable (Marcela approved without additional notes). Field is route_to (not routed_to) — PASS.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "route_to=Lupe: CORRECT. Decision=approve: CORRECT. All 11 fields present. Timestamp ISO-8601: CONFIRMED.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

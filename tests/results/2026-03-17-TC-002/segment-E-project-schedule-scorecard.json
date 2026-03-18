@@ -1,0 +1,25 @@
+{
+  "run_id": "2026-03-17-TC-002",
+  "segment": "E",
+  "phase": "E",
+  "gate_id": "N/A",
+  "gate_type": "auto",
+  "agent_tested": "Pablo",
+  "deliverable": "project-schedule",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5
+  },
+  "average_score": 4.4,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All required schema fields present: phases (array, 6 phases matching all 6 SOW scope_phases), milestone_dates (M1–M5 with ISO-8601 dates), dependencies (mapping each phase to predecessor). Completeness 5: all 6 SOW phases present in schedule; milestone_dates covers all payment trigger milestones (M1=2026-03-17, M2=2026-04-28, M3=2026-10-06, M4=2027-02-02, M5=2027-04-01); dependencies graph complete (phase_2 depends on phase_1_complete, etc.). Accuracy 5: timeline realistic for residential_in_development — total design-to-permit flow approximately 10.5 months from 2026-03-17 to 2027-02-02, well within 8–14 month residential typical range; HOA review buffer correctly noted (+2–4 weeks vs standalone residential); dates in ISO-8601 format; no dependency inversions (each phase start date equals previous phase end date). Clarity 4 (not 5): each phase has a named milestone and target date, phase sequence is clear — however, critical path is not explicitly marked (no 'critical_path' field or annotation); rubric requires critical path to be visible for score 5. State sync 3: simulated run. Timing 5: schedule produced after activation conditions (contract_signed, site_docs_complete, deposit_confirmed — per simulated flow). No auto-fail conditions triggered — phases array populated, milestone_dates present, schedule produced after activation.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "No Celia routing at project-schedule — Pablo fires after activation confirmation, no Celia gate here.",
+  "payload_fields_verified": 3,
+  "passed": true
+}

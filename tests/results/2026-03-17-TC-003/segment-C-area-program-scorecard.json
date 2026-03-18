@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-003",
+  "segment": "C",
+  "phase": "C",
+  "gate_id": "DG-03",
+  "gate_type": "marcela",
+  "agent_tested": "Ana",
+  "deliverable": "area-program",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "All 9 programmed spaces from seed data present with name, qty, and size_sqm: Casita (20×60), Spa (300), Restaurant (250), Reception/Lobby (150), Pool Deck (400), Staff Quarters (120), Back of House (200), Parking (320), Circulation (60). total_sqm=3,000 present. assumptions array present (6 items). Score 5.",
+    "accuracy": "Total verified: (20×60)+300+250+150+400+120+200+320+60 = 1200+300+250+150+400+120+200+320+60 = 3,000 sqm. Matches stated total exactly. Score 5.",
+    "clarity": "Matrix is readable standalone — each space has name, qty, size, and notes. No conversation context required. Score 5.",
+    "state_sync": "No Asana state field in deliverable. Simulated run. Score 3.",
+    "timing": "Area program delivered concurrent with cost basis work before DG-03. Score 5.",
+    "decision_readiness": "Assumptions documented for all non-obvious decisions: casita size from seed data, pool deck scope, landscape exclusions, solar exclusion, greywater distribution. Marcela has full context. Score 5."
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Excellent area program. All 9 spaces from seed data present with correct quantities and sizes. Total sqm verified at 3,000. Assumptions are specific and complete. State sync scored 3 per simulated run convention. No auto-fail conditions triggered (total_sqm present, all spaces have sizes, assumptions section present).",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "Celia DG-03 routing scored separately.",
+  "payload_fields_verified": null,
+  "passed": true
+}

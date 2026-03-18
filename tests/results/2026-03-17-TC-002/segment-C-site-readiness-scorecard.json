@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-002",
+  "segment": "C",
+  "phase": "C",
+  "gate_id": "DG-03",
+  "gate_type": "marcela",
+  "agent_tested": "Sol",
+  "deliverable": "site-readiness-report",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.5,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "TC-002 SPECIFIC CHECK — No hydrologic study required: CONFIRMED. Site condition is 'slight slope only, no hydrology concerns' per lead-record.json and seed data. Sol correctly requests only: (1) Levantamiento Topográfico (always required), (2) HOA Design Guidelines — Residencial Vista del Mar (required for residential_in_development type), (3) Escrituras/Property Title (required to confirm ownership). No hydrologic study requested — correct for slight slope with no arroyo. All required schema fields present: required_documents (array), request_sent_at, current_status, blockers. Completeness 5: topo always required and present; HOA design guidelines correctly identified as required for this project type per Sol spec; no over-requesting of hydrologic study for mere slight slope. Accuracy 5: document requirements match site conditions exactly. Clarity 4 (not 5): request_sent_at is populated (2026-03-17T13:00:00-07:00) but no explicit deadline is stated for client document delivery — rubric requires client instructions include deadline for score 5. State sync 3: simulated run. Timing 5: request issued at 13:00 concurrently with area program work (parallel tracks). Decision readiness 5: Vera can assess activation readiness at any time — blockers=[] and current_status='documents_requested' are clear. No auto-fail conditions triggered — topo is included.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "No Celia routing on site-readiness-report — this is a Vera status update track, not a Celia gate.",
+  "payload_fields_verified": 4,
+  "passed": true
+}

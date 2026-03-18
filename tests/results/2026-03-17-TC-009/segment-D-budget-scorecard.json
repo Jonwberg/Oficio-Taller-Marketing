@@ -1,0 +1,25 @@
+{
+  "run_id": "2026-03-17-TC-009",
+  "segment": "D",
+  "phase": "DG-04",
+  "gate_id": "DG-04",
+  "gate_type": "marcela",
+  "agent_tested": "Bruno",
+  "deliverable": "budget",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 4,
+    "clarity": 4,
+    "state_sync": 4,
+    "timing": 5
+  },
+  "average_score": 4.2,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All required schema fields present: project_name, client_name, milestone_name (M1), amount (36,000 USD), payment_instructions, currency (USD), line_items (6 items covering all SOW phases). Running total (90,000 USD) traceable from line items. Completeness scored 4 (not 5): the budget covers only the M1 milestone trigger amount and 6 line items but does not explicitly list all payment milestone entries (M2, M3) as separate objects with percentage, trigger event — the rubric expects all 5 payment milestones with name/percentage/trigger. However, the M1 amount (36,000 = 40% of 90,000) is correctly calculated and line items total to 90,000 (18,000+22,500+13,500+22,500+9,000+4,500 = 90,000 correct). Accuracy scored 4: budget total (90,000 USD) vs cost-basis total (MXN 9,907,480 ≈ USD 550-600K) — the budget is architecture-fee-only, not construction total, which is correct per SOW. Payment instructions present but contain placeholder for CLABE — scored 4 on clarity. State sync scored 4 — Asana GID 1213707388064159 confirmed in state.json. No auto-fail conditions triggered.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "N/A — Bruno budget feeds directly to Renata without a separate Celia gate.",
+  "payload_fields_verified": 7,
+  "passed": true
+}

@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "B",
+  "phase": "B",
+  "gate_id": "DG-01",
+  "gate_type": "marcela",
+  "agent_tested": "Lupe",
+  "deliverable": "lead-summary",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Completeness scored 5: all five required fields present — project_name='Casa Moderna — Carlos Mendoza', source_channel='instagram', raw_message (verbatim Spanish inbound), initial_assessment, and recommended_action all populated. Accuracy scored 5: project type correctly classified as residential inquiry; legitimacy assessment ('Strong project inquiry. Client has site, clear program, realistic budget, no red flags') is fully defensible given the client message content. Clarity scored 5: Marcela can make approve/reject/pass decision in well under 30 seconds — initial_assessment is crisp, recommended_action='advance_to_discovery' is explicit. State_sync scored 3: simulated run — no live Asana state update to lead_summary_sent_to_marcela. Timing scored 5: summary produced in correct pipeline order immediately after lead record. Decision_readiness scored 5: explicit recommended_action with brief rationale provided; no follow-up research needed.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "Celia routing scored separately in DG-01 routing scorecard.",
+  "payload_fields_verified": 5,
+  "passed": true
+}

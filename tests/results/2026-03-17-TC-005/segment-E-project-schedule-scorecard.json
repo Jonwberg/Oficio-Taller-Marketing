@@ -1,0 +1,32 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "E",
+  "phase": "E",
+  "gate_id": null,
+  "gate_type": "auto",
+  "agent_tested": "Pablo",
+  "deliverable": "project-schedule",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5
+  },
+  "score_evidence": {
+    "completeness": "phases array: 6 phases matching all SOW scope_phases (Conceptual Design, Architectural Design, Engineering Coordination, Executive Plans, Contractor Bidding, Permitting). Each phase has start_date, end_date, duration_weeks, deliverables list, and milestone name. milestone_dates: 5 milestones M1–M5 with ISO-8601 dates. dependencies: complete graph (phase_2→phase_1, phase_3→phase_2, phase_4→phase_3, phase_5→phase_4, phase_6→phase_5). construction_milestones: 5 entries with amounts. Score 5.",
+    "accuracy": "Timeline realistic for public_civic 2,000m² project: Phase 1 (8 weeks), Phase 2 (16 weeks — slightly above rubric range of 10-14 but justified for public project with government approval cycles), Phase 3 (10 weeks), Phase 4 (10 weeks), Phase 5 (8 weeks), Phase 6 (26 weeks — explicitly noted as longer than residential for public project). Total span: 2026-03-25 to 2027-09-29 = approximately 18 months, appropriate for public civic project. All dates ISO-8601. No dependency inversions. Score 5.",
+    "clarity": "Each phase has named milestone and target date. Critical path visible through linear dependencies. Licitación pública Phase 5 includes note clarifying it is managed by contracting entity. Score 5.",
+    "state_sync": "Score 3 (simulated run — ASANA_UNAVAILABLE). Asana milestone subtasks with due dates not confirmed in live environment. project_state=active_in_progress not confirmed.",
+    "timing": "Schedule produced after activation conditions confirmed (state.json: contract_signed=true, site_docs_complete=true, deposit_confirmed=true). Score 5."
+  },
+  "average_score": 4.6,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Comprehensive project schedule. All 6 SOW phases present with full deliverables lists. Timeline is realistic for public civic context — Phase 2 at 16 weeks (vs SOW's 10-14 range) appropriately extended to accommodate government approval cycles. Phase 6 permitting at 26 weeks correctly reflects public project extended timeline. All 5 payment milestones mapped. Only deduction is simulated Asana state sync.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "No Marcela gate on Segment E per rubric. Pablo fires after activation confirmed. Routing is correct.",
+  "payload_fields_verified": 7,
+  "passed": true
+}

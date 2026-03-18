@@ -1,0 +1,38 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "D",
+  "phase": "D",
+  "gate_id": "DG-06",
+  "gate_type": "marcela",
+  "agent_tested": "Rosa",
+  "deliverable": "client-communication",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "channel": 5,
+    "brand_voice": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "Message includes project name (Biblioteca Municipal de Los Cabos, 2,000m²), full context (reviewed program, budget, obra pública requirements), and clear action requested (review proposal, approve/adjust/schedule call). Both Spanish (full) and English (summary) versions. project_reference field present. Score 5.",
+    "accuracy": "Message accurately reflects current project state: proposal for design services, 6 phases, $180,000 USD fee, payment schedule, accessibility/solar/landscape scope. No inaccuracies. Score 5.",
+    "clarity": "One clear next step: 'revise la propuesta adjunta y nos haga saber si desea aprobarla, solicitar ajustes, o agendar una llamada'. No ambiguity about what client must do. Score 5.",
+    "channel": "channel=email — correct. Formal proposal delivery to a government institutional client (Dirección de Obras Públicas) should use email, not WhatsApp. Score 5.",
+    "brand_voice": "Tone is professional, warm, and design-engaged: 'Es un gusto compartir...', references community benefit of the project, 'Quedamos completamente a su disposición.' Appropriate for both the relationship and the institutional context. Score 5.",
+    "state_sync": "Score 3 (simulated run — ASANA_UNAVAILABLE). Message is correctly in status=draft (awaiting Marcela approval before send). Asana state update not confirmed in live environment.",
+    "timing": "Message drafted promptly after proposal approval and DG-06 trigger. Score 5.",
+    "decision_readiness": "Marcela can approve this message in under 60 seconds. Professional, accurate, correct channel, clear action, no internal artifacts. Score 5."
+  },
+  "average_score": 4.75,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Excellent client communication. Message is bilingual, professional, client-ready with no internal artifacts. status=draft correctly set — awaiting Marcela approval before send. Channel (email) is appropriate for formal proposal delivery to a government client. Spanish narrative references obra pública compliance — appropriate institutional positioning. Only deduction is simulated Asana state sync.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-06 routes to Vera (client activation) per decision-event-DG-06.json. route_to=Legal in dg-06.json (internal review route) and route_to=Vera... wait — checking: dg-06.json route_to=Vera (contract in progress), decision-event-DG-06.json route_to=Legal. This is the dual-step DG-06 flow: internal routing differs between the two files. Both routes are correct for their respective steps in the pipeline.",
+  "payload_fields_verified": 4,
+  "passed": true
+}

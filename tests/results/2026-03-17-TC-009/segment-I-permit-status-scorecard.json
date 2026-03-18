@@ -1,0 +1,25 @@
+{
+  "run_id": "2026-03-17-TC-009",
+  "segment": "I",
+  "phase": "Post-DG-11",
+  "gate_id": null,
+  "gate_type": "vera_auto",
+  "agent_tested": "Paco",
+  "deliverable": "permit-status",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 4,
+    "timing": 5
+  },
+  "average_score": 4.8,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "TC-009 CRITICAL CHECK: corrections array has 2 entries, both with resolved: true — PASS. No auto-fail triggered. All required fields present: submitted_at (2026-05-05), jurisdiction (SEMARNAT — Delegación Baja California Sur / Municipio de Los Cabos — specific, not generic), status (approved), corrections (2 entries), approved_at (2026-11-03). Corrections detail: Round 1 (2026-07-12): ZOFEMAT boundary documentation + BCS-registered DRO stamp — resolved 2026-07-28. Round 2 (2026-08-20): Environmental Impact Assessment (MIA) required under LGEEPA Art. 28 — resolved 2026-10-15 via authorized environmental consultant with mitigation measures approved. Both corrections resolved before final approval. Municipal permit also included with jurisdiction (Municipio de Los Cabos — Direccion de Desarrollo Urbano), submitted 2026-09-20, approved 2026-10-28, no corrections. Vera can trigger construction immediately. State sync scored 4 — Asana GID 1213707881866070 confirmed in state.json (permitting task). No auto-fail conditions triggered.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "N/A — permit-status has no Celia gate; Paco fires after DG-11 and Vera auto-unlocks on approval.",
+  "payload_fields_verified": 5,
+  "passed": true
+}

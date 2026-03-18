@@ -1,0 +1,35 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "C",
+  "phase": "C",
+  "gate_id": "DG-03",
+  "gate_type": "marcela",
+  "agent_tested": "Sol",
+  "deliverable": "site-readiness-report",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "CRITICAL TC-008 CHECK: required_documents=['topographic_survey', 'hydrologic_study'] — BOTH present. Topo required as standard; hydrologic_study correctly required due to stream in northeast corner. All 4 schema fields present: required_documents, request_sent_at, current_status, blockers. Detail section explains rationale for each document. activation_delayed_by_hydrology=true explicitly set.",
+    "accuracy": "Document requirements match site conditions exactly. Stream on site → hydrologic study required. Steep slope on west side → topo required and flagged as particularly important for contour data. No over-requesting (no soil study requested at this stage — correct). Under-requesting risk fully avoided. current_status='hydrologic_study_pending' is accurate.",
+    "clarity": "Blockers array contains clear, specific statement: 'hydrologic_study_pending — stream proximity requires setback analysis and possible retention basin — estimated 6 weeks'. Vera can assess activation readiness immediately from this report.",
+    "state_sync": "Score 3 per simulated run rule — no live Asana. activation_delayed_by_hydrology=true logged as state flag. Blocker explicitly logged.",
+    "timing": "request_sent_at=2026-03-17T09:35:00-07:00 — concurrent with Segment C area program work. Parallel track executed correctly.",
+    "decision_readiness": "Vera can assess activation readiness at any time: site_data_complete=false, blocker clearly identified (hydrologic_study_pending), estimated timeline (6 weeks) provided. No ambiguity."
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "auto_fail_notes": "TC-008 CRITICAL CHECK PASSED: hydrologic_study present in required_documents. Topo also present. Blocker logged. No auto-fail conditions triggered.",
+  "decision_simulated": "approve",
+  "decision_commentary": "This is the key TC-008 deliverable. Sol correctly identifies BOTH the topographic survey AND the hydrologic study as required documents. The hydrology blocker is clearly logged with timeline estimate. This deliverable directly enables the correct activation gate behavior in Segment E. Full marks — perfect execution of the edge case.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-03 routes to Tomás (correct — scope prep follows Segment C). Vera's site-readiness-report routes through the Vera status channel, not a Celia gate — correct per rubric.",
+  "payload_fields_verified": 4,
+  "passed": true
+}

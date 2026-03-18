@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-004",
+  "segment": "F",
+  "phase": "F",
+  "gate_id": "DG-07",
+  "gate_type": "marcela",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-DG-07",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 11 required payload fields present: project_id, phase='DG-07', review_item='concept-review', reviewed_by='Marcela', decision='approve', comment=null, timestamp='2026-05-06T09:00:00-07:00' (ISO-8601), source_channel='email', next_action='Dispatch Felipe — develop full architectural design set', route_to='Felipe', sync_to_asana=true. Decision='approve' — rubric note for DG-07: when Pass to Agent is simulated, project_state must remain concept_in_progress. In this case decision='approve' (not Pass to Agent), so the state-advancement rule applies correctly (concept_approved). route_to='Felipe' is correct for concept approval. Rubric Pass-to-Agent state check N/A for this simulated run (no pass event occurred).",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "route_to=Felipe: CORRECT. Decision=approve: CORRECT. No Pass to Agent event (N/A state-lock check). All 11 fields present.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

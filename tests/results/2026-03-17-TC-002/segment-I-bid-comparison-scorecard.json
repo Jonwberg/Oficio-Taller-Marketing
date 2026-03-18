@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-002",
+  "segment": "I",
+  "phase": "I",
+  "gate_id": "DG-11",
+  "gate_type": "marcela",
+  "agent_tested": "Ofelia",
+  "deliverable": "bid-comparison",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All required schema fields present: bids (array with 2 contractors — Constructora Los Cabos S.A. de C.V. and BCS Builders Group), each with contractor, total, line_items (6 categories), timeline, notes; recommendation='Constructora Los Cabos S.A. de C.V.'; recommendation_rationale (substantive). Completeness 5: two bids compared with full matrix — contractor name, total, 6 line items, timeline (13 months vs 11 months), notes; one clear recommendation with rationale. Accuracy 5: recommendation rationale goes well beyond lowest price — cites development pre-approval (3 completed projects in Residencial Vista del Mar), HOA compliance documentation support, cost comparison (USD 590,000 vs USD 635,000 = USD 45,000 savings), and risk analysis (BCS pre-approval unconfirmed = coordination risk). Both bids within client budget range (400,000–700,000). Clarity 5: Marcela can select a contractor immediately — bid matrix is complete, recommendation is specific, risk differential is clearly articulated. State sync 3: simulated run. Timing 5: comparison produced after executive plans approved (DG-10 at 2026-10-07); both bids collected before matrix presented to Marcela. Decision readiness 5: Marcela can select with confidence. No auto-fail conditions triggered — two bids present, comparison matrix complete.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "Celia routing for DG-11 scored separately in segment-I-celia-routing-DG11-scorecard.json.",
+  "payload_fields_verified": 3,
+  "passed": true
+}

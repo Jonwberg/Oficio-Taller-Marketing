@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "D",
+  "phase": "D",
+  "gate_id": "DG-05",
+  "gate_type": "marcela",
+  "agent_tested": "Renata",
+  "deliverable": "proposal",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "All required sections present in both Spanish and English: scope_summary (bilingual, full 6-phase program narrative), budget_detail (bilingual, full 5-milestone payment schedule, line_items_ref), timeline_phases (6 phases with durations and key milestones), process_narrative (bilingual, 4-paragraph narrative per language). No placeholder text. Score 5.",
+    "accuracy": "SOW section reflects Tomás's approved scope exactly: 6 phases, public_civic template, licitación pública management structure. Budget matches Bruno's figures exactly: $180,000 USD total, 20/15/20/25/20 split, all 5 milestones at correct amounts. Score 5.",
+    "clarity": "Client-ready: no internal notes, no agent commentary, no jargon. Professional tone appropriate for a government institutional client. Spanish narrative explicitly mentions 'Ley de Adquisiciones' and obra pública framework — appropriate for Dirección de Obras Públicas. Score 5.",
+    "state_sync": "Score 3 (simulated run — ASANA_UNAVAILABLE). Proposal ready for architect review state not confirmed in live Asana.",
+    "timing": "Proposal assembled after Bruno's budget and SOW approval. Score 5.",
+    "decision_readiness": "Architect (Marcela) can approve or flag immediately. Scope, budget, timeline, and process narrative all complete. Score 5."
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Excellent proposal. Both language versions complete with no placeholders. Scope exactly reflects Tomás's approved public_civic SOW. Budget exactly matches Bruno's figures ($180,000 USD, 20/15/20/25/20). Process narrative appropriately references obra pública procurement framework and government approval cycles — correct institutional positioning. Only deduction is simulated Asana state sync.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-05 routes to Rosa (dispatch Rosa to send proposal to client). decision-event-DG-05.json: route_to=Rosa. Correct per segment D flow. Note: dg-05.json shows route_to=Vera (internal architect review), decision-event-DG-05.json shows route_to=Rosa (client send). This dual-file structure reflects the two-step DG-05 flow (internal review then client send).",
+  "payload_fields_verified": 11,
+  "passed": true
+}

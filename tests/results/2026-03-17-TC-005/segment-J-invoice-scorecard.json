@@ -1,0 +1,32 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "J",
+  "phase": "J",
+  "gate_id": null,
+  "gate_type": "auto",
+  "agent_tested": "Controller",
+  "deliverable": "invoice",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5
+  },
+  "score_evidence": {
+    "completeness": "All required fields present: project_name, client_name, milestone_name (M5 — Construction Start Authorized), amount (36000 USD), due_date (2027-09-29), payment_instructions, currency (USD), running_total (180000 USD). Payment history for all 5 milestones M1–M5 included showing complete project fee schedule. Score 5.",
+    "accuracy": "Invoice amount $36,000 USD matches exactly the M5 amount from Bruno's payment schedule (20% × $180,000 = $36,000). running_total $180,000 matches total architecture fee. payment_schedule_template correctly identified as public_civic 20/15/20/25/20. Score 5.",
+    "clarity": "Payment instructions include bank transfer reference format. Score 4: CLABE and BANK_NAME are placeholders (TO BE CONFIGURED in .env) — client cannot pay without these details resolved. This is expected in test environment but is a gap in production readiness.",
+    "state_sync": "Score 3 (simulated run — ASANA_UNAVAILABLE). Invoice issued after milestone trigger not confirmed via live Asana. payment_history shows all prior milestones as 'paid' which correctly reflects project-closed state.",
+    "timing": "Invoice for M5 due 2027-09-29 — matches milestone_dates.M5_construction_start_authorized in project-schedule.json. Permit approved 2027-09-20, M5 invoice due 2027-09-29. Timing is correct (invoice after milestone trigger). Score 5."
+  },
+  "average_score": 4.4,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Strong invoice deliverable. This is the final M5 invoice — running_total confirms all $180,000 USD has been invoiced. Payment history for M1-M4 shows all paid, M5 shows invoiced status. public_civic template correctly applied. CLABE/bank placeholder is expected in test environment (non-blocking). No auto-fail conditions triggered — invoice amount matches payment schedule, payment instructions present (with placeholder), no pre-trigger timing issue.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Controller dispatches Tax at final milestone (not Vera). tax-filing.json: dispatched_by=Controller. Confirmed per KVP-7 in run-summary. Correct chain per agent protocol.",
+  "payload_fields_verified": 8,
+  "passed": true
+}

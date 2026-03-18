@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-009",
+  "segment": "G",
+  "phase": "DG-09",
+  "gate_id": "DG-09",
+  "gate_type": "celia_routing",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-dg09",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 5,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.83,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 11 payload fields present. Decision: approve. review_item: budget-alignment (correct). route_to: Hugo (correct — DG-09 approve → Hugo for executive plans). next_action: 'dispatch Hugo for executive plans'. sync_to_asana: true. Clarity scored 4: comment null. State sync scored 5 — Asana GID 1213707881203442 (budget_alignment_gate). No auto-fail conditions.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-09: approve → route_to Hugo. Correct.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

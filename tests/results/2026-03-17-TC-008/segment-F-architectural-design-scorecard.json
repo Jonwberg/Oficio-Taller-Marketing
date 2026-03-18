@@ -1,0 +1,35 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "F",
+  "phase": "F",
+  "gate_id": "DG-08",
+  "gate_type": "marcela",
+  "agent_tested": "Felipe",
+  "deliverable": "architectural-design",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "design_set_status='complete', concept_reflection_confirmed=true, area_program_compliance={compliant:true, deviations:[]}, structural_coordination_notes present. All 8 program elements confirmed in developed set. Spa repositioned to 18m (TC-008 compliance). Deviations array is empty — no departures.",
+    "accuracy": "Area program compliance: all rooms verified at correct sizes. No unexplained departures from approved concept. The repositioning of spa to 18m from stream centerline is documented and compliant. Structural system defined: post-tensioned concrete slabs, concrete bearing walls, steel moment frames for restaurant.",
+    "clarity": "Score 4: Design is mostly complete for engineering handoff. Structural engineer is 'TBD — to be contracted' — this is an open item that means not all engineering handoff details are finalized. Retaining wall system noted as 'structural engineer will specify in Phase 3' — one area flagged for later resolution. Infinity pool differential settlement noted as 'special attention' item. Design is ready but with noted open items.",
+    "state_sync": "Score 3 per simulated run rule — no live Asana.",
+    "timing": "Design delivered after concept approval (DG-07 at 2026-06-10) and before engineering phase start (2026-08-05). Correct sequencing per schedule.",
+    "decision_readiness": "Marcela can approve and hand off to Emilio immediately. DG-08 approves with no comment. The structural engineer TBD status is appropriate at this phase — it is flagged and known."
+  },
+  "average_score": 4.50,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "auto_fail_notes": "No rooms missing from area program ✓. Concept reflected (spa repositioned per concept approval) ✓. Structural coordination notes present ✓. No auto-fail triggered.",
+  "decision_simulated": "approve",
+  "decision_commentary": "Strong architectural design set. TC-008 compliance: spa repositioned to 18m from stream centerline documented in both concept_reflection_confirmed note and area_program_compliance notes. The TBD structural engineer is the one notable open item — acceptable at DG-08 but should be resolved before Emilio's engineering package.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-08 routes to Emilio for engineering coordination. decision-event-dg08.json: all 11 payload fields present. route_to='Emilio' is correct.",
+  "payload_fields_verified": 4,
+  "passed": true
+}

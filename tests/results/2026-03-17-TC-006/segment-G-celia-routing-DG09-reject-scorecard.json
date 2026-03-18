@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-006",
+  "segment": "G",
+  "phase": "G",
+  "gate_id": "DG-09",
+  "gate_type": "celia_routing",
+  "agent_tested": "Celia",
+  "deliverable": "dg-09-v1",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "reject",
+  "decision_commentary": "First DG-09 pass — reject. All 11 required payload fields present: project_id, phase (G), review_item (budget_alignment), reviewed_by (Celia), decision (reject), comment (specific — $380K vs $200K, 90% over, redesign required, remove pool, reduce to 160sqm), timestamp (2026-03-17T14:00:00-07:00, ISO-8601), source_channel (instagram), next_action (redesign_scope_reduction), route_to (Felipe), sync_to_asana (false). Critical check: decision is 'reject' — not 'approve'. Routing back to Felipe for redesign is correct. Comment preserves specific numbers and scope reduction instruction verbatim.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Correctly rejected. route_to = Felipe for redesign. Comment includes specific budget numbers and scope reduction directive.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

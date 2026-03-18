@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "B",
+  "phase": "B",
+  "gate_id": "DG-01",
+  "gate_type": "marcela",
+  "agent_tested": "Celia",
+  "deliverable": "decision-routing-DG01",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "Both dg-01.json and decision-event-DG-01.json present. All 11 payload fields verified in decision-event-DG-01.json: project_id ✓, phase=DG-01 ✓, review_item=lead-record ✓, reviewed_by=Marcela ✓, decision=approve ✓, comment=null ✓, timestamp=2026-03-17T10:00:00-07:00 ✓ (ISO-8601), source_channel=email ✓, next_action ✓, route_to=Lupe ✓, sync_to_asana=true ✓. Score 5.",
+    "accuracy": "Decision=approve correctly parsed. route_to=Lupe correct per routing table (Lupe dispatches for Segment B after DG-01 approval). dg-01.json has route_to=Lupe with source_channel=gmail; decision-event-DG-01.json has route_to=Lupe with source_channel=email — consistent decision, minor channel difference between the two files. Score 5.",
+    "clarity": "Score 4: comment=null — no reviewer comment preserved. Rubric scores 5 for verbatim comment preserved; null is acceptable only when truly no comment, but a Marcela approval of a government library project would typically generate at least a brief note. Not a failure but not a 5.",
+    "state_sync": "Score 3 (simulated run — ASANA_UNAVAILABLE). sync_to_asana=true logged. Live Asana decision_status and assigned_agent fields not confirmed.",
+    "timing": "Decision event created at 2026-03-17T10:00:00-07:00, one hour after lead_record received_at (09:00). Immediate capture. Score 5.",
+    "decision_readiness": "Lupe receives: project_id, phase, next_action (dispatch lead-summary and Elena). Complete context to begin work. Score 5."
+  },
+  "average_score": 4.5,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Clean DG-01 routing. All 11 payload fields present. route_to=Lupe correct. Dual file format (dg-01.json + decision-event-DG-01.json) both use route_to field (not routed_to — correct per rubric note). Only gaps: comment=null (no reviewer comment) and simulated Asana sync.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "route_to=Lupe in both dg-01.json and decision-event-DG-01.json. Correct routing per production table. Both files use route_to field (not routed_to). Source channel difference (gmail vs email) between the two files is minor and does not affect routing correctness.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

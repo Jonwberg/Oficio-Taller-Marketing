@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "C",
+  "phase": "C",
+  "gate_id": "DG-03",
+  "gate_type": "marcela",
+  "agent_tested": "Sol",
+  "deliverable": "site-readiness-report",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 4
+  },
+  "score_evidence": {
+    "completeness": "All required fields present: required_documents (array with name, rationale, received), request_sent_at, current_status, blockers. Topo always required — present. Soil mechanics study present (correct for 2,000m² public building). Municipal title/land use authorization present (appropriate for government project). Seed data states 'flat municipal land, no hydrology concerns' — hydrologic study correctly omitted. Score 5.",
+    "accuracy": "Document requirements precisely match site conditions: flat land → topo yes, hydrologic study N/A; public building 2,000m² → soil study required for structural engineering; government land → municipal title authorization. No over-requesting, no under-requesting. Score 5.",
+    "clarity": "Instructions sent (request_sent_at confirmed). Rationale for each document is documented. Score 4 (not 5): no deadline specified in required_documents entries — client would need follow-up to know when documents are due.",
+    "state_sync": "Score 3 (simulated run — ASANA_UNAVAILABLE). current_status=documents_requested logged. Live Asana update not confirmed.",
+    "timing": "Request sent at 2026-03-17T17:00:00-07:00 — same day as lead intake, parallel track with area program. Score 5.",
+    "decision_readiness": "Score 4: current_status=documents_requested, blockers=[] (empty). Vera can see document status, but all three documents show received=false — the report accurately reflects that no documents have been received yet. Vera can assess status but cannot confirm site_docs_complete. State is correct for this stage of the pipeline."
+  },
+  "average_score": 4.33,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Solid site readiness report. Correct documents identified for flat municipal land / public building context. Hydrologic study correctly omitted per site conditions. Two minor gaps: no delivery deadline specified for client, and no Asana live sync (simulated run). No auto-fail conditions triggered.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Sol operates in parallel with Ana (Segment C). No separate Celia gate for site readiness — feeds DG-03 via Vera's parallel track.",
+  "payload_fields_verified": 4,
+  "passed": true
+}

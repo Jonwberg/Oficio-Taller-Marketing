@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-006",
+  "segment": "I",
+  "phase": "I",
+  "gate_id": "DG-11",
+  "gate_type": "marcela",
+  "agent_tested": "Ofelia",
+  "deliverable": "bid-comparison",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Bid comparison matrix contains two bids with all required fields: contractor name, total, line_items (5 scope categories each), timeline, and notes. Constructora Horizonte Los Cabos: $192,000 / 11 months. Grupo Constructor del Pacifico: $198,000 / 12 months. Recommendation is Constructora Horizonte Los Cabos with rationale going beyond lowest price — track record (12 years coastal), timeline (11 months), both bids confirming scope is viable within budget. Both bids are below the $200K client budget — confirms redesigned scope is correct. recommendation_rationale is specific and multi-criteria. No auto-fail conditions triggered. State_sync scored 3 per simulated run note.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Confirmed via dg-11.json — Celia approved Horizonte recommendation.",
+  "payload_fields_verified": 7,
+  "passed": true
+}

@@ -1,0 +1,30 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "H",
+  "phase": "H",
+  "gate_id": "DG-10",
+  "gate_type": "celia",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-dg10",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 3,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "All 11 required payload fields present: project_id ✓, phase='DG-10' ✓, review_item='executive-plans' ✓, reviewed_by='Marcela' ✓, decision='approve' ✓, comment=null ✓, timestamp='2026-11-11T09:00:00-07:00' ✓, source_channel='email' ✓, next_action='dispatch Ofelia for bidding and contractor selection' ✓, route_to='Ofelia' ✓, sync_to_asana=true ✓.",
+    "accuracy": "Decision='approve' correct. route_to='Ofelia' correct — bidding follows executive plans approval. Decision type correctly classified.",
+    "clarity": "Score 3: comment=null. Clean approve.",
+    "state_sync": "Score 3 per simulated run rule — no live Asana.",
+    "timing": "Event at 2026-11-11T09:00:00 — same day as Phase 5 start (Phase 4 ends 2026-11-10, DG-10 fires next morning). Correct.",
+    "decision_readiness": "Ofelia receives complete context to begin bidding immediately."
+  },
+  "average_score": 4.33,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "auto_fail_notes": "route_to='Ofelia' correct ✓. All 11 fields present ✓. No auto-fail triggered.",
+  "passed": true
+}

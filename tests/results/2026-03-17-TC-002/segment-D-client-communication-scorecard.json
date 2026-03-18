@@ -1,0 +1,28 @@
+{
+  "run_id": "2026-03-17-TC-002",
+  "segment": "D",
+  "phase": "D",
+  "gate_id": "DG-06",
+  "gate_type": "marcela",
+  "agent_tested": "Rosa",
+  "deliverable": "client-communication",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "channel": 5,
+    "brand_voice": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.75,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All required schema fields present: channel='email', message_body (es+en), project_reference='PRJ-2026-0317-tc002-casa-vista', status='sent'. Note: status='sent' — rubric requires status='draft' for score 5 on state_sync (requires Marcela approval before send). Status='sent' is noted but in the TC-002 simulated flow, this follows DG-06 approval. Scoring state_sync=3 for this reason. Completeness 5: message includes project name (Residencial Vista del Mar), full context of the proposal, and explicit next action ('confirme su aceptación de la propuesta respondiendo a este correo'). Accuracy 5: message accurately reflects current project state — proposal package including 6 phases, HOA coordination, fees, and milestone payment structure. Clarity 5: one clear next step — confirm acceptance by replying to email, or ask questions. Channel 5: email is the correct formal channel for proposal delivery — rubric specifies email for formal deliverables and proposals. Brand voice 5: warm, professional, design-engaged — 'Con gusto coordinamos una llamada si lo prefiere' and 'Quedamos a sus órdenes' match Oficio Taller tone. State sync 3: status='sent' rather than 'draft' — per rubric, message should be in draft awaiting Marcela approval. In the simulated flow this follows DG-06 approval so the send is authorized, but the draft->approved->sent state transition is not visible in the field. Timing 5: drafted promptly after DG-06 triggering event. Decision readiness 5: Marcela can approve in under 60 seconds. No auto-fail conditions triggered.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "No Celia routing at client-communication — Celia fires at decision gate events.",
+  "payload_fields_verified": 4,
+  "passed": true
+}

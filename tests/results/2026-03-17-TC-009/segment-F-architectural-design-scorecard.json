@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-009",
+  "segment": "F",
+  "phase": "DG-08",
+  "gate_id": "DG-08",
+  "gate_type": "marcela",
+  "agent_tested": "Felipe",
+  "deliverable": "architectural-design",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 4,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.83,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All required schema fields present: design_set_status (complete), concept_reflection_confirmed (true), area_program_compliance (compliant: true, deviations: [], 10 spaces present at 356 sqm matching area-program.json), structural_coordination_notes (detailed — wind load study inputs reviewed, roof uplift calculations, wind-rated glazing, salt-air exposure class, pool structural design as monolithic RC, mat/raft foundation, no unresolved conflicts). No unexplained departures from approved concept. Sizes match area program targets. Structural engineer engaged and wind load study input confirmed received. Pool tank designed as monolithic RC for coastal conditions — technically sophisticated and correct. Design is complete enough for Emilio to begin engineering. State sync scored 4 — Asana GID 1213707911464830 confirmed in state.json (architectural_design task). No auto-fail conditions triggered.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Celia DG-08 routing checked in separate scorecard.",
+  "payload_fields_verified": 4,
+  "passed": true
+}

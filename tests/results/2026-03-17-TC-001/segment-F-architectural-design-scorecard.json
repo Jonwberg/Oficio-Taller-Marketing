@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "F",
+  "phase": "F",
+  "gate_id": "DG-08",
+  "gate_type": "marcela",
+  "agent_tested": "Felipe",
+  "deliverable": "architectural-design",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 4
+  },
+  "average_score": 4.17,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Completeness scored 4: design_set_status='complete', concept_reflection_confirmed=true, area_program_compliance=true, structural_coordination_notes present. Rubric requires 'all rooms from area program present' and 'material specs consistent with concept approval' — the document confirms area_program_compliance=true but does not enumerate which rooms are present; material specs are not explicitly documented in this file. Score 4: the boolean flags indicate compliance but do not provide verifiable evidence for each requirement. Accuracy scored 5: no unexplained departures from concept — concept_reflection_confirmed=true; sizes match area_program — area_program_compliance=true; structural_coordination_notes document flat site foundation approach appropriate for the site conditions. Clarity scored 4: design_set_status='complete' and the structural coordination notes are clear; however no open design questions are flagged (good) but the document is sparse — engineering handoff readiness is asserted by boolean rather than enumerated. Score 4: mostly complete for engineering handoff; one area (material specs) not explicitly confirmed. State_sync scored 3: simulated run. Timing scored 5: delivered before Emilio begins engineering. Decision_readiness scored 4: Marcela can approve and hand off; one clarification on material specs confirmation would strengthen the handoff.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Celia routing at DG-08 scored separately.",
+  "payload_fields_verified": 4,
+  "passed": true
+}

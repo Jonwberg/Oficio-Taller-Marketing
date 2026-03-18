@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "D",
+  "phase": "D",
+  "gate_id": "DG-04",
+  "gate_type": "vera",
+  "agent_tested": "Tomás",
+  "deliverable": "scope-of-work",
+  "scores": {
+    "completeness": 3,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 4
+  },
+  "average_score": 4.0,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Completeness scored 3: 20-item checklist review — Items present: (1) conceptual design phase ✓, (2) architectural design phases ✓, (3) executive plans ✓, (4) optional architectural supervision — not explicit, (5) landscape excluded ✓ (in exclusions), (6) structural engineering ✓, (7) electrical engineering ✓ (MEP), (8) lighting design — not explicitly stated as separate scope item, (9) water systems ✓ (MEP), (10) irrigation — not in exclusions and not scoped ✗, (11) solar ✓ (solar_system_coordination_clause), (12) local contractor cost validation — not explicitly stated ✗, (13) payment schedule ✓, (14) deliverables by phase ✓ (descriptions present), (15) responsibilities matrix ✓, (16) exclusions ✓, (17) revision assumptions ✓, (18) timeline structure ✓ (phases sequenced), (19) project-type clauses ✓ (standalone_residential_standard_clause, solar_system_coordination_clause, pool_coordination_clause), (20) e-signature path — not mentioned ✗. Items 4, 8, 10, 12, and 20 are absent or not explicitly addressed — that is more than 3 missing, placing this at the boundary between score 3 and 1. Items 4, 8, 10, 12 are arguably implied; item 20 (e-signature) is clearly absent. Score 3 applied: 15–17 items effectively present with project-type clause correctly applied. Accuracy scored 5: correct standalone_residential template applied; deliverables per phase match production pipeline; responsibilities name real parties (oficio_taller, client). Clarity scored 4: SOW is understandable to a professional architect-client relationship; payment schedule is clear; however the deliverables descriptions within phases are concise to the point of needing expansion for a lay client. State_sync scored 3: simulated run. Timing scored 5: produced before downstream proposal work. Decision_readiness scored 4: architect reviewer can evaluate most sections immediately; the missing e-signature path and implicit items require follow-up.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "No Celia routing at DG-04 — Vera sends to architect for review.",
+  "payload_fields_verified": 6,
+  "passed": true
+}

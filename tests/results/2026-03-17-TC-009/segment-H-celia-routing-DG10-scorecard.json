@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-009",
+  "segment": "H",
+  "phase": "DG-10",
+  "gate_id": "DG-10",
+  "gate_type": "celia_routing",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-dg10",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 5,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.83,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 11 payload fields present. Decision: approve. review_item: executive-plans (correct). route_to: Ofelia (correct — DG-10 approve → Ofelia for contractor bidding). next_action: 'dispatch Ofelia for contractor bidding'. sync_to_asana: true. Clarity scored 4: comment null. State sync scored 5 — Asana GID 1213707912111430 (final_approval_gate). No auto-fail conditions.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-10: approve → route_to Ofelia. Correct.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

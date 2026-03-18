@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-004",
+  "segment": "A",
+  "phase": "A",
+  "gate_id": "DG-01",
+  "gate_type": "marcela",
+  "agent_tested": "Lupe",
+  "deliverable": "lead-record",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.5,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Lead record captures all required fields (source_channel, category, received_at, summary, status). Completeness docked to 4 because the raw WhatsApp message is not preserved verbatim in this record (summary is a clean paraphrase, not the raw text — raw message lives in lead-summary.json). Accuracy is 5: source_channel=whatsapp is correct, category=project_inquiry is correct. Clarity is 5: project type, client name (Dra. Carmen Valdez), location (La Paz, BCS), and key program details are immediately scannable. State_sync scored 3 per simulated run scoring note (no live Asana). Timing is 5: record created in the same session as inbound message. Decision_readiness is 5: all qualifying signals present for Marcela.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-01 route_to=Lupe is correct — Lupe dispatched for Segment B lead-summary. All 11 required payload fields present. timestamp ISO-8601 confirmed.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

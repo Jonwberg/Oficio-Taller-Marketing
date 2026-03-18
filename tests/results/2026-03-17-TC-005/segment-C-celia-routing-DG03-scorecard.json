@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "C",
+  "phase": "C",
+  "gate_id": "DG-03",
+  "gate_type": "marcela",
+  "agent_tested": "Celia",
+  "deliverable": "decision-routing-DG03",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "Both dg-03.json and decision-event-DG-03.json present. All 11 payload fields in decision-event-DG-03.json: project_id ✓, phase=DG-03 ✓, review_item=cost-basis ✓, reviewed_by=Marcela ✓, decision=approve ✓, comment=null ✓, timestamp=2026-03-18T09:00:00-07:00 ✓, source_channel=email ✓, next_action=dispatch Tomás to prepare public_civic SOW ✓, route_to=Tomás ✓, sync_to_asana=true ✓. Score 5.",
+    "accuracy": "Decision=approve correct. route_to=Tomás correct (Tomás prepares SOW in Segment D). next_action explicitly specifies public_civic SOW — correct template routing for this project type. Score 5.",
+    "clarity": "Score 4: comment=null. Cost basis review covers a MXN 72M total estimate — some reviewer note on budget alignment signal would be expected in production.",
+    "state_sync": "Score 3 (simulated run — ASANA_UNAVAILABLE). sync_to_asana=true logged.",
+    "timing": "Decision event at 2026-03-18T09:00:00-07:00. Next day after lead intake and discovery. Prompt capture. Score 5.",
+    "decision_readiness": "Tomás receives: project_id, phase, next_action specifying public_civic SOW. Complete context to select correct template and begin work. Score 5."
+  },
+  "average_score": 4.5,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Clean DG-03 routing. All 11 payload fields present. route_to=Tomás with next_action explicitly calling out public_civic SOW — critical for correct template selection. Both dg-03.json and decision-event-DG-03.json consistent.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "route_to=Tomás in both files. next_action specifies 'public_civic SOW' — ensures Tomás uses correct template. Both files use route_to field.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "F",
+  "phase": "F",
+  "gate_id": "DG-07",
+  "gate_type": "celia",
+  "agent_tested": "Celia",
+  "deliverable": "celia-routing-dg07",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 4,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 4
+  },
+  "average_score": 4.17,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 11 required payload fields verified present: project_id, phase='F', review_item='concept_review', reviewed_by='Celia', decision='approve', comment='Concept approved. Advance to architectural design.', timestamp='2026-03-17T12:00:00-07:00' (ISO-8601 ✓), source_channel='email', next_action='concept_in_progress', route_to='Felipe', sync_to_asana=false. Completeness scored 5: all 11 fields present. Accuracy scored 4: decision='approve' correctly parsed; route_to='Felipe' is correct — DG-07 approve routes to Felipe for architectural design. However next_action='concept_in_progress' is semantically incorrect for an approve event — if the concept was approved, the next_action should be 'advance_to_architectural_design' or 'architectural_design_in_progress', not 'concept_in_progress' which implies concept is still being worked on. This is a minor inaccuracy in the state label. Score 4. Clarity scored 4: comment 'Concept approved. Advance to architectural design.' is clear; however next_action='concept_in_progress' contradicts the comment which says to advance — slightly ambiguous. State_sync scored 3: simulated run. Note per rubric: for approve (not Pass to Agent) at DG-07, project_state should advance — next_action should not be concept_in_progress. Timing scored 5: timestamp at 12:00, correct pipeline order. Decision_readiness scored 4: Felipe receives correct routing; next_action label ambiguity is minor gap.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "route_to='Felipe' — correct. next_action='concept_in_progress' is a minor inaccuracy — should be 'advance_to_architectural_design' for an approve event. Not an auto-fail but noted.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

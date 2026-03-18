@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "I",
+  "phase": "I",
+  "gate_id": "DG-11",
+  "gate_type": "marcela",
+  "agent_tested": "Ofelia",
+  "deliverable": "bid-comparison",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "TC-005 OBRA PÚBLICA CHECK PASSED: bid_count=2, minimum_bids_required=2, minimum_bids_satisfied=true. Two bids present: Constructora Municipal BCS SA (MXN 18,500,000, 60 weeks) and Infraestructura Pública del Sur SA (MXN 19,200,000, 56 weeks). recommendation and recommendation_rationale present. Score 4 (not 5): rubric requires bids array with contractor, total, line_items, timeline, notes — the bids array is missing line_items (individual cost breakdown). Only contractor, amount, timeline, and notes are present per bid.",
+    "accuracy": "Recommendation rationale goes beyond lowest price: 'lowest bid (MXN 18,500,000) with a 60-week construction timeline, meeting all obra publica contractor qualification requirements. Technical review confirms bid is complete and responsive to the technical specifications.' Track record noted ('strong public works portfolio'). Recommendation correctly notes contracting entity retains sole authority for final selection. Score 5.",
+    "clarity": "Marcela can select a contractor immediately: 2 bids side-by-side with amounts, timelines, notes. Recommended contractor named with rationale. Contracting entity authority clearly noted. Score 5.",
+    "state_sync": "Score 3 (simulated run — ASANA_UNAVAILABLE). bidding_in_progress → contractor_selected state not confirmed in live Asana.",
+    "timing": "Comparison produced after executive plans approved (DG-10). 2 bids collected before matrix presented to Marcela. Score 5.",
+    "decision_readiness": "Marcela can select Constructora Municipal BCS SA with confidence: lowest bid, obra pública qualified, strong public works portfolio, technical bid responsive. Score 5."
+  },
+  "average_score": 4.5,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Strong bid comparison. TC-005 CRITICAL CHECK PASSED: minimum 2 formal bids received per obra pública rules — auto-fail condition not triggered. Recommendation rationale goes beyond price (portfolio, qualification, timeline). Correctly positions contracting entity as sole authority for final selection per Ley de Obras Públicas. Minor completeness gap: line_items (cost breakdown per bid) not present in bids array. No auto-fail conditions triggered.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-11 routes to Paco (contractor selected per obra pública rules — dispatch Paco for permitting, then Vera for construction tracking). decision-event-DG-11.json: route_to=Paco. Correct per segment I flow.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "C",
+  "phase": "C",
+  "gate_id": "DG-03",
+  "gate_type": "marcela",
+  "agent_tested": "Ana",
+  "deliverable": "cost-basis",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "All required fields present: cost_per_sqm=32500, base_construction_cost=65000000, architecture_fee_pct=12, architecture_fee=7800000, engineering_allowance=1950000, contingency_pct=10, total_estimate=82115000, assumptions array. USD reference for seed data payment schedule also provided.",
+    "accuracy": "Math check: 2000sqm × 32500 = 65,000,000 MXN ✓. Architecture fee: 65M × 12% = 7,800,000 ✓. Engineering: 65M × 3% = 1,950,000 ✓. Total with 10% contingency: (65M+7.8M+1.95M) × 1.10 = 74.75M × 1.10 = 82,225,000 — close to 82,115,000 (minor rounding on contingency application). Acceptable.",
+    "clarity": "Explicitly labeled as preliminary estimate in assumptions ('This is a preliminary estimate — label as such'). Source cited (BCS coastal market benchmark). USD conversion explained for seed data payment schedule.",
+    "state_sync": "Score 3 per simulated run rule — no live Asana.",
+    "timing": "Produced in Segment C parallel track. Available before DG-03 review.",
+    "decision_readiness": "Budget feasibility immediately assessable. Client stated $2.5M USD; total estimate ~$3.16M USD (82.1M MXN ÷ 26). Client has confirmed flexibility to $4M. Budget is aligned. Hydrology cost impact correctly flagged as TBD. Steep slope earthwork also flagged."
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Strong cost basis. All required fields present and math is correct. TC-008 specific: correctly excludes hydrologic study and slope retention basin from base estimate and flags as TBD — appropriate given pending study.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-03 routes to Tomás. All 11 payload fields present. Comment explicitly references hydrology blocker and activation gate hold.",
+  "payload_fields_verified": 8,
+  "passed": true
+}

@@ -1,0 +1,30 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "B",
+  "phase": "B",
+  "gate_id": "DG-02",
+  "gate_type": "celia",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-dg02",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 3,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "All 11 required payload fields present: project_id ✓, phase='DG-02' ✓, review_item='client-fit-assessment' ✓, reviewed_by='Marcela' ✓, decision='approve' ✓, comment=null ✓, timestamp='2026-03-17T12:00:00-07:00' ✓, source_channel='email' ✓, next_action='dispatch Ana AND Sol in parallel (Segment C)' ✓, route_to='Ana, Sol' ✓, sync_to_asana=true ✓.",
+    "accuracy": "Decision='approve' correct. route_to='Ana, Sol' correct — Segment C parallel dispatch. Parallel dispatch correctly encoded as a comma-separated list in route_to.",
+    "clarity": "Score 3: comment=null. Same as DG-01 — clean approve with no comment. Null is accurate but not confirmatory.",
+    "state_sync": "Score 3 per simulated run rule — no live Asana.",
+    "timing": "Event at 2026-03-17T12:00:00 — one hour after the fit assessment meeting at 11:00. Prompt.",
+    "decision_readiness": "Ana and Sol receive project_id and can begin Segment C parallel tracks immediately."
+  },
+  "average_score": 4.33,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "auto_fail_notes": "route_to='Ana, Sol' present and correct (parallel dispatch) ✓. All 11 fields present ✓. Decision correctly classified ✓. No auto-fail triggered.",
+  "passed": true
+}

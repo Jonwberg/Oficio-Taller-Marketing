@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-002",
+  "segment": "F",
+  "phase": "F",
+  "gate_id": "DG-07",
+  "gate_type": "marcela",
+  "agent_tested": "Andrés",
+  "deliverable": "concept-review",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 4,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.33,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All required schema fields present: deliverables_checklist (3d_model, renders, material_direction, color_direction, space_arrangement), presentation_milestone='M2 — Concept Design Approved', review_notes. Completeness 4 (not 5): all five deliverables confirmed complete (3d_model='complete', renders='complete' with 4 views, material_direction='complete', color_direction='complete', space_arrangement='complete'). However, the rubric requires the in-person presentation to be 'logged as milestone with date' — presentation_milestone='M2 — Concept Design Approved' gives the milestone name but no specific date for the in-person presentation event itself. Score 4 rather than 5. Accuracy 4 (not 5): review_notes field contains Andrés's own recommendation ('Recommend DG-07 approval') rather than capturing Marcela's specific feedback verbatim. Rubric requires 'Marcela's specific feedback — not just approved'. DG-07 decision-event-dg07.json shows comment=null, so no Marcela feedback was captured — this limits accuracy. Clarity 5: HOA constraints (7m height, contemporary style, stone/stucco, no flat roofs over 2 floors) addressed in every deliverable — actionable for the design team. State sync 3: simulated run. Timing 5: package confirmed before DG-07 invocation. Decision readiness 5: Marcela can approve or reject from this package. No auto-fail conditions triggered — all five deliverables confirmed, presentation_milestone present.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "Celia routing for DG-07 scored separately in segment-F-celia-routing-DG07-scorecard.json.",
+  "payload_fields_verified": 3,
+  "passed": true
+}

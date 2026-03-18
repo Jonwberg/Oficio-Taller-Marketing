@@ -1,0 +1,25 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "J",
+  "phase": "J",
+  "gate_id": "DG-12",
+  "gate_type": "vera",
+  "agent_tested": "Controller",
+  "deliverable": "invoice",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 3,
+    "clarity": 3,
+    "state_sync": 3,
+    "timing": 5
+  },
+  "average_score": 3.8,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Completeness scored 5: all eight required fields present — project_name='Casa Moderna — Carlos Mendoza', client_name='Carlos Mendoza', milestone_name='M3 — Executive Plans Approved', amount=16200, due_date='2026-08-25', payment_instructions='Wire transfer to Oficio Taller account per contract', currency='USD', running_total=54000. Accuracy scored 3: the invoice is for M3 (milestone 3) at 30% = $16,200. Per the SOW payment schedule: contract_signed=40%=$21,600, concept_approved=30%=$16,200, executive_plans_approved=30%=$16,200. M3 amount matches. However running_total=54,000 suggests this is being treated as the final invoice covering the full contract — but the running_total at M3 milestone should be the cumulative total invoiced to date (M1+M2+M3 = 21,600+16,200+16,200 = 54,000), which is correct only if M1 and M2 invoices were also issued. The invoice amount $16,200 matches the payment schedule. Score 3: amount is correct for M3, but this single invoice.json represents only M3 — the running_total implies all three invoices total $54,000 which is accurate, but the individual milestone amount being the full running total is only correct at project end. Clarity scored 3: payment_instructions='Wire transfer to Oficio Taller account per contract' — this is generic. Rubric requires specific bank name, account, reference format. Client would need at least one follow-up to complete payment. State_sync scored 3: simulated run. Timing scored 5: invoice produced in correct pipeline order.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "No Celia routing on invoices — Controller issues outbound to client.",
+  "payload_fields_verified": 8,
+  "passed": true
+}

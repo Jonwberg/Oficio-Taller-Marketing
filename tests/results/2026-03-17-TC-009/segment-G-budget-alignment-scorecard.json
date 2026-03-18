@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-009",
+  "segment": "G",
+  "phase": "DG-09",
+  "gate_id": "DG-09",
+  "gate_type": "marcela",
+  "agent_tested": "Bruno",
+  "deliverable": "budget-alignment",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 4,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.83,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All required fields present: contractor_pricing_source (documented — 2 local BCS contractors with coastal residential experience), contractor_total (MXN 8,200,000), client_budget (MXN 9,907,480 from cost-basis.json), variance_amount (-1,707,480), variance_pct (-17.2%), recommendation (proceed). Math verified: 8,200,000 - 9,907,480 = -1,707,480; -1,707,480 / 9,907,480 = -17.2% correct. Recommendation matches data — contractor pricing below budget, no value engineering needed. Recommendation rationale explains the variance: conservative benchmark vs efficient local contractors. Pool and solar quoted separately as specialist subcontractors and within budget range. No redesign required. Proceed decision is unambiguous. State sync scored 4 — Asana GID 1213707830703243 confirmed in state.json (budget_alignment task). No auto-fail conditions triggered.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Celia DG-09 routing verified in separate scorecard.",
+  "payload_fields_verified": 6,
+  "passed": true
+}

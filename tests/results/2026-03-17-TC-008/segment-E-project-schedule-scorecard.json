@@ -1,0 +1,33 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "E",
+  "phase": "E",
+  "gate_id": null,
+  "gate_type": "activation",
+  "agent_tested": "Pablo",
+  "deliverable": "project-schedule",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5
+  },
+  "score_evidence": {
+    "completeness": "All 6 SOW phases present in phases array. milestone_dates covers M1 (contract signing), M2 (concept approved), M3 (executive plans), M4 (permit), M5 (construction admin final). dependencies graph complete (phase N depends on phase N-1). Asana subtask creation noted as pending (simulated run).",
+    "accuracy": "Timeline realistic for commercial hotel: total design+permits ~92 weeks from activation (Apr 2026 → Feb 2027 for permits), plus 52-week construction = ~144 weeks total project duration. Phase durations match SOW exactly: 6+8+6+8+12+52 weeks. ISO-8601 dates used throughout. No dependency inversions. Hydrology delay correctly reflected: schedule_notes explicitly state 6-week activation delay due to hydrology blocker, effective activation 2026-04-28.",
+    "clarity": "Each phase has start/end dates, duration, deliverables list, and named milestone. Phase 1 specifically notes '15m stream setback' in deliverable list — carries TC-008 constraint into the active schedule. Critical path is traceable through milestone dates.",
+    "state_sync": "Score 3 per simulated run rule — no live Asana. schedule_notes correctly references activation_blocked state and hydrology resolution.",
+    "timing": "TC-008 CRITICAL: Pablo NOT dispatched during hydrology blocker. Schedule start date 2026-04-28 is after hydrology study received (hydrology-study-received.json received_at=2026-04-28T10:00:00). Activation conditions met before schedule produced. Correct timing — activation gate held correctly."
+  },
+  "average_score": 4.60,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "auto_fail_notes": "phases array non-empty ✓. milestone_dates present ✓. TC-008 CRITICAL: Schedule produced only after contract_signed=true, site_docs_complete=true (hydrology resolved 2026-04-28), deposit_confirmed=true ✓. No auto-fail triggered. This is the key TC-008 test of Pablo's timing — PASSED.",
+  "decision_simulated": "activate",
+  "decision_commentary": "This is the TC-008 core timing test for Pablo. The schedule correctly reflects the 6-week activation delay due to the hydrology blocker. Pablo was NOT dispatched during the blocked period — Vera held the gate until hydrology-study-received.json confirmed resolution. Start date 2026-04-28 correctly follows hydrology study receipt. Phase 1 deliverable explicitly references the 15m stream setback. Perfect TC-008 edge case handling.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "No Celia gate — Pablo fires after activation confirmed by Vera. vera-activation-approved.json correctly shows all three activation conditions true before Pablo dispatch. Correct per rubric (no Marcela gate on schedule).",
+  "payload_fields_verified": 3,
+  "passed": true
+}

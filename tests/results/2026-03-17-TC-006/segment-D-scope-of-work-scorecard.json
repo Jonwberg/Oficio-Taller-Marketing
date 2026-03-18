@@ -1,0 +1,25 @@
+{
+  "run_id": "2026-03-17-TC-006",
+  "segment": "D",
+  "phase": "D",
+  "gate_id": "DG-04",
+  "gate_type": "marcela",
+  "agent_tested": "Tomás",
+  "deliverable": "scope-of-work",
+  "scores": {
+    "completeness": 3,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 4
+  },
+  "average_score": 4.0,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "SOW covers 6 scope phases with deliverables, payment schedule with 3 milestones (names, percentages, trigger events), and exclusions. Completeness scored 3: multiple checklist items from the 20-item rubric are missing or not addressed — specifically: optional architectural supervision clause, landscape architecture scope statement, electrical and lighting engineering scope, water systems scope, irrigation scope, solar scope, local contractor cost validation, responsibilities matrix assigning deliverables to named parties, revision assumptions per phase, and e-signature path. These are 10+ items absent from the 20-item checklist. Payment schedule is present. Exclusions section is present and specific. Accuracy scored 5: deliverables per phase match the production pipeline; phases are correctly sequenced. Clarity scored 4: scope phases are clear but the absence of a responsibilities matrix makes accountability ambiguous. State_sync scored 3 per simulated run note.",
+  "payload_fields_verified": 4,
+  "passed": true,
+  "gap_note": "Structural gap: SOW is missing ~10 of 20 checklist items per rubric (responsibilities matrix, revision assumptions, engineering scope items, supervision clause, e-signature path). Passed because payment schedule and exclusions are present and no auto-fail triggered."
+}

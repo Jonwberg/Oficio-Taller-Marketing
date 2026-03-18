@@ -1,0 +1,25 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "J",
+  "phase": "J",
+  "gate_id": "DG-12",
+  "gate_type": "vera",
+  "agent_tested": "Tax",
+  "deliverable": "tax-filing",
+  "scores": {
+    "completeness": 3,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5
+  },
+  "average_score": 4.0,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Completeness scored 3: all six required fields present — rfc='TEST-RFC-001', revenue_amount=54000, tax_jurisdiction='Mexico IVA 16%', filing_period='2026-08', cfdi_reference='CFDI-TC001-2026-08', deductibles=[]. However the rubric requires 'all Controller invoices accounted for in revenue total' and 'deductibles documented.' The revenue_amount=54000 USD matches the running_total from the Controller invoice (correct), but this is only M3's invoice file — if there were M1 and M2 invoices, the tax filing should account for all three. With only one CFDI reference (for 2026-08) and deductibles=[] (empty, not documented), score 3 is correct: revenue total present but deductibles not documented, and only one CFDI reference for what should be three invoice milestones across the project. Accuracy scored 5: revenue_amount=54,000 matches the contract total from the SOW and proposal. Tax_jurisdiction='Mexico IVA 16%' is the correct standard jurisdiction for Mexican architectural services. Clarity scored 4: CFDI reference 'CFDI-TC001-2026-08' is traceable to the project and period; one CFDI reference is present. Score 4 rather than 5 because multiple invoice milestones (M1, M2, M3) should each have CFDI references — only one is listed. State_sync scored 3: simulated run. Timing scored 5: filed within the 2026-08 period which aligns with the M3 milestone date.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "No Celia routing on tax-filing — compliance output.",
+  "payload_fields_verified": 6,
+  "passed": true
+}

@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "A",
+  "phase": "A",
+  "gate_id": "DG-01",
+  "gate_type": "marcela",
+  "agent_tested": "Lupe",
+  "deliverable": "lead-record",
+  "scores": {
+    "completeness": 3,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.33,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Completeness scored 3: all five required fields are present (source_channel, category, received_at, summary, status) but the raw message from the client is summarized in the summary field rather than stored verbatim — rubric requires score 3 for this condition. Accuracy scored 5: source_channel='instagram' matches the inbound platform exactly; category='project_inquiry' is correctly classified for a residential design lead. Clarity scored 5: summary is immediately scannable — client name (Carlos Mendoza), project type (250sqm modern residence), location (Los Cabos), key features (pool, rooftop terrace), and budget range ($300K–$500K USD) all visible in one sentence. State_sync scored 3: simulated run — fields documented but no live Asana task created. Timing scored 5: received_at and record creation are in the same pipeline session. Decision_readiness scored 5: all required fields populated, quality signal clear, Marcela can make approve/reject decision immediately.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "No Celia routing at Segment A — Marcela is direct reviewer.",
+  "payload_fields_verified": 5,
+  "passed": true
+}

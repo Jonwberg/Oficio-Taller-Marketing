@@ -1,0 +1,24 @@
+{
+  "run_id": "2026-03-17-TC-006",
+  "segment": "F",
+  "phase": "F",
+  "gate_id": "DG-08",
+  "gate_type": "marcela",
+  "agent_tested": "Felipe",
+  "deliverable": "architectural-design",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Architectural design set is complete. All required fields present: design_set_status (complete), concept_reflection_confirmed (true), area_program_compliance (compliant, no deviations, all 11 spaces confirmed), structural_coordination_notes (specific and complete — structural engineer engaged, pool shell structural requirements noted, coastal wind load analysis referenced). All rooms from area program are present in the design set. No unexplained departures from concept. Structural coordination notes are actionable and specific. Design is complete enough for engineering handoff. State_sync scored 3 per simulated run note. No auto-fail conditions triggered.",
+  "payload_fields_verified": 4,
+  "passed": true
+}

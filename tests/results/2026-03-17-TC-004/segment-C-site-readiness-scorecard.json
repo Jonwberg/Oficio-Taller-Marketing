@@ -1,0 +1,27 @@
+{
+  "run_id": "2026-03-17-TC-004",
+  "segment": "C",
+  "phase": "C",
+  "gate_id": "Vera-status",
+  "gate_type": "vera_auto",
+  "agent_tested": "Sol",
+  "deliverable": "site-readiness-report",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 3,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 4
+  },
+  "average_score": 4.17,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "tc004_specific_check": "PASS — flat urban lot: hydrologic study correctly NOT included. topographic_survey correctly required.",
+  "decision_simulated": "approve",
+  "decision_commentary": "Completeness 5: all required fields present — required_documents=['topographic_survey'], request_sent_at, current_status='documents_requested', blockers=[]. TC-004 specific check PASSES: flat urban lot with municipal services — hydrologic study is correctly absent. topographic survey correctly included. No over-requesting or under-requesting. Accuracy 5: document requirements exactly match site conditions (flat urban lot, no stream/slope/wetland). Clarity 3: while the schema is correct, the document is minimal — no explicit deadline communicated to client in the deliverable, no client instruction details visible. Rubric penalizes missing deadline. State_sync 3 (simulated — no live Asana; also blockers=[] is correct as documents have been requested without an overdue flag at this stage). Timing 5: request issued concurrently with Ana's area program work (request_sent_at 09:35, same session). Decision_readiness 4: Vera can read status but instructions to client are not visible in this deliverable — one follow-up context needed. No auto-fail conditions triggered.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "No Celia gate on site-readiness. Vera auto-tracks status. Rubric note: hydrologic study auto-fail check verified PASS.",
+  "payload_fields_verified": 4,
+  "passed": true
+}

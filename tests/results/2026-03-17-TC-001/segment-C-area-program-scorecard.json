@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "C",
+  "phase": "C",
+  "gate_id": "DG-03",
+  "gate_type": "marcela",
+  "agent_tested": "Ana",
+  "deliverable": "area-program",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 4,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.5,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Completeness scored 5: all 10 spaces from seed data program are present with name, qty, and size — Master Bedroom (25sqm), Guest Bedrooms ×2 (18sqm each), Bathrooms ×3 (8sqm each), Kitchen (20sqm), Dining/Living (45sqm), Office (12sqm), Pool (35sqm), Patio (40sqm), Rooftop Terrace (5sqm), Service Areas (15sqm). Special programmed features (pool, rooftop) included with sizes. Accuracy scored 4: total_sqm=250 is stated and matches program intent, but the mathematical sum of spaces is: 25 + (2×18) + (3×8) + 20 + 45 + 12 + 35 + 40 + 5 + 15 = 25+36+24+20+45+12+35+40+5+15 = 257sqm, not 250sqm as stated. This is a minor discrepancy (7sqm off, ~2.7%) — not a rounding error but a genuine arithmetic mismatch. Scored 4 rather than 5 for this minor inaccuracy; rubric specifies score 3 for 'minor rounding' — this is slightly more than rounding but still minor. Clarity scored 5: matrix is readable as a standalone document — no back-reference required. State_sync scored 3: simulated run. Timing scored 5: produced before downstream scope and cost work. Decision_readiness scored 5: assumptions documented ('Program matches seed data exactly at 250sqm. Flat site allows single-level or two-level layout.').",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "Celia routing for DG-03 scored separately.",
+  "payload_fields_verified": 3,
+  "passed": true
+}

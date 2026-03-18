@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-004",
+  "segment": "B",
+  "phase": "B",
+  "gate_id": "DG-02",
+  "gate_type": "marcela",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-DG-02",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 11 required payload fields present: project_id, phase='DG-02', review_item='client-fit-assessment', reviewed_by='Marcela', decision='approve', comment=null, timestamp='2026-03-17T16:00:00-07:00' (ISO-8601), source_channel='email', next_action='Dispatch Ana (area program + cost basis) and Sol (site readiness) in parallel', route_to='Ana', sync_to_asana=true. Accuracy: decision='approve' correct; route_to='Ana' correct (Ana leads Segment C area program with Sol in parallel). next_action correctly describes parallel dispatch. comment=null acceptable.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "route_to=Ana: CORRECT. Decision=approve: CORRECT. All 11 fields present.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

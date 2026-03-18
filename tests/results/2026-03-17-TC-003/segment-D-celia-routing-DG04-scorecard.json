@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-003",
+  "segment": "D",
+  "phase": "D",
+  "gate_id": "DG-04",
+  "gate_type": "marcela",
+  "agent_tested": "Celia",
+  "deliverable": "celia-routing-dg04",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 3,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "dg-04.json: 11 fields present but comment=null. Marcela's decision had a substantive comment: 'commercial_hotel_standard_clause and hospitality_compliance_clause both confirmed. SOW approved.' dropped. Score 4.",
+    "accuracy": "Decision=approve correct. route_to=Bruno correct — DG-04 triggers Bruno to price the SOW. Score 5.",
+    "clarity": "comment=null. Marcela's confirmation of both commercial_hotel clauses was in dg-04.json human file but not captured in Celia's event. Score 3.",
+    "state_sync": "sync_to_asana=true. Score 3.",
+    "timing": "Timestamp 2026-03-19T09:00:00. Score 5.",
+    "decision_readiness": "route_to=Bruno, next_action specifies SOW pricing task. Bruno can begin immediately. Score 5."
+  },
+  "average_score": 4.17,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "DG-04 routing correct: approve, route_to=Bruno. Continuing systematic pattern of comment=null in Celia's events when Marcela's human file contains a substantive comment. Functionally correct routing.",
+  "celia_routing_correct": false,
+  "celia_routing_notes": "comment=null; Marcela's comment ('commercial_hotel_standard_clause and hospitality_compliance_clause both confirmed. SOW approved.') was dropped — systematic pattern.",
+  "payload_fields_verified": 10,
+  "passed": false
+}

@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "G",
+  "phase": "G",
+  "gate_id": "DG-09",
+  "gate_type": "marcela",
+  "agent_tested": "Emilio",
+  "deliverable": "engineering-package",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Completeness scored 5: all four required systems present and confirmed — structural='complete', electrical='complete', lighting='complete', water='complete'. Conditional systems addressed: solar='complete' (solar was in scope per lead and SOW), pool_mechanical='complete' (pool in program), conditional_systems=['solar'] properly declared. all_inputs_confirmed=true, conflicts_resolved=true. Irrigation is not in scope (excluded in SOW) — no gap. Accuracy scored 5: package explicitly declared complete (all systems='complete', all_inputs_confirmed=true). No pending consultant inputs undeclared. Conflicts declared resolved. Clarity scored 5: conflicts_resolved=true documents that any design conflicts during engineering were resolved — all systems marked complete provides clear handoff signal for Bruno. State_sync scored 3: simulated run. Timing scored 5: package complete before Bruno begins contractor pricing — in correct pipeline position. Decision_readiness scored 5: Bruno can proceed to contractor pricing immediately from this document; no items outstanding.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Celia routing at DG-09 scored separately.",
+  "payload_fields_verified": 4,
+  "passed": true
+}

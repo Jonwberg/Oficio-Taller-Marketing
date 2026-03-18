@@ -1,0 +1,28 @@
+{
+  "run_id": "2026-03-17-TC-004",
+  "segment": "B",
+  "phase": "B",
+  "gate_id": "pre-DG-02",
+  "gate_type": "output",
+  "agent_tested": "Elena",
+  "deliverable": "discovery-questionnaire",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 4,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5,
+    "language": 4,
+    "decision_readiness": 5
+  },
+  "average_score": 4.29,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Completeness 5: all 7 required topics covered — project type, budget, timeline, location, special requirements, design style, site ownership. Accuracy 4 (not 5): questionnaire questions are somewhat generic in format — while project_type_question asks about type of project, it references 'casa habitación, ampliación, proyecto interior, desarrollo inmobiliario' as examples, which are residential/interior categories inappropriate for a commercial health center lead. For a commercial lead already identified as such, questions should be tailored to clinical program details, COFEPRIS registration status, and medical group structure. Docking to 4. Clarity 4: questions are clear and conversational in Spanish but feel like a standard intake form rather than a bespoke clinical project questionnaire — warm but not maximally tailored. Language 4: questionnaire is in Spanish matching inbound WhatsApp message — correct language choice. Minor note: sent_to field is null, which is a schema gap (required field missing recipient). State_sync 3 (simulated). Timing 5: sent within session at 10:45 same day as lead receipt at 09:00. Decision_readiness 5: questions will yield enough information for fit assessment. Auto-fail check: budget_question present, project_type_question present, language correct. sent_to=null is a schema concern but does not trigger the 'sent to wrong contact' auto-fail (more a data population issue).",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "No Celia gate directly on discovery questionnaire. Routing flows through DG-02 after Elena's fit assessment.",
+  "payload_fields_verified": 8,
+  "passed": true,
+  "gaps": ["sent_to field is null — recipient not recorded in deliverable schema"]
+}

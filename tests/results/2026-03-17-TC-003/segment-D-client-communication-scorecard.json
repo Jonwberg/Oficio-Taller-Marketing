@@ -1,0 +1,38 @@
+{
+  "run_id": "2026-03-17-TC-003",
+  "segment": "D",
+  "phase": "D",
+  "gate_id": "DG-06",
+  "gate_type": "marcela",
+  "agent_tested": "Rosa",
+  "deliverable": "client-communication",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "channel": 5,
+    "brand_voice": 5,
+    "state_sync": 4,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "Message includes project name (boutique wellness hotel, Todos Santos, BCS), full context of all 6 phases, clear action requested (review and sign, or schedule call). Score 5.",
+    "accuracy": "Message accurately reflects project state and all decisions made — 6 phases, full fee breakdown, minimum 3 bids, M1 trigger. No inaccuracies. Score 5.",
+    "clarity": "Three explicit next steps listed: (1) review and sign; (2) request adjustments; (3) schedule a call. One clear M1 trigger (USD 168,000 + signed SOW). No ambiguity. Score 5.",
+    "channel": "email channel — correct for formal proposal delivery with attached documents. Score 5.",
+    "brand_voice": "Professional, warm, design-engaged. Opens with 'Es un gusto compartir...' / 'We are pleased to share...' References client's own stated vision ('desert landscape of Todos Santos'). Not a form letter. Score 5.",
+    "state_sync": "status='draft' present — Marcela approval required before send. This satisfies the rubric requirement. Score 4 (draft status present but Asana update not verifiable in simulated run — slight deduction from 5 since the simulated run note only applies to live Asana checks, and status=draft is the explicit field).",
+    "timing": "Message drafted after proposal assembly and legal review. Score 5.",
+    "decision_readiness": "Marcela can approve in under 60 seconds — professional bilingual email, draft status, clear action for client. Score 5."
+  },
+  "average_score": 4.88,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Excellent client communication. Bilingual (es+en), professional and warm, accurate project summary, three clear next steps for client. Status=draft correctly set — awaiting Marcela approval before send. No confidential internal information included. No auto-fail conditions triggered.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "Celia DG-06 routing scored separately.",
+  "payload_fields_verified": null,
+  "passed": true
+}

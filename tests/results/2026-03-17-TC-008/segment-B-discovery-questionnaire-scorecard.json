@@ -1,0 +1,36 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "B",
+  "phase": "B",
+  "gate_id": "DG-01",
+  "gate_type": "marcela",
+  "agent_tested": "Elena",
+  "deliverable": "discovery-questionnaire",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 4,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "language": 4,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "All 7 required fields present. Covers all 8 required topics: project type, site location, budget range, timeline, special requirements, design style, site ownership. Special requirements question explicitly opens space for sustainability and commercial-use specifics.",
+    "accuracy": "Score 4: questions are appropriate for commercial hotel context but are not explicitly tailored/customized to commercial hotel vs generic. The questionnaire is high-quality but generic enough to apply to any project type. Minor gap: no explicit question about operational timeline (opening date targets), which matters for hospitality projects.",
+    "clarity": "Questions are conversational and warm — not bureaucratic. Each question invites dialogue rather than demanding data. Format is professional and inviting.",
+    "state_sync": "Score 3 per simulated run rule — no live Asana.",
+    "timing": "sent_at=2026-03-17T10:00:00-07:00, one hour after lead receipt at 09:00. Well within 24h requirement.",
+    "language": "Score 4: Questionnaire is in Spanish (correct for a Mexico-based studio). However, the inbound message was in English ('Good morning, I have a 15,000sqm property...'). A 5 would require matching the client's inbound language exactly. Spanish is defensible as the studio's primary language and the project is in Mexico, but strict rubric interpretation lowers this to 4.",
+    "decision_readiness": "All 8 topics covered. Responses to these questions will provide Elena with everything needed for a complete fit assessment: design engagement, budget realism, scope clarity, collaborative style."
+  },
+  "average_score": 4.43,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Strong questionnaire. Language mismatch (sent in Spanish to English-speaking client) is a minor gap — not an auto-fail since the studio context is Mexico-based. Decision readiness is high.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-02 routes to Ana and Sol in parallel — correct per segment C routing rules. decision-event-dg02.json has all 11 fields. route_to='Ana, Sol' is correct.",
+  "payload_fields_verified": 7,
+  "passed": true
+}

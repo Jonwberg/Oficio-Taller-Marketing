@@ -1,0 +1,25 @@
+{
+  "run_id": "2026-03-17-TC-002",
+  "segment": "J",
+  "phase": "J",
+  "gate_id": "N/A",
+  "gate_type": "auto",
+  "agent_tested": "Controller",
+  "deliverable": "invoice",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 3,
+    "state_sync": 3,
+    "timing": 5
+  },
+  "average_score": 4.2,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All required schema fields present: project_name, client_name, milestone_name='M3 — Construction Documents Delivered', amount=20400, due_date='2026-10-07', payment_instructions, currency='USD', running_total=68000. Completeness 5: all required fields present including running_total=68000 showing cumulative invoiced vs total contract value; milestones_invoiced array shows M1 (27,200/40%), M2 (20,400/30%), M3 (20,400/30%) — complete milestone history. Accuracy 5: M3 amount 20,400 = 30% of 68,000 = 20,400 — exactly matches budget schedule figures. Running total 27,200+20,400+20,400=68,000 — correct, equals full architecture fee. Clarity 3 (not 5): payment_instructions contains placeholder values — '[BANK_NAME]' and '[CLABE — TO BE CONFIGURED IN .env]'. Rubric requires specific bank name and account for score 5; placeholders present but instructions include the reference format (PRJ-2026-0317-tc002-casa-vista-M3) which is partial. Score 3 — client cannot pay without additional information (bank and CLABE missing). State sync 3: simulated run. Timing 5: M3 invoice issued at 2026-10-06, consistent with M3 milestone trigger (executive plans delivered 2026-10-06 per project-schedule.json). No auto-fail conditions triggered — amount matches payment schedule, payment instructions present (with placeholders), milestone trigger not violated.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "No Celia routing at invoice — Controller fires after Vera milestone confirmation.",
+  "payload_fields_verified": 8,
+  "passed": true
+}

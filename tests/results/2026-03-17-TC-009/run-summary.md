@@ -26,6 +26,52 @@
 
 ---
 
+## Scored Segment Table (TC-009 Decision Gate Agent Scoring)
+
+| Segment | Deliverable | Agent | Avg Score | Auto-Fail | Passed |
+|---------|------------|-------|-----------|-----------|--------|
+| A | lead-record | Lupe | 5.00 | No | ✅ |
+| B | lead-summary | Lupe | 4.83 | No | ✅ |
+| B | discovery-questionnaire | Elena | 4.86 | No | ✅ |
+| B | client-fit-assessment | Elena | 4.83 | No | ✅ |
+| B | Celia DG-01 routing | Celia | 4.83 | No | ✅ |
+| B | Celia DG-02 routing | Celia | 4.83 | No | ✅ |
+| C | area-program | Ana | 4.67 | No | ✅ |
+| C | cost-basis | Ana | 4.83 | No | ✅ |
+| C | site-readiness-report | Sol | 4.67 | No | ✅ |
+| C | Celia DG-03 routing | Celia | 4.83 | No | ✅ |
+| D | scope-of-work | Tomás | 4.83 | No | ✅ |
+| D | budget | Bruno | 4.20 | No | ✅ |
+| D | proposal | Renata | 4.83 | No | ✅ |
+| D | legal-review | Legal | 4.67 | No | ✅ |
+| D | client-communication | Rosa | 5.00 | No | ✅ |
+| D | Celia DG-04 routing | Celia | 4.83 | No | ✅ |
+| D | Celia DG-05 routing | Celia | 4.83 | No | ✅ |
+| D | Celia DG-06 routing | Celia | 4.83 | No | ✅ |
+| E | project-schedule | Pablo | 5.00 | No | ✅ |
+| F | concept-review | Andrés | 4.50 | No | ✅ |
+| F | architectural-design | Felipe | 4.83 | No | ✅ |
+| F | Celia DG-07 routing | Celia | 4.83 | No | ✅ |
+| F | Celia DG-08 routing | Celia | 4.83 | No | ✅ |
+| G | engineering-package | Emilio | 4.83 | No | ✅ |
+| G | budget-alignment | Bruno | 4.83 | No | ✅ |
+| G | Celia DG-09 routing | Celia | 4.83 | No | ✅ |
+| H | executive-plans | Hugo | 4.50 | No | ✅ |
+| H | Celia DG-10 routing | Celia | 4.83 | No | ✅ |
+| I | bid-comparison | Ofelia | 4.83 | No | ✅ |
+| I | permit-status | Paco | 4.80 | No | ✅ |
+| I | Celia DG-11 routing | Celia | 4.83 | No | ✅ |
+| J | invoice | Controller | 4.20 | No | ✅ |
+| J | tax-filing | Tax | 4.00 | No | ✅ |
+
+**Deliverable average (22 scorecards):** 4.67 / 5.0
+**Celia routing average (11 scorecards):** 4.83 / 5.0
+**Combined average (33 scorecards):** 4.73 / 5.0
+**Auto-fail rate:** 0%
+**Pass rate:** 33/33 (100%)
+
+---
+
 ## TC-009 Key Verification Points
 
 | Check | Required | Result |

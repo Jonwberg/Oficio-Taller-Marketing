@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "D",
+  "phase": "D",
+  "gate_id": "DG-06",
+  "gate_type": "marcela",
+  "agent_tested": "Legal",
+  "deliverable": "legal-review",
+  "scores": {
+    "completeness": 3,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 4
+  },
+  "average_score": 4.0,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Completeness scored 3: all five required fields present (reviewed_by='Legal', reviewed_at, ip_rights_status='all_rights_reserved_oficio_taller', compliance_flags=[], approval_status='approved'). However, the rubric requires 'all proposal clauses reviewed; IP and usage rights addressed; project-type-specific compliance verified.' The record shows ip_rights_status is set and compliance_flags is empty, but there is no documentation that specific proposal clauses were reviewed section by section — only a summary approval is present. IP is addressed; project-type-specific compliance is not explicitly documented as reviewed. Score 3: IP rights checked but compliance review documentation is generic (empty flags array without documented scope of review). Accuracy scored 5: compliance_flags=[] with approval_status='approved' is internally consistent and correct — no open flags with approval given. No known compliance issue appears to be missed for a standalone residential project. Clarity scored 4: approval_status='approved' is clear and unambiguous; however the review does not document what was reviewed — 'looks okay' concern partially applies. The explicit 'all_rights_reserved_oficio_taller' IP status is specific. State_sync scored 3: simulated run. Timing scored 5: reviewed_at=2026-03-17T11:00:00, concurrent with Renata's proposal assembly. Decision_readiness scored 4: Vera can proceed to architect gate on clean approval; however one ambiguity — the absence of documented review scope means Vera must trust that the full proposal was reviewed without evidence.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Celia routing at DG-06 scored separately.",
+  "payload_fields_verified": 5,
+  "passed": true
+}

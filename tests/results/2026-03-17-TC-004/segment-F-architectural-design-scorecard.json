@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-004",
+  "segment": "F",
+  "phase": "F",
+  "gate_id": "DG-08",
+  "gate_type": "marcela",
+  "agent_tested": "Felipe",
+  "deliverable": "architectural-design",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Completeness 5: design_set_status='complete'; concept_reflection_confirmed=true; area_program_compliance confirmed with deviations=[] and detailed notes; structural_coordination_notes present and specific (raft foundation, concrete frame, MEP coordination). All 11 space types from area program reflected per notes. COFEPRIS NOM compliance per space confirmed. All 6 engineering disciplines initiated listed. Accuracy 5: no unexplained departures from approved concept — clean/dirty corridor separation maintained, consultorios exceed COFEPRIS minimum (designed 20 sqm vs 15 sqm minimum). Urgencias 120 sqm meets COFEPRIS requirements. COFEPRIS pre-consultation completed at Phase 2 as required. Clarity 5: design is complete for engineering handoff — no open design questions, all 6 engineering disciplines initiated with coordination status. State_sync 3 (simulated). Timing 5: architectural design delivered before Emilio's engineering phase (DG-08 timestamp 2026-07-30, Phase 3 start date 2026-07-30 — same day, correct). Decision_readiness 5: Marcela can hand off to Emilio immediately. Auto-fail: no rooms missing from area program — PASS; concept reflected — PASS; structural coordination notes present — PASS.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-08: decision=approve, route_to=Emilio (coordinate structural and systems engineering including medical gas and specialized HVAC). All 11 payload fields present.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

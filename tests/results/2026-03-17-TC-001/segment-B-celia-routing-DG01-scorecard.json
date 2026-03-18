@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "B",
+  "phase": "B",
+  "gate_id": "DG-01",
+  "gate_type": "celia",
+  "agent_tested": "Celia",
+  "deliverable": "celia-routing-dg01",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 11 required payload fields verified present: project_id='PRJ-2026-0317-tc001-casa-moderna', phase='B', review_item='lead_qualification', reviewed_by='Celia', decision='approve', comment='Lead qualified. Advance to Elena for discovery questionnaire.', timestamp='2026-03-17T09:05:00-07:00' (ISO-8601 ✓), source_channel='instagram', next_action='send_questionnaire', route_to='Elena', sync_to_asana=false. Completeness scored 5: all 11 fields present, timestamp in ISO-8601 format. Accuracy scored 5: decision='approve' correctly parsed; route_to='Elena' is correct per routing table — DG-01 approve routes to Elena for discovery questionnaire. Clarity scored 5: reviewer comment preserved verbatim — no truncation; specific and actionable. State_sync scored 3: sync_to_asana=false (simulated run — correct behavior for simulation). Timing scored 5: decision event at T+05min from lead receipt — immediate upon receiving human response. Decision_readiness scored 5: Elena receives complete context (route_to, next_action, project_id, phase) to begin questionnaire immediately. Note: route_to field used (not routed_to) — correct field name per rubric spec.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "route_to='Elena' — correct. next_action='send_questionnaire' — correct. All 11 payload fields present. Field name route_to (not routed_to) correctly used.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

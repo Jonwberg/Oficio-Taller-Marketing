@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "C",
+  "phase": "C",
+  "gate_id": "DG-03",
+  "gate_type": "celia",
+  "agent_tested": "Celia",
+  "deliverable": "celia-routing-dg03",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 11 required payload fields verified present: project_id, phase='C', review_item='area_program_and_site_readiness', reviewed_by='Celia', decision='approve', comment='Area program (250sqm) and site readiness report complete. No site blockers. Topographic survey requested. Advance to SOW and proposal.', timestamp='2026-03-17T10:00:00-07:00' (ISO-8601 ✓), source_channel='instagram', next_action='advance_to_scope_and_proposal', route_to='Marcela', sync_to_asana=false. Completeness scored 5: all 11 fields present. Accuracy scored 5: decision='approve' correctly parsed; route_to='Marcela' is appropriate for DG-03 — the gate passes to Marcela for the scope/proposal review phase. The comment accurately reflects the deliverable state (250sqm program confirmed, no blockers, topo requested). Clarity scored 5: comment is specific and verbatim — references 250sqm, site readiness, topo survey, and next phase explicitly. State_sync scored 3: simulated run. Timing scored 5: timestamp at 10:00, after area program work at 09:35. Decision_readiness scored 5: Marcela receives full context including area, site status, and next action.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "route_to='Marcela' — correct for DG-03 advance to scope and proposal. Comment reflects both area program and site status.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

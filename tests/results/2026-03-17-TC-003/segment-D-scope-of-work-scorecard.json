@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-003",
+  "segment": "D",
+  "phase": "D",
+  "gate_id": "DG-04",
+  "gate_type": "marcela",
+  "agent_tested": "Tomás",
+  "deliverable": "scope-of-work",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "TC-003 CRITICAL CHECK PASSED. All 20 checklist items verified: (1) Conceptual design phase with 7 deliverables ✓; (2) Architectural design phase with 11 deliverables ✓; (3) Executive architectural plans phase ✓; (4) Optional supervision mentioned in exclusions (Construction Administration) ✓; (5) Landscape excluded explicitly ✓; (6) Structural engineering in collaborators_required and exclusions ✓; (7) Electrical engineering in collaborators_required ✓; (8) Lighting design in Phase 3 deliverables ✓; (9) Water systems in Phase 3 (plumbing, hydraulic, pool, greywater) ✓; (10) Irrigation excluded explicitly ✓; (11) Solar systems in Phase 3 deliverables and responsibilities_matrix ✓; (12) Local contractor cost validation in Phase 5 (3 competitive bids) ✓; (13) Payment schedule with M1/M2/M3 names, percentages (40/30/30), amounts, trigger events ✓; (14) Deliverables by phase with specifics ✓; (15) Responsibilities matrix with named parties ✓; (16) Exclusions with 16 specific items ✓; (17) Revision assumptions per phase ✓; (18) Timeline structure with phase sequence (6 phases with durations) ✓; (19) Project-type clauses: commercial_hotel_standard_clause + hospitality_compliance_clause + brand_standards_coordination + ffe_scope_boundary + esignature ✓; (20) E-signature defined (esignature clause) ✓. Score 5.",
+    "accuracy": "commercial_hotel_standard_clause explicitly confirms: 'SECTUR boutique hotel classification compliance, COFEPRIS food and beverage compliance, minimum 3 competitive contractor bids, coordinated engineering across all hotel-specific disciplines (HVAC, AV, fire suppression, greywater, solar).' hospitality_compliance_clause explicitly addresses SECTUR and COFEPRIS regulatory requirements. Deliverables per phase match production pipeline. Score 5.",
+    "clarity": "Each phase has named deliverables. Payment schedule has trigger events. Exclusions are specific (16 named items). Client can sign with full understanding. Score 5.",
+    "state_sync": "No Asana state field in deliverable. Simulated run. Score 3.",
+    "timing": "SOW produced after area program and cost basis confirmed (all Segment C deliverables complete before DG-03, SOW dispatched after DG-03 approval on 2026-03-18). Score 5.",
+    "decision_readiness": "Architect reviewer can approve or flag specific sections. All sections clearly delineated. Score 5."
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "TC-003 CRITICAL CHECK PASSED: commercial_hotel_standard_clause AND hospitality_compliance_clause both present and complete. All 20 SOW checklist items satisfied. SECTUR and COFEPRIS compliance explicitly addressed. Minimum 3 bids requirement confirmed in both clause and Phase 5 scope. State sync scored 3 per simulated run convention. No auto-fail conditions triggered.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "Celia DG-04 routing scored separately.",
+  "payload_fields_verified": null,
+  "passed": true
+}

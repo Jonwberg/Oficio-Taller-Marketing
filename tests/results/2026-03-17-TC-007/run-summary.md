@@ -13,6 +13,16 @@
 
 **Overall: 1/1 segments PASS**
 
+## Scored Results (Decision Gate Agent)
+
+| Segment | Agent | Deliverable | Avg Score | Auto-Fail | Passed |
+|---------|-------|-------------|-----------|-----------|--------|
+| A | Lupe | lead-record | 4.17 / 5.0 | false | ✅ PASS |
+| A | Lupe | spam-classification | 5.0 / 5.0 | false | ✅ PASS |
+
+**Scorecards written:** 2
+**Gap analysis:** `tests/results/2026-03-17-TC-007/gap-analysis.md`
+
 ## Key Verification Points
 
 | Check | Result |

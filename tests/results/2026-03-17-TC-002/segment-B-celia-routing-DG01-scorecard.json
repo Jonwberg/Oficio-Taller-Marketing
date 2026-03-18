@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-002",
+  "segment": "B",
+  "phase": "B",
+  "gate_id": "DG-01",
+  "gate_type": "celia",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-dg01",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 3,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.17,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "DG-01 decision event for lead-record review. Fields present: project_id='PRJ-2026-0317-tc002-casa-vista', phase='DG-01', review_item='lead-record', reviewed_by='Marcela', decision='approve', comment=null, timestamp='2026-03-17T09:30:00-07:00', source_channel='email', next_action='dispatch_elena_segment_b', route_to='Elena', sync_to_asana=true. Completeness 4: 10 of 11 payload fields present with values — all 11 fields are structurally present BUT comment=null. Rubric requires 'All 11 payload fields present with values' for score 5. A null comment is technically a field present but without a value; score 4 rather than 5. Accuracy 5: decision='approve' correctly parsed; route_to='Elena' is correct next agent — after DG-01 approval, Elena should receive dispatch for Segment B discovery work. next_action='dispatch_elena_segment_b' is correct. Clarity 3: comment=null means reviewer comment is not preserved — rubric requires 'Reviewer comment preserved verbatim' for score 5. Marcela provided no comment at this gate, so null is the correct representation, but the rubric scores this as 3 (comment present but slightly paraphrased maps to 3; null maps to 3 rather than 1 since no comment was given). State sync 3: simulated run. Timing 5: timestamp='2026-03-17T09:30:00-07:00' — immediately upon receiving human response. Decision readiness 5: Elena receives complete context (project_id, phase, route_to, next_action) to begin work. No auto-fail conditions triggered — route_to present (not routed_to), decision correctly parsed, correct next agent assigned.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-01: decision=approve routes to Elena for Segment B dispatch. route_to='Elena' is correct. All 11 payload fields present. comment=null (Marcela provided no feedback at this gate).",
+  "payload_fields_verified": 11,
+  "passed": true
+}

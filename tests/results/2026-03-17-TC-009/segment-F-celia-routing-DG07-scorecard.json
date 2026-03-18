@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-009",
+  "segment": "F",
+  "phase": "DG-07",
+  "gate_id": "DG-07",
+  "gate_type": "celia_routing",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-dg07",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 5,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.83,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 11 payload fields present. Decision: approve (not pass_to_agent — DG-07 'Pass to Agent' scenario not triggered in this run). review_item: concept-review (correct). route_to: Felipe (correct — DG-07 approve → Felipe for architectural design). next_action: 'dispatch Felipe for architectural design'. sync_to_asana: true. Clarity scored 4: comment null. State sync scored 5 — Asana GID 1213707911432133 (concept_gate). NOTE: Rubric specifies that if 'Pass to Agent' is simulated at DG-07, project_state must remain concept_in_progress. In this run, DG-07 was an approve (not pass_to_agent), so this check is N/A. No auto-fail conditions.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-07: approve → route_to Felipe. Correct. Pass-to-Agent scenario not exercised in this run (straightforward approve).",
+  "payload_fields_verified": 11,
+  "passed": true
+}

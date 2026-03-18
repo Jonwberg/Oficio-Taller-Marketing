@@ -1,0 +1,39 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "D",
+  "phase": "D",
+  "gate_id": "DG-06",
+  "gate_type": "marcela",
+  "agent_tested": "Rosa",
+  "deliverable": "client-communication",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "channel": 5,
+    "brand_voice": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "Project name referenced ('Hotel Boutique East Cape'). Full context: 6 phases summarized, fees, payment schedule milestones, timeline. Clear action requested ('reply with approval or questions, or schedule a call').",
+    "accuracy": "Accurately reflects current state: 6 phases, $300K total, M1/M2/M3 payment schedule with correct amounts, 40-week design-to-permit estimate. No internal notes or inaccurate statements.",
+    "clarity": "One clear next step: reply with approval or reach out with questions. No ambiguity about what the client is expected to do.",
+    "channel": "Channel='email'. Correct — formal proposal delivery warrants email per rubric (email for formal deliverables and proposals).",
+    "brand_voice": "Professional, warm, and design-engaged. 'Es un gusto compartir' opening is warm. Summary conveys the full scope substantively without being overwhelming. Signed 'Oficio Taller' — correct brand attribution. No cold form-letter language.",
+    "state_sync": "Score 3 per simulated run rule — no live Asana. status='draft' is correct — message awaiting Marcela approval.",
+    "timing": "Message drafted in Segment D after proposal assembly. Available before DG-06.",
+    "decision_readiness": "Marcela can approve this message in under 60 seconds. Bilingual, accurate, warm, complete."
+  },
+  "average_score": 4.63,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "auto_fail_notes": "status='draft' — not sent without Marcela approval ✓. project_reference='PRJ-2026-0317-tc008-site-complications' present ✓. No confidential internal information in client-facing message ✓. No auto-fail triggered.",
+  "decision_simulated": "approve",
+  "decision_commentary": "Excellent client communication. Bilingual, warm, complete, and professionally drafted. The email accurately captures the full proposal scope and payment structure. Draft status correctly set — awaiting Marcela approval before send.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-06 routes to Legal (for contract review per decision-event-dg06.json). Rosa sends proposal email after Marcela approval. All 11 payload fields present in dg06.json. route_to='Legal' is correct.",
+  "payload_fields_verified": 4,
+  "passed": true
+}

@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "G",
+  "phase": "G",
+  "gate_id": "DG-09",
+  "gate_type": "marcela",
+  "agent_tested": "Bruno",
+  "deliverable": "budget-alignment",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "All required fields present: contractor_pricing_source (2 local contractors, Cabo San Lucas, BCS, obra pública experience), contractor_total (1,300,000 USD), client_budget (1,500,000 USD), currency (USD), variance_amount (-200,000 USD), variance_pct (-13.3%), recommendation (proceed), notes. Score 5.",
+    "accuracy": "Variance calculation: 1,500,000 - 1,300,000 = 200,000 USD. variance_pct = -200,000/1,500,000 = -13.33% ✓. Recommendation=proceed matches data (13.3% under budget — healthy contingency buffer). Note correctly states final pricing via licitación pública managed by contracting entity. Score 5.",
+    "clarity": "Proceed recommendation with clear rationale. If redesign were needed, this rubric expects scope elements named — not applicable here (budget aligned). For obra pública, correctly notes that final pricing via formal licitación. Score 5.",
+    "state_sync": "Score 3 (simulated run — ASANA_UNAVAILABLE). budget_alignment_pending → budget_aligned state not confirmed in live Asana.",
+    "timing": "Analysis delivered after engineering package complete (Segment G, parallel flow). Before DG-09 review. Score 5.",
+    "decision_readiness": "Marcela can approve immediately: 13.3% under budget, proceed recommendation, source documented (2 local contractors with obra pública experience). Score 5."
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Strong budget alignment analysis. Two contractor sources documented, both with obra pública credentials and relevant to Cabo San Lucas market. 13.3% budget underrun provides healthy contingency. Correctly positions this as preliminary alignment, with final pricing through formal licitación pública. No auto-fail conditions triggered.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-09 routes to Hugo (budget aligned — dispatch Hugo for executive plans). decision-event-DG-09.json: route_to=Hugo. Correct per segment G→H flow.",
+  "payload_fields_verified": 6,
+  "passed": true
+}

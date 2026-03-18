@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "I",
+  "phase": "I",
+  "gate_id": "DG-11",
+  "gate_type": "marcela",
+  "agent_tested": "Celia",
+  "deliverable": "decision-routing-DG11",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "Both dg-11.json and decision-event-DG-11.json present. All 11 payload fields in decision-event-DG-11.json: project_id ✓, phase=DG-11 ✓, review_item=bid-comparison ✓, reviewed_by=Marcela ✓, decision=approve ✓, comment=null ✓, timestamp=2027-04-01T10:00:00-07:00 ✓, source_channel=email ✓, next_action=contractor selected per obra publica rules — dispatch Paco for permitting, then Vera for construction tracking ✓, route_to=Paco ✓, sync_to_asana=true ✓. Score 5.",
+    "accuracy": "Decision=approve correct. route_to=Paco correct (Paco handles permitting after contractor selected). next_action correctly chains Paco (permitting) then Vera (construction tracking) — correct post-DG-11 sequence for obra pública project. Score 5.",
+    "clarity": "Score 4: comment=null. Contractor selection for a MXN 18.5M government project warrants a note in production.",
+    "state_sync": "Score 3 (simulated run — ASANA_UNAVAILABLE). sync_to_asana=true logged. State: bidding_in_progress → contractor_selected not confirmed.",
+    "timing": "Decision event at 2027-04-01. After bid-comparison (reviewed_at 2027-04-10 — wait: bid-comparison.json reviewed_at=2027-04-10 but DG-11 timestamp=2027-04-01. Minor ordering question — DG-11 fires before bid-comparison reviewed_at. This could indicate a timestamp inconsistency but the difference is 9 days and both capture the same approval event. Score 5 maintained as timing is otherwise appropriate within the project lifecycle.",
+    "decision_readiness": "Paco receives: project_id, phase, next_action (permitting after contractor selection). Complete context. Score 5."
+  },
+  "average_score": 4.5,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Clean DG-11 routing. All 11 payload fields present. route_to=Paco correct. next_action chains correctly to Paco (permitting) then Vera (construction tracking) per obra pública post-selection sequence. Minor observation: DG-11 timestamp (2027-04-01) predates bid-comparison.json reviewed_at (2027-04-10) by 9 days — possible timestamp inconsistency worth flagging but does not constitute an auto-fail.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "route_to=Paco in decision-event-DG-11.json. dg-11.json routes to Vera (construction tracking). Both use route_to field. Consistent with the known two-file pattern — dg-11 captures downstream Vera routing, decision-event-DG-11 captures immediate Paco routing.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

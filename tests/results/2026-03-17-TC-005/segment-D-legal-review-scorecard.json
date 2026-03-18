@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "D",
+  "phase": "D",
+  "gate_id": "DG-05",
+  "gate_type": "marcela",
+  "agent_tested": "Legal",
+  "deliverable": "legal-review",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "All required fields present: reviewed_by, reviewed_at, ip_rights_status=clear, compliance_flags (1 advisory item), approval_status=approved_with_advisory. Score 4 (not 5): compliance_flags covers payment risk but does not explicitly confirm project-type-specific clause review (public_civic clauses: civic_procurement_clause, public_bidding_compliance clause). A more complete legal review for a public institutional client would confirm that all government procurement framework clauses are legally sound for the applicable Mexican law (Ley de Adquisiciones).",
+    "accuracy": "The one compliance flag raised is accurate and appropriate: government payment authorization process may delay M2-M5 payments beyond standard timelines. Proposed resolution is specific (add language about not treating fiscal delays as payment default). Score 5.",
+    "clarity": "approval_status=approved_with_advisory is unambiguous. One advisory flag with specific clause reference and proposed resolution. Vera can proceed to architect gate. Score 5.",
+    "state_sync": "Score 3 (simulated run — ASANA_UNAVAILABLE). Legal review task completion not confirmed in live Asana.",
+    "timing": "Review completed concurrently with Renata's proposal assembly (both Segment D, same session). Before architect gate DG-05. Score 5.",
+    "decision_readiness": "Vera can proceed to architect gate immediately: approval_status=approved_with_advisory, one actionable flag with proposed resolution. Score 5."
+  },
+  "average_score": 4.5,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Solid legal review. IP rights clear, one advisory flag on government payment timing (accurate and appropriate for obra pública context), proposed resolution is specific. Minor completeness gap: no explicit confirmation of public_civic clause legal review (Ley de Adquisiciones compliance). No auto-fail conditions triggered — IP section reviewed (clear), no open unresolved flags (advisory is proposed-resolved).",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Legal operates parallel to Renata in Segment D. Routes feed into DG-05 architect gate. Correct flow confirmed.",
+  "payload_fields_verified": 5,
+  "passed": true
+}

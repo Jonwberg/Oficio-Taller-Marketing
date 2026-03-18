@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "C",
+  "phase": "C",
+  "gate_id": "DG-03",
+  "gate_type": "marcela",
+  "agent_tested": "Ana",
+  "deliverable": "area-program",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "All 10 programmed spaces from seed data present with name, qty, and size_sqm: Sala Lectura Adultos (400m²), Sala Lectura Infantil (200m²), Acervo Cerrado (300m²), Sala Cómputo (150m²), Sala Usos Múltiples (200m²), Administración (150m²), Sanitarios (4×30m²=120m²), Vestíbulo (200m²), Estacionamiento (250m²), Bodega (30m²). Solar noted as engineering scope. Civic art space integrated (not a separate room — documented assumption). Score 5.",
+    "accuracy": "Total verification: 400+200+300+150+200+150+120+200+250+30 = 2,000m². Exactly matches seed data program. Sanitarios correctly calculated: 4 units × 30m² = 120m². No arithmetic error. Score 5.",
+    "clarity": "Matrix readable as standalone document: each entry has name, qty, size_sqm, and notes describing function and requirements. No context needed. Score 5.",
+    "state_sync": "Score 3 (simulated run — ASANA_UNAVAILABLE). State update to area_program_confirmed not confirmed in live Asana.",
+    "timing": "Area program produced in Segment C, before any scope or cost downstream work. Exists before DG-03 Marcela review. Score 5.",
+    "decision_readiness": "Assumptions section fully documented: 7 explicit assumptions including circulation/walls rationale, solar scope placement, civic art space integration rationale, landscape default rule, construction cost benchmark. Marcela can review with full context. Score 5."
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Exemplary area program. All 10 seed data spaces present at exact specified sizes. Total 2,000m² verified. Assumptions section is comprehensive (7 items). Special features (solar, civic art, accessibility) all addressed with clear scope notes. Only deduction is simulated Asana state sync.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-03 routes to Tomás (dispatch Tomás to prepare public_civic SOW). decision-event-DG-03.json: route_to=Tomás, correct per segment D flow.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

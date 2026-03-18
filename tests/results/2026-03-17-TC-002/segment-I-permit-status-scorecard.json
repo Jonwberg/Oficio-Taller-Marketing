@@ -1,0 +1,25 @@
+{
+  "run_id": "2026-03-17-TC-002",
+  "segment": "I",
+  "phase": "I",
+  "gate_id": "N/A",
+  "gate_type": "auto",
+  "agent_tested": "Paco",
+  "deliverable": "permit-status",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5
+  },
+  "average_score": 4.6,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All required schema fields present: submitted_at='2026-10-28T10:00:00-07:00', jurisdiction='Municipio de Los Cabos, Baja California Sur', status='approved', corrections=[] (empty array — correct when no corrections required), approved_at='2027-01-30T14:00:00-07:00'. Completeness 5: all fields present; jurisdiction names the specific authority ('Municipio de Los Cabos, Baja California Sur' — specific, not generic 'Mexico'); status='approved' (one of valid statuses); corrections=[] correctly empty for approval with no corrections; approved_at is populated and consistent with status='approved'. Accuracy 5: jurisdiction matches project location (San José del Cabo is within Municipio de Los Cabos, BCS); submitted_at='2026-10-28' is after contractor selection at DG-11 (2026-10-28 per decision-event-dg11.json — same day, same session, correct sequencing); permit approved in 13 weeks (2026-10-28 to 2027-01-30), within stated 4–16 week estimate. Clarity 5: status='approved' with approved_at date — Vera can trigger construction phase start immediately; no corrections, no ambiguity. State sync 3: simulated run. Timing 5: submitted promptly after DG-11 contractor selection (submitted_at = 2026-10-28, one day after DG-11 decision 2026-10-27). No auto-fail conditions triggered — jurisdiction specific, submitted_at present, corrections array present, approved_at consistent with status, submitted after DG-11.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "No Celia routing at permit-status — Paco fires after DG-11, routes directly to Vera on approval.",
+  "payload_fields_verified": 5,
+  "passed": true
+}

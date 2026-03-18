@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "F",
+  "phase": "F",
+  "gate_id": "DG-08",
+  "gate_type": "celia",
+  "agent_tested": "Celia",
+  "deliverable": "celia-routing-dg08",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 11 required payload fields verified present: project_id, phase='F', review_item='architectural_design', reviewed_by='Celia', decision='approve', comment='Architectural design approved. Advance to engineering.', timestamp='2026-03-17T13:00:00-07:00' (ISO-8601 ✓), source_channel='email', next_action='advance_to_engineering', route_to='Emilio', sync_to_asana=false. Completeness scored 5: all 11 fields present. Accuracy scored 5: decision='approve' correctly parsed; route_to='Emilio' is correct — DG-08 approve routes to Emilio for engineering; next_action='advance_to_engineering' is semantically correct for this approve event. Clarity scored 5: comment preserved verbatim, specific and actionable — 'Advance to engineering' is clear. State_sync scored 3: simulated run, sync_to_asana=false. Timing scored 5: timestamp at 13:00, correct pipeline order after DG-07 at 12:00. Decision_readiness scored 5: Emilio receives complete context to begin engineering immediately.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "route_to='Emilio' — correct. next_action='advance_to_engineering' — correct and semantically accurate.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

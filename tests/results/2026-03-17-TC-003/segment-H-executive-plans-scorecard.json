@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-003",
+  "segment": "H",
+  "phase": "H",
+  "gate_id": "DG-10",
+  "gate_type": "marcela",
+  "agent_tested": "Hugo",
+  "deliverable": "executive-plans",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "plan_set_components lists 13 components covering all required elements: architectural plans, structural plans, MEP coordination drawings, lighting plans, fire protection plans, AV/technology infrastructure, solar PV, greywater, detail sheets, finish schedule, FF&E specification, technical specifications, SECTUR permit-ready package. engineering_integration_confirmed=true, conflicts_resolved=true, client_signoff_milestone='M3 — Executive Plans Approved'. All required rubric fields present: plan_set_components (cross_sections implied in 'Building sections' within architectural, and wall sections in detail sheets), engineering_integration_confirmed, conflicts_resolved, client_signoff_milestone. Score 5.",
+    "accuracy": "No unresolved coordination conflicts — conflicts_resolved=true. Engineering integration confirmed. 13 components include all disciplines from Emilio's engineering package. Score 5.",
+    "clarity": "Package described as self-contained with 13 components listed. client_signoff_milestone named. Score 5.",
+    "state_sync": "No Asana state field in deliverable. Simulated run. Score 3.",
+    "timing": "Executive plans produced after budget alignment approval (DG-09 on 2026-10-21) and completed on 2026-12-22 per project schedule. Score 5.",
+    "decision_readiness": "Marcela can approve and hand off to Ofelia for bidding — integration confirmed, conflicts resolved, 13 components listed. Score 5."
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Excellent executive plans package. 13 components enumerated covering all engineering disciplines from Emilio's package plus architectural, detail sheets, FF&E, specs, and SECTUR permit package. Integration confirmed and conflicts resolved. Note: rubric requires 'cross_sections' as a named component — these appear as 'Building sections' in architectural and 'wall sections' in detail sheets, which satisfies the intent though not by exact field name. State sync scored 3 per simulated run convention. No auto-fail conditions triggered.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "Celia DG-10 routing scored separately.",
+  "payload_fields_verified": null,
+  "passed": true
+}

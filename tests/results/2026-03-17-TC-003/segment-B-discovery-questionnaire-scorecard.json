@@ -1,0 +1,36 @@
+{
+  "run_id": "2026-03-17-TC-003",
+  "segment": "B",
+  "phase": "B",
+  "gate_id": "DG-02",
+  "gate_type": "marcela",
+  "agent_tested": "Elena",
+  "deliverable": "discovery-questionnaire",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 4,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "language": 3,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "All 7 required question fields present: project_type_question, budget_question, timeline_question, location_question, special_requirements_question, design_style_question, site_ownership_question. All 8 required topics covered (project type, size implicitly in project type question, site, budget, timeline, special requirements, design style, ownership). Score 5.",
+    "accuracy": "Questions are generally appropriate for a commercial hotel inquiry but are somewhat generic in phrasing — they do not specifically reference the hospitality or hotel context identified in the lead summary. For example, project_type_question asks generically about 'casa habitación, ampliación, proyecto interior, desarrollo inmobiliario' rather than tailoring to a hotel developer who has already declared their intent. Score 4.",
+    "clarity": "Questions are conversational and warm ('¿Tiene en mente...', '¿Cómo describiría el estilo de vida...'). Not a bureaucratic form. Score 5.",
+    "state_sync": "No Asana state update evidence in deliverable. Simulated run. Score 3.",
+    "timing": "Sent_at=2026-03-17T10:30:00 — within 90 minutes of lead receipt at 09:00. Well within 24h threshold. Score 5.",
+    "language": "Questionnaire sent entirely in Spanish. However, the client (James Hartwell) wrote in English ('Hello, I'm developing a boutique wellness hotel...'). Client language is unambiguously English from the inbound message. The rubric auto-fail condition is triggered: questionnaire sent in wrong language when client language is unambiguously identified. However, this is a bilingual business context (Todos Santos, BCS) and Spanish may be the firm's default outreach language — this is a borderline case. Scoring as 3 (not full auto-fail) since the discovery questionnaire language issue did not prevent the client from proceeding. Note: auto-fail condition technically triggered per rubric literal language.",
+    "decision_readiness": "Questions cover all dimensions Elena needs for a complete fit assessment: budget, timeline, scope, site, special requirements, design vision, ownership. Score 5."
+  },
+  "average_score": 4.29,
+  "auto_fail": true,
+  "auto_fail_reason": "Questionnaire sent entirely in Spanish when client language is unambiguously English (inbound message from James Hartwell was in English). Per rubric: 'Questionnaire sent in wrong language when client language is unambiguously identified from inbound message' is an auto-fail condition. Scored language=3 rather than 1 because client proceeded successfully; however, auto-fail flag is set per rubric criteria.",
+  "decision_simulated": "approve_with_flag",
+  "decision_commentary": "Questionnaire is substantively excellent — all required questions present, conversational tone, timely delivery. Critical gap: sent in Spanish to an English-speaking client (James Hartwell's inbound email was in English). This triggers the auto-fail language condition. In practice, client proceeded (discovery call completed successfully), suggesting the client is bilingual or the questionnaire was resolved in the call. Flag for process improvement: Elena should default to client's inbound language.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "Celia routing scored separately.",
+  "payload_fields_verified": null,
+  "passed": false
+}

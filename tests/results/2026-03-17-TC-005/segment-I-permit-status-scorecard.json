@@ -1,0 +1,32 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "I",
+  "phase": "I",
+  "gate_id": null,
+  "gate_type": "auto",
+  "agent_tested": "Paco",
+  "deliverable": "permit-status",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5
+  },
+  "score_evidence": {
+    "completeness": "All required fields present: submitted_at (2027-04-15T09:00:00-07:00), jurisdiction ('Municipio de Los Cabos, Baja California Sur — Direccion de Obras Publicas y Desarrollo Urbano' — specific authority named), status=approved, corrections=[] (empty array — valid for approved status), approved_at (2027-09-20T14:00:00-07:00). additional_authorizations array with CONAGUA and CFE approvals. Score 5.",
+    "accuracy": "Jurisdiction matches project location (Municipio de Los Cabos, BCS). submitted_at (2027-04-15) is after contractor selection (DG-11 decision-event: 2027-04-01). Permit duration: 23 weeks (2027-04-15 to 2027-09-20) — correctly longer than residential as expected. Inter-agency coordination (CONAGUA, CFE) appropriate for public building with solar net metering. Score 5.",
+    "clarity": "Status=approved. approved_at populated. corrections=[] (no corrections on first submission — clean). Vera can trigger construction phase start immediately. permit_notes explicitly confirms 23 weeks, public project longer timeline, clean first submission. Score 5.",
+    "state_sync": "Score 3 (simulated run — ASANA_UNAVAILABLE). Asana permit task not updated at intermediate states. Construction phase unlock not confirmed in live Asana.",
+    "timing": "Submission at 2027-04-15, after contractor selection (2027-04-01). Clean timing, appropriate gap between contractor selection and permit submission. Score 5."
+  },
+  "average_score": 4.6,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Excellent permit status record. Specific jurisdiction authority named (Dirección de Obras Públicas y Desarrollo Urbano). Clean first submission (no corrections). Inter-agency coordination (CONAGUA for water/sanitary, CFE for electrical + solar net metering) correctly documented for public building with solar system. 23-week permit process confirms expected public project timeline. submitted_at correctly after DG-11 contractor selection. Only deduction is simulated Asana state sync.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "No Marcela gate on permit status per rubric. Paco fires after DG-11, routes to Vera for construction tracking on approval. Correct flow.",
+  "payload_fields_verified": 5,
+  "passed": true
+}

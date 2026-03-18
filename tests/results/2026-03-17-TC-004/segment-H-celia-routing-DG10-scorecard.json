@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-004",
+  "segment": "H",
+  "phase": "H",
+  "gate_id": "DG-10",
+  "gate_type": "marcela",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-DG-10",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 11 required payload fields present: project_id, phase='DG-10', review_item='executive-plans', reviewed_by='Marcela', decision='approve', comment=null, timestamp='2026-11-20T09:00:00-07:00' (ISO-8601), source_channel='email', next_action='Dispatch Ofelia — initiate contractor bidding', route_to='Ofelia', sync_to_asana=true. Accuracy: route_to='Ofelia' correct (Ofelia handles Segment I contractor bidding). Timestamp 2026-11-20 matches Phase 5 start date in project-schedule.json — correct handoff timing.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "route_to=Ofelia: CORRECT. Decision=approve: CORRECT. All 11 fields present.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

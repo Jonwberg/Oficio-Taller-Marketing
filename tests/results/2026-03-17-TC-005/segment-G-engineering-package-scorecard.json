@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "G",
+  "phase": "G",
+  "gate_id": "DG-09",
+  "gate_type": "marcela",
+  "agent_tested": "Emilio",
+  "deliverable": "engineering-package",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "All 4 required systems present: structural ✓, electrical ✓, lighting ✓, water ✓. Conditional systems addressed: irrigation ✓ (landscape in scope per public_civic default), solar ✓ (in scope per seed data + contracting entity requirement), AV not listed (not in scope for this project type). all_inputs_confirmed=true, conflicts_resolved=true. Score 5.",
+    "accuracy": "Package explicitly declared complete (design_set_status all=complete). all_inputs_confirmed=true. Each system has status=complete with engineer noted as TBD (government procurement rules — contracting entity coordinates). This TBD is appropriate and accurately reflects obra pública coordination model. Score 5.",
+    "clarity": "conflicts_resolved=true with explicit field. No design conflicts documented (none to document). Each system includes specific engineering scope notes (seismic Zone C, NOM-007-ENER lighting compliance, public restroom counts per IMSS/ISSSTE, drip/subsurface irrigation for Baja climate, rooftop solar PV sized for partial building load). Score 5.",
+    "state_sync": "Score 3 (simulated run — ASANA_UNAVAILABLE). structural_engineering_in_progress → budget_alignment_pending state not confirmed in live Asana.",
+    "timing": "Engineering package complete before Bruno begins contractor pricing (budget-alignment.json). Package exists before DG-09 review. Score 5.",
+    "decision_readiness": "Bruno can proceed to contractor pricing immediately: all systems confirmed complete, no pending inputs, conflicts resolved. Score 5."
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Excellent engineering package. All 4 required systems plus both conditional systems (irrigation, solar) complete. Specific engineering notes per system demonstrate thorough scope coverage. Climate-appropriate design choices noted (drip irrigation for BCS, seismic Zone C). TBD for specific engineer names is correct for obra pública procurement model. No auto-fail conditions triggered.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-09 routes to Hugo (dispatch Hugo for executive plans). decision-event-DG-09.json: route_to=Hugo. Correct per segment G→H flow.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

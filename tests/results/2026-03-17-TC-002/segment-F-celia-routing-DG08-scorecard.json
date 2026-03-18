@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-002",
+  "segment": "F",
+  "phase": "F",
+  "gate_id": "DG-08",
+  "gate_type": "celia",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-dg08",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 3,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.17,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "DG-08 decision event for architectural-design review. Fields present: project_id, phase='DG-08', review_item='architectural-design', reviewed_by='Marcela', decision='approve', comment=null, timestamp='2026-07-15T09:00:00-07:00', source_channel='email', next_action='dispatch Emilio for engineering coordination', route_to='Emilio', sync_to_asana=true. Completeness 4: all 11 fields present; comment=null. Accuracy 5: decision='approve' correct; route_to='Emilio' correct — at DG-08 architectural design approval, Emilio is dispatched for engineering coordination (Segment G). next_action consistent with route_to. Clarity 3: comment=null. State sync 3: simulated run. Timing 5: timestamp='2026-07-15T09:00:00-07:00' one day after Phase 2 end date (2026-07-14 per project-schedule.json). Decision readiness 5: Emilio receives sufficient context to begin engineering immediately.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-08: decision=approve routes to Emilio for engineering coordination. route_to='Emilio' is correct.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

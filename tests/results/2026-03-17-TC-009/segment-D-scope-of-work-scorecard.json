@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-009",
+  "segment": "D",
+  "phase": "DG-04",
+  "gate_id": "DG-04",
+  "gate_type": "marcela",
+  "agent_tested": "Tomás",
+  "deliverable": "scope-of-work",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 4,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.83,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "20-item checklist verified: (1) conceptual design defined ✓, (2) architectural design defined ✓, (3) executive plans included ✓, (4) supervision clause referenced as Phase 7 add-on ✓, (5) landscape scope stated (referral, coordination in scope) ✓, (6) structural engineering collaboration defined ✓, (7) electrical engineering in scope ✓, (8) lighting design in scope ✓, (9) water systems defined ✓, (10) irrigation excluded (not applicable for coastal residential) ✓, (11) solar in scope ✓, (12) contractor cost validation in Phase 5 ✓, (13) payment schedule with milestone names/percentages/triggers ✓, (14) deliverables listed by phase ✓, (15) responsibilities matrix present ✓, (16) exclusions documented with specifics ✓, (17) revision assumptions per phase ✓, (18) timeline structure clear ✓, (19) project-type clauses: residential_standard, client_changes, site_conditions, esignature ✓, (20) e-signature path defined via NOM-151-SCFI ✓. All 20 items confirmed. Standalone residential template correctly applied. State sync scored 4 — Asana GID 1213707829263114 confirmed in state.json. No auto-fail conditions triggered.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Celia DG-04 routing checked in separate scorecard.",
+  "payload_fields_verified": 6,
+  "passed": true
+}

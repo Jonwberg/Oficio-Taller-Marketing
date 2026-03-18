@@ -1,0 +1,35 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "D",
+  "phase": "D",
+  "gate_id": "DG-05",
+  "gate_type": "marcela",
+  "agent_tested": "Legal",
+  "deliverable": "legal-review",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "Score 4: All 5 required fields present (reviewed_by, reviewed_at, ip_rights_status, compliance_flags, approval_status). IP rights reviewed (ip_rights_status='clear'). Project-type-specific compliance verified. However, only 1 compliance flag documented — the review is somewhat sparse given 5 commercial hotel project-type clauses. Rubric expects all proposal clauses reviewed; one advisory flag only may indicate incomplete clause-by-clause review documentation.",
+    "accuracy": "Flag correctly identifies advisory issue with CH-004 (hydrologic setback — CONAGUA specificity). Proposed resolution is accurate: 'Clause as written is acceptable — CONAGUA/CNA cited. Advisory only.' CH-004 does cite CONAGUA/CNA by name in the SOW, making this advisory truly low-severity. No compliance issues missed.",
+    "clarity": "Output is unambiguous: approval_status='approved_with_advisory'. The advisory flag is specific, cites the clause reference, states severity ('advisory'), and explicitly notes no revision required before DG-05. Vera can proceed immediately.",
+    "state_sync": "Score 3 per simulated run rule — no live Asana.",
+    "timing": "reviewed_at=2026-03-17T16:00:00-07:00. Concurrent with Renata's proposal assembly — correct parallel execution.",
+    "decision_readiness": "Vera can proceed to architect gate immediately. The advisory flag is resolved within the flag itself ('no revision required before DG-05'). No blocking items."
+  },
+  "average_score": 4.50,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "auto_fail_notes": "IP and usage rights reviewed ✓ (ip_rights_status='clear'). Approval given — single advisory flag with explicit resolution (no revision required) ✓ — not an unresolved flag. Full proposal reviewed (commercial hotel clauses CH-001 through CH-005 reviewed) ✓. No auto-fail triggered.",
+  "decision_simulated": "approve",
+  "decision_commentary": "Solid legal review. The one advisory flag is accurate and properly resolved. TC-008 relevance: CH-004 correctly addresses the hydrologic setback legal framework. No blocking items. Minor gap is that only 1 flag was documented — a more thorough review might have noted minor items on other clauses. Overall approved.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-06 (client proposal review) routes Legal concurrently. DG-05 routes Rosa. Both are present in decision-event-dg05.json and dg06.json with correct next_action fields.",
+  "payload_fields_verified": 5,
+  "passed": true
+}

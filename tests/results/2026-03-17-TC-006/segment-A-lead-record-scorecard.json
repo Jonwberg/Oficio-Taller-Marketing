@@ -1,0 +1,24 @@
+{
+  "run_id": "2026-03-17-TC-006",
+  "segment": "A",
+  "phase": "A",
+  "gate_id": "DG-01",
+  "gate_type": "marcela",
+  "agent_tested": "Lupe",
+  "deliverable": "lead-record",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.5,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Lead record is well-structured with all required fields: source_channel (instagram), category (project_inquiry), received_at, summary, and status all present. Summary is informative — project type, location, client name, budget, and program all captured. Score 4 on completeness because raw message is not stored verbatim in the record (only captured in lead-summary.json). State_sync scored 3 per simulated run note — Asana not live. Timing is excellent: record created same session as inbound.",
+  "payload_fields_verified": 6,
+  "passed": true
+}

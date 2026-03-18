@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "I",
+  "phase": "I",
+  "gate_id": "DG-11",
+  "gate_type": "marcela",
+  "agent_tested": "Ofelia",
+  "deliverable": "bid-comparison",
+  "scores": {
+    "completeness": 3,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.33,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Completeness scored 3: two bids are compared — Constructora Los Cabos SA (5,200,000 MXN, 48 weeks) and Edificaciones del Pacífico (5,450,000 MXN, 44 weeks). Recommendation and rationale present. Gap: rubric schema requires 'contractor, total, line_items, timeline, notes' per bid entry — the bids include contractor, amount_mxn, timeline_weeks, and notes, but line_items are absent from both bid entries. No breakdown of what the bid covers. Score 3: two bids present, recommendation present, but one required field (line_items) missing from both bids. Accuracy scored 5: recommendation rationale goes beyond lowest price — cites 'Strong local track record, residential specialists' and 'Timeline 48 weeks acceptable per schedule' — track record and timeline cited as criteria alongside price. This meets the rubric's criterion for accuracy score 5. Clarity scored 5: Marcela can select a contractor immediately — two bids with clear recommendation and rationale. State_sync scored 3: simulated run. Timing scored 5: comparison produced after executive plans approved, two bids collected before Marcela decision. Decision_readiness scored 5: Marcela can select with confidence from this document.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Celia routing at DG-11 scored separately.",
+  "payload_fields_verified": 3,
+  "passed": true
+}

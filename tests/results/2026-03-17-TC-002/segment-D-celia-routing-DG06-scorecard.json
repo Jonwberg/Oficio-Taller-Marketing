@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-002",
+  "segment": "D",
+  "phase": "D",
+  "gate_id": "DG-06",
+  "gate_type": "celia",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-dg06",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 3,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.17,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "DG-06 decision event for client-proposal review. Fields present: project_id, phase='DG-06', review_item='client-proposal', reviewed_by='Marcela', decision='approve', comment=null, timestamp='2026-03-18T15:00:00-07:00', source_channel='email', next_action='dispatch Legal for contract review; Rosa sends proposal email to client', route_to='Legal', sync_to_asana=true. Completeness 4: all 11 fields structurally present; comment=null reduces from 5. Accuracy 5: decision='approve' correct; route_to='Legal' is correct — at DG-06 approval, Legal is dispatched for final contract review and Rosa sends the proposal email. next_action documents both Legal dispatch and Rosa parallel send. Routing table: DG-06 approve → Legal (for legal review) + Rosa (for client communication) — the route_to='Legal' captures the primary routing correctly; Rosa's parallel action is in next_action. Clarity 3: comment=null. State sync 3: simulated run. Timing 5: timestamp='2026-03-18T15:00:00-07:00' consistent with timeline. Decision readiness 5: Legal and Rosa receive sufficient context from project_id + next_action.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-06: decision=approve routes to Legal (route_to='Legal') with Rosa parallel send documented in next_action. Correct routing for client proposal approval gate.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

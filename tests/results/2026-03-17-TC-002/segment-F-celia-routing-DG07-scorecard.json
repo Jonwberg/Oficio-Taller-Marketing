@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-002",
+  "segment": "F",
+  "phase": "F",
+  "gate_id": "DG-07",
+  "gate_type": "celia",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-dg07",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 3,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.17,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "DG-07 decision event for concept-review. Fields present: project_id, phase='DG-07', review_item='concept-review', reviewed_by='Marcela', decision='approve', comment=null, timestamp='2026-04-29T09:00:00-07:00', source_channel='email', next_action='dispatch Felipe for architectural design development', route_to='Felipe', sync_to_asana=true. Completeness 4: all 11 fields structurally present; comment=null. Accuracy 5: decision='approve' correct; route_to='Felipe' correct — at DG-07 approval, Felipe is dispatched for architectural design. next_action='dispatch Felipe for architectural design development' is consistent with route_to. Special rubric note: 'Pass to Agent at DG-07 — expected project_state = concept_in_progress (no change)' — this test case is an approve (not pass-to-agent), so that special rule does not apply here; standard approve routing verified. Clarity 3: comment=null — Marcela provided no feedback. State sync 3: simulated run. Timing 5: timestamp='2026-04-29T09:00:00-07:00' one day after M2 milestone (concept approved 2026-04-28). Decision readiness 5: Felipe receives complete context to begin architectural design immediately.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-07: decision=approve routes to Felipe for architectural design. route_to='Felipe' is correct. Pass-to-Agent special rule not triggered (decision is approve, not pass_to_agent).",
+  "payload_fields_verified": 11,
+  "passed": true
+}

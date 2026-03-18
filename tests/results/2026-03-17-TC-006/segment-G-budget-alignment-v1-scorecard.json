@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-006",
+  "segment": "G",
+  "phase": "G",
+  "gate_id": "DG-09",
+  "gate_type": "marcela",
+  "agent_tested": "Bruno",
+  "deliverable": "budget-alignment-v1",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "reject",
+  "decision_commentary": "First pass budget alignment. contractor_total = $380,000 vs client_budget = $200,000. variance_amount = $180,000; variance_pct = 90.0%. Recommendation is 'reject_scope_reduction_required' — correct. Auto-fail condition explicitly states: if recommendation is 'proceed' when contractor_total ($380K) > client budget ($200K) by 90%, that is an auto-fail. Recommendation is NOT 'proceed' — auto-fail is not triggered. All required fields present: contractor_pricing_source (preliminary_estimate), contractor_total, client_budget, variance_amount, variance_pct, recommendation. Feedback names specific scope elements to remove (pool, reduce 216sqm to 160sqm). Clarity scored 5: no ambiguity — scope reduction with specific elements called out. Decision readiness scored 5: Marcela can immediately approve the redesign direction.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "dg-09-v1.json: Celia correctly rejected, comment captures specific numbers, routes back to Felipe for redesign.",
+  "payload_fields_verified": 6,
+  "passed": true
+}

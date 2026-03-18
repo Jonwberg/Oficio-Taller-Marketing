@@ -1,0 +1,33 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "I",
+  "phase": "I",
+  "gate_id": null,
+  "gate_type": "permit",
+  "agent_tested": "Paco",
+  "deliverable": "permit-status",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5
+  },
+  "score_evidence": {
+    "completeness": "All required fields present: submitted_at='2026-11-19T10:00:00-07:00' ✓, jurisdiction='Municipio de Los Cabos, Baja California Sur' ✓ (specific authority), status='approved' ✓, corrections (array with 1 item, fully documented) ✓, approved_at='2027-02-07T14:00:00-07:00' ✓. Corrections array is populated with specific items — not empty when corrections were required.",
+    "accuracy": "Jurisdiction matches project location (East Cape, BCS — Municipio de Los Cabos is correct jurisdiction). submitted_at=2026-11-19 is after DG-11 contractor selection (2026-11-18) — correct timing. Correction item is accurate: authority required CONAGUA approval letter for 15m setback designation — directly tied to TC-008 hydrology constraint. Resolution is specific and documented.",
+    "clarity": "status='approved' with approved_at timestamp. Vera can trigger construction phase start immediately. Correction item resolved with specific resolution_notes. TC-008 bonus: the permit correction required CONAGUA addendum — hydrologic study correctly surfaced again at permit stage, and resolution notes document the resubmission.",
+    "state_sync": "Score 3 per simulated run rule — no live Asana.",
+    "timing": "submitted_at=2026-11-19 — one day after DG-11 (2026-11-18). Prompt submission. approved_at=2027-02-07 — within 12-week Phase 5 window (2026-11-11 + 12 weeks = 2027-02-03, close to actual)."
+  },
+  "average_score": 4.60,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "auto_fail_notes": "jurisdiction present and specific ✓. submitted_at present ✓. corrections array present (non-empty, with content) ✓. approved_at populated and status='approved' ✓ (consistent). submitted_at after DG-11 ✓. No auto-fail triggered.",
+  "decision_simulated": "approved",
+  "decision_commentary": "Excellent permit status record. TC-008 specific strength: permit corrections required CONAGUA addendum for hydrologic setback — a realistic and well-constructed edge case that tests the full-circle hydrology constraint (Sol → activation-gate → schedule → executive plans → permit). Resolution is documented with specific steps taken. The permit authority's request for CONAGUA certification validates Sol's initial study requirement.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "No Celia gate — Paco fires after DG-11. Vera auto-unlocks construction phase on permit approval. Correct per rubric.",
+  "payload_fields_verified": 5,
+  "passed": true
+}

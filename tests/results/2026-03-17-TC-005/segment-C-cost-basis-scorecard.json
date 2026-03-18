@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "C",
+  "phase": "C",
+  "gate_id": "DG-03",
+  "gate_type": "marcela",
+  "agent_tested": "Ana",
+  "deliverable": "cost-basis",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "All required fields present: cost_per_sqm=28500, base_construction_cost=57000000, architecture_fee_pct=12, architecture_fee=6840000, engineering_allowance=1710000, contingency_pct=10, total_estimate=72105000, currency=MXN, assumptions (7 items). Additional note on USD comparison provided. Score 5.",
+    "accuracy": "Math verification: base_cost = 2000 × 28500 = 57,000,000 MXN ✓. arch_fee = 57,000,000 × 12% = 6,840,000 MXN ✓. engineering = 57,000,000 × 3% = 1,710,000 MXN ✓. subtotal = 65,550,000. contingency = 65,550,000 × 10% = 6,555,000 MXN ✓. total = 65,550,000 + 6,555,000 = 72,105,000 MXN ✓. All arithmetic correct. Score 5.",
+    "clarity": "Labeled as preliminary estimate ('This is a preliminary estimate — label as such in all client communications'). Cost/sqm source documented: 'market benchmark for public_civic in Baja California Sur (Cabo San Lucas): MXN 22,000–35,000/sqm — midpoint MXN 28,500/sqm used'. USD comparison note included. Score 5.",
+    "state_sync": "Score 3 (simulated run — ASANA_UNAVAILABLE). cost_basis_ready state not confirmed in live Asana.",
+    "timing": "Cost basis produced concurrently with area program (Segment C, same session). Before DG-03 review. Score 5.",
+    "decision_readiness": "Marcela can assess budget feasibility immediately: MXN 72.1M total vs client budget $1.5M USD (≈MXN 25.5M) — cost basis reveals full project cost is significantly higher, with arch fee at $180,000 USD explicitly noted as the seed data reference. This gives clear context for scoping the architecture services contract. Score 5."
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Perfect cost basis. All required fields present, all arithmetic verified correct, labeled as preliminary, assumptions fully documented. USD comparison note adds useful context for the institutional client budget signal. Only deduction is simulated Asana state sync.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-03 (cost-basis review) routes to Tomás per decision-event-DG-03.json. route_to=Tomás, correct.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

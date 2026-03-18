@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "F",
+  "phase": "F",
+  "gate_id": "DG-07",
+  "gate_type": "marcela",
+  "agent_tested": "Andrés",
+  "deliverable": "concept-review",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 4,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "5 deliverables all confirmed complete: 3d_model=complete, renders=complete (4 views), material_direction=complete, color_direction=complete, space_arrangement=complete. presentation_milestone=M2 logged. review_notes present. Score 4 (not 5): in-person presentation is noted as a milestone but no presentation date is explicitly logged — presentation_milestone field contains 'M2 — Concept Design Approved' which is a payment milestone, not a presentation event date. Rubric requires in-person presentation logged as milestone with date.",
+    "accuracy": "review_notes capture specific design choices: accessible entry, courtyard, civic art wall, solar on roof, 4 exterior perspectives, material direction board with 5 materials. However, review_notes end with 'Recommend approval' — rubric calls for Marcela's specific feedback, not just 'approved'. Notes are more of a checklist confirmation than captured feedback. Score 4.",
+    "clarity": "No revision notes needed (approval). Space arrangement confirms all 10 programmed spaces at correct sizes. Deliverables checklist is specific with notes for each item. Score 5.",
+    "state_sync": "Score 3 (simulated run — ASANA_UNAVAILABLE). State transition concept_in_progress → concept_ready_for_review → concept_approved not confirmed in live Asana.",
+    "timing": "Concept package confirmed before DG-07 Marcela review was invoked. Review happened at 2026-04-15 (dg-07.json) / 2026-05-25 (decision-event-DG-07.json). Score 5.",
+    "decision_readiness": "Marcela can approve the concept: all 5 deliverables confirmed, programmed spaces verified at correct sizes, civic character noted, solar shown. Score 5."
+  },
+  "average_score": 4.33,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Good concept review. All 5 deliverables confirmed complete. Space arrangement verifies all 10 programmed spaces at correct sizes — strong program compliance. Two minor gaps: (1) in-person presentation date not explicitly logged as an event (presentation_milestone refers to payment milestone M2, not a meeting event), (2) review notes are a checklist confirmation rather than captured Marcela feedback. No auto-fail conditions triggered.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-07 routes to Felipe (dispatch Felipe to begin architectural design Phase 2). decision-event-DG-07.json: route_to=Felipe. Correct per segment F flow.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

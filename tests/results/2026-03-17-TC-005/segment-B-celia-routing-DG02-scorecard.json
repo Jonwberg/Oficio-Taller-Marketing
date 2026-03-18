@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "B",
+  "phase": "B",
+  "gate_id": "DG-02",
+  "gate_type": "marcela",
+  "agent_tested": "Celia",
+  "deliverable": "decision-routing-DG02",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "Both dg-02.json and decision-event-DG-02.json present. All 11 payload fields in decision-event-DG-02.json: project_id ✓, phase=DG-02 ✓, review_item=client-fit-assessment ✓, reviewed_by=Marcela ✓, decision=approve ✓, comment=null ✓, timestamp=2026-03-17T16:00:00-07:00 ✓, source_channel=email ✓, next_action=dispatch Ana AND Sol in parallel for Segment C ✓, route_to=Ana ✓, sync_to_asana=true ✓. Score 5.",
+    "accuracy": "Decision=approve correct. route_to=Ana correct (Ana leads Segment C area program + cost basis). next_action correctly specifies parallel dispatch (Ana AND Sol) for Segment C. Score 5.",
+    "clarity": "Score 4: comment=null. A Marcela review of an institutional fit assessment for a $180K project would typically include a note on the committee approval dynamics or procurement framework. Not a failure.",
+    "state_sync": "Score 3 (simulated run — ASANA_UNAVAILABLE). sync_to_asana=true logged. discovery_completed state not confirmed in live Asana.",
+    "timing": "Decision event at 2026-03-17T16:00:00-07:00. Same day as lead intake (09:00). Prompt capture. Score 5.",
+    "decision_readiness": "Ana and Sol receive: project_id, phase, next_action confirming parallel dispatch. Both agents can begin work immediately. Score 5."
+  },
+  "average_score": 4.5,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Clean DG-02 routing. All 11 payload fields present. route_to=Ana with next_action correctly specifying parallel dispatch for Ana AND Sol. Both dg-02.json and decision-event-DG-02.json consistent. Comment=null is the only gap.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "route_to=Ana in both files. next_action specifies Ana AND Sol parallel dispatch for Segment C — correct per pipeline design. Both files use route_to field.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

@@ -1,0 +1,35 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "E",
+  "phase": "E",
+  "gate_id": "hydrology-resolution",
+  "gate_type": "activation",
+  "agent_tested": "Vera",
+  "deliverable": "hydrology-study-received",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "decision_clarity": 5
+  },
+  "score_evidence": {
+    "completeness": "All required fields present: received_at (ISO-8601 timestamp), study_findings (specific: stream setback 10m from centerline, retention basin not required), blocker_resolved=true, site_data_complete=true.",
+    "accuracy": "blocker_resolved=true correctly closes the 'hydrologic_study_pending' blocker from activation-gate.json. site_data_complete=true is correct — study received and findings documented. Findings are specific and actionable: 10m setback from centerline (within the 15m design setback already built into the concept), no retention basin required — both favorable outcomes. received_at=2026-04-28T10:00:00-07:00 is approximately 6 weeks after the blocker was logged (2026-03-17), consistent with the 6-week estimate in site-readiness-report.json.",
+    "decision_clarity": "blocker_resolved=true and site_data_complete=true are unambiguous. Vera-activation-approved.json correctly fires after this event, showing all three activation conditions met. Pablo dispatched for project schedule. No ambiguity."
+  },
+  "average_score": 5.00,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "tc008_checks": {
+    "blocker_resolved_true": true,
+    "site_data_complete_true": true,
+    "resolution_timing_consistent_with_estimate": true,
+    "findings_actionable": true,
+    "pablo_dispatched_after_resolution": true
+  },
+  "decision_simulated": "unblock",
+  "decision_commentary": "TC-008 hydrology resolution: PERFECT. blocker_resolved=true, site_data_complete=true. The study findings are specific and favorable (10m setback, no retention basin). Vera correctly fires activation_approved event after receiving this file, dispatching Pablo. The full hydrology blocker lifecycle (blocked → study pending → study received → unblocked → Pablo dispatched) is correctly simulated end-to-end.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Hydrology resolution triggers Vera activation_approved check (vera-activation-approved.json), which then dispatches Pablo. Not a Celia routing event — correct per pipeline design.",
+  "payload_fields_verified": 4,
+  "passed": true
+}

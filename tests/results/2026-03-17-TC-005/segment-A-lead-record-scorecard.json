@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "A",
+  "phase": "A",
+  "gate_id": "DG-01",
+  "gate_type": "marcela",
+  "agent_tested": "Lupe",
+  "deliverable": "lead-record",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "All 5 required fields present (source_channel, category, received_at, summary, status). Score 4 not 5: raw message is not stored verbatim — summary is a structured paraphrase rather than the original email body preserved word-for-word.",
+    "accuracy": "source_channel=gmail exactly matches inbound platform. category=project_inquiry is correct — named institutional client, specific public library project, explicit obra publica procurement. No ambiguity.",
+    "clarity": "Summary immediately scannable: project type (public_civic), location (Cabo San Lucas, BCS), client name (Arq. Roberto Salinas, Dirección de Obras Públicas), budget ($1.5M USD), procurement type (obra pública). Passes in under 5 seconds.",
+    "state_sync": "Score 3 (simulated run — no live Asana per scoring note). state=new correct. ASANA_UNAVAILABLE throughout — logged and continued per protocol. Would be 5 in live environment.",
+    "timing": "received_at=2026-03-17T09:00:00-07:00. Lead record created in same session as inbound message. No gap. Score 5.",
+    "decision_readiness": "All qualifying fields present: source channel, category, budget signal ($1.5M USD), project type, procurement type. Marcela has everything needed for DG-01 decision. Score 5."
+  },
+  "average_score": 4.5,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Strong institutional lead with pre-approved budget and explicit obra pública procurement. All required fields present, correct classification, immediate scannability. Minor gap: raw message not stored verbatim (structured summary substituted). No auto-fail conditions triggered.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-01 routes to Lupe (next_action: dispatch Lupe Segment B to write lead-summary and dispatch Elena). Correct per routing table. Both dg-01.json and decision-event-DG-01.json files present — both use route_to field correctly.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

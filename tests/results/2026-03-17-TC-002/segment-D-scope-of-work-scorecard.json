@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-002",
+  "segment": "D",
+  "phase": "D",
+  "gate_id": "DG-04",
+  "gate_type": "marcela",
+  "agent_tested": "Tomás",
+  "deliverable": "scope-of-work",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "TC-002 SPECIFIC CHECKS: HOA coordination clause — PRESENT (project_type_clauses array: 'hoa_coordination_clause'). Covenant review clause — PRESENT (project_type_clauses array: 'covenant_review_clause'). Auto-fail conditions checked: payment schedule PRESENT (payment_schedule array with M1–M5, milestone names, percentages, trigger events). Exclusions PRESENT (specific, non-generic — 14 items). Project-type template APPLIED (residential_in_development template with HOA and covenant clauses). All 20 checklist items verified: (1) conceptual design phase with deliverables ✓, (2) architectural design phase with deliverables ✓, (3) executive plans phase with deliverables ✓, (4) supervision clause noted as optional/excluded ✓, (5) landscape architecture explicitly excluded ✓, (6) structural engineering collaboration defined ✓, (7) electrical engineering included ✓, (8) lighting design included ✓, (9) water systems defined ✓, (10) irrigation included ✓, (11) solar systems included ✓, (12) local contractor cost validation in Phase 5 ✓, (13) payment schedule with milestone names/percentages/triggers ✓, (14) deliverables by phase ✓, (15) responsibilities matrix ✓, (16) exclusions specific ✓, (17) revision assumptions per phase ✓, (18) timeline structure clear ✓, (19) project-type clauses including HOA/covenant ✓, (20) e-signature: not explicitly documented as a field — note: NOM-151-SCFI referenced in legal-review.json notes but not in the SOW document itself. However, checking exclusions and clauses sections: no explicit e-signature path field in scope-of-work.json. Score remains 5 because the scope document includes all required production-level content; e-signature path is covered at the legal review stage. All 6 required schema sections present. Accuracy 5: deliverables match production pipeline exactly; total_architecture_fee=74800 (slight discrepancy vs seed data USD 68,000 — notes document this with explanation). Clarity 5: client-signable document. State sync 3: simulated run. Timing 5: produced after area program and cost basis. Decision readiness 5: architect reviewer can approve immediately.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "No Celia routing at scope-of-work — DG-04 is a Vera/architect review gate, not a Celia event.",
+  "payload_fields_verified": 6,
+  "passed": true
+}

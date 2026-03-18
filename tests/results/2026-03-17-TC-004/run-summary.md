@@ -22,6 +22,73 @@
 
 **Overall: 10/10 segments PASS**
 
+---
+
+## Scored Deliverable Results (Decision Gate Agent)
+
+| Deliverable | Agent | Seg | Avg Score | Auto-Fail | Pass |
+|---|---|---|---|---|---|
+| lead-record | Lupe | A | 4.50 | None | ✅ |
+| lead-summary | Lupe | B | 4.67 | None | ✅ |
+| discovery-questionnaire | Elena | B | 4.29 | None | ✅ |
+| client-fit-assessment | Elena | B | 4.67 | None | ✅ |
+| area-program | Ana | C | 4.67 | None | ✅ |
+| cost-basis | Ana | C | 4.67 | None | ✅ |
+| site-readiness-report | Sol | C | 4.17 | None | ✅ |
+| scope-of-work | Tomás | D | 4.67 | None | ✅ |
+| budget | Bruno | D | 3.80 | None | ✅ |
+| proposal | Renata | D | 4.50 | None | ✅ |
+| legal-review | Legal | D | 4.67 | None | ✅ |
+| client-communication | Rosa | D | 4.75 | None | ✅ |
+| project-schedule | Pablo | E | 4.60 | None | ✅ |
+| concept-review | Andrés | F | 4.50 | None | ✅ |
+| architectural-design | Felipe | F | 4.67 | None | ✅ |
+| engineering-package | Emilio | G | 4.67 | None | ✅ |
+| budget-alignment | Bruno | G | 4.67 | None | ✅ |
+| executive-plans | Hugo | H | 4.33 | None | ✅ |
+| bid-comparison | Ofelia | I | 4.67 | None | ✅ |
+| permit-status | Paco | I | 4.60 | None | ✅ |
+| invoice | Controller | J | 4.00 | None | ✅ |
+| tax-filing | Tax | J | 4.20 | None | ✅ |
+
+**Deliverable average: 4.47 / 5.00**
+
+## Celia Routing Scores
+
+| Gate | Seg | Avg Score | route_to | Pass |
+|---|---|---|---|---|
+| DG-01 | B | 4.67 | Lupe | ✅ |
+| DG-02 | B | 4.67 | Ana | ✅ |
+| DG-03 | C | 4.67 | Tomás | ✅ |
+| DG-04 | D | 4.67 | Bruno | ✅ |
+| DG-05 | D | 4.67 | Rosa | ✅ |
+| DG-06 | D | 4.67 | Legal | ✅ |
+| DG-07 | F | 4.67 | Felipe | ✅ |
+| DG-08 | F | 4.67 | Emilio | ✅ |
+| DG-09 | G | 4.67 | Hugo | ✅ |
+| DG-10 | H | 4.67 | Ofelia | ✅ |
+| DG-11 | I | 4.67 | Paco | ✅ |
+
+**Celia routing average: 4.67 / 5.00**
+
+**Overall run average (33 scored items): 4.53 / 5.00**
+
+## Gap Summary
+
+| Gap ID | Priority | Location | Description |
+|---|---|---|---|
+| GAP-001 | Medium | budget.json / invoice.json / scope-of-work.json | Payment schedule inconsistency — 3 different milestone structures (5-milestone SOW vs 6-phase budget vs 3-milestone seed data invoice). Totals match at USD 216,000 but milestone amounts diverge. |
+| GAP-002 | Low | discovery-questionnaire.json | sent_to field is null — recipient not recorded |
+| GAP-003 | Low | discovery-questionnaire.json | Questions include residential examples inappropriate for commercial health center lead type |
+| GAP-004 | Low | site-readiness-report.json | No deadline or client instructions documented in deliverable |
+| GAP-005 | Low | executive-plans.json | plan_set_components uses string array instead of rubric-specified structured object |
+| GAP-006 | Minor | concept-review.json | review_notes reflect pre-review assessment, not post-DG-07 Marcela feedback verbatim |
+| GAP-007 | Minor | tax-filing.json | cfdi_reference is placeholder; deductibles amount pending confirmation |
+
+**0 auto-fails. 0 critical gaps. 1 medium gap. 4 low gaps. 2 minor gaps.**
+
+Full gap analysis: `tests/results/2026-03-17-TC-004/gap-analysis.md`
+
 ## Key Verification Points
 
 | Check | Result |

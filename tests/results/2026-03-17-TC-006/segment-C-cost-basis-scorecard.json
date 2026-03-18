@@ -1,0 +1,24 @@
+{
+  "run_id": "2026-03-17-TC-006",
+  "segment": "C",
+  "phase": "C",
+  "gate_id": "DG-03",
+  "gate_type": "marcela",
+  "agent_tested": "Ana",
+  "deliverable": "cost-basis",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.5,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Cost basis is well-constructed. All key fields present: cost_per_sqm ($1,200 USD — defensible for Los Cabos), base construction cost ($259,200 = 216 × $1,200 — math correct), pool premium ($45,000), coastal site premium ($25,000), total construction ($329,200), architecture fee ($30,000, 9.1%), total estimate ($359,200), client budget ($200,000), budget gap ($159,200, 79.6%). Completeness scored 4: 'engineering_allowance' and 'contingency_pct' as named fields are absent — cost-basis.md rubric requires them. Method documented as parametric. Labeled as preliminary in notes. Budget gap clearly quantified — Marcela can immediately assess feasibility. State_sync scored 3 per simulated run note.",
+  "payload_fields_verified": 12,
+  "passed": true
+}

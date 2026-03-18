@@ -1,0 +1,27 @@
+{
+  "run_id": "2026-03-17-TC-002",
+  "segment": "B",
+  "phase": "B",
+  "gate_id": "DG-02",
+  "gate_type": "marcela",
+  "agent_tested": "Elena",
+  "deliverable": "discovery-questionnaire",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "language": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.57,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 7 required fields present per schema. Completeness scores 4 (not 5): 7 of 8 rubric-required topics covered — project type, budget, timeline, location, special requirements, design style, and site ownership questions are all present; however, 'approximate size' as a standalone topic is not explicitly a separate question (the project_type_question touches on it implicitly). This is a minor gap — score 4 rather than 5. Note: sent_to=null is a data issue (no email address populated) but this is expected in test mode from seed data. Accuracy 5: questions are tailored to the residential_in_development context — specifically references 'fraccionamiento' and HOA covenant in design_style_question, demonstrating project-type adjustment. Clarity 5: questions are warm and conversational in Spanish — '¿Cómo describiría el estilo de vida...?' — not a bureaucratic form. State sync 3: simulated run. Timing 5: sent_at='2026-03-17T10:00:00-07:00' within same session as lead creation. Language 5: all questions in Spanish, matching inbound Spanish message exactly. Decision readiness 5: questions will produce responses sufficient for a complete fit assessment. No auto-fail conditions triggered.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "No Celia routing at questionnaire dispatch — Celia fires after DG-02 fit assessment review.",
+  "payload_fields_verified": 7,
+  "passed": true
+}

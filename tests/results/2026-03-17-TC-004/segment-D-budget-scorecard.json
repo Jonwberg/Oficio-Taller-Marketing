@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-004",
+  "segment": "D",
+  "phase": "D",
+  "gate_id": "pre-DG-05",
+  "gate_type": "output",
+  "agent_tested": "Bruno",
+  "deliverable": "budget",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 3,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5
+  },
+  "average_score": 3.8,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Completeness 4: all required schema fields present (project_name, client_name, milestone_name, amount, payment_instructions, currency, line_items). However the rubric requires 'all 5 payment milestones present with name, percentage, trigger event' — the budget.json presents line_items by phase (6 items) rather than the 5 milestone payment schedule (M1–M5). The milestone structure is in scope-of-work.json payment_schedule but not explicitly reproduced here with percentage and trigger event columns. Docking to 4. Accuracy 3: The line_items phase amounts sum to USD 216,000 (43,200+54,000+32,400+54,000+21,600+10,800=216,000 — confirmed). However the payment schedule in this document uses a 5-milestone structure with percentages from the SOW template (M1 25%=$54,000, M2 15%=$32,400, M3 20%=$43,200, M4 25%=$54,000, M5 15%=$32,400), but the invoice.json (final milestone) shows a different 40/30/30 schedule (M1=$86,400, M2=$64,800, M3=$64,800). The budget document phase_allocation_note explicitly uses proportional phase percentages that differ from the SOW milestone percentages. This is an internal inconsistency: budget.json phase allocations (20/25/15/25/10/5%) differ from the SOW milestone schedule (25/15/20/25/15%) and from the invoice (40/30/30%). The total is consistent at USD 216,000, so no auto-fail on total, but accuracy docked to 3 for the milestone percentage mismatch. Clarity 4: payment_instructions reference CLABE as '[CLABE — TO BE CONFIGURED IN .env]' — placeholder for production but acceptable in test. Currency USD is explicit. State_sync 3 (simulated). Timing 5: budget passed to Renata after DG-04.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "No Celia gate on budget; feeds directly to Renata.",
+  "payload_fields_verified": 7,
+  "passed": true,
+  "gaps": ["Payment milestone percentages in budget.json (phase allocation 20/25/15/25/10/5%) do not match SOW payment schedule percentages (25/15/20/25/15%) nor the invoice payment schedule (40/30/30%). All three sources total USD 216,000 but internal consistency gap exists."]
+}

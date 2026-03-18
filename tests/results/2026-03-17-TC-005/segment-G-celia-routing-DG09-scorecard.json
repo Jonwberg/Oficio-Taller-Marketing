@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "G",
+  "phase": "G",
+  "gate_id": "DG-09",
+  "gate_type": "marcela",
+  "agent_tested": "Celia",
+  "deliverable": "decision-routing-DG09",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "Both dg-09.json and decision-event-DG-09.json present. All 11 payload fields in decision-event-DG-09.json: project_id ✓, phase=DG-09 ✓, review_item=budget-alignment ✓, reviewed_by=Marcela ✓, decision=approve ✓, comment=null ✓, timestamp=2026-11-25T10:00:00-07:00 ✓, source_channel=email ✓, next_action=dispatch Hugo for executive plans phase ✓, route_to=Hugo ✓, sync_to_asana=true ✓. Score 5.",
+    "accuracy": "Decision=approve correct (budget aligned at 13.3% under budget). route_to=Hugo correct (Hugo leads executive plans in Segment H). Score 5.",
+    "clarity": "Score 4: comment=null. Budget alignment approval with 13.3% underrun might warrant a note on contingency management.",
+    "state_sync": "Score 3 (simulated run — ASANA_UNAVAILABLE). sync_to_asana=true logged. State: budget_alignment_pending → budget_aligned not confirmed.",
+    "timing": "Decision event at 2026-11-25. After Phase 3 engineering coordination (schedule: Phase 3 end_date=2026-11-18, DG-09 fires 7 days later). Score 5.",
+    "decision_readiness": "Hugo receives: project_id, phase, next_action (executive plans phase). Complete context. Score 5."
+  },
+  "average_score": 4.5,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Clean DG-09 routing. All 11 payload fields present. route_to=Hugo correct. Budget alignment approve correctly triggers executive plans phase. Both dg-09.json and decision-event-DG-09.json consistent in routing to Hugo.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "route_to=Hugo in both files. Both use route_to field. Timestamp difference (dg-09: 2026-07-15, decision-event-DG-09: 2026-11-25) — internal vs external capture. Both correctly route to Hugo.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

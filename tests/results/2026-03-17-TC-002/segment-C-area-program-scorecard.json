@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-002",
+  "segment": "C",
+  "phase": "C",
+  "gate_id": "DG-03",
+  "gate_type": "marcela",
+  "agent_tested": "Ana",
+  "deliverable": "area-program",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "TC-002 SPECIFIC CHECK — 7m height limit: CONFIRMED. Assumptions array includes: 'HOA height limit of 7m is taken into account for massing — 337 sqm program distributed across two stories to stay under 7m; no three-story configuration.' All required fields present: spaces (array with name, qty, size_sqm per entry), total_sqm=337, assumptions. Completeness 5: all 12 programmed spaces from seed data present with name, qty, and size_sqm — bedrooms (4×20), bathrooms (4×9), kitchen (25), dining/living (55), family room (30), office (15), pool (40), terraces (2×20), service (16). Pool and terraces included per client request. Accuracy 5: total_sqm=337 is verified by the running sum shown in assumptions: 80+36+25+55+30+15+40+40+16=337. Clarity 5: matrix is self-contained, no context needed — space types and sizes are clear. State sync 3: simulated run. Timing 5: produced before any downstream scope/cost work. Decision readiness 5: assumptions fully documented including HOA height limit, pool inclusion rationale, and arithmetic verification. No auto-fail conditions triggered.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "No Celia routing at area-program — Celia fires at DG-03 after Marcela reviews cost-basis.",
+  "payload_fields_verified": 3,
+  "passed": true
+}

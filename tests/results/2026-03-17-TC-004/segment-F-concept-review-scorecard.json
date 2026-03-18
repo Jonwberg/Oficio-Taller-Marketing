@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-004",
+  "segment": "F",
+  "phase": "F",
+  "gate_id": "DG-07",
+  "gate_type": "marcela",
+  "agent_tested": "Andrés",
+  "deliverable": "concept-review",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 4,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.5,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Completeness 5: all five deliverables confirmed complete — 3d_model (status=complete with detailed notes), renders (status=complete, 4 views, key perspectives named), material_direction (status=complete, clinical durability emphasis), color_direction (status=complete, clinical white/gray + green accent), space_arrangement (status=complete, all 11 spaces from area program present). presentation_milestone='M2 — Concept Design Approved' logged. review_notes present. Accuracy 4: review_notes capture design intent and clinical zoning rationale, and include a recommendation to advance to Phase 2 — this is good context, but the rubric requires Marcela's specific feedback (not just approval recommendation). The review_notes are Andrés's own assessment and recommendation, not a record of Marcela's feedback verbatim. Docking to 4. Clarity 5: revision notes would be specific to room-level if required (none needed here); all deliverables status is clear; recommendation to advance is explicit. State_sync 3 (simulated). Timing 5: package confirmed complete before DG-07 review invoked (DG-07 timestamp 2026-05-06, Phase 1 end date 2026-05-05 — same timing). Decision_readiness 5: Marcela has all five deliverables confirmed, area program alignment verified, and clinical zoning rationale documented. Auto-fail: no deliverable unconfirmed — PASS; presentation_milestone logged — PASS.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-07: decision=approve, route_to=Felipe. All 11 payload fields present.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

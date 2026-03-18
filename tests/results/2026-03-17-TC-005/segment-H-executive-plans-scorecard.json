@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "H",
+  "phase": "H",
+  "gate_id": "DG-10",
+  "gate_type": "marcela",
+  "agent_tested": "Hugo",
+  "deliverable": "executive-plans",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 4
+  },
+  "score_evidence": {
+    "completeness": "Required components: Architectural Construction Drawing Set ✓ (9 sheet types listed), Technical Specifications Package ✓, Public Bidding Technical Documents ✓ (catálogo de conceptos for licitación pública). Engineering coordination: structural ✓, electrical ✓, plumbing_hydraulic ✓, solar ✓, landscape_irrigation ✓. Sustainability package ✓ (solar, passive design, accessibility matrix). Score 4 (not 5): rubric requires plan_set_components with cross_sections, full_plan_book, technical_coordination fields — executive-plans.json uses 'components' array structure, not the exact schema field names. Rubric also requires client_signoff_milestone field — not present in the deliverable.",
+    "accuracy": "coordination_conflicts_resolved=true. No unresolved conflicts between architectural and engineering drawings. Score 5.",
+    "clarity": "Score 4: Package is described as complete but client_signoff_milestone is not logged. Without a sign-off milestone, Vera cannot confirm client has accepted the plan set before Ofelia begins bidding. This creates a gap in the handoff chain.",
+    "state_sync": "Score 3 (simulated run — ASANA_UNAVAILABLE). executive_plans_in_progress → executive_plans_approved state and client sign-off milestone not confirmed in live Asana.",
+    "timing": "Executive plans produced after budget alignment approval (DG-09). Before Ofelia begins bidding (DG-10 leads to DG-11 bidding phase). Score 5.",
+    "decision_readiness": "Score 4: Marcela can approve and hand off to Ofelia. Minor gap: no client_signoff_milestone field means the contracting entity's formal acceptance of the plan set is not explicitly captured."
+  },
+  "average_score": 4.17,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Solid executive plans package. All drawing types present, engineering coordination complete across all systems, Public Bidding Technical Documents (catálogo de conceptos) ready for licitación pública. Two schema gaps: (1) exact schema fields (plan_set_components with cross_sections, full_plan_book, technical_coordination) not used — components array structure used instead; (2) client_signoff_milestone field absent. No auto-fail conditions triggered (cross sections present within the sheet list, no unresolved coordination conflicts, all system drawings present).",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-10 routes to Ofelia (executive plans approved — dispatch Ofelia for bidding and permitting). decision-event-DG-10.json: route_to=Ofelia. Correct per segment H→I flow.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

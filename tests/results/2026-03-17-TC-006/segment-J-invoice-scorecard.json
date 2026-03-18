@@ -1,0 +1,23 @@
+{
+  "run_id": "2026-03-17-TC-006",
+  "segment": "J",
+  "phase": "J",
+  "gate_id": "DG-10",
+  "gate_type": "vera_trigger",
+  "agent_tested": "Controller",
+  "deliverable": "invoice",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5
+  },
+  "average_score": 4.4,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "n/a",
+  "decision_commentary": "Invoice covers M3 — Executive Plans Approved: $9,000 USD. All required fields present: project_name, client_name, milestone_name, amount ($9,000 — matches Bruno's payment schedule M3 amount exactly), due_date (2026-07-21), payment_instructions (bank transfer with reference code), currency (USD), and running_total ($30,000 — full architecture fee reached, correct). Invoice history documents all 3 milestones: M1 $12,000 (paid 2026-03-31), M2 $9,000 (paid 2026-04-21), M3 $9,000 (due 2026-07-21). Total $30,000 matches architecture fee. Clarity scored 4: payment_instructions contain placeholder bank/CLABE values — client cannot pay without completing the bank configuration, but per auto-fail conditions this does not trigger failure. State_sync scored 3 per simulated run note.",
+  "payload_fields_verified": 8,
+  "passed": true
+}

@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-002",
+  "segment": "B",
+  "phase": "B",
+  "gate_id": "DG-02",
+  "gate_type": "celia",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-dg02",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 4,
+    "clarity": 3,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 4
+  },
+  "average_score": 3.83,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "DG-02 decision event for client-fit-assessment review. Fields present: project_id, phase='DG-02', review_item='client-fit-assessment', reviewed_by='Marcela', decision='approve', comment=null, timestamp='2026-03-17T12:00:00-07:00', source_channel='email', next_action='dispatch_ana_and_sol_parallel', route_to='Ana', sync_to_asana=true. Completeness 4: all 11 fields structurally present; comment=null reduces from 5 to 4. Accuracy 4 (not 5): decision='approve' correct; next_action='dispatch_ana_and_sol_parallel' correctly describes the parallel dispatch to Ana and Sol. However, route_to='Ana' only — the rubric's routing table expects parallel dispatch to both Ana AND Sol at DG-02. routing only to 'Ana' in the route_to field does not capture Sol's parallel track. The next_action field documents the parallel dispatch correctly, but route_to='Ana' alone is incomplete — it should be 'Ana, Sol' or similar to capture both parallel agents. Score 4 (minor routing incompleteness in route_to field; next_action correctly describes intent). Clarity 3: comment=null. State sync 3: simulated run. Timing 5: timestamp='2026-03-17T12:00:00-07:00' — same session. Decision readiness 4: Ana receives context; Sol's dispatch context may be partially handled via next_action description but route_to='Ana' only creates ambiguity. No auto-fail conditions triggered — route_to field present (not routed_to), decision correctly parsed.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-02: decision=approve routes to Ana (and Sol per next_action field). route_to='Ana' only — Sol parallel track not captured in route_to field itself, documented only in next_action. Minor incompleteness.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

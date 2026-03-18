@@ -1,0 +1,36 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "B",
+  "phase": "B",
+  "gate_id": "DG-01",
+  "gate_type": "marcela",
+  "agent_tested": "Elena",
+  "deliverable": "discovery-questionnaire",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 4,
+    "clarity": 3,
+    "state_sync": 3,
+    "timing": 5,
+    "language": 5,
+    "decision_readiness": 4
+  },
+  "score_evidence": {
+    "completeness": "7 of the 8 required question topics present: project type, budget, timeline, location, special requirements, design style, site ownership. Missing: approximate size/sqm as a standalone question (program size is implied by context but not explicitly asked). Score 4.",
+    "accuracy": "Questions are partially tailored to the public_civic context: site ownership question (relevant), special requirements (accessibility, sustainability asked). However, questions lean toward residential/private framing ('casa habitación, ampliación', 'estilo de vida', 'atmósfera') rather than civic/institutional framing. For a Dirección de Obras Públicas commissioner, questions about organizational approval process, procurement constraints, or committee structure would be expected. Score 4.",
+    "clarity": "Questions are grammatically clear. However, 'cómo describiría el estilo de vida o la atmósfera' reads as residential framing for a government library client. Tone is appropriately professional but slightly mismatched to institutional context. Score 3.",
+    "state_sync": "Score 3 (simulated run — ASANA_UNAVAILABLE). Questionnaire sent at 2026-03-17T10:30:00-07:00. State update not confirmed in live Asana.",
+    "timing": "Questionnaire sent at 10:30 on same day as lead creation (09:00). Well within 24h window. Score 5.",
+    "language": "Questionnaire sent entirely in Spanish — correct. Client inbound message was in Spanish (Dirección de Obras Públicas, formal institutional Spanish). Score 5.",
+    "decision_readiness": "Questions will produce responses covering most fit assessment dimensions (budget, timeline, location, requirements, site). Missing: size confirmation question and procurement/committee question. Elena can prepare a fit assessment but will have gaps on program size and institutional approval structure. Score 4."
+  },
+  "average_score": 4.0,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Questionnaire is functionally adequate — all critical questions present (budget, project type, timeline, location, special requirements). Two gaps: (1) no explicit program size/sqm question, and (2) residential framing ('estilo de vida', 'atmósfera') is slightly mismatched to a government institutional client. Language is correctly Spanish. No auto-fail conditions triggered.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Elena fires after DG-01 approval. Routing is correct per segment B flow. decision-event-DG-01.json correctly routes to Lupe who dispatches Elena.",
+  "payload_fields_verified": 9,
+  "passed": true
+}

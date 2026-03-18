@@ -1,0 +1,24 @@
+{
+  "run_id": "2026-03-17-TC-006",
+  "segment": "G",
+  "phase": "G",
+  "gate_id": "DG-09",
+  "gate_type": "marcela",
+  "agent_tested": "Felipe",
+  "deliverable": "redesign-scope",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Redesign scope correctly captures all required elements: original_sqm = 216, revised_sqm = 160, removed_elements = ['pool'], feedback_type = 'scope_reduction', rationale referencing DG-09 reject, redesigned_at timestamp. Key checks pass: pool is removed (removed_elements includes 'pool') and sqm reduced to 160 (within ~160 target). revised-architectural-design.json confirms full redesign: 3 bedrooms retained, pool bathroom eliminated, spaces proportionally reduced, structural notes updated to remove pool elements. Both redesign files are consistent and complete. Rationale is explicitly linked to DG-09 reject decision. State_sync scored 3 per simulated run note.",
+  "payload_fields_verified": 6,
+  "passed": true
+}

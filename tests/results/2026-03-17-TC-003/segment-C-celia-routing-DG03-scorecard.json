@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-003",
+  "segment": "C",
+  "phase": "C",
+  "gate_id": "DG-03",
+  "gate_type": "marcela",
+  "agent_tested": "Celia",
+  "deliverable": "celia-routing-dg03",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "dg-03.json: all 11 fields present with values: project_id ✓, phase ✓, review_item ✓, reviewed_by ✓, decision ✓, comment='Proceed with SOW. Note budget gap — ensure phasing option is reflected in scope.' ✓ (non-null), timestamp ✓, source_channel ✓, next_action ✓, route_to ✓, sync_to_asana ✓. Score 5.",
+    "accuracy": "Decision=approve correct. route_to=Tomás correct — DG-03 triggers Tomás to produce scope-of-work.json. Score 5.",
+    "clarity": "Comment preserved: 'Proceed with SOW. Note budget gap — ensure phasing option is reflected in scope.' Matches Marcela's decision note. Score 5.",
+    "state_sync": "sync_to_asana=true. Score 3.",
+    "timing": "Timestamp 2026-03-18T10:00:00. Score 5.",
+    "decision_readiness": "route_to=Tomás, next_action specifies commercial_hotel template with hospitality_compliance_clause. Tomás can begin immediately with full context. Score 5."
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "DG-03 routing is excellent. All 11 payload fields present with values — comment is non-null and preserved verbatim. Decision correct, routing to Tomás correct, next_action specifies commercial_hotel template. This is the first DG where Celia successfully captured the reviewer comment.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "All 11 fields populated. Comment preserved. route_to=Tomás correct. No issues.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

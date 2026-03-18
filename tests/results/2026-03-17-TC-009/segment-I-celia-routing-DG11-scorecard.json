@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-009",
+  "segment": "I",
+  "phase": "DG-11",
+  "gate_id": "DG-11",
+  "gate_type": "celia_routing",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-dg11",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 5,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.83,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 11 payload fields present. Decision: approve. review_item: bid-comparison (correct). route_to: Paco (correct — DG-11 approve → Paco for permitting). next_action: 'dispatch Paco for permitting; Vera unlocks construction on permit approval' — captures both Paco dispatch and Vera unlock trigger correctly. sync_to_asana: true. Clarity scored 4: comment null. State sync scored 5 — Asana GID 1213707881896836 (contractor_selection_gate). No auto-fail conditions.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-11: approve → route_to Paco. Vera auto-unlock on permit approval captured in next_action. Correct.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

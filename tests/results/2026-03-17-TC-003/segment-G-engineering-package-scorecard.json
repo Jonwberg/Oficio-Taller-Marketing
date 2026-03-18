@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-003",
+  "segment": "G",
+  "phase": "G",
+  "gate_id": "DG-09",
+  "gate_type": "marcela",
+  "agent_tested": "Emilio",
+  "deliverable": "engineering-package",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "TC-003 CRITICAL CHECK PASSED. All required systems present in systems_status: structural ✓, electrical ✓, lighting ✓, water ✓. Additionally: pool_mechanical ✓, hvac ✓, fire_suppression ✓. Conditional systems ALL present: solar (complete, 80kWp roof + 20kWp ground) ✓, greywater (complete, NOM-015-CONAGUA compliant, sized for 20-unit occupancy) ✓, av_system (complete, in-room AV all 20 casitas + public areas + network backbone) ✓. conditional_systems=['solar','greywater','av_system'] explicitly listed. all_inputs_confirmed=true, conflicts_resolved=true. Score 5.",
+    "accuracy": "Package declared complete with all_inputs_confirmed=true. All engineers listed as TBD — they are external consultants and TBD is the production simulation convention. arroyo_coordination_note explicitly addresses seasonal arroyo across all disciplines. No pending inputs undeclared. Score 5.",
+    "clarity": "Conflicts resolved, noted explicitly. Arroyo coordination documented. All systems have status, engineer, and detailed notes. Score 5.",
+    "state_sync": "No Asana state field in deliverable. Simulated run. Score 3.",
+    "timing": "Package complete at 2026-10-20T17:00:00, before Bruno begins contractor pricing. Score 5.",
+    "decision_readiness": "Bruno can proceed to contractor pricing immediately — all systems confirmed complete, no pending inputs. Score 5."
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "TC-003 CRITICAL CHECK PASSED: Emilio correctly includes greywater (NOM-015-CONAGUA, sized for 20-unit hotel), av_system (in-room + public areas + network backbone), and solar (100kWp total system). All three TC-003 required conditional systems present and complete. Arroyo coordination explicitly addressed across all disciplines. State sync scored 3 per simulated run convention. No auto-fail conditions triggered (all required systems present, no undeclared pending inputs).",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "Celia DG-09 routing scored separately.",
+  "payload_fields_verified": null,
+  "passed": true
+}

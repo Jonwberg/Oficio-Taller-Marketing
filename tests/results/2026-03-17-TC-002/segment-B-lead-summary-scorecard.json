@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-002",
+  "segment": "B",
+  "phase": "B",
+  "gate_id": "DG-01",
+  "gate_type": "marcela",
+  "agent_tested": "Lupe",
+  "deliverable": "lead-summary",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All five required fields present: project_name='Casa Vista — Patricia Reyes', source_channel='professional_contact', raw_message (verbatim Spanish inbound), initial_assessment, recommended_action='proceed to discovery'. Completeness 5: source, channel, raw message, classification, and initial assessment all present. Accuracy 5: classified as residential_in_development (correct — client owns lot in fraccionamiento privado); legitimacy assessment defensible with HOA context, program detail, and budget range. Clarity 5: Marcela can decide approve/reject in under 30 seconds — strong candidate language, specific program details, HOA awareness noted. State sync 3: simulated run, no live Asana verification. Timing 5: summary created promptly after lead creation in same session. Decision readiness 5: explicit recommended_action='proceed to discovery' with substantive rationale. No auto-fail conditions triggered.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "Celia routing for DG-01 scored separately in segment-B-celia-routing-DG01-scorecard.json.",
+  "payload_fields_verified": 5,
+  "passed": true
+}

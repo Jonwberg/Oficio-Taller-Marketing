@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "D",
+  "phase": "D",
+  "gate_id": "DG-04",
+  "gate_type": "marcela",
+  "agent_tested": "Tomás",
+  "deliverable": "scope-of-work",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "TC-005 AUTO-FAIL CHECK PASSED: template_used=sow-public-civic.md. project_type_clause_ids includes civic_procurement_clause and public_bidding_clause. All 20 checklist items verified: (1) Conceptual design phase ✓ with full deliverables list; (2) Architectural design phase ✓; (3) Executive plans ✓ (Phase 4); (4) Optional supervision clause ✓; (5) Landscape architecture ✓ (included by default); (6) Structural engineering ✓; (7) Electrical ✓; (8) Lighting ✓; (9) Water/plumbing ✓; (10) Irrigation ✓; (11) Solar ✓; (12) Local contractor cost validation ✓ (Phase 5 note); (13) Payment schedule ✓ 5 milestones with trigger events; (14) Deliverables by phase ✓; (15) Responsibilities matrix ✓ 13 entries; (16) Exclusions ✓ 12 specific items; (17) Revision assumptions ✓ per phase; (18) Timeline structure ✓; (19) Public_civic clauses ✓ (civic_procurement, public_bidding_compliance, government_approval_timeline, optional_supervision); (20) E-signature ✓. Score 5.",
+    "accuracy": "Deliverables per phase match the production pipeline exactly. Responsibilities matrix names real parties (Oficio Taller, contracting entity, structural/electrical/plumbing engineers, landscape architect, solar specialist). Payment schedule 20/15/20/25/20 = $180,000 USD total matches seed data. Score 5.",
+    "clarity": "Client (Dirección de Obras Públicas) can sign with full understanding: all phases, deliverables, payment triggers, responsibilities, and exclusions are clearly stated. Government approval cycle implications documented in both phases and a dedicated clause. Score 5.",
+    "state_sync": "Score 3 (simulated run — ASANA_UNAVAILABLE). scope_in_preparation and scope_sent_for_architect_review states not confirmed in live Asana.",
+    "timing": "SOW produced after area program and cost basis confirmed (Segment C DG-03). Before Vera sends DG-04 architect email. Score 5.",
+    "decision_readiness": "Architect reviewer (Marcela) can approve or flag specific sections immediately. All 20 items present, project-type clauses correct, payment schedule precise. Score 5."
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Exemplary scope of work. TC-005 CRITICAL CHECKS PASSED: (1) public_civic template correctly applied (not a generic or wrong-type template), (2) civic_procurement_clause present, (3) public_bidding_clause present. All 20 checklist items verified present. Payment schedule is the public_civic template 20/15/20/25/20 split — seed data override correctly applied per Tomás protocol. Full responsibilities matrix with 13 entries. 12 specific exclusions documented. Only deduction is simulated Asana state sync.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-04 routes to Bruno (dispatch Bruno to price SOW into itemized budget). decision-event-DG-04.json: route_to=Bruno. Correct per segment D flow.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

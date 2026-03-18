@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-009",
+  "segment": "D",
+  "phase": "DG-05",
+  "gate_id": "DG-05",
+  "gate_type": "marcela",
+  "agent_tested": "Legal",
+  "deliverable": "legal-review",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 4,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "TC-009 SPECIFIC CHECK: SEMARNAT disclosure advisory present — legal-review.json includes clause 'coastal_zone_permit_disclosure' with status 'flagged_advisory' and explicit note recommending plain-language SEMARNAT prerequisite language in the proposal. This is the correct behavior for a coastal project. Advisory is non-blocking and correctly escalated. Four standard clauses reviewed (residential_standard, client_changes, site_conditions, esignature) — all approved. Completeness scored 4 (not 5) because the rubric schema requires 'ip_rights_status' and 'compliance_flags' as explicit fields, but these are addressed via the review_items array rather than top-level fields. No IP/usage rights section is present as a standalone field. All material content is present but schema field naming deviates from rubric requirement. No blocking issues. Approval given as 'approved_with_advisory' which is correct. No flags left unresolved. State sync scored 4 — Asana GID 1213707388081969 confirmed in state.json. No auto-fail conditions triggered.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "N/A — legal review feeds into DG-05 alongside proposal.",
+  "payload_fields_verified": 5,
+  "passed": true
+}

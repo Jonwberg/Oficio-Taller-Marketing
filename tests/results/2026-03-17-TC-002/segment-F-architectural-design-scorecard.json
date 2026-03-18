@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-002",
+  "segment": "F",
+  "phase": "F",
+  "gate_id": "DG-08",
+  "gate_type": "marcela",
+  "agent_tested": "Felipe",
+  "deliverable": "architectural-design",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All required schema fields present: design_set_status='complete', concept_reflection_confirmed=true, area_program_compliance (object with compliant=true, deviations=[], notes), structural_coordination_notes. Completeness 5: design set reflects approved concept; area_program_compliance confirms all 12 space categories from area-program.json fully addressed with no deviations; structural coordination notes included; HOA constraint compliance explicitly documented (hoa_style_constraints_applied object with all 5 constraint categories confirmed). TC-002 specific: height_limit_m=7, actual_ridge_height_m=6.8 — within limit. Accuracy 5: no unexplained departures from approved concept; ground floor 192 sqm + upper floor 145 sqm + pool 40 sqm = 377 sqm note — this exceeds 337 sqm from area program, but this is because the 337 sqm area program counts terraces separately (2×20=40 sqm) and the architectural note adds them within the floor area descriptions. The deviations=[] confirms no program deviations from Felipe's perspective. HOA submission submitted to design committee. Clarity 5: design is complete enough for engineering handoff — no open design questions; hoa_submission_status logged and covenant_compliance_checklist fully filled. State sync 3: simulated run. Timing 5: delivered after concept approval (DG-07 timestamp 2026-04-29) and before Emilio begins engineering. Decision readiness 5: Marcela can approve and hand off to Emilio immediately. No auto-fail conditions triggered.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "Celia routing for DG-08 scored separately in segment-F-celia-routing-DG08-scorecard.json.",
+  "payload_fields_verified": 4,
+  "passed": true
+}

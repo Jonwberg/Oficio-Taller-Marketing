@@ -1,0 +1,24 @@
+{
+  "run_id": "2026-03-17-TC-007",
+  "segment": "A",
+  "phase": "A",
+  "gate_id": "DG-01",
+  "gate_type": "marcela",
+  "agent_tested": "Lupe",
+  "deliverable": "spam-classification",
+  "source_file": "TC-007-segment-A-spam-confirmed.json",
+  "scores": {
+    "spam_reason_specific_and_evidence_based": 5,
+    "all_spam_signals_identified": 5,
+    "classification_decision_unambiguous": 5
+  },
+  "average_score": 5.0,
+  "scoring_notes": {
+    "spam_reason_specific_and_evidence_based": "The reason field cites four distinct, concrete signals: (1) service offering with no project intent, (2) unknown sender identity, (3) a specific suspicious URL (seguidores-fake.com), and (4) bulk/automated messaging pattern. This is maximally specific and grounded in observable evidence from the message.",
+    "all_spam_signals_identified": "All recognizable spam signals present in the inbound message are captured: commercial offer, absence of qualifying project fields (location, client name, design intent), a promotional external link, and automated/bulk message characteristics. No signals were overlooked.",
+    "classification_decision_unambiguous": "The classification field is 'spam' with no hedging or conditional language. The reason statement directly maps each signal to a spam criterion, leaving no ambiguity about the decision or its basis."
+  },
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "passed": true
+}

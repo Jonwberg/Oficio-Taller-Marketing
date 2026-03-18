@@ -4,6 +4,7 @@
 **Date:** 2026-03-17
 **Mode:** Simulated
 **Final State:** `project_closed` ✅
+**Scored:** 2026-03-17 by Test Decision Gate + Gap Analysis Agent
 
 ---
 
@@ -13,7 +14,7 @@
 |---------|--------|--------|
 | A | Lupe | ✅ PASS |
 | B | Lupe, Celia, Elena, Celia | ✅ PASS |
-| C | Ana, Sol, Vera, Celia | ✅ PASS |
+| C | Ana, Sol, Vera, Celia | ⚠️ PASS (1 Celia routing gap — DG-03) |
 | D | Tomás, Vera, Bruno, Renata, Legal, Vera, Rosa, Celia | ✅ PASS |
 | E | Vera, Pablo | ✅ PASS |
 | F | Andrés, Celia, Felipe, Celia | ✅ PASS |
@@ -22,7 +23,50 @@
 | I | Ofelia, Celia, Paco | ✅ PASS |
 | J | Vera, Controller ×3, Tax | ✅ PASS |
 
-**Overall: 10/10 segments PASS**
+**Overall: 10/10 segments PASS (1 routing gap identified in Segment C Celia DG-03)**
+
+---
+
+## Scored Deliverable Table
+
+| Segment | Deliverable | Agent | Avg Score | Passed |
+|---------|-------------|-------|-----------|--------|
+| A | lead-record | Lupe | 4.33 | PASS |
+| B | lead-summary | Lupe | 4.67 | PASS |
+| B | discovery-questionnaire | Elena | 4.57 | PASS |
+| B | client-fit-assessment | Elena | 4.67 | PASS |
+| B | Celia DG-01 | Celia | 4.17 | PASS |
+| B | Celia DG-02 | Celia | 3.83 | PASS |
+| C | area-program | Ana | 4.67 | PASS |
+| C | cost-basis | Ana | 4.50 | PASS |
+| C | site-readiness-report | Sol | 4.50 | PASS |
+| C | Celia DG-03 | Celia | 3.33 | **FAIL** |
+| D | scope-of-work | Tomás | 4.67 | PASS |
+| D | budget | Bruno | 4.00 | PASS |
+| D | proposal | Renata | 4.67 | PASS |
+| D | legal-review | Legal | 4.67 | PASS |
+| D | client-communication | Rosa | 4.75 | PASS |
+| D | Celia DG-06 | Celia | 4.17 | PASS |
+| E | project-schedule | Pablo | 4.40 | PASS |
+| F | concept-review | Andrés | 4.33 | PASS |
+| F | architectural-design | Felipe | 4.67 | PASS |
+| F | Celia DG-07 | Celia | 4.17 | PASS |
+| F | Celia DG-08 | Celia | 4.17 | PASS |
+| G | engineering-package | Emilio | 4.67 | PASS |
+| G | budget-alignment | Bruno | 4.67 | PASS |
+| G | Celia DG-09 | Celia | 4.17 | PASS |
+| H | executive-plans | Hugo | 4.50 | PASS |
+| H | Celia DG-10 | Celia | 4.17 | PASS |
+| I | bid-comparison | Ofelia | 4.67 | PASS |
+| I | permit-status | Paco | 4.60 | PASS |
+| I | Celia DG-11 | Celia | 4.67 | PASS |
+| J | invoice | Controller | 4.20 | PASS |
+| J | tax-filing | Tax | 4.00 | PASS |
+
+**Overall average score: 4.37 / 5.00**
+**Scorecards written: 31**
+**Auto-fails: 0**
+**PASS: 30 / 31 | FAIL: 1 / 31**
 
 ---
 

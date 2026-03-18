@@ -1,0 +1,24 @@
+{
+  "run_id": "2026-03-17-TC-006",
+  "segment": "B",
+  "phase": "B",
+  "gate_id": "DG-02",
+  "gate_type": "marcela",
+  "agent_tested": "Elena",
+  "deliverable": "client-fit-assessment",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.5,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Fit assessment covers budget realism (flagged as constrained — under-budgeted 40-60%), location complexity (Los Cabos coastal premiums), scope complexity (pool + coastal environment), and client profile. Recommendation 'proceed_with_budget_advisory' is explicit. Completeness scored 4: 'meeting_notes' and formal 'assessment_dimensions' array not structurally present — content is embedded in flat fields rather than the schema's expected structure. Accuracy is excellent: budget constraint correctly quantified, coastal risk correctly identified. Clarity scored 5: recommendation is unambiguous with supporting evidence. State_sync scored 3 per simulated run note.",
+  "payload_fields_verified": 7,
+  "passed": true
+}

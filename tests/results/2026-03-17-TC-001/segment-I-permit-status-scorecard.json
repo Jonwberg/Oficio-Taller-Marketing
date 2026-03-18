@@ -1,0 +1,25 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "I",
+  "phase": "I",
+  "gate_id": "DG-11",
+  "gate_type": "vera",
+  "agent_tested": "Paco",
+  "deliverable": "permit-status",
+  "scores": {
+    "completeness": 1,
+    "accuracy": 3,
+    "clarity": 3,
+    "state_sync": 3,
+    "timing": 5
+  },
+  "average_score": 3.0,
+  "auto_fail": true,
+  "auto_fail_reason": "submitted_at is absent — required field per schema and explicit auto-fail condition. jurisdiction is absent — required field per schema and explicit auto-fail condition. Two auto-fail conditions triggered simultaneously.",
+  "decision_simulated": "flag",
+  "decision_commentary": "Completeness scored 1: rubric schema requires submitted_at, jurisdiction, status, corrections (array), approved_at. The file contains only status='approved', municipal_permit_approved='2026-11-01', approved_at='2026-11-01', and corrections=[]. Both submitted_at and jurisdiction are absent — these are required fields and auto-fail conditions. The file also conflates municipal_permit_approved with approved_at (both same date) but lacks the submission tracking. Score 1: two required fields missing. Accuracy scored 3: jurisdiction should match project location (Los Cabos, Baja California Sur — 'Municipio de Los Cabos — Desarrollo Urbano'). While the jurisdiction is absent, the status='approved' with approved_at='2026-11-01' is plausible timing given construction start='2026-09-15' in the schedule — actually the permit is approved AFTER construction start, which is a logical inconsistency. However scoring accuracy 3 because the permit approval date and corrections tracking are otherwise internally consistent (empty corrections, approved status). Clarity scored 3: status='approved' is unambiguous and Vera could trigger construction from this; however without submitted_at, the permit tracking history is lost. State_sync scored 3: simulated run. Timing scored 5: permit produced in correct pipeline position.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "No Celia routing on permit-status — Paco fires after contractor selection, Vera auto-unlocks on approval.",
+  "payload_fields_verified": 3,
+  "passed": false
+}

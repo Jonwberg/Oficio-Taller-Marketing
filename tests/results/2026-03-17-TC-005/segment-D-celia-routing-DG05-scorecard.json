@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "D",
+  "phase": "D",
+  "gate_id": "DG-05",
+  "gate_type": "marcela",
+  "agent_tested": "Celia",
+  "deliverable": "decision-routing-DG05",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 4,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 4
+  },
+  "score_evidence": {
+    "completeness": "Both dg-05.json and decision-event-DG-05.json present. All 11 payload fields in decision-event-DG-05.json: project_id ✓, phase=DG-05 ✓, review_item=proposal ✓, reviewed_by=Marcela ✓, decision=approve ✓, comment=null ✓, timestamp=2026-03-19T15:00:00-07:00 ✓, source_channel=email ✓, next_action=dispatch Rosa to send proposal to client ✓, route_to=Rosa ✓, sync_to_asana=true ✓. Score 5.",
+    "accuracy": "Score 4: dg-05.json routes to Vera (dispatch Vera to send proposal to architect for review) while decision-event-DG-05.json routes to Rosa (dispatch Rosa to send proposal to client). These two files represent two different steps in DG-05 (internal architect review first, then client send). The routing is correct in sequence, but there is an inconsistency: dg-05.json next_action says 'send proposal to architect for review' while decision-event-DG-05.json says 'send proposal to client' — these should be two separate events/gates (DG-05a internal, DG-05b client), not captured under the same DG-05 label. The routing logic is functionally correct but the event labeling creates minor ambiguity.",
+    "clarity": "Score 4: comment=null. The dual-routing structure (Vera internal then Rosa client) could be clearer as separate decision events.",
+    "state_sync": "Score 3 (simulated run — ASANA_UNAVAILABLE). sync_to_asana=true logged.",
+    "timing": "Decision event at 2026-03-19T15:00:00. Same day as DG-04 (March 19). Prompt. Score 5.",
+    "decision_readiness": "Score 4: Rosa receives route_to=Rosa with next_action=dispatch Rosa to send proposal to client. Complete context for Rosa. Vera's internal review step is captured in dg-05.json separately. Two-step flow works but could be more explicit."
+  },
+  "average_score": 4.17,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "DG-05 routing is functionally correct but has structural ambiguity: two files represent two different sub-steps of DG-05 (Vera for internal architect review, Rosa for client send). Both files are consistent in decision=approve. route_to values differ by design (two steps) but this creates minor ambiguity about which is the canonical DG-05 event. No auto-fail conditions triggered.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "dg-05.json: route_to=Vera (internal review step). decision-event-DG-05.json: route_to=Rosa (client send step). Both use route_to field. Dual routing reflects two-step DG-05 flow — correct per pipeline design, minor clarity gap.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

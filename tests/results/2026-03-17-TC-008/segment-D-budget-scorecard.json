@@ -1,0 +1,33 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "D",
+  "phase": "D",
+  "gate_id": "DG-04",
+  "gate_type": "marcela",
+  "agent_tested": "Bruno",
+  "deliverable": "budget",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 3,
+    "state_sync": 3,
+    "timing": 5
+  },
+  "score_evidence": {
+    "completeness": "Score 4: All 7 required schema fields present (project_name, client_name, milestone_name, amount, payment_instructions, currency, line_items). Line items cover all 6 SOW phases. However, only M1 milestone is invoiced in this document — it is labeled M1-focused. M2 and M3 milestones are referenced in the total and line item structure but the document does not present all 3 milestones with separate rows (rubric requires all payment milestones with name, percentage, trigger event). Rubric score 4: all required fields present but milestone structure is M1-centric only.",
+    "accuracy": "Total of all line items: $60K+$75K+$45K+$75K+$15K+$30K=$300,000 USD. Matches seed data total contract value exactly. Amount for M1=$120,000 = 40% of $300,000 ✓. Line items are correctly calculated and labeled by phase.",
+    "clarity": "Score 3: payment_instructions contain placeholders '[BANK_NAME — TO BE CONFIGURED IN .env]' and '[CLABE — TO BE CONFIGURED IN .env]'. These are expected in test mode but reduce clarity — client would need follow-up to complete payment. Currency is explicit (USD) ✓. Milestones labeled but M2 and M3 payment details not separately presented.",
+    "state_sync": "Score 3 per simulated run rule — no live Asana.",
+    "timing": "Budget produced after DG-04 SOW approval. Passed to Renata immediately."
+  },
+  "average_score": 4.00,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "auto_fail_notes": "line_items present and non-empty ✓. payment_instructions present (though placeholder values) ✓. Total $300,000 USD matches cost_basis architecture fee exactly (seed data uses USD for payment schedule, not the MXN construction cost) ✓. Budget produced after DG-04 ✓. No auto-fail triggered.",
+  "decision_simulated": "approve",
+  "decision_commentary": "Functional budget document. The M1-centric structure is appropriate for an invoice document. The .env placeholders for bank details are expected in test mode and do not represent a production failure. Minor gap: all three milestone totals/triggers not presented in a single payment schedule table, which reduces completeness.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Budget flows directly to Renata (no Celia gate per rubric). Correct per Segment D scope boundary.",
+  "payload_fields_verified": 7,
+  "passed": true
+}

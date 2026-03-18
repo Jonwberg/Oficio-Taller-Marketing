@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "A",
+  "phase": "A",
+  "gate_id": "DG-01",
+  "gate_type": "marcela",
+  "agent_tested": "Lupe",
+  "deliverable": "lead-record",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "All 5 required fields present: source_channel, category, received_at, summary, status. Raw message context captured in summary.",
+    "accuracy": "source_channel=email matches inbound channel exactly. category=project_inquiry is correct for a detailed hotel project inquiry with specific program, location, and budget.",
+    "clarity": "Summary immediately identifies client (David Chen), project type (commercial_hotel), location (East Cape BCS), key program elements, budget signal ($2.5M USD), and site complication (stream/hydrology). Scannable in under 10 seconds.",
+    "state_sync": "Score 3 per simulated run rule — no live Asana. status=new is correct. ASANA_UNAVAILABLE fallback logged in A-execution-complete.json.",
+    "timing": "received_at=2026-03-17T09:00:00-07:00 and record created in same session. No processing gap.",
+    "decision_readiness": "All qualifying fields populated. Project type, location, program, budget, and critical site condition (hydrologic study required) all surfaced. Marcela has complete context for DG-01 decision."
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Strong lead record. All required fields present and accurate. Summary surfaces the hydrology complication proactively, which is exactly what Marcela needs for the DG-01 decision.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-01 event correctly routes to Lupe (Segment B) per decision-event-dg01.json. All 11 payload fields present. route_to='Lupe' is correct.",
+  "payload_fields_verified": 5,
+  "passed": true
+}

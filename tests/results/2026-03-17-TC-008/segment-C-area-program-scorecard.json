@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "C",
+  "phase": "C",
+  "gate_id": "DG-03",
+  "gate_type": "marcela",
+  "agent_tested": "Ana",
+  "deliverable": "area-program",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "All 8 program spaces present with name, qty, and size_sqm: Guest Room (15×55), Restaurant (200), Infinity Pool+Deck (300), Reception (100), Back of House (150), Staff Facilities (80), Spa (200), Circulation (145). total_sqm=2000. assumptions array present and detailed.",
+    "accuracy": "Math verified: 15×55=825 + 200+300+100+150+80+200+145=1175. Total=825+1175=2000sqm. Exact match. Calculation verified within the assumptions field itself.",
+    "clarity": "Matrix is standalone-readable. Each space has notes explaining source (per client spec, per client program, assumed). No back-reference to conversation needed.",
+    "state_sync": "Score 3 per simulated run rule — no live Asana.",
+    "timing": "Area program produced as part of Segment C parallel track with site readiness. Available before DG-03.",
+    "decision_readiness": "Assumptions address all points where client input was incomplete or inferred: guest room size, pool deck interpretation, circulation estimate, sustainability systems placement. Marcela can evaluate with full context. Hydrology note in assumptions flags stream setback impact on infinity pool siting."
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Perfect area program. All spaces accounted for, math verified, assumptions thorough. TC-008 specific note: Ana correctly flags that 'infinity pool 300sqm includes pool basin and surrounding deck — structural setback from stream will need to be confirmed via hydrologic study' — exactly the right flag for this edge case.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-03 (decision-event-dg03.json) correctly routes to Tomás. All 11 payload fields present. Comment preserved: 'Proceed with scope preparation. Hydrology blocker noted — ensure activation gate holds until study received.'",
+  "payload_fields_verified": 3,
+  "passed": true
+}

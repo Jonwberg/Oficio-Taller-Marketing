@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "E",
+  "phase": "E",
+  "gate_id": "activation-gate",
+  "gate_type": "activation",
+  "agent_tested": "Vera",
+  "deliverable": "activation-gate",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "decision_clarity": 5
+  },
+  "score_evidence": {
+    "completeness": "All required fields present: gate_check='activation_prerequisites', area_program_complete=true, site_data_complete=false, contract_signed=true, deposit_confirmed=true, blocker='hydrologic_study_pending', blocker_reason (detailed), gate_status='blocked', checked_at timestamp.",
+    "accuracy": "Blocker correctly identified as 'hydrologic_study_pending'. This matches the seed data: stream running through northeast corner requires hydrologic study. site_data_complete=false is accurate — study not yet received at time of check (2026-03-17T11:30:00). The blocker_reason accurately explains the stream proximity, setback analysis, and retention basin possibility.",
+    "decision_clarity": "gate_status='blocked' is unambiguous. The blocker field is a single specific value: 'hydrologic_study_pending'. The blocker_reason provides complete context. No ambiguity about why activation is blocked or what must happen to unblock it. Pablo NOT dispatched — confirmed by vera-activation-blocked.json action='STOP — do not dispatch Pablo'."
+  },
+  "average_score": 5.00,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "tc008_checks": {
+    "gate_status_blocked": true,
+    "blocker_is_hydrologic_study_pending": true,
+    "pablo_not_dispatched": true,
+    "site_data_complete_false": true
+  },
+  "decision_simulated": "blocked",
+  "decision_commentary": "TC-008 activation gate check: PERFECT. gate_status='blocked', blocker='hydrologic_study_pending', site_data_complete=false, Pablo NOT dispatched. vera-activation-blocked.json explicitly states 'STOP — do not dispatch Pablo.' All TC-008 edge case requirements fully satisfied.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Vera activation gate is not a Celia routing event — it is a Vera-internal activation check. No Celia payload expected here.",
+  "payload_fields_verified": 8,
+  "passed": true
+}

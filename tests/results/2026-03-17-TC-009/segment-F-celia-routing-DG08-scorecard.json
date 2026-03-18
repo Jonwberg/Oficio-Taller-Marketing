@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-009",
+  "segment": "F",
+  "phase": "DG-08",
+  "gate_id": "DG-08",
+  "gate_type": "celia_routing",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-dg08",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 5,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.83,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 11 payload fields present. Decision: approve. review_item: architectural-design (correct). route_to: Emilio (correct — DG-08 approve → Emilio for engineering coordination). next_action: 'dispatch Emilio for engineering coordination'. sync_to_asana: true. Clarity scored 4: comment null. State sync scored 5 — Asana GID 1213707881132965 (design_gate). No auto-fail conditions.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-08: approve → route_to Emilio. Correct.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

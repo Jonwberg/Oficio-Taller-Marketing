@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-009",
+  "segment": "F",
+  "phase": "DG-07",
+  "gate_id": "DG-07",
+  "gate_type": "marcela",
+  "agent_tested": "Andrés",
+  "deliverable": "concept-review",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 4,
+    "clarity": 4,
+    "state_sync": 4,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.5,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All five deliverables confirmed complete in deliverables_checklist: 3d_model (complete), renders (complete — 4 views), material_direction (complete), color_direction (complete), space_arrangement (complete — all 10 spaces present, 356 sqm matches area-program.json). Presentation milestone logged as 'M2 — Concept Design Client Approval'. review_notes present. Accuracy scored 4 (not 5): review_notes capture general concept alignment and horizon-axis logic but Marcela's specific feedback per dimension is not individually documented — notes confirm approval direction but read as analytical rather than capturing verbatim Marcela commentary. Clarity scored 4: review_notes mention coastal zone setback confirmation deferred to Phase 2 — a minor open item that is correctly flagged but creates a slight residual open question. State sync scored 4 — Asana GID 1213707881191365 confirmed in state.json (concept task). No auto-fail conditions triggered.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Celia DG-07 routing checked in separate scorecard.",
+  "payload_fields_verified": 3,
+  "passed": true
+}

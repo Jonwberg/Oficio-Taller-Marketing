@@ -1,0 +1,35 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "I",
+  "phase": "I",
+  "gate_id": "DG-11",
+  "gate_type": "marcela",
+  "agent_tested": "Ofelia",
+  "deliverable": "bid-comparison",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "Two bids present: Constructora del Cabo ($3,350,000) and Grupo Constructor Baja ($3,480,000). Each has: contractor name ✓, total ✓, line_items (10 items each) ✓, timeline ✓, notes ✓. recommendation and recommendation_rationale present. TC-008 specific: both bids include 'Civil and earthwork (slope retention, stream setback grading)' as a named line item — site complexity properly priced.",
+    "accuracy": "Recommendation goes beyond lowest price: rationale cites hotel construction experience in Los Cabos, full specialty systems coverage with no exclusions, and equivalent timeline. Recommendation matches data: Constructora del Cabo is $130K cheaper, equivalent timeline, better hotel track record.",
+    "clarity": "Marcela can select immediately. Two bids clearly presented with full line-item breakdowns. Recommended contractor identified with rationale. Price difference ($130K = 3.7%) and budget headroom ($650K below client max) stated.",
+    "state_sync": "Score 3 per simulated run rule — no live Asana.",
+    "timing": "Bid comparison produced after executive plans approved (DG-10). DG-11 fires 2026-11-18. Two bids collected before presenting to Marcela. Correct.",
+    "decision_readiness": "Marcela can select Constructora del Cabo with full confidence. DG-11 approves: 'Approve Constructora del Cabo. Good value, local experience.'"
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "auto_fail_notes": "Two bids compared ✓. Comparison matrix present ✓. Decision routed to Marcela ✓. No auto-fail triggered.",
+  "decision_simulated": "approve",
+  "decision_commentary": "Strong bid comparison. TC-008 site complexity is properly reflected in bid structure: civil/earthwork line items explicitly reference slope retention and stream setback grading in Constructora del Cabo's bid. Both bidders acknowledge site complexity. Ofelia's recommendation correctly goes beyond price — track record with hotel projects in Los Cabos is the differentiating factor.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-11 routes to Paco for permit management. decision-event-dg11.json: all 11 payload fields present. route_to='Paco' is correct. Comment preserved: 'Approve Constructora del Cabo. Good value, local experience.'",
+  "payload_fields_verified": 3,
+  "passed": true
+}

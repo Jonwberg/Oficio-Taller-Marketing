@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "G",
+  "phase": "G",
+  "gate_id": "DG-09",
+  "gate_type": "marcela",
+  "agent_tested": "Bruno",
+  "deliverable": "budget-alignment",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.5,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Completeness scored 4: all six required fields present — contractor_pricing_source='preliminary_estimate', contractor_total=5200000, client_budget=6162500, variance_amount=-962500, variance_pct=-15.6, recommendation='proceed'. Rubric requires 'contractor pricing from at least one source with source documented' — source is documented as 'preliminary_estimate'. However rubric also says 'comparison clearly presented' — the file lacks line-item breakdown showing what the 5,200,000 includes. Score 4: source documented, comparison present but not detailed. Accuracy scored 5: variance_amount = 5,200,000 − 6,162,500 = −962,500 — correct. Variance_pct = −962,500 / 6,162,500 = −15.62% ≈ −15.6% — correct. Recommendation='proceed' correctly matches the data (contractor total is under client budget by 15.6% — aligned, so proceed is correct). Clarity scored 5: 'proceed' is unambiguous; contractor total is under budget, no redesign needed. State_sync scored 3: simulated run. Timing scored 5: delivered after engineering package complete. Decision_readiness scored 5: Marcela can approve immediately — budget is aligned, recommendation is clear.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Celia routing at DG-09 scored separately.",
+  "payload_fields_verified": 6,
+  "passed": true
+}

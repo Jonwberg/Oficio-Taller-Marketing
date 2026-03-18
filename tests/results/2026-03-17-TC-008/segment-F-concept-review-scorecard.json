@@ -1,0 +1,35 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "F",
+  "phase": "F",
+  "gate_id": "DG-07",
+  "gate_type": "marcela",
+  "agent_tested": "Andrés",
+  "deliverable": "concept-review",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "All 5 deliverables confirmed complete: 3d_model ✓, renders ✓ (5 views), material_direction ✓, color_direction ✓, space_arrangement ✓. presentation_milestone='M2 — Concept Approved' logged. review_notes present and substantive.",
+    "accuracy": "Review notes capture specific design reasoning: dispersed pavilion typology, hydrology compliance (spa repositioned to 18m — exceeds 15m CONAGUA setback), all 5 deliverables confirmed. Notes go beyond 'approved' — they explain why the concept is well-suited to this site's constraints.",
+    "clarity": "Review notes are specific and actionable. The hydrology constraint is directly addressed: spa pavilion repositioned 18m from stream centerline, exceeding the required setback. No vague revision notes — concept is recommended for approval with clear rationale.",
+    "state_sync": "Score 3 per simulated run rule — no live Asana. DG-07 Celia event correctly shows approve decision.",
+    "timing": "Package confirmed ready before DG-07 Marcela review. DG-07 timestamp 2026-06-10T09:00:00 follows concept period start 2026-04-29 by 6 weeks — correct per schedule.",
+    "decision_readiness": "Marcela can approve immediately. Review notes directly reference TC-008 hydrology constraint and confirm compliance. DG-07 approves with specific comment: 'Strong concept. Dispersed pavilion approach is appropriate for the site constraints. Approve.'"
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "auto_fail_notes": "All 5 deliverables confirmed ✓. Presentation milestone logged ✓. No auto-fail triggered.",
+  "decision_simulated": "approve",
+  "decision_commentary": "Excellent concept review. TC-008 specific strength: spa repositioned to 18m from stream centerline (exceeds 15m CONAGUA setback). This demonstrates that the hydrology study findings (10m setback) were incorporated into design decisions with appropriate margin. Marcela's DG-07 comment validates the site-constraint-driven approach.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-07 routes to Felipe for architectural design development. decision-event-dg07.json: all 11 payload fields present. route_to='Felipe' is correct. Comment preserved verbatim: 'Strong concept. Dispersed pavilion approach is appropriate for the site constraints. Approve — advance to design development.'",
+  "payload_fields_verified": 3,
+  "passed": true
+}

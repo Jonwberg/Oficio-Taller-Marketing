@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-009",
+  "segment": "B",
+  "phase": "DG-01",
+  "gate_id": "DG-01",
+  "gate_type": "celia_routing",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-dg01",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 5,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.83,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 11 required payload fields present: project_id ✓, phase (DG-01) ✓, review_item (lead-record) ✓, reviewed_by (Marcela) ✓, decision (approve) ✓, comment (null — acceptable, no revision required) ✓, timestamp (ISO-8601) ✓, source_channel (email) ✓, next_action (dispatch Lupe Segment B) ✓, route_to (Lupe) ✓, sync_to_asana (true) ✓. Field is route_to (not routed_to) — correct. Decision correctly parsed as approve. Next agent Lupe is correct per routing table (DG-01 approve → Lupe Segment B). sync_to_asana true with confirmed Asana GID. Clarity scored 4: comment is null — no reviewer commentary captured, which is acceptable when Marcela approved without notes, but rubric gives 5 only when reviewer comment is preserved verbatim. State sync scored 5 given live Asana integration confirmed.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-01: approve → route_to Lupe. Correct. All 11 fields present. route_to field used (not routed_to).",
+  "payload_fields_verified": 11,
+  "passed": true
+}

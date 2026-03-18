@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "D",
+  "phase": "D",
+  "gate_id": "DG-06",
+  "gate_type": "celia",
+  "agent_tested": "Celia",
+  "deliverable": "celia-routing-dg06",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 4,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 4
+  },
+  "average_score": 4.33,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 11 required payload fields verified present: project_id, phase='D', review_item='proposal_sent_to_client', reviewed_by='Celia', decision='approve', comment='Proposal sent to client. Awaiting client decision.', timestamp='2026-03-17T11:15:00-07:00' (ISO-8601 ✓), source_channel='email', next_action='await_client_decision', route_to='Marcela', sync_to_asana=false. Completeness scored 5: all 11 fields present. Accuracy scored 4: decision='approve' correctly parsed. route_to='Marcela' — for DG-06 after proposal is sent to client, routing back to Marcela to await client decision is appropriate. However, next_action='await_client_decision' is a wait state rather than an active routing — the DG-06 gate is the architect review gate where the full package (proposal + legal + communication) is reviewed before sending. The comment says 'Proposal sent to client' which implies DG-06 has already fired and the proposal is already sent — this is slightly post-gate rather than the gate decision itself. Score 4: routing is functionally correct but the comment describes a post-gate state rather than the gate decision event. Clarity scored 5: comment is specific and preserved. State_sync scored 3: simulated run. Timing scored 5: timestamp at 11:15, after legal review at 11:00. Decision_readiness scored 4: Marcela is routed correctly; next_action clarifies the awaiting state.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "route_to='Marcela' for DG-06 — correct. Minor note: comment describes post-send state rather than gate decision moment.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

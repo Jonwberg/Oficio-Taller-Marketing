@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "I",
+  "phase": "I",
+  "gate_id": "DG-11",
+  "gate_type": "celia",
+  "agent_tested": "Celia",
+  "deliverable": "celia-routing-dg11",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 4,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 4
+  },
+  "average_score": 4.17,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 11 required payload fields verified present: project_id, phase='I', review_item='bid_comparison', reviewed_by='Celia', decision='approve', comment='Bid comparison approved. Contractor selected. Permit process underway.', timestamp='2026-03-17T15:30:00-07:00' (ISO-8601 ✓), source_channel='email', next_action='advance_to_construction', route_to='Marcela', sync_to_asana=false. Completeness scored 5: all 11 fields present. Accuracy scored 4: decision='approve' correctly parsed. route_to='Marcela' for DG-11 — routing to Marcela for the construction phase advance is plausible but the next agent in the pipeline after contractor selection would typically be Paco (permits) and the Controller. The comment mentions 'Permit process underway' which correctly reflects concurrent permit work. next_action='advance_to_construction' is slightly premature — construction requires permit approval before starting. Score 4 for the premature next_action label. Clarity scored 4: comment mentions both contractor selection and permit process — good context. However 'advance_to_construction' conflicts with permit-not-yet-approved status. State_sync scored 3: simulated run. Timing scored 5: timestamp at 15:30, correct order after DG-10 at 15:00. Decision_readiness scored 4: routing is functional; the next_action label ambiguity is a minor gap.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "route_to='Marcela' — acceptable for DG-11. next_action='advance_to_construction' is premature given permit approval is still pending at this stage.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

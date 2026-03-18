@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-002",
+  "segment": "H",
+  "phase": "H",
+  "gate_id": "DG-10",
+  "gate_type": "celia",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-dg10",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 3,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.17,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "DG-10 decision event for executive-plans review. Fields present: project_id, phase='DG-10', review_item='executive-plans', reviewed_by='Marcela', decision='approve', comment=null, timestamp='2026-10-07T09:00:00-07:00', source_channel='email', next_action='dispatch Ofelia for contractor bidding', route_to='Ofelia', sync_to_asana=true. Completeness 4: all 11 fields present; comment=null. Accuracy 5: decision='approve' correct; route_to='Ofelia' correct — at DG-10 executive plans approval, Ofelia is dispatched for contractor bidding (Segment I). next_action consistent with route_to. Clarity 3: comment=null. State sync 3: simulated run. Timing 5: timestamp='2026-10-07T09:00:00-07:00' one day after M3 milestone (construction docs delivered 2026-10-06). Decision readiness 5: Ofelia receives sufficient context to begin contractor bidding immediately.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-10: decision=approve routes to Ofelia for contractor bidding. route_to='Ofelia' is correct.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

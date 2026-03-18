@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-006",
+  "segment": "G",
+  "phase": "G",
+  "gate_id": "DG-09",
+  "gate_type": "celia_routing",
+  "agent_tested": "Celia",
+  "deliverable": "dg-09",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Second DG-09 pass — approve after redesign. All 11 required payload fields present: project_id, phase (G), review_item (budget_alignment_post_redesign), reviewed_by (Celia), decision (approve), comment ($195K within $200K budget), timestamp (2026-03-17T15:00:00-07:00, ISO-8601), source_channel (instagram), next_action (advance_to_executive_plans), route_to (Hugo), sync_to_asana (false). Critical check: decision is 'approve' on second pass. Routing to Hugo for executive plans is correct — executive plans only proceed after budget alignment is approved. One-hour gap between reject (14:00) and approve (15:00) reflects the redesign loop processing time.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Correctly approved second pass. route_to = Hugo for executive plans. next_action = advance_to_executive_plans — correct sequencing.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

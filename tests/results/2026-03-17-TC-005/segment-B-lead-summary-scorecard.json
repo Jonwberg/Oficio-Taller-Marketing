@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "B",
+  "phase": "B",
+  "gate_id": "DG-01",
+  "gate_type": "marcela",
+  "agent_tested": "Lupe",
+  "deliverable": "lead-summary",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "All 5 required fields present: project_name, source_channel, raw_message, initial_assessment, recommended_action. raw_message contains the original Spanish email verbatim. initial_assessment is a full structured analysis (300+ words covering client type, project type, procurement framework, budget analysis). Score 5.",
+    "accuracy": "project type classified as public_civic — correct. Legitimacy assessment correct: named institutional government client, specific program, approved budget, explicit procurement type. No ambiguity in classification. Score 5.",
+    "clarity": "Marcela can make approve/proceed decision in under 30 seconds: project_name identifies client + type + location; initial_assessment summarizes all qualifying signals; recommended_action = 'proceed to discovery'. Score 5.",
+    "state_sync": "Score 3 (simulated run — ASANA_UNAVAILABLE per scoring note). Live Asana state update not confirmed. Protocol correctly logged and continued.",
+    "timing": "Summary sent promptly after lead creation (same session, 2026-03-17). No gap between lead record and summary. Score 5.",
+    "decision_readiness": "Explicit recommended_action = 'proceed to discovery' with rationale. All qualifying signals present. Marcela can approve immediately. Score 5."
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Excellent lead summary. All required fields present with raw message preserved verbatim. Classification is precise (public_civic, obra_publica procurement). Recommended action is explicit. Single deduction: Asana state sync simulated only (non-blocking per TC-005 scoring note).",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Post DG-01 approval routes to Lupe for Segment B. Confirmed: decision-event-DG-01.json route_to=Lupe, next_action correctly specifies dispatching Lupe for lead-summary and Elena for discovery. Score 5.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

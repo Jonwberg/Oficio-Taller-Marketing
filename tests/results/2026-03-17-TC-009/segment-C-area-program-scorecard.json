@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-009",
+  "segment": "C",
+  "phase": "DG-03",
+  "gate_id": "DG-03",
+  "gate_type": "marcela",
+  "agent_tested": "Ana",
+  "deliverable": "area-program",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 4,
+    "clarity": 5,
+    "state_sync": 4,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 10 programmed spaces present with name, qty, and size_sqm for each. total_sqm present (356). Assumptions section present and detailed — 7 assumptions documented including the sqm reconciliation note (client stated 320sqm but total with outdoor/covered = 356sqm), coastal wind-protection rationale for terrace/pool deck full structural billing, and solar/interior coordination notes. Accuracy scored 4 (not 5): total 356 sqm is correctly calculated as sum of all spaces (45 + 40 + 24 + 60 + 22 + 18 + 55 + 45 + 20 + 27 = 356), but the deliverable appropriately flags the discrepancy with the client's stated '320 sqm' rather than silently using a different number — this is good practice but introduces a minor open item requiring Marcela confirmation. State sync scored 4 — Asana GID 1213707396011964 confirmed in state.json. No auto-fail conditions triggered.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "N/A — area program flows to cost-basis; Celia gate is at DG-03.",
+  "payload_fields_verified": 3,
+  "passed": true
+}

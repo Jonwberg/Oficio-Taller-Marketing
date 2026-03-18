@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-002",
+  "segment": "G",
+  "phase": "G",
+  "gate_id": "DG-09",
+  "gate_type": "marcela",
+  "agent_tested": "Emilio",
+  "deliverable": "engineering-package",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All required schema fields present: systems_status (structural, electrical, lighting, water — all four required systems), conditional_systems=['irrigation','solar','av'], all_inputs_confirmed=true, conflicts_resolved=true. Completeness 5: all four required systems (structural, electrical, lighting, water) present and confirmed complete; all three conditional systems addressed (irrigation — correct per residential template default; solar — correct per seed data special_features; av/smart home — correct per seed data special_features); no pending consultant inputs (all_inputs_confirmed=true). Accuracy 5: package explicitly declared complete and ready ('Ready for executive plans phase'); all consultant inputs confirmed. The engineer fields note 'TBD — to be contracted by client per SOW' — this is correct behavior per SOW exclusions (engineers contract directly with client; Oficio Taller coordinates). Clarity 5: conflicts_resolved=true; no coordination conflicts identified — engineering drawings integrated with architectural set. State sync 3: simulated run. Timing 5: package complete before Bruno begins contractor pricing (per simulated timeline, engineering completes at end of Phase 3, budget alignment follows in Segment G). Decision readiness 5: Bruno can proceed to contractor pricing immediately. No auto-fail conditions triggered — all required systems present, no undeclared pending inputs.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "Celia routing for DG-09 scored separately in segment-G-celia-routing-DG09-scorecard.json.",
+  "payload_fields_verified": 4,
+  "passed": true
+}

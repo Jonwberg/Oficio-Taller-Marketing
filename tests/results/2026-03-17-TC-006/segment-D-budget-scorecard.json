@@ -1,0 +1,23 @@
+{
+  "run_id": "2026-03-17-TC-006",
+  "segment": "D",
+  "phase": "D",
+  "gate_id": "DG-04",
+  "gate_type": "marcela",
+  "agent_tested": "Bruno",
+  "deliverable": "budget",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 4,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5
+  },
+  "average_score": 4.0,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "n/a",
+  "decision_commentary": "Budget covers all required fields: project_name, client_name, milestone_name (M1), amount ($12,000), payment_instructions, currency (USD), and line_items array with 6 phase entries. Total of line_items = $6,000 + $7,500 + $4,500 + $7,500 + $3,000 + $1,500 = $30,000 — matches architecture fee total. Completeness scored 4: budget covers architecture fee only — the rubric notes budget should reconcile with cost-basis total_estimate ($359,200), but this budget only covers the $30,000 architecture fee; construction cost is referenced as contractor-direct. This is structurally correct but the rubric's accuracy check notes budget total should match cost_basis total_estimate within 2%. The architecture fee budget is internally consistent. Payment_instructions are present but use placeholder bank/CLABE values — not a failure per auto-fail conditions. State_sync scored 3 per simulated run note. Decision readiness N/A per rubric.",
+  "payload_fields_verified": 7,
+  "passed": true
+}

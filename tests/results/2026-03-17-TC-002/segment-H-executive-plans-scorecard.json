@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-002",
+  "segment": "H",
+  "phase": "H",
+  "gate_id": "DG-10",
+  "gate_type": "marcela",
+  "agent_tested": "Hugo",
+  "deliverable": "executive-plans",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.5,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All required schema fields present: plan_set_components (array of 12 components), engineering_integration_confirmed=true, conflicts_resolved=true, client_signoff_milestone='M3 — Construction Documents Delivered'. Schema check: rubric requires plan_set_components to contain cross_sections, full_plan_book, technical_coordination — these are present in the array as named components ('Architectural plans — floor plans all levels, sections (minimum 2)...', MEP drawings, technical specifications). Completeness 5: all required components present — cross sections (included in 'Architectural plans' component with 'sections minimum 2'), full plan book (12-component array covers all engineering inputs from Emilio's package), technical coordination layer (MEP coordination drawings, solar, smart home, irrigation all integrated), HOA approval stamp included (hoa_approval_stamp_included=true). Accuracy 5: no unresolved conflicts (conflicts_resolved=true); all 7 systems from engineering-package.json integrated and confirmed. Clarity 4 (not 5): package is largely self-contained; however, plan_set_components is a list of component descriptions (not a document set with page counts or drawing numbers) — one external reference exists (notes reference 'engineering-package.json' for the 7 systems). Not a critical gap but prevents score 5. State sync 3: simulated run. Timing 5: executive plans produced after budget alignment approval (DG-09 at 2026-08-26) and before Ofelia begins bidding (DG-10 fires 2026-10-07). Decision readiness 5: Marcela can approve and hand off to Ofelia immediately. No auto-fail conditions triggered — cross sections present, no unresolved conflicts, all required system drawings present.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "Celia routing for DG-10 scored separately in segment-H-celia-routing-DG10-scorecard.json.",
+  "payload_fields_verified": 4,
+  "passed": true
+}

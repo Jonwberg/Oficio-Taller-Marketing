@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "H",
+  "phase": "H",
+  "gate_id": "DG-10",
+  "gate_type": "marcela",
+  "agent_tested": "Hugo",
+  "deliverable": "executive-plans",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 4
+  },
+  "average_score": 4.17,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Completeness scored 4: rubric schema requires plan_set_components covering cross_sections, full_plan_book, technical_coordination. The plan_set_components array includes: architectural drawings (all floors, sections, elevations), structural drawings, MEP drawings, solar system drawings, pool construction drawings, site plan with survey integration, specifications and finish schedule. Cross sections are covered ('Architectural drawings — all floors, sections, elevations'). engineering_integration_confirmed=true, conflicts_resolved=true, client_signoff_milestone='M3 — Executive Plans Approved'. Gap: rubric explicitly requires 'technical_coordination' as a named component — the plan set includes technical drawings but does not list a 'technical coordination layer' as a distinct component. Score 4: all major components present but technical coordination layer not explicitly named. Accuracy scored 5: engineering_integration_confirmed=true and conflicts_resolved=true — no unresolved coordination conflicts. Architectural and engineering drawings both present. Clarity scored 4: package components are clearly enumerated and self-contained; client_signoff_milestone is named. Minor gap: no explicit statement that all referenced engineering systems from Emilio's package are included. State_sync scored 3: simulated run. Timing scored 5: executive plans produced before Ofelia begins bidding. Decision_readiness scored 4: Marcela can approve and hand off to Ofelia; one minor clarification on technical coordination layer completeness.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Celia routing at DG-10 scored separately.",
+  "payload_fields_verified": 4,
+  "passed": true
+}

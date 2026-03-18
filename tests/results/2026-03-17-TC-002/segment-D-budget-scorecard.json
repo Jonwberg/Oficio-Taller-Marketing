@@ -1,0 +1,25 @@
+{
+  "run_id": "2026-03-17-TC-002",
+  "segment": "D",
+  "phase": "D",
+  "gate_id": "DG-04",
+  "gate_type": "marcela",
+  "agent_tested": "Bruno",
+  "deliverable": "budget",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 4,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5
+  },
+  "average_score": 4.0,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All required schema fields present: project_name, client_name, milestone_name='M1 — Contract Signing', amount=27200, payment_instructions, currency='USD', total=68000, line_items (array). Completeness 4 (not 5): rubric requires all 5 payment milestones present with name, percentage, trigger event, and amount. The budget.json line_items contain phases (Phase 1–6) and M1 retainer, but these are not structured as milestone payment records — they describe phase fees without the explicit M2–M5 milestone structure with percentages and trigger events as standalone entries. The payment_schedule_notes acknowledges M2 and M3 are recalculated from template percentages and M4/M5 are not explicitly present as line items. Score 4 rather than 5. Accuracy 4: total line items sum: 13,600+17,000+6,800+10,200+3,400+3,400+27,200=81,600 USD. This does not directly reconcile to a single figure. The 'total' field shows 68,000 (the architecture fee per seed data) which is the referenced amount. The cost_basis.json is in MXN (10,230,840) while budget.json is in USD (68,000) — these are the architecture fees not the construction cost, which is correct per rubric (reconcile with cost_basis total_estimate). Currency difference creates comparison difficulty; within context this is correct behavior. Minor scoring issue. Clarity 4: payment_instructions have BANK_NAME and CLABE placeholders — rubric requires specific bank name and CLABE for score 5. Placeholders present lose one point. State sync 3: simulated run. Timing 5: produced after DG-04 architect approval. No auto-fail conditions triggered — line_items present, payment_instructions present (with placeholder caveat), budget reconcilable with seed data.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "No Celia routing at budget — Bruno passes directly to Renata per scope boundary (no separate gate).",
+  "payload_fields_verified": 7,
+  "passed": true
+}

@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-002",
+  "segment": "G",
+  "phase": "G",
+  "gate_id": "DG-09",
+  "gate_type": "celia",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-dg09",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 3,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.17,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "DG-09 decision event for budget-alignment review. Fields present: project_id, phase='DG-09', review_item='budget-alignment', reviewed_by='Marcela', decision='approve', comment=null, timestamp='2026-08-26T09:00:00-07:00', source_channel='email', next_action='dispatch Hugo for executive plans coordination', route_to='Hugo', sync_to_asana=true. Completeness 4: all 11 fields present; comment=null. Accuracy 5: decision='approve' correct (9.09% variance within proceed threshold); route_to='Hugo' correct — at DG-09 budget alignment approval, Hugo is dispatched for executive plans (Segment H). next_action consistent with route_to. Clarity 3: comment=null — Marcela provided no feedback at this gate. State sync 3: simulated run. Timing 5: timestamp='2026-08-26T09:00:00-07:00' one day after Phase 3 engineering end (2026-08-25). Decision readiness 5: Hugo receives sufficient context to begin executive plans coordination immediately.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-09: decision=approve routes to Hugo for executive plans. route_to='Hugo' is correct.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

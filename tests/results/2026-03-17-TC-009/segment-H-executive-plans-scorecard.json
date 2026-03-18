@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-009",
+  "segment": "H",
+  "phase": "DG-10",
+  "gate_id": "DG-10",
+  "gate_type": "marcela",
+  "agent_tested": "Hugo",
+  "deliverable": "executive-plans",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 4,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.5,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "plan_set_components array contains 7 entries: architectural plans, structural plans, MEP coordination drawings, solar system drawings, detail sheets, finish schedule, technical specifications. engineering_integration_confirmed true, conflicts_resolved true, client_signoff_milestone 'M3 — Executive Plans Approved'. Completeness scored 4 (not 5): rubric schema expects explicit fields for cross_sections, full_plan_book, technical_coordination as named schema fields; instead executive-plans.json uses a flat plan_set_components array. Cross sections are included as 'architectural plans — elevations (1:50), building sections (1:50)' but are not named explicitly as cross_sections. The content is present but the schema structure deviates from rubric specification. Clarity scored 4: the plan_set_components array is comprehensive but does not explicitly map each component to an engineering input source — reader must infer coordination. State sync scored 4 — Asana GID 1213707912066127 confirmed in state.json (executive_plans task). No auto-fail conditions triggered — no missing cross sections, no unresolved conflicts, all required system drawings present.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Celia DG-10 routing verified in separate scorecard.",
+  "payload_fields_verified": 4,
+  "passed": true
+}

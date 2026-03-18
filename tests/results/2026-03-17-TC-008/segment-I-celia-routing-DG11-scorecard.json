@@ -1,0 +1,30 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "I",
+  "phase": "I",
+  "gate_id": "DG-11",
+  "gate_type": "celia",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-dg11",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "All 11 required payload fields present: project_id ✓, phase='DG-11' ✓, review_item='bid-comparison' ✓, reviewed_by='Marcela' ✓, decision='approve' ✓, comment (non-null) ✓, timestamp='2026-11-18T09:00:00-07:00' ✓, source_channel='email' ✓, next_action='dispatch Paco for permit management' ✓, route_to='Paco' ✓, sync_to_asana=true ✓.",
+    "accuracy": "Decision='approve' correct. route_to='Paco' correct — permit management follows contractor selection. Decision type correctly classified.",
+    "clarity": "Score 5: comment='Approve Constructora del Cabo. Good value, local experience.' Preserved verbatim. Specific contractor named in comment.",
+    "state_sync": "Score 3 per simulated run rule — no live Asana.",
+    "timing": "Event at 2026-11-18T09:00:00 — one week after DG-10 (2026-11-11). Bid collection and comparison complete. Prompt.",
+    "decision_readiness": "Paco receives context including Marcela's specific contractor selection. Can begin permit submission immediately."
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "auto_fail_notes": "route_to='Paco' correct ✓. All 11 fields present ✓. Comment preserved verbatim ✓. No auto-fail triggered.",
+  "passed": true
+}

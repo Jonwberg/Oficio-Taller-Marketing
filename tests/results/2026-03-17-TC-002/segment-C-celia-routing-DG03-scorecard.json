@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-002",
+  "segment": "C",
+  "phase": "C",
+  "gate_id": "DG-03",
+  "gate_type": "celia",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-dg03",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 2,
+    "clarity": 3,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 3
+  },
+  "average_score": 3.33,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "DG-03 decision event for cost-basis review. Fields present: project_id, phase='DG-03', review_item='cost-basis', reviewed_by='Marcela', decision='approve', comment=null, timestamp='2026-03-17T15:00:00-07:00', source_channel='email', next_action='dispatch_tomas_segment_d', route_to='Marcela', sync_to_asana=true. Completeness 4: all 11 fields structurally present; comment=null reduces from 5. Accuracy 2: ROUTING ERROR — route_to='Marcela' is WRONG. At DG-03 (cost-basis approved), the correct next agent is Tomás (to begin SOW/Segment D), not Marcela. Marcela is the reviewer, not the recipient. next_action='dispatch_tomas_segment_d' correctly identifies Tomás as the intended recipient, making the error in route_to even more glaring — the two fields are inconsistent. The routing table for DG-03 approval → Tomás. route_to='Marcela' is an incorrect agent assignment. Score 2 (decision correct but next agent is wrong). Clarity 3: comment=null; route_to inconsistent with next_action creates ambiguity. State sync 3: simulated run. Timing 5: timestamp in-session. Decision readiness 3: next_action='dispatch_tomas_segment_d' provides the correct intent, but route_to='Marcela' would route to wrong agent — Tomás cannot begin work immediately from this payload without confusion. GAP IDENTIFIED: Celia DG-03 route_to field incorrectly populated ('Marcela' instead of 'Tomás').",
+  "celia_routing_correct": false,
+  "celia_routing_notes": "GAP: route_to='Marcela' is incorrect at DG-03. Correct route_to should be 'Tomás' (dispatch Segment D SOW). next_action='dispatch_tomas_segment_d' correctly identifies intent but route_to field is wrong. This is a Celia routing error.",
+  "payload_fields_verified": 11,
+  "passed": false
+}

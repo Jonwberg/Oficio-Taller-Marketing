@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-004",
+  "segment": "B",
+  "phase": "B",
+  "gate_id": "DG-01",
+  "gate_type": "marcela",
+  "agent_tested": "Lupe",
+  "deliverable": "lead-summary",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 5 required fields present: project_name, source_channel, raw_message (verbatim Spanish WhatsApp text), initial_assessment, recommended_action. Completeness 5: raw message preserved verbatim, all fields populated. Accuracy 5: project type classified as commercial_health_center — correct; legitimacy assessed as serious/high-budget medical group — fully defensible. Clarity 5: Marcela can approve in under 30 seconds — client name, project type, size, budget, and special systems all surfaced in initial_assessment. State_sync 3 (simulated run, no live Asana). Timing 5: dispatched same session. Decision_readiness 5: recommended_action=proceed with explicit rationale. No auto-fail conditions triggered.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-01 decision=approve, route_to=Lupe confirmed. All 11 payload fields present with ISO-8601 timestamp.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

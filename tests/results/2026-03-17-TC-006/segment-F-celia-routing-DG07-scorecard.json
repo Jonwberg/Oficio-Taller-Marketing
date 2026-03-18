@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-006",
+  "segment": "F",
+  "phase": "F",
+  "gate_id": "DG-07",
+  "gate_type": "celia_routing",
+  "agent_tested": "Celia",
+  "deliverable": "dg-07",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 11 required payload fields present: project_id, phase (F), review_item (concept_review), reviewed_by (Celia), decision (approve), comment (specific — notes coastal glazing and pool axis design quality), timestamp (2026-03-18T09:00:00-07:00, ISO-8601), source_channel (instagram), next_action (dispatch_felipe), route_to (Felipe), sync_to_asana (false). Decision is 'approve' — not a Pass to Agent scenario. Routing to Felipe for architectural design development is correct. Comment is specific and preserved verbatim.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "All 11 fields present. route_to field used correctly. DG-07 is approve (not pass_to_agent) — no state change concern triggered.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

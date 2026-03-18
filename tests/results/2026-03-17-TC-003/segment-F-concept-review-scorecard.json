@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-003",
+  "segment": "F",
+  "phase": "F",
+  "gate_id": "DG-07",
+  "gate_type": "marcela",
+  "agent_tested": "Andrés",
+  "deliverable": "concept-review",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 4,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "All 5 deliverables confirmed complete: 3d_model (status=complete with massing notes), renders (status=complete, 6 views enumerated), material_direction (status=complete with desert palette), color_direction (status=complete with earth tones), space_arrangement (status=complete, all 9 programmed zones accounted for). presentation_milestone=M2. review_notes present. Score 5.",
+    "accuracy": "Review notes capture arroyo buffer zone treatment and biophilic massing approach. However, notes are written by Andrés confirming readiness — they don't capture Marcela's specific feedback from an in-person review session. The review_notes say 'Concept is ready for Marcela's approval at DG-07' which is pre-review commentary, not post-review documentation. Score 4 (approval captured, arroyo treatment noted, but feedback is preparatory rather than post-presentation feedback).",
+    "clarity": "No revision notes needed (concept approved). Review notes are specific: arroyo buffer zone respected, rolling terrain massing noted, all 9 zones accounted for. Score 4 (specific but written as Andrés's pre-presentation check rather than Marcela's post-review feedback).",
+    "state_sync": "No Asana state field in deliverable. Simulated run. Score 3.",
+    "timing": "Concept package confirmed ready before DG-07 Marcela review (review_notes end with 'ready for Marcela's approval at DG-07'). Score 5.",
+    "decision_readiness": "Marcela can approve or reject the concept — all 5 checklist items complete, renders enumerated, space arrangement confirmed. Score 5."
+  },
+  "average_score": 4.33,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Strong concept review. All 5 required deliverables confirmed. TC-003 arroyo buffer zone correctly addressed in massing concept. Minor deductions: review notes read as Andrés's pre-presentation checklist rather than documented post-presentation Marcela feedback. In-person presentation milestone is referenced but not logged as a past event with date — presentation_milestone='M2' is a label, not a timestamped event. State sync scored 3 per simulated run convention. No auto-fail conditions triggered (all 5 deliverables confirmed).",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "Celia DG-07 routing scored separately.",
+  "payload_fields_verified": null,
+  "passed": true
+}

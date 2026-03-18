@@ -1,0 +1,25 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "D",
+  "phase": "D",
+  "gate_id": "DG-05",
+  "gate_type": "vera",
+  "agent_tested": "Bruno",
+  "deliverable": "budget",
+  "scores": {
+    "completeness": 1,
+    "accuracy": 3,
+    "clarity": 1,
+    "state_sync": 3,
+    "timing": 5
+  },
+  "average_score": 2.6,
+  "auto_fail": true,
+  "auto_fail_reason": "payment_instructions absent — required field per rubric schema and auto-fail condition. Additionally, project_name, client_name, and milestone_name are absent from the budget.json file — these are required fields per rubric schema. The line_items array is present but no payment milestones are defined with trigger events.",
+  "decision_simulated": "flag",
+  "decision_commentary": "Completeness scored 1: rubric schema requires project_name, client_name, milestone_name, amount, payment_instructions, currency, line_items. The budget.json is missing project_name, client_name, milestone_name, and payment_instructions. Only total, currency, and line_items (phase breakdown) are present. The rubric requires 'all 5 payment milestones present with name, percentage, trigger event, and MXN amount' — the file has phase cost breakdowns but no milestone structure with trigger events. This is a required field absence. Accuracy scored 3: line_items sum = 9720+13500+8100+10800+5400+6480 = 54,000 USD. The total field = 54,000 USD. The cost-basis total_estimate is 6,162,500 MXN — Bruno's budget is in USD ($54,000) which is the architectural fee, not the construction cost. These are different financial instruments — the architectural fee budget is internally consistent. Score 3 because the context of comparison to cost_basis is unclear given currency differences, and the budget appears to represent architectural fees only (correct per SOW payment schedule which also shows $54,000 USD total). Clarity scored 1: payment_instructions are entirely absent — the client cannot pay without additional information. This is also an auto-fail condition. State_sync scored 3: simulated run. Timing scored 5: produced in correct pipeline order.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "No Celia routing on budget — proceeds directly to Renata.",
+  "payload_fields_verified": 3,
+  "passed": false
+}

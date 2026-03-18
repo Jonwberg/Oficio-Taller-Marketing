@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "F",
+  "phase": "F",
+  "gate_id": "DG-08",
+  "gate_type": "marcela",
+  "agent_tested": "Felipe",
+  "deliverable": "architectural-design",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 4
+  },
+  "score_evidence": {
+    "completeness": "Required fields present: design_set_status=complete, concept_reflection_confirmed=true, area_program_compliance (object with compliant=true, deviations=[], notes), structural_coordination_notes. All 10 programmed spaces confirmed at approved sizes. Score 4 (not 5): architectural-design.json is minimal — it confirms compliance rather than describing the actual drawing deliverables. The rubric expects 'all rooms from area program present; structural coordination notes included; material specs consistent with concept approval'. Structural coordination notes are present but at summary level (engineer engaged, preliminary sketch complete, foundation type under review). Material specs are not re-confirmed in this deliverable.",
+    "accuracy": "No unexplained departures from approved concept: concept_reflection_confirmed=true. area_program_compliance.deviations=[]. All 10 spaces at approved sizes. Score 5.",
+    "clarity": "Score 4: 'foundation type under review — flat municipal land, soil study results pending engineer review' indicates one open design question (foundation type) before engineering handoff. Not a blocker but not fully resolved. Otherwise design is ready for Phase 3.",
+    "state_sync": "Score 3 (simulated run — ASANA_UNAVAILABLE). architectural_design_in_progress → architectural_design_approved state transition not confirmed in live Asana.",
+    "timing": "Architectural design delivered after concept approval (DG-07: 2026-04-15/05-25) and before Emilio begins engineering. DG-08 timestamps (dg-08: 2026-06-01, decision-event-DG-08: 2026-09-15) indicate design was complete before engineering start. Score 5.",
+    "decision_readiness": "Score 4: Marcela can approve and hand off to Emilio. One minor item: foundation type under review pending soil study — this is explicitly noted so it is transparent, but it means engineering cannot finalize structural foundation without this input."
+  },
+  "average_score": 4.17,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Solid architectural design confirmation. All 10 programmed spaces verified at approved sizes, no departures from concept. Structural engineer engaged and coordination begun. Minor gap: foundation type pending soil study results — appropriately flagged. Deliverable is a compliance confirmation rather than a full drawing set description. No auto-fail conditions triggered (no missing rooms, concept reflected, structural coordination notes present).",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-08 routes to Emilio (dispatch Emilio for engineering coordination). decision-event-DG-08.json: route_to=Emilio. Correct per segment F→G flow.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

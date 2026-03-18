@@ -1,0 +1,32 @@
+{
+  "run_id": "2026-03-17-TC-003",
+  "segment": "J",
+  "phase": "J",
+  "gate_id": null,
+  "gate_type": "controller_automation",
+  "agent_tested": "Controller",
+  "deliverable": "invoice",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 3,
+    "state_sync": 3,
+    "timing": 5
+  },
+  "score_evidence": {
+    "completeness": "All 8 required fields present: project_name ✓, client_name ✓, milestone_name (M3 — Executive Plans Approved) ✓, amount (126,000) ✓, due_date (2026-12-22) ✓, payment_instructions ✓, currency (USD) ✓, running_total (420,000) ✓. Score 5.",
+    "accuracy": "Invoice amount 126,000 matches Bruno's payment schedule M3 amount (30% of 420,000 = 126,000) ✓. running_total=420,000 matches total contract value ✓. Score 5.",
+    "clarity": "Payment instructions present but contain two placeholder values: bank name ('[BANK_NAME]') and CLABE ('[CLABE — TO BE CONFIGURED IN .env]'). Reference format is specified (PRJ-2026-0317-tc003-wellness-retreat-M3). Client cannot pay without these two details — needs follow-up. Score 3.",
+    "state_sync": "No Asana state field in deliverable. Simulated run. Score 3.",
+    "timing": "Invoice is for M3 (Executive Plans Approved on 2026-12-22). Due_date=2026-12-22 matches milestone trigger. Prompt. Score 5."
+  },
+  "average_score": 4.2,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve_with_flag",
+  "decision_commentary": "Invoice amount and structure are correct. M3 amount of USD 126,000 matches Bruno's payment schedule. Running total of USD 420,000 confirms full contract value. Critical gap: bank name and CLABE are placeholders — client cannot pay without these details being populated. This is a systematic gap (same issue in budget.json payment_instructions). Auto-fail conditions checked: amount matches Bruno's schedule, issued after M3 trigger confirmed, payment_instructions present (though incomplete). No hard auto-fail but clarity flag is significant.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "No Celia gate on Controller invoice.",
+  "payload_fields_verified": null,
+  "passed": true
+}

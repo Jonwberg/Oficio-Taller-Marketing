@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "G",
+  "phase": "G",
+  "gate_id": "DG-09",
+  "gate_type": "celia",
+  "agent_tested": "Celia",
+  "deliverable": "celia-routing-dg09",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 11 required payload fields verified present: project_id, phase='G', review_item='budget_alignment', reviewed_by='Celia', decision='approve', comment='Budget aligned. Contractor total within client budget. Advance to executive plans.', timestamp='2026-03-17T14:00:00-07:00' (ISO-8601 ✓), source_channel='email', next_action='advance_to_executive_plans', route_to='Hugo', sync_to_asana=false. Completeness scored 5: all 11 fields present. Accuracy scored 5: decision='approve' correctly parsed; route_to='Hugo' is correct — DG-09 approve routes to Hugo for executive plans; next_action='advance_to_executive_plans' is semantically correct. Comment accurately reflects the data: contractor total (5,200,000) is within client budget (6,162,500). Clarity scored 5: comment is specific — references budget alignment status explicitly. State_sync scored 3: simulated run. Timing scored 5: timestamp at 14:00, correct order after DG-08 at 13:00. Decision_readiness scored 5: Hugo receives complete context.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "route_to='Hugo' — correct. next_action='advance_to_executive_plans' — correct.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

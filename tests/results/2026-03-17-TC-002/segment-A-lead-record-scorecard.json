@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-002",
+  "segment": "A",
+  "phase": "A",
+  "gate_id": "DG-01",
+  "gate_type": "marcela",
+  "agent_tested": "Lupe",
+  "deliverable": "lead-record",
+  "scores": {
+    "completeness": 3,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.33,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All five required fields present (source_channel='professional_contact', category='project_inquiry', received_at='2026-03-17T09:00:00-07:00', summary, status='new'). Completeness scores 3 because the rubric specifies score 5 requires raw message stored verbatim — the lead-record.json contains a structured summary rather than the raw verbatim client message ('Buenas tardes, me recomendaron...'), which is only present in lead-summary.json. Accuracy is 5: source_channel correctly identifies professional_contact; category correctly classified as project_inquiry. Clarity is 5: summary immediately scannable — project type (residential_in_development), location (San José del Cabo), client name (Patricia Reyes), budget signal, HOA details all visible. State sync scores 3: status='new' is correct but this is a simulated run — no live Asana verification. Timing scores 5: received_at and creation are in-session. Decision readiness 5: all required fields present, quality signal (budget, program, HOA context) is clear for Marcela.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "No Celia routing at Segment A lead-record creation — Celia fires at DG-01 after Marcela reviews the lead-summary.",
+  "payload_fields_verified": 5,
+  "passed": true
+}

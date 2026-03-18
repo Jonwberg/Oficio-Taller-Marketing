@@ -1,0 +1,34 @@
+{
+  "run_id": "2026-03-17-TC-003",
+  "segment": "C",
+  "phase": "C",
+  "gate_id": "DG-03",
+  "gate_type": "marcela",
+  "agent_tested": "Ana",
+  "deliverable": "cost-basis",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "score_evidence": {
+    "completeness": "All 8 required fields present: cost_per_sqm (32,500), base_construction_cost (97,500,000), architecture_fee_pct (12), architecture_fee (11,700,000), engineering_allowance (2,925,000), contingency_pct (10), total_estimate (123,337,500), assumptions (8-item array). Score 5.",
+    "accuracy": "Math verified: 3,000×32,500=97,500,000 ✓. Arch fee: 97,500,000×12%=11,700,000 ✓. Engineering: 97,500,000×3%=2,925,000 ✓. Subtotal: 112,125,000. Contingency: 112,125,000×10%=11,212,500 ✓. Total: 123,337,500 ✓. All calculations correct. Score 5.",
+    "clarity": "Labeled as preliminary estimate in assumptions ('This is a preliminary estimate — label as such in all client communications'). Source documented (market benchmark, MXN 25,000–40,000/sqm range for commercial_hotel BCS). Score 5.",
+    "state_sync": "No Asana state field in deliverable. Simulated run. Score 3.",
+    "timing": "Cost basis produced concurrently with area program before DG-03. Score 5.",
+    "decision_readiness": "Budget gap documented explicitly: client at ~49% of preliminary construction estimate. Client openness to phasing and value engineering noted. Marcela can assess budget feasibility immediately. Score 5."
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Excellent cost basis. All required fields present, all calculations verified correct. Preliminary label present in assumptions. Budget gap quantified at 49% with context. State sync scored 3 per simulated run convention. No auto-fail conditions triggered (assumptions present, total estimate present, architecture fee present).",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "Celia DG-03 routing scored separately.",
+  "payload_fields_verified": null,
+  "passed": true
+}

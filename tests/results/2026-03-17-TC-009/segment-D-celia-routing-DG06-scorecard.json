@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-009",
+  "segment": "D",
+  "phase": "DG-06",
+  "gate_id": "DG-06",
+  "gate_type": "celia_routing",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-dg06",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 5,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.83,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 11 payload fields present. Decision: approve. review_item: client-proposal (correct — this is the second proposal gate, Marcela's final approval before Rosa sends). route_to: Rosa (correct). next_action: 'Rosa sends proposal email to client; Celia routes to activation' — captures both Rosa dispatch and activation signal correctly. sync_to_asana: true. Clarity scored 4: comment null. State sync scored 5 — Gmail thread 19cff1532ce051b0 confirmed as client_proposal_thread_id in state.json. No auto-fail conditions.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-06: approve → route_to Rosa (client-proposal send). Activation routing captured. Correct.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

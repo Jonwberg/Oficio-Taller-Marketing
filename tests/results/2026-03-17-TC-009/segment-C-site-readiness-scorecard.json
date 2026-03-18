@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-009",
+  "segment": "C",
+  "phase": "DG-03",
+  "gate_id": "DG-03",
+  "gate_type": "marcela",
+  "agent_tested": "Sol",
+  "deliverable": "site-readiness-report",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 4,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "CRITICAL TC-009 CHECK: coastal_zone_permit (SEMARNAT ZOFEMAT) present in required_documents — PASS. wind_load_study present in required_documents — PASS. No auto-fail triggered. Three documents correctly identified: (1) Topographic Survey (standard, always required), (2) SEMARNAT Coastal Zone Permit (critical for coastal Pacific site at scrub-to-sand edge in BCS), (3) Wind Load Study (required for strong prevailing coastal wind conditions). required_documents array, request_sent_at, current_status, and blockers all present. Accuracy is excellent — no over-requesting, no under-requesting given coastal site conditions. Clarity scored 4 (not 5) because rationale is excellent but deadline for client document delivery is not specified in the JSON — client receives clear document specs and rationale but no explicit deadline date. State sync scored 4 — Asana GID 1213707403933299 confirmed in state.json (site_readiness task). blockers array is empty (documents not yet received, which is appropriate for a request-sent status).",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "N/A — site-readiness-report is a Sol deliverable; not a Celia gate deliverable.",
+  "payload_fields_verified": 4,
+  "passed": true
+}

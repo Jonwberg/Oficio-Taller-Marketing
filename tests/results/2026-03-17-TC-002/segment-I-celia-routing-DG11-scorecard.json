@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-002",
+  "segment": "I",
+  "phase": "I",
+  "gate_id": "DG-11",
+  "gate_type": "celia",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-dg11",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "DG-11 decision event for bid-comparison review. Fields present: project_id, phase='DG-11', review_item='bid-comparison', reviewed_by='Marcela', decision='approve', comment='Recommend Constructora Los Cabos — development pre-approval confirmed, cost within budget.', timestamp='2026-10-28T09:00:00-07:00', source_channel='email', next_action='dispatch Paco for permit submission', route_to='Paco', sync_to_asana=true. Completeness 5: all 11 payload fields present with values — this is the only DG event where comment is non-null. Accuracy 5: decision='approve' correct; route_to='Paco' correct — at DG-11 contractor selection, Paco is dispatched for permit submission. next_action consistent with route_to. Clarity 5: Marcela's comment preserved verbatim ('Recommend Constructora Los Cabos — development pre-approval confirmed, cost within budget.') — specific and actionable. State sync 3: simulated run. Timing 5: timestamp='2026-10-28T09:00:00-07:00' one day after Phase 5 end (2026-10-27). Decision readiness 5: Paco receives complete context including Marcela's contractor selection to begin permit submission. This is the highest-quality Celia event in the pipeline — comment field populated with substantive Marcela feedback.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-11: decision=approve routes to Paco for permit submission. route_to='Paco' is correct. Marcela comment captured verbatim — only non-null comment in the entire pipeline.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

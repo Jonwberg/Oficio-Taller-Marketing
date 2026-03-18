@@ -1,0 +1,24 @@
+{
+  "run_id": "2026-03-17-TC-006",
+  "segment": "C",
+  "phase": "C",
+  "gate_id": "DG-03",
+  "gate_type": "marcela",
+  "agent_tested": "Sol",
+  "deliverable": "site-readiness-report",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 4
+  },
+  "average_score": 4.33,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Required documents correctly identified for Los Cabos coastal site: escritura, predial, topographic survey, SEMARNAT coastal zone clearance, and municipal use-of-land permit. Topographic survey is included — no auto-fail. No hydrology concerns per site data (hydrology: false) — no hydrological study over-requested. Accuracy is strong: SEMARNAT ZOFEMAT buffer correctly identified as a coastal-zone-specific requirement. Blockers documented: SEMARNAT clearance timeline (4-8 weeks) and topographic survey not yet commissioned. Clarity scored 4: current_status is 'documents_pending' and site_docs_complete is null — Vera can read readiness but deadline is not specified. State_sync scored 3 per simulated run note. Decision readiness scored 4: blockers are documented but resolution timeline for SEMARNAT is approximate.",
+  "payload_fields_verified": 7,
+  "passed": true
+}

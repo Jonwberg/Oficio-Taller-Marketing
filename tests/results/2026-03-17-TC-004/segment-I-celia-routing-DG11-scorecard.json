@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-004",
+  "segment": "I",
+  "phase": "I",
+  "gate_id": "DG-11",
+  "gate_type": "marcela",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-DG-11",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 11 required payload fields present: project_id, phase='DG-11', review_item='bid-comparison', reviewed_by='Marcela', decision='approve', comment='Approve Constructora Clínica del Pacífico — COFEPRIS experience in BCS is the deciding factor', timestamp='2026-12-01T10:00:00-07:00' (ISO-8601), source_channel='email', next_action='Dispatch Paco — initiate permit submission', route_to='Paco', sync_to_asana=true. This is the strongest Celia payload: comment is non-null and preserved verbatim (Marcela's specific rationale noting COFEPRIS BCS experience as deciding factor). Accuracy: route_to='Paco' correct (Paco handles permit submission). Clarity 5: comment preserved verbatim, not paraphrased.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "route_to=Paco: CORRECT. Decision=approve: CORRECT. Marcela comment preserved verbatim with COFEPRIS-specific rationale. All 11 fields present.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

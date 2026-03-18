@@ -1,0 +1,28 @@
+{
+  "run_id": "2026-03-17-TC-009",
+  "segment": "D",
+  "phase": "DG-06",
+  "gate_id": "DG-06",
+  "gate_type": "marcela",
+  "agent_tested": "Rosa",
+  "deliverable": "client-communication",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "channel": 5,
+    "brand_voice": 5,
+    "state_sync": 5,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 5.0,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All required schema fields present: channel (email), message_body (bilingual — both es and en), project_reference (PRJ-2026-0317-familia-reyes-montoya), status (draft — correct, awaiting Marcela approval before send). Message is complete: project name in subject context, full proposal context, and clear action requested ('Si desean avanzar, pueden respondernos con Aprobamos'). Channel is email — correct for formal deliverable/proposal delivery. Brand voice is excellent — warm, design-engaged, references the specific design concept ('ese borde entre la vegetación y el mar'), professional without being cold. SEMARNAT timeline note accurately included in both language versions. State sync scored 5 — status is 'draft' indicating proper hold-for-approval workflow, and Gmail thread 19cff1532ce051b0 confirmed as client_proposal_thread_id in state.json. Next step for client is unambiguous. No confidential internal information included. No auto-fail conditions triggered.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Celia DG-06 routing checked in separate scorecard.",
+  "payload_fields_verified": 4,
+  "passed": true
+}

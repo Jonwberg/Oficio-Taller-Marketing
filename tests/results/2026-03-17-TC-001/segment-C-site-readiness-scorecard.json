@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "C",
+  "phase": "C",
+  "gate_id": "DG-03",
+  "gate_type": "vera",
+  "agent_tested": "Sol",
+  "deliverable": "site-readiness-report",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 3,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 4
+  },
+  "average_score": 4.17,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Completeness scored 5: required_documents=['topographic_survey'] — topo is correctly identified as required for a flat Los Cabos site. Hydrologic study is NOT required because the site is described as flat with no stream, slope, or wetland conditions — rubric confirms topo always required and hydrologic only when stream/slope/wetland present. Accuracy scored 5: document requirements exactly match site conditions — flat site requires topo, no over- or under-requesting. Clarity scored 3: current_status='documents_requested' and request_sent_at is present, but there is no indication of a deadline for document delivery — rubric requires 'clear instructions with document specifications and deadline'; deadline is missing, hence score 3. State_sync scored 3: simulated run — no live Asana update. Timing scored 5: request_sent_at=2026-03-17T09:35:00 — parallel to area program work, correct pipeline position. Decision_readiness scored 4: Vera can read the status clearly; blockers=[] confirms no current blockers; however the missing deadline specification means Vera cannot determine when to escalate to a blocker state.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "No Celia routing at site-readiness — Vera tracks this independently.",
+  "payload_fields_verified": 4,
+  "passed": true
+}

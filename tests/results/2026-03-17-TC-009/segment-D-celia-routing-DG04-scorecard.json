@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-009",
+  "segment": "D",
+  "phase": "DG-04",
+  "gate_id": "DG-04",
+  "gate_type": "celia_routing",
+  "agent_tested": "Celia",
+  "deliverable": "decision-event-dg04",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 5,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.83,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 11 payload fields present. Decision: approve. review_item: scope-of-work (correct). route_to: Bruno (correct — DG-04 approve → Bruno for budget, then Renata for proposal). next_action: 'dispatch Bruno for budget, then Renata for proposal' — captures sequential dependency correctly. sync_to_asana: true. Clarity scored 4: comment null. State sync scored 5 — confirmed Asana GIDs for sow_architect_gate (1213707388076873). No auto-fail conditions.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "DG-04: approve → route_to Bruno (sequential: Bruno then Renata). Correct routing and dependency captured.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

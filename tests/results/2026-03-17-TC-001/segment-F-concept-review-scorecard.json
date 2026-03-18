@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "F",
+  "phase": "F",
+  "gate_id": "DG-07",
+  "gate_type": "marcela",
+  "agent_tested": "Andrés",
+  "deliverable": "concept-review",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 3,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 4
+  },
+  "average_score": 4.0,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "Completeness scored 4: rubric schema requires deliverables_checklist with 3d_model, renders, material_direction, color_direction, space_arrangement. The file uses different field names: 'Site analysis and orientation study', 'Conceptual floor plans', 'Conceptual sections and elevations', 'Material and finish palette', '3D concept renderings' — all five are present and map to the rubric requirements. Presentation_milestone='2026-04-28' is logged. Review_notes present. All five deliverables confirmed complete=true. Score 4 rather than 5 because the schema field names differ from what the rubric specifies (e.g., 'Material and finish palette' vs 'material_direction' — color_direction is not explicitly present as separate from material). Accuracy scored 3: review_notes='Modern design with strong indoor-outdoor connection. Pool integrated with living areas. Rooftop terrace with ocean views. Solar array on roof.' This captures the design direction but is a description, not Marcela's specific feedback — the rubric requires 'Marcela's specific feedback — not just approved.' The notes describe the design rather than capture review decisions or requested modifications. Score 3: approval is documented; feedback is generic design description. Clarity scored 5: any revision notes would be actionable; this is a clean approval with design description. Presentation milestone logged. State_sync scored 3: simulated run. Timing scored 5: concept package confirmed complete before DG-07 review. Decision_readiness scored 4: Marcela can approve the concept from this package; one gap — the review notes don't distinguish between 'this is what we presented' and 'this is Marcela's approval feedback.'",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Celia routing at DG-07 scored separately.",
+  "payload_fields_verified": 3,
+  "passed": true
+}

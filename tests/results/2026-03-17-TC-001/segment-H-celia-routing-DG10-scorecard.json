@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "H",
+  "phase": "H",
+  "gate_id": "DG-10",
+  "gate_type": "celia",
+  "agent_tested": "Celia",
+  "deliverable": "celia-routing-dg10",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 11 required payload fields verified present: project_id, phase='H', review_item='executive_plans', reviewed_by='Celia', decision='approve', comment='Executive plans approved. Advance to contractor selection and permitting.', timestamp='2026-03-17T15:00:00-07:00' (ISO-8601 ✓), source_channel='email', next_action='advance_to_contractor_and_permits', route_to='Ofelia', sync_to_asana=false. Completeness scored 5: all 11 fields present. Accuracy scored 5: decision='approve' correctly parsed; route_to='Ofelia' is correct — DG-10 approve routes to Ofelia for contractor bidding; next_action='advance_to_contractor_and_permits' correctly captures that both Ofelia (bidding) and Paco (permits) are triggered. Clarity scored 5: comment is specific — references both contractor selection and permitting explicitly. State_sync scored 3: simulated run. Timing scored 5: timestamp at 15:00, correct order after DG-09 at 14:00. Decision_readiness scored 5: Ofelia receives complete context; Paco is implicitly included via the permits reference.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "route_to='Ofelia' — correct for DG-10. Comment correctly references both contractor selection and permitting parallel tracks.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

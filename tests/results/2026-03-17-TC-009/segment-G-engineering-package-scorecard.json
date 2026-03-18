@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-009",
+  "segment": "G",
+  "phase": "DG-09",
+  "gate_id": "DG-09",
+  "gate_type": "marcela",
+  "agent_tested": "Emilio",
+  "deliverable": "engineering-package",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 4,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.83,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "TC-009 SPECIFIC CHECK: solar present in conditional_systems array — PASS. All four required systems present in systems_status: structural (complete — coastal wind load, mat foundation, marine-grade stainless connections, pool tank monolithic RC), electrical (complete — 200A panel, GFCI outdoor circuits, solar feed-in, generator provision), lighting (complete — IP65 exterior, IP68 pool perimeter, indirect cove living/dining), water (complete — 3 baths, kitchen, pool plumbing, saltwater chlorination, biodigestor sizing, rainwater harvesting). Solar system fully scoped in systems_status: 180sqm south-facing roof, 12kW peak, 18,000 kWh annual, battery storage, wind-rated mounting, CFE net metering. conditional_systems: [\"solar\"] — correctly flags solar as a conditional system. all_inputs_confirmed: true, conflicts_resolved: true. No unresolved conflicts documented. Bruno can proceed to contractor pricing immediately. State sync scored 4 — Asana GID 1213707881199949 confirmed in state.json (engineering task). No auto-fail conditions triggered.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "Celia DG-09 routing checked in separate scorecard.",
+  "payload_fields_verified": 4,
+  "passed": true
+}

@@ -1,0 +1,33 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "J",
+  "phase": "J",
+  "gate_id": null,
+  "gate_type": "controller",
+  "agent_tested": "Controller",
+  "deliverable": "invoice",
+  "scores": {
+    "completeness": 4,
+    "accuracy": 5,
+    "clarity": 3,
+    "state_sync": 3,
+    "timing": 5
+  },
+  "score_evidence": {
+    "completeness": "Score 4: All 7 required fields present (project_name, client_name, milestone_name, amount, payment_instructions, currency, running_total). However, due_date is present ✓. running_total=$300,000 is present ✓. Note: this invoice is for M3 ($90,000) — the final milestone. running_total=$300,000 represents cumulative invoiced amount. This is a single milestone invoice — the full schema is satisfied.",
+    "accuracy": "M3 amount=$90,000 = 30% of $300,000 — exactly matches Bruno's payment schedule. running_total=$300,000 = M1($120K) + M2($90K) + M3($90K) = $300,000 ✓. Perfect match.",
+    "clarity": "Score 3: payment_instructions contain placeholders '[BANK_NAME — TO BE CONFIGURED IN .env]' and '[CLABE — TO BE CONFIGURED IN .env]'. Client cannot pay without additional information. In production these would be populated from environment variables. Due date=2026-11-10 is explicit. Currency=USD is explicit.",
+    "state_sync": "Score 3 per simulated run rule — no live Asana.",
+    "timing": "M3 invoice due_date=2026-11-10 corresponds to Phase 4 (Executive Plans) approval milestone — correct per payment schedule trigger. Invoice issued after executive plans approved at DG-10 (2026-11-11). Timing is within acceptable window."
+  },
+  "average_score": 4.00,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "auto_fail_notes": "Amount=$90,000 matches Bruno's M3 payment schedule ✓. Invoice issued after DG-10 (executive plans approved) — milestone trigger confirmed ✓. payment_instructions present (with placeholders — acceptable in test mode) ✓. No auto-fail triggered.",
+  "decision_simulated": "issue",
+  "decision_commentary": "Functional invoice for M3. All required fields present. The .env placeholders for bank details are expected in test mode. Amount exactly matches the payment schedule. Running total correctly reflects full contract value. Minor gap: this file represents M3 only — M1 and M2 invoices would be in separate files (J-controller-m1-raw.md, J-controller-m2-raw.md).",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "No Celia gate — Controller invoice is outbound to client. No Marcela decision gate required. Correct per rubric.",
+  "payload_fields_verified": 7,
+  "passed": true
+}

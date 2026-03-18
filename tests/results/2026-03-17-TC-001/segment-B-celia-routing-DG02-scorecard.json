@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-001",
+  "segment": "B",
+  "phase": "B",
+  "gate_id": "DG-02",
+  "gate_type": "celia",
+  "agent_tested": "Celia",
+  "deliverable": "celia-routing-dg02",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 11 required payload fields verified present: project_id='PRJ-2026-0317-tc001-casa-moderna', phase='B', review_item='client_fit_assessment', reviewed_by='Celia', decision='approve', comment='Client fit confirmed. Advance to Ana and Sol for program and site work.', timestamp='2026-03-17T09:30:00-07:00' (ISO-8601 ✓), source_channel='instagram', next_action='advance_to_program_and_site', route_to='Ana', sync_to_asana=false. Completeness scored 5: all 11 fields present. Accuracy scored 5: decision='approve' correctly parsed; route_to='Ana' is correct for DG-02 approve — Ana leads the area program and Sol leads site readiness in parallel. Comment explicitly mentions both Ana and Sol. Clarity scored 5: comment preserved verbatim, specific routing to 'Ana and Sol for program and site work' is clear and actionable. State_sync scored 3: simulated run, sync_to_asana=false. Timing scored 5: timestamp at 09:30 — after lead record (09:00) and questionnaire (09:10), correct order. Decision_readiness scored 5: Ana receives complete context to begin area program.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "route_to='Ana' — correct for DG-02 approve advancing to area program phase. Comment references both Ana and Sol correctly.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

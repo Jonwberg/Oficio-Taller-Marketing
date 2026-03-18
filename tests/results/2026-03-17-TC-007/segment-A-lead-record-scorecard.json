@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-007",
+  "segment": "A",
+  "phase": "A",
+  "gate_id": "DG-01",
+  "gate_type": "marcela",
+  "agent_tested": "Lupe",
+  "deliverable": "lead-record",
+  "scores": {
+    "completeness": 3,
+    "accuracy": 5,
+    "clarity": 4,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.17,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "discard",
+  "decision_commentary": "Lupe correctly identified this as spam with high confidence. All five required lead-record fields are present and accurate. The source channel (instagram) is correctly recorded, and the category 'spam' is the precise correct classification for this inbound message — no false-positive concern applies. The summary is concise and evidence-backed, immediately communicating the spam nature without requiring downstream agent review. Completeness and state_sync are scored at 3 because the raw message text is summarized rather than preserved verbatim, and Asana task creation shows ASANA_UNAVAILABLE rather than confirmed task creation with section/tag data. These are minor gaps that do not affect the correctness of the discard decision.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "TC-007: Lupe classified as spam and discarded — no Celia routing required. Pipeline correctly stopped.",
+  "payload_fields_verified": 5,
+  "passed": true
+}

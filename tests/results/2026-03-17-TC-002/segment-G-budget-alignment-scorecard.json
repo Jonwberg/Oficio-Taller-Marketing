@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-002",
+  "segment": "G",
+  "phase": "G",
+  "gate_id": "DG-09",
+  "gate_type": "marcela",
+  "agent_tested": "Bruno",
+  "deliverable": "budget-alignment",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All required schema fields present: contractor_pricing_source (documented as 'Preliminary estimates from 2 local contractors in San José del Cabo, BCS — simulated in test mode'), contractor_total=600000 USD, client_budget=550000 USD (midpoint of USD 400,000–700,000 range), variance_amount=50000, variance_pct=9.09, recommendation='proceed'. Completeness 5: pricing from two sources documented; comparison clearly presented; variance calculated in both $ (50,000) and % (9.09%); explicit recommendation with rationale; line_items_summary provides 6-category breakdown of contractor pricing. Accuracy 5: variance calculation correct — (600,000-550,000)/550,000 = 9.09%. Recommendation matches data — 9.09% is within 10% proceed threshold; USD 600,000 falls within stated budget range USD 400,000–700,000. Correct recommendation = proceed. Clarity 5: 'proceed' — no ambiguity; no redesign required so no scope elements need naming. State sync 3: simulated run. Timing 5: delivered promptly after engineering package complete. Decision readiness 5: Marcela can approve or require redesign immediately. No auto-fail conditions triggered — pricing source documented, explicit recommendation present.",
+  "celia_routing_correct": null,
+  "celia_routing_notes": "Celia routing for DG-09 scored separately in segment-G-celia-routing-DG09-scorecard.json (same gate as engineering package).",
+  "payload_fields_verified": 6,
+  "passed": true
+}

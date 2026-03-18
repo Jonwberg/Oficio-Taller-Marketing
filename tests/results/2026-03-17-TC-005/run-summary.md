@@ -1,26 +1,31 @@
 # Run Summary — TC-005 Biblioteca Municipal
 ## Run ID: 2026-03-17-TC-005
 ## Date: 2026-03-17
+## Scored: 2026-03-17 by Test Decision Gate + Gap Analysis Agent
 ## Overall: PASS
+## Overall Average Score: 4.46 / 5.00 (deliverables: 4.47 | Celia routing: 4.44)
 
 ---
 
-## Segment Results
+## Segment Results — Scored
 
-| Segment | Agents | Schema | TC-005 Checks | Result |
-|---------|--------|--------|---------------|--------|
-| A — Lead Intake | Lupe | PASS | PASS | PASS |
-| B — Discovery | Lupe, Celia (DG-01), Elena, Celia (DG-02) | PASS | PASS | PASS |
-| C — Site & Area Program | Ana, Sol, Vera (site_status_update), Celia (DG-03) | PASS | PASS | PASS |
-| D — Scope / Budget / Proposal / Legal | Tomas, Vera (DG-04), Celia (DG-04), Bruno, Renata, Legal, Vera (DG-05), Celia (DG-05), Rosa, Celia (DG-06) | PASS | PASS | PASS |
-| E — Activation & Scheduling | Vera (activation_check), Pablo | PASS | PASS | PASS |
-| F — Concept & Architectural Design | Andres, Celia (DG-07), Felipe, Celia (DG-08) | PASS | PASS | PASS |
-| G — Engineering & Budget Alignment | Emilio, Bruno (budget_alignment), Celia (DG-09) | PASS | PASS | PASS |
-| H — Executive Plans | Hugo, Celia (DG-10) | PASS | PASS | PASS |
-| I — Bidding, Contractor Selection, Permitting | Ofelia, Celia (DG-11), Paco | PASS | PASS | PASS |
-| J — Construction Tracking, Invoicing, Tax, Close | Vera (construction_tracking), Controller (M1/M2/M3/M4/M5), Tax | PASS | PASS | PASS |
+| Segment | Agents | Deliverable Avg | Celia Routing Avg | Auto-Fail | Result |
+|---------|--------|-----------------|-------------------|-----------|--------|
+| A — Lead Intake | Lupe | 4.50 (lead-record) | 4.50 (DG-01) | No | PASS |
+| B — Discovery | Lupe, Elena, Celia (DG-01, DG-02) | 4.44 (lead-summary 4.67, questionnaire 4.00, fit-assessment 4.67) | 4.50 (DG-01) / 4.50 (DG-02) | No | PASS |
+| C — Site & Area Program | Ana, Sol, Celia (DG-03) | 4.56 (area-program 4.67, cost-basis 4.67, site-readiness 4.33) | 4.50 (DG-03) | No | PASS |
+| D — Scope / Budget / Proposal / Legal / Comms | Tomás, Bruno, Renata, Legal, Rosa, Celia (DG-04–06) | 4.56 (SOW 4.67, budget 4.20, proposal 4.67, legal 4.50, comms 4.75) | 4.28 (DG-04 4.50, DG-05 4.17, DG-06 4.17) | No | PASS |
+| E — Activation & Scheduling | Pablo | 4.60 (project-schedule) | N/A | No | PASS |
+| F — Concept & Architectural Design | Andrés, Felipe, Celia (DG-07, DG-08) | 4.25 (concept-review 4.33, arch-design 4.17) | 4.50 (DG-07) / 4.50 (DG-08) | No | PASS |
+| G — Engineering & Budget Alignment | Emilio, Bruno, Celia (DG-09) | 4.67 (eng-package 4.67, budget-alignment 4.67) | 4.50 (DG-09) | No | PASS |
+| H — Executive Plans | Hugo, Celia (DG-10) | 4.17 (executive-plans) | 4.50 (DG-10) | No | PASS |
+| I — Bidding / Permitting | Ofelia, Paco, Celia (DG-11) | 4.55 (bid-comparison 4.50, permit-status 4.60) | 4.50 (DG-11) | No | PASS |
+| J — Invoicing & Tax | Controller, Tax | 4.30 (invoice 4.40, tax-filing 4.20) | N/A | No | PASS |
 
 **All 10 segments: PASS**
+**22 deliverable scorecards: all PASS**
+**11 Celia routing scorecards: all PASS**
+**0 auto-fail conditions triggered**
 
 ---
 
@@ -151,13 +156,70 @@ All 11 decision-event-DG-XX.json files verified to contain route_to field:
 
 ## Issues
 
-None — clean run.
+**Scored run — 12 gaps identified. 0 auto-fail conditions. All segments PASS.**
 
-All 10 segments passed. All 8 TC-005 key verification points passed. All schema validations passed. No auto-fail conditions triggered.
+See `gap-analysis.md` for full gap detail. Summary below:
+
+| # | Gap | Severity | Deliverable | Agent |
+|---|-----|----------|-------------|-------|
+| GAP-001 | Discovery questionnaire uses residential framing for institutional client | Minor | discovery-questionnaire | Elena |
+| GAP-002 | Lead record summary not verbatim raw message | Minor | lead-record | Lupe |
+| GAP-003 | Concept review — presentation event date not logged | Minor | concept-review | Andrés |
+| GAP-004 | Concept review — review notes are agent-generated, not Marcela's verbatim | Minor | concept-review | Andrés |
+| GAP-005 | Foundation type open at engineering handoff | Minor | architectural-design / engineering-package | Felipe / Emilio |
+| GAP-006 | Executive plans — schema mismatch + missing client_signoff_milestone | Minor | executive-plans | Hugo |
+| GAP-007 | Bid comparison — individual line items not present per bid | Minor | bid-comparison | Ofelia |
+| GAP-008 | DG-05 / DG-06 dual-routing structural ambiguity | Low | Celia routing | Celia |
+| GAP-009 | Legal review — procurement clause legal validity not confirmed | Low | legal-review | Legal |
+| GAP-010 | comment=null across all 11 decision gates | Low | All Celia routing | Celia |
+| GAP-011 | Internal/external timestamp divergence at later-stage gates | Low (Obs.) | Celia routing DG-08,09,10 | Celia |
+| GAP-012 | DG-11 fires 9 days before bid-comparison reviewed_at | Low (Obs.) | bid-comparison / DG-11 | Ofelia / Celia |
 
 **Infrastructure notes (non-blocking):**
-- ASANA_UNAVAILABLE throughout all segments — all Asana calls logged and continued per agent protocol.
+- ASANA_UNAVAILABLE throughout all segments — all Asana calls logged and continued per agent protocol. All state_sync dimensions scored 3/5 per TC-005 scoring note.
 - GMAIL_UNAVAILABLE at multiple points (questionnaire, all DG gate emails) — logged, simulated responses used per test harness, pipeline continued correctly.
 
 **Note on seed data payment schedule:**
 The seed data payment_schedule field (40/30/30 with 3 milestones) was overridden by Tomas with the public_civic template schedule (20/15/20/25/20 with 5 milestones). This is correct per Tomas agent protocol: the matching SOW template's payment schedule takes precedence. The seed data total_architecture_fee_usd = $180,000 USD was preserved as the fee base for all milestone calculations.
+
+---
+
+## Scorecard Files Written
+
+| File | Segment | Agent | Score |
+|------|---------|-------|-------|
+| segment-A-lead-record-scorecard.json | A | Lupe | 4.50 |
+| segment-B-lead-summary-scorecard.json | B | Lupe | 4.67 |
+| segment-B-discovery-questionnaire-scorecard.json | B | Elena | 4.00 |
+| segment-B-client-fit-assessment-scorecard.json | B | Elena | 4.67 |
+| segment-B-celia-routing-DG01-scorecard.json | B | Celia | 4.50 |
+| segment-B-celia-routing-DG02-scorecard.json | B | Celia | 4.50 |
+| segment-C-area-program-scorecard.json | C | Ana | 4.67 |
+| segment-C-cost-basis-scorecard.json | C | Ana | 4.67 |
+| segment-C-site-readiness-scorecard.json | C | Sol | 4.33 |
+| segment-C-celia-routing-DG03-scorecard.json | C | Celia | 4.50 |
+| segment-D-scope-of-work-scorecard.json | D | Tomás | 4.67 |
+| segment-D-budget-scorecard.json | D | Bruno | 4.20 |
+| segment-D-proposal-scorecard.json | D | Renata | 4.67 |
+| segment-D-legal-review-scorecard.json | D | Legal | 4.50 |
+| segment-D-client-communication-scorecard.json | D | Rosa | 4.75 |
+| segment-D-celia-routing-DG04-scorecard.json | D | Celia | 4.50 |
+| segment-D-celia-routing-DG05-scorecard.json | D | Celia | 4.17 |
+| segment-D-celia-routing-DG06-scorecard.json | D | Celia | 4.17 |
+| segment-E-project-schedule-scorecard.json | E | Pablo | 4.60 |
+| segment-F-concept-review-scorecard.json | F | Andrés | 4.33 |
+| segment-F-architectural-design-scorecard.json | F | Felipe | 4.17 |
+| segment-F-celia-routing-DG07-scorecard.json | F | Celia | 4.50 |
+| segment-F-celia-routing-DG08-scorecard.json | F | Celia | 4.50 |
+| segment-G-engineering-package-scorecard.json | G | Emilio | 4.67 |
+| segment-G-budget-alignment-scorecard.json | G | Bruno | 4.67 |
+| segment-G-celia-routing-DG09-scorecard.json | G | Celia | 4.50 |
+| segment-H-executive-plans-scorecard.json | H | Hugo | 4.17 |
+| segment-H-celia-routing-DG10-scorecard.json | H | Celia | 4.50 |
+| segment-I-bid-comparison-scorecard.json | I | Ofelia | 4.50 |
+| segment-I-permit-status-scorecard.json | I | Paco | 4.60 |
+| segment-I-celia-routing-DG11-scorecard.json | I | Celia | 4.50 |
+| segment-J-invoice-scorecard.json | J | Controller | 4.40 |
+| segment-J-tax-filing-scorecard.json | J | Tax | 4.20 |
+
+**Total scorecards written: 33 (22 deliverables + 11 Celia routing)**

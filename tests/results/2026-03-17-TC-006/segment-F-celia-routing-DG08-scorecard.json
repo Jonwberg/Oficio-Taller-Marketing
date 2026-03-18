@@ -1,0 +1,26 @@
+{
+  "run_id": "2026-03-17-TC-006",
+  "segment": "F",
+  "phase": "F",
+  "gate_id": "DG-08",
+  "gate_type": "celia_routing",
+  "agent_tested": "Celia",
+  "deliverable": "dg-08",
+  "scores": {
+    "completeness": 5,
+    "accuracy": 5,
+    "clarity": 5,
+    "state_sync": 3,
+    "timing": 5,
+    "decision_readiness": 5
+  },
+  "average_score": 4.67,
+  "auto_fail": false,
+  "auto_fail_reason": null,
+  "decision_simulated": "approve",
+  "decision_commentary": "All 11 required payload fields present: project_id, phase (F), review_item (architectural_design), reviewed_by (Celia), decision (approve), comment (design set complete, fully reflects approved concept), timestamp (2026-03-18T11:00:00-07:00, ISO-8601), source_channel (instagram), next_action (dispatch_emilio), route_to (Emilio), sync_to_asana (false). Routing to Emilio for engineering coordination is correct per production routing table.",
+  "celia_routing_correct": true,
+  "celia_routing_notes": "All 11 fields present. route_to field used correctly. Routes to Emilio for engineering — correct.",
+  "payload_fields_verified": 11,
+  "passed": true
+}

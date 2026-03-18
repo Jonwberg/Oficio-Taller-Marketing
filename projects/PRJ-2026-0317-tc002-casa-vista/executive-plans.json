@@ -1,0 +1,23 @@
+{
+  "project_id": "PRJ-2026-0317-tc002-casa-vista",
+  "client_name": "Patricia Reyes",
+  "plan_set_components": [
+    "Architectural plans — floor plans all levels, sections (minimum 2), elevations all four facades, roof plan, site plan with setbacks",
+    "Structural plans — foundation plan and details, framing plan, moment frame connections, structural sections",
+    "MEP coordination drawings — electrical single-line diagram and panel schedules, lighting layout with fixture specifications, plumbing and hydraulic layout",
+    "Solar PV system drawings — panel layout on roof (HOA-recessed), inverter location, electrical interconnect diagram",
+    "Smart home / AV system drawings — structured wiring plan, home automation hub location, device rough-in locations",
+    "Irrigation system plan — drip zone layout, controller location, connection to smart home",
+    "Detail sheets — wall sections, stair details, roof details (HOA-compliant ridge treatment), window and door openings",
+    "Finish schedule — all surfaces, all rooms, all exterior finishes",
+    "Door and window schedule with specifications",
+    "Built-in furniture drawings — kitchen, master closet, built-in shelving",
+    "Technical specifications document",
+    "Final HOA-compliant drawing set bearing Residencial Vista del Mar HOA approval stamp"
+  ],
+  "engineering_integration_confirmed": true,
+  "conflicts_resolved": true,
+  "client_signoff_milestone": "M3 — Construction Documents Delivered",
+  "hoa_approval_stamp_included": true,
+  "notes": "All 7 systems from engineering-package.json (structural, electrical, lighting, water, irrigation, solar, av) are fully integrated and coordinated in the executive plan set. HOA approval from Residencial Vista del Mar obtained and approval stamp/reference number included on final drawing set. Municipal permit application can now proceed per SOW Phase 6."
+}

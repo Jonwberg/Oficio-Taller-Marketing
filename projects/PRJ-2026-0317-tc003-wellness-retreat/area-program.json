@@ -1,0 +1,67 @@
+{
+  "spaces": [
+    {
+      "name": "Casita — Guest Unit",
+      "qty": 20,
+      "size_sqm": 60,
+      "notes": "Standard casita unit — private bathroom, terrace. Avg 60 sqm per seed data."
+    },
+    {
+      "name": "Spa",
+      "qty": 1,
+      "size_sqm": 300,
+      "notes": "Full-service spa including treatment rooms, relaxation areas, and hydrotherapy zone."
+    },
+    {
+      "name": "Restaurant",
+      "qty": 1,
+      "size_sqm": 250,
+      "notes": "Full-service F&B program — kitchen, dining, service areas. COFEPRIS compliance required."
+    },
+    {
+      "name": "Reception / Lobby",
+      "qty": 1,
+      "size_sqm": 150,
+      "notes": "Hotel reception, concierge, sitting area, main arrival sequence."
+    },
+    {
+      "name": "Pool Deck",
+      "qty": 1,
+      "size_sqm": 400,
+      "notes": "Main pool, lounging deck, and wet bar service area."
+    },
+    {
+      "name": "Staff Quarters",
+      "qty": 1,
+      "size_sqm": 120,
+      "notes": "Staff accommodation, locker rooms, and break room."
+    },
+    {
+      "name": "Back of House",
+      "qty": 1,
+      "size_sqm": 200,
+      "notes": "Laundry, maintenance, storage, service corridors."
+    },
+    {
+      "name": "Parking",
+      "qty": 1,
+      "size_sqm": 320,
+      "notes": "Surface parking for guests and staff. SECTUR required minimum count."
+    },
+    {
+      "name": "Circulation Areas",
+      "qty": 1,
+      "size_sqm": 60,
+      "notes": "Covered walkways and internal circulation paths between casitas and amenities."
+    }
+  ],
+  "total_sqm": 3000,
+  "assumptions": [
+    "Total programmed sqm of 3,000 confirmed from seed data — sum of all spaces × quantities: (20×60) + 300 + 250 + 150 + 400 + 120 + 200 + 320 + 60 = 3,000 sqm",
+    "Casita size of 60 sqm per unit taken directly from seed data program specification",
+    "Pool deck area includes deck/hardscape surround — pool structure itself is counted within this zone",
+    "Landscape areas, arroyo buffer zone, and site setbacks are NOT included in programmed sqm — these are part of the 12,000 sqm site area only",
+    "Solar array area is excluded from programmed sqm — to be determined in Phase 3 engineering coordination",
+    "Greywater recycling infrastructure is distributed across BOH and site — not assigned as a separate program space"
+  ]
+}

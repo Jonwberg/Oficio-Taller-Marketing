@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oficio Taller — Agent System Flow</title>
+<style>
+:root {
+  --bg:#0F172A; --surface:#1E293B; --surface2:#162032; --border:#334155;
+  --text:#E2E8F0; --muted:#94A3B8;
+  --entrega:#F59E0B; --entrega-bg:rgba(245,158,11,.12);
+  --admin:#94A3B8; --admin-bg:rgba(148,163,184,.12);
+  --mktg:#6EE7B7; --mktg-bg:rgba(110,231,183,.12);
+  --perf:#A78BFA; --perf-bg:rgba(167,139,250,.12);
+  --in:#60A5FA; --in-bg:rgba(96,165,250,.1);
+  --out:#34D399; --out-bg:rgba(52,211,153,.1);
+  --arc:#6B7280; --arc-bg:rgba(107,114,128,.1);
+  --state:#C084FC; --state-bg:rgba(192,132,252,.1);
+  --gh:#F87171; --ga:#FB923C; --gs:#818CF8; --gc:#38BDF8;
+  --ok:#4ADE80; --no:#F87171; --pa:#FBBF24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:13px;line-height:1.5}
+a{color:inherit;text-decoration:none}
+
+/* HEADER */
+.hdr{background:var(--surface);border-bottom:1px solid var(--border);padding:16px 28px;position:sticky;top:0;z-index:100}
+.hdr-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.hdr h1{font-size:16px;font-weight:700;letter-spacing:-.3px}
+.hdr .sub{font-size:11px;color:var(--muted)}
+.legend{display:flex;gap:12px;flex-wrap:wrap;align-items:center;font-size:10px}
+.lg{display:flex;align-items:center;gap:4px}
+.ld{width:8px;height:8px;border-radius:50%}
+.lp{padding:2px 7px;border-radius:4px;font-weight:600;font-size:10px}
+.sep{width:1px;height:14px;background:var(--border)}
+
+/* MAIN */
+.main{max-width:1320px;margin:0 auto;padding:28px 24px}
+
+/* PHASE NAV */
+.pnav{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:24px}
+.pnav a{font-size:10px;padding:3px 8px;background:var(--surface);border:1px solid var(--border);border-radius:4px;color:var(--muted)}
+.pnav a:hover{color:var(--text);border-color:var(--text)}
+
+/* FLOW */
+.flow{position:relative}
+.flow-line{position:absolute;left:19px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,transparent,var(--border) 4%,var(--border) 96%,transparent);z-index:0;pointer-events:none}
+
+/* SECTION LABEL */
+.slabel{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:3px 12px;font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin:12px 0 8px 42px;position:relative;z-index:1}
+
+/* PHASE CARD */
+.pc{margin-left:42px;background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;position:relative;z-index:1;scroll-margin-top:80px}
+.pc-dot{position:absolute;left:-31px;top:18px;width:10px;height:10px;border-radius:50%;background:var(--border);border:2px solid var(--surface);z-index:2}
+.pc-hdr{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--border);gap:10px;flex-wrap:wrap}
+.pc-left{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.pnum{font-size:9px;font-weight:700;color:var(--muted);background:var(--bg);border-radius:4px;padding:2px 6px}
+.pname{font-size:13px;font-weight:700}
+.ab{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600}
+.ab.e{background:var(--entrega-bg);color:var(--entrega)}
+.ab.a{background:var(--admin-bg);color:var(--admin)}
+.ab.m{background:var(--mktg-bg);color:var(--mktg)}
+.ab.p{background:var(--perf-bg);color:var(--perf)}
+.states{display:flex;align-items:center;gap:5px;font-size:9px;font-family:'SF Mono','Fira Code',monospace;color:var(--state);flex-wrap:wrap}
+.sc{background:var(--state-bg);padding:2px 5px;border-radius:3px;white-space:nowrap}
+.sarr{color:var(--muted)}
+
+/* PHASE BODY */
+.pb{display:grid;grid-template-columns:1fr 1fr 1fr}
+@media(max-width:900px){.pb{grid-template-columns:1fr}}
+.pc-col{padding:12px 14px;border-right:1px solid var(--border)}
+.pc-col:last-child{border-right:none}
+.ct{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:700;margin-bottom:8px}
+.al{list-style:none;display:flex;flex-direction:column;gap:4px}
+.ai{display:flex;align-items:flex-start;gap:5px;font-size:11px;line-height:1.4;color:var(--text)}
+.ai::before{content:'›';color:var(--muted);flex-shrink:0;margin-top:1px}
+
+/* DOCS */
+.dg{margin-bottom:8px}
+.dgl{font-size:9px;text-transform:uppercase;letter-spacing:.8px;font-weight:700;margin-bottom:4px}
+.dgl.i{color:var(--in)} .dgl.o{color:var(--out)} .dgl.a{color:var(--arc)}
+.dtags{display:flex;flex-wrap:wrap;gap:3px}
+.dt{display:inline-block;padding:2px 7px;border-radius:4px;font-size:10px;font-family:'SF Mono','Fira Code',monospace;font-weight:500;white-space:nowrap;border:1px solid transparent}
+.dt.i{background:var(--in-bg);color:var(--in);border-color:rgba(96,165,250,.2)}
+.dt.o{background:var(--out-bg);color:var(--out);border-color:rgba(52,211,153,.2)}
+.dt.a{background:var(--arc-bg);color:var(--arc);border-color:rgba(107,114,128,.2)}
+
+/* DATA COL */
+.db{margin-bottom:9px}
+.dbl{font-size:9px;text-transform:uppercase;letter-spacing:.8px;font-weight:700;color:var(--state);margin-bottom:4px}
+.df{font-family:'SF Mono','Fira Code',monospace;font-size:10px;color:var(--muted);margin-bottom:2px}
+.df .k{color:var(--text)} .df .v{color:var(--state)}
+.we{font-size:10px;color:#FB923C;font-family:'SF Mono',monospace;margin-bottom:3px;padding-left:12px;position:relative}
+.we::before{content:'⚡';position:absolute;left:0;font-size:9px}
+
+/* CONNECTOR */
+.conn{height:16px;margin-left:42px;width:2px;background:var(--border);position:relative;z-index:1}
+
+/* GATE */
+.gw{margin-left:42px;position:relative;z-index:1;scroll-margin-top:80px}
+.gc-card{border-radius:10px;border:1px solid;overflow:hidden}
+.gc-card.h{border-color:rgba(248,113,113,.35);background:rgba(248,113,113,.04)}
+.gc-card.ar{border-color:rgba(251,146,60,.35);background:rgba(251,146,60,.04)}
+.gc-card.sy{border-color:rgba(129,140,248,.35);background:rgba(129,140,248,.04)}
+.gc-card.cl{border-color:rgba(56,189,248,.35);background:rgba(56,189,248,.04)}
+.gh-hdr{display:flex;align-items:center;justify-content:space-between;padding:9px 14px;gap:10px;flex-wrap:wrap}
+.gh-left{display:flex;align-items:center;gap:9px}
+.g-icon{font-size:16px}
+.gname{font-size:13px;font-weight:700}
+.gc-card.h .gname{color:var(--gh)} .gc-card.ar .gname{color:var(--ga)}
+.gc-card.sy .gname{color:var(--gs)} .gc-card.cl .gname{color:var(--gc)}
+.gmeta{font-size:10px;color:var(--muted)}
+.gchan{font-size:10px;padding:2px 8px;border-radius:4px;font-weight:600}
+.gc-card.h .gchan{background:rgba(248,113,113,.1);color:var(--gh)}
+.gc-card.ar .gchan{background:rgba(251,146,60,.1);color:var(--ga)}
+.gc-card.sy .gchan{background:rgba(129,140,248,.1);color:var(--gs)}
+.gc-card.cl .gchan{background:rgba(56,189,248,.1);color:var(--gc)}
+.gpaths{display:flex;border-top:1px solid var(--border)}
+.gp{flex:1;padding:8px 12px;border-right:1px solid var(--border)}
+.gp:last-child{border-right:none}
+.gpl{font-size:9px;text-transform:uppercase;letter-spacing:.8px;font-weight:700;margin-bottom:3px}
+.gp.ok .gpl{color:var(--ok)} .gp.no .gpl{color:var(--no)} .gp.pa .gpl{color:var(--pa)}
+.gpt{font-size:11px;color:var(--text);line-height:1.3}
+.gp-note{font-size:10px;color:var(--muted);margin-top:2px}
+
+/* PARALLEL */
+.par-wrap{margin-left:42px;display:grid;grid-template-columns:1fr 1fr;gap:8px;position:relative;z-index:1}
+@media(max-width:800px){.par-wrap{grid-template-columns:1fr}}
+.par-label{grid-column:1/-1;font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--gc);display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.par-label::before,.par-label::after{content:'';flex:1;height:1px;background:rgba(56,189,248,.3)}
+.pc.sub{margin-left:0}
+
+/* DATA LAYER */
+.dls{margin-top:48px;border-top:2px solid var(--border);padding-top:32px}
+.dls-title{font-size:17px;font-weight:700;margin-bottom:20px;color:var(--state)}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.dcard{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px}
+.dcard-title{font-size:11px;font-weight:700;color:var(--state);margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px}
+.state-flow{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.si{background:var(--state-bg);color:var(--state);font-size:9px;font-family:'SF Mono',monospace;padding:2px 5px;border-radius:3px}
+.si.term{background:rgba(34,197,94,.1);color:#4ADE80}
+.si.rej{background:rgba(239,68,68,.1);color:#F87171}
+.si.hold{background:rgba(251,191,36,.1);color:#FCD34D}
+.sarrow{color:var(--muted);font-size:10px;margin:0 1px}
+
+.step{display:flex;align-items:flex-start;gap:8px;font-size:11px;margin-bottom:6px}
+.sn{background:rgba(148,163,184,.1);color:var(--admin);border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;flex-shrink:0}
+.tbl{width:100%;border-collapse:collapse;font-size:11px}
+.tbl th{text-align:left;padding:5px 8px;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.8px;border-bottom:1px solid var(--border)}
+.tbl td{padding:5px 8px;border-bottom:1px solid rgba(51,65,85,.5);vertical-align:top}
+.tbl td:first-child{font-family:'SF Mono',monospace;color:#FB923C;white-space:nowrap;font-size:10px}
+.field-ref{font-family:'SF Mono',monospace;font-size:10px;color:var(--state)}
+.note{font-size:10px;color:var(--muted);margin-top:4px;font-style:italic}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="hdr-top">
+    <div>
+      <h1>Oficio Taller — Full Agent System Flow</h1>
+      <div class="sub">35 agents · 20 phases · 13 gates · complete document and data layer</div>
+    </div>
+    <div class="sub">v2.0 · 2026-03-15</div>
+  </div>
+  <div class="legend">
+    <div class="lg"><div class="ld" style="background:var(--entrega)"></div> Entrega</div>
+    <div class="lg"><div class="ld" style="background:var(--admin)"></div> Admin</div>
+    <div class="lg"><div class="ld" style="background:var(--mktg)"></div> Marketing</div>
+    <div class="sep"></div>
+    <div class="lg"><span class="lp" style="background:var(--in-bg);color:var(--in)">Input</span></div>
+    <div class="lg"><span class="lp" style="background:var(--out-bg);color:var(--out)">Output</span></div>
+    <div class="lg"><span class="lp" style="background:var(--arc-bg);color:var(--arc)">Archived</span></div>
+    <div class="sep"></div>
+    <div class="lg"><span class="lp" style="background:rgba(248,113,113,.1);color:var(--gh)">◆ Marcela Gate</span></div>
+    <div class="lg"><span class="lp" style="background:rgba(251,146,60,.1);color:var(--ga)">◆ Architect Gate</span></div>
+    <div class="lg"><span class="lp" style="background:rgba(129,140,248,.1);color:var(--gs)">◆ System Gate</span></div>
+    <div class="lg"><span class="lp" style="background:rgba(56,189,248,.1);color:var(--gc)">◆ Client Gate</span></div>
+  </div>
+</div>
+
+<div class="main">
+<div class="pnav">
+  <a href="#p1">Ph 1-2 Intake</a><a href="#g1">Gate 1</a>
+  <a href="#p4">Ph 4 Discovery</a><a href="#g2">Gate 2</a>
+  <a href="#p56">Ph 5-6 Area+Site</a><a href="#g3">Gate 3</a>
+  <a href="#p8a">Ph 8 SOW</a><a href="#g4">Gate 4</a>
+  <a href="#p8b">Ph 8 Budget</a><a href="#p8c">Ph 8 Proposal</a>
+  <a href="#g5">Gate 5</a><a href="#p8e">Ph 8 Client Send</a><a href="#g6">Gate 6</a>
+  <a href="#p9">Ph 9-10 Contract</a><a href="#g7">Gate 7 Activation</a>
+  <a href="#p11">Ph 11 Concept</a><a href="#g8">Gate 8</a>
+  <a href="#p12">Ph 12 Arch Design</a><a href="#g9">Gate 9</a>
+  <a href="#p13">Ph 13 Engineering</a>
+  <a href="#p14">Ph 14 Budget Align</a><a href="#g10">Gate 10</a>
+  <a href="#p15">Ph 15 Exec Plans</a><a href="#g11">Gate 11</a>
+  <a href="#p17">Ph 17 Bidding</a><a href="#g12">Gate 12</a>
+  <a href="#p18">Ph 18 Permitting</a>
+  <a href="#p19">Ph 19-20 Construction</a>
+  <a href="#mktg">Marketing Pipeline</a>
+  <a href="#datalayer">Data Layer</a>
+</div>
+
+<div class="flow">
+<div class="flow-line"></div>
+
+<!-- ═══ PHASE 1-2 ═══ -->
+<div class="slabel">Lead Intake &amp; Screening</div>
+<div class="pc" id="p1">
+  <div class="pc-dot"></div>
+  <div class="pc-hdr">
+    <div class="pc-left">
+      <span class="pnum">01–02</span>
+      <span class="pname">Lead Intake &amp; Screening</span>
+      <span class="ab e">Lupe</span>
+    </div>
+    <div class="states">
+      <span class="sc">lead_received</span><span class="sarr">→</span>
+      <span class="sc">lead_screened</span><span class="sarr">→</span>
+      <span class="sc">lead_summary_sent_to_marcela</span>
+    </div>
+  </div>
+  <div class="pb">
+    <div class="pc-col">
+      <div class="ct">Agent Actions</div>
+      <ul class="al">
+        <li class="ai">Monitor 5 channels: Instagram, Gmail, WhatsApp, website, YouTube</li>
+        <li class="ai">Also monitor: conferences, speaking invites, professional contacts</li>
+        <li class="ai">Run legitimacy screen — detect spam, phishing, AI-generated outreach</li>
+        <li class="ai">Classify: project inquiry / speaking invite / collaboration / press / spam</li>
+        <li class="ai">Create Asana lead task for every non-spam inbound</li>
+        <li class="ai">Archive spam and invalid leads — do not surface to Marcela</li>
+        <li class="ai">Route press inquiries directly to Valentina (Marketing)</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Documents</div>
+      <div class="dg"><div class="dgl i">Inputs</div>
+        <div class="dtags">
+          <span class="dt i">raw_message</span>
+          <span class="dt i">channel_metadata</span>
+          <span class="dt i">sender_profile</span>
+        </div>
+      </div>
+      <div class="dg"><div class="dgl o">Outputs</div>
+        <div class="dtags">
+          <span class="dt o">lead_record.json</span>
+        </div>
+      </div>
+      <div class="dg"><div class="dgl a">Archived</div>
+        <div class="dtags">
+          <span class="dt a">spam/</span>
+          <span class="dt a">invalid_leads/</span>
+          <span class="dt a">phishing_log.json</span>
+        </div>
+      </div>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Data Layer</div>
+      <div class="db"><div class="dbl">Asana Task Created — Leads Project</div>
+        <div class="df"><span class="k">source_channel:</span> <span class="v">instagram | gmail | whatsapp</span></div>
+        <div class="df"><span class="k">category:</span> <span class="v">project_inquiry | speaking | press | spam</span></div>
+        <div class="df"><span class="k">received_at:</span> <span class="v">ISO timestamp</span></div>
+        <div class="df"><span class="k">status:</span> <span class="v">new</span></div>
+        <div class="df"><span class="k">summary:</span> <span class="v">Lupe's structured summary</span></div>
+      </div>
+      <div class="db"><div class="dbl">Webhook Events</div>
+        <div class="we">lead.classified → Celia notifies Marcela via WhatsApp</div>
+        <div class="we">press.received → Valentina task created</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- GATE 1 -->
+<div class="gw" id="g1">
+  <div class="gc-card h">
+    <div class="gh-hdr">
+      <div class="gh-left">
+        <span class="g-icon">◆</span>
+        <span class="gname">Gate 1 — Marcela Lead Review</span>
+        <span class="gmeta">Celia sends structured review to Marcela</span>
+      </div>
+      <span class="gchan">WhatsApp</span>
+    </div>
+    <div class="gpaths">
+      <div class="gp ok"><div class="gpl">✓ Approve</div>
+        <div class="gpt">Lead qualified — Elena assigned, questionnaire sent</div>
+        <div class="gp-note">State → lead_qualified</div>
+      </div>
+      <div class="gp no"><div class="gpl">✗ Reject</div>
+        <div class="gpt">Lead archived — no further action</div>
+        <div class="gp-note">State → discarded</div>
+      </div>
+      <div class="gp pa"><div class="gpl">→ Pass to Agent</div>
+        <div class="gpt">Elena handles outreach autonomously — no manual follow-up from Marcela</div>
+        <div class="gp-note">State → lead_qualified</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- ═══ PHASE 4 ═══ -->
+<div class="slabel">Discovery &amp; First Meeting</div>
+<div class="pc" id="p4">
+  <div class="pc-dot"></div>
+  <div class="pc-hdr">
+    <div class="pc-left">
+      <span class="pnum">04</span>
+      <span class="pname">Discovery &amp; First Meeting</span>
+      <span class="ab e">Elena</span>
+    </div>
+    <div class="states">
+      <span class="sc">lead_qualified</span><span class="sarr">→</span>
+      <span class="sc">followup_sent</span><span class="sarr">→</span>
+      <span class="sc">meeting_scheduled</span><span class="sarr">→</span>
+      <span class="sc">discovery_completed</span>
+    </div>
+  </div>
+  <div class="pb">
+    <div class="pc-col">
+      <div class="ct">Agent Actions</div>
+      <ul class="al">
+        <li class="ai">Send first-response questionnaire to lead (templated by project type)</li>
+        <li class="ai">Capture structured questionnaire response</li>
+        <li class="ai">Schedule first meeting (Zoom / Teams / in-person)</li>
+        <li class="ai">Document meeting: client goals, priorities, expectations, chemistry read</li>
+        <li class="ai">Prepare fit assessment summary for Marcela</li>
+        <li class="ai">Flag good-fit and poor-fit signals (collaboration vs. transactional intent)</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Documents</div>
+      <div class="dg"><div class="dgl i">Inputs</div>
+        <div class="dtags">
+          <span class="dt i">lead_record.json</span>
+          <span class="dt i">decision_payload.yaml</span>
+        </div>
+      </div>
+      <div class="dg"><div class="dgl o">Outputs</div>
+        <div class="dtags">
+          <span class="dt o">questionnaire_response.json</span>
+          <span class="dt o">meeting_notes.md</span>
+          <span class="dt o">fit_assessment_summary.md</span>
+        </div>
+      </div>
+      <div class="dg"><div class="dgl a">Archived</div>
+        <div class="dtags">
+          <span class="dt a">questionnaire_template.md</span>
+          <span class="dt a">raw_meeting_transcript</span>
+        </div>
+      </div>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Data Layer</div>
+      <div class="db"><div class="dbl">Asana Fields Updated</div>
+        <div class="df"><span class="k">status:</span> <span class="v">followup_sent → responding → meeting_scheduled</span></div>
+        <div class="df"><span class="k">client_fit_status:</span> <span class="v">pending</span></div>
+        <div class="df"><span class="k">review_status:</span> <span class="v">pending_fit_decision</span></div>
+      </div>
+      <div class="db"><div class="dbl">Webhook Events</div>
+        <div class="we">discovery.completed → Celia notifies Marcela (fit decision)</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- GATE 2 -->
+<div class="gw" id="g2">
+  <div class="gc-card h">
+    <div class="gh-hdr">
+      <div class="gh-left">
+        <span class="g-icon">◆</span>
+        <span class="gname">Gate 2 — Fit Decision</span>
+        <span class="gmeta">Marcela reviews fit_assessment_summary.md</span>
+      </div>
+      <span class="gchan">WhatsApp</span>
+    </div>
+    <div class="gpaths">
+      <div class="gp ok"><div class="gpl">✓ Fit Approved</div>
+        <div class="gpt">Ana + Sol begin in parallel</div>
+        <div class="gp-note">State → client_fit_approved</div>
+      </div>
+      <div class="gp no"><div class="gpl">✗ Not a Fit</div>
+        <div class="gpt">Rosa sends polite decline — lead archived</div>
+        <div class="gp-note">State → client_fit_rejected</div>
+      </div>
+      <div class="gp pa"><div class="gpl">→ Pass to Agent</div>
+        <div class="gpt">Elena schedules follow-up meeting or sends clarifying questions</div>
+        <div class="gp-note">State → meeting_scheduled</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- ═══ PHASE 5+6 PARALLEL ═══ -->
+<div class="slabel">Area Program + Site Documentation — Parallel Tracks</div>
+<div class="par-wrap" id="p56">
+  <div class="par-label">⟵ parallel tracks — both must complete before scope begins ⟶</div>
+
+  <!-- Phase 5 Ana -->
+  <div class="pc sub">
+    <div class="pc-hdr">
+      <div class="pc-left">
+        <span class="pnum">05</span>
+        <span class="pname">Area Program &amp; Cost Basis</span>
+        <span class="ab e">Ana</span>
+      </div>
+      <div class="states">
+        <span class="sc">area_program_in_progress</span><span class="sarr">→</span>
+        <span class="sc">area_program_confirmed</span><span class="sarr">→</span>
+        <span class="sc">cost_basis_ready</span>
+      </div>
+    </div>
+    <div class="pb" style="grid-template-columns:1fr 1fr">
+      <div class="pc-col">
+        <div class="ct">Agent Actions</div>
+        <ul class="al">
+          <li class="ai">Collect room-by-room requirements from client</li>
+          <li class="ai">Build area matrix: bedrooms, baths, living, office, service, pool, patio…</li>
+          <li class="ai">Calculate total programmed square meters</li>
+          <li class="ai">Apply sq m cost logic to create preliminary cost basis</li>
+          <li class="ai">Document assumptions (materials, finish level, site complexity)</li>
+        </ul>
+      </div>
+      <div class="pc-col" style="border-right:none">
+        <div class="ct">Documents</div>
+        <div class="dg"><div class="dgl i">Inputs</div>
+          <div class="dtags"><span class="dt i">meeting_notes.md</span><span class="dt i">questionnaire_response.json</span></div>
+        </div>
+        <div class="dg"><div class="dgl o">Outputs</div>
+          <div class="dtags"><span class="dt o">area_program.xlsx</span><span class="dt o">cost_basis_v1.md</span></div>
+        </div>
+        <div class="dg"><div class="dgl a">Archived</div>
+          <div class="dtags"><span class="dt a">rough_estimates/</span></div>
+        </div>
+        <div class="db" style="margin-top:8px"><div class="dbl">Asana</div>
+          <div class="df"><span class="k">area_sqm:</span> <span class="v">[calculated]</span></div>
+          <div class="we">cost_basis.ready → (wait for Sol)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phase 6 Sol -->
+  <div class="pc sub">
+    <div class="pc-hdr">
+      <div class="pc-left">
+        <span class="pnum">06</span>
+        <span class="pname">Site Documentation</span>
+        <span class="ab e">Sol</span>
+      </div>
+      <div class="states">
+        <span class="sc">site_data_pending</span><span class="sarr">→</span>
+        <span class="sc">site_data_complete</span>
+      </div>
+    </div>
+    <div class="pb" style="grid-template-columns:1fr 1fr">
+      <div class="pc-col">
+        <div class="ct">Agent Actions</div>
+        <ul class="al">
+          <li class="ai">Request updated topographic map from client</li>
+          <li class="ai">Assess whether hydrologic study is needed (streams, wetlands, site-water)</li>
+          <li class="ai">Send hydrology request if required</li>
+          <li class="ai">Track receipt from client — log missing_documents in Asana</li>
+          <li class="ai">Confirm site completeness, notify Vera</li>
+        </ul>
+      </div>
+      <div class="pc-col" style="border-right:none">
+        <div class="ct">Documents</div>
+        <div class="dg"><div class="dgl i">Inputs</div>
+          <div class="dtags"><span class="dt i">site_location_info</span></div>
+        </div>
+        <div class="dg"><div class="dgl o">Outputs — from client</div>
+          <div class="dtags">
+            <span class="dt o">topo_map.pdf</span>
+            <span class="dt o">hydrology_study.pdf</span>
+            <span class="dt o">site_readiness_status.json</span>
+          </div>
+        </div>
+        <div class="dg"><div class="dgl a">Sends to client</div>
+          <div class="dtags">
+            <span class="dt a">topo_request_letter.md</span>
+            <span class="dt a">hydrology_request_letter.md</span>
+          </div>
+        </div>
+        <div class="db" style="margin-top:8px"><div class="dbl">Asana</div>
+          <div class="df"><span class="k">missing_documents:</span> <span class="v">[tracked]</span></div>
+          <div class="we">site_data.complete → Vera updates readiness</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- GATE 3 -->
+<div class="gw" id="g3">
+  <div class="gc-card h">
+    <div class="gh-hdr">
+      <div class="gh-left">
+        <span class="g-icon">◆</span>
+        <span class="gname">Gate 3 — Cost Basis Review</span>
+        <span class="gmeta">Marcela reviews area_program.xlsx + cost_basis_v1.md · Both parallel tracks must be complete first</span>
+      </div>
+      <span class="gchan">WhatsApp</span>
+    </div>
+    <div class="gpaths">
+      <div class="gp ok"><div class="gpl">✓ Approve</div>
+        <div class="gpt">Tomás begins SOW generation</div>
+      </div>
+      <div class="gp no"><div class="gpl">✗ Reject / Revision</div>
+        <div class="gpt">Ana revises area program or adjusts cost assumptions</div>
+      </div>
+      <div class="gp pa"><div class="gpl">→ Pass to Agent</div>
+        <div class="gpt">Tomás begins with current estimates, flagged for review during SOW</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- ═══ PHASE 8a SOW ═══ -->
+<div class="slabel">Scope of Work → Budget → Proposal → Contract Clause Review</div>
+<div class="pc" id="p8a">
+  <div class="pc-dot"></div>
+  <div class="pc-hdr">
+    <div class="pc-left">
+      <span class="pnum">08a</span>
+      <span class="pname">Scope of Work Generation</span>
+      <span class="ab e">Tomás</span>
+    </div>
+    <div class="states">
+      <span class="sc">scope_in_preparation</span><span class="sarr">→</span>
+      <span class="sc">scope_sent_for_architect_review</span>
+    </div>
+  </div>
+  <div class="pb">
+    <div class="pc-col">
+      <div class="ct">Agent Actions</div>
+      <ul class="al">
+        <li class="ai">Select project type template (5 types: standalone residential, residential in development, hotel, health center, civic/public)</li>
+        <li class="ai">Generate SOW: deliverables by phase, architect hours, collaborator requirements</li>
+        <li class="ai">Define exclusions, revision assumptions, timeline structure</li>
+        <li class="ai">Build responsibilities matrix (client vs. firm vs. collaborators)</li>
+        <li class="ai">Include payment schedule logic and project-type conditions</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Documents</div>
+      <div class="dg"><div class="dgl i">Inputs</div>
+        <div class="dtags">
+          <span class="dt i">area_program.xlsx</span>
+          <span class="dt i">cost_basis_v1.md</span>
+          <span class="dt i">site_readiness_status.json</span>
+          <span class="dt i">project_type_template</span>
+        </div>
+      </div>
+      <div class="dg"><div class="dgl o">Outputs</div>
+        <div class="dtags">
+          <span class="dt o">scope_of_work_v1.md</span>
+        </div>
+      </div>
+      <div class="dg"><div class="dgl a">Archived</div>
+        <div class="dtags"><span class="dt a">scope_drafts/</span></div>
+      </div>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Data Layer</div>
+      <div class="db"><div class="dbl">Asana Fields</div>
+        <div class="df"><span class="k">project_type:</span> <span class="v">standalone_residential (etc)</span></div>
+        <div class="df"><span class="k">review_status:</span> <span class="v">pending_architect_sow</span></div>
+      </div>
+      <div class="db"><div class="dbl">Webhook Events</div>
+        <div class="we">sow.ready → Vera (notify architect via email)</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- GATE 4 — Architect SOW -->
+<div class="gw" id="g4">
+  <div class="gc-card ar">
+    <div class="gh-hdr">
+      <div class="gh-left">
+        <span class="g-icon">◆</span>
+        <span class="gname">Gate 4 — Architect SOW Review</span>
+        <span class="gmeta">Vera assembles + sends email · 24–48h window · Vera manages follow-up</span>
+      </div>
+      <span class="gchan">Email (architect)</span>
+    </div>
+    <div class="gpaths">
+      <div class="gp ok"><div class="gpl">✓ Approved</div>
+        <div class="gpt">Bruno begins detailed costing</div>
+      </div>
+      <div class="gp no"><div class="gpl">✗ Flagged / Revision</div>
+        <div class="gpt">Tomás revises SOW</div>
+        <div class="gp-note">State → scope_under_revision</div>
+      </div>
+      <div class="gp pa"><div class="gpl">⏱ No Response</div>
+        <div class="gpt">24h → Vera sends reminder · 48h → Vera escalates to Marcela</div>
+        <div class="gp-note">State → architect_review_no_response → architect_review_escalated</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- PHASE 8b Budget -->
+<div class="pc" id="p8b">
+  <div class="pc-dot"></div>
+  <div class="pc-hdr">
+    <div class="pc-left">
+      <span class="pnum">08b</span>
+      <span class="pname">Cost Estimation &amp; Payment Schedule</span>
+      <span class="ab e">Bruno</span>
+      <span class="ab a">CFO</span>
+    </div>
+  </div>
+  <div class="pb">
+    <div class="pc-col">
+      <div class="ct">Agent Actions</div>
+      <ul class="al">
+        <li class="ai">Price architect-approved scope into itemized line-item budget</li>
+        <li class="ai">Apply contingency percentage</li>
+        <li class="ai">Build payment milestone schedule (% by phase: signing / design / delivery)</li>
+        <li class="ai">CFO reviews and approves payment schedule</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Documents</div>
+      <div class="dg"><div class="dgl i">Inputs</div>
+        <div class="dtags"><span class="dt i">scope_of_work.md</span><span class="dt i">area_program.xlsx</span></div>
+      </div>
+      <div class="dg"><div class="dgl o">Outputs</div>
+        <div class="dtags">
+          <span class="dt o">budget_itemized_v1.xlsx</span>
+          <span class="dt o">payment_schedule_v1.md</span>
+          <span class="dt o">payment_schedule_approved.md</span>
+        </div>
+      </div>
+      <div class="dg"><div class="dgl a">Archived</div>
+        <div class="dtags"><span class="dt a">budget_drafts/</span></div>
+      </div>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Data Layer</div>
+      <div class="db"><div class="dbl">Webhook Events</div>
+        <div class="we">budget.cfo_approved → Renata begins proposal</div>
+        <div class="we">payment_schedule.set → Controller stores template</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- PHASE 8c Proposal -->
+<div class="pc" id="p8c">
+  <div class="pc-dot"></div>
+  <div class="pc-hdr">
+    <div class="pc-left">
+      <span class="pnum">08c</span>
+      <span class="pname">Proposal + Legal Review + Package Assembly</span>
+      <span class="ab e">Renata</span>
+      <span class="ab a">Legal</span>
+      <span class="ab e">Vera</span>
+    </div>
+  </div>
+  <div class="pb">
+    <div class="pc-col">
+      <div class="ct">Agent Actions</div>
+      <ul class="al">
+        <li class="ai">Renata: assemble bilingual proposal (ES primary, EN secondary) — SOW + budget + timeline + process narrative</li>
+        <li class="ai">Legal: review proposal clauses, flag issues, return with comments</li>
+        <li class="ai">Renata: incorporate legal edits → proposal_v2</li>
+        <li class="ai">Vera: assemble final proposal package PDF</li>
+        <li class="ai">Vera: send architect notification email with package</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Documents</div>
+      <div class="dg"><div class="dgl i">Inputs</div>
+        <div class="dtags">
+          <span class="dt i">scope_of_work.md</span>
+          <span class="dt i">budget_itemized.xlsx</span>
+          <span class="dt i">payment_schedule_approved.md</span>
+        </div>
+      </div>
+      <div class="dg"><div class="dgl o">Outputs</div>
+        <div class="dtags">
+          <span class="dt o">proposal_v1.pdf</span>
+          <span class="dt o">legal_review.md</span>
+          <span class="dt o">proposal_v2.pdf</span>
+          <span class="dt o">proposal_package.pdf</span>
+          <span class="dt o">architect_notification_email</span>
+        </div>
+      </div>
+      <div class="dg"><div class="dgl a">Archived</div>
+        <div class="dtags"><span class="dt a">proposal_drafts/</span><span class="dt a">legal_comments/</span></div>
+      </div>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Data Layer</div>
+      <div class="db"><div class="dbl">Webhook Events</div>
+        <div class="we">proposal.drafted → Legal</div>
+        <div class="we">legal.complete → Vera (assemble package)</div>
+        <div class="we">architect_notification.sent → [await architect response]</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- GATE 5 Architect Approval -->
+<div class="gw" id="g5">
+  <div class="gc-card ar">
+    <div class="gh-hdr">
+      <div class="gh-left">
+        <span class="g-icon">◆</span>
+        <span class="gname">Gate 5 — Architect Proposal Approval</span>
+        <span class="gmeta">Reviews full proposal_package.pdf · Vera manages · 24–48h window</span>
+      </div>
+      <span class="gchan">Email (architect)</span>
+    </div>
+    <div class="gpaths">
+      <div class="gp ok"><div class="gpl">✓ Approved</div>
+        <div class="gpt">Rosa drafts client delivery message · Marcela approves send</div>
+      </div>
+      <div class="gp no"><div class="gpl">✗ Rejected / Flagged</div>
+        <div class="gpt">Vera routes by feedback_type: copy → Renata · scope → Tomás · budget → Bruno</div>
+      </div>
+      <div class="gp pa"><div class="gpl">⏱ No Response</div>
+        <div class="gpt">24h → Vera reminder · 48h → escalate to Marcela</div>
+        <div class="gp-note">State → architect_review_escalated</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- PHASE 8e Client Send -->
+<div class="pc" id="p8e">
+  <div class="pc-dot"></div>
+  <div class="pc-hdr">
+    <div class="pc-left">
+      <span class="pnum">08e</span>
+      <span class="pname">Proposal Delivery to Client</span>
+      <span class="ab e">Rosa</span>
+    </div>
+  </div>
+  <div class="pb">
+    <div class="pc-col">
+      <div class="ct">Agent Actions</div>
+      <ul class="al">
+        <li class="ai">Draft client delivery message (bilingual cover note)</li>
+        <li class="ai">Marcela approves message before send</li>
+        <li class="ai">Send proposal package to client via email</li>
+        <li class="ai">Track response — classify on receipt: approve / revision / reject</li>
+        <li class="ai">On revision: extract feedback_type (budget/scope/copy/legal)</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Documents</div>
+      <div class="dg"><div class="dgl i">Inputs</div>
+        <div class="dtags"><span class="dt i">proposal_package.pdf</span></div>
+      </div>
+      <div class="dg"><div class="dgl o">Outputs</div>
+        <div class="dtags">
+          <span class="dt o">client_delivery_email</span>
+          <span class="dt o">client_response.json</span>
+        </div>
+      </div>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Data Layer</div>
+      <div class="db"><div class="dbl">Asana Fields</div>
+        <div class="df"><span class="k">review_status:</span> <span class="v">pending_client_response</span></div>
+        <div class="df"><span class="k">revision_count:</span> <span class="v">0 (increments per cycle)</span></div>
+      </div>
+      <div class="db"><div class="dbl">Webhook Events</div>
+        <div class="we">proposal.delivered_to_client → [await client response]</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- GATE 6 Client Response -->
+<div class="gw" id="g6">
+  <div class="gc-card cl">
+    <div class="gh-hdr">
+      <div class="gh-left">
+        <span class="g-icon">◆</span>
+        <span class="gname">Gate 6 — Client Response</span>
+        <span class="gmeta">Rosa classifies response · max 3 revision cycles before Marcela steps in</span>
+      </div>
+      <span class="gchan">Email / Rosa</span>
+    </div>
+    <div class="gpaths">
+      <div class="gp ok"><div class="gpl">✓ Approved</div>
+        <div class="gpt">Legal drafts contract · CFO notified</div>
+      </div>
+      <div class="gp no"><div class="gpl">↺ Revision</div>
+        <div class="gpt">Rosa routes by feedback_type: budget→Bruno · scope→Tomás · copy→Renata · legal→Legal · max 3 cycles</div>
+        <div class="gp-note">State → scope_under_revision · revision_count++</div>
+      </div>
+      <div class="gp no" style="border-right:none"><div class="gpl">✗ Hard Reject</div>
+        <div class="gpt">Rosa classifies terminal → Vera closes project · Controller/Legal notified of pre-contract costs</div>
+        <div class="gp-note">State → client_fit_rejected (terminal)</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- PHASE 9-10 Contract + Activation -->
+<div class="slabel">Contract &amp; Activation</div>
+<div class="pc" id="p9">
+  <div class="pc-dot"></div>
+  <div class="pc-hdr">
+    <div class="pc-left">
+      <span class="pnum">09–10</span>
+      <span class="pname">Contract, Signature &amp; Activation Gate</span>
+      <span class="ab a">Legal</span>
+      <span class="ab a">Finance Ops</span>
+      <span class="ab e">Sol</span>
+      <span class="ab e">Pablo</span>
+      <span class="ab e">Vera</span>
+    </div>
+    <div class="states">
+      <span class="sc">scope_signed</span><span class="sarr">→</span>
+      <span class="sc">contract_signed</span><span class="sarr">→</span>
+      <span class="sc">deposit_pending</span><span class="sarr">→</span>
+      <span class="sc">project_activated</span>
+    </div>
+  </div>
+  <div class="pb">
+    <div class="pc-col">
+      <div class="ct">Agent Actions</div>
+      <ul class="al">
+        <li class="ai">Legal: draft contract from approved proposal, prepare e-sign packet</li>
+        <li class="ai">Client signs contract electronically</li>
+        <li class="ai">Finance Ops: tracks 40% deposit receipt, confirms to Vera</li>
+        <li class="ai">Sol: confirms topo + hydrology docs complete</li>
+        <li class="ai">Vera: holds activation until ALL 3 conditions met — signed contract + site docs + 40% deposit</li>
+        <li class="ai">Pablo: builds full project timeline + Asana milestone tasks on activation</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Documents</div>
+      <div class="dg"><div class="dgl i">Inputs</div>
+        <div class="dtags">
+          <span class="dt i">proposal_v2.pdf</span>
+          <span class="dt i">client_response.json (approved)</span>
+        </div>
+      </div>
+      <div class="dg"><div class="dgl o">Outputs</div>
+        <div class="dtags">
+          <span class="dt o">contract_draft.pdf</span>
+          <span class="dt o">esign_packet</span>
+          <span class="dt o">contract_signed.pdf</span>
+          <span class="dt o">deposit_confirmation.json</span>
+          <span class="dt o">project_timeline.xlsx</span>
+          <span class="dt o">asana_milestone_tasks</span>
+        </div>
+      </div>
+      <div class="dg"><div class="dgl a">Archived</div>
+        <div class="dtags"><span class="dt a">contract_drafts/</span></div>
+      </div>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Data Layer</div>
+      <div class="db"><div class="dbl">Activation Conditions (Vera monitors)</div>
+        <div class="df"><span class="k">contract_signed:</span> <span class="v">✓ Legal confirms</span></div>
+        <div class="df"><span class="k">site_docs_complete:</span> <span class="v">✓ Sol confirms</span></div>
+        <div class="df"><span class="k">deposit_40pct:</span> <span class="v">✓ Finance Ops confirms</span></div>
+      </div>
+      <div class="db"><div class="dbl">Asana Fields</div>
+        <div class="df"><span class="k">deposit_status:</span> <span class="v">pending → received</span></div>
+        <div class="df"><span class="k">current_phase:</span> <span class="v">activation</span></div>
+      </div>
+      <div class="db"><div class="dbl">Webhook Events</div>
+        <div class="we">activation.conditions_met → Pablo builds schedule</div>
+        <div class="we">project.activated → Vera begins tracking</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- GATE 7 Activation (automated) -->
+<div class="gw" id="g7">
+  <div class="gc-card sy">
+    <div class="gh-hdr">
+      <div class="gh-left">
+        <span class="g-icon">◆</span>
+        <span class="gname">Gate 7 — Activation Gate (Automated)</span>
+        <span class="gmeta">Vera enforces — no human input required · project does NOT activate until all 3 conditions confirmed</span>
+      </div>
+      <span class="gchan">System / Vera</span>
+    </div>
+    <div class="gpaths">
+      <div class="gp ok"><div class="gpl">✓ All Conditions Met</div>
+        <div class="gpt">Pablo fires — builds timeline · Vera begins active project tracking · State → project_activated</div>
+      </div>
+      <div class="gp no"><div class="gpl">✗ Condition Missing</div>
+        <div class="gpt">Vera holds · sends reminder to client or team for missing item · logs missing_documents in Asana</div>
+        <div class="gp-note">State → deposit_pending (waits)</div>
+      </div>
+      <div class="gp pa" style="border-right:none"><div class="gpl">Rule</div>
+        <div class="gpt">No project activates without: signed scope + site documents + 40% deposit</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- PHASE 11 Concept Design -->
+<div class="slabel">Post-Activation — Design Phases</div>
+<div class="pc" id="p11">
+  <div class="pc-dot"></div>
+  <div class="pc-hdr">
+    <div class="pc-left">
+      <span class="pnum">11</span>
+      <span class="pname">Conceptual Design</span>
+      <span class="ab e">Andrés</span>
+    </div>
+    <div class="states">
+      <span class="sc">concept_in_progress</span><span class="sarr">→</span>
+      <span class="sc">concept_ready_for_review</span>
+    </div>
+  </div>
+  <div class="pb">
+    <div class="pc-col">
+      <div class="ct">Agent Actions</div>
+      <ul class="al">
+        <li class="ai">Brief architect team on concept deliverables and program</li>
+        <li class="ai">Track production: 3D model, renders, material direction, spatial concept</li>
+        <li class="ai">Assemble concept_package.pdf for review</li>
+        <li class="ai">Send review request to Marcela (typically in-person presentation)</li>
+        <li class="ai">On revision: route back to architect with Marcela's notes</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Documents</div>
+      <div class="dg"><div class="dgl i">Inputs</div>
+        <div class="dtags">
+          <span class="dt i">area_program.xlsx</span>
+          <span class="dt i">project_brief.md</span>
+          <span class="dt i">meeting_notes.md</span>
+          <span class="dt i">project_timeline.xlsx</span>
+        </div>
+      </div>
+      <div class="dg"><div class="dgl o">From Architect Team</div>
+        <div class="dtags">
+          <span class="dt o">3d_model.file</span>
+          <span class="dt o">renders.zip</span>
+          <span class="dt o">material_direction.md</span>
+          <span class="dt o">spatial_concept.md</span>
+          <span class="dt o">concept_package.pdf</span>
+        </div>
+      </div>
+      <div class="dg"><div class="dgl a">Archived</div>
+        <div class="dtags"><span class="dt a">early_sketches/</span><span class="dt a">rejected_concepts/</span></div>
+      </div>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Data Layer</div>
+      <div class="db"><div class="dbl">Asana Fields</div>
+        <div class="df"><span class="k">current_phase:</span> <span class="v">conceptual_design</span></div>
+        <div class="df"><span class="k">review_status:</span> <span class="v">pending_concept_review</span></div>
+      </div>
+      <div class="db"><div class="dbl">Webhook Events</div>
+        <div class="we">concept.ready → Celia notifies Marcela</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- GATE 8 Concept Review -->
+<div class="gw" id="g8">
+  <div class="gc-card h">
+    <div class="gh-hdr">
+      <div class="gh-left">
+        <span class="g-icon">◆</span>
+        <span class="gname">Gate 8 — Concept Review</span>
+        <span class="gmeta">Marcela reviews concept_package.pdf — typically in-person presentation</span>
+      </div>
+      <span class="gchan">WhatsApp / In-person</span>
+    </div>
+    <div class="gpaths">
+      <div class="gp ok"><div class="gpl">✓ Approved</div>
+        <div class="gpt">Felipe begins architectural design</div>
+        <div class="gp-note">State → concept_approved</div>
+      </div>
+      <div class="gp no"><div class="gpl">✗ Revision</div>
+        <div class="gpt">Andrés routes Marcela's notes back to architect team</div>
+        <div class="gp-note">State → concept_rejected → concept_in_progress</div>
+      </div>
+      <div class="gp pa"><div class="gpl">→ Pass to Agent</div>
+        <div class="gpt">Andrés coordinates revision directly with architect</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- PHASE 12 Architectural Design -->
+<div class="pc" id="p12">
+  <div class="pc-dot"></div>
+  <div class="pc-hdr">
+    <div class="pc-left">
+      <span class="pnum">12</span>
+      <span class="pname">Architectural Design</span>
+      <span class="ab e">Felipe</span>
+    </div>
+    <div class="states">
+      <span class="sc">architectural_design_in_progress</span><span class="sarr">→</span>
+      <span class="sc">architectural_design_approved</span>
+    </div>
+  </div>
+  <div class="pb">
+    <div class="pc-col">
+      <div class="ct">Agent Actions</div>
+      <ul class="al">
+        <li class="ai">Track detailed design set: floor plans, sections, elevations, details</li>
+        <li class="ai">Coordinate resolution of design questions with architect team</li>
+        <li class="ai">Assemble architectural_design_milestone.pdf</li>
+        <li class="ai">Send review request to Marcela</li>
+        <li class="ai">On revision: route feedback to architect team</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Documents</div>
+      <div class="dg"><div class="dgl i">Inputs</div>
+        <div class="dtags"><span class="dt i">concept_package.pdf</span></div>
+      </div>
+      <div class="dg"><div class="dgl o">From Architect Team</div>
+        <div class="dtags">
+          <span class="dt o">floor_plans.dwg</span>
+          <span class="dt o">sections.dwg</span>
+          <span class="dt o">elevations.dwg</span>
+          <span class="dt o">architectural_design_milestone.pdf</span>
+        </div>
+      </div>
+      <div class="dg"><div class="dgl a">Archived</div>
+        <div class="dtags"><span class="dt a">design_iterations/</span></div>
+      </div>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Data Layer</div>
+      <div class="db"><div class="dbl">Webhook Events</div>
+        <div class="we">arch_design.complete → Celia notifies Marcela</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- GATE 9 -->
+<div class="gw" id="g9">
+  <div class="gc-card h">
+    <div class="gh-hdr">
+      <div class="gh-left"><span class="g-icon">◆</span>
+        <span class="gname">Gate 9 — Architectural Design Review</span>
+        <span class="gmeta">Marcela reviews architectural_design_milestone.pdf</span>
+      </div>
+      <span class="gchan">WhatsApp</span>
+    </div>
+    <div class="gpaths">
+      <div class="gp ok"><div class="gpl">✓ Approved</div><div class="gpt">Emilio begins engineering coordination</div></div>
+      <div class="gp no"><div class="gpl">✗ Revision</div><div class="gpt">Felipe routes feedback to architect team</div></div>
+      <div class="gp pa"><div class="gpl">→ Pass to Agent</div><div class="gpt">Felipe coordinates design changes directly</div></div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- PHASE 13 Engineering -->
+<div class="pc" id="p13">
+  <div class="pc-dot"></div>
+  <div class="pc-hdr">
+    <div class="pc-left">
+      <span class="pnum">13</span>
+      <span class="pname">Structural &amp; Systems Engineering</span>
+      <span class="ab e">Emilio</span>
+    </div>
+    <div class="states">
+      <span class="sc">structural_engineering_in_progress</span>
+      <span class="sc">+ systems_engineering_in_progress</span>
+      <span class="sarr">→ both complete</span>
+    </div>
+  </div>
+  <div class="pb">
+    <div class="pc-col">
+      <div class="ct">Agent Actions</div>
+      <ul class="al">
+        <li class="ai">Send project to structural engineering consultants for calculations and load analysis (3 weeks – 2 months)</li>
+        <li class="ai">Coordinate parallel systems: electrical, lighting, water, irrigation, solar (if applicable), AV (if applicable)</li>
+        <li class="ai">Track all consultant inputs — log blockers in Asana</li>
+        <li class="ai">Assemble consolidated engineering_package.pdf when all inputs received</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Documents</div>
+      <div class="dg"><div class="dgl i">Inputs</div>
+        <div class="dtags"><span class="dt i">architectural_design_milestone.pdf</span></div>
+      </div>
+      <div class="dg"><div class="dgl o">Received from Consultants</div>
+        <div class="dtags">
+          <span class="dt o">structural_calculations.pdf</span>
+          <span class="dt o">electrical_design.pdf</span>
+          <span class="dt o">lighting_design.pdf</span>
+          <span class="dt o">water_systems.pdf</span>
+          <span class="dt o">irrigation_design.pdf</span>
+          <span class="dt o">solar_design.pdf</span>
+          <span class="dt o">av_design.pdf</span>
+          <span class="dt o">engineering_package.pdf</span>
+        </div>
+      </div>
+      <div class="dg"><div class="dgl a">Archived</div>
+        <div class="dtags"><span class="dt a">consultant_requests/</span><span class="dt a">draft_inputs/</span></div>
+      </div>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Data Layer</div>
+      <div class="db"><div class="dbl">Asana Fields</div>
+        <div class="df"><span class="k">missing_documents:</span> <span class="v">[tracks pending consultant inputs]</span></div>
+      </div>
+      <div class="db"><div class="dbl">Webhook Events</div>
+        <div class="we">engineering.package_complete → Bruno (budget alignment)</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- PHASE 14 Budget Alignment -->
+<div class="pc" id="p14">
+  <div class="pc-dot"></div>
+  <div class="pc-hdr">
+    <div class="pc-left">
+      <span class="pnum">14</span>
+      <span class="pname">Contractor Pricing &amp; Budget Alignment</span>
+      <span class="ab e">Bruno</span>
+    </div>
+    <div class="states">
+      <span class="sc">budget_alignment_pending</span><span class="sarr">→</span>
+      <span class="sc">budget_aligned</span> / <span class="sc" style="background:rgba(239,68,68,.1);color:#F87171">budget_misaligned</span>
+    </div>
+  </div>
+  <div class="pb">
+    <div class="pc-col">
+      <div class="ct">Agent Actions</div>
+      <ul class="al">
+        <li class="ai">Request cost proposals from local contractors using engineering + design package</li>
+        <li class="ai">Compare contractor pricing against client's confirmed budget</li>
+        <li class="ai">Produce budget_alignment_analysis with proceed/redesign recommendation</li>
+        <li class="ai">Rule: major design changes happen HERE — not during or after executive plans</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Documents</div>
+      <div class="dg"><div class="dgl i">Inputs</div>
+        <div class="dtags">
+          <span class="dt i">engineering_package.pdf</span>
+          <span class="dt i">architectural_design_milestone.pdf</span>
+        </div>
+      </div>
+      <div class="dg"><div class="dgl o">Outputs</div>
+        <div class="dtags">
+          <span class="dt o">bid_request_preliminary.pdf</span>
+          <span class="dt o">contractor_pricing_proposals.pdf</span>
+          <span class="dt o">budget_alignment_analysis.md</span>
+        </div>
+      </div>
+      <div class="dg"><div class="dgl a">Archived</div>
+        <div class="dtags"><span class="dt a">preliminary_bids/</span></div>
+      </div>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Data Layer</div>
+      <div class="db"><div class="dbl">Asana Fields</div>
+        <div class="df"><span class="k">budget_alignment_status:</span> <span class="v">pending → aligned / misaligned</span></div>
+      </div>
+      <div class="db"><div class="dbl">Webhook Events</div>
+        <div class="we">budget_alignment.ready → Celia notifies Marcela</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- GATE 10 Budget Alignment -->
+<div class="gw" id="g10">
+  <div class="gc-card h">
+    <div class="gh-hdr">
+      <div class="gh-left"><span class="g-icon">◆</span>
+        <span class="gname">Gate 10 — Budget Alignment Review</span>
+        <span class="gmeta">Marcela reviews budget_alignment_analysis.md</span>
+      </div>
+      <span class="gchan">WhatsApp</span>
+    </div>
+    <div class="gpaths">
+      <div class="gp ok"><div class="gpl">✓ Budget Aligned</div><div class="gpt">Hugo begins executive plans</div><div class="gp-note">State → budget_aligned</div></div>
+      <div class="gp no"><div class="gpl">✗ Not Aligned — Redesign</div><div class="gpt">Felipe (design issue) or Emilio (engineering issue) per feedback_type · all major changes happen before executive plans</div><div class="gp-note">State → budget_misaligned</div></div>
+      <div class="gp pa"><div class="gpl">→ Pass to Agent</div><div class="gpt">Bruno handles contractor negotiation to close the gap</div></div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- PHASE 15 Executive Plans -->
+<div class="pc" id="p15">
+  <div class="pc-dot"></div>
+  <div class="pc-hdr">
+    <div class="pc-left">
+      <span class="pnum">15–16</span>
+      <span class="pname">Executive Plans (Fase Ejecutiva) + Final Approval</span>
+      <span class="ab e">Hugo</span>
+    </div>
+    <div class="states">
+      <span class="sc">executive_plans_in_progress</span><span class="sarr">→</span>
+      <span class="sc">executive_plans_approved</span>
+    </div>
+  </div>
+  <div class="pb">
+    <div class="pc-col">
+      <div class="ct">Agent Actions</div>
+      <ul class="al">
+        <li class="ai">Coordinate final plan set production: cross sections, full plan book, technical coordination</li>
+        <li class="ai">Track specification book and detailed technical information from architect</li>
+        <li class="ai">Assemble executive_plans_package.pdf (final integrated deliverable)</li>
+        <li class="ai">Send final approval request to Marcela</li>
+        <li class="ai">On revision: route to Felipe (design) or Emilio (engineering) per feedback_type</li>
+        <li class="ai">Rule: at this stage only minor changes should remain — major changes require going back to Phase 14</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Documents</div>
+      <div class="dg"><div class="dgl i">Inputs</div>
+        <div class="dtags">
+          <span class="dt i">engineering_package.pdf</span>
+          <span class="dt i">architectural_design_milestone.pdf</span>
+          <span class="dt i">budget_alignment_analysis.md</span>
+        </div>
+      </div>
+      <div class="dg"><div class="dgl o">Produced</div>
+        <div class="dtags">
+          <span class="dt o">full_plan_book.pdf</span>
+          <span class="dt o">cross_sections.pdf</span>
+          <span class="dt o">specification_book.pdf</span>
+          <span class="dt o">technical_coordination.md</span>
+          <span class="dt o">executive_plans_package.pdf</span>
+        </div>
+      </div>
+      <div class="dg"><div class="dgl a">Archived</div>
+        <div class="dtags"><span class="dt a">plan_revisions/</span></div>
+      </div>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Data Layer</div>
+      <div class="db"><div class="dbl">Webhook Events</div>
+        <div class="we">executive_plans.ready → Celia notifies Marcela</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- GATE 11 Final Approval -->
+<div class="gw" id="g11">
+  <div class="gc-card h">
+    <div class="gh-hdr">
+      <div class="gh-left"><span class="g-icon">◆</span>
+        <span class="gname">Gate 11 — Final Approval</span>
+        <span class="gmeta">Client signs off on executive_plans_package.pdf — final design milestone before bidding</span>
+      </div>
+      <span class="gchan">WhatsApp</span>
+    </div>
+    <div class="gpaths">
+      <div class="gp ok"><div class="gpl">✓ Approved</div><div class="gpt">Ofelia begins bidding process</div><div class="gp-note">State → executive_plans_approved</div></div>
+      <div class="gp no"><div class="gpl">✗ Revision (design)</div><div class="gpt">Hugo routes to Felipe</div></div>
+      <div class="gp no" style="border-right:none"><div class="gpl">✗ Revision (engineering)</div><div class="gpt">Hugo routes to Emilio</div></div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- PHASE 17 Bidding -->
+<div class="slabel">Procurement &amp; Permitting</div>
+<div class="pc" id="p17">
+  <div class="pc-dot"></div>
+  <div class="pc-hdr">
+    <div class="pc-left">
+      <span class="pnum">17</span>
+      <span class="pname">Bidding &amp; Contractor Selection</span>
+      <span class="ab e">Ofelia</span>
+    </div>
+    <div class="states">
+      <span class="sc">bidding_in_progress</span><span class="sarr">→</span>
+      <span class="sc">contractor_selected</span> / <span class="sc hold" style="background:rgba(251,191,36,.1);color:#FCD34D">project_on_hold</span>
+    </div>
+  </div>
+  <div class="pb">
+    <div class="pc-col">
+      <div class="ct">Agent Actions</div>
+      <ul class="al">
+        <li class="ai">Prepare bid package from executive plans</li>
+        <li class="ai">Request bids from multiple contractors</li>
+        <li class="ai">Collect and compare contractor proposals</li>
+        <li class="ai">Build contractor_comparison_matrix with recommendation</li>
+        <li class="ai">Send comparison to Marcela for contractor selection decision</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Documents</div>
+      <div class="dg"><div class="dgl i">Inputs</div>
+        <div class="dtags"><span class="dt i">executive_plans_package.pdf</span></div>
+      </div>
+      <div class="dg"><div class="dgl o">Outputs</div>
+        <div class="dtags">
+          <span class="dt o">bid_package.pdf</span>
+          <span class="dt o">contractor_bid_proposals.pdf</span>
+          <span class="dt o">contractor_comparison_matrix.pdf</span>
+        </div>
+      </div>
+      <div class="dg"><div class="dgl a">Archived</div>
+        <div class="dtags"><span class="dt a">raw_bids/</span></div>
+      </div>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Data Layer</div>
+      <div class="db"><div class="dbl">Webhook Events</div>
+        <div class="we">bidding.comparison_ready → Celia notifies Marcela</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- GATE 12 Contractor Selection -->
+<div class="gw" id="g12">
+  <div class="gc-card h">
+    <div class="gh-hdr">
+      <div class="gh-left"><span class="g-icon">◆</span>
+        <span class="gname">Gate 12 — Contractor Selection</span>
+        <span class="gmeta">Ofelia presents comparison · Celia captures Marcela's decision</span>
+      </div>
+      <span class="gchan">WhatsApp</span>
+    </div>
+    <div class="gpaths">
+      <div class="gp ok"><div class="gpl">✓ Contractor Selected</div><div class="gpt">Paco begins permitting</div><div class="gp-note">State → contractor_selected</div></div>
+      <div class="gp no"><div class="gpl">↺ Re-bid</div><div class="gpt">Ofelia re-bids with revised scope note from Marcela</div><div class="gp-note">State → bidding_in_progress</div></div>
+      <div class="gp no" style="border-right:none"><div class="gpl">✗ No Viable Bids</div><div class="gpt">Vera escalates to COO + Marcela · project enters hold state</div><div class="gp-note">State → project_on_hold</div></div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- PHASE 18 Permitting -->
+<div class="pc" id="p18">
+  <div class="pc-dot"></div>
+  <div class="pc-hdr">
+    <div class="pc-left">
+      <span class="pnum">18</span>
+      <span class="pname">Permitting</span>
+      <span class="ab e">Paco</span>
+    </div>
+    <div class="states">
+      <span class="sc">permit_submitted</span><span class="sarr">→</span>
+      <span class="sc">permit_corrections</span><span class="sarr">(if needed)</span><span class="sarr">→</span>
+      <span class="sc">permit_approved</span>
+    </div>
+  </div>
+  <div class="pb">
+    <div class="pc-col">
+      <div class="ct">Agent Actions</div>
+      <ul class="al">
+        <li class="ai">Assemble permit application from executive plans + contractor info</li>
+        <li class="ai">Submit to relevant jurisdiction (duration varies: weeks to months)</li>
+        <li class="ai">Track permit status — log corrections required</li>
+        <li class="ai">Manage correction cycles: receive corrections → fix → resubmit</li>
+        <li class="ai">Notify Vera when permit is approved</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Documents</div>
+      <div class="dg"><div class="dgl i">Inputs</div>
+        <div class="dtags">
+          <span class="dt i">executive_plans_package.pdf</span>
+          <span class="dt i">contractor_selection_confirmation.md</span>
+        </div>
+      </div>
+      <div class="dg"><div class="dgl o">Outputs</div>
+        <div class="dtags">
+          <span class="dt o">permit_application.pdf</span>
+          <span class="dt o">permit_approved.pdf</span>
+        </div>
+      </div>
+      <div class="dg"><div class="dgl a">Received / Archived</div>
+        <div class="dtags">
+          <span class="dt a">permit_corrections.pdf</span>
+          <span class="dt a">correction_responses/</span>
+          <span class="dt a">submission_history/</span>
+        </div>
+      </div>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Data Layer</div>
+      <div class="db"><div class="dbl">Asana Fields</div>
+        <div class="df"><span class="k">permit_status:</span> <span class="v">submitted → corrections → approved</span></div>
+      </div>
+      <div class="db"><div class="dbl">Webhook Events</div>
+        <div class="we">permit.approved → Vera (unlock construction)</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- PHASE 19-20 Construction -->
+<div class="slabel">Construction &amp; Supervision</div>
+<div class="pc" id="p19">
+  <div class="pc-dot"></div>
+  <div class="pc-hdr">
+    <div class="pc-left">
+      <span class="pnum">19–20</span>
+      <span class="pname">Construction + Optional Supervision</span>
+      <span class="ab e">Vera</span>
+    </div>
+    <div class="states">
+      <span class="sc">construction_started</span><span class="sarr">→</span>
+      <span class="sc">supervision_active</span><span class="sarr">(if selected)</span><span class="sarr">→</span>
+      <span class="sc">closed</span>
+    </div>
+  </div>
+  <div class="pb">
+    <div class="pc-col">
+      <div class="ct">Agent Actions</div>
+      <ul class="al">
+        <li class="ai">Monitor construction milestones against Pablo's schedule</li>
+        <li class="ai">Flag delays and deviations in Asana</li>
+        <li class="ai">If supervision selected: track architect site visits (every 2 weeks or monthly)</li>
+        <li class="ai">Log site visit reports and design compliance observations</li>
+        <li class="ai">Issue weekly digest on construction progress</li>
+        <li class="ai">On project completion: close Asana project, trigger Controller + Tax + Arquitecto</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Documents</div>
+      <div class="dg"><div class="dgl i">Inputs</div>
+        <div class="dtags">
+          <span class="dt i">permit_approved.pdf</span>
+          <span class="dt i">project_timeline.xlsx</span>
+          <span class="dt i">executive_plans_package.pdf</span>
+        </div>
+      </div>
+      <div class="dg"><div class="dgl o">Outputs</div>
+        <div class="dtags">
+          <span class="dt o">construction_progress_reports.md</span>
+          <span class="dt o">site_visit_reports.md</span>
+          <span class="dt o">final_completion_certificate.pdf</span>
+        </div>
+      </div>
+      <div class="dg"><div class="dgl a">Archived</div>
+        <div class="dtags">
+          <span class="dt a">progress_photos/</span>
+          <span class="dt a">field_observations/</span>
+        </div>
+      </div>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Data Layer</div>
+      <div class="db"><div class="dbl">Asana Fields</div>
+        <div class="df"><span class="k">supervision_status:</span> <span class="v">active | not_selected</span></div>
+        <div class="df"><span class="k">current_phase:</span> <span class="v">construction</span></div>
+      </div>
+      <div class="db"><div class="dbl">Completion Webhooks</div>
+        <div class="we">project.closed → Controller (final invoice)</div>
+        <div class="we">project.closed → Tax (revenue filing)</div>
+        <div class="we">project.closed → Arquitecto (marketing trigger)</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="conn"></div>
+
+<!-- MARKETING PIPELINE -->
+<div class="slabel" id="mktg">Marketing Trigger — Two Types</div>
+<div class="pc">
+  <div class="pc-dot"></div>
+  <div class="pc-hdr">
+    <div class="pc-left">
+      <span class="pnum">MKT</span>
+      <span class="pname">Marketing Pipeline</span>
+      <span class="ab m">Arquitecto</span>
+      <span class="ab m">Lucía</span>
+      <span class="ab m">Marco</span>
+      <span class="ab m">Sofía</span>
+      <span class="ab m">Diego</span>
+      <span class="ab m">Ileana</span>
+      <span class="ab m">Valentina</span>
+      <span class="ab m">Canal</span>
+      <span class="ab m">Rafael</span>
+      <span class="ab m">Carmen</span>
+    </div>
+  </div>
+  <div class="pb">
+    <div class="pc-col">
+      <div class="ct">Trigger Types</div>
+      <ul class="al">
+        <li class="ai"><strong style="color:var(--mktg)">Type A — In-Process:</strong> Marcela manually triggers when architects have compelling materials during an active project</li>
+        <li class="ai"><strong style="color:var(--mktg)">Type B — Completion:</strong> Vera auto-triggers when a project closes</li>
+        <li class="ai">Arquitecto adapts brief.json per trigger type</li>
+        <li class="ai">Pipeline: Arquitecto → Lucía → Marco → Sofía → Diego → Ileana → Valentina → CEO Gate → Canal → Rafael → Carmen → Lucía (per-campaign feedback)</li>
+        <li class="ai">Carmen also produces quarterly synthesis brief (from Alma's metrics data)</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Documents</div>
+      <div class="dg"><div class="dgl i">Inputs</div>
+        <div class="dtags">
+          <span class="dt i">project_brief.md</span>
+          <span class="dt i">photos/</span>
+          <span class="dt i">renders/</span>
+          <span class="dt i">final_completion_certificate.pdf</span>
+        </div>
+      </div>
+      <div class="dg"><div class="dgl o">Outputs (file-based pipeline)</div>
+        <div class="dtags">
+          <span class="dt o">brief.json</span>
+          <span class="dt o">lucia-analysis.json</span>
+          <span class="dt o">strategy.json</span>
+          <span class="dt o">copy.json</span>
+          <span class="dt o">approval_page.html</span>
+        </div>
+      </div>
+    </div>
+    <div class="pc-col">
+      <div class="ct">Data Layer</div>
+      <div class="db"><div class="dbl">Campaign State (Asana)</div>
+        <div class="df"><span class="k">ceo_decision:</span> <span class="v">pending → approved → published</span></div>
+      </div>
+      <div class="db"><div class="dbl">Feedback Loop</div>
+        <div class="we">campaign.published → Rafael (metrics)</div>
+        <div class="we">rafael.complete → Carmen (per-campaign brief to Lucía)</div>
+        <div class="we">quarter_end → Carmen (strategic synthesis + Alma data)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ DATA LAYER SECTION ═══ -->
+<div class="dls" id="datalayer">
+  <div class="dls-title">Data Layer</div>
+  <div class="dgrid">
+
+    <!-- State Machine -->
+    <div class="dcard" style="grid-column:span 2">
+      <div class="dcard-title">Project State Machine — 40 States</div>
+      <div class="state-flow">
+        <span class="si">lead_received</span><span class="sarrow">→</span>
+        <span class="si">lead_screened</span><span class="sarrow">→</span>
+        <span class="si">lead_summary_sent_to_marcela</span><span class="sarrow">→</span>
+        <span class="si">followup_sent</span><span class="sarrow">→</span>
+        <span class="si">awaiting_lead_response</span><span class="sarrow">→</span>
+        <span class="si">lead_qualified</span><span class="sarrow">→</span>
+        <span class="si">meeting_scheduled</span><span class="sarrow">→</span>
+        <span class="si">discovery_completed</span><span class="sarrow">→</span>
+        <span class="si">client_fit_approved</span>
+        <span class="sarrow">or</span>
+        <span class="si rej">client_fit_rejected</span>
+        <span class="sarrow">→</span>
+        <span class="si">area_program_in_progress</span><span class="sarrow">→</span>
+        <span class="si">area_program_confirmed</span><span class="sarrow">→</span>
+        <span class="si">site_data_pending</span><span class="sarrow">→</span>
+        <span class="si">site_data_complete</span><span class="sarrow">→</span>
+        <span class="si">cost_basis_ready</span><span class="sarrow">→</span>
+        <span class="si">scope_in_preparation</span><span class="sarrow">→</span>
+        <span class="si">scope_sent_for_architect_review</span>
+        <span class="sarrow">or</span>
+        <span class="si">architect_review_no_response</span><span class="sarrow">→</span>
+        <span class="si">architect_review_escalated</span>
+        <span class="sarrow">→</span>
+        <span class="si">scope_under_revision</span><span class="sarrow">→</span>
+        <span class="si">scope_signed</span><span class="sarrow">→</span>
+        <span class="si">contract_pending</span><span class="sarrow">→</span>
+        <span class="si">contract_signed</span><span class="sarrow">→</span>
+        <span class="si">deposit_pending</span><span class="sarrow">→</span>
+        <span class="si">project_activated</span><span class="sarrow">→</span>
+        <span class="si">concept_in_progress</span><span class="sarrow">→</span>
+        <span class="si">concept_ready_for_review</span><span class="sarrow">→</span>
+        <span class="si">concept_approved</span>
+        <span class="sarrow">or</span>
+        <span class="si rej">concept_rejected</span>
+        <span class="sarrow">→</span>
+        <span class="si">architectural_design_in_progress</span><span class="sarrow">→</span>
+        <span class="si">architectural_design_approved</span><span class="sarrow">→</span>
+        <span class="si">structural_engineering_in_progress</span>
+        <span class="sarrow">+</span>
+        <span class="si">systems_engineering_in_progress</span><span class="sarrow">→</span>
+        <span class="si">budget_alignment_pending</span><span class="sarrow">→</span>
+        <span class="si">budget_aligned</span>
+        <span class="sarrow">or</span>
+        <span class="si rej">budget_misaligned</span>
+        <span class="sarrow">→</span>
+        <span class="si">executive_plans_in_progress</span><span class="sarrow">→</span>
+        <span class="si">executive_plans_approved</span><span class="sarrow">→</span>
+        <span class="si">bidding_in_progress</span><span class="sarrow">→</span>
+        <span class="si">contractor_selected</span>
+        <span class="sarrow">or</span>
+        <span class="si hold">project_on_hold</span>
+        <span class="sarrow">→</span>
+        <span class="si">permit_submitted</span><span class="sarrow">→</span>
+        <span class="si">permit_corrections</span><span class="sarrow">→</span>
+        <span class="si">permit_approved</span><span class="sarrow">→</span>
+        <span class="si">construction_started</span><span class="sarrow">→</span>
+        <span class="si">supervision_active</span><span class="sarrow">→</span>
+        <span class="si term">closed</span>
+      </div>
+    </div>
+
+    <!-- Celia Decision Flow -->
+    <div class="dcard">
+      <div class="dcard-title">Celia — Decision Capture Flow</div>
+      <div class="step"><div class="sn">1</div><div>Human receives WhatsApp or email review request with structured summary + action choices</div></div>
+      <div class="step"><div class="sn">2</div><div>Human replies: <strong>Approve</strong> / <strong>Reject</strong> / <strong>Pass to Agent</strong> + optional comment</div></div>
+      <div class="step"><div class="sn">3</div><div>Celia parses reply → creates normalized <span class="field-ref">decision_payload.yaml</span></div></div>
+      <div class="step"><div class="sn">4</div><div>Celia updates Asana: task field <span class="field-ref">decision_status</span>, moves section, assigns next agent, logs comment</div></div>
+      <div class="step"><div class="sn">5</div><div>Webhook fires → next agent task created → pipeline advances automatically</div></div>
+      <div class="note">All 11 human review gates (9 Marcela + 2 Architect) route through Celia</div>
+    </div>
+
+    <!-- Asana Fields -->
+    <div class="dcard">
+      <div class="dcard-title">Key Asana Fields — Entrega Tasks</div>
+      <table class="tbl">
+        <tr><th>Field</th><th>Set by</th></tr>
+        <tr><td>project_id</td><td>Elena (on fit approval)</td></tr>
+        <tr><td>project_type</td><td>Tomás (SOW generation)</td></tr>
+        <tr><td>project_state</td><td>Updated at every phase transition</td></tr>
+        <tr><td>area_sqm</td><td>Ana (area program)</td></tr>
+        <tr><td>client_fit_status</td><td>Celia (after Gate 2)</td></tr>
+        <tr><td>deposit_status</td><td>Finance Ops (on receipt)</td></tr>
+        <tr><td>site_docs_complete</td><td>Sol (when docs received)</td></tr>
+        <tr><td>missing_documents</td><td>Sol + Emilio (tracked live)</td></tr>
+        <tr><td>budget_alignment_status</td><td>Bruno + Celia (after Gate 10)</td></tr>
+        <tr><td>permit_status</td><td>Paco (through permit cycle)</td></tr>
+        <tr><td>revision_count</td><td>Rosa (proposal revisions)</td></tr>
+        <tr><td>feedback_type</td><td>Celia (from decision payload)</td></tr>
+      </table>
+    </div>
+
+    <!-- Webhook event table -->
+    <div class="dcard" style="grid-column:span 2">
+      <div class="dcard-title">Key Webhook Events — Trigger Map</div>
+      <table class="tbl">
+        <tr><th>Event</th><th>Fired by</th><th>Creates task for</th></tr>
+        <tr><td>lead.classified</td><td>Lupe</td><td>Celia → notifies Marcela (Gate 1)</td></tr>
+        <tr><td>discovery.completed</td><td>Elena</td><td>Celia → notifies Marcela (Gate 2)</td></tr>
+        <tr><td>cost_basis.ready</td><td>Ana</td><td>Celia → notifies Marcela (Gate 3) — after Sol also complete</td></tr>
+        <tr><td>sow.ready</td><td>Tomás</td><td>Vera → sends architect SOW email (Gate 4)</td></tr>
+        <tr><td>budget.cfo_approved</td><td>CFO</td><td>Renata</td></tr>
+        <tr><td>legal.complete</td><td>Legal</td><td>Vera → assembles proposal package</td></tr>
+        <tr><td>architect_notification.sent</td><td>Vera</td><td>[await response] → Celia captures (Gate 5)</td></tr>
+        <tr><td>activation.conditions_met</td><td>Vera</td><td>Pablo (builds timeline)</td></tr>
+        <tr><td>concept.ready</td><td>Andrés</td><td>Celia → notifies Marcela (Gate 8)</td></tr>
+        <tr><td>arch_design.complete</td><td>Felipe</td><td>Celia → notifies Marcela (Gate 9)</td></tr>
+        <tr><td>engineering.package_complete</td><td>Emilio</td><td>Bruno (budget alignment)</td></tr>
+        <tr><td>budget_alignment.ready</td><td>Bruno</td><td>Celia → notifies Marcela (Gate 10)</td></tr>
+        <tr><td>executive_plans.ready</td><td>Hugo</td><td>Celia → notifies Marcela (Gate 11)</td></tr>
+        <tr><td>bidding.comparison_ready</td><td>Ofelia</td><td>Celia → notifies Marcela (Gate 12)</td></tr>
+        <tr><td>permit.approved</td><td>Paco</td><td>Vera (unlock construction)</td></tr>
+        <tr><td>project.closed</td><td>Vera</td><td>Controller + Tax + Arquitecto</td></tr>
+        <tr><td>campaign.published</td><td>Canal</td><td>Rafael</td></tr>
+        <tr><td>quarter_end (cron)</td><td>System</td><td>FP&amp;A + Tax + Carmen + Alma</td></tr>
+        <tr><td>agent.underperforming</td><td>Alma</td><td>COO (flag)</td></tr>
+      </table>
+    </div>
+
+    <!-- Document types reference -->
+    <div class="dcard">
+      <div class="dcard-title">Document Type Reference</div>
+      <div style="margin-bottom:10px">
+        <div class="dgl i" style="margin-bottom:5px">Inputs — consumed by agents</div>
+        <div class="note">Documents that exist before a phase begins. Always present in Asana as task attachments or file system references.</div>
+      </div>
+      <div style="margin-bottom:10px">
+        <div class="dgl o" style="margin-bottom:5px">Outputs — produced by agents</div>
+        <div class="note">New documents created during a phase. Become inputs for the next phase or are delivered to clients/architects.</div>
+      </div>
+      <div style="margin-bottom:10px">
+        <div class="dgl a" style="margin-bottom:5px">Archived — stored, not forwarded</div>
+        <div class="note">Intermediate versions, drafts, raw materials. Kept for reference and audit trail but not passed downstream.</div>
+      </div>
+      <div style="margin-top:12px">
+        <div class="dbl">YAML Handoff Schema</div>
+        <div class="note">All agent-to-agent handoffs use structured YAML with: project_id, from_agent, to_agent, current_phase, status, required_inputs, outputs_created, decisions_needed, blockers, next_action, timestamp</div>
+      </div>
+    </div>
+
+    <!-- File system vs Asana -->
+    <div class="dcard">
+      <div class="dcard-title">Persistence Split</div>
+      <div class="db">
+        <div class="dbl">File System — Source of Truth for Content</div>
+        <div class="df"><span class="k">campaigns/pending/</span> <span class="v">marketing JSON files</span></div>
+        <div class="df"><span class="k">projects/</span> <span class="v">SOW, budgets, proposals, contracts</span></div>
+        <div class="df"><span class="k">metrics/quarterly/</span> <span class="v">Alma performance JSON</span></div>
+      </div>
+      <div class="db">
+        <div class="dbl">Asana — Source of Truth for State &amp; Coordination</div>
+        <div class="df"><span class="k">task state</span> <span class="v">current_phase, review_status, decision_status</span></div>
+        <div class="df"><span class="k">dependencies</span> <span class="v">blocking relationships between tasks</span></div>
+        <div class="df"><span class="k">comments</span> <span class="v">signed agent activity log</span></div>
+        <div class="df"><span class="k">custom fields</span> <span class="v">40 fields across 5 task types</span></div>
+      </div>
+      <div class="db">
+        <div class="dbl">WhatsApp / Email — Human Interface</div>
+        <div class="df"><span class="k">review requests</span> <span class="v">Celia formats + sends</span></div>
+        <div class="df"><span class="k">decisions</span> <span class="v">Celia parses + normalizes → Asana</span></div>
+        <div class="note" style="margin-top:6px">Humans never log into Asana to make decisions. All decisions flow through WhatsApp/email → Celia → Asana → webhook → next agent.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div><!-- end flow -->
+</div><!-- end main -->
+</body>
+</html>

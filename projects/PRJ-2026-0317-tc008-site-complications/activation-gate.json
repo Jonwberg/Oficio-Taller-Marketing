@@ -1,0 +1,11 @@
+{
+  "gate_check": "activation_prerequisites",
+  "area_program_complete": true,
+  "site_data_complete": false,
+  "contract_signed": true,
+  "deposit_confirmed": true,
+  "blocker": "hydrologic_study_pending",
+  "blocker_reason": "Stream running through northeast corner requires setback analysis and possible retention basin. Hydrologic study estimated 6 weeks.",
+  "gate_status": "blocked",
+  "checked_at": "2026-03-17T11:30:00-07:00"
+}

@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oficio Taller — System Map</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #0f0e0c;
+      --surface:     #181614;
+      --surface2:    #201e1b;
+      --rule:        #2a2724;
+      --text:        #e8e2d8;
+      --text-dim:    #7a7268;
+      --text-mid:    #b0a898;
+
+      --purple:      #9b7ecb;
+      --purple-dim:  #3a2d55;
+      --teal:        #5ab4a0;
+      --teal-dim:    #1a3d38;
+      --orange:      #d4895a;
+      --orange-dim:  #3d2510;
+      --brown:       #a07850;
+      --brown-dim:   #2d2010;
+      --green:       #6aaa78;
+      --green-dim:   #1a3020;
+      --red:         #c06060;
+      --red-dim:     #3a1818;
+      --gold:        #c8a84a;
+      --gold-dim:    #3a2e10;
+      --blue:        #6090c8;
+      --blue-dim:    #1a2840;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 2rem 2.5rem 1.5rem;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+    }
+
+    .header-studio {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    .header-title {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: 0.06em;
+    }
+
+    .header-sub {
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-left: auto;
+    }
+
+    /* ── Layout ── */
+    .layout {
+      display: flex;
+      height: calc(100vh - 70px);
+    }
+
+    .canvas {
+      flex: 1;
+      overflow: auto;
+      padding: 3rem 2rem 4rem;
+      position: relative;
+    }
+
+    /* ── Detail panel ── */
+    .detail-panel {
+      width: 320px;
+      border-left: 1px solid var(--rule);
+      background: var(--surface);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: width 0.2s;
+    }
+
+    .detail-panel.empty .detail-body { opacity: 0; }
+
+    .detail-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .detail-type {
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .detail-name {
+      font-size: 1.1rem;
+      font-weight: 400;
+    }
+
+    .detail-body {
+      padding: 1.5rem;
+      overflow-y: auto;
+      flex: 1;
+      transition: opacity 0.2s;
+    }
+
+    .detail-label {
+      font-size: 0.58rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 0.5rem;
+      margin-top: 1.25rem;
+    }
+
+    .detail-label:first-child { margin-top: 0; }
+
+    .detail-desc {
+      font-size: 0.82rem;
+      line-height: 1.7;
+      color: var(--text-mid);
+    }
+
+    .detail-connects {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .connect-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 2px;
+      background: var(--surface2);
+      color: var(--text-mid);
+    }
+
+    .connect-tag .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+
+    .detail-empty {
+      padding: 2rem 1.5rem;
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    /* ── Section titles ── */
+    .section-title {
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* ── Flow groups ── */
+    .flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .flow-row {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      align-items: center;
+      position: relative;
+    }
+
+    .flow-arrow {
+      display: flex;
+      justify-content: center;
+      padding: 0.4rem 0;
+      color: var(--rule);
+      font-size: 1.1rem;
+    }
+
+    .flow-arrow-label {
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-align: center;
+      padding: 0 0 0.2rem;
+    }
+
+    /* ── Nodes ── */
+    .node {
+      position: relative;
+      padding: 0.7rem 1rem;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s, transform 0.1s;
+      user-select: none;
+      min-width: 120px;
+      text-align: center;
+    }
+
+    .node:hover {
+      transform: translateY(-1px);
+    }
+
+    .node.active {
+      outline: 1px solid rgba(255,255,255,0.15);
+      outline-offset: 2px;
+    }
+
+    .node-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+    }
+
+    .node-role {
+      font-size: 0.6rem;
+      opacity: 0.6;
+      letter-spacing: 0.06em;
+    }
+
+    .node-badge {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      font-size: 0.48rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.35rem;
+      border-radius: 2px;
+      background: var(--surface2);
+      color: var(--text-dim);
+    }
+
+    /* color variants */
+    .node-purple  { background: var(--purple-dim);  border-color: var(--purple);  color: var(--purple); }
+    .node-teal    { background: var(--teal-dim);    border-color: var(--teal);    color: var(--teal); }
+    .node-orange  { background: var(--orange-dim);  border-color: var(--orange);  color: var(--orange); }
+    .node-brown   { background: var(--brown-dim);   border-color: var(--brown);   color: var(--brown); }
+    .node-green   { background: var(--green-dim);   border-color: var(--green);   color: var(--green); }
+    .node-red     { background: var(--red-dim);     border-color: var(--red);     color: var(--red); }
+    .node-gold    { background: var(--gold-dim);    border-color: var(--gold);    color: var(--gold); }
+    .node-blue    { background: var(--blue-dim);    border-color: var(--blue);    color: var(--blue); }
+    .node-dim     { background: var(--surface2);    border-color: var(--rule);    color: var(--text-dim); }
+
+    /* skill nodes */
+    .node-skill {
+      border-style: dashed;
+      opacity: 0.75;
+      font-style: italic;
+    }
+    .node-skill:hover { opacity: 1; }
+
+    /* ── Pod wrapper ── */
+    .pod {
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 1rem 1.25rem 1.25rem;
+      background: var(--surface);
+      position: relative;
+    }
+
+    .pod-label {
+      position: absolute;
+      top: -0.55rem;
+      left: 1rem;
+      background: var(--surface);
+      padding: 0 0.4rem;
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    .pod-inner {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── Advisory section ── */
+    .advisory-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .advisory-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .advisory-col-label {
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 0.35rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* ── Connector lines (SVG overlay) ── */
+    .connectors {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: visible;
+    }
+
+    .connector {
+      stroke: var(--rule);
+      stroke-width: 1;
+      fill: none;
+      stroke-dasharray: 3 4;
+    }
+
+    /* ── Divider ── */
+    .flow-divider {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 2.5rem auto;
+      max-width: 900px;
+    }
+
+    /* ── Legend ── */
+    .legend {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.62rem;
+      color: var(--text-dim);
+      letter-spacing: 0.08em;
+    }
+
+    .legend-swatch {
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+    }
+
+    .legend-line {
+      width: 18px;
+      height: 1px;
+      border-top: 1px dashed var(--text-dim);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 700px) {
+      .detail-panel { display: none; }
+      .advisory-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <span class="header-studio">Oficio Taller</span>
+  <span class="header-title">Marketing System — Agent &amp; Skill Map</span>
+  <span class="header-sub">Click any node for detail</span>
+</header>
+
+<div class="layout">
+
+  <!-- ── Canvas ── -->
+  <div class="canvas">
+
+    <!-- Legend -->
+    <div class="legend">
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--purple)"></div> CMO / Orchestrator</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--teal)"></div> Resonancia Pod</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--orange)"></div> Materia Pod</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--brown)"></div> Intake Agent</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--green)"></div> Publisher</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--red)"></div> Pulso Pod</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--gold)"></div> Advisory Skills</div>
+      <div class="legend-item"><div class="legend-line"></div> Skill / Trigger</div>
+    </div>
+
+    <!-- ══ MARKETING PIPELINE ══ -->
+    <div class="section-title">Marketing Campaign Pipeline</div>
+
+    <div class="flow">
+
+      <!-- Row 0: Trigger -->
+      <div class="flow-row">
+        <div class="node node-dim node-skill"
+             data-id="skill-architect-intake"
+             onclick="select(this)">
+          <div class="node-label">/architect-intake</div>
+          <div class="node-role">trigger skill</div>
+        </div>
+      </div>
+
+      <div class="flow-arrow">↓</div>
+
+      <!-- Row 1: Intake -->
+      <div class="flow-row">
+        <div class="node node-brown"
+             data-id="agent-arquitecto"
+             onclick="select(this)">
+          <div class="node-label">Arquitecto</div>
+          <div class="node-role">Intake &amp; Brief Structure</div>
+        </div>
+      </div>
+
+      <div class="flow-arrow-label">Structured brief ready</div>
+      <div class="flow-arrow">↓</div>
+
+      <!-- Row 2: Run Campaign skill + Valentina -->
+      <div class="flow-row">
+        <div class="node node-dim node-skill"
+             data-id="skill-run-campaign"
+             onclick="select(this)">
+          <div class="node-label">/run-campaign</div>
+          <div class="node-role">pipeline orchestrator skill</div>
+        </div>
+        <div style="color:var(--rule); font-size:1.1rem">→</div>
+        <div class="node node-purple"
+             data-id="agent-valentina"
+             onclick="select(this)">
+          <div class="node-label">Valentina</div>
+          <div class="node-role">CMO — Orchestrator</div>
+        </div>
+      </div>
+
+      <div class="flow-arrow-label">Dispatches pods in sequence</div>
+      <div class="flow-arrow">↓</div>
+
+      <!-- Row 3: Resonancia Pod -->
+      <div class="flow-row">
+        <div class="pod">
+          <span class="pod-label">Resonancia Pod</span>
+          <div class="pod-inner">
+            <div class="node node-teal"
+                 data-id="agent-lucia"
+                 onclick="select(this)">
+              <div class="node-label">Lucía</div>
+              <div class="node-role">Audience Intelligence</div>
+            </div>
+            <div style="color:var(--rule); font-size:1.1rem">→</div>
+            <div class="node node-teal"
+                 data-id="agent-marco"
+                 onclick="select(this)">
+              <div class="node-label">Marco</div>
+              <div class="node-role">Creative Brief Writer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-arrow-label">Creative brief passed to Materia</div>
+      <div class="flow-arrow">↓</div>
+
+      <!-- Row 4: Materia Pod -->
+      <div class="flow-row">
+        <div class="pod">
+          <span class="pod-label">Materia Pod</span>
+          <div class="pod-inner">
+            <div class="node node-orange"
+                 data-id="agent-sofia"
+                 onclick="select(this)">
+              <div class="node-label">Sofía</div>
+              <div class="node-role">Content Strategist</div>
+            </div>
+            <div style="color:var(--rule); font-size:1.1rem">→</div>
+            <div class="node node-orange"
+                 data-id="agent-diego"
+                 onclick="select(this)">
+              <div class="node-label">Diego</div>
+              <div class="node-role">Bilingual Copywriter</div>
+            </div>
+            <div style="color:var(--rule); font-size:1.1rem">→</div>
+            <div class="node node-orange"
+                 data-id="agent-ileana"
+                 onclick="select(this)">
+              <div class="node-label">Ileana</div>
+              <div class="node-role">Visual Director</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-arrow-label">Valentina brand review → Approval package generated</div>
+      <div class="flow-arrow">↓</div>
+
+      <!-- Row 5: CEO Gate -->
+      <div class="flow-row">
+        <div class="node node-dim"
+             data-id="ceo-gate"
+             onclick="select(this)"
+             style="min-width:160px; border-color:#4a4640;">
+          <div class="node-label" style="color:var(--text)">CEO Approval Gate</div>
+          <div class="node-role">WhatsApp notification sent</div>
+        </div>
+      </div>
+
+      <!-- Branch: Approve or Reject -->
+      <div class="flow-row" style="gap:3rem; margin-top:0.4rem;">
+        <div style="text-align:center; color:var(--green); font-size:0.7rem; letter-spacing:0.1em;">
+          ↙ APRUEBA
+        </div>
+        <div style="text-align:center; color:var(--red); font-size:0.7rem; letter-spacing:0.1em;">
+          RECHAZA ↘
+        </div>
+      </div>
+
+      <div class="flow-row" style="gap:3rem; align-items:flex-start;">
+
+        <!-- Approve path -->
+        <div style="display:flex;flex-direction:column;align-items:center;gap:0;">
+          <div class="node node-dim node-skill"
+               data-id="skill-approve-campaign"
+               onclick="select(this)">
+            <div class="node-label">/approve-campaign</div>
+            <div class="node-role">trigger skill</div>
+          </div>
+          <div class="flow-arrow" style="padding:0.3rem 0;">↓</div>
+          <div class="node node-green"
+               data-id="agent-canal"
+               onclick="select(this)">
+            <div class="node-label">Canal</div>
+            <div class="node-role">Publisher</div>
+          </div>
+          <div style="margin-top:0.6rem; display:flex; flex-direction:column; gap:0.35rem; align-items:center;">
+            <div class="node node-dim" style="min-width:90px; padding:0.4rem 0.7rem; font-size:0.6rem; cursor:default;">
+              <div class="node-label" style="font-size:0.58rem; color:var(--text-mid)">Cargo Website</div>
+            </div>
+            <div class="node node-dim" style="min-width:90px; padding:0.4rem 0.7rem; font-size:0.6rem; cursor:default;">
+              <div class="node-label" style="font-size:0.58rem; color:var(--text-mid)">Instagram</div>
+            </div>
+            <div class="node node-dim" style="min-width:90px; padding:0.4rem 0.7rem; font-size:0.6rem; cursor:default;">
+              <div class="node-label" style="font-size:0.58rem; color:var(--text-mid)">YouTube</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reject path -->
+        <div style="display:flex;flex-direction:column;align-items:center;gap:0;">
+          <div class="node" style="border-color:var(--red-dim); background:var(--red-dim); color:var(--red); min-width:120px; cursor:default;">
+            <div class="node-label" style="font-size:0.62rem;">Notes Sent</div>
+            <div class="node-role">Valentina coordinates revisions</div>
+          </div>
+          <div class="flow-arrow" style="padding:0.3rem 0;">↓</div>
+          <div style="font-size:0.62rem; color:var(--text-dim); letter-spacing:0.06em; text-align:center;">
+            Re-enters pipeline<br>at Materia or Resonancia
+          </div>
+        </div>
+      </div>
+
+      <!-- Quarterly loop -->
+      <div style="margin-top:1.5rem; display:flex; align-items:center; justify-content:center; gap:1rem; flex-wrap:wrap;">
+        <div class="node node-dim node-skill"
+             data-id="skill-quarterly-review"
+             onclick="select(this)">
+          <div class="node-label">/quarterly-review</div>
+          <div class="node-role">quarterly trigger skill</div>
+        </div>
+        <div style="color:var(--rule); font-size:1.1rem">→</div>
+        <div class="node node-red"
+             data-id="agent-rafael"
+             onclick="select(this)">
+          <div class="node-label">Rafael</div>
+          <div class="node-role">Metrics Analyst</div>
+        </div>
+        <div style="color:var(--rule); font-size:1.1rem">→</div>
+        <div class="node node-red"
+             data-id="agent-carmen"
+             onclick="select(this)">
+          <div class="node-label">Carmen</div>
+          <div class="node-role">Learning Loop</div>
+        </div>
+        <div style="color:var(--rule); font-size:1.1rem">→</div>
+        <div style="font-size:0.65rem; color:var(--text-dim); letter-spacing:0.06em;">
+          feeds back to<br>Valentina + Lucía
+        </div>
+      </div>
+
+    </div><!-- /flow -->
+
+    <hr class="flow-divider">
+
+    <!-- ══ ADVISORY SUITE ══ -->
+    <div class="section-title">Business Advisory Skill Suite <span style="font-size:0.52rem;color:var(--text-dim);letter-spacing:0.08em;margin-left:0.5rem;">(standalone — invoked on demand)</span></div>
+
+    <div class="advisory-grid">
+
+      <!-- Left: Integrated + Marketing -->
+      <div class="advisory-col">
+        <div class="advisory-col-label">Finance &amp; Operations</div>
+
+        <div class="node node-gold"
+             data-id="skill-finance-ops"
+             onclick="select(this)"
+             style="text-align:left; padding:0.9rem 1rem;">
+          <div class="node-badge">unified layer</div>
+          <div class="node-label">finance-ops-advisory</div>
+          <div class="node-role">FP&amp;A + Controller + COO + CFO integrated</div>
+        </div>
+
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-left:0.75rem;">
+          <div class="node node-gold node-skill"
+               data-id="skill-fpa"
+               onclick="select(this)" style="min-width:0; flex:1;">
+            <div class="node-label" style="font-size:0.6rem;">fpa-advisory</div>
+            <div class="node-role">budgeting &amp; forecast</div>
+          </div>
+          <div class="node node-gold node-skill"
+               data-id="skill-controller"
+               onclick="select(this)" style="min-width:0; flex:1;">
+            <div class="node-label" style="font-size:0.6rem;">controller-advisory</div>
+            <div class="node-role">reporting &amp; controls</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-left:0.75rem;">
+          <div class="node node-gold node-skill"
+               data-id="skill-coo"
+               onclick="select(this)" style="min-width:0; flex:1;">
+            <div class="node-label" style="font-size:0.6rem;">coo-advisory</div>
+            <div class="node-role">operations &amp; execution</div>
+          </div>
+          <div class="node node-gold node-skill"
+               data-id="skill-cfo"
+               onclick="select(this)" style="min-width:0; flex:1;">
+            <div class="node-label" style="font-size:0.6rem;">cfo-advisory</div>
+            <div class="node-role">strategy &amp; capital</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Legal + Tax -->
+      <div class="advisory-col">
+        <div class="advisory-col-label">Legal &amp; Tax</div>
+
+        <div class="node node-blue"
+             data-id="skill-legal"
+             onclick="select(this)"
+             style="text-align:left; padding:0.9rem 1rem;">
+          <div class="node-label">legal-review</div>
+          <div class="node-role">Mexican law · real estate · construction · environmental</div>
+        </div>
+
+        <div class="node node-blue"
+             data-id="skill-tax"
+             onclick="select(this)"
+             style="text-align:left; padding:0.9rem 1rem;">
+          <div class="node-label">tax-advisory</div>
+          <div class="node-role">PFAE · ISR / IVA · cross-border US &amp; CA clients</div>
+        </div>
+      </div>
+
+    </div><!-- /advisory-grid -->
+
+  </div><!-- /canvas -->
+
+  <!-- ── Detail panel ── -->
+  <div class="detail-panel empty" id="detail-panel">
+    <div class="detail-body">
+      <div class="detail-empty">Click any agent or skill node to see its role, responsibilities, and connections.</div>
+    </div>
+  </div>
+
+</div><!-- /layout -->
+
+<script>
+  const DATA = {
+    "skill-architect-intake": {
+      type: "Skill",
+      color: "var(--text-dim)",
+      name: "/architect-intake",
+      desc: "Trigger skill invoked when architects provide raw project materials — photos, notes, drive links, sensory descriptions. Launches Arquitecto to structure everything into a clean campaign brief that Valentina and the pods can work from without follow-up questions.",
+      connects: [
+        { label: "Triggers →", name: "Arquitecto", color: "var(--brown)" }
+      ]
+    },
+    "agent-arquitecto": {
+      type: "Agent — Intake",
+      color: "var(--brown)",
+      name: "Arquitecto",
+      desc: "Receives raw project materials from the architects: photos, drive folders, notes, sensory descriptions. Structures them into a complete, unambiguous campaign brief — asset inventory, project summary, photo status, open questions resolved. The brief is the handoff document for the entire pipeline.",
+      connects: [
+        { label: "Hands off to →", name: "Valentina / run-campaign", color: "var(--purple)" }
+      ]
+    },
+    "skill-run-campaign": {
+      type: "Skill",
+      color: "var(--text-dim)",
+      name: "/run-campaign",
+      desc: "Pipeline orchestrator skill. After Arquitecto completes a brief, this skill dispatches all pods in sequence — Resonancia then Materia — then triggers Valentina's brand review, generates the CEO approval package, and sends the WhatsApp notification to the CEO.",
+      connects: [
+        { label: "Coordinates →", name: "Valentina (CMO)", color: "var(--purple)" },
+        { label: "Dispatches →", name: "Resonancia Pod: Lucía → Marco", color: "var(--teal)" },
+        { label: "Dispatches →", name: "Materia Pod: Sofía → Diego → Ileana", color: "var(--orange)" }
+      ]
+    },
+    "agent-valentina": {
+      type: "Agent — CMO Orchestrator",
+      color: "var(--purple)",
+      name: "Valentina",
+      desc: "CMO and narrative steward. Does not write copy, design visuals, or set strategy — she coordinates everyone who does. Holds the brand standard. Reviews all Materia outputs for fidelity to Oficio Taller's voice before anything reaches the CEO. Generates the approval package and sends the WhatsApp notification.",
+      connects: [
+        { label: "Receives brief from →", name: "Arquitecto", color: "var(--brown)" },
+        { label: "Dispatches →", name: "Lucía (Resonancia)", color: "var(--teal)" },
+        { label: "Reviews →", name: "Materia Pod outputs", color: "var(--orange)" },
+        { label: "Submits to →", name: "CEO Gate", color: "var(--text-dim)" },
+        { label: "Receives loop from →", name: "Carmen (Pulso)", color: "var(--red)" }
+      ]
+    },
+    "agent-lucia": {
+      type: "Agent — Resonancia Pod",
+      color: "var(--teal)",
+      name: "Lucía",
+      desc: "Audience intelligence analyst. Identifies which segment the project speaks to most directly, what value-language they use, what emotional hook creates genuine resonance. Optimizes for resonance, not reach. Does not write the brief — she generates the intelligence Marco converts into direction.",
+      connects: [
+        { label: "Receives from →", name: "Valentina (brief)", color: "var(--purple)" },
+        { label: "Passes to →", name: "Marco", color: "var(--teal)" },
+        { label: "Updated quarterly by →", name: "Carmen (Pulso loop)", color: "var(--red)" }
+      ]
+    },
+    "agent-marco": {
+      type: "Agent — Resonancia Pod",
+      color: "var(--teal)",
+      name: "Marco",
+      desc: "Creative brief writer. Takes Lucía's audience intelligence and converts it into a precise, actionable creative brief for the Materia Pod — telling Sofía, Diego, and Ileana exactly how to use the intelligence. If the brief is vague, the work will be vague.",
+      connects: [
+        { label: "Receives from →", name: "Lucía", color: "var(--teal)" },
+        { label: "Passes to →", name: "Sofía (Materia)", color: "var(--orange)" }
+      ]
+    },
+    "agent-sofia": {
+      type: "Agent — Materia Pod",
+      color: "var(--orange)",
+      name: "Sofía",
+      desc: "Content strategist. Designs the campaign calendar — which platforms, what post types, in what sequence, on what dates. Does not write copy or select assets. Decides the shape and cadence of the campaign. Works directly from Marco's creative brief.",
+      connects: [
+        { label: "Receives from →", name: "Marco (creative brief)", color: "var(--teal)" },
+        { label: "Passes to →", name: "Diego", color: "var(--orange)" }
+      ]
+    },
+    "agent-diego": {
+      type: "Agent — Materia Pod",
+      color: "var(--orange)",
+      name: "Diego",
+      desc: "Bilingual copywriter. Writes all campaign copy in Spanish and English — Instagram captions, YouTube titles and descriptions, website text, Reels scripts. Every word must earn its place. The goal is to make a right-fit person feel recognized, not to convince anyone of anything.",
+      connects: [
+        { label: "Receives from →", name: "Sofía (strategy + calendar)", color: "var(--orange)" },
+        { label: "Passes to →", name: "Ileana", color: "var(--orange)" }
+      ]
+    },
+    "agent-ileana": {
+      type: "Agent — Materia Pod",
+      color: "var(--orange)",
+      name: "Ileana",
+      desc: "Visual director. Reviews available photo and video assets and produces the visual plan — which photos to use, in what order, with precise framing and edit notes. Does not create images. Selects from what the architects have provided and sequences it to support the message angle.",
+      connects: [
+        { label: "Receives from →", name: "Diego (copy)", color: "var(--orange)" },
+        { label: "Outputs to →", name: "Valentina (brand review)", color: "var(--purple)" }
+      ]
+    },
+    "ceo-gate": {
+      type: "Decision Gate",
+      color: "var(--text-dim)",
+      name: "CEO Approval Gate",
+      desc: "The single human decision point in the pipeline. Valentina generates a formatted approval package — campaign summary, all copy, visual plan, schedule, open flags. A WhatsApp notification is sent to the CEO. The CEO reviews on the approval page and decides: Aprobar or Rechazar con notas.",
+      connects: [
+        { label: "Approve path →", name: "/approve-campaign → Canal", color: "var(--green)" },
+        { label: "Reject path →", name: "Notes → Valentina → revisions", color: "var(--red)" }
+      ]
+    },
+    "skill-approve-campaign": {
+      type: "Skill",
+      color: "var(--text-dim)",
+      name: "/approve-campaign",
+      desc: "Invoked after CEO approval. Confirms the decision, moves the campaign folder from pending/ to approved/, dispatches Canal to publish in the exact sequence Sofía designed, and closes the campaign into published/ when all posts are live.",
+      connects: [
+        { label: "Triggers →", name: "Canal (publisher)", color: "var(--green)" }
+      ]
+    },
+    "agent-canal": {
+      type: "Agent — Publisher",
+      color: "var(--green)",
+      name: "Canal",
+      desc: "Publisher agent. Executes only — does not create, revise, or improve. Coordinates publishing approved content to Cargo website, Instagram, and YouTube in the exact sequence Sofía designed. Only activates after CEO approval is confirmed in ceo-decision.json.",
+      connects: [
+        { label: "Publishes to →", name: "Cargo Website", color: "var(--text-dim)" },
+        { label: "Publishes to →", name: "Instagram", color: "var(--text-dim)" },
+        { label: "Publishes to →", name: "YouTube", color: "var(--text-dim)" }
+      ]
+    },
+    "skill-quarterly-review": {
+      type: "Skill",
+      color: "var(--text-dim)",
+      name: "/quarterly-review",
+      desc: "Run at the end of each quarter or after a campaign cycle completes. Dispatches Rafael to collect and score metrics, then Carmen to synthesize the learning brief, then feeds insights back into Valentina and Lucía for the next campaign cycle. Closes the feedback loop.",
+      connects: [
+        { label: "Triggers →", name: "Rafael (metrics)", color: "var(--red)" },
+        { label: "Then →", name: "Carmen (learning loop)", color: "var(--red)" },
+        { label: "Feeds into →", name: "Valentina + Lucía", color: "var(--purple)" }
+      ]
+    },
+    "agent-rafael": {
+      type: "Agent — Pulso Pod",
+      color: "var(--red)",
+      name: "Rafael",
+      desc: "Metrics analyst. Collects, scores, and interprets engagement and inquiry data across all platforms. Distinguishes between attention that leads somewhere and attention that leads nowhere. A post with 80 saves and 3 qualified inquiries is better than one with 2,000 likes and no saves.",
+      connects: [
+        { label: "Triggered by →", name: "/quarterly-review", color: "var(--text-dim)" },
+        { label: "Passes to →", name: "Carmen", color: "var(--red)" }
+      ]
+    },
+    "agent-carmen": {
+      type: "Agent — Pulso Pod",
+      color: "var(--red)",
+      name: "Carmen",
+      desc: "Learning loop synthesizer. Closes the feedback loop. Rafael tells her what happened — she tells Valentina and Lucía what it means and what to do about it. Her brief determines how the studio's marketing evolves from one quarter to the next.",
+      connects: [
+        { label: "Receives from →", name: "Rafael (metrics report)", color: "var(--red)" },
+        { label: "Delivers to →", name: "Valentina + Lucía", color: "var(--purple)" }
+      ]
+    },
+
+    // Advisory skills
+    "skill-finance-ops": {
+      type: "Skill — Advisory (Unified)",
+      color: "var(--gold)",
+      name: "finance-ops-advisory",
+      desc: "Unified finance-and-operations advisory layer. Combines FP&A, Controller, COO, and Fractional CFO thinking into a single integrated response. Invoke when leadership needs cross-functional analysis spanning planning, reporting quality, operational execution, and capital decisions at the same time.",
+      connects: [
+        { label: "Integrates →", name: "fpa-advisory", color: "var(--gold)" },
+        { label: "Integrates →", name: "controller-advisory", color: "var(--gold)" },
+        { label: "Integrates →", name: "coo-advisory", color: "var(--gold)" },
+        { label: "Integrates →", name: "cfo-advisory", color: "var(--gold)" }
+      ]
+    },
+    "skill-fpa": {
+      type: "Skill — Advisory",
+      color: "var(--gold)",
+      name: "fpa-advisory",
+      desc: "FP&A advisor for budgeting, rolling forecasts, variance analysis, projections, scenario planning, management reporting, and profitability optimization. Conservative on assumptions. Connects financial signals to operating decisions.",
+      connects: [{ label: "Part of →", name: "finance-ops-advisory (unified layer)", color: "var(--gold)" }]
+    },
+    "skill-controller": {
+      type: "Skill — Advisory",
+      color: "var(--gold)",
+      name: "controller-advisory",
+      desc: "Controller-level review of income statement integrity, classification consistency, accrual and cutoff quality, unusual variances, reporting reliability, and internal control awareness. Never smooths over inconsistencies for presentation purposes.",
+      connects: [{ label: "Part of →", name: "finance-ops-advisory (unified layer)", color: "var(--gold)" }]
+    },
+    "skill-coo": {
+      type: "Skill — Advisory",
+      color: "var(--gold)",
+      name: "coo-advisory",
+      desc: "COO-level operational advisory for execution reliability, bottleneck identification, cross-functional coordination, capacity planning, process discipline, and connecting financial pressure to operating changes.",
+      connects: [{ label: "Part of →", name: "finance-ops-advisory (unified layer)", color: "var(--gold)" }]
+    },
+    "skill-cfo": {
+      type: "Skill — Advisory",
+      color: "var(--gold)",
+      name: "cfo-advisory",
+      desc: "Fractional CFO advisory for strategic finance, capital allocation, cash resilience, earnings quality, owner compensation strategy, reinvestment timing, downside scenario planning, and executive decision support.",
+      connects: [{ label: "Part of →", name: "finance-ops-advisory (unified layer)", color: "var(--gold)" }]
+    },
+    "skill-legal": {
+      type: "Skill — Advisory",
+      color: "var(--blue)",
+      name: "legal-review",
+      desc: "Pre-review of isolated contract clauses under Mexican law for an architectural firm. Emphasis on real estate, construction, architectural services, and environmental permitting. Conservative 60/40 posture. Reviews for enforceability, ambiguity, liability allocation, permitting risk, and regulatory exposure.",
+      connects: [
+        { label: "Escalates to →", name: "Licensed Mexican counsel when warranted", color: "var(--text-dim)" }
+      ]
+    },
+    "skill-tax": {
+      type: "Skill — Advisory",
+      color: "var(--blue)",
+      name: "tax-advisory",
+      desc: "Tax and accounting advisory for a Mexican persona física con actividad empresarial. Covers ISR/IVA compliance, CFDI/invoice discipline, deductibility, cross-border issues with US/Canada clients, foreign-currency collections, and funds received in US bank accounts.",
+      connects: [
+        { label: "Escalates to →", name: "Licensed contador or tax attorney when warranted", color: "var(--text-dim)" }
+      ]
+    }
+  };
+
+  let activeNode = null;
+
+  function select(el) {
+    if (activeNode) activeNode.classList.remove('active');
+    el.classList.add('active');
+    activeNode = el;
+
+    const id   = el.dataset.id;
+    const item = DATA[id];
+    if (!item) return;
+
+    const panel = document.getElementById('detail-panel');
+    panel.classList.remove('empty');
+
+    panel.innerHTML = `
+      <div class="detail-header">
+        <div class="detail-type" style="color:${item.color}">${item.type}</div>
+        <div class="detail-name">${item.name}</div>
+      </div>
+      <div class="detail-body">
+        <div class="detail-label">Role</div>
+        <div class="detail-desc">${item.desc}</div>
+        ${item.connects && item.connects.length ? `
+          <div class="detail-label">Connections</div>
+          <div class="detail-connects">
+            ${item.connects.map(c => `
+              <div class="connect-tag">
+                <span class="dot" style="background:${c.color}"></span>
+                <span style="color:var(--text-dim); font-size:0.65rem;">${c.label}</span>
+                <span>${c.name}</span>
+              </div>
+            `).join('')}
+          </div>
+        ` : ''}
+      </div>
+    `;
+  }
+</script>
+
+</body>
+</html>

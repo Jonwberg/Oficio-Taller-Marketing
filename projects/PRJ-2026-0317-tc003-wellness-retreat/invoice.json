@@ -1,0 +1,10 @@
+{
+  "project_name": "James Hartwell — commercial_hotel — Todos Santos, BCS",
+  "client_name": "James Hartwell",
+  "milestone_name": "M3 — Executive Plans Approved",
+  "amount": 126000,
+  "due_date": "2026-12-22",
+  "payment_instructions": "Bank transfer to Oficio Taller. Bank: [BANK_NAME]. CLABE: [CLABE — TO BE CONFIGURED IN .env]. Reference: PRJ-2026-0317-tc003-wellness-retreat-M3.",
+  "currency": "USD",
+  "running_total": 420000
+}

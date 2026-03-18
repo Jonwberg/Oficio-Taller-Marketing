@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc003-wellness-retreat",
+  "phase": "DG-08",
+  "review_item": "architectural-design",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": "Architectural design set complete. All 3,000 sqm programmed. SECTUR and COFEPRIS checklists confirmed. Proceed to engineering.",
+  "timestamp": "2026-08-19T10:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "Dispatch Emilio — coordinate all engineering disciplines including structural, MEP, HVAC, solar, greywater, AV, and fire",
+  "route_to": "Emilio",
+  "sync_to_asana": true
+}

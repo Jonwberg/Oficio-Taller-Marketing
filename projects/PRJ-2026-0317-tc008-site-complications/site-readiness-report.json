@@ -1,0 +1,19 @@
+{
+  "required_documents": ["topographic_survey", "hydrologic_study"],
+  "request_sent_at": "2026-03-17T09:35:00-07:00",
+  "current_status": "hydrologic_study_pending",
+  "blockers": ["hydrologic_study_pending — stream proximity requires setback analysis and possible retention basin — estimated 6 weeks"],
+  "activation_delayed_by_hydrology": true,
+  "_detail": {
+    "topographic_survey": {
+      "rationale": "Required for all projects — establishes site boundaries, levels, and contours. Particularly important for this 15,000sqm site with steep slope on the west side.",
+      "received": false
+    },
+    "hydrologic_study": {
+      "rationale": "Required due to stream running through the northeast corner. Stream proximity requires setback analysis and possible retention basin design per BCS environmental regulations.",
+      "received": false,
+      "estimated_timeline_weeks": 6,
+      "logged_as": "activation_delayed_by_hydrology"
+    }
+  }
+}

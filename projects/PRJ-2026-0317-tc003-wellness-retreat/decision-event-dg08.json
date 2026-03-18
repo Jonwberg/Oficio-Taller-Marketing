@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc003-wellness-retreat",
+  "phase": "DG-08",
+  "review_item": "architectural-design",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": null,
+  "timestamp": "2026-08-19T10:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "Dispatch Emilio — coordinate all engineering disciplines including solar, greywater, and AV",
+  "route_to": "Emilio",
+  "sync_to_asana": true
+}

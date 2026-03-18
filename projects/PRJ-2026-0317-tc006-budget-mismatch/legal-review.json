@@ -1,0 +1,14 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "client_name": "Miguel Torres",
+  "review_date": "2026-03-17T14:30:00-07:00",
+  "approval_status": "approved_with_advisory",
+  "ip_rights_status": "Oficio Taller retains all intellectual property rights to architectural designs per standard contract clause. Client receives license to build the approved design at the specified site only.",
+  "contract_flags": [],
+  "advisory_notes": [
+    "Los Cabos is a federal zone municipality — confirm SEMARNAT clearance before permit submission to avoid construction stoppage.",
+    "Contract should include a budget alignment clause noting that construction cost estimates are preliminary and subject to contractor bidding — particularly given the stated budget vs. program scope gap.",
+    "RFC provided (TEST-RFC-006) — confirm valid Mexican RFC before CFDI issuance at project close."
+  ],
+  "reviewed_by": "Legal"
+}

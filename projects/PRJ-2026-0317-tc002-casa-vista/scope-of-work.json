@@ -1,0 +1,251 @@
+{
+  "project_type": "residential_in_development",
+  "template_applied": "sow-residential-in-development",
+  "client_name": "Patricia Reyes",
+  "project_id": "PRJ-2026-0317-tc002-casa-vista",
+  "scope_phases": [
+    {
+      "phase_number": 1,
+      "phase_name": "Conceptual Design",
+      "deliverables": [
+        "Parti diagram and massing model",
+        "3D conceptual model with massing respecting 7m HOA height limit",
+        "Material direction board (contemporary palette; natural stone and stucco per HOA covenant)",
+        "Color and texture direction",
+        "Preliminary space arrangement aligned with 337 sqm area program",
+        "Preliminary concept submitted to HOA design review committee (Residencial Vista del Mar) for early feedback"
+      ],
+      "duration_weeks": "4–6",
+      "milestone_trigger": "Phase 1 complete when client provides written approval of conceptual direction AND HOA early feedback has been received",
+      "revision_assumptions": "2 rounds of client revision included. Each additional round billed at MXN 8,000/day."
+    },
+    {
+      "phase_number": 2,
+      "phase_name": "Architectural Design",
+      "deliverables": [
+        "Floor plans all levels (1:100 scale)",
+        "Elevations all four facades (1:100) — natural stone and stucco facade per HOA covenant",
+        "Building sections minimum 2 (1:100)",
+        "Roof plan — no flat roofs over 2 floors per HOA covenant",
+        "Site plan with property boundaries, setbacks, access, parking",
+        "Interior design criteria document",
+        "Window and door schedule",
+        "Preliminary structural coordination sketch (Oficio Taller coordinates with structural engineer)",
+        "HOA design review submission package (floor plans + elevations in format required by Residencial Vista del Mar)",
+        "Covenant compliance checklist confirming: setbacks, maximum height (7m), facade materials (natural stone/stucco), parking count, prohibited uses, landscaping requirements, contemporary style compliance",
+        "Written HOA approval document (obtained by Oficio Taller on behalf of client)"
+      ],
+      "duration_weeks": "8–12",
+      "milestone_trigger": "Phase 2 complete when client provides written approval of architectural design AND written HOA approval from Residencial Vista del Mar is received",
+      "revision_assumptions": "2 rounds of client revision included (including HOA compliance). HOA-driven revisions beyond 2 rounds billed as change orders at MXN 10,000/day.",
+      "notes": "Municipal permit application cannot proceed until HOA written approval is received. Collaborators required: structural engineer, electrical engineer, plumbing/hydraulic engineer (all coordinated by Oficio Taller; client contracts engineers directly)."
+    },
+    {
+      "phase_number": 3,
+      "phase_name": "Engineering Coordination",
+      "deliverables": [
+        "Structural engineering drawings integrated with architectural set",
+        "Electrical single-line diagram and panel schedules",
+        "Lighting layout plan with fixture specifications",
+        "Plumbing and hydraulic layout",
+        "Irrigation plan (included per template default for residential)",
+        "Solar systems coordination (included — client confirmed solar in program)",
+        "Smart home / AV systems coordination (included — client confirmed smart home in program)",
+        "Foundation plan and details"
+      ],
+      "duration_weeks": "4–6",
+      "revision_assumptions": "1 round of structural coordination revision included. Changes driven by client program additions billed additionally.",
+      "notes": "Solar and smart home included in scope per client's confirmed special_features. Landscape architecture excluded by default (client responsibility for independent landscape architect)."
+    },
+    {
+      "phase_number": 4,
+      "phase_name": "Executive Plans",
+      "deliverables": [
+        "Fully coordinated construction drawing set (architectural + structural + MEP)",
+        "Detail sheets: wall sections, stairs, roof details, openings",
+        "Finish schedule (all surfaces, all rooms)",
+        "Door and window schedule with specifications",
+        "Built-in furniture drawings (kitchen, closets, built-in shelving)",
+        "Technical specifications document",
+        "Final HOA-compliant drawing set bearing HOA approval stamp or reference number from Residencial Vista del Mar"
+      ],
+      "duration_weeks": "4–6",
+      "revision_assumptions": "1 round of coordination revision included. Client-initiated changes after executive plan approval require a change order.",
+      "notes": "All engineers from Phase 3 must deliver coordinated final drawings."
+    },
+    {
+      "phase_number": 5,
+      "phase_name": "Contractor Bidding",
+      "deliverables": [
+        "Bid package preparation (executive plans + spec document sent to minimum 2 contractors)",
+        "Bid comparison matrix (contractor name, total, key line items, timeline, notes)",
+        "Recommendation with rationale",
+        "Development contractor pre-approval verification (confirm with client whether Residencial Vista del Mar maintains a contractor pre-approval list before Phase 5 begins)",
+        "Local contractor cost validation (bid prices reviewed against current Los Cabos construction cost benchmarks)"
+      ],
+      "duration_weeks": "3–4",
+      "notes": "Minimum 2 bids required. If only 1 contractor responds, matter is escalated to client before proceeding."
+    },
+    {
+      "phase_number": 6,
+      "phase_name": "Permitting",
+      "deliverables": [
+        "Building permit application package (architectural plans + structural calculations + forms)",
+        "Submission to Municipio de Los Cabos, BCS",
+        "Tracking and correction management until permit issued",
+        "Developer internal authorization verification (Oficio Taller verifies requirement with client during Phase 2)"
+      ],
+      "duration_weeks": "4–16",
+      "notes": "Permit timeline is authority-dependent. HOA approval from Phase 2 is a prerequisite."
+    }
+  ],
+  "payment_schedule": [
+    {
+      "milestone": "M1",
+      "name": "Contract Signing",
+      "percentage": 30,
+      "amount": 27200,
+      "currency": "USD",
+      "trigger_event": "Signed SOW + first payment received"
+    },
+    {
+      "milestone": "M2",
+      "name": "Concept Design Approved",
+      "percentage": 20,
+      "amount": 13600,
+      "currency": "USD",
+      "trigger_event": "Client written approval of Phase 1 (and HOA early feedback received)"
+    },
+    {
+      "milestone": "M3",
+      "name": "Construction Documents Delivered",
+      "percentage": 25,
+      "amount": 17000,
+      "currency": "USD",
+      "trigger_event": "Executive plans package + HOA-approved drawing set delivered"
+    },
+    {
+      "milestone": "M4",
+      "name": "Building Permit Obtained",
+      "percentage": 15,
+      "amount": 10200,
+      "currency": "USD",
+      "trigger_event": "Municipal permit document delivered to client"
+    },
+    {
+      "milestone": "M5",
+      "name": "Construction Administration Final",
+      "percentage": 10,
+      "amount": 6800,
+      "currency": "USD",
+      "trigger_event": "Final site visit report delivered (if supervision in scope); otherwise triggers at construction start"
+    }
+  ],
+  "total_architecture_fee": 74800,
+  "currency": "USD",
+  "payment_schedule_notes": "Payment amounts derived from seed data payment_schedule where available. M1 matches seed data (USD 27,200 = 40%). M2 and M3 recalculated from template percentages applied to USD 68,000 total fee. Seed data payment_schedule used as primary reference for M1.",
+  "responsibilities_matrix": [
+    {
+      "deliverable": "Conceptual design",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Client"
+    },
+    {
+      "deliverable": "Architectural drawings",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Client"
+    },
+    {
+      "deliverable": "HOA design review submission — Residencial Vista del Mar",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "HOA design committee"
+    },
+    {
+      "deliverable": "Covenant compliance checklist",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Client"
+    },
+    {
+      "deliverable": "HOA approval document",
+      "responsible_party": "Oficio Taller (pursues)",
+      "reviewed_by": "HOA / Client"
+    },
+    {
+      "deliverable": "Structural calculations",
+      "responsible_party": "Structural engineer",
+      "reviewed_by": "Oficio Taller coordinates"
+    },
+    {
+      "deliverable": "MEP engineering",
+      "responsible_party": "MEP engineers",
+      "reviewed_by": "Oficio Taller coordinates"
+    },
+    {
+      "deliverable": "Solar systems design",
+      "responsible_party": "Solar engineer / specialist",
+      "reviewed_by": "Oficio Taller coordinates"
+    },
+    {
+      "deliverable": "Smart home / AV systems design",
+      "responsible_party": "AV/technology integrator",
+      "reviewed_by": "Oficio Taller coordinates"
+    },
+    {
+      "deliverable": "Executive plans set",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Client + engineers"
+    },
+    {
+      "deliverable": "Bid package",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Client selects contractor"
+    },
+    {
+      "deliverable": "Developer contractor pre-approval",
+      "responsible_party": "Client",
+      "reviewed_by": "—"
+    },
+    {
+      "deliverable": "Permit application",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Municipio de Los Cabos"
+    },
+    {
+      "deliverable": "Construction",
+      "responsible_party": "Contractor",
+      "reviewed_by": "Oficio Taller (if supervision in scope)"
+    },
+    {
+      "deliverable": "Payment milestone sign-off",
+      "responsible_party": "Client",
+      "reviewed_by": "Oficio Taller invoices"
+    }
+  ],
+  "exclusions": [
+    "Structural, electrical, plumbing, and civil engineering fees — client contracts engineers directly; Oficio Taller coordinates only",
+    "Permit fees, municipal taxes, or government charges",
+    "Contractor selection or construction contracts — Oficio Taller recommends; client decides",
+    "Furniture, art, décor, or movable equipment not shown in built-in furniture drawings",
+    "Topographic survey — required; client responsibility to provide",
+    "Hydrologic or soil study (site conditions show no hydrology concerns; if municipality requires one, client responsibility)",
+    "Legal review of property title or easements",
+    "Construction cost guarantees — estimates are preliminary; final cost determined by contractor bids",
+    "HOA fees, development assessment fees, or Residencial Vista del Mar design review committee fees",
+    "Legal challenges to HOA decisions or covenant disputes — refer to attorney",
+    "Design changes required by HOA feedback beyond 2 included revision rounds — billed as change orders",
+    "Landscape architecture — excluded by default; included only if client requests as an additional service",
+    "Construction administration / supervisión arquitectónica — not included in this scope unless added by change order"
+  ],
+  "revision_assumptions": {
+    "phase_1": "2 rounds included. Additional rounds billed at MXN 8,000/day.",
+    "phase_2": "2 rounds included (including HOA compliance). HOA-driven revisions beyond 2 rounds billed as change orders at MXN 10,000/day.",
+    "phase_3": "1 round included. Changes driven by client program additions billed additionally.",
+    "phase_4": "1 round included. Client-initiated changes after Phase 4 approval require a change order."
+  },
+  "project_type_clauses": [
+    "residential_in_development_standard_clause",
+    "hoa_coordination_clause",
+    "covenant_review_clause",
+    "solar_coordination_clause"
+  ]
+}

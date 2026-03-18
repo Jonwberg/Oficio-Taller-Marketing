@@ -1,0 +1,30 @@
+{
+  "run_id": "2026-03-17-TC-004",
+  "segment": "D",
+  "agents": ["Tomás", "Vera", "Bruno", "Renata", "Legal", "Vera", "Rosa", "Celia"],
+  "result": "PASS",
+  "executed_at": "2026-03-19T09:00:00-07:00",
+  "files_written": [
+    "projects/PRJ-2026-0317-tc004-centro-salud/scope-of-work.json",
+    "projects/PRJ-2026-0317-tc004-centro-salud/budget.json",
+    "projects/PRJ-2026-0317-tc004-centro-salud/proposal.json",
+    "projects/PRJ-2026-0317-tc004-centro-salud/legal-review.json",
+    "projects/PRJ-2026-0317-tc004-centro-salud/client-communication.json",
+    "projects/PRJ-2026-0317-tc004-centro-salud/decision-event-DG-04.json",
+    "projects/PRJ-2026-0317-tc004-centro-salud/decision-event-DG-05.json",
+    "projects/PRJ-2026-0317-tc004-centro-salud/decision-event-DG-06.json"
+  ],
+  "verification": {
+    "sow_template_applied": "commercial_health_center",
+    "sow_project_type_clauses_includes_commercial_health_center_standard_clause": true,
+    "sow_project_type_clauses_includes_health_authority_compliance_clause": true,
+    "sow_project_type_clauses_includes_cofepris_compliance_clause": true,
+    "cofepris_compliance_explicit_deliverable_in_sow": true,
+    "celia_dg04_route_to": true,
+    "celia_dg04_field_count": 11,
+    "celia_dg05_route_to": true,
+    "celia_dg05_field_count": 11,
+    "celia_dg06_route_to": true,
+    "celia_dg06_field_count": 11
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "H",
+  "tc_id": "TC-008",
+  "project_id": "PRJ-2026-0317-tc008-site-complications",
+  "executed_at": "2026-11-10T09:00:00-07:00",
+  "schema_passes": true,
+  "agents_executed": [
+    {
+      "agent": "Hugo",
+      "role": "Executive plans coordination + DG-10",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/executive-plans.json",
+      "schema_pass": true,
+      "fields_validated": ["plan_set_components", "engineering_integration_confirmed", "conflicts_resolved", "client_signoff_milestone"],
+      "plan_set_components_count": 8,
+      "minimum_3_met": true,
+      "engineering_integration_confirmed": true,
+      "conflicts_resolved": true,
+      "tc008_specific_components": [
+        "Hydrologic setback compliance plan — stream buffer, site grading, drainage design respecting 15m setback",
+        "Infinity pool hydraulic and structural drawings"
+      ],
+      "fallbacks": [
+        "ASANA_UNAVAILABLE: would complete executive_plans task",
+        "GMAIL_UNAVAILABLE: would send DG-10 review request"
+      ]
+    },
+    {
+      "agent": "Celia",
+      "role": "DG-10 decision routing",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/decision-event-dg10.json",
+      "schema_pass": true,
+      "fields_validated": ["project_id", "phase", "review_item", "reviewed_by", "decision", "comment", "timestamp", "source_channel", "next_action", "route_to", "sync_to_asana"],
+      "decision": "approve",
+      "route_to": "Ofelia",
+      "route_to_field_correct": true,
+      "fallbacks": ["ASANA_UNAVAILABLE: would update decision_status for DG-10"]
+    }
+  ],
+  "tc008_checks": {
+    "hydrologic_setback_compliance_in_plan_set": true,
+    "infinity_pool_hydraulic_drawings_in_plan_set": true,
+    "all_celia_decision_events_use_route_to_field": true
+  },
+  "final_project_state": "bidding_in_progress",
+  "awaiting_gate": null,
+  "segment_H_complete": true,
+  "next_segment": "I",
+  "issues": []
+}

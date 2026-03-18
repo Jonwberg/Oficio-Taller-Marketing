@@ -1,0 +1,148 @@
+{
+  "run_id": "2026-03-16-TC-009",
+  "tc_id": "TC-009",
+  "segment": "I",
+  "project_id": "PRJ-2026-0316-familia-reyes-montoya",
+  "executed_at": "2026-03-16T12:30:00-07:00",
+
+  "agents": {
+    "ofelia": {
+      "output_file": "projects/PRJ-2026-0316-familia-reyes-montoya/bid-comparison.json",
+      "awaiting_gate_set": "DG-11",
+      "schema_validation": {
+        "bids": {
+          "present": true,
+          "is_array": true,
+          "count": 2,
+          "min_2_met": true,
+          "each_bid_has_contractor": true,
+          "each_bid_has_total": true,
+          "each_bid_has_line_items": true,
+          "each_bid_has_timeline": true,
+          "each_bid_has_notes": true
+        },
+        "recommendation": {
+          "present": true,
+          "value": "Constructora del Pacífico, S.A. de C.V.",
+          "is_escalate_to_marcela": false
+        },
+        "recommendation_rationale": {
+          "present": true,
+          "non_empty": true
+        },
+        "all_required_fields_present": true,
+        "schema_pass": true
+      },
+      "tc009_specific_checks": {
+        "two_or_more_bids": true,
+        "single_bid_escalation_path_not_triggered": true,
+        "coastal_experience_as_selection_criterion": true,
+        "coastal_criterion_evidence": "recommendation_rationale cites 8-project coastal BCS portfolio, Cerritos-specific experience, ZOFEMAT familiarity, and solar integration capability as selection factors beyond price"
+      },
+      "asana_status": "ASANA_UNAVAILABLE — tasks.bidding is null; logged and continued",
+      "gmail_status": "GMAIL_UNAVAILABLE — simulated thread_id THREAD-DG11-PRJ-2026-0316",
+      "result": "PASS"
+    },
+
+    "celia_dg11": {
+      "output_file": "projects/PRJ-2026-0316-familia-reyes-montoya/decision-event.json",
+      "decision": "approve",
+      "route_to": "Paco",
+      "schema_validation": {
+        "field_count": 11,
+        "all_11_fields_present": true,
+        "fields": [
+          "project_id",
+          "phase",
+          "review_item",
+          "reviewed_by",
+          "decision",
+          "comment",
+          "timestamp",
+          "source_channel",
+          "next_action",
+          "route_to",
+          "sync_to_asana"
+        ],
+        "route_to_field_correct": true,
+        "routed_to_field_used": false,
+        "timestamp_iso8601": true,
+        "schema_pass": true
+      },
+      "state_update": {
+        "project_state": "contractor_selected",
+        "awaiting_gate": null,
+        "review_thread_id": null
+      },
+      "asana_status": "ASANA_UNAVAILABLE — tasks.contractor_selection_gate is null; logged and continued",
+      "result": "PASS"
+    },
+
+    "paco": {
+      "output_file": "projects/PRJ-2026-0316-familia-reyes-montoya/permit-status.json",
+      "schema_validation": {
+        "submitted_at": {
+          "present": true,
+          "value": "2026-03-18T09:00:00-07:00",
+          "iso8601": true
+        },
+        "jurisdiction": {
+          "present": true,
+          "value": "Municipio de Los Cabos — Dirección de Desarrollo Urbano y Ecología / SEMARNAT Delegación BCS (Zona Federal Marítimo Terrestre)",
+          "is_generic_mexico": false,
+          "specific_authority_named": true
+        },
+        "status": {
+          "present": true,
+          "value": "approved",
+          "valid_enum": true
+        },
+        "corrections": {
+          "present": true,
+          "is_array": true,
+          "count": 1,
+          "populated_not_empty": true
+        },
+        "approved_at": {
+          "present": true,
+          "value": "2026-04-28T11:15:00-07:00",
+          "iso8601": true,
+          "consistent_with_status": true
+        },
+        "all_required_fields_present": true,
+        "schema_pass": true
+      },
+      "tc009_specific_checks": {
+        "corrections_cycle_simulated": true,
+        "initial_status_pending_corrections": true,
+        "corrections_array_populated_not_empty": true,
+        "correction_count": 1,
+        "correction_description_specific": true,
+        "correction_description_summary": "SEMARNAT requested corrected site plan with MHTL-referenced coastal zone setback line, ZOFEMAT boundary delineation overlay, and certified engineer's 20m setback compliance statement",
+        "correction_resolved_before_approval": true,
+        "final_status_approved": true,
+        "approved_at_set": true,
+        "asana_field_name_used": "permit_status",
+        "asana_field_name_correct": true,
+        "asana_project_state_field_NOT_used": true,
+        "bid_comparison_read": true,
+        "selected_contractor_noted": "Constructora del Pacífico, S.A. de C.V.",
+        "contractor_noted_in_context_only_not_new_field": true,
+        "vera_dispatched": true,
+        "vera_dispatch_mode": "construction_tracking"
+      },
+      "asana_status": "ASANA_UNAVAILABLE — tasks.permitting is null; logged and continued; field name 'permit_status' verified correct",
+      "result": "PASS"
+    }
+  },
+
+  "segment_i_result": "PASS",
+  "auto_fail_conditions_triggered": [],
+  "issues": [
+    {
+      "severity": "INFO",
+      "description": "All tasks.* IDs in state.json are null — Asana updates logged as ASANA_UNAVAILABLE throughout Segments H and I. No pipeline impact; agents continue per protocol.",
+      "impact": "none"
+    }
+  ]
+}

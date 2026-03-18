@@ -1,0 +1,22 @@
+{
+  "required_documents": [
+    {
+      "name": "Levantamiento Topográfico",
+      "rationale": "Required for all projects — establishes site boundaries, levels, and contours. Site has slight slope; topographic data is essential for massing and drainage design.",
+      "received": false
+    },
+    {
+      "name": "HOA Design Guidelines — Residencial Vista del Mar",
+      "rationale": "Required for residential_in_development projects. Client mentioned reglamento de construcción del fraccionamiento with contemporary style, natural stone/stucco facade, and 7m height limit restrictions. Full written guidelines needed for covenant compliance checklist.",
+      "received": false
+    },
+    {
+      "name": "Escrituras / Property Title",
+      "rationale": "Required to confirm ownership and check for easements or restrictions not yet disclosed. Client confirmed ownership but document not yet received.",
+      "received": false
+    }
+  ],
+  "request_sent_at": "2026-03-17T13:00:00-07:00",
+  "current_status": "documents_requested",
+  "blockers": []
+}

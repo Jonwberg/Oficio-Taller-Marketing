@@ -1,0 +1,275 @@
+{
+  "scope_phases": [
+    {
+      "phase_number": 1,
+      "phase_name": "Conceptual Design",
+      "deliverables": [
+        "Parti diagram and design narrative (2–4 pages including guest experience narrative)",
+        "Preliminary floor plan sketches by functional zone (casitas, spa, restaurant, lobby, back-of-house, site)",
+        "Site placement / orientation / massing concept",
+        "3D conceptual massing model",
+        "Material, finish, and brand direction board (preliminary)",
+        "Space arrangement diagram showing all programmed zones (casitas, lobby, restaurant, spa, pool, BOH)",
+        "SECTUR boutique hotel classification target confirmed with client"
+      ],
+      "duration_weeks": "6–8"
+    },
+    {
+      "phase_number": 2,
+      "phase_name": "Architectural Design",
+      "deliverables": [
+        "Floor plans all levels (1:100 scale) — all functional zones",
+        "Elevations all facades (1:100)",
+        "Building sections minimum 4 (1:100)",
+        "Roof plan",
+        "Site plan with property boundaries, setbacks, access, service entry, parking, landscape concept areas",
+        "Interior design criteria document by zone (lobby, corridors, casitas, restaurant, spa, pool, BOH)",
+        "Guest casita typical unit plan with furniture layout (standard, accessible, suite variants)",
+        "Window and door schedule",
+        "Preliminary structural coordination sketch",
+        "SECTUR compliance checklist (room count, accessible room percentage, egress requirements, signage zones)",
+        "COFEPRIS F&B zone compliance checklist (kitchen ventilation, grease trap, NSF/health code layout)"
+      ],
+      "collaborators_required": [
+        "Structural engineer (Oficio Taller coordinates; client contract is separate)",
+        "Electrical engineer (Oficio Taller coordinates)",
+        "Plumbing / hydraulic engineer (Oficio Taller coordinates)",
+        "HVAC engineer — always required for hotel projects (Oficio Taller coordinates)",
+        "AV / technology consultant — always required for hotel projects (Oficio Taller coordinates)"
+      ],
+      "duration_weeks": "12–16"
+    },
+    {
+      "phase_number": 3,
+      "phase_name": "Engineering Coordination",
+      "deliverables": [
+        "Structural engineering drawings integrated with architectural set",
+        "Electrical single-line diagram and panel schedules (including generator and UPS systems for hotel operations)",
+        "Lighting layout plan — all zones — with fixture specifications (design-led lighting for guest experience zones)",
+        "HVAC system design — zoned system layout, equipment schedules, energy efficiency targets",
+        "Plumbing and hydraulic layout including pool systems",
+        "Fire suppression system design (sprinkler layout and design basis)",
+        "AV / technology infrastructure layout — in-room AV, public area AV, network backbone",
+        "Solar system design — rooftop and site array layout, system capacity specification",
+        "Greywater recycling system design — collection, treatment, and reuse infrastructure layout",
+        "Foundation plan and details"
+      ],
+      "collaborators_required": [
+        "All engineers from Phase 2 must deliver coordinated drawings",
+        "Fire protection engineer (Oficio Taller coordinates)",
+        "AV/technology consultant (Oficio Taller coordinates)"
+      ],
+      "duration_weeks": "8–10"
+    },
+    {
+      "phase_number": 4,
+      "phase_name": "Executive Plans",
+      "deliverables": [
+        "Fully coordinated construction drawing set (architectural + structural + MEP + HVAC + fire + AV + solar + greywater)",
+        "Detail sheets: wall sections, ceiling details, lobby feature elements, casita millwork, openings",
+        "Finish schedule (all surfaces, all zones, all room types)",
+        "Door and window schedule with hardware and acoustic specifications",
+        "FF&E specification document: room-by-room specification of all furniture, fixtures, and equipment",
+        "Built-in millwork drawings (reception desk, bar, case goods prototypes for casitas)",
+        "Technical specifications document",
+        "SECTUR permit-ready drawing package"
+      ],
+      "collaborators_required": [
+        "All engineers from Phase 3 must deliver coordinated final drawings"
+      ],
+      "duration_weeks": "8–10"
+    },
+    {
+      "phase_number": 5,
+      "phase_name": "Contractor Bidding",
+      "deliverables": [
+        "Bid package preparation (executive plans + spec document sent to minimum 3 contractors)",
+        "Bid comparison matrix (contractor name, total, key line items, timeline, hospitality project experience, notes)",
+        "Recommendation with rationale (including contractor hospitality project experience assessment)"
+      ],
+      "minimum_bids": 3,
+      "duration_weeks": "4–6"
+    },
+    {
+      "phase_number": 6,
+      "phase_name": "Permitting",
+      "deliverables": [
+        "Building permit application package (architectural + structural + MEP)",
+        "SECTUR hotel classification permit package",
+        "COFEPRIS F&B permit package (restaurant program included)",
+        "Submission to all relevant authorities (Municipio de Todos Santos, SECTUR BCS delegación, COFEPRIS)",
+        "Tracking and correction management until all permits issued"
+      ],
+      "duration_weeks": "10–24"
+    }
+  ],
+  "payment_schedule": [
+    {
+      "milestone": "M1",
+      "name": "Contract Signing",
+      "percentage": 40,
+      "amount": 168000,
+      "currency": "USD",
+      "trigger_event": "Signed SOW + first payment received"
+    },
+    {
+      "milestone": "M2",
+      "name": "Concept Approved",
+      "percentage": 30,
+      "amount": 126000,
+      "currency": "USD",
+      "trigger_event": "Client written approval of Phase 1 conceptual design"
+    },
+    {
+      "milestone": "M3",
+      "name": "Executive Plans Approved",
+      "percentage": 30,
+      "amount": 126000,
+      "currency": "USD",
+      "trigger_event": "Executive plans package delivered and approved by client"
+    }
+  ],
+  "responsibilities_matrix": [
+    {
+      "deliverable": "Conceptual design",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Client"
+    },
+    {
+      "deliverable": "Architectural drawings",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Client"
+    },
+    {
+      "deliverable": "SECTUR compliance package",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "SECTUR / Client"
+    },
+    {
+      "deliverable": "COFEPRIS F&B compliance",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "COFEPRIS / Client"
+    },
+    {
+      "deliverable": "Structural calculations",
+      "responsible_party": "Structural engineer",
+      "reviewed_by": "Oficio Taller coordinates"
+    },
+    {
+      "deliverable": "MEP engineering",
+      "responsible_party": "MEP engineers",
+      "reviewed_by": "Oficio Taller coordinates"
+    },
+    {
+      "deliverable": "HVAC engineering",
+      "responsible_party": "HVAC engineer",
+      "reviewed_by": "Oficio Taller coordinates"
+    },
+    {
+      "deliverable": "AV / technology design",
+      "responsible_party": "AV consultant",
+      "reviewed_by": "Oficio Taller coordinates"
+    },
+    {
+      "deliverable": "Fire protection design",
+      "responsible_party": "Fire protection engineer",
+      "reviewed_by": "Oficio Taller coordinates"
+    },
+    {
+      "deliverable": "FF&E specification",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Client approves"
+    },
+    {
+      "deliverable": "FF&E procurement",
+      "responsible_party": "Client",
+      "reviewed_by": "—"
+    },
+    {
+      "deliverable": "Solar system design",
+      "responsible_party": "Oficio Taller coordinates",
+      "reviewed_by": "Client approves"
+    },
+    {
+      "deliverable": "Greywater system design",
+      "responsible_party": "Oficio Taller coordinates",
+      "reviewed_by": "Client approves"
+    },
+    {
+      "deliverable": "Executive plans set",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Client + engineers"
+    },
+    {
+      "deliverable": "Bid package",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Client selects contractor"
+    },
+    {
+      "deliverable": "Permit applications",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Multiple authorities"
+    },
+    {
+      "deliverable": "Construction",
+      "responsible_party": "Contractor",
+      "reviewed_by": "Oficio Taller (if supervision in scope)"
+    },
+    {
+      "deliverable": "Payment milestone sign-off",
+      "responsible_party": "Client",
+      "reviewed_by": "Oficio Taller invoices"
+    }
+  ],
+  "exclusions": [
+    "Structural, electrical, plumbing, civil, HVAC, AV, fire protection, and solar engineering fees — client contracts engineers directly; Oficio Taller coordinates only",
+    "Permit fees, SECTUR fees, COFEPRIS fees, municipal taxes, or government charges",
+    "Contractor selection or construction contracts — Oficio Taller recommends; client decides",
+    "FF&E procurement — Oficio Taller specifies; client procures",
+    "OS&E (Operating Supplies and Equipment) specification or procurement",
+    "Topographic survey — client responsibility to provide",
+    "Hydrologic study — client responsibility (triggered by seasonal arroyo on south boundary)",
+    "Soil study — client responsibility",
+    "Legal review of property title or easements",
+    "Construction cost guarantees",
+    "Hotel operating system (PMS, POS) specification or procurement",
+    "Landscape architecture — client responsibility for independent landscape architect",
+    "Irrigation — excluded unless client requests as added service",
+    "Signage and wayfinding — excluded by default",
+    "Pre-opening services (staffing, training, soft opening management)",
+    "Construction Administration (Phase 7) — strongly recommended but not included; may be added as a service"
+  ],
+  "revision_assumptions": {
+    "phase_1": "2 rounds included. Additional rounds: MXN 15,000/day.",
+    "phase_2": "2 rounds included. Additional rounds: MXN 15,000/day.",
+    "phase_3": "1 round included.",
+    "phase_4": "1 round included. Post-approval changes require change order."
+  },
+  "project_type_clauses": [
+    {
+      "clause": "commercial_hotel_standard_clause",
+      "title": "Commercial Hotel Standard Scope",
+      "text": "This project is classified as a commercial hotel under Oficio Taller's project type framework. The scope includes full SECTUR boutique hotel classification compliance, COFEPRIS food and beverage compliance for all F&B program areas, minimum 3 competitive contractor bids (Segment I), and coordinated engineering across all hotel-specific disciplines (HVAC, AV, fire suppression, greywater, solar). All deliverables conform to the commercial_hotel template standard."
+    },
+    {
+      "clause": "hospitality_compliance_clause",
+      "title": "SECTUR and COFEPRIS Regulatory Compliance",
+      "text": "This project is subject to SECTUR (Secretaría de Turismo) hotel classification regulations and, where the program includes food and beverage service, COFEPRIS health and food safety regulations. Oficio Taller will prepare compliance documentation and permit packages for both authorities. Processing timelines set by SECTUR and COFEPRIS are outside Oficio Taller's control and do not constitute project delays attributable to Oficio Taller. Client is responsible for ongoing SECTUR classification renewals after project completion."
+    },
+    {
+      "clause": "brand_standards_coordination",
+      "title": "Brand Design Standards Coordination",
+      "text": "If this project operates under a hotel brand, franchise agreement, or soft-brand affiliation, the brand's design standards manual governs all exterior and interior design decisions within the brand's purview. Oficio Taller will design in compliance with the applicable brand standards manual provided by the client. The client is responsible for providing the current brand standards manual before Phase 1 begins. Design changes required by brand approval beyond 2 revision rounds will be billed as change orders. Brand review timelines are outside Oficio Taller's control."
+    },
+    {
+      "clause": "ffe_scope_boundary",
+      "title": "FF&E Specification vs. Procurement Boundary",
+      "text": "Oficio Taller's scope includes the specification of all Furniture, Fixtures, and Equipment (FF&E) — defining item types, quality standards, finishes, and placement. FF&E procurement (purchasing, vendor management, delivery coordination, and installation) is the client's responsibility unless explicitly added as a service in writing. Oficio Taller is not responsible for FF&E budget overruns arising from market pricing at time of procurement."
+    },
+    {
+      "clause": "esignature",
+      "title": "Electronic Signature",
+      "text": "This document is valid when signed electronically by the client and an authorized Oficio Taller representative. Electronic signatures carry the same legal weight as physical signatures under Mexican federal law (NOM-151-SCFI)."
+    }
+  ]
+}

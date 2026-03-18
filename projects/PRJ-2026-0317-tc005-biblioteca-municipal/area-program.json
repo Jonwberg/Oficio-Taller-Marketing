@@ -1,0 +1,74 @@
+{
+  "spaces": [
+    {
+      "name": "Sala de Lectura para Adultos",
+      "qty": 1,
+      "size_sqm": 400,
+      "notes": "Main adult reading room — open shelving, study tables, natural light priority"
+    },
+    {
+      "name": "Sala de Lectura Infantil",
+      "qty": 1,
+      "size_sqm": 200,
+      "notes": "Children's reading room — accessible design, age-appropriate furniture, adjacent to lobby"
+    },
+    {
+      "name": "Acervo Cerrado",
+      "qty": 1,
+      "size_sqm": 300,
+      "notes": "Closed stacks / restricted collection area — climate control considerations"
+    },
+    {
+      "name": "Sala de Cómputo",
+      "qty": 1,
+      "size_sqm": 150,
+      "notes": "Computer lab — electrical/data infrastructure, cooling"
+    },
+    {
+      "name": "Sala de Usos Múltiples",
+      "qty": 1,
+      "size_sqm": 200,
+      "notes": "Multi-purpose room — folding walls, AV provisions, civic art space integration"
+    },
+    {
+      "name": "Administración",
+      "qty": 1,
+      "size_sqm": 150,
+      "notes": "Administrative offices — staff work areas, director office, records storage"
+    },
+    {
+      "name": "Sanitarios",
+      "qty": 4,
+      "size_sqm": 30,
+      "notes": "Public restrooms — full accessibility compliance (IMSS/ISSSTE standards), gender-neutral option required"
+    },
+    {
+      "name": "Vestíbulo",
+      "qty": 1,
+      "size_sqm": 200,
+      "notes": "Main entrance lobby — accessible arrival, information desk, civic art display area"
+    },
+    {
+      "name": "Estacionamiento",
+      "qty": 1,
+      "size_sqm": 250,
+      "notes": "Parking area — accessible parking spaces required per NOM-001-STPS"
+    },
+    {
+      "name": "Bodega",
+      "qty": 1,
+      "size_sqm": 30,
+      "notes": "Storage room — building maintenance and library supplies"
+    }
+  ],
+  "total_sqm": 2000,
+  "assumptions": [
+    "Total 2,000m² per seed data program; all spaces from seed data program map verified",
+    "Sanitarios: 4 units × 30m² each = 120m² total",
+    "Circulation, walls, and mechanical spaces not separately listed — included within gross floor area per public civic benchmarks",
+    "Solar system is in scope per seed data special_features — included in Phase 2 engineering scope",
+    "Civic art space integrated within Sala de Usos Múltiples and Vestíbulo rather than as a separate room — no additional sqm added",
+    "Landscape and irrigation included by default per sow-public-civic.md template rules",
+    "Construction cost benchmark: MXN 22,000–35,000/sqm for public_civic; midpoint MXN 28,500/sqm used"
+  ]
+}

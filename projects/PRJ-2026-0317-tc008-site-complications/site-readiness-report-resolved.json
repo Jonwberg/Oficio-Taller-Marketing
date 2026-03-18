@@ -1,0 +1,34 @@
+{
+  "_note": "Updated site readiness report after all documents received — hydrology study resolved. This supersedes site-readiness-report.json for the second Vera activation check.",
+  "required_documents": [
+    {
+      "name": "Levantamiento Topográfico",
+      "rationale": "Required for all projects — establishes site boundaries, levels, and contours.",
+      "received": true,
+      "received_at": "2026-03-24T10:00:00-07:00"
+    },
+    {
+      "name": "Estudio Hidrológico",
+      "rationale": "Required due to stream running through the northeast corner. Study confirms: 15m riparian setback from stream centerline per CONAGUA regulations, retention basin NOT required (stream volume within natural capacity), infinity pool siting must respect setback — design adjustment accommodated within approved program.",
+      "received": true,
+      "received_at": "2026-04-28T10:00:00-07:00"
+    },
+    {
+      "name": "Estudio de Mecánica de Suelos",
+      "rationale": "Required for commercial hotel (>300sqm) — slope stability confirmed, foundations to be designed per geotechnical recommendations.",
+      "received": true,
+      "received_at": "2026-04-14T10:00:00-07:00"
+    },
+    {
+      "name": "Escrituras / Título de Propiedad",
+      "rationale": "Ownership confirmation.",
+      "received": true,
+      "received_at": "2026-03-17T10:00:00-07:00"
+    }
+  ],
+  "request_sent_at": "2026-03-17T13:00:00-07:00",
+  "current_status": "documents_complete",
+  "blockers": [],
+  "operator_confirmation_at": "2026-04-28T11:00:00-07:00",
+  "operator_note": "All required documents received. Hydrologic study confirms 15m setback — program adaptation in progress. site_docs_complete set to true. Re-dispatching Vera activation_check."
+}

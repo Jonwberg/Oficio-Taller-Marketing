@@ -1,0 +1,20 @@
+{
+  "run_id": "2026-03-17-TC-004",
+  "segment": "B",
+  "agents": ["Lupe", "Celia", "Elena", "Celia"],
+  "result": "PASS",
+  "executed_at": "2026-03-17T10:15:00-07:00",
+  "files_written": [
+    "projects/PRJ-2026-0317-tc004-centro-salud/lead-summary.json",
+    "projects/PRJ-2026-0317-tc004-centro-salud/decision-event-DG-01.json",
+    "projects/PRJ-2026-0317-tc004-centro-salud/discovery-questionnaire.json",
+    "projects/PRJ-2026-0317-tc004-centro-salud/client-fit-assessment.json"
+  ],
+  "verification": {
+    "celia_dg01_route_to": true,
+    "celia_dg01_field_count": 11,
+    "celia_dg02_route_to": true,
+    "celia_dg02_field_count": 11,
+    "all_celia_payloads_use_route_to": true
+  }
+}

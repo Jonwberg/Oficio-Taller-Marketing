@@ -1,0 +1,12 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "client_name": "Miguel Torres",
+  "fit_score": 72,
+  "budget_signal": "constrained",
+  "budget_range_usd": { "min": 150000, "max": 200000 },
+  "location_complexity": "high — Los Cabos coastal premiums, premium labor and materials market",
+  "scope_complexity": "medium-high — pool adds significant cost in coastal environment",
+  "client_profile": "budget_constrained",
+  "fit_notes": "Client has clear program intent and realistic timeline. Budget of $200K for a 216 sqm house with pool in Los Cabos is likely under-budgeted by 40-60% given local market rates. Project is viable if scope is adjusted — recommend proceeding to programming with explicit budget alignment discussion. Strong design engagement signals genuine project intent.",
+  "recommended_action": "proceed_with_budget_advisory"
+}

@@ -1,0 +1,49 @@
+{
+  "scope_summary": {
+    "es": "Oficio Taller se complace en presentar esta propuesta de colaboración para el proyecto de clínica privada del grupo médico de Dra. Carmen Valdez en La Paz, Baja California Sur. El proyecto comprende el diseño arquitectónico completo de una instalación de salud de 1,500 m² que incluirá 10 consultorios, área de urgencias, laboratorio clínico, farmacia, sala de rayos X, enfermería, recepción y áreas de apoyo.\n\nNuestro alcance incluye seis fases de trabajo: diseño conceptual con enfoque en flujo clínico y zonificación de infección; proyecto arquitectónico con cumplimiento de las normas COFEPRIS y NOM; coordinación de ingeniería (estructural, eléctrica, HVAC clínico, instalación hidráulica, sistemas de gases medicinales y protección contra incendios); planos ejecutivos listos para permisos; licitación con un mínimo de tres contratistas con experiencia en construcción clínica; y gestión de trámites ante el Municipio de La Paz y la delegación de COFEPRIS en BCS para la obtención de la Licencia Sanitaria.\n\nEl cumplimiento de COFEPRIS es un entregable explícito en cada fase del proyecto. Todos los espacios clínicos serán diseñados conforme a las normas NOM aplicables para instalaciones de salud, incluyendo dimensiones mínimas, niveles de ventilación, control de infecciones y accesibilidad universal.",
+    "en": "Oficio Taller is pleased to present this collaboration proposal for the private clinic project of Dr. Carmen Valdez's medical group in La Paz, Baja California Sur. The project encompasses the complete architectural design of a 1,500-sqm healthcare facility including 10 consultation rooms, emergency area, clinical laboratory, pharmacy, X-ray suite, nursing station, reception, and support areas.\n\nOur scope covers six phases of work: conceptual design with a clinical workflow and infection control zoning focus; architectural design with full COFEPRIS and NOM compliance; engineering coordination (structural, electrical, clinical HVAC, hydraulic, medical gas systems, and fire protection); permit-ready executive plans; contractor bidding with a minimum of three clinically experienced contractors; and permit management with the Municipio de La Paz and the COFEPRIS delegación in BCS for the Licencia Sanitaria.\n\nCOFEPRIS regulatory compliance is an explicit deliverable in every phase of this project. All clinical spaces will be designed to meet applicable NOM standards for healthcare facilities, including minimum room dimensions, ventilation rates, infection control requirements, and accessibility standards."
+  },
+  "budget_detail": {
+    "es": "Honorarios Totales de Arquitectura: USD 216,000\n\nFase 1 — Diseño Conceptual: USD 43,200 (20%)\nFase 2 — Proyecto Arquitectónico: USD 54,000 (25%)\nFase 3 — Coordinación de Ingeniería: USD 32,400 (15%)\nFase 4 — Planos Ejecutivos: USD 54,000 (25%)\nFase 5 — Licitación: USD 21,600 (10%)\nFase 6 — Trámites: USD 10,800 (5%)\n\nCalendario de Pagos:\nM1 — Firma de Contrato (25%): USD 54,000\nM2 — Concepto Aprobado (15%): USD 32,400\nM3 — Proyecto Arquitectónico Aprobado (20%): USD 43,200\nM4 — Planos Ejecutivos Entregados (25%): USD 54,000\nM5 — Licencia COFEPRIS Obtenida (15%): USD 32,400",
+    "en": "Total Architecture Fee: USD 216,000\n\nPhase 1 — Conceptual Design: USD 43,200 (20%)\nPhase 2 — Architectural Design: USD 54,000 (25%)\nPhase 3 — Engineering Coordination: USD 32,400 (15%)\nPhase 4 — Executive Plans: USD 54,000 (25%)\nPhase 5 — Contractor Bidding: USD 21,600 (10%)\nPhase 6 — Permitting: USD 10,800 (5%)\n\nPayment Schedule:\nM1 — Contract Signing (25%): USD 54,000\nM2 — Concept Approved (15%): USD 32,400\nM3 — Architectural Design Approved (20%): USD 43,200\nM4 — Executive Plans Delivered (25%): USD 54,000\nM5 — COFEPRIS Permit Obtained (15%): USD 32,400",
+    "total": 216000,
+    "currency": "USD",
+    "line_items_ref": "budget.json"
+  },
+  "timeline_phases": [
+    {
+      "phase": "Phase 1 — Conceptual Design",
+      "duration_weeks": 6,
+      "key_milestone": "Client approval of conceptual direction and clinical zoning concept"
+    },
+    {
+      "phase": "Phase 2 — Architectural Design",
+      "duration_weeks": 12,
+      "key_milestone": "Client approval of Phase 2 drawings and COFEPRIS pre-consultation complete"
+    },
+    {
+      "phase": "Phase 3 — Engineering Coordination",
+      "duration_weeks": 8,
+      "key_milestone": "All engineering disciplines coordinated; medical gas systems design complete"
+    },
+    {
+      "phase": "Phase 4 — Executive Plans",
+      "duration_weeks": 8,
+      "key_milestone": "COFEPRIS permit-ready drawing package delivered to client"
+    },
+    {
+      "phase": "Phase 5 — Contractor Bidding",
+      "duration_weeks": 5,
+      "key_milestone": "Contractor selected with clinical experience verification"
+    },
+    {
+      "phase": "Phase 6 — Permitting (Building + COFEPRIS)",
+      "duration_weeks": 20,
+      "key_milestone": "COFEPRIS Licencia Sanitaria and building permit obtained"
+    }
+  ],
+  "process_narrative": {
+    "es": "En Oficio Taller, entendemos que una clínica de salud no es simplemente un edificio — es la infraestructura física del cuidado médico. Cada decisión de diseño tiene implicaciones clínicas, regulatorias y operativas. Por eso, nuestro proceso para proyectos de salud comienza con el entendimiento profundo del flujo clínico, la separación limpio/sucio, y los requerimientos específicos de COFEPRIS antes de trazar una sola línea.\n\nDurante el diseño conceptual, trabajamos directamente con el equipo médico del cliente para validar la zonificación clínica y confirmar que la distribución propuesta soporta los procesos de atención que el grupo médico necesita. No asumimos: verificamos. La categoría de instalación COFEPRIS se confirma con el cliente en Fase 1, no al final.\n\nCoordinamos un equipo de especialistas — ingeniería estructural, eléctrica, HVAC clínico, hidráulica, gases medicinales y protección contra incendios — y asumimos la responsabilidad de la coordinación entre todas las disciplinas. El cliente contrata directamente a los ingenieros, pero Oficio Taller dirige la coordinación técnica para garantizar que el conjunto final sea coherente y esté listo para tramitar ante COFEPRIS.\n\nNuestro compromiso con el cumplimiento regulatorio es proactivo: preparamos los paquetes de trámite ante el Municipio de La Paz y la delegación de COFEPRIS en BCS, y gestionamos las correcciones hasta la obtención de todos los permisos y la Licencia Sanitaria. La apertura de su clínica depende de ese documento — y nosotros lo sabemos.",
+    "en": "At Oficio Taller, we understand that a health clinic is not simply a building — it is the physical infrastructure of medical care. Every design decision has clinical, regulatory, and operational implications. That is why our process for healthcare projects begins with a deep understanding of clinical workflow, clean/dirty separation, and COFEPRIS requirements before a single line is drawn.\n\nDuring conceptual design, we work directly with the client's medical team to validate clinical zoning and confirm that the proposed layout supports the care processes the medical group requires. We do not assume: we verify. The COFEPRIS facility category is confirmed with the client in Phase 1 — not at the end.\n\nWe coordinate a team of specialists — structural, electrical, clinical HVAC, hydraulic, medical gas systems, and fire protection engineers — and take responsibility for the coordination among all disciplines. The client contracts the engineers directly, but Oficio Taller leads the technical coordination to ensure that the final set is coherent and ready for COFEPRIS submission.\n\nOur commitment to regulatory compliance is proactive: we prepare the permit packages for submission to the Municipio de La Paz and the COFEPRIS delegación in BCS, and we manage all corrections through to the issuance of all permits and the Licencia Sanitaria. Your clinic's opening depends on that document — and we know it."
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "run_id": "2026-03-16-TC-009",
+  "tc_id": "TC-009",
+  "segment": "C",
+  "project_id": "PRJ-2026-0316-familia-reyes-montoya",
+  "executed_at": "2026-03-16T12:15:00-07:00",
+  "segment_status": "complete",
+
+  "agents": {
+    "ana": {
+      "status": "complete",
+      "deliverables": [
+        "projects/PRJ-2026-0316-familia-reyes-montoya/area-program.json",
+        "projects/PRJ-2026-0316-familia-reyes-montoya/cost-basis.json"
+      ],
+      "state_flags_set": {
+        "area_program_complete": true
+      },
+      "asana": "ASANA_UNAVAILABLE — tasks.area_program is null",
+      "gmail": "ASANA_UNAVAILABLE — DG-03 email path delegated to Vera"
+    },
+    "sol": {
+      "status": "complete",
+      "deliverables": [
+        "projects/PRJ-2026-0316-familia-reyes-montoya/site-readiness-report.json"
+      ],
+      "state_flags_set": {
+        "site_data_complete": true
+      },
+      "site_docs_complete_note": "site_docs_complete remains null — set by human operator only when physical documents are received. Sol does not set this field.",
+      "asana": "ASANA_UNAVAILABLE — tasks.site_readiness is null",
+      "gmail": "GMAIL_UNAVAILABLE — client document request email not sent"
+    },
+    "vera": {
+      "mode": "site_status_update",
+      "status": "complete",
+      "dg03_trigger": {
+        "area_program_complete": true,
+        "site_data_complete": true,
+        "awaiting_gate_was_null": true,
+        "dg03_sent": false,
+        "dg03_not_sent_reason": "GMAIL_UNAVAILABLE"
+      },
+      "asana_update": "ASANA_UNAVAILABLE",
+      "state_flags_modified": ["project_state", "awaiting_gate", "review_thread_id"],
+      "state_flags_NOT_modified_by_vera": ["site_data_complete"],
+      "downstream_dispatch": "none — Vera does not dispatch Tomás or Celia directly"
+    },
+    "celia": {
+      "gate": "DG-03",
+      "marcela_reply_simulated": "Approve",
+      "status": "complete",
+      "deliverables": [
+        "projects/PRJ-2026-0316-familia-reyes-montoya/decision-event-dg03.json"
+      ],
+      "decision": "approve",
+      "route_to": "Tomás",
+      "state_updates": {
+        "project_state": "scope_in_preparation",
+        "awaiting_gate": null,
+        "review_thread_id": null
+      },
+      "asana": "ASANA_UNAVAILABLE — tasks.cost_basis_gate is null"
+    }
+  },
+
+  "schema_validation": {
+    "area_program": {
+      "result": "PASS",
+      "fields_checked": ["spaces", "total_sqm", "assumptions"],
+      "spaces_count": 10,
+      "total_sqm": 320,
+      "auto_fail_conditions": {
+        "total_sqm_missing": false,
+        "any_space_missing_size": false,
+        "assumptions_missing": false
+      }
+    },
+    "cost_basis": {
+      "result": "PASS",
+      "fields_checked": ["cost_per_sqm", "base_construction_cost", "architecture_fee_pct", "architecture_fee", "engineering_allowance", "contingency_pct", "total_estimate", "assumptions"],
+      "math_verified": {
+        "base_construction_cost": "320 × 21500 = 6880000 ✓",
+        "architecture_fee": "6880000 × 0.12 = 825600 ✓",
+        "engineering_allowance": "6880000 × 0.03 = 206400 ✓",
+        "contingency": "(6880000 + 825600 + 206400) × 0.10 = 791200 ✓",
+        "total_estimate": "6880000 + 825600 + 206400 + 791200 = 8703200 ✓"
+      },
+      "auto_fail_conditions": {
+        "assumptions_missing": false,
+        "total_estimate_missing": false,
+        "architecture_fee_absent": false
+      }
+    },
+    "site_readiness_report": {
+      "result": "PASS",
+      "fields_checked": ["required_documents", "request_sent_at", "current_status", "blockers"],
+      "request_sent_at_iso8601": true,
+      "auto_fail_conditions": {
+        "topo_not_included": false,
+        "no_asana_status_update": "ASANA_UNAVAILABLE — task_id null, logged",
+        "blocker_not_logged_when_overdue": "not applicable — no overdue condition at this stage"
+      }
+    },
+    "vera_site_status": {
+      "result": "PASS",
+      "output_non_empty": true,
+      "auto_fail_conditions": {
+        "output_empty": false,
+        "vera_dispatched_tomas_or_downstream": false,
+        "vera_set_site_data_complete": false,
+        "vera_status_contradicts_sol_report": false
+      }
+    },
+    "celia_dg03": {
+      "result": "PASS",
+      "fields_present": 11,
+      "fields_checked": ["project_id", "phase", "review_item", "reviewed_by", "decision", "comment", "timestamp", "source_channel", "next_action", "route_to", "sync_to_asana"],
+      "route_to_field_correct": true,
+      "routed_to_field_absent": true,
+      "timestamp_iso8601": true,
+      "auto_fail_conditions": {
+        "wrong_next_agent": false,
+        "decision_misclassified": false,
+        "asana_not_updated": "ASANA_UNAVAILABLE — logged",
+        "reviewer_comment_dropped": false,
+        "any_11_fields_missing": false,
+        "route_to_missing": false
+      }
+    }
+  },
+
+  "tc009_specific_checks": {
+    "coastal_documents_check": {
+      "result": "PASS",
+      "required_documents_in_sol_report": ["topographic_survey", "coastal_zone_permit", "wind_load_study"],
+      "topographic_survey_present": true,
+      "coastal_zone_permit_present": true,
+      "wind_load_study_present": true
+    },
+    "site_data_complete_set_by_sol": true,
+    "site_docs_complete_null_not_set_by_sol": true,
+    "vera_did_not_block_on_site_docs_complete": true,
+    "dg03_triggered_correctly": true,
+    "celia_route_to_tomas_on_approve": true
+  },
+
+  "infrastructure_notes": {
+    "asana": "ASANA_UNAVAILABLE throughout — all task_ids null. All Asana calls logged and continued per agent protocol.",
+    "gmail": "GMAIL_UNAVAILABLE for DG-03 email and client document request. Logged and continued. Pipeline is paused at DG-03 pending Gmail restoration.",
+    "pipeline_state": "paused_at_DG-03_awaiting_gmail_restore"
+  },
+
+  "files_written": [
+    "projects/PRJ-2026-0316-familia-reyes-montoya/area-program.json",
+    "projects/PRJ-2026-0316-familia-reyes-montoya/cost-basis.json",
+    "projects/PRJ-2026-0316-familia-reyes-montoya/site-readiness-report.json",
+    "projects/PRJ-2026-0316-familia-reyes-montoya/decision-event-dg03.json",
+    "projects/PRJ-2026-0316-familia-reyes-montoya/state.json",
+    "tests/results/2026-03-16-TC-009/C-ana-raw.md",
+    "tests/results/2026-03-16-TC-009/C-sol-raw.md",
+    "tests/results/2026-03-16-TC-009/C-vera-raw.md",
+    "tests/results/2026-03-16-TC-009/C-celia-dg03-raw.md",
+    "tests/results/2026-03-16-TC-009/C-execution-complete.json"
+  ],
+
+  "overall_result": "PASS"
+}

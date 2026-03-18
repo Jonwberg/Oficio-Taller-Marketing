@@ -1,0 +1,48 @@
+{
+  "project_id": "PRJ-2026-0317-tc002-casa-vista",
+  "client_name": "Patricia Reyes",
+  "contractor_pricing_source": "Preliminary estimates from 2 local contractors in San José del Cabo, BCS (simulated in test mode per TC-002 expected_outcome: full_activation)",
+  "contractor_total": 600000,
+  "contractor_total_currency": "USD",
+  "client_budget_min": 400000,
+  "client_budget_max": 700000,
+  "client_budget": 550000,
+  "client_budget_currency": "USD",
+  "client_budget_note": "Midpoint of seed data budget_range_usd (USD 400,000–700,000) used as client_budget baseline for variance calculation",
+  "variance_amount": 50000,
+  "variance_pct": 9.09,
+  "recommendation": "proceed",
+  "recommendation_rationale": "Contractor total of USD 600,000 is within 9.09% of the client budget midpoint (USD 550,000), well within the 10% proceed threshold. USD 600,000 also falls within the client's stated budget range of USD 400,000–700,000. No value engineering required. Budget alignment is favorable — proceed to executive plans phase.",
+  "line_items_summary": [
+    {
+      "scope": "Civil and structural work",
+      "amount": 180000,
+      "currency": "USD"
+    },
+    {
+      "scope": "Finishes and interior",
+      "amount": 150000,
+      "currency": "USD"
+    },
+    {
+      "scope": "MEP (electrical, plumbing, HVAC)",
+      "amount": 90000,
+      "currency": "USD"
+    },
+    {
+      "scope": "Pool and terraces",
+      "amount": 60000,
+      "currency": "USD"
+    },
+    {
+      "scope": "Solar and smart home systems",
+      "amount": 70000,
+      "currency": "USD"
+    },
+    {
+      "scope": "Exterior and site work",
+      "amount": 50000,
+      "currency": "USD"
+    }
+  ]
+}

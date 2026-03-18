@@ -1,0 +1,17 @@
+{
+  "run_id": "2026-03-17-TC-003",
+  "segment": "C",
+  "agents": ["Ana", "Sol", "Vera", "Celia"],
+  "result": "PASS",
+  "deliverables": ["area-program.json", "cost-basis.json", "site-readiness-report.json", "client-fit-assessment.json", "dg-02.json"],
+  "completed_at": "2026-03-17T17:00:00-07:00",
+  "key_verification": {
+    "sol_requested_topographic_survey": true,
+    "sol_requested_hydrologic_study": true,
+    "hydrologic_study_trigger": "seasonal arroyo on south boundary",
+    "required_documents": ["topographic_survey", "hydrologic_study"],
+    "blockers": ["hydrologic_study_pending"]
+  },
+  "notes": "Ana wrote area-program.json (3,000 sqm, 9 zones confirmed). Sol identified BOTH topographic_survey AND hydrologic_study as required — arroyo on south boundary triggered hydrologic requirement. site-readiness-report.json has required_documents: [topographic_survey, hydrologic_study] and blockers: [hydrologic_study_pending]. Vera assembled cost-basis.json and client-fit-assessment.json. Celia routed to DG-02.",
+  "celia_route_to_verified": true
+}

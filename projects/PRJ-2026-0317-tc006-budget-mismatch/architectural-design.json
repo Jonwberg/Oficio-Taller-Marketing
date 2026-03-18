@@ -1,0 +1,12 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "client_name": "Miguel Torres",
+  "design_set_status": "complete",
+  "concept_reflection_confirmed": true,
+  "area_program_compliance": {
+    "compliant": true,
+    "deviations": [],
+    "notes": "All 11 spaces from area-program.json are represented in the design set. Total designed area: 216 sqm — fully compliant with approved program. Pool deck area treated as exterior unconditioned space, consistent with program."
+  },
+  "structural_coordination_notes": "Structural engineer engagement initiated. Single-story load path is straightforward. Pool shell requires specialized structural design (reinforced concrete with waterproofing system). Coastal wind load analysis per CFE (Comisión Federal de Electricidad) wind zone requirements for Los Cabos. Structural package targeted for Phase 3 delivery."
+}

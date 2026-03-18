@@ -1,0 +1,12 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "client_name": "Miguel Torres",
+  "revision_note": "Second pass — redesigned scope: 160 sqm, no pool. Per DG-09 reject and Felipe redesign.",
+  "contractor_pricing_source": "Updated preliminary estimates from same 2 local contractors after scope reduction (160 sqm, no pool). Contractor A: $192,000 USD; Contractor B: $198,000 USD. Average used as baseline.",
+  "contractor_total": 195000,
+  "client_budget": 200000,
+  "variance_amount": -5000,
+  "variance_pct": -2.5,
+  "recommendation": "proceed",
+  "alignment_notes": "Revised contractor pricing at $195,000 USD is 2.5% BELOW the client budget of $200,000 USD — well within the ≤10% threshold for 'proceed'. Scope reduction (remove pool, reduce from 216 sqm to 160 sqm) achieved the necessary cost reduction of ~$185,000 USD. Budget is now aligned. Client budget of $200K provides a $5,000 contingency buffer against contractor pricing. Recommend proceeding to executive plans."
+}

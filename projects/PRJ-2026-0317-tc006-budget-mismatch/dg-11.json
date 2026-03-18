@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "phase": "I",
+  "review_item": "bid_comparison",
+  "reviewed_by": "Celia",
+  "decision": "approve",
+  "comment": "Two bids received. Horizonte is competitive and local — approve. Proceed with Constructora Horizonte Los Cabos.",
+  "timestamp": "2026-03-19T14:00:00-07:00",
+  "source_channel": "instagram",
+  "next_action": "dispatch_paco",
+  "route_to": "Paco",
+  "sync_to_asana": false
+}

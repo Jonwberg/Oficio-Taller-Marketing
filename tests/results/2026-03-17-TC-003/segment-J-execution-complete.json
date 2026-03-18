@@ -1,0 +1,19 @@
+{
+  "run_id": "2026-03-17-TC-003",
+  "segment": "J",
+  "agents": ["Vera", "Controller", "Controller", "Controller", "Tax"],
+  "result": "PASS",
+  "deliverables": ["invoice.json", "tax-filing.json", "state.json"],
+  "completed_at": "2026-12-22T18:00:00-07:00",
+  "key_verification": {
+    "invoice_milestone": "M3",
+    "invoice_amount": 126000,
+    "invoice_running_total": 420000,
+    "invoice_currency": "USD",
+    "tax_rfc": "TEST-RFC-003",
+    "tax_revenue": 420000,
+    "final_state": "project_closed"
+  },
+  "notes": "Vera triggered Controller at M3 milestone. Controller ×3 processed M1 (168,000), M2 (126,000), M3 (126,000) — running total 420,000 USD confirmed. Tax agent dispatched — tax-filing.json has rfc: TEST-RFC-003 and revenue: 420000. state.json updated to project_closed.",
+  "celia_route_to_verified": true
+}

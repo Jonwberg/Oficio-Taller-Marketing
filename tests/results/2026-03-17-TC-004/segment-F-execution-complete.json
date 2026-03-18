@@ -1,0 +1,21 @@
+{
+  "run_id": "2026-03-17-TC-004",
+  "segment": "F",
+  "agents": ["Andrés", "Celia", "Felipe", "Celia"],
+  "result": "PASS",
+  "executed_at": "2026-05-06T09:00:00-07:00",
+  "files_written": [
+    "projects/PRJ-2026-0317-tc004-centro-salud/concept-review.json",
+    "projects/PRJ-2026-0317-tc004-centro-salud/architectural-design.json",
+    "projects/PRJ-2026-0317-tc004-centro-salud/decision-event-DG-07.json",
+    "projects/PRJ-2026-0317-tc004-centro-salud/decision-event-DG-08.json"
+  ],
+  "verification": {
+    "concept_review_5_items": true,
+    "cofepris_preconsultation_in_arch_design": true,
+    "celia_dg07_route_to": true,
+    "celia_dg07_field_count": 11,
+    "celia_dg08_route_to": true,
+    "celia_dg08_field_count": 11
+  }
+}

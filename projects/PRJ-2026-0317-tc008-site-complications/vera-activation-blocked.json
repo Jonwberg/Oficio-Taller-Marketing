@@ -1,0 +1,25 @@
+{
+  "project_id": "PRJ-2026-0317-tc008-site-complications",
+  "mode": "activation_check",
+  "check_performed_at": "2026-03-17T20:00:00-07:00",
+  "activation_conditions": {
+    "contract_signed": {
+      "value": true,
+      "note": "Contract signed — M1 payment received (USD $120,000)"
+    },
+    "site_docs_complete": {
+      "value": false,
+      "note": "Hydrologic study NOT yet received. Sol's site-readiness-report.json shows current_status = 'blocked'. Blocker: estudio hidrológico pending — estimated 6 weeks. Stream through northeast corner requires setback analysis and possible retention basin before site documentation can be marked complete."
+    },
+    "deposit_confirmed": {
+      "value": true,
+      "note": "Deposit confirmed — M1 payment received and cleared"
+    }
+  },
+  "all_conditions_met": false,
+  "result": "activation_blocked",
+  "blocking_condition": "site_docs_complete",
+  "blocker_detail": "Hydrologic study (estudio hidrológico) has not been received. The stream running through the northeast corner of the property requires a licensed hydrologist's study to determine setback requirements and impact on the infinity pool and northeast program placement. Estimated receipt: 6 weeks from study commission date.",
+  "asana_comment_logged": "Activation check: contract=true, site_docs=false, deposit=true. Not all conditions met — activation blocked. Waiting for hydrologic study. Estimated resolution: 6 weeks.",
+  "action": "STOP — do not dispatch Pablo. Re-dispatch Vera in activation_check mode when operator confirms site_docs_complete = true."
+}

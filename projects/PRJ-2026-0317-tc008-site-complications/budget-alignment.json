@@ -1,0 +1,10 @@
+{
+  "contractor_pricing_source": "Preliminary estimates from 2 local contractors (East Cape / Los Cabos region) based on executive plan set and engineering package",
+  "contractor_total": 3400000,
+  "client_budget": 4000000,
+  "variance_amount": -600000,
+  "variance_pct": -15.0,
+  "recommendation": "proceed",
+  "currency": "USD",
+  "notes": "Contractor pricing of USD $3.4M is USD $600,000 below the client's stated maximum budget of USD $4M — negative variance of 15%, meaning the project is within budget with margin. Solar and greywater systems are included in the contractor total. The infinity pool hydraulic and structural costs are included as a line item. Recommend proceeding to executive plans without scope reduction."
+}

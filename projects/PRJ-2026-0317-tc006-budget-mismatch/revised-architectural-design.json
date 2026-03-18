@@ -1,0 +1,42 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "client_name": "Miguel Torres",
+  "redesign_trigger": "DG-09 reject — budget misaligned (contractor $380K vs client budget $200K, variance 90%)",
+  "feedback_type": "scope_reduction",
+  "redesign_scope": "Remove pool entirely. Reduce living area from 216 sqm to 160 sqm. Retain 3-bedroom program but reduce room sizes and eliminate pool bathroom. Retain covered patio as dry terrace only.",
+  "design_set_status": "complete",
+  "concept_reflection_confirmed": true,
+  "revised_program": {
+    "total_sqm": 160,
+    "includes_pool": false,
+    "bedrooms": 3,
+    "spaces": [
+      { "name": "Bedroom 1 (Primary)", "sqm": 16, "notes": "Reduced from 18 sqm" },
+      { "name": "Bedroom 2", "sqm": 14, "notes": "Reduced from 18 sqm" },
+      { "name": "Bedroom 3", "sqm": 14, "notes": "Reduced from 18 sqm" },
+      { "name": "Bathroom 1 (Primary En-Suite)", "sqm": 7, "notes": "Reduced from 8 sqm" },
+      { "name": "Bathroom 2", "sqm": 6, "notes": "Reduced from 8 sqm. Pool bath eliminated." },
+      { "name": "Kitchen", "sqm": 15, "notes": "Reduced from 18 sqm" },
+      { "name": "Dining / Living", "sqm": 32, "notes": "Reduced from 40 sqm — pool removed, view terrace added" },
+      { "name": "Patio / Terrace (dry)", "sqm": 28, "notes": "Reduced from 30 sqm. Dry terrace — no pool." },
+      { "name": "Service Areas / Utility", "sqm": 12, "notes": "Reduced from 15 sqm" }
+    ],
+    "special_features": ["covered terrace", "coastal glazing system"],
+    "removed_features": ["infinity pool", "pool bathroom", "pool equipment room"]
+  },
+  "area_program_compliance": {
+    "compliant": true,
+    "deviations": [
+      {
+        "space": "Total area",
+        "approved_sqm": 216,
+        "designed_sqm": 160,
+        "justification": "Scope reduction per DG-09 reject — budget misalignment required 56 sqm reduction and pool removal to align with $200K client budget"
+      }
+    ],
+    "notes": "Redesigned program at 160 sqm — all 3 bedrooms retained. Pool eliminated per Marcela instruction. Area reductions distributed proportionally across all spaces."
+  },
+  "structural_coordination_notes": "Pool shell and associated structural design removed from scope. Simplified foundation: slab on grade without pool structural elements. Coastal wind zone design retained. Engineering package requires update to remove pool systems.",
+  "redesign_date": "2026-03-18",
+  "redesign_status": "complete"
+}

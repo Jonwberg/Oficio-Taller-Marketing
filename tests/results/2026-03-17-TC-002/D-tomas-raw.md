@@ -1,0 +1,3 @@
+# Segment D — Tomás (Scope of Work)
+
+Tomás applied the `residential_in_development` SOW template for Casa Vista, generating a six-phase scope with HOA coordination baked into Phases 1 and 2. The scope-of-work includes four project_type_clauses: residential_in_development_standard_clause, hoa_coordination_clause, covenant_review_clause, and solar_coordination_clause. HOA details (Residencial Vista del Mar, 7m height limit, contemporary/stone/stucco covenant) are referenced throughout Phase 1–2 deliverables and the responsibilities matrix. Payment schedule follows seed data: M1 USD 27,200 (40%), M2 USD 20,400 (30%), M3 USD 20,400 (30%).

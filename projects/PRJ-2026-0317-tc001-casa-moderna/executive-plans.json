@@ -1,0 +1,14 @@
+{
+  "plan_set_components": [
+    "Architectural drawings — all floors, sections, elevations",
+    "Structural drawings — foundation, framing, details",
+    "MEP drawings — electrical, plumbing, mechanical",
+    "Solar system drawings",
+    "Pool construction drawings",
+    "Site plan with survey integration",
+    "Specifications and finish schedule"
+  ],
+  "engineering_integration_confirmed": true,
+  "conflicts_resolved": true,
+  "client_signoff_milestone": "M3 — Executive Plans Approved"
+}

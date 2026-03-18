@@ -1,0 +1,294 @@
+{
+  "project_id": "PRJ-2026-0317-tc004-centro-salud",
+  "project_type": "commercial_health_center",
+  "sow_template_applied": "docs/templates/sow/sow-commercial-health-center.md",
+  "scope_phases": [
+    {
+      "phase_number": 1,
+      "phase_name": "Conceptual Design (Diseño Conceptual)",
+      "deliverables": [
+        "Design narrative focused on clinical workflow and patient experience (2–4 pages)",
+        "Preliminary zone diagrams: clinical areas, waiting, staff areas, clean/dirty service corridors, reception",
+        "Site placement / access / ambulance and emergency access concept",
+        "3D conceptual massing model",
+        "Material and finish direction board (clinical durability and infection control emphasis)",
+        "Space arrangement diagram showing all programmed clinical and support zones",
+        "COFEPRIS facility category confirmed with client (general consultation + specialty clinic + diagnostic center — outpatient private clinic)",
+        "Infection control zoning concept (clean corridor / dirty corridor separation concept)"
+      ],
+      "duration_weeks": 6,
+      "collaborators": "None at this phase. All engineers and medical consultants join Phase 2.",
+      "revision_assumptions": "2 rounds of client revision included. Each additional round billed at MXN 12,000/day."
+    },
+    {
+      "phase_number": 2,
+      "phase_name": "Architectural Design (Proyecto Arquitectónico)",
+      "deliverables": [
+        "Floor plans all levels (1:100 scale) — all clinical and support zones",
+        "Elevations all facades (1:100)",
+        "Building sections minimum 3 (1:100) — including at least one through clinical core",
+        "Roof plan",
+        "Site plan with property boundaries, setbacks, access, ambulance drop-off, service entry, accessible parking",
+        "Interior design criteria document (clinical durability standards, antimicrobial surfaces, infection control requirements by zone)",
+        "Room-by-room clinical standards checklist (minimum room sizes, lighting levels, ventilation rates per COFEPRIS NOM requirements)",
+        "Window and door schedule (including cleanroom-rated doors for clinical areas where required)",
+        "Preliminary structural coordination sketch",
+        "COFEPRIS compliance checklist — Phase 2: zoning compliance, accessible route compliance, clinical area minimum dimensions, medical waste flow confirmation",
+        "Accessibility compliance matrix (all COFEPRIS and NOM accessibility requirements verified)"
+      ],
+      "duration_weeks": 12,
+      "collaborators": "Structural engineer (Oficio Taller coordinates; client contract separate); Electrical engineer (Oficio Taller coordinates); Plumbing/hydraulic engineer (Oficio Taller coordinates); HVAC engineer — always required for clinical spaces (Oficio Taller coordinates); Medical equipment consultant (client responsibility; Oficio Taller coordinates space allocation)",
+      "revision_assumptions": "2 rounds of client revision included. Each additional round billed at MXN 12,000/day."
+    },
+    {
+      "phase_number": 3,
+      "phase_name": "Engineering Coordination (Coordinación de Ingeniería)",
+      "deliverables": [
+        "Structural engineering drawings integrated with architectural set",
+        "Electrical single-line diagram and panel schedules (including emergency power for clinical areas, UPS for critical systems, backup generator integration)",
+        "Lighting layout plan with fixture specifications (clinical lighting levels per COFEPRIS NOM standards; exam room, procedure room lighting specifications)",
+        "HVAC system design — required: pressure differential zoning, ventilation rates per COFEPRIS, filtration specifications (HEPA where required), equipment schedules",
+        "Plumbing and hydraulic layout (including medical-grade hand-washing stations per COFEPRIS requirements)",
+        "Medical gas systems design: oxygen, medical air, vacuum — piping layout, zone valve specifications, outlet locations, alarm panel locations (required for consultorios, urgencias, laboratorio, enfermería)",
+        "Fire suppression system design (sprinkler and/or gaseous suppression for server and equipment rooms)",
+        "Foundation plan and details",
+        "Note: Landscape architecture and irrigation are excluded by default for health centers"
+      ],
+      "duration_weeks": 8,
+      "collaborators": "All engineers from Phase 2; Medical gas systems engineer (Oficio Taller coordinates); Fire protection engineer (Oficio Taller coordinates)",
+      "revision_assumptions": "1 round of coordination revision included. Changes driven by clinical program additions after Phase 2 approval are billed as change orders.",
+      "cofepris_note": "COFEPRIS compliance is a deliverable integrated throughout this phase — all systems designed to COFEPRIS NOM requirements for healthcare facilities."
+    },
+    {
+      "phase_number": 4,
+      "phase_name": "Executive Plans (Planos Ejecutivos)",
+      "deliverables": [
+        "Fully coordinated construction drawing set (architectural + structural + MEP + HVAC + medical gas + fire)",
+        "Detail sheets: wall sections, clean corridor details, clinical room millwork, laboratory casework, hand-washing station details",
+        "Finish schedule (all surfaces, all zones — with infection control surface rating for clinical areas)",
+        "Door and window schedule with hardware specifications (including cleanroom-rated hardware for clinical zones)",
+        "Built-in clinical millwork drawings (nurses' stations, reception counters, lab casework, medication rooms)",
+        "Medical equipment rough-in drawings (power, data, medical gas, drainage at each equipment location)",
+        "Technical specifications document (clinical standards throughout)",
+        "COFEPRIS permit-ready drawing package"
+      ],
+      "duration_weeks": 8,
+      "collaborators": "All engineers from Phase 3 must deliver coordinated final drawings.",
+      "revision_assumptions": "1 round of coordination revision included. Client changes after executive plan approval require a change order."
+    },
+    {
+      "phase_number": 5,
+      "phase_name": "Contractor Bidding (Licitación)",
+      "deliverables": [
+        "Bid package preparation (executive plans + spec document sent to minimum 3 contractors with clinical construction experience)",
+        "Bid comparison matrix (contractor name, total, key line items, timeline, clinical construction experience references, notes)",
+        "Recommendation with rationale (including contractor clinical project experience assessment)"
+      ],
+      "duration_weeks": 5,
+      "note": "Minimum 3 bids required for health center projects. Contractors must demonstrate prior experience with COFEPRIS-regulated construction."
+    },
+    {
+      "phase_number": 6,
+      "phase_name": "Permitting — Trámites (Building Permit + COFEPRIS Licencia Sanitaria)",
+      "deliverables": [
+        "Building permit application package (architectural + structural + MEP)",
+        "COFEPRIS sanitary license application package (required for all healthcare facilities)",
+        "COFEPRIS facility authorization package (Licencia Sanitaria — specific to facility category: private outpatient clinic)",
+        "Medical gas system approval package (submitted to COFEPRIS)",
+        "Submission to all relevant authorities (Municipio de La Paz + COFEPRIS delegación BCS)",
+        "Tracking and correction management until all permits and licenses issued"
+      ],
+      "duration_weeks": 20,
+      "note": "COFEPRIS Licencia Sanitaria processing timelines vary significantly. 12–28 week estimate; actual timeline authority-dependent. COFEPRIS compliance is the primary permitting deliverable for this project type."
+    }
+  ],
+  "payment_schedule": [
+    {
+      "milestone": "M1",
+      "name": "Contract Signing",
+      "percentage": 25,
+      "amount": 54000,
+      "currency": "USD",
+      "trigger_event": "Signed SOW + first payment received"
+    },
+    {
+      "milestone": "M2",
+      "name": "Concept Design Approved",
+      "percentage": 15,
+      "amount": 32400,
+      "currency": "USD",
+      "trigger_event": "Client written approval of Phase 1 and clinical zoning concept"
+    },
+    {
+      "milestone": "M3",
+      "name": "Architectural Design Approved",
+      "percentage": 20,
+      "amount": 43200,
+      "currency": "USD",
+      "trigger_event": "Client written approval of Phase 2 architectural drawings and COFEPRIS pre-consultation complete"
+    },
+    {
+      "milestone": "M4",
+      "name": "Construction Documents Delivered",
+      "percentage": 25,
+      "amount": 54000,
+      "currency": "USD",
+      "trigger_event": "Executive plans package delivered to client"
+    },
+    {
+      "milestone": "M5",
+      "name": "COFEPRIS Permit Obtained",
+      "percentage": 15,
+      "amount": 32400,
+      "currency": "USD",
+      "trigger_event": "COFEPRIS Licencia Sanitaria and building permit delivered to client"
+    }
+  ],
+  "payment_schedule_note": "Total architecture fee: USD 216,000 per seed data. Payment schedule percentages from commercial_health_center template (25/15/20/25/15). M5 milestone tied to COFEPRIS permit — the critical regulatory milestone for this project type. Seed data payment_schedule (40/30/30) is for construction milestones; architecture fee schedule follows template percentages.",
+  "responsibilities_matrix": [
+    {
+      "deliverable": "Conceptual design and clinical zoning",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Client + medical consultant"
+    },
+    {
+      "deliverable": "Architectural drawings",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Client"
+    },
+    {
+      "deliverable": "COFEPRIS compliance checklists",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "COFEPRIS / Client"
+    },
+    {
+      "deliverable": "Clinical room standards compliance",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Client + medical consultant"
+    },
+    {
+      "deliverable": "Structural calculations",
+      "responsible_party": "Structural engineer",
+      "reviewed_by": "Oficio Taller coordinates"
+    },
+    {
+      "deliverable": "MEP engineering",
+      "responsible_party": "MEP engineers",
+      "reviewed_by": "Oficio Taller coordinates"
+    },
+    {
+      "deliverable": "HVAC clinical design",
+      "responsible_party": "HVAC engineer",
+      "reviewed_by": "Oficio Taller coordinates"
+    },
+    {
+      "deliverable": "Medical gas systems design",
+      "responsible_party": "Medical gas engineer",
+      "reviewed_by": "Oficio Taller coordinates"
+    },
+    {
+      "deliverable": "Fire protection design",
+      "responsible_party": "Fire protection engineer",
+      "reviewed_by": "Oficio Taller coordinates"
+    },
+    {
+      "deliverable": "Medical equipment specifications",
+      "responsible_party": "Client / medical consultant",
+      "reviewed_by": "Oficio Taller rough-in coordinates"
+    },
+    {
+      "deliverable": "Executive plans set",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Client + engineers"
+    },
+    {
+      "deliverable": "Bid package",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Client selects contractor"
+    },
+    {
+      "deliverable": "Permit applications (building + COFEPRIS)",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Municipal authority + COFEPRIS"
+    },
+    {
+      "deliverable": "COFEPRIS Licencia Sanitaria",
+      "responsible_party": "Oficio Taller (prepares package)",
+      "reviewed_by": "COFEPRIS"
+    },
+    {
+      "deliverable": "Construction",
+      "responsible_party": "Contractor (with clinical experience)",
+      "reviewed_by": "Oficio Taller (if supervision in scope)"
+    },
+    {
+      "deliverable": "Payment milestone sign-off",
+      "responsible_party": "Client",
+      "reviewed_by": "Oficio Taller invoices"
+    }
+  ],
+  "exclusions": [
+    "Structural, electrical, plumbing, civil, HVAC, medical gas, and fire protection engineering fees (client contracts engineers directly; Oficio Taller coordinates only)",
+    "Permit fees, COFEPRIS fees, municipal taxes, or government charges",
+    "Contractor selection or construction contracts (Oficio Taller recommends; client decides)",
+    "Medical equipment procurement (Oficio Taller provides rough-in coordination; client procures equipment)",
+    "Medical furniture and casework procurement (Oficio Taller specifies; client procures)",
+    "Topographic survey (required — client responsibility to provide)",
+    "Hydrologic or soil study (client responsibility)",
+    "Legal review of property title or easements",
+    "Construction cost guarantees",
+    "COFEPRIS ongoing compliance or annual renewal processes after project completion",
+    "Hazardous materials (asbestos, lead) assessment or abatement",
+    "Radiation shielding design for Rayos-X room (flagged as required specialist add-on service — scope excludes per template unless explicitly added as change order)",
+    "Landscape architecture and irrigation (excluded by default for health centers)",
+    "Signage and wayfinding (excluded by default)"
+  ],
+  "revision_assumptions": {
+    "phase_1": "2 rounds included. Additional: MXN 12,000/day",
+    "phase_2": "2 rounds included. Additional: MXN 12,000/day",
+    "phase_3": "1 round included. Changes from clinical program additions after Phase 2 approval billed as change orders.",
+    "phase_4": "1 round included. Post-approval changes require change order."
+  },
+  "project_type_clauses": [
+    {
+      "clause": "commercial_health_center_standard_clause",
+      "title": "Commercial Health Center — Standard Scope",
+      "text": "This project is classified as a commercial health center under the Oficio Taller project type framework. The scope of work applies the commercial_health_center template, which includes clinical zoning, COFEPRIS compliance integration throughout all phases, medical gas systems coordination, specialized HVAC design, and a permit-ready drawing package for submission to COFEPRIS. All clinical spaces are designed to the applicable NOM standards for healthcare facilities."
+    },
+    {
+      "clause": "health_authority_compliance_clause",
+      "title": "Health Authority Compliance — COFEPRIS",
+      "text": "This project is subject to COFEPRIS (Comisión Federal para la Protección contra Riesgos Sanitarios) sanitary regulations for healthcare facilities. COFEPRIS compliance is an explicit deliverable in every phase of this project, from conceptual clinical zoning through permit submission. A Licencia Sanitaria is required before the facility may open for clinical operations. Oficio Taller will prepare all COFEPRIS permit packages and coordinate the application process. Processing timelines are set by COFEPRIS and are outside Oficio Taller's control. The client is responsible for COFEPRIS renewals and ongoing compliance after project completion."
+    },
+    {
+      "clause": "cofepris_compliance_clause",
+      "title": "COFEPRIS Compliance as Explicit Deliverable",
+      "text": "COFEPRIS regulatory compliance is a named, tracked deliverable at each phase of this project. Phase 1 deliverables include COFEPRIS facility category confirmation. Phase 2 deliverables include the COFEPRIS compliance checklist — zoning, accessible route, clinical dimensions, and medical waste flow. Phase 3 deliverables include medical gas system design and specialized HVAC designed to COFEPRIS NOM requirements. Phase 4 deliverables include the COFEPRIS permit-ready drawing package. Phase 6 deliverables include the COFEPRIS Licencia Sanitaria application, medical gas system approval package, and submission to COFEPRIS delegación BCS. Failure to complete any COFEPRIS compliance deliverable is a project blocker."
+    },
+    {
+      "clause": "health_authority_compliance",
+      "title": "COFEPRIS Regulatory Compliance",
+      "text": "This project is subject to COFEPRIS (Comisión Federal para la Protección contra Riesgos Sanitarios) sanitary regulations for healthcare facilities, including the requirement for a Licencia Sanitaria before the facility may open for clinical operations. Oficio Taller will prepare all COFEPRIS permit packages and support the application process. Processing timelines set by COFEPRIS are outside Oficio Taller's control and do not constitute project delays attributable to Oficio Taller. The client is responsible for COFEPRIS Licencia Sanitaria renewals and ongoing compliance after project completion."
+    },
+    {
+      "clause": "medical_equipment_coordination",
+      "title": "Medical Equipment Rough-In Coordination",
+      "text": "Oficio Taller will coordinate architectural and MEP rough-in requirements (power, data, medical gas, drainage) for all medical equipment identified in the client's equipment list. The client is responsible for providing an equipment list with technical specifications before Phase 3 begins. Changes to the equipment list after Phase 3 approval will require a change order. Oficio Taller is not responsible for equipment procurement, installation, or commissioning."
+    },
+    {
+      "clause": "clinical_standards",
+      "title": "Clinical Design Standards",
+      "text": "All clinical spaces in this project are designed to comply with applicable COFEPRIS NOM standards for healthcare facilities, including minimum room dimensions, ventilation rates, lighting levels, infection control surface requirements, and accessible route standards. Design is based on the clinical program and facility category confirmed by the client at project initiation. Changes to the facility category or clinical program after Phase 2 approval constitute a change order."
+    },
+    {
+      "clause": "optional_supervision",
+      "title": "Construction Supervision — Strongly Recommended",
+      "text": "Construction supervision (Phase 7) is an optional service for this project type. Given the complexity of clinical construction, COFEPRIS compliance requirements during construction, and the consequences of construction deficiencies in healthcare facilities, Oficio Taller strongly recommends including construction supervision in the scope of work. If the client elects to proceed without supervision, the client accepts responsibility for verifying that construction conforms to the approved drawings and specifications."
+    },
+    {
+      "clause": "esignature",
+      "title": "Electronic Signature",
+      "text": "This document is valid when signed electronically by the client and an authorized Oficio Taller representative. Electronic signatures carry the same legal weight as physical signatures under Mexican federal law (NOM-151-SCFI)."
+    }
+  ]
+}

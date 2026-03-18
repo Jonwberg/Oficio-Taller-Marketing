@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "phase": "D",
+  "review_item": "client_proposal",
+  "reviewed_by": "Celia",
+  "decision": "approve",
+  "comment": "Client approved proposal. Contract signed and deposit confirmed.",
+  "timestamp": "2026-03-17T17:30:00-07:00",
+  "source_channel": "instagram",
+  "next_action": "dispatch_legal",
+  "route_to": "Legal",
+  "sync_to_asana": false
+}

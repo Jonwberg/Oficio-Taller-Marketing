@@ -1,0 +1,16 @@
+{
+  "phases": [
+    {"phase": 1, "name": "Project Development", "start": "2026-03-24", "end": "2026-04-14", "duration_weeks": 3},
+    {"phase": 2, "name": "Architectural Design", "start": "2026-04-14", "end": "2026-06-09", "duration_weeks": 8},
+    {"phase": 3, "name": "Engineering", "start": "2026-05-26", "end": "2026-07-07", "duration_weeks": 6},
+    {"phase": 4, "name": "Executive Plans", "start": "2026-07-07", "end": "2026-08-18", "duration_weeks": 6},
+    {"phase": 5, "name": "Contractor Selection", "start": "2026-08-18", "end": "2026-09-15", "duration_weeks": 4},
+    {"phase": 6, "name": "Construction Administration", "start": "2026-09-15", "end": "2027-09-15", "duration_weeks": 52}
+  ],
+  "milestones": [
+    {"name": "M1 — Contract Signed", "date": "2026-03-24"},
+    {"name": "M2 — Concept Approved", "date": "2026-04-28"},
+    {"name": "M3 — Executive Plans Approved", "date": "2026-08-18"}
+  ],
+  "construction_start": "2026-09-15"
+}

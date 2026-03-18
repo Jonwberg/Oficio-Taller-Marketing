@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc003-wellness-retreat",
+  "phase": "DG-06",
+  "review_item": "client-proposal-delivered",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": "Proposal delivered to James Hartwell. Client confirmed acceptance. M1 payment USD 168,000 received. Contract active.",
+  "timestamp": "2026-03-21T14:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "Dispatch Pablo — create project-schedule.json; contract is now active",
+  "route_to": "Pablo",
+  "sync_to_asana": true
+}

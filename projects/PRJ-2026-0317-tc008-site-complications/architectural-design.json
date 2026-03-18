@@ -1,0 +1,10 @@
+{
+  "design_set_status": "complete",
+  "concept_reflection_confirmed": true,
+  "area_program_compliance": {
+    "compliant": true,
+    "deviations": [],
+    "notes": "All 8 program elements confirmed in developed design set. Guest rooms: 15 units at 55sqm avg (verified). Restaurant 200sqm, infinity pool + deck 300sqm, reception 100sqm, back of house 150sqm, staff 80sqm, spa 200sqm, circulation 145sqm. Total 2,000sqm — no deviations from approved area program. Spa pavilion repositioned to 18m from stream centerline — exceeds 15m CONAGUA setback requirement."
+  },
+  "structural_coordination_notes": "Structural engineer engaged (TBD — to be contracted). Preliminary structural system: post-tensioned concrete slabs on concrete bearing walls and steel moment frames for the restaurant pavilion's long spans. Steep west slope requires retaining wall system — structural engineer will specify in Phase 3. Foundation type to be confirmed per soil study recommendations (deep piers likely for sloped areas). Infinity pool structural and hydraulic requirements communicated to structural and hydraulic engineers — special attention to differential settlement adjacent to slope."
+}

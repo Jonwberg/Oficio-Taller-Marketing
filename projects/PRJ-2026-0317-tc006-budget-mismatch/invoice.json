@@ -1,0 +1,15 @@
+{
+  "project_name": "Miguel Torres — standalone_residential — Los Cabos, BCS",
+  "client_name": "Miguel Torres",
+  "milestone_name": "M3 — Executive Plans Approved",
+  "amount": 9000,
+  "due_date": "2026-07-21",
+  "payment_instructions": "Bank transfer to Oficio Taller. Bank: [BANK_NAME — TO BE CONFIGURED IN .env]. CLABE: [CLABE — TO BE CONFIGURED IN .env]. Reference: PRJ-2026-0317-tc006-budget-mismatch-M3.",
+  "currency": "USD",
+  "running_total": 30000,
+  "invoice_history": [
+    { "milestone": "M1 — Contract Signed", "amount": 12000, "paid_at": "2026-03-31" },
+    { "milestone": "M2 — Concept Approved", "amount": 9000, "paid_at": "2026-04-21" },
+    { "milestone": "M3 — Executive Plans Approved", "amount": 9000, "due": "2026-07-21" }
+  ]
+}

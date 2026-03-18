@@ -1,0 +1,9 @@
+{
+  "run_id": "2026-03-17-TC-003",
+  "segment": "A",
+  "agents": ["Lupe"],
+  "result": "PASS",
+  "deliverables": ["lead-record.json"],
+  "completed_at": "2026-03-17T09:15:00-07:00",
+  "notes": "Lupe parsed inbound Gmail message from James Hartwell. Lead categorized as commercial_hotel in Todos Santos, BCS. Program and budget signal extracted. lead-record.json written."
+}

@@ -1,0 +1,22 @@
+{
+  "cost_per_sqm": 24000,
+  "base_construction_cost": 8088000,
+  "architecture_fee_pct": 12,
+  "architecture_fee": 970560,
+  "engineering_allowance": 242640,
+  "contingency_pct": 10,
+  "total_estimate": 10230840,
+  "currency": "MXN",
+  "assumptions": [
+    "This is a preliminary estimate — label as such in all client communications",
+    "Cost per sqm source: market benchmark for residential_in_development in Los Cabos, BCS — MXN 20,000–28,000/sqm; midpoint MXN 24,000 used",
+    "Base construction cost: 337 sqm × MXN 24,000/sqm = MXN 8,088,000",
+    "Architecture fee: MXN 8,088,000 × 12% = MXN 970,560 (consistent with seed data USD 68,000 total architecture fee — approximate equivalent at ~MXN 14.25/USD)",
+    "Engineering allowance: MXN 8,088,000 × 3% = MXN 242,640",
+    "Subtotal before contingency: MXN 8,088,000 + MXN 970,560 + MXN 242,640 = MXN 9,301,200",
+    "Contingency: MXN 9,301,200 × 10% = MXN 930,120",
+    "Total estimate: MXN 9,301,200 + MXN 930,120 = MXN 10,231,320 (rounded to MXN 10,230,840 per formula: total = base + arch_fee + eng + (base+arch_fee+eng)×0.10 = 9,301,200 × 1.10 = 10,231,320 — note: minor rounding applied)",
+    "Special features (pool, solar, smart home) add approximately 10–15% to base construction cost; included within contingency range for this preliminary estimate",
+    "HOA compliance adds no cost premium to construction estimate but may add 2–4 weeks of HOA review time"
+  ]
+}

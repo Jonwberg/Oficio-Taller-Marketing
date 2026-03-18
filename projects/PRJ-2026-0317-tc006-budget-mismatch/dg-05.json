@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "phase": "D",
+  "review_item": "proposal",
+  "reviewed_by": "Celia",
+  "decision": "approve",
+  "comment": "Proposal is clear. Budget constraint note included is appropriate.",
+  "timestamp": "2026-03-17T16:00:00-07:00",
+  "source_channel": "instagram",
+  "next_action": "dispatch_rosa",
+  "route_to": "Rosa",
+  "sync_to_asana": false
+}

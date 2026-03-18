@@ -1,0 +1,63 @@
+{
+  "bids": [
+    {
+      "contractor": "Constructora Baja Sur, S.A. de C.V.",
+      "total": 105000000,
+      "currency": "MXN",
+      "line_items": [
+        { "scope": "Civil works and site preparation", "amount": 12000000 },
+        { "scope": "Structural — foundations and framing", "amount": 18500000 },
+        { "scope": "Architectural finishes — all zones", "amount": 28000000 },
+        { "scope": "MEP — electrical, plumbing, HVAC", "amount": 22000000 },
+        { "scope": "Pool construction", "amount": 5500000 },
+        { "scope": "Solar PV system", "amount": 7500000 },
+        { "scope": "Greywater recycling system", "amount": 3500000 },
+        { "scope": "AV / technology infrastructure", "amount": 4000000 },
+        { "scope": "Fire protection system", "amount": 2000000 },
+        { "scope": "Landscape hardscape and site works", "amount": 2000000 }
+      ],
+      "timeline": "88 weeks",
+      "notes": "Strong hospitality portfolio — 3 boutique hotel references in BCS. Local subcontractor network well established. SECTUR and COFEPRIS compliance experience confirmed. Bid is comprehensive with no major exclusions."
+    },
+    {
+      "contractor": "Desarrollos Pacífico Norte, S.A. de C.V.",
+      "total": 112000000,
+      "currency": "MXN",
+      "line_items": [
+        { "scope": "Civil works and site preparation", "amount": 13500000 },
+        { "scope": "Structural — foundations and framing", "amount": 20000000 },
+        { "scope": "Architectural finishes — all zones", "amount": 29000000 },
+        { "scope": "MEP — electrical, plumbing, HVAC", "amount": 23000000 },
+        { "scope": "Pool construction", "amount": 5500000 },
+        { "scope": "Solar PV system", "amount": 7500000 },
+        { "scope": "Greywater recycling system", "amount": 4000000 },
+        { "scope": "AV / technology infrastructure", "amount": 4500000 },
+        { "scope": "Fire protection system", "amount": 2000000 },
+        { "scope": "Landscape hardscape and site works", "amount": 3000000 }
+      ],
+      "timeline": "80 weeks",
+      "notes": "Faster timeline proposed. Premium pricing reflects higher-spec finishes package. 2 hospitality references — fewer than Baja Sur but strong quality reputation. Higher landscape allocation suggests more detailed site execution."
+    },
+    {
+      "contractor": "Grupo Constructivo Los Cabos, S.A. de C.V.",
+      "total": 118500000,
+      "currency": "MXN",
+      "line_items": [
+        { "scope": "Civil works and site preparation", "amount": 14000000 },
+        { "scope": "Structural — foundations and framing", "amount": 21000000 },
+        { "scope": "Architectural finishes — all zones", "amount": 31000000 },
+        { "scope": "MEP — electrical, plumbing, HVAC", "amount": 24000000 },
+        { "scope": "Pool construction", "amount": 6000000 },
+        { "scope": "Solar PV system", "amount": 8000000 },
+        { "scope": "Greywater recycling system", "amount": 4500000 },
+        { "scope": "AV / technology infrastructure", "amount": 5000000 },
+        { "scope": "Fire protection system", "amount": 2500000 },
+        { "scope": "Landscape hardscape and site works", "amount": 2500000 }
+      ],
+      "timeline": "78 weeks",
+      "notes": "Highest bid — significant premium. Fastest proposed schedule. Extensive hospitality portfolio (5 references including 2 luxury properties in Los Cabos). Price reviewed against benchmarks — at MXN 39,500/sqm, is at the top of the commercial_hotel range. Suitable for luxury tier; may be above budget ceiling unless client accepts this price point."
+    }
+  ],
+  "recommendation": "Constructora Baja Sur, S.A. de C.V.",
+  "recommendation_rationale": "Constructora Baja Sur provides the best combination of competitive pricing (MXN 105M — lowest of three bids at MXN 35,000/sqm), strong hospitality experience (3 BCS boutique hotel references), and a comprehensive scope with no major exclusions. Their timeline of 88 weeks is the longest of the three but is within the hotel construction typical range (16–24 months). The MXN 7M premium for Desarrollos Pacífico Norte does not justify the hospitality experience differential. Grupo Constructivo Los Cabos, while the most experienced luxury builder, is MXN 13.5M above the low bid — a 12.9% premium that is not justified for this project's quality tier."
+}

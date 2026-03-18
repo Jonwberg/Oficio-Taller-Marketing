@@ -1,0 +1,20 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "client_name": "Miguel Torres",
+  "project_type": "standalone_residential",
+  "total_sqm": 216,
+  "cost_per_sqm_usd": 1200,
+  "construction_cost_subtotal_usd": 259200,
+  "pool_premium_usd": 45000,
+  "coastal_site_premium_usd": 25000,
+  "total_construction_estimate_usd": 329200,
+  "architecture_fee_usd": 30000,
+  "architecture_fee_pct": 9.1,
+  "total_estimate_usd": 359200,
+  "client_budget_usd": 200000,
+  "budget_gap_usd": 159200,
+  "budget_gap_pct": 79.6,
+  "preliminary_estimate_notes": "Los Cabos carries a significant coastal premium — construction costs run USD 1,100–1,300/sqm for mid-high spec residential. Pool in coastal environment adds $40K-$50K. Client budget of $200K is substantially below preliminary estimate of $359K. Budget alignment will be critical at Segment G. Architecture fee set at $30,000 USD per seed data payment schedule.",
+  "cost_basis_method": "parametric — cost per sqm with coastal and pool premiums",
+  "currency": "USD"
+}

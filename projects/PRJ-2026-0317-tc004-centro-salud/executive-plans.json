@@ -1,0 +1,17 @@
+{
+  "project_id": "PRJ-2026-0317-tc004-centro-salud",
+  "plan_set_components": [
+    "Architectural plans — floor plans all levels, sections, elevations, roof plan, site plan",
+    "Structural plans — foundation (raft), frame, connections, penetrations for MEP",
+    "MEP coordination drawings — electrical single-line, panel schedules, emergency power, lighting layout",
+    "HVAC clinical design drawings — pressure differential zoning plan, equipment schedule, duct layout, filtration specs",
+    "Medical gas systems drawings — O2/air/vacuum piping layout, zone valve locations, outlet schedule, alarm panel locations",
+    "Fire protection plans — sprinkler layout, gaseous suppression zones, fire alarm system",
+    "Detail sheets — wall sections, clean corridor details, clinical room millwork, lab casework, hand-washing station details",
+    "COFEPRIS permit-ready drawing package — compiled set per COFEPRIS submission requirements for Delegación BCS"
+  ],
+  "engineering_integration_confirmed": true,
+  "conflicts_resolved": true,
+  "client_signoff_milestone": "M4 — Construction Documents Delivered",
+  "plan_set_notes": "8-component plan set. All systems from engineering-package.json are integrated: structural, electrical, lighting, water (4 standard) plus hvac_clinical and medical_gas (2 conditional specialized systems). COFEPRIS permit-ready package is included as an explicit component — this is the deliverable package required for COFEPRIS Licencia Sanitaria application. All coordination conflicts resolved per engineering-package.json conflicts_resolved: true."
+}

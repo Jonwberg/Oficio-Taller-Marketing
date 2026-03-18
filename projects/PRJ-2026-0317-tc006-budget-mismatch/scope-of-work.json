@@ -1,0 +1,74 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "client_name": "Miguel Torres",
+  "project_type": "standalone_residential",
+  "project_name": "Miguel Torres — standalone_residential — Los Cabos, BCS",
+  "currency": "USD",
+  "scope_phases": [
+    {
+      "phase": "Phase 1 — Conceptual Design",
+      "description": "Site analysis, area program validation, 3D massing studies, concept design options, preliminary material direction",
+      "deliverables": ["3D concept model", "Floor plan options (2 schemes)", "Site plan", "Material direction board"],
+      "duration_weeks": 3
+    },
+    {
+      "phase": "Phase 2 — Architectural Design Development",
+      "description": "Developed architectural design: floor plans, sections, elevations, preliminary details",
+      "deliverables": ["Floor plans (all levels)", "Elevations (all facades)", "Sections (2 minimum)", "Roof plan"],
+      "duration_weeks": 4
+    },
+    {
+      "phase": "Phase 3 — Engineering Coordination",
+      "description": "Structural, electrical, lighting, water, and pool systems engineering coordination",
+      "deliverables": ["Structural design package", "MEP coordination", "Pool structural design"],
+      "duration_weeks": 4
+    },
+    {
+      "phase": "Phase 4 — Executive Plans (Construction Documents)",
+      "description": "Full construction document set integrated with engineering",
+      "deliverables": ["Architectural construction documents", "Structural drawings", "MEP coordination drawings", "Door/window schedule", "Finish schedule"],
+      "duration_weeks": 5
+    },
+    {
+      "phase": "Phase 5 — Permit Management",
+      "description": "Municipal building permit submission and tracking; SEMARNAT coastal clearance coordination",
+      "deliverables": ["Permit application package", "Permit status tracking"],
+      "duration_weeks": 8
+    },
+    {
+      "phase": "Phase 6 — Construction Administration",
+      "description": "Site visits, RFI responses, contractor coordination, milestone inspection sign-offs",
+      "deliverables": ["Site visit reports", "RFI log", "Change order log"],
+      "duration_weeks": 52
+    }
+  ],
+  "payment_schedule": [
+    {
+      "milestone": "M1 — Contract Signed",
+      "trigger_event": "contract_signed",
+      "percentage": 40,
+      "amount_usd": 12000
+    },
+    {
+      "milestone": "M2 — Concept Approved",
+      "trigger_event": "dg07_approved",
+      "percentage": 30,
+      "amount_usd": 9000
+    },
+    {
+      "milestone": "M3 — Executive Plans Approved",
+      "trigger_event": "dg10_approved",
+      "percentage": 30,
+      "amount_usd": 9000
+    }
+  ],
+  "total_architecture_fee_usd": 30000,
+  "exclusions": [
+    "Construction costs (contractor-direct)",
+    "Furniture, fixtures, and equipment (FF&E)",
+    "Interior design beyond material direction board",
+    "Landscaping beyond site plan",
+    "SEMARNAT fees (client-direct)",
+    "Municipal permit fees (client-direct)"
+  ]
+}

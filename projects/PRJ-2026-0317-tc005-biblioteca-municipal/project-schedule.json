@@ -1,0 +1,164 @@
+{
+  "project_id": "PRJ-2026-0317-tc005-biblioteca-municipal",
+  "project_type": "public_civic",
+  "schedule_created_at": "2026-03-25T09:00:00-07:00",
+  "phases": [
+    {
+      "phase_number": 1,
+      "phase_name": "Conceptual Design",
+      "start_date": "2026-03-25",
+      "end_date": "2026-05-20",
+      "duration_weeks": 8,
+      "deliverables": [
+        "Design narrative (civic character + community benefit)",
+        "Preliminary floor plan sketches (1:200)",
+        "Site placement / public access concept",
+        "3D conceptual massing model",
+        "Material and finish direction board",
+        "Space arrangement diagram",
+        "Accessibility compliance concept",
+        "Sustainability/solar concept"
+      ],
+      "milestone": "Concept design — contracting entity technical committee approval"
+    },
+    {
+      "phase_number": 2,
+      "phase_name": "Architectural Design",
+      "start_date": "2026-05-21",
+      "end_date": "2026-09-09",
+      "duration_weeks": 16,
+      "deliverables": [
+        "Floor plans all levels (1:100)",
+        "Elevations all facades (1:100)",
+        "Building sections ×3 (1:100)",
+        "Roof plan",
+        "Site plan (boundaries, setbacks, accessible parking, service entry)",
+        "Interior design criteria document",
+        "Accessibility compliance matrix (NOM-001-STPS / IMSS/ISSSTE)",
+        "Window and door schedule",
+        "Structural coordination sketch",
+        "Sustainability compliance strategy (solar included)",
+        "Landscape architecture",
+        "Irrigation plan"
+      ],
+      "milestone": "Architectural design — contracting entity written approval (technical + budget committee)"
+    },
+    {
+      "phase_number": 3,
+      "phase_name": "Engineering Coordination",
+      "start_date": "2026-09-10",
+      "end_date": "2026-11-18",
+      "duration_weeks": 10,
+      "deliverables": [
+        "Structural engineering drawings",
+        "Electrical single-line diagram + panel schedules",
+        "Lighting layout plan",
+        "Plumbing and hydraulic layout",
+        "HVAC system design",
+        "Landscape engineering coordination",
+        "Solar systems design",
+        "Foundation plan and details",
+        "Sustainability coordination confirmation"
+      ],
+      "milestone": "Engineering coordination complete"
+    },
+    {
+      "phase_number": 4,
+      "phase_name": "Executive Plans",
+      "start_date": "2026-11-19",
+      "end_date": "2027-01-27",
+      "duration_weeks": 10,
+      "deliverables": [
+        "Fully coordinated construction drawing set",
+        "Detail sheets",
+        "Finish schedule",
+        "Door and window schedule with specs",
+        "Site furniture and signage coordination",
+        "Technical specifications (government procurement format)",
+        "Sustainability certification documentation",
+        "Public bidding technical documents"
+      ],
+      "milestone": "M4 — Construction documents delivered to contracting entity"
+    },
+    {
+      "phase_number": 5,
+      "phase_name": "Contractor Bidding (Licitación Pública)",
+      "start_date": "2027-01-28",
+      "end_date": "2027-03-25",
+      "duration_weeks": 8,
+      "deliverables": [
+        "Technical bid package submitted to contracting entity",
+        "Technical bid review",
+        "Technical recommendation"
+      ],
+      "milestone": "Contractor selection by contracting entity — obra pública procurement",
+      "note": "Formal licitación pública managed by contracting entity. Oficio Taller prepares technical documents only."
+    },
+    {
+      "phase_number": 6,
+      "phase_name": "Permitting",
+      "start_date": "2027-03-26",
+      "end_date": "2027-09-29",
+      "duration_weeks": 26,
+      "deliverables": [
+        "Building permit application package",
+        "Submission to Municipio de Los Cabos",
+        "Additional authorizations as required",
+        "Tracking and correction management"
+      ],
+      "milestone": "M5 — Building permit issued; construction start authorized",
+      "note": "Public project permit process expected to be longer than residential. Estimated 20–26 weeks for government project in Baja California Sur."
+    }
+  ],
+  "milestone_dates": {
+    "M1_contract_signing": "2026-03-25",
+    "M2_concept_approved": "2026-05-20",
+    "M3_architectural_design_approved": "2026-09-09",
+    "M4_construction_docs_delivered": "2027-01-27",
+    "M5_construction_start_authorized": "2027-09-29"
+  },
+  "dependencies": {
+    "phase_2": "phase_1_complete",
+    "phase_3": "phase_2_complete",
+    "phase_4": "phase_3_complete",
+    "phase_5": "phase_4_complete",
+    "phase_6": "phase_5_complete"
+  },
+  "construction_milestones": [
+    {
+      "milestone_number": 1,
+      "milestone_name": "M1 — Contract Signing",
+      "payment_due": "2026-03-25",
+      "amount_usd": 36000,
+      "final_milestone": false
+    },
+    {
+      "milestone_number": 2,
+      "milestone_name": "M2 — Concept Design Approved",
+      "payment_due": "2026-05-20",
+      "amount_usd": 27000,
+      "final_milestone": false
+    },
+    {
+      "milestone_number": 3,
+      "milestone_name": "M3 — Architectural Design Approved",
+      "payment_due": "2026-09-09",
+      "amount_usd": 36000,
+      "final_milestone": false
+    },
+    {
+      "milestone_number": 4,
+      "milestone_name": "M4 — Construction Documents Delivered",
+      "payment_due": "2027-01-27",
+      "amount_usd": 45000,
+      "final_milestone": false
+    },
+    {
+      "milestone_number": 5,
+      "milestone_name": "M5 — Construction Start Authorized",
+      "payment_due": "2027-09-29",
+      "amount_usd": 36000,
+      "final_milestone": true
+    }
+  ]
+}

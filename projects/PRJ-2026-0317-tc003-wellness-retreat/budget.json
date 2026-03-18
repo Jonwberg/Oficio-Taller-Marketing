@@ -1,0 +1,47 @@
+{
+  "project_name": "James Hartwell — commercial_hotel — Todos Santos, BCS",
+  "client_name": "James Hartwell",
+  "milestone_name": "M1 — Contract Signing",
+  "amount": 168000,
+  "payment_instructions": "Bank transfer to Oficio Taller. Bank: [BANK_NAME]. CLABE: [CLABE — TO BE CONFIGURED IN .env]. Reference: PRJ-2026-0317-tc003-wellness-retreat-M1.",
+  "currency": "USD",
+  "total": 420000,
+  "line_items": [
+    {
+      "phase": "Phase 1 — Conceptual Design",
+      "description": "Parti diagram, design narrative, massing model, material/brand direction board, space arrangement diagram, SECTUR classification target confirmation",
+      "amount": 84000,
+      "currency": "USD"
+    },
+    {
+      "phase": "Phase 2 — Architectural Design",
+      "description": "Full architectural drawing set, SECTUR compliance checklist, COFEPRIS F&B checklist, all functional zones",
+      "amount": 105000,
+      "currency": "USD"
+    },
+    {
+      "phase": "Phase 3 — Engineering Coordination",
+      "description": "Structural, MEP, HVAC, fire, AV, solar, and greywater systems coordination drawings",
+      "amount": 63000,
+      "currency": "USD"
+    },
+    {
+      "phase": "Phase 4 — Executive Plans",
+      "description": "Fully coordinated construction document set, FF&E specifications, technical specs, SECTUR permit-ready package",
+      "amount": 105000,
+      "currency": "USD"
+    },
+    {
+      "phase": "Phase 5 — Contractor Bidding",
+      "description": "Bid package preparation, minimum 3 bids, bid comparison matrix, recommendation",
+      "amount": 42000,
+      "currency": "USD"
+    },
+    {
+      "phase": "Phase 6 — Permitting",
+      "description": "Building permit, SECTUR hotel classification permit, COFEPRIS F&B permit — all submissions and tracking",
+      "amount": 21000,
+      "currency": "USD"
+    }
+  ]
+}

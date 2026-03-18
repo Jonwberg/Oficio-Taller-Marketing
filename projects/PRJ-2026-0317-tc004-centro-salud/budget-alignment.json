@@ -1,0 +1,11 @@
+{
+  "project_id": "PRJ-2026-0317-tc004-centro-salud",
+  "contractor_pricing_source": "Preliminary estimates from 2 local contractors in La Paz, BCS with confirmed COFEPRIS clinical construction experience",
+  "contractor_total": 1850000,
+  "client_budget": 1800000,
+  "variance_amount": 50000,
+  "variance_pct": 2.78,
+  "currency": "USD",
+  "recommendation": "proceed",
+  "recommendation_notes": "Variance of 2.78% is well within the 10% proceed threshold. Contractor estimates of USD 1,850,000 reflect the specialized systems premium for medical gas, clinical HVAC, and backup generator. Client budget of USD 1,800,000 is slightly below contractor estimates but the gap is minor — client may elect to fund the difference directly or adjust minor program elements. No value engineering required. Recommend proceeding to DG-09."
+}

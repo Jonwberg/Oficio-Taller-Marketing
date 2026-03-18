@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "phase": "DG-01",
+  "review_item": "lead-record",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": "Pool + Los Cabos is an expensive combination. Budget may be tight but worth discovery.",
+  "timestamp": "2026-03-17T09:45:00-07:00",
+  "source_channel": "email",
+  "next_action": "dispatch_lupe_segment_b",
+  "route_to": "Lupe",
+  "sync_to_asana": true
+}

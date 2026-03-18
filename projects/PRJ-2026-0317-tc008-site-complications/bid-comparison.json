@@ -1,0 +1,44 @@
+{
+  "bids": [
+    {
+      "contractor": "Constructora del Cabo S.A. de C.V.",
+      "total": 3350000,
+      "currency": "USD",
+      "line_items": [
+        { "scope": "Civil and earthwork (slope retention, stream setback grading)", "amount": 420000 },
+        { "scope": "Structural (foundations, slabs, walls, steel frames)", "amount": 780000 },
+        { "scope": "Finishes (architecture interior and exterior)", "amount": 650000 },
+        { "scope": "MEP — electrical and lighting", "amount": 320000 },
+        { "scope": "MEP — plumbing and water systems", "amount": 280000 },
+        { "scope": "Solar PV and thermal systems", "amount": 195000 },
+        { "scope": "Greywater recycling system", "amount": 85000 },
+        { "scope": "Infinity pool construction and hydraulics", "amount": 320000 },
+        { "scope": "Landscaping (native xeriscape)", "amount": 150000 },
+        { "scope": "General conditions and overhead", "amount": 150000 }
+      ],
+      "timeline": "52 weeks",
+      "notes": "Strong local BCS portfolio with prior hotel experience in Los Cabos. Price includes all specialty systems. No exclusions noted for stream setback compliance."
+    },
+    {
+      "contractor": "Grupo Constructor Baja S.A. de C.V.",
+      "total": 3480000,
+      "currency": "USD",
+      "line_items": [
+        { "scope": "Civil and earthwork", "amount": 450000 },
+        { "scope": "Structural", "amount": 820000 },
+        { "scope": "Finishes", "amount": 670000 },
+        { "scope": "MEP — electrical and lighting", "amount": 340000 },
+        { "scope": "MEP — plumbing and water", "amount": 295000 },
+        { "scope": "Solar systems", "amount": 210000 },
+        { "scope": "Greywater recycling", "amount": 90000 },
+        { "scope": "Infinity pool", "amount": 340000 },
+        { "scope": "Landscaping", "amount": 115000 },
+        { "scope": "General conditions", "amount": 150000 }
+      ],
+      "timeline": "54 weeks",
+      "notes": "Larger firm with industrial and residential portfolio. Higher price on specialty systems. 2-week longer timeline."
+    }
+  ],
+  "recommendation": "Constructora del Cabo S.A. de C.V.",
+  "recommendation_rationale": "Constructora del Cabo S.A. de C.V. is recommended at USD $3,350,000 — USD $130,000 (3.7%) below the competing bid and USD $650,000 below the client's maximum budget. The contractor has prior hotel construction experience in Los Cabos, includes full specialty systems coverage with no exclusions, and estimates equivalent timeline to the project schedule. Two bids received — sufficient competitive basis for selection."
+}

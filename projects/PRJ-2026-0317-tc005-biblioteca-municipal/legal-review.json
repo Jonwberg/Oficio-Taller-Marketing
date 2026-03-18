@@ -1,0 +1,14 @@
+{
+  "reviewed_by": "Legal",
+  "reviewed_at": "2026-03-18T14:00:00-07:00",
+  "ip_rights_status": "clear",
+  "compliance_flags": [
+    {
+      "flag": "Advisory: Government payment authorization process may delay M2–M5 payments beyond standard private client timelines",
+      "clause_reference": "payment_schedule / government_approval_timeline clause",
+      "proposed_resolution": "Payment schedule already notes government fiscal authorization subject; add language to proposal confirming Oficio Taller will not treat fiscal delays as payment default where delay is attributable to government budget cycle",
+      "severity": "advisory"
+    }
+  ],
+  "approval_status": "approved_with_advisory"
+}

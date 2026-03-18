@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc008-site-complications",
+  "phase": "DG-10",
+  "review_item": "executive-plans",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": null,
+  "timestamp": "2026-11-11T09:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "dispatch Ofelia for bidding and contractor selection",
+  "route_to": "Ofelia",
+  "sync_to_asana": true
+}

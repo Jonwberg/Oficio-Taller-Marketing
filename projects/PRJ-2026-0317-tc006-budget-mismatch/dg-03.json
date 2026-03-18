@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "phase": "C",
+  "review_item": "cost_basis",
+  "reviewed_by": "Celia",
+  "decision": "approve",
+  "comment": "Cost basis is realistic for Los Cabos. Client will see the gap at DG-09. Proceed with full scope design — we'll address budget alignment after engineering.",
+  "timestamp": "2026-03-17T13:00:00-07:00",
+  "source_channel": "instagram",
+  "next_action": "dispatch_tomas",
+  "route_to": "Tomás",
+  "sync_to_asana": false
+}

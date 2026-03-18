@@ -1,0 +1,61 @@
+{
+  "spaces": [
+    {
+      "name": "Guest Room",
+      "qty": 15,
+      "size_sqm": 55,
+      "notes": "Standard boutique room, 55sqm avg per client spec"
+    },
+    {
+      "name": "Restaurant",
+      "qty": 1,
+      "size_sqm": 200,
+      "notes": "Full-service restaurant with bar — per client program"
+    },
+    {
+      "name": "Infinity Pool + Deck",
+      "qty": 1,
+      "size_sqm": 300,
+      "notes": "Infinity pool with pool deck — special feature per client"
+    },
+    {
+      "name": "Reception / Lobby",
+      "qty": 1,
+      "size_sqm": 100,
+      "notes": "Hotel reception and lobby area"
+    },
+    {
+      "name": "Back of House",
+      "qty": 1,
+      "size_sqm": 150,
+      "notes": "Kitchen, storage, service areas"
+    },
+    {
+      "name": "Staff Facilities",
+      "qty": 1,
+      "size_sqm": 80,
+      "notes": "Staff quarters/locker room"
+    },
+    {
+      "name": "Spa",
+      "qty": 1,
+      "size_sqm": 200,
+      "notes": "Full spa including treatment rooms — per client program"
+    },
+    {
+      "name": "Circulation / Common Areas",
+      "qty": 1,
+      "size_sqm": 145,
+      "notes": "Corridors, terraces, landscaped paths between volumes"
+    }
+  ],
+  "total_sqm": 2000,
+  "assumptions": [
+    "Guest room size 55sqm is per client specification — includes bathroom and private terrace",
+    "Infinity pool 300sqm includes pool basin and surrounding deck — structural setback from stream will need to be confirmed via hydrologic study",
+    "Circulation 145sqm assumes dispersed pavilion typology on 15,000sqm site — may increase if program consolidates vertically",
+    "Site area 15,000sqm is per client; 2,000sqm programmed = 13% coverage ratio, well within typical BCS limits",
+    "Solar and greywater recycling systems will be coordinated at engineering phase — not added as separate programmed spaces but require dedicated plant room within back-of-house",
+    "total_sqm = 15×55 + 200 + 300 + 100 + 150 + 80 + 200 + 145 = 825 + 200 + 300 + 100 + 150 + 80 + 200 + 145 = 2,000sqm (verified)"
+  ]
+}

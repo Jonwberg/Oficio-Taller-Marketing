@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc001-casa-moderna",
+  "phase": "D",
+  "review_item": "proposal_sent_to_client",
+  "reviewed_by": "Celia",
+  "decision": "approve",
+  "comment": "Proposal sent to client. Awaiting client decision.",
+  "timestamp": "2026-03-17T11:15:00-07:00",
+  "source_channel": "email",
+  "next_action": "await_client_decision",
+  "route_to": "Marcela",
+  "sync_to_asana": false
+}

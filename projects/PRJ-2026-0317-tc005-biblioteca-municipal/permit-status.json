@@ -1,0 +1,23 @@
+{
+  "project_id": "PRJ-2026-0317-tc005-biblioteca-municipal",
+  "submitted_at": "2027-04-15T09:00:00-07:00",
+  "jurisdiction": "Municipio de Los Cabos, Baja California Sur — Direccion de Obras Publicas y Desarrollo Urbano",
+  "status": "approved",
+  "corrections": [],
+  "approved_at": "2027-09-20T14:00:00-07:00",
+  "permit_notes": "Public project permit process — 23 weeks (longer than residential as expected for a government-commissioned building in BCS). Inter-agency coordination required: CONAGUA (water/sanitary connection) and CFE (electrical service + solar net metering). No corrections received — clean first submission. Permit process duration confirms public project requires longer timeline than residential per scope-of-work.json Phase 6.",
+  "additional_authorizations": [
+    {
+      "authority": "CONAGUA",
+      "type": "Potable water and sanitary discharge connection",
+      "status": "approved",
+      "notes": "Municipal site — direct connection to existing infrastructure"
+    },
+    {
+      "authority": "CFE",
+      "type": "Electrical service connection including solar net metering",
+      "status": "approved",
+      "notes": "Net metering agreement for solar system approved"
+    }
+  ]
+}

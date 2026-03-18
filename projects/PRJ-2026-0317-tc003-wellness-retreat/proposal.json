@@ -1,0 +1,49 @@
+{
+  "scope_summary": {
+    "es": "Oficio Taller tiene el gusto de presentar esta propuesta de colaboración para el diseño y coordinación de su hotel boutique de bienestar en Todos Santos, BCS. Nuestro alcance cubre el ciclo completo de diseño arquitectónico — desde la conceptualización hasta los planos ejecutivos listos para permiso — en seis fases integrales: Diseño Conceptual, Proyecto Arquitectónico, Coordinación de Ingeniería, Planos Ejecutivos, Licitación con Contratistas, y Trámites de Permisos.\n\nEl programa contempla un hotel de 3,000 m² distribuido en 20 casitas, spa, restaurante, área de recepción/lobby, piscina, cuartos de personal y áreas de servicio. Cada zona recibirá un tratamiento de diseño específico — desde los planos de unidad típica de casita con variantes de accesibilidad, hasta el diseño de cumplimiento COFEPRIS para las zonas de alimentos y bebidas. La coordinación de ingeniería incluye sistemas de climatización (HVAC, siempre requerido para proyectos hoteleros), tecnología AV, solar fotovoltaico, sistema de reciclaje de aguas grises, y protección contra incendios.\n\nNuestro proceso culmina con un set de documentos constructivos completamente coordinados — arquitectura más todas las disciplinas de ingeniería — y los paquetes de permiso para el Municipio de Todos Santos, SECTUR y COFEPRIS. La selección de contratistas incluye un mínimo de tres licitaciones comparativas para garantizar transparencia y competencia real.",
+    "en": "Oficio Taller is pleased to present this proposal for the design and coordination of your boutique wellness hotel in Todos Santos, BCS. Our scope covers the full architectural design cycle — from concept through permit-ready executive plans — across six integrated phases: Conceptual Design, Architectural Design, Engineering Coordination, Executive Plans, Contractor Bidding, and Permitting.\n\nThe program encompasses 3,000 sqm across 20 casitas, a full-service spa, restaurant, reception/lobby, pool deck, staff quarters, and back-of-house. Each zone receives dedicated design attention — from casita unit plans with accessibility variants to COFEPRIS-compliant F&B zone layouts. Engineering coordination includes HVAC (always required for hotel projects), AV technology systems, photovoltaic solar, greywater recycling, and fire protection design.\n\nOur process delivers a fully coordinated construction document set — architecture plus all engineering disciplines — along with permit packages for the Municipio de Todos Santos, SECTUR, and COFEPRIS. Contractor selection includes a minimum of three competitive bids to ensure price transparency and qualified competition."
+  },
+  "budget_detail": {
+    "es": "Honorarios de arquitectura: USD $420,000 total.\n\nDesglose por fase:\n- Fase 1 — Diseño Conceptual: USD $84,000\n- Fase 2 — Proyecto Arquitectónico: USD $105,000\n- Fase 3 — Coordinación de Ingeniería: USD $63,000\n- Fase 4 — Planos Ejecutivos: USD $105,000\n- Fase 5 — Licitación: USD $42,000\n- Fase 6 — Trámites: USD $21,000\n\nCalendario de pagos:\n- M1 — Firma de contrato: USD $168,000 (40%)\n- M2 — Aprobación de concepto: USD $126,000 (30%)\n- M3 — Aprobación de planos ejecutivos: USD $126,000 (30%)",
+    "en": "Architecture fees: USD $420,000 total.\n\nFee breakdown by phase:\n- Phase 1 — Conceptual Design: USD $84,000\n- Phase 2 — Architectural Design: USD $105,000\n- Phase 3 — Engineering Coordination: USD $63,000\n- Phase 4 — Executive Plans: USD $105,000\n- Phase 5 — Contractor Bidding: USD $42,000\n- Phase 6 — Permitting: USD $21,000\n\nPayment schedule:\n- M1 — Contract signing: USD $168,000 (40%)\n- M2 — Concept approval: USD $126,000 (30%)\n- M3 — Executive plans approval: USD $126,000 (30%)",
+    "total": 420000,
+    "currency": "USD",
+    "line_items_ref": "budget.json"
+  },
+  "timeline_phases": [
+    {
+      "phase": "Phase 1 — Conceptual Design",
+      "duration_weeks": 7,
+      "key_milestone": "Conceptual design client approval — M2"
+    },
+    {
+      "phase": "Phase 2 — Architectural Design",
+      "duration_weeks": 14,
+      "key_milestone": "Architectural design client approval"
+    },
+    {
+      "phase": "Phase 3 — Engineering Coordination",
+      "duration_weeks": 9,
+      "key_milestone": "All engineering drawings coordinated"
+    },
+    {
+      "phase": "Phase 4 — Executive Plans",
+      "duration_weeks": 9,
+      "key_milestone": "Executive plans delivered — M3"
+    },
+    {
+      "phase": "Phase 5 — Contractor Bidding",
+      "duration_weeks": 5,
+      "key_milestone": "Contractor selected"
+    },
+    {
+      "phase": "Phase 6 — Permitting",
+      "duration_weeks": 16,
+      "key_milestone": "All permits issued (building + SECTUR + COFEPRIS)"
+    }
+  ],
+  "process_narrative": {
+    "es": "En Oficio Taller, trabajamos con un modelo de proceso que prioriza la claridad en cada etapa. Antes de iniciar el diseño, definimos juntos el programa completo — espacio por espacio — y lo vinculamos a un estimado de costo preliminar. Esto no es un trámite burocrático: es la base sobre la que se construye un proyecto coherente. Cuando llegamos a la mesa de diseño, sabemos exactamente qué estamos diseñando y por qué.\n\nNuestras decisiones de diseño son trazables. Cada propuesta conceptual tiene raíces en el programa aprobado, en las condiciones del sitio, y en la visión del cliente. Documentamos el proceso de revisión — qué fue aprobado, qué fue ajustado, y por qué — para que tanto el cliente como el equipo puedan referenciar el historial de decisiones en cualquier momento del proyecto.\n\nLa coordinación de ingeniería no es una fase separada del diseño: la trabajamos en paralelo desde la Fase 2. Los ingenieros de estructura, instalaciones, HVAC, AV, sistemas solares y de aguas grises se integran al proceso cuando el proyecto lo requiere, no al final. El resultado es un set de documentos constructivos sin conflictos entre disciplinas — lo que significa menos preguntas de contratista en obra y menos órdenes de cambio.\n\nLos proyectos hoteleros de esta escala requieren gestión activa de permisos ante múltiples autoridades: Municipio, SECTUR y COFEPRIS. Hacemos ese seguimiento por cuenta del cliente — rastreamos el estado de cada expediente, respondemos requerimientos de corrección, y notificamos al cliente únicamente cuando se requiere su acción directa.",
+    "en": "At Oficio Taller, we work with a process model that prioritizes clarity at every stage. Before design begins, we define the full program together — space by space — and connect it to a preliminary cost estimate. This is not bureaucratic formality: it is the foundation on which a coherent project is built. When we come to the design table, we know exactly what we are designing and why.\n\nOur design decisions are traceable. Every concept proposal is rooted in the approved program, the site conditions, and the client's vision. We document the review process — what was approved, what was adjusted, and why — so that both the client and the team can reference the decision history at any point in the project.\n\nEngineering coordination is not a separate phase from design: we work it in parallel from Phase 2 onwards. Structural, MEP, HVAC, AV, solar, and greywater engineers are integrated into the process when the project needs them — not at the end. The result is a construction document set with no inter-discipline conflicts, which means fewer contractor RFIs in the field and fewer change orders.\n\nHotel projects at this scale require active permit management with multiple authorities: the Municipio, SECTUR, and COFEPRIS. We handle that tracking on the client's behalf — monitoring each file, responding to correction requests, and notifying the client only when their direct action is required."
+  }
+}

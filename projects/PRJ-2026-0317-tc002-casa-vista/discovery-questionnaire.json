@@ -1,0 +1,11 @@
+{
+  "sent_to": null,
+  "sent_at": "2026-03-17T10:00:00-07:00",
+  "project_type_question": "¿Qué tipo de proyecto tiene en mente? ¿Casa habitación, ampliación, proyecto interior, desarrollo inmobiliario? ¿Ya tiene terreno o predios definidos?",
+  "budget_question": "¿Tiene en mente un presupuesto aproximado total para construcción? ¿Y para los honorarios de diseño y coordinación?",
+  "timeline_question": "¿En qué etapa está el proyecto actualmente? ¿Cuándo le gustaría iniciar la fase de diseño? ¿Tiene alguna fecha límite de entrega o de inicio de obra?",
+  "location_question": "¿Cuál es la ubicación del predio o inmueble? ¿Tiene ya escrituras u otro documento que acredite propiedad o posesión?",
+  "special_requirements_question": "¿Tiene requerimientos especiales: accesibilidad universal, sistemas sustentables, certificaciones, o elementos de programa que considere fuera de lo ordinario? Por ejemplo, ¿le interesa integrar paneles solares o domótica?",
+  "design_style_question": "¿Cómo describiría el estilo de vida o la atmósfera que quiere que el proyecto refleje? ¿Tiene referencias visuales — otros proyectos, arquitectos, materiales, lugares — que le inspiren? Considerando que el fraccionamiento exige estilo contemporáneo, ¿cómo le gustaría expresar su personalidad dentro de esa guía?",
+  "site_ownership_question": "¿El terreno o inmueble es de su propiedad? ¿Está libre de gravámenes? ¿Cuenta con algún estudio o levantamiento previo del predio? ¿Tiene una copia del reglamento de construcción del fraccionamiento que podamos revisar?"
+}

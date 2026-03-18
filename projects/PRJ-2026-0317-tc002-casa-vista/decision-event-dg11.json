@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc002-casa-vista",
+  "phase": "DG-11",
+  "review_item": "bid-comparison",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": "Recommend Constructora Los Cabos — development pre-approval confirmed, cost within budget.",
+  "timestamp": "2026-10-28T09:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "dispatch Paco for permit submission",
+  "route_to": "Paco",
+  "sync_to_asana": true
+}

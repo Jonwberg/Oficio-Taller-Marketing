@@ -1,0 +1,129 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "D",
+  "tc_id": "TC-008",
+  "project_id": "PRJ-2026-0317-tc008-site-complications",
+  "executed_at": "2026-03-17T17:00:00-07:00",
+  "schema_passes": true,
+  "agents_executed": [
+    {
+      "agent": "Tomás",
+      "role": "Scope of work — commercial_hotel template",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/scope-of-work.json",
+      "schema_pass": true,
+      "fields_validated": ["scope_phases", "payment_schedule", "responsibilities_matrix", "exclusions", "revision_assumptions", "project_type_clauses"],
+      "project_type_clauses_count": 5,
+      "template_applied": "commercial_hotel",
+      "payment_schedule_currency": "USD",
+      "payment_schedule_source": "seed data (40/30/30)",
+      "fallbacks": ["ASANA_UNAVAILABLE: would complete scope_of_work task"]
+    },
+    {
+      "agent": "Vera",
+      "role": "DG-04 architect SOW review email",
+      "mode": "architect_sow_review",
+      "schema_pass": true,
+      "fallbacks": [
+        "GMAIL_UNAVAILABLE: would send DG-04 SOW review to architect",
+        "ASANA_UNAVAILABLE: would update sow_architect_gate task"
+      ]
+    },
+    {
+      "agent": "Celia",
+      "role": "DG-04 decision routing",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/decision-event-dg04.json",
+      "schema_pass": true,
+      "fields_validated": ["project_id", "phase", "review_item", "reviewed_by", "decision", "comment", "timestamp", "source_channel", "next_action", "route_to", "sync_to_asana"],
+      "decision": "approve",
+      "route_to": "Bruno",
+      "route_to_field_correct": true,
+      "fallbacks": ["ASANA_UNAVAILABLE: would update decision_status for DG-04"]
+    },
+    {
+      "agent": "Bruno",
+      "role": "Itemized budget (Segment D)",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/budget.json",
+      "schema_pass": true,
+      "fields_validated": ["project_name", "client_name", "milestone_name", "amount", "payment_instructions", "currency", "line_items"],
+      "total": 300000,
+      "currency": "USD",
+      "fallbacks": ["ASANA_UNAVAILABLE: would complete budget task"]
+    },
+    {
+      "agent": "Renata",
+      "role": "Client-facing proposal (ES + EN)",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/proposal.json",
+      "schema_pass": true,
+      "fields_validated": ["scope_summary", "budget_detail", "timeline_phases", "process_narrative"],
+      "bilingual_check": "PASS — both es and en keys present in scope_summary and process_narrative",
+      "fallbacks": ["ASANA_UNAVAILABLE: would complete proposal task"]
+    },
+    {
+      "agent": "Legal",
+      "role": "Proposal legal review",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/legal-review.json",
+      "schema_pass": true,
+      "fields_validated": ["reviewed_by", "reviewed_at", "ip_rights_status", "compliance_flags", "approval_status"],
+      "approval_status": "approved_with_advisory",
+      "blocking_flags": 0,
+      "fallbacks": ["ASANA_UNAVAILABLE: would complete legal_review task"]
+    },
+    {
+      "agent": "Vera",
+      "role": "DG-05 architect proposal review email",
+      "mode": "architect_proposal_review",
+      "schema_pass": true,
+      "legal_status_check": "approved_with_advisory — proceed confirmed",
+      "fallbacks": [
+        "GMAIL_UNAVAILABLE: would send DG-05 proposal review to architect",
+        "ASANA_UNAVAILABLE: would update proposal_architect_gate task"
+      ]
+    },
+    {
+      "agent": "Celia",
+      "role": "DG-05 decision routing",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/decision-event-dg05.json",
+      "schema_pass": true,
+      "fields_validated": ["project_id", "phase", "review_item", "reviewed_by", "decision", "comment", "timestamp", "source_channel", "next_action", "route_to", "sync_to_asana"],
+      "decision": "approve",
+      "route_to": "Rosa",
+      "route_to_field_correct": true,
+      "fallbacks": ["ASANA_UNAVAILABLE: would update decision_status for DG-05"]
+    },
+    {
+      "agent": "Rosa",
+      "role": "Client proposal delivery draft",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/client-communication.json",
+      "schema_pass": true,
+      "fields_validated": ["channel", "message_body", "project_reference", "status"],
+      "status": "draft",
+      "fallbacks": [
+        "GMAIL_UNAVAILABLE: would send DG-06 review request to Marcela",
+        "ASANA_UNAVAILABLE: would update client_proposal task"
+      ]
+    },
+    {
+      "agent": "Celia",
+      "role": "DG-06 decision routing",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/decision-event-dg06.json",
+      "schema_pass": true,
+      "fields_validated": ["project_id", "phase", "review_item", "reviewed_by", "decision", "comment", "timestamp", "source_channel", "next_action", "route_to", "sync_to_asana"],
+      "decision": "approve",
+      "route_to": "Legal",
+      "route_to_field_correct": true,
+      "fallbacks": ["ASANA_UNAVAILABLE: would update decision_status for DG-06"]
+    }
+  ],
+  "tc008_checks": {
+    "commercial_hotel_sow_template_applied": true,
+    "project_type_clauses_include_hospitality_compliance": true,
+    "project_type_clauses_include_hydrologic_setback": true,
+    "payment_schedule_usd_preserved": true,
+    "all_celia_decision_events_use_route_to_field": true
+  },
+  "final_project_state": "contract_in_progress",
+  "awaiting_gate": null,
+  "segment_D_complete": true,
+  "next_segment": "E",
+  "issues": []
+}

@@ -1,0 +1,69 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "F",
+  "tc_id": "TC-008",
+  "project_id": "PRJ-2026-0317-tc008-site-complications",
+  "executed_at": "2026-06-09T09:00:00-07:00",
+  "schema_passes": true,
+  "agents_executed": [
+    {
+      "agent": "Andrés",
+      "role": "Concept design coordination + DG-07",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/concept-review.json",
+      "schema_pass": true,
+      "fields_validated": ["deliverables_checklist", "presentation_milestone", "review_notes"],
+      "all_5_checklist_keys_present": true,
+      "deliverables_complete": 5,
+      "deliverables_total": 5,
+      "fallbacks": [
+        "ASANA_UNAVAILABLE: would complete concept task",
+        "GMAIL_UNAVAILABLE: would send DG-07 review request for PRJ-2026-0317-tc008-site-complications"
+      ]
+    },
+    {
+      "agent": "Celia",
+      "role": "DG-07 decision routing",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/decision-event-dg07.json",
+      "schema_pass": true,
+      "fields_validated": ["project_id", "phase", "review_item", "reviewed_by", "decision", "comment", "timestamp", "source_channel", "next_action", "route_to", "sync_to_asana"],
+      "decision": "approve",
+      "route_to": "Felipe",
+      "route_to_field_correct": true,
+      "fallbacks": ["ASANA_UNAVAILABLE: would update decision_status for DG-07"]
+    },
+    {
+      "agent": "Felipe",
+      "role": "Architectural design development + DG-08",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/architectural-design.json",
+      "schema_pass": true,
+      "fields_validated": ["design_set_status", "concept_reflection_confirmed", "area_program_compliance", "structural_coordination_notes"],
+      "concept_reflection_confirmed": true,
+      "area_program_compliant": true,
+      "deviations": 0,
+      "fallbacks": [
+        "ASANA_UNAVAILABLE: would complete architectural_design task",
+        "GMAIL_UNAVAILABLE: would send DG-08 review request"
+      ]
+    },
+    {
+      "agent": "Celia",
+      "role": "DG-08 decision routing",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/decision-event-dg08.json",
+      "schema_pass": true,
+      "fields_validated": ["project_id", "phase", "review_item", "reviewed_by", "decision", "comment", "timestamp", "source_channel", "next_action", "route_to", "sync_to_asana"],
+      "decision": "approve",
+      "route_to": "Emilio",
+      "route_to_field_correct": true,
+      "fallbacks": ["ASANA_UNAVAILABLE: would update decision_status for DG-08"]
+    }
+  ],
+  "tc008_checks": {
+    "all_celia_decision_events_use_route_to_field": true,
+    "all_8_program_spaces_in_architectural_design": true
+  },
+  "final_project_state": "architectural_design_in_progress",
+  "awaiting_gate": null,
+  "segment_F_complete": true,
+  "next_segment": "G",
+  "issues": []
+}

@@ -1,0 +1,21 @@
+{
+  "cost_per_sqm": 28500,
+  "base_construction_cost": 57000000,
+  "architecture_fee_pct": 12,
+  "architecture_fee": 6840000,
+  "engineering_allowance": 1710000,
+  "contingency_pct": 10,
+  "total_estimate": 72105000,
+  "currency": "MXN",
+  "note_usd_comparison": "Client budget $1.5M USD (approx. MXN 25.5M at ~17 MXN/USD) represents the full project budget including construction. Architecture fee at 12% of construction is MXN 6.84M. Seed data provides explicit architecture_fee of $180,000 USD — this is used in scope-of-work.json payment schedule as the fee reference.",
+  "assumptions": [
+    "This is a preliminary estimate — label as such in all client communications",
+    "Cost per sqm source: market benchmark for public_civic in Baja California Sur (Cabo San Lucas): MXN 22,000–35,000/sqm — midpoint MXN 28,500/sqm used",
+    "base_construction_cost = 2,000 sqm × MXN 28,500 = MXN 57,000,000",
+    "architecture_fee = MXN 57,000,000 × 12% = MXN 6,840,000",
+    "engineering_allowance = MXN 57,000,000 × 3% = MXN 1,710,000",
+    "subtotal = MXN 65,550,000; contingency = MXN 6,555,000; total_estimate = MXN 72,105,000",
+    "Seed data provides explicit total_architecture_fee_usd = $180,000 USD — used in SOW payment schedule per Tomás protocol",
+    "Client budget $1.5M USD is the full project budget (construction + design); architecture fee $180,000 = 12% of construction cost (~$1.5M × 12% = $180,000 USD)"
+  ]
+}

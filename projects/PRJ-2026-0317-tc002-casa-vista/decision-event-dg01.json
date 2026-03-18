@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc002-casa-vista",
+  "phase": "DG-01",
+  "review_item": "lead-record",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": null,
+  "timestamp": "2026-03-17T09:30:00-07:00",
+  "source_channel": "email",
+  "next_action": "dispatch_elena_segment_b",
+  "route_to": "Elena",
+  "sync_to_asana": true
+}

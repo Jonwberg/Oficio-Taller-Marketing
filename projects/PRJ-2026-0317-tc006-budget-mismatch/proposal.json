@@ -1,0 +1,27 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "client_name": "Miguel Torres",
+  "project_name": "Miguel Torres — standalone_residential — Los Cabos, BCS",
+  "proposal_date": "2026-03-17",
+  "scope_summary": "Full architectural services for a 216 sqm, 3-bedroom standalone residence with pool in Los Cabos, BCS. Includes 6 phases: conceptual design through construction administration. Architecture fee: $30,000 USD in 3 milestone payments.",
+  "budget_detail": {
+    "architecture_fee_total_usd": 30000,
+    "milestone_1_usd": 12000,
+    "milestone_2_usd": 9000,
+    "milestone_3_usd": 9000,
+    "construction_cost_estimate_usd": "329,200 (preliminary — subject to contractor bidding)",
+    "currency": "USD",
+    "note": "Construction costs are contracted directly between client and contractor. Architecture fee is separate and fixed per the payment schedule above."
+  },
+  "timeline_phases": [
+    { "phase": "Conceptual Design", "duration": "3 weeks" },
+    { "phase": "Architectural Design Development", "duration": "4 weeks" },
+    { "phase": "Engineering Coordination", "duration": "4 weeks" },
+    { "phase": "Executive Plans", "duration": "5 weeks" },
+    { "phase": "Permit Management", "duration": "8 weeks (concurrent with design)" },
+    { "phase": "Construction Administration", "duration": "Duration of construction (~12 months)" }
+  ],
+  "total_duration_estimate_months": 18,
+  "legal_status": "approved_with_advisory",
+  "proposal_status": "ready_for_architect_review"
+}

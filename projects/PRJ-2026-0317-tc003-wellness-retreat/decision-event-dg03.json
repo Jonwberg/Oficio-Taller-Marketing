@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc003-wellness-retreat",
+  "phase": "DG-03",
+  "review_item": "cost-basis",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": "Proceed with SOW. Note budget gap — ensure phasing option is reflected in scope.",
+  "timestamp": "2026-03-18T10:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "Dispatch Tomás — apply commercial_hotel SOW template and produce scope-of-work.json",
+  "route_to": "Tomás",
+  "sync_to_asana": true
+}

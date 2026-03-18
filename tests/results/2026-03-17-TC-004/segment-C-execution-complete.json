@@ -1,0 +1,21 @@
+{
+  "run_id": "2026-03-17-TC-004",
+  "segment": "C",
+  "agents": ["Ana", "Sol", "Vera", "Celia"],
+  "result": "PASS",
+  "executed_at": "2026-03-17T17:30:00-07:00",
+  "files_written": [
+    "projects/PRJ-2026-0317-tc004-centro-salud/area-program.json",
+    "projects/PRJ-2026-0317-tc004-centro-salud/cost-basis.json",
+    "projects/PRJ-2026-0317-tc004-centro-salud/site-readiness-report.json",
+    "projects/PRJ-2026-0317-tc004-centro-salud/decision-event-DG-03.json"
+  ],
+  "verification": {
+    "area_program_total_sqm": 1590,
+    "site_readiness_no_hydrologic_study": true,
+    "site_readiness_required_documents": ["topographic_survey"],
+    "no_hydrology_flat_urban_lot": true,
+    "celia_dg03_route_to": true,
+    "celia_dg03_field_count": 11
+  }
+}

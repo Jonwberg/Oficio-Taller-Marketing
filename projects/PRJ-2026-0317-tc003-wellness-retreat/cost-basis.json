@@ -1,0 +1,20 @@
+{
+  "cost_per_sqm": 32500,
+  "base_construction_cost": 97500000,
+  "architecture_fee_pct": 12,
+  "architecture_fee": 11700000,
+  "engineering_allowance": 2925000,
+  "contingency_pct": 10,
+  "total_estimate": 123337500,
+  "assumptions": [
+    "This is a preliminary estimate — label as such in all client communications",
+    "Cost per sqm source: market benchmark for commercial_hotel in BCS/Todos Santos — MXN 25,000–40,000/sqm range, midpoint MXN 32,500/sqm used",
+    "Base construction cost = 3,000 sqm × MXN 32,500 = MXN 97,500,000",
+    "Architecture fee = MXN 97,500,000 × 12% = MXN 11,700,000",
+    "Engineering allowance = MXN 97,500,000 × 3% = MXN 2,925,000",
+    "Contingency = (MXN 97,500,000 + MXN 11,700,000 + MXN 2,925,000) × 10% = MXN 11,212,500",
+    "Total estimate = MXN 112,125,000 + MXN 11,212,500 = MXN 123,337,500",
+    "Client budget of $3.5M USD (~MXN 60.2M at 17.2 rate) is approximately 49% of the preliminary construction estimate — budget gap requires discussion; client indicated openness to phasing and value engineering",
+    "Seed data provides explicit architecture fee of USD 420,000 — this figure is used in the SOW payment schedule per Tomás instructions"
+  ]
+}

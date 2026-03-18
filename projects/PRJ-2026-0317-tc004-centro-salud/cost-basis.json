@@ -1,0 +1,22 @@
+{
+  "cost_per_sqm": 40000,
+  "base_construction_cost": 63600000,
+  "architecture_fee_pct": 12,
+  "architecture_fee": 7632000,
+  "engineering_allowance": 1908000,
+  "contingency_pct": 10,
+  "total_estimate": 80739600,
+  "currency": "MXN",
+  "architecture_fee_usd": 216000,
+  "note_seed_override": "Seed data provides explicit USD architecture fee of $216,000 and payment schedule in USD. Per Tomás instructions, USD amounts from seed data are used in scope-of-work.json payment schedule. MXN cost basis preserved for local market reference.",
+  "assumptions": [
+    "This is a preliminary estimate — label as such in all client communications",
+    "Cost per sqm source: market benchmark midpoint for commercial_health_center in Baja California Sur (MXN 30,000–50,000/sqm range; midpoint MXN 40,000/sqm used)",
+    "base_construction_cost = 1,590 sqm × MXN 40,000/sqm = MXN 63,600,000",
+    "architecture_fee = MXN 63,600,000 × 0.12 = MXN 7,632,000 (USD 216,000 per seed data — seed data value used in payment schedule)",
+    "engineering_allowance = MXN 63,600,000 × 0.03 = MXN 1,908,000",
+    "contingency = (MXN 63,600,000 + 7,632,000 + 1,908,000) × 0.10 = MXN 7,314,000; total = MXN 80,454,000 + 7,314,000 = MXN 80,739,600 (note: rounding in line items)",
+    "Medical gas systems and specialized HVAC are included in engineering scope — these are specialty line items that may increase engineering allowance above 3%; flagged for Bruno's review",
+    "Backup generator included in MEP electrical scope"
+  ]
+}

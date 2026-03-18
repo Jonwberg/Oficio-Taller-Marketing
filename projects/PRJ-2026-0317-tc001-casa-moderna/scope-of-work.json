@@ -1,0 +1,22 @@
+{
+  "scope_phases": [
+    {"phase": 1, "name": "Project Development", "description": "Concept design, area program validation, preliminary layouts"},
+    {"phase": 2, "name": "Architectural Design", "description": "Architectural design set, material palettes, renderings"},
+    {"phase": 3, "name": "Engineering", "description": "Structural, MEP, solar systems coordination"},
+    {"phase": 4, "name": "Executive Plans", "description": "Construction documents, specifications, permit drawings"},
+    {"phase": 5, "name": "Contractor Selection", "description": "Bid process, contractor evaluation and recommendation"},
+    {"phase": 6, "name": "Construction Administration", "description": "Site supervision, RFI responses, progress reporting, project close"}
+  ],
+  "payment_schedule": [
+    {"milestone": "contract_signed", "percentage": 40, "amount_usd": 21600},
+    {"milestone": "concept_approved", "percentage": 30, "amount_usd": 16200},
+    {"milestone": "executive_plans_approved", "percentage": 30, "amount_usd": 16200}
+  ],
+  "responsibilities_matrix": {
+    "oficio_taller": ["design", "engineering coordination", "permitting support", "construction administration"],
+    "client": ["site acquisition", "financing", "contractor payment", "furniture and finishes beyond scope"]
+  },
+  "exclusions": ["civil engineering beyond structural", "MEP installation", "furniture", "landscaping design"],
+  "revision_assumptions": "Two rounds of revisions included per phase. Additional revisions billed at hourly rate.",
+  "project_type_clauses": ["standalone_residential_standard_clause", "solar_system_coordination_clause", "pool_coordination_clause"]
+}

@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "phase": "DG-09",
+  "review_item": "budget-alignment",
+  "reviewed_by": "Marcela",
+  "decision": "reject",
+  "comment": "90% over budget is not viable. Remove the pool entirely and reduce the footprint to 160 sqm. Redesign required before we can proceed. Dispatch Felipe for scope reduction redesign.",
+  "timestamp": "2026-03-18T13:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "dispatch_felipe_redesign",
+  "route_to": "Felipe",
+  "sync_to_asana": true
+}

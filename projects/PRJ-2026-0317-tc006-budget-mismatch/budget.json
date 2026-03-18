@@ -1,0 +1,47 @@
+{
+  "project_name": "Miguel Torres — standalone_residential — Los Cabos, BCS",
+  "client_name": "Miguel Torres",
+  "milestone_name": "M1 — Contract Signed",
+  "amount": 12000,
+  "payment_instructions": "Bank transfer to Oficio Taller. Bank: [BANK_NAME — TO BE CONFIGURED IN .env]. CLABE: [CLABE — TO BE CONFIGURED IN .env]. Reference: PRJ-2026-0317-tc006-budget-mismatch-M1.",
+  "currency": "USD",
+  "total": 30000,
+  "line_items": [
+    {
+      "phase": "Phase 1 — Conceptual Design",
+      "description": "Site analysis, 3D massing, concept options, material direction board",
+      "amount": 6000,
+      "currency": "USD"
+    },
+    {
+      "phase": "Phase 2 — Architectural Design Development",
+      "description": "Floor plans, elevations, sections, developed design drawings",
+      "amount": 7500,
+      "currency": "USD"
+    },
+    {
+      "phase": "Phase 3 — Engineering Coordination",
+      "description": "Structural, MEP, pool systems engineering coordination",
+      "amount": 4500,
+      "currency": "USD"
+    },
+    {
+      "phase": "Phase 4 — Executive Plans (Construction Documents)",
+      "description": "Full construction document set with engineering integration",
+      "amount": 7500,
+      "currency": "USD"
+    },
+    {
+      "phase": "Phase 5 — Permit Management",
+      "description": "Municipal and SEMARNAT permit submission and tracking",
+      "amount": 3000,
+      "currency": "USD"
+    },
+    {
+      "phase": "Phase 6 — Construction Administration",
+      "description": "Site visits, RFI responses, contractor coordination",
+      "amount": 1500,
+      "currency": "USD"
+    }
+  ]
+}

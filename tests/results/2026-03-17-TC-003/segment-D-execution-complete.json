@@ -1,0 +1,16 @@
+{
+  "run_id": "2026-03-17-TC-003",
+  "segment": "D",
+  "agents": ["Tomás", "Vera", "Bruno", "Renata", "Legal", "Vera", "Rosa", "Celia"],
+  "result": "PASS",
+  "deliverables": ["scope-of-work.json", "budget.json", "proposal.json", "legal-review.json", "client-communication.json", "dg-03.json", "dg-04.json", "dg-05.json"],
+  "completed_at": "2026-03-20T18:00:00-07:00",
+  "key_verification": {
+    "tomas_applied_commercial_hotel_template": true,
+    "hospitality_compliance_clause_present": true,
+    "commercial_hotel_standard_clause_present": true,
+    "project_type_clauses": ["commercial_hotel_standard_clause", "hospitality_compliance_clause", "brand_standards_coordination", "ffe_scope_boundary", "esignature"]
+  },
+  "notes": "Tomás applied commercial_hotel SOW template — project_type_clauses confirmed to include both commercial_hotel_standard_clause and hospitality_compliance_clause. Bruno priced into budget.json (USD 420,000 total). Renata drafted bilingual proposal. Legal reviewed and issued approved_with_advisory. Rosa drafted client-communication.json. Celia routed at DG-03, DG-04, DG-05.",
+  "celia_route_to_verified": true
+}

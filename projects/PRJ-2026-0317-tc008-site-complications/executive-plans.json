@@ -1,0 +1,15 @@
+{
+  "plan_set_components": [
+    "Architectural plans — floor plans (all levels), sections, elevations, and construction details",
+    "Structural plans — foundation plans, framing plans, retaining wall design, connections",
+    "MEP coordination drawings — electrical, lighting, water, greywater recycling system",
+    "Solar PV and thermal systems drawings — roof layout, panel schedule, inverter coordination",
+    "Fire protection and life safety drawings — egress, emergency lighting, suppression (per BCS commercial code)",
+    "Accessibility compliance drawings — universal design compliance per NOM and BCS municipal code",
+    "Infinity pool hydraulic and structural drawings — overflow collection, equipment room, structural integration",
+    "Hydrologic setback compliance plan — stream buffer, site grading, drainage design respecting 15m setback"
+  ],
+  "engineering_integration_confirmed": true,
+  "conflicts_resolved": true,
+  "client_signoff_milestone": "M3 — Executive Plans Approved"
+}

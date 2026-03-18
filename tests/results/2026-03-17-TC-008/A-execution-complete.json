@@ -1,0 +1,37 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "A",
+  "tc_id": "TC-008",
+  "project_id": "PRJ-2026-0317-tc008-site-complications",
+  "executed_at": "2026-03-17T09:00:00-07:00",
+  "schema_passes": true,
+  "agents_executed": [
+    {
+      "agent": "Lupe",
+      "role": "Segment A — lead intake, classification, DG-01 request",
+      "output_files": [
+        "projects/PRJ-2026-0317-tc008-site-complications/state.json",
+        "projects/PRJ-2026-0317-tc008-site-complications/lead-record.json"
+      ],
+      "schema_pass": true,
+      "fields_validated": ["source_channel", "category", "received_at", "summary", "status"],
+      "classification": "project_inquiry",
+      "project_type_inferred": "commercial_hotel",
+      "spam_check": "PASS — not spam, clear commercial hotel project intent with specific program and location",
+      "auto_fail_checks": "all clear",
+      "fallbacks": [
+        "ASANA_UNAVAILABLE: would create lead task for David Chen",
+        "GMAIL_UNAVAILABLE: would send DG-01 review request for PRJ-2026-0317-tc008-site-complications"
+      ]
+    }
+  ],
+  "tc008_checks": {
+    "lupe_classifies_as_project_inquiry": true,
+    "lupe_classifies_as_commercial_hotel": true
+  },
+  "final_project_state": "awaiting_decision",
+  "awaiting_gate": "DG-01",
+  "segment_A_complete": true,
+  "next_segment": "B (after DG-01 approval)",
+  "issues": []
+}

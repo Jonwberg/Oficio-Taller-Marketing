@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc001-casa-moderna",
+  "phase": "B",
+  "review_item": "lead_qualification",
+  "reviewed_by": "Celia",
+  "decision": "approve",
+  "comment": "Lead qualified. Advance to Elena for discovery questionnaire.",
+  "timestamp": "2026-03-17T09:05:00-07:00",
+  "source_channel": "instagram",
+  "next_action": "send_questionnaire",
+  "route_to": "Elena",
+  "sync_to_asana": false
+}

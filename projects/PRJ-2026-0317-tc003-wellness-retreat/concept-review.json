@@ -1,0 +1,27 @@
+{
+  "deliverables_checklist": {
+    "3d_model": {
+      "status": "complete",
+      "notes": "Massing model shows 20 casita volumes distributed across rolling terrain, organized around a central arrival spine. Spa and restaurant volumes anchor the northern and southern edges. Pool deck positioned to capture prevailing evening light. Arroyo buffer zone on south boundary is respected in massing placement."
+    },
+    "renders": {
+      "status": "complete",
+      "num_views": 6,
+      "notes": "Six perspective views: arrival approach from main road, lobby entry sequence, casita cluster looking toward arroyo, pool deck at dusk, spa exterior, aerial site overview."
+    },
+    "material_direction": {
+      "status": "complete",
+      "notes": "Desert palette: rammed earth walls, local quarry stone at base, weathered steel accents, palapa-inspired roof forms with exposed timber and thatch. Interior spaces use natural linen, local clay plaster, and regional hardwood. Palette aligns with biophilic wellness brief."
+    },
+    "color_direction": {
+      "status": "complete",
+      "notes": "Earth tones anchored by warm adobe, sand, and sage — with contrast accents in deep terracotta for feature walls. Natural materials carry primary color expression; specified palette remains neutral to support wellness atmosphere."
+    },
+    "space_arrangement": {
+      "status": "complete",
+      "notes": "Space arrangement diagram confirmed: 20 casitas in 4 clusters of 5, organized radially around shared garden paths. Central spine links lobby, restaurant, and spa. Pool deck adjacent to lobby as social heart. BOH and parking accessed via separate service road. All 9 programmed zones from area-program.json are accounted for."
+    }
+  },
+  "presentation_milestone": "M2 — Concept Approved",
+  "review_notes": "Concept is fully developed and covers all 9 programmed zones from the approved area-program.json (3,000 sqm). The massing approach appropriately responds to the rolling terrain and respects the seasonal arroyo buffer zone on the south boundary — a key site constraint. No program deviations detected. Concept is ready for Marcela's approval at DG-07."
+}

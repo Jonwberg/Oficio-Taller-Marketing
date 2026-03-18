@@ -1,0 +1,9 @@
+{
+  "contractor_pricing_source": "preliminary_estimate",
+  "contractor_total": 380000,
+  "client_budget": 200000,
+  "variance_amount": 180000,
+  "variance_pct": 90.0,
+  "recommendation": "reject_scope_reduction_required",
+  "feedback": "Contractor pricing at $380K is 90% over client budget of $200K. Scope reduction required: remove pool, reduce living area from 216sqm to 160sqm."
+}

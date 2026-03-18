@@ -1,0 +1,24 @@
+{
+  "project_id": "PRJ-2026-0317-tc008-site-complications",
+  "mode": "activation_check",
+  "check_performed_at": "2026-04-28T11:30:00-07:00",
+  "check_number": 2,
+  "activation_conditions": {
+    "contract_signed": {
+      "value": true,
+      "note": "Contract signed — confirmed at M1 payment"
+    },
+    "site_docs_complete": {
+      "value": true,
+      "note": "Operator confirmed site_docs_complete = true at 2026-04-28T11:00:00-07:00. Hydrologic study received, reviewed, and accepted. 15m riparian setback documented. All four required documents now received."
+    },
+    "deposit_confirmed": {
+      "value": true,
+      "note": "Deposit confirmed — M1 payment received and cleared"
+    }
+  },
+  "all_conditions_met": true,
+  "result": "activation_approved",
+  "action": "Update state.json project_state to active_in_progress. Dispatch Pablo for project schedule.",
+  "asana_comment_logged": "Activation check: contract=true, site_docs=true, deposit=true. All activation conditions confirmed. Dispatching Pablo for project schedule."
+}

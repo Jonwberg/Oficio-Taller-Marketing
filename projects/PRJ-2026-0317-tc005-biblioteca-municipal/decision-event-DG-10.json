@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc005-biblioteca-municipal",
+  "phase": "DG-10",
+  "review_item": "executive-plans",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": null,
+  "timestamp": "2027-02-03T10:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "dispatch Ofelia for contractor bidding (licitacion publica) and permit process",
+  "route_to": "Ofelia",
+  "sync_to_asana": true
+}

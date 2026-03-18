@@ -1,0 +1,10 @@
+{
+  "run_id": "2026-03-17-TC-003",
+  "segment": "B",
+  "agents": ["Lupe", "Celia", "Elena", "Celia"],
+  "result": "PASS",
+  "deliverables": ["lead-summary.json", "discovery-questionnaire.json", "dg-01.json"],
+  "completed_at": "2026-03-17T11:30:00-07:00",
+  "notes": "Lupe wrote lead-summary.json. Celia routed to Marcela for DG-01 review (route_to field confirmed). Marcela approved. Elena dispatched to send discovery questionnaire to client. Celia confirmed routing at DG-01.",
+  "celia_route_to_verified": true
+}

@@ -1,0 +1,15 @@
+{
+  "reviewed_by": "Legal",
+  "reviewed_at": "2026-03-17T17:00:00-07:00",
+  "ip_rights_status": "clear",
+  "compliance_flags": [
+    {
+      "flag": "Architectural drawings ownership not explicitly stated in proposal body — standard clause implied by SOW but not surfaced in client-facing proposal text",
+      "clause_reference": "proposal.json scope_summary — ownership terms",
+      "proposed_resolution": "Add one sentence to proposal scope_summary confirming that architectural drawings remain property of Oficio Taller until full payment; client receives perpetual use license upon payment completion. Alternatively, rely on SOW esignature clause which establishes this under Mexican law.",
+      "severity": "advisory"
+    }
+  ],
+  "approval_status": "approved_with_advisory",
+  "notes": "HOA coordination clause and covenant review clause are present and verbatim in scope-of-work.json project_type_clauses. Electronic signature clause (NOM-151-SCFI) is present. IP ownership is implied by standard Mexican architectural services law but is advisory to make explicit in the client proposal. No blocking issues — proceed to DG-05."
+}

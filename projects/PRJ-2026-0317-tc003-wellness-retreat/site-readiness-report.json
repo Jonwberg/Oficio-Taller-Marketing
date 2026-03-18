@@ -1,0 +1,31 @@
+{
+  "project_id": "PRJ-2026-0317-tc003-wellness-retreat",
+  "agent": "Sol",
+  "segment": "C",
+  "required_documents": ["topographic_survey", "hydrologic_study"],
+  "document_details": [
+    {
+      "name": "topographic_survey",
+      "rationale": "Required for all projects — establishes site boundaries, levels, and contours. The 12,000 sqm site in Todos Santos has rolling terrain that requires accurate topo data for casita placement and drainage design.",
+      "received": false
+    },
+    {
+      "name": "hydrologic_study",
+      "rationale": "Required due to seasonal arroyo on the south boundary of the site. The arroyo represents a hydrologic feature that must be studied to determine flood risk, setback requirements, and drainage strategy. This is a regulatory and design-critical requirement triggered specifically by this site condition.",
+      "received": false
+    },
+    {
+      "name": "soil_mechanics_study",
+      "rationale": "Required for commercial projects — this is a 3,000 sqm commercial hotel. Rolling terrain further necessitates soil analysis to determine foundation strategy and bearing capacity.",
+      "received": false
+    },
+    {
+      "name": "property_title",
+      "rationale": "Property title must be confirmed before entering design contract. Client indicated ownership — formal document confirmation required.",
+      "received": false
+    }
+  ],
+  "request_sent_at": "2026-03-17T09:35:00-07:00",
+  "current_status": "documents_requested",
+  "blockers": ["hydrologic_study_pending"]
+}

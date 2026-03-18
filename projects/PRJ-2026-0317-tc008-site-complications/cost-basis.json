@@ -1,0 +1,24 @@
+{
+  "cost_per_sqm": 32500,
+  "base_construction_cost": 65000000,
+  "architecture_fee_pct": 12,
+  "architecture_fee": 7800000,
+  "engineering_allowance": 1950000,
+  "contingency_pct": 10,
+  "total_estimate": 82115000,
+  "currency": "MXN",
+  "usd_reference": {
+    "architecture_fee_usd": 300000,
+    "note": "Seed data specifies total architecture fee of $300,000 USD. MXN figures above are at ~26 MXN/USD. Payment schedule per seed data uses USD."
+  },
+  "assumptions": [
+    "This is a preliminary estimate — label as such in all client communications",
+    "Cost per sqm source: market benchmark for commercial_hotel in Baja California Sur coastal zone — MXN 25,000–40,000/sqm mid-2026; using MXN 32,500 midpoint",
+    "base_construction_cost = 2,000sqm × MXN 32,500 = MXN 65,000,000",
+    "architecture_fee = MXN 65,000,000 × 12% = MXN 7,800,000 (seed data specifies USD 300,000 — using USD in payment schedule)",
+    "engineering_allowance = MXN 65,000,000 × 3% = MXN 1,950,000",
+    "total_estimate = 65,000,000 + 7,800,000 + 1,950,000 + contingency(10%) = 82,115,000",
+    "Hydrologic study and retention basin (if required) not included in base estimate — cost impact TBD pending study results",
+    "Steep slope on west side may require additional civil/earthwork budget — flagged for engineering phase"
+  ]
+}

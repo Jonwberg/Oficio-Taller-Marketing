@@ -1,0 +1,16 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "client_name": "Miguel Torres",
+  "submitted_at": "2026-07-25T08:00:00-07:00",
+  "jurisdiction": "H. Ayuntamiento de Los Cabos, Baja California Sur",
+  "status": "approved",
+  "corrections": [
+    {
+      "received_at": "2026-08-10T10:00:00-07:00",
+      "description": "Fire separation distances on east property line do not comply with municipal regulation — minimum 1.5m required. Provide updated site plan with correction.",
+      "resolved": true
+    }
+  ],
+  "approved_at": "2026-09-05T14:00:00-07:00",
+  "notes": "SEMARNAT coastal clearance confirmed prior to permit submission — no federal maritime zone encroachment with revised 160 sqm footprint. One correction required — resolved with revised site plan. Municipal permit granted after correction."
+}

@@ -1,0 +1,10 @@
+{
+  "project_name": "David Chen — commercial_hotel — East Cape, BCS",
+  "client_name": "David Chen",
+  "milestone_name": "M3 — Executive Plans Approved",
+  "amount": 90000,
+  "due_date": "2026-11-10",
+  "payment_instructions": "Bank transfer to Oficio Taller. Bank: [BANK_NAME — TO BE CONFIGURED IN .env]. CLABE: [CLABE — TO BE CONFIGURED IN .env]. Reference: PRJ-2026-0317-tc008-site-complications-M3.",
+  "currency": "USD",
+  "running_total": 300000
+}

@@ -1,0 +1,8 @@
+{
+  "contractor_pricing_source": "preliminary_estimate",
+  "contractor_total": 5200000,
+  "client_budget": 6162500,
+  "variance_amount": -962500,
+  "variance_pct": -15.6,
+  "recommendation": "proceed"
+}

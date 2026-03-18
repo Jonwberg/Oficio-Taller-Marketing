@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "phase": "DG-08",
+  "review_item": "architectural-design",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": "Design set is complete and fully reflects the approved concept. Advance to engineering.",
+  "timestamp": "2026-03-18T11:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "dispatch_emilio",
+  "route_to": "Emilio",
+  "sync_to_asana": true
+}

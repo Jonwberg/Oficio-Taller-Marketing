@@ -1,0 +1,21 @@
+{
+  "run_id": "2026-03-17-TC-004",
+  "segment": "I",
+  "agents": ["Ofelia", "Celia", "Paco"],
+  "result": "PASS",
+  "executed_at": "2026-12-26T10:00:00-07:00",
+  "files_written": [
+    "projects/PRJ-2026-0317-tc004-centro-salud/bid-comparison.json",
+    "projects/PRJ-2026-0317-tc004-centro-salud/permit-status.json",
+    "projects/PRJ-2026-0317-tc004-centro-salud/decision-event-DG-11.json"
+  ],
+  "verification": {
+    "bid_comparison_minimum_2_bids": true,
+    "bid_comparison_actual_bids": 3,
+    "all_contractors_cofepris_experience_verified": true,
+    "permit_status_approved": true,
+    "licencia_sanitaria_obtained": true,
+    "celia_dg11_route_to": true,
+    "celia_dg11_field_count": 11
+  }
+}

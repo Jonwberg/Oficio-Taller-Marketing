@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc005-biblioteca-municipal",
+  "phase": "DG-03",
+  "review_item": "cost-basis",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": null,
+  "timestamp": "2026-03-18T09:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "dispatch Tomás to prepare public_civic SOW",
+  "route_to": "Tomás",
+  "sync_to_asana": true
+}

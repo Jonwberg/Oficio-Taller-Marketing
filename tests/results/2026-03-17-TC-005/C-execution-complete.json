@@ -1,0 +1,8 @@
+{
+  "run_id": "2026-03-17-TC-005",
+  "segment": "C",
+  "tc_id": "TC-005",
+  "agents_dispatched": ["Ana", "Sol", "Vera (site_status_update)", "Celia (DG-03)"],
+  "schema_passes": true,
+  "completed_at": "2026-03-18T09:30:00-07:00"
+}

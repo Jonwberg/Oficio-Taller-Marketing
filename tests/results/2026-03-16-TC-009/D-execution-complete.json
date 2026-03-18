@@ -1,0 +1,214 @@
+{
+  "run_id": "2026-03-16-TC-009",
+  "tc_id": "TC-009",
+  "segment": "D",
+  "project_id": "PRJ-2026-0316-familia-reyes-montoya",
+  "executed_at": "2026-03-16T17:30:00-07:00",
+  "status": "PASS",
+
+  "agents_executed": [
+    {
+      "agent": "Tomás",
+      "deliverable": "scope-of-work.json",
+      "output_file": "projects/PRJ-2026-0316-familia-reyes-montoya/scope-of-work.json",
+      "raw_log": "tests/results/2026-03-16-TC-009/D-tomas-raw.md",
+      "status": "PASS"
+    },
+    {
+      "agent": "Vera",
+      "mode": "architect_sow_review",
+      "gate": "DG-04",
+      "raw_log": "tests/results/2026-03-16-TC-009/D-vera-dg04-raw.md",
+      "simulated_response": "approve",
+      "status": "PASS"
+    },
+    {
+      "agent": "Celia",
+      "gate": "DG-04",
+      "raw_log": "tests/results/2026-03-16-TC-009/D-celia-dg04-raw.md",
+      "decision": "approve",
+      "route_to": "Bruno",
+      "all_11_fields": true,
+      "status": "PASS"
+    },
+    {
+      "agent": "Bruno",
+      "mode": "Segment D — budget",
+      "deliverable": "budget.json",
+      "output_file": "projects/PRJ-2026-0316-familia-reyes-montoya/budget.json",
+      "raw_log": "tests/results/2026-03-16-TC-009/D-bruno-raw.md",
+      "total": 90000,
+      "line_items_count": 6,
+      "status": "PASS"
+    },
+    {
+      "agent": "Renata",
+      "deliverable": "proposal.json",
+      "output_file": "projects/PRJ-2026-0316-familia-reyes-montoya/proposal.json",
+      "raw_log": "tests/results/2026-03-16-TC-009/D-renata-raw.md",
+      "bilingual": true,
+      "placeholders": false,
+      "status": "PASS"
+    },
+    {
+      "agent": "Legal",
+      "deliverable": "legal-review.json",
+      "output_file": "projects/PRJ-2026-0316-familia-reyes-montoya/legal-review.json",
+      "raw_log": "tests/results/2026-03-16-TC-009/D-legal-raw.md",
+      "approval_status": "approved",
+      "ip_rights_status": "clear",
+      "compliance_flags": 0,
+      "status": "PASS"
+    },
+    {
+      "agent": "Vera",
+      "mode": "architect_proposal_review",
+      "gate": "DG-05",
+      "raw_log": "tests/results/2026-03-16-TC-009/D-vera-dg05-raw.md",
+      "simulated_response": "approve",
+      "status": "PASS"
+    },
+    {
+      "agent": "Celia",
+      "gate": "DG-05",
+      "raw_log": "tests/results/2026-03-16-TC-009/D-celia-dg05-raw.md",
+      "decision": "approve",
+      "route_to": "Rosa",
+      "all_11_fields": true,
+      "status": "PASS"
+    },
+    {
+      "agent": "Rosa",
+      "deliverable": "client-communication.json",
+      "output_file": "projects/PRJ-2026-0316-familia-reyes-montoya/client-communication.json",
+      "raw_log": "tests/results/2026-03-16-TC-009/D-rosa-raw.md",
+      "channel": "email",
+      "status_field": "draft",
+      "gmail_fallback": "GMAIL_UNAVAILABLE",
+      "status": "PASS"
+    },
+    {
+      "agent": "Celia",
+      "gate": "DG-06",
+      "raw_log": "tests/results/2026-03-16-TC-009/D-celia-dg06-raw.md",
+      "decision": "approve",
+      "route_to": "Rosa",
+      "all_11_fields": true,
+      "status": "PASS"
+    }
+  ],
+
+  "schema_validation": {
+    "scope_of_work": {
+      "scope_phases": "PASS",
+      "payment_schedule": "PASS",
+      "responsibilities_matrix": "PASS",
+      "exclusions": "PASS",
+      "revision_assumptions": "PASS",
+      "project_type_clauses": "PASS",
+      "overall": "PASS"
+    },
+    "budget": {
+      "project_name": "PASS",
+      "client_name": "PASS",
+      "milestone_name": "PASS",
+      "amount": "PASS",
+      "payment_instructions": "PASS",
+      "currency": "PASS",
+      "total": "PASS",
+      "line_items": "PASS",
+      "overall": "PASS"
+    },
+    "proposal": {
+      "scope_summary_es": "PASS",
+      "scope_summary_en": "PASS",
+      "budget_detail": "PASS",
+      "timeline_phases": "PASS",
+      "process_narrative_es": "PASS",
+      "process_narrative_en": "PASS",
+      "overall": "PASS"
+    },
+    "legal_review": {
+      "reviewed_by": "PASS",
+      "reviewed_at": "PASS",
+      "ip_rights_status": "PASS",
+      "compliance_flags": "PASS",
+      "approval_status": "PASS",
+      "overall": "PASS"
+    },
+    "client_communication": {
+      "channel": "PASS",
+      "message_body": "PASS",
+      "project_reference": "PASS",
+      "status": "PASS",
+      "overall": "PASS"
+    },
+    "celia_dg04": {
+      "fields_count": 11,
+      "all_11_present": true,
+      "route_to_correct": true,
+      "timestamp_iso8601": true,
+      "overall": "PASS"
+    },
+    "celia_dg05": {
+      "fields_count": 11,
+      "all_11_present": true,
+      "route_to_correct": true,
+      "timestamp_iso8601": true,
+      "overall": "PASS"
+    },
+    "celia_dg06": {
+      "fields_count": 11,
+      "all_11_present": true,
+      "route_to_correct": true,
+      "timestamp_iso8601": true,
+      "overall": "PASS"
+    }
+  },
+
+  "tc009_specific_checks": {
+    "sow_project_type_clauses_standalone_residential_only": {
+      "result": "PASS",
+      "detail": "project_type_clauses contains exactly the 4 standalone_residential template clauses (residential_standard, client_changes, site_conditions, esignature). No mixed clauses from other project types."
+    },
+    "budget_total_field_populated": {
+      "result": "PASS",
+      "detail": "total = 90000 USD. Sum verification: $18,000 + $22,500 + $13,500 + $22,500 + $9,000 + $4,500 = $90,000. Not null, not 0."
+    },
+    "proposal_bilingual_no_placeholders": {
+      "result": "PASS",
+      "detail": "scope_summary.es and scope_summary.en both present and fully populated. process_narrative.es and process_narrative.en both present and fully populated. No placeholder text anywhere in proposal.json."
+    }
+  },
+
+  "infrastructure_fallbacks": {
+    "gmail": "GMAIL_UNAVAILABLE — DG-04, DG-05, DG-06 emails simulated; architect and Marcela responses simulated per seed architect_response = approve",
+    "asana": "ASANA_UNAVAILABLE — all Asana updates logged as would-execute"
+  },
+
+  "project_files_written": [
+    "projects/PRJ-2026-0316-familia-reyes-montoya/scope-of-work.json",
+    "projects/PRJ-2026-0316-familia-reyes-montoya/budget.json",
+    "projects/PRJ-2026-0316-familia-reyes-montoya/proposal.json",
+    "projects/PRJ-2026-0316-familia-reyes-montoya/legal-review.json",
+    "projects/PRJ-2026-0316-familia-reyes-montoya/client-communication.json",
+    "projects/PRJ-2026-0316-familia-reyes-montoya/state.json (updated)"
+  ],
+
+  "test_result_files_written": [
+    "tests/results/2026-03-16-TC-009/D-tomas-raw.md",
+    "tests/results/2026-03-16-TC-009/D-vera-dg04-raw.md",
+    "tests/results/2026-03-16-TC-009/D-celia-dg04-raw.md",
+    "tests/results/2026-03-16-TC-009/D-bruno-raw.md",
+    "tests/results/2026-03-16-TC-009/D-renata-raw.md",
+    "tests/results/2026-03-16-TC-009/D-legal-raw.md",
+    "tests/results/2026-03-16-TC-009/D-vera-dg05-raw.md",
+    "tests/results/2026-03-16-TC-009/D-celia-dg05-raw.md",
+    "tests/results/2026-03-16-TC-009/D-rosa-raw.md",
+    "tests/results/2026-03-16-TC-009/D-celia-dg06-raw.md",
+    "tests/results/2026-03-16-TC-009/D-execution-complete.json"
+  ],
+
+  "final_project_state": "proposal_sent_to_client",
+  "segment_d_result": "PASS — all agents executed, all schemas validated, all TC-009 specific checks passed"
+}

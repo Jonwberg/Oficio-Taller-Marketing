@@ -1,0 +1,282 @@
+{
+  "project_id": "PRJ-2026-0317-tc005-biblioteca-municipal",
+  "project_type": "public_civic",
+  "template_used": "sow-public-civic.md",
+  "scope_phases": [
+    {
+      "phase_number": 1,
+      "phase_name": "Conceptual Design (Diseño Conceptual)",
+      "deliverables": [
+        "Design narrative addressing public program, community benefit, and civic character (2–4 pages)",
+        "Preliminary floor plan sketches (1:200 scale minimum)",
+        "Site placement / orientation / public access concept",
+        "3D conceptual massing model",
+        "Material and finish direction board (durability, maintainability, and public character emphasis)",
+        "Space arrangement diagram showing all programmed public and administrative spaces",
+        "Accessibility compliance concept (full accessibility from arrival to all public areas)",
+        "Sustainability concept (passive design strategies; solar systems required per contracting entity)"
+      ],
+      "duration_weeks": "5–8 (+ government approval time)",
+      "milestone_trigger": "Phase 1 complete when contracting entity's authorized representative provides written approval of conceptual direction (may require technical committee approval).",
+      "revision_assumptions": "2 rounds of government entity revision included. Each additional round: MXN 10,000/day. Government review cycles are often longer than private client cycles."
+    },
+    {
+      "phase_number": 2,
+      "phase_name": "Architectural Design (Proyecto Arquitectónico)",
+      "deliverables": [
+        "Floor plans all levels (1:100 scale)",
+        "Elevations all facades (1:100)",
+        "Building sections minimum 3 (1:100)",
+        "Roof plan",
+        "Site plan with property boundaries, setbacks, public access routes, accessible parking, service entry",
+        "Interior design criteria document (public durability standards, accessibility integration, civic identity)",
+        "Accessibility compliance matrix (full NOM-001-STPS and IMSS/ISSSTE accessibility standards; all public areas)",
+        "Window and door schedule",
+        "Preliminary structural coordination sketch",
+        "Sustainability compliance strategy document (passive design measures, envelope performance; solar systems included per program requirement)",
+        "Landscape architecture — pedestrian areas, accessible routes, planting zones, hardscape (included by default for public civic projects)",
+        "Irrigation plan (included by default for public civic projects)"
+      ],
+      "duration_weeks": "10–14 (+ government approval time)",
+      "collaborators_required": [
+        "Structural engineer (Oficio Taller coordinates; contract structure per government procurement rules)",
+        "Electrical engineer (Oficio Taller coordinates)",
+        "Plumbing / hydraulic engineer (Oficio Taller coordinates)",
+        "Landscape architect (Oficio Taller coordinates; included by default)"
+      ],
+      "milestone_trigger": "Phase 2 complete when contracting entity's authorized representative provides written approval (may require technical and budget committee approval).",
+      "revision_assumptions": "2 rounds of government entity revision included. Each additional round: MXN 10,000/day."
+    },
+    {
+      "phase_number": 3,
+      "phase_name": "Engineering Coordination (Coordinación de Ingeniería)",
+      "deliverables": [
+        "Structural engineering drawings integrated with architectural set",
+        "Electrical single-line diagram and panel schedules (including public safety lighting, emergency systems)",
+        "Lighting layout plan (interior and exterior public area lighting; energy efficiency compliance)",
+        "Plumbing and hydraulic layout (including public restrooms at code-required counts and accessibility standards)",
+        "HVAC system design (public occupancy ventilation standards; Cabo San Lucas climate)",
+        "Landscape engineering coordination (grading, drainage, irrigation system design)",
+        "Solar systems design (in scope — required by contracting entity per program)",
+        "Foundation plan and details",
+        "Sustainability coordination: confirm all passive design measures implemented in engineering systems"
+      ],
+      "duration_weeks": "6–10",
+      "collaborators_required": [
+        "Structural engineer (coordinated drawings required)",
+        "Electrical engineer (coordinated drawings required)",
+        "Plumbing / hydraulic engineer (coordinated drawings required)",
+        "Landscape architect (irrigation, grading, planting coordination)",
+        "Solar systems engineer (in scope)"
+      ],
+      "revision_assumptions": "1 round of coordination revision included. Changes driven by program additions after Phase 2 approval are billed as change orders."
+    },
+    {
+      "phase_number": 4,
+      "phase_name": "Executive Plans (Planos Ejecutivos)",
+      "deliverables": [
+        "Fully coordinated construction drawing set (architectural + structural + MEP + landscape)",
+        "Detail sheets: wall sections, public restroom details, accessible route details, entrance canopy, site furniture",
+        "Finish schedule (all surfaces, all areas — public durability standards throughout)",
+        "Door and window schedule with specifications",
+        "Site furniture and signage coordination (benches, bollards, bicycle parking, wayfinding) — specification level",
+        "Technical specifications document (government procurement-compatible format)",
+        "Sustainability certification documentation package (solar systems as applicable)",
+        "Public bidding technical documents (engineering quantities and specifications formatted for licitación pública)"
+      ],
+      "duration_weeks": "6–10",
+      "collaborators_required": [
+        "All engineers from Phase 3 must deliver coordinated final drawings"
+      ],
+      "revision_assumptions": "1 round of coordination revision included. Changes after executive plan approval require a change order (subject to government change order process)."
+    },
+    {
+      "phase_number": 5,
+      "phase_name": "Contractor Bidding (Licitación Pública)",
+      "deliverables": [
+        "Technical bid package (executive plans + technical specifications + engineering quantities — formatted for government licitación)",
+        "Bid comparison technical review (Oficio Taller reviews technical submissions; contracting entity runs the formal procurement process)",
+        "Technical recommendation with rationale"
+      ],
+      "duration_weeks": "6–12 (public procurement process timeline — contracting entity manages)",
+      "note": "For public civic projects, the formal contractor bidding process (licitación pública) is governed by the contracting entity under applicable procurement law. Oficio Taller prepares and provides technical documents. The contracting entity manages the formal procurement process, evaluates bids against legal/financial criteria, and makes the contractor selection. Minimum bid count is set by the contracting entity per obra pública procurement rules."
+    },
+    {
+      "phase_number": 6,
+      "phase_name": "Permitting (Trámites)",
+      "deliverables": [
+        "Building permit application package",
+        "Submission to municipal authority (Municipio de Los Cabos)",
+        "Any additional government authorizations required",
+        "Tracking and correction management until all permits issued"
+      ],
+      "duration_weeks": "8–20",
+      "note": "Government-commissioned projects: inter-agency coordination may add complexity. Public project permit process is expected to be longer than residential projects. Oficio Taller will navigate the applicable process."
+    }
+  ],
+  "payment_schedule": [
+    {
+      "milestone": "M1",
+      "name": "Contract Signing",
+      "percentage": 20,
+      "amount": 36000,
+      "currency": "USD",
+      "trigger_event": "Signed contract (per government contracting process) + first payment authorized"
+    },
+    {
+      "milestone": "M2",
+      "name": "Concept Design Approved",
+      "percentage": 15,
+      "amount": 27000,
+      "currency": "USD",
+      "trigger_event": "Contracting entity's written approval of Phase 1 (may require technical committee approval)"
+    },
+    {
+      "milestone": "M3",
+      "name": "Architectural Design Approved",
+      "percentage": 20,
+      "amount": 36000,
+      "currency": "USD",
+      "trigger_event": "Contracting entity's written approval of Phase 2 (may require technical and budget committee approval)"
+    },
+    {
+      "milestone": "M4",
+      "name": "Construction Documents Delivered",
+      "percentage": 25,
+      "amount": 45000,
+      "currency": "USD",
+      "trigger_event": "Executive plans package and public bid documents delivered to contracting entity"
+    },
+    {
+      "milestone": "M5",
+      "name": "Construction Start Authorized",
+      "percentage": 20,
+      "amount": 36000,
+      "currency": "USD",
+      "trigger_event": "Building permit obtained and contracting entity authorizes construction start"
+    }
+  ],
+  "payment_schedule_total_usd": 180000,
+  "payment_schedule_note": "20/15/20/25/20 split per public_civic template. Total architecture fee: $180,000 USD per seed data. Government payment terms subject to fiscal year budget availability and contracting entity's standard payment authorization process.",
+  "responsibilities_matrix": [
+    {
+      "deliverable": "Conceptual design",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Contracting entity technical committee"
+    },
+    {
+      "deliverable": "Architectural drawings",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Contracting entity"
+    },
+    {
+      "deliverable": "Accessibility compliance matrix",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Contracting entity + accessibility authority"
+    },
+    {
+      "deliverable": "Sustainability strategy and documentation (including solar)",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Contracting entity + certifying body (if applicable)"
+    },
+    {
+      "deliverable": "Structural calculations",
+      "responsible_party": "Structural engineer",
+      "reviewed_by": "Oficio Taller coordinates"
+    },
+    {
+      "deliverable": "MEP engineering",
+      "responsible_party": "MEP engineers",
+      "reviewed_by": "Oficio Taller coordinates"
+    },
+    {
+      "deliverable": "Landscape architecture and irrigation",
+      "responsible_party": "Landscape architect",
+      "reviewed_by": "Oficio Taller coordinates"
+    },
+    {
+      "deliverable": "Public bid technical documents",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Contracting entity"
+    },
+    {
+      "deliverable": "Formal bid procurement process (licitación pública)",
+      "responsible_party": "Contracting entity",
+      "reviewed_by": "—"
+    },
+    {
+      "deliverable": "Contractor selection",
+      "responsible_party": "Contracting entity",
+      "reviewed_by": "Oficio Taller provides technical recommendation"
+    },
+    {
+      "deliverable": "Permit applications",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Municipal authority + other agencies"
+    },
+    {
+      "deliverable": "Construction",
+      "responsible_party": "Contractor (selected by contracting entity)",
+      "reviewed_by": "Oficio Taller (if supervision in scope)"
+    },
+    {
+      "deliverable": "Payment authorization",
+      "responsible_party": "Contracting entity",
+      "reviewed_by": "Per government fiscal process"
+    }
+  ],
+  "exclusions": [
+    "Structural, electrical, plumbing, civil, and landscape engineering fees (coordinated by Oficio Taller; contract structure per government procurement rules)",
+    "Permit fees, municipal taxes, government charges, environmental impact study fees",
+    "Formal licitación pública procurement management (Oficio Taller provides technical documents; contracting entity runs the process)",
+    "Site furniture, signage, and wayfinding procurement (Oficio Taller specifies; contracting entity procures)",
+    "Topographic survey (required — contracting entity responsibility to provide)",
+    "Environmental impact study (if required — contracting entity responsibility, or add as service)",
+    "Archaeological survey (if required in project area — contracting entity responsibility)",
+    "Legal review of property title or government land use authorization",
+    "Construction cost guarantees",
+    "Community engagement process (if required — add as service)",
+    "LEED / sustainability certification fees and third-party submission management (Oficio Taller prepares documentation; certification submission fees are contracting entity's responsibility)",
+    "Road, highway, or large-scale civil infrastructure design (civil engineering exclusion)",
+    "Construction supervision / Phase 7 (not included unless contracting entity includes supervision in contract scope — note: government contracts frequently include a supervision requirement)"
+  ],
+  "revision_assumptions": {
+    "phase_1": "2 rounds of government entity revision included. Each additional round: MXN 10,000/day. Government approval cycles may be longer than private client cycles — milestone approval may require technical committee sign-off.",
+    "phase_2": "2 rounds of government entity revision included. Each additional round: MXN 10,000/day. Milestone approval may require technical and budget committee approval.",
+    "phase_3": "1 round of coordination revision included. Changes driven by program additions after Phase 2 approval are billed as change orders.",
+    "phase_4": "1 round of coordination revision included. Changes after executive plan approval require a change order (subject to government change order process)."
+  },
+  "project_type_clause_ids": [
+    "public_civic_standard_clause",
+    "civic_procurement_clause",
+    "public_bidding_clause",
+    "accessibility_compliance_clause"
+  ],
+  "project_type_clauses": [
+    {
+      "clause": "civic_procurement",
+      "title": "Government Procurement Framework",
+      "text": "This project is commissioned by a government entity and is subject to applicable federal or state public procurement regulations (Ley de Adquisiciones, Arrendamientos y Servicios del Sector Público or state equivalent). Oficio Taller will fulfill its design and technical obligations in accordance with the terms of the government contract. Requirements arising from the procurement framework that expand the scope of design services beyond those described in this document will be addressed as change orders."
+    },
+    {
+      "clause": "public_bidding_compliance",
+      "title": "Public Contractor Bidding Process",
+      "text": "The contractor bidding process for this project is a formal licitación pública managed by the contracting entity under applicable procurement law. Oficio Taller prepares the technical documents (plans, specifications, engineering quantities) that form the technical section of the bid package. Oficio Taller provides a technical recommendation on contractor submissions. The contracting entity has sole authority to select the contractor. Oficio Taller is not responsible for contractor selection outcomes or for contractor performance."
+    },
+    {
+      "clause": "government_approval_timeline",
+      "title": "Government Approval Cycles",
+      "text": "This project requires approval from the contracting entity's authorized representatives, which may include technical committees, budget committees, and elected governing bodies. Approval timelines between phases are outside Oficio Taller's control. Project timeline milestones are set relative to approval events, not calendar dates. Delays caused by government approval processes do not constitute breaches of Oficio Taller's obligations under this contract."
+    },
+    {
+      "clause": "optional_supervision",
+      "title": "Construction Supervision",
+      "text": "Construction supervision (Phase 7) is an optional service for this project. Government contracts frequently include a supervision scope. If supervision is included, Oficio Taller will produce documentation in the format required by the contracting entity, including the bitácora de obra. If supervision is not included in the contract scope, the contracting entity is responsible for construction oversight and compliance verification."
+    },
+    {
+      "clause": "esignature",
+      "title": "Electronic Signature",
+      "text": "This document is valid when signed electronically by the client and an authorized Oficio Taller representative. Electronic signatures carry the same legal weight as physical signatures under Mexican federal law (NOM-151-SCFI)."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "phase": "G",
+  "review_item": "budget_alignment_post_redesign",
+  "reviewed_by": "Celia",
+  "decision": "approve",
+  "comment": "Budget aligned after redesign. $195K contractor total within $200K budget. Advance to executive plans.",
+  "timestamp": "2026-03-17T15:00:00-07:00",
+  "source_channel": "instagram",
+  "next_action": "advance_to_executive_plans",
+  "route_to": "Hugo",
+  "sync_to_asana": false
+}

@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc004-centro-salud",
+  "phase": "DG-07",
+  "review_item": "concept-review",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": null,
+  "timestamp": "2026-05-06T09:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "Dispatch Felipe — develop full architectural design set",
+  "route_to": "Felipe",
+  "sync_to_asana": true
+}

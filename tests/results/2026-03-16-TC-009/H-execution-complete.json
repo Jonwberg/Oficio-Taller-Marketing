@@ -1,0 +1,82 @@
+{
+  "run_id": "2026-03-16-TC-009",
+  "tc_id": "TC-009",
+  "segment": "H",
+  "project_id": "PRJ-2026-0316-familia-reyes-montoya",
+  "executed_at": "2026-03-16T10:20:00-07:00",
+
+  "agents": {
+    "hugo": {
+      "output_file": "projects/PRJ-2026-0316-familia-reyes-montoya/executive-plans.json",
+      "awaiting_gate_set": "DG-10",
+      "schema_validation": {
+        "plan_set_components": {
+          "present": true,
+          "is_array": true,
+          "count": 8,
+          "min_3_met": true
+        },
+        "engineering_integration_confirmed": {
+          "present": true,
+          "value": true
+        },
+        "conflicts_resolved": {
+          "present": true,
+          "value": true
+        },
+        "client_signoff_milestone": {
+          "present": true,
+          "value": "M3 — Executive Plans Approved"
+        },
+        "all_required_fields_present": true,
+        "schema_pass": true
+      },
+      "tc009_specific_checks": {
+        "coastal_zone_compliance_component_present": true,
+        "coastal_zone_component_text": "Coastal zone compliance drawings — site plan with ZOFEMAT setback line from Pacific coastal zone boundary, Zona Federal Marítimo Terrestre delineation, buildable footprint confirmed within setback limits",
+        "wind_load_structural_set_present": true,
+        "wind_load_component_text": "Wind load structural set — lateral system documentation, roof uplift calculations, wind-load-rated window and door schedule per coastal BCS requirements"
+      },
+      "asana_status": "ASANA_UNAVAILABLE — tasks.executive_plans is null; logged and continued",
+      "gmail_status": "GMAIL_UNAVAILABLE — simulated thread_id THREAD-DG10-PRJ-2026-0316",
+      "result": "PASS"
+    },
+    "celia_dg10": {
+      "output_file": "projects/PRJ-2026-0316-familia-reyes-montoya/decision-event.json",
+      "decision": "approve",
+      "route_to": "Ofelia",
+      "schema_validation": {
+        "field_count": 11,
+        "all_11_fields_present": true,
+        "fields": [
+          "project_id",
+          "phase",
+          "review_item",
+          "reviewed_by",
+          "decision",
+          "comment",
+          "timestamp",
+          "source_channel",
+          "next_action",
+          "route_to",
+          "sync_to_asana"
+        ],
+        "route_to_field_correct": true,
+        "routed_to_field_used": false,
+        "timestamp_iso8601": true,
+        "schema_pass": true
+      },
+      "state_update": {
+        "project_state": "bidding_in_progress",
+        "awaiting_gate": null,
+        "review_thread_id": null
+      },
+      "asana_status": "ASANA_UNAVAILABLE — tasks.final_approval_gate is null; logged and continued",
+      "result": "PASS"
+    }
+  },
+
+  "segment_h_result": "PASS",
+  "auto_fail_conditions_triggered": [],
+  "issues": []
+}

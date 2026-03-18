@@ -1,0 +1,45 @@
+{
+  "project_id": "PRJ-2026-0317-tc002-casa-vista",
+  "client_name": "Patricia Reyes",
+  "systems_status": {
+    "structural": {
+      "status": "complete",
+      "engineer": "TBD — to be contracted by client per SOW",
+      "notes": "Concrete moment frame system on slight slope. Foundation design confirmed after soil study: continuous reinforced footing with grade beams. Structural drawings integrated with architectural set. Two-story scheme, 6.8m ridge height. No conflicts with architectural layout."
+    },
+    "electrical": {
+      "status": "complete",
+      "engineer": "TBD — to be contracted by client per SOW",
+      "notes": "Single-line diagram and panel schedules complete. 200A residential service panel. Smart home integration conduit routes coordinated with AV system. Exterior lighting circuits for pool and terrace included. Solar interconnect breaker position reserved in main panel."
+    },
+    "lighting": {
+      "status": "complete",
+      "engineer": "TBD — to be contracted by client per SOW",
+      "notes": "Lighting layout plan complete with fixture specifications. Interior: recessed LED throughout, feature wall accent lighting in living/dining. Exterior: terrace, pool deck, and landscape path lighting per HOA visual guidelines. No uplighting on facade to comply with development dark-sky guidance."
+    },
+    "water": {
+      "status": "complete",
+      "engineer": "TBD — to be contracted by client per SOW",
+      "notes": "Plumbing and hydraulic layout complete. 4 full bathrooms, kitchen, service areas, pool equipment room, irrigation system. Municipal water supply + cistern + pressure pump system. Water heater: solar thermal system coordinated with solar package."
+    },
+    "irrigation": {
+      "status": "complete",
+      "engineer": "TBD — to be contracted by client per SOW",
+      "notes": "Drip irrigation system for landscape areas. Drought-tolerant planting per HOA landscaping requirements. Zone control via smart home automation system."
+    },
+    "solar": {
+      "status": "complete",
+      "engineer": "TBD — to be contracted by client per SOW",
+      "notes": "Grid-tied solar photovoltaic system (approx. 8kW array) on roof — panel layout recessed per HOA guidelines. Inverter and disconnect in utility room. Solar thermal for domestic hot water integrated. System sized for 337 sqm residential load plus pool equipment."
+    },
+    "av": {
+      "status": "complete",
+      "engineer": "TBD — to be contracted by client per SOW",
+      "notes": "Smart home / AV systems coordination complete. Conduit runs for structured wiring, in-wall speaker pre-wire, network infrastructure, and home automation hub location defined. Lighting control, HVAC automation, security camera rough-in, and pool/irrigation automation integrated."
+    }
+  },
+  "conditional_systems": ["irrigation", "solar", "av"],
+  "all_inputs_confirmed": true,
+  "conflicts_resolved": true,
+  "notes": "All seven systems (4 standard + 3 conditional: irrigation, solar, av) confirmed in scope per client's special_features (pool, solar, smart_home) and SOW Phase 3 deliverables. No outstanding coordination conflicts between architectural and engineering drawings. Ready for executive plans phase."
+}

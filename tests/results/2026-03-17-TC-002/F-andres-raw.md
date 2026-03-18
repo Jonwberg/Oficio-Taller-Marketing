@@ -1,0 +1,3 @@
+# Segment F — Andrés (Concept Design)
+
+Andrés developed the conceptual design for Casa Vista — a two-story contemporary massing that respects the Residencial Vista del Mar 7m height limit (ridge at 6.8m). The design uses natural volcanic stone as a feature wall on the street facade, white stucco body, and bronze aluminum frames, all compliant with the HOA covenant. All five concept deliverables are complete: 3D model, four renders, material direction, color direction, and space arrangement. Solar panel array integrated into roof plane per HOA visual guidelines. Preliminary concept submitted to HOA for early feedback.

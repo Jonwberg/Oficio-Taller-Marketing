@@ -1,0 +1,123 @@
+{
+  "project_id": "PRJ-2026-0317-tc002-casa-vista",
+  "client_name": "Patricia Reyes",
+  "project_type": "residential_in_development",
+  "start_date": "2026-03-17",
+  "phases": [
+    {
+      "phase_number": 1,
+      "phase_name": "Conceptual Design",
+      "start_date": "2026-03-17",
+      "end_date": "2026-04-28",
+      "duration_weeks": 6,
+      "deliverables": [
+        "Parti diagram and massing model",
+        "3D conceptual model (HOA height-compliant, 7m limit)",
+        "Material direction board (contemporary; natural stone and stucco)",
+        "Color and texture direction",
+        "Preliminary space arrangement aligned with 337 sqm program",
+        "Preliminary concept submitted to HOA design review committee"
+      ],
+      "milestone": "Concept design client approval + HOA early feedback received"
+    },
+    {
+      "phase_number": 2,
+      "phase_name": "Architectural Design",
+      "start_date": "2026-04-28",
+      "end_date": "2026-07-14",
+      "duration_weeks": 11,
+      "deliverables": [
+        "Floor plans all levels (1:100)",
+        "Elevations all four facades (1:100) — natural stone/stucco facade",
+        "Building sections minimum 2 (1:100)",
+        "Roof plan",
+        "Site plan with property boundaries, setbacks, access, parking",
+        "Interior design criteria document",
+        "Window and door schedule",
+        "Preliminary structural coordination sketch",
+        "HOA design review submission package",
+        "Covenant compliance checklist (setbacks, 7m height, facade materials, parking, style)",
+        "Written HOA approval from Residencial Vista del Mar"
+      ],
+      "milestone": "Client written approval of architectural design + written HOA approval received"
+    },
+    {
+      "phase_number": 3,
+      "phase_name": "Engineering Coordination",
+      "start_date": "2026-07-14",
+      "end_date": "2026-08-25",
+      "duration_weeks": 6,
+      "deliverables": [
+        "Structural engineering drawings integrated with architectural set",
+        "Electrical single-line diagram and panel schedules",
+        "Lighting layout plan with fixture specifications",
+        "Plumbing and hydraulic layout",
+        "Irrigation plan",
+        "Solar systems coordination",
+        "Smart home AV systems coordination",
+        "Foundation plan and details"
+      ],
+      "milestone": "All engineering inputs confirmed; no coordination conflicts"
+    },
+    {
+      "phase_number": 4,
+      "phase_name": "Executive Plans",
+      "start_date": "2026-08-25",
+      "end_date": "2026-10-06",
+      "duration_weeks": 6,
+      "deliverables": [
+        "Fully coordinated construction drawing set (architectural + structural + MEP)",
+        "Detail sheets: wall sections, stairs, roof details, openings",
+        "Finish schedule (all surfaces, all rooms)",
+        "Door and window schedule with specifications",
+        "Built-in furniture drawings (kitchen, closets, built-in shelving)",
+        "Technical specifications document",
+        "Final HOA-compliant drawing set bearing HOA approval stamp"
+      ],
+      "milestone": "Executive plans package + HOA-approved drawing set delivered — M3 payment trigger"
+    },
+    {
+      "phase_number": 5,
+      "phase_name": "Contractor Bidding",
+      "start_date": "2026-10-06",
+      "end_date": "2026-10-27",
+      "duration_weeks": 3,
+      "deliverables": [
+        "Bid package sent to minimum 2 contractors",
+        "Bid comparison matrix",
+        "Recommendation with rationale",
+        "Development contractor pre-approval verification"
+      ],
+      "milestone": "Contractor selected by client"
+    },
+    {
+      "phase_number": 6,
+      "phase_name": "Permitting",
+      "start_date": "2026-10-27",
+      "end_date": "2027-02-02",
+      "duration_weeks": 14,
+      "deliverables": [
+        "Building permit application package",
+        "Submission to Municipio de Los Cabos, BCS",
+        "Tracking and correction management",
+        "Developer internal authorization verification"
+      ],
+      "milestone": "Building permit issued — M4 payment trigger"
+    }
+  ],
+  "milestone_dates": {
+    "M1_contract_signing": "2026-03-17",
+    "M2_concept_approved": "2026-04-28",
+    "M3_construction_docs_delivered": "2026-10-06",
+    "M4_permits_obtained": "2027-02-02",
+    "M5_construction_administration_final": "2027-04-01"
+  },
+  "dependencies": {
+    "phase_2": "phase_1_complete",
+    "phase_3": "phase_2_complete",
+    "phase_4": "phase_3_complete",
+    "phase_5": "phase_4_complete",
+    "phase_6": "phase_5_complete"
+  },
+  "notes": "HOA review in Phases 1 and 2 adds 2–4 weeks vs. standalone residential. Permitting duration is authority-dependent (4–16 weeks typical); 14 weeks used as working estimate for Los Cabos. M5 is post-permit and covers construction start confirmation."
+}

@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc001-casa-moderna",
+  "phase": "I",
+  "review_item": "bid_comparison",
+  "reviewed_by": "Celia",
+  "decision": "approve",
+  "comment": "Bid comparison approved. Contractor selected. Permit process underway.",
+  "timestamp": "2026-03-17T15:30:00-07:00",
+  "source_channel": "email",
+  "next_action": "advance_to_construction",
+  "route_to": "Marcela",
+  "sync_to_asana": false
+}

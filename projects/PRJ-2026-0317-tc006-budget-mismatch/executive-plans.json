@@ -1,0 +1,16 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "client_name": "Miguel Torres",
+  "plan_set_components": [
+    "Architectural plans — floor plans (revised 160 sqm), sections, elevations, interior details",
+    "Structural plans — foundation slab on grade, perimeter grade beam, roof structure, coastal wind zone compliance",
+    "MEP coordination drawings — electrical single-line, lighting layout, plumbing isometric (pool systems removed)",
+    "Site plan — revised without pool, terrace layout, parking, landscaping setbacks",
+    "Door and window schedule — coastal-rated aluminum frames with thermal break glazing",
+    "Finish schedule — materials and finishes per coastal environment specifications"
+  ],
+  "engineering_integration_confirmed": true,
+  "conflicts_resolved": true,
+  "client_signoff_milestone": "M3 — Executive Plans Approved",
+  "revision_notes": "Executive plans reflect the redesigned 160 sqm no-pool program approved at DG-09 (second pass). All pool-related structural and MEP elements removed. Engineering package updated accordingly. 6 plan set components total — all four required engineering disciplines integrated."
+}

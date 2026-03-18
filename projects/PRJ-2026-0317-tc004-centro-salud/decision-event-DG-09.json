@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc004-centro-salud",
+  "phase": "DG-09",
+  "review_item": "budget-alignment",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": null,
+  "timestamp": "2026-09-25T09:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "Dispatch Hugo — coordinate executive plans production",
+  "route_to": "Hugo",
+  "sync_to_asana": true
+}

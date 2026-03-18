@@ -1,0 +1,23 @@
+{
+  "meeting_notes": "Video call, 60 minutes, conducted 2026-03-17T11:00:00-07:00. Agenda: review questionnaire answers, understand project vision, assess fit. Responses from seed data (test mode). Client stated: 'I want to build a boutique hotel — 15 rooms, restaurant, infinity pool, and a spa. The property is 15,000sqm in East Cape. I own it outright and have the escrituras.' On sustainability: 'Solar and greywater recycling are non-negotiable for me — I want this to be a model for responsible hospitality in the region.' On design: 'I've been studying Amangiri and Cala di Volpe. I want something rooted in the landscape — raw materials, strong geometry, no resort kitsch.' Budget confirmed at $2.5M USD construction, open to $4M if the program justifies it. Assessment: Client is highly design-engaged, financially realistic for the scope, has a clear and specific program, and demonstrated collaborative, idea-oriented communication throughout.",
+  "assessment_dimensions": {
+    "design_engagement": {
+      "score": 5,
+      "evidence": "Client cited specific architectural references (Amangiri, Cala di Volpe), articulated a clear spatial philosophy ('rooted in the landscape, raw materials, strong geometry'), and asked informed questions about material sourcing in BCS."
+    },
+    "budget_realism": {
+      "score": 4,
+      "evidence": "Stated budget $2.5M USD with flexibility to $4M. For 2,000sqm commercial hotel in East Cape at mid-range MXN 32,500/sqm (~USD 1,600/sqm), total construction would be approximately $3.2M USD — within the stated range with value engineering room."
+    },
+    "scope_clarity": {
+      "score": 5,
+      "evidence": "15 rooms at 55sqm avg, restaurant 200sqm, infinity pool 300sqm, spa 200sqm, reception 100sqm, back-of-house 150sqm, staff 80sqm, circulation 145sqm. Total 2,000sqm fully specified. Escrituras confirmed."
+    },
+    "collaborative_style": {
+      "score": 5,
+      "evidence": "Client asked thoughtful questions about the design process, showed curiosity about site-response design methodology, and explicitly welcomed Oficio Taller's design leadership within the vision parameters."
+    }
+  },
+  "recommendation": "proceed",
+  "rationale": "David Chen scores 4.75 average across all four dimensions with no individual score below 4. Design engagement (5) and scope clarity (5) are exceptional — the client arrives with a fully articulated program, confirmed ownership, and strong aesthetic references. Budget realism (4) is solid given the flexibility to $4M, which comfortably covers the 2,000sqm commercial hotel program at BCS coastal rates."
+}

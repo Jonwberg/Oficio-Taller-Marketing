@@ -1,0 +1,26 @@
+{
+  "project_id": "PRJ-2026-0317-tc005-biblioteca-municipal",
+  "procurement_type": "obra_publica",
+  "procurement_note": "Formal licitación pública managed by Municipio de Los Cabos. Oficio Taller provides technical review and recommendation. Contracting entity has sole authority for contractor selection per obra pública procurement rules.",
+  "bids": [
+    {
+      "contractor": "Constructora Municipal BCS SA",
+      "amount_mxn": 18500000,
+      "timeline_weeks": 60,
+      "notes": "Registered obra pública contractor, strong public works portfolio"
+    },
+    {
+      "contractor": "Infraestructura Pública del Sur SA",
+      "amount_mxn": 19200000,
+      "timeline_weeks": 56,
+      "notes": "Higher bid, faster timeline, also obra pública registered"
+    }
+  ],
+  "bid_count": 2,
+  "minimum_bids_required": 2,
+  "minimum_bids_satisfied": true,
+  "recommendation": "Constructora Municipal BCS SA",
+  "recommendation_rationale": "Two formal bids received satisfying the obra publica minimum bid requirement (minimum 2 bids per procurement rules). Constructora Municipal BCS SA submitted the lowest bid (MXN 18,500,000) with a 60-week construction timeline, meeting all obra publica contractor qualification requirements. Technical review confirms bid is complete and responsive to the technical specifications. Oficio Taller provides this as a technical recommendation — the contracting entity (Municipio de Los Cabos) retains sole authority for final contractor selection under applicable procurement law.",
+  "reviewed_by": "Ofelia",
+  "reviewed_at": "2027-04-10T09:00:00-07:00"
+}

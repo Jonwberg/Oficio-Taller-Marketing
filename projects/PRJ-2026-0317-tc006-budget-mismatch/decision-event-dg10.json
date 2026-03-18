@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "phase": "DG-10",
+  "review_item": "executive-plans",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": "Executive plans look complete. 6 components, all engineering integrated. Advance to bidding.",
+  "timestamp": "2026-03-19T10:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "dispatch_ofelia",
+  "route_to": "Ofelia",
+  "sync_to_asana": true
+}

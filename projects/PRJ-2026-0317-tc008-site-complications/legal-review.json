@@ -1,0 +1,14 @@
+{
+  "reviewed_by": "Legal",
+  "reviewed_at": "2026-03-17T16:00:00-07:00",
+  "ip_rights_status": "clear",
+  "compliance_flags": [
+    {
+      "flag": "Hydrologic setback clause (CH-004) should reference CONAGUA specifically by name rather than generically",
+      "clause_reference": "project_type_clauses CH-004",
+      "proposed_resolution": "Clause as written is acceptable — CONAGUA/CNA cited. Advisory only — no revision required before DG-05.",
+      "severity": "advisory"
+    }
+  ],
+  "approval_status": "approved_with_advisory"
+}

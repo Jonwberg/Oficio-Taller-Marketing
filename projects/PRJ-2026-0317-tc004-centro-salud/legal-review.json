@@ -1,0 +1,15 @@
+{
+  "reviewed_by": "Legal",
+  "reviewed_at": "2026-03-18T14:00:00-07:00",
+  "ip_rights_status": "clear",
+  "compliance_flags": [
+    {
+      "flag": "Radiation shielding exclusion for Rayos-X room should be explicitly stated in the client-facing proposal scope summary, not only in the SOW exclusions list",
+      "clause_reference": "scope_summary — exclusions",
+      "proposed_resolution": "Add one sentence to scope_summary noting that radiation shielding design for the Rayos-X room is excluded from standard scope and requires a specialist add-on service agreement",
+      "severity": "advisory"
+    }
+  ],
+  "approval_status": "approved_with_advisory",
+  "notes": "Commercial health center project type clauses are all present in scope-of-work.json verbatim: health_authority_compliance (COFEPRIS), medical_equipment_coordination, clinical_standards, optional_supervision, esignature. IP rights are clear — architectural drawings owned by Oficio Taller until full payment, client licenses use rights, terms stated. E-signature clause valid under NOM-151-SCFI. One advisory flag on Rayos-X exclusion visibility — non-blocking."
+}

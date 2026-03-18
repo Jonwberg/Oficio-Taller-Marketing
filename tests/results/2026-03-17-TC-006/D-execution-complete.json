@@ -1,0 +1,8 @@
+{
+  "run_id": "2026-03-17-TC-006",
+  "segment": "D",
+  "tc_id": "TC-006",
+  "agents_dispatched": ["Tomás", "Vera", "Bruno", "Renata", "Legal", "Vera", "Rosa", "Celia"],
+  "schema_passes": true,
+  "completed_at": "2026-03-17T17:35:00-07:00"
+}

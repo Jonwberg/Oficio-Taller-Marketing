@@ -1,0 +1,9 @@
+{
+  "channel": "email",
+  "message_body": {
+    "es": "Estimado Carlos, adjuntamos nuestra propuesta de servicios para el proyecto Casa Moderna en Los Cabos. Quedamos a sus órdenes para resolver cualquier duda.",
+    "en": "Dear Carlos, please find attached our service proposal for Casa Moderna in Los Cabos. We are available to answer any questions."
+  },
+  "project_reference": "PRJ-2026-0317-tc001-casa-moderna",
+  "status": "sent"
+}

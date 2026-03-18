@@ -1,0 +1,23 @@
+{
+  "submitted_at": "2026-12-26T10:00:00-07:00",
+  "jurisdiction": "Municipio de La Paz, BCS + COFEPRIS Delegación Baja California Sur",
+  "status": "approved",
+  "corrections": [
+    {
+      "received_at": "2027-01-20T14:00:00-07:00",
+      "description": "Municipal building permit correction: site plan requires updated setback dimensions from property line per La Paz municipal zoning code. Three north-side setback dimensions shown as 3.0m; code minimum is 3.5m. Adjust site plan and resubmit architectural plan sheet A-001.",
+      "resolved": true
+    },
+    {
+      "received_at": "2027-02-15T10:00:00-07:00",
+      "description": "COFEPRIS correction — medical gas systems: zone valve locations must be shown on a separate dedicated medical gas zone diagram per COFEPRIS NOM requirements. Currently shown only on general MEP plan. Prepare standalone medical gas zone valve diagram sheet and resubmit.",
+      "resolved": true
+    }
+  ],
+  "approved_at": "2027-06-02T09:00:00-07:00",
+  "permits_obtained": [
+    "Licencia de Construcción — Municipio de La Paz, BCS",
+    "Licencia Sanitaria — COFEPRIS Delegación BCS (private outpatient clinic: consultorios, urgencias, laboratorio, farmacia, rayos-X)",
+    "Autorización de Sistemas de Gases Medicinales — COFEPRIS"
+  ]
+}

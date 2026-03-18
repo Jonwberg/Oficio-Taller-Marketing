@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "phase": "B",
+  "review_item": "client_fit_assessment",
+  "reviewed_by": "Celia",
+  "decision": "approve",
+  "comment": "Proceed to programming. Flag budget constraint clearly in cost basis — client needs to see the numbers before committing.",
+  "timestamp": "2026-03-17T11:30:00-07:00",
+  "source_channel": "instagram",
+  "next_action": "dispatch_ana_and_sol_parallel",
+  "route_to": "Ana",
+  "sync_to_asana": false
+}

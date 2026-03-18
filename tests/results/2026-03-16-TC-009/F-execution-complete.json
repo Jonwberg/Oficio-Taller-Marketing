@@ -1,0 +1,97 @@
+{
+  "run_id": "2026-03-16-TC-009",
+  "tc_id": "TC-009",
+  "segment": "F",
+  "project_id": "PRJ-2026-0316-familia-reyes-montoya",
+  "execution_date": "2026-03-16",
+  "status": "complete",
+
+  "agents_executed": [
+    {
+      "agent": "Andrés",
+      "deliverable": "concept-review.json",
+      "gate": "DG-07",
+      "revision_cycle": true,
+      "revision_reason": "Reject — terrace/pool transition unclear in first submission",
+      "final_decision_simulated": "approve",
+      "status": "pass"
+    },
+    {
+      "agent": "Celia",
+      "gate": "DG-07",
+      "decision": "approve",
+      "route_to": "Felipe",
+      "status": "pass"
+    },
+    {
+      "agent": "Felipe",
+      "deliverable": "architectural-design.json",
+      "gate": "DG-08",
+      "final_decision_simulated": "approve",
+      "status": "pass"
+    },
+    {
+      "agent": "Celia",
+      "gate": "DG-08",
+      "decision": "approve",
+      "route_to": "Emilio",
+      "status": "pass"
+    }
+  ],
+
+  "schema_validation": {
+    "concept_review": {
+      "deliverables_checklist_5_items": "PASS",
+      "items_present": ["3d_model", "renders", "material_direction", "color_direction", "space_arrangement"],
+      "all_items_complete": "PASS",
+      "presentation_milestone": "PASS — M2 — Concept Design Approved",
+      "review_notes": "PASS — substantive, 3 sentences, recommends approval",
+      "auto_fail_conditions": "NONE TRIGGERED"
+    },
+    "architectural_design": {
+      "design_set_status": "PASS — complete",
+      "concept_reflection_confirmed": "PASS — true",
+      "area_program_compliance": "PASS — compliant: true, deviations: []",
+      "structural_coordination_notes": "PASS — present and substantive",
+      "auto_fail_conditions": "NONE TRIGGERED"
+    },
+    "celia_dg07": {
+      "all_11_fields_present": "PASS",
+      "fields": ["project_id", "phase", "review_item", "reviewed_by", "decision", "comment", "timestamp", "source_channel", "next_action", "route_to", "sync_to_asana"],
+      "route_to_not_routed_to": "PASS",
+      "timestamp_iso8601": "PASS",
+      "decision_correct": "PASS — approve",
+      "next_agent_correct": "PASS — Felipe",
+      "comment_verbatim": "PASS",
+      "state_updated": "PASS — concept_approved",
+      "auto_fail_conditions": "NONE TRIGGERED"
+    },
+    "celia_dg08": {
+      "all_11_fields_present": "PASS",
+      "fields": ["project_id", "phase", "review_item", "reviewed_by", "decision", "comment", "timestamp", "source_channel", "next_action", "route_to", "sync_to_asana"],
+      "route_to_not_routed_to": "PASS",
+      "timestamp_iso8601": "PASS",
+      "decision_correct": "PASS — approve",
+      "next_agent_correct": "PASS — Emilio",
+      "comment_verbatim": "PASS",
+      "state_updated": "PASS — architectural_design_in_progress",
+      "auto_fail_conditions": "NONE TRIGGERED"
+    }
+  },
+
+  "tc009_specific_checks": {
+    "andres_revision_cycle_simulated": "PASS — first DG-07 was reject, Andrés revised, second DG-07 was approve",
+    "presentation_milestone_logged": "PASS — M2 — Concept Design Approved",
+    "felipe_wind_load_in_structural_notes": "PASS — CFE NTC-Viento, coastal wind pressure zone, uplift resistance explicitly referenced",
+    "felipe_salt_resistant_materials_in_structural_notes": "PASS — marine-grade reinforcing steel (epoxy-coated or stainless), high-density concrete mix specified",
+    "felipe_awaiting_gate_dg08": "PASS",
+    "all_10_area_program_spaces_reflected": "PASS — all 10 spaces confirmed in design set, deviations: []"
+  },
+
+  "issues": [],
+
+  "final_project_state_after_segment_f": "architectural_design_in_progress",
+  "awaiting_gate_after_segment_f": null,
+  "next_segment": "G",
+  "next_agent": "Emilio"
+}

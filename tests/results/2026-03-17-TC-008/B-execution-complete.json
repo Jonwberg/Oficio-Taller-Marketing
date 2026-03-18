@@ -1,0 +1,67 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "B",
+  "tc_id": "TC-008",
+  "project_id": "PRJ-2026-0317-tc008-site-complications",
+  "executed_at": "2026-03-17T10:00:00-07:00",
+  "schema_passes": true,
+  "agents_executed": [
+    {
+      "agent": "Lupe",
+      "role": "Segment B — lead summary author",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/lead-summary.json",
+      "schema_pass": true,
+      "fields_validated": ["project_name", "source_channel", "raw_message", "initial_assessment", "recommended_action"],
+      "raw_message_verbatim": true,
+      "fallbacks": ["ASANA_UNAVAILABLE: state sync for lead_summary_ready"]
+    },
+    {
+      "agent": "Celia",
+      "role": "DG-01 decision routing",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/decision-event-dg01.json",
+      "schema_pass": true,
+      "fields_validated": ["project_id", "phase", "review_item", "reviewed_by", "decision", "comment", "timestamp", "source_channel", "next_action", "route_to", "sync_to_asana"],
+      "decision": "approve",
+      "route_to": "Lupe",
+      "route_to_field_correct": true,
+      "fallbacks": ["ASANA_UNAVAILABLE: would update decision_status for DG-01"]
+    },
+    {
+      "agent": "Elena",
+      "role": "Discovery questionnaire + client fit assessment",
+      "output_files": [
+        "projects/PRJ-2026-0317-tc008-site-complications/discovery-questionnaire.json",
+        "projects/PRJ-2026-0317-tc008-site-complications/client-fit-assessment.json"
+      ],
+      "schema_pass": true,
+      "questionnaire_fields_validated": ["sent_to", "sent_at", "project_type_question", "budget_question", "timeline_question", "location_question", "special_requirements_question", "design_style_question", "site_ownership_question"],
+      "fit_assessment_fields_validated": ["meeting_notes", "assessment_dimensions", "recommendation", "rationale"],
+      "recommendation": "proceed",
+      "average_dimension_score": 4.75,
+      "fallbacks": [
+        "GMAIL_UNAVAILABLE: would send questionnaire to david.chen@test.oficio.mx",
+        "GMAIL_UNAVAILABLE: would send DG-02 review request for PRJ-2026-0317-tc008-site-complications",
+        "ASANA_UNAVAILABLE: would create fit gate task for PRJ-2026-0317-tc008-site-complications"
+      ]
+    },
+    {
+      "agent": "Celia",
+      "role": "DG-02 decision routing",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/decision-event-dg02.json",
+      "schema_pass": true,
+      "fields_validated": ["project_id", "phase", "review_item", "reviewed_by", "decision", "comment", "timestamp", "source_channel", "next_action", "route_to", "sync_to_asana"],
+      "decision": "approve",
+      "route_to": "Ana, Sol",
+      "route_to_field_correct": true,
+      "parallel_dispatch_correct": true,
+      "fallbacks": ["ASANA_UNAVAILABLE: would update decision_status for DG-02"]
+    }
+  ],
+  "final_project_state": "discovery_complete",
+  "awaiting_gate": null,
+  "segment_B_complete": true,
+  "next_segment": "C",
+  "next_agents": ["Ana", "Sol"],
+  "dispatch_mode": "parallel",
+  "issues": []
+}

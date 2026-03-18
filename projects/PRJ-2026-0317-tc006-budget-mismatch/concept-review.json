@@ -1,0 +1,21 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "client_name": "Miguel Torres",
+  "concept_phase": "Phase 1 — Conceptual Design",
+  "design_concept": "Contemporary coastal residence — single-story with rooftop terrace option. Open-plan living oriented toward pool and patio. Natural materials: exposed concrete, weathered wood, large glazing to maximize ocean views. Pool positioned as visual axis from entry through living area.",
+  "deliverables_checklist": {
+    "3d_model": true,
+    "floor_plan_options": true,
+    "site_plan": true,
+    "space_arrangement": true,
+    "material_direction_board": true
+  },
+  "approved_program": {
+    "total_sqm": 216,
+    "includes_pool": true,
+    "bedrooms": 3,
+    "special_features": ["infinity pool", "covered terrace", "coastal glazing system"]
+  },
+  "concept_approved": true,
+  "review_notes": "Concept reflects full 216 sqm program including pool. Design is strong — note that budget alignment review at Segment G will be critical given Los Cabos construction costs."
+}

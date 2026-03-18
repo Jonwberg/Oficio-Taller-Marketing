@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "phase": "DG-04",
+  "review_item": "scope-of-work",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": "SOW looks complete. Pool engineering in Phase 3 is correct. Proceed.",
+  "timestamp": "2026-03-17T15:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "dispatch_bruno_segment_d",
+  "route_to": "Bruno",
+  "sync_to_asana": true
+}

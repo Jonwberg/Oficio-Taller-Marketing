@@ -1,0 +1,89 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "J",
+  "tc_id": "TC-008",
+  "project_id": "PRJ-2026-0317-tc008-site-complications",
+  "executed_at": "2028-02-09T09:00:00-07:00",
+  "schema_passes": true,
+  "agents_executed": [
+    {
+      "agent": "Vera",
+      "role": "Construction tracking initialization",
+      "mode": "construction_tracking",
+      "schema_pass": true,
+      "construction_phases_tracked": 6,
+      "first_milestone_date": "2026-06-09",
+      "fallbacks": ["ASANA_UNAVAILABLE: would update construction task to construction_in_progress"]
+    },
+    {
+      "agent": "Controller",
+      "role": "Invoice M1 — Contract Signing",
+      "milestone_number": 1,
+      "final_milestone": false,
+      "schema_pass": true,
+      "fields_validated": ["project_name", "client_name", "milestone_name", "amount", "due_date", "payment_instructions", "currency", "running_total"],
+      "amount": 120000,
+      "running_total_after": 120000,
+      "currency": "USD",
+      "tax_dispatched": false,
+      "fallbacks": ["ASANA_UNAVAILABLE: would update invoice task"]
+    },
+    {
+      "agent": "Controller",
+      "role": "Invoice M2 — Concept Approved",
+      "milestone_number": 2,
+      "final_milestone": false,
+      "schema_pass": true,
+      "amount": 90000,
+      "running_total_after": 210000,
+      "currency": "USD",
+      "tax_dispatched": false,
+      "fallbacks": ["ASANA_UNAVAILABLE: would update invoice task"]
+    },
+    {
+      "agent": "Controller",
+      "role": "Invoice M3 — Executive Plans Approved (FINAL MILESTONE)",
+      "milestone_number": 3,
+      "final_milestone": true,
+      "schema_pass": true,
+      "amount": 90000,
+      "running_total_after": 300000,
+      "currency": "USD",
+      "tax_dispatched": true,
+      "tax_dispatch_agent": "Tax",
+      "marketing_dispatch_agent": "Valentina",
+      "state_updated_to_project_closed": true,
+      "fallbacks": ["ASANA_UNAVAILABLE: would complete construction task"]
+    },
+    {
+      "agent": "Tax",
+      "role": "Tax filing generation — dispatched by Controller (not Vera)",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/tax-filing.json",
+      "schema_pass": true,
+      "fields_validated": ["rfc", "revenue_amount", "tax_jurisdiction", "filing_period", "cfdi_reference", "deductibles"],
+      "rfc": "TEST-RFC-008",
+      "revenue_amount": 300000,
+      "tax_jurisdiction": "Mexico — IVA 16%",
+      "cfdi_reference": "placeholder — not fabricated",
+      "dispatch_source": "Controller (final_milestone=true) — NOT Vera",
+      "tc008_check_controller_dispatches_tax_not_vera": true,
+      "fallbacks": ["ASANA_UNAVAILABLE: would complete tax_filing task"]
+    }
+  ],
+  "tc008_checks": {
+    "controller_dispatches_tax_on_final_milestone": true,
+    "vera_does_not_dispatch_tax_directly": true,
+    "running_total_at_m3_equals_300000": true,
+    "invoice_amounts_match_sow_40_30_30": true,
+    "rfc_is_TEST_RFC_008": true,
+    "revenue_amount_is_300000": true,
+    "tax_jurisdiction_mexico_iva_16": true,
+    "cfdi_reference_is_placeholder": true,
+    "project_state_project_closed_after_tax": true
+  },
+  "final_project_state": "project_closed",
+  "awaiting_gate": null,
+  "segment_J_complete": true,
+  "pipeline_complete": true,
+  "issues": []
+}

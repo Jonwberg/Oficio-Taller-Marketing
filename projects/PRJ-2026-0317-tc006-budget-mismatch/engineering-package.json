@@ -1,0 +1,30 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "client_name": "Miguel Torres",
+  "systems_status": {
+    "structural": {
+      "status": "complete",
+      "engineer": "Ing. Raúl Morales (subcontractor — Los Cabos)",
+      "notes": "Single-story reinforced concrete structure. Coastal wind zone design per CFE. Pool shell: reinforced concrete with epoxy waterproofing membrane. Foundation: slab on grade with perimeter grade beam — flat site, no special conditions."
+    },
+    "electrical": {
+      "status": "complete",
+      "engineer": "Ing. Patricia Flores (subcontractor)",
+      "notes": "200A single-phase panel for residential loads. Pool equipment panel (separate 60A). Exterior lighting circuit for terrace and landscape. CFE connection at property line — service available."
+    },
+    "lighting": {
+      "status": "complete",
+      "engineer": "Ing. Patricia Flores (subcontractor)",
+      "notes": "Interior lighting design coordinated. LED recessed throughout. Exterior terrace linear LED. Pool underwater LED lighting (color-changing). Coastal salt-air rated fixtures specified throughout."
+    },
+    "water": {
+      "status": "complete",
+      "engineer": "Ing. Carlos Soto (subcontractor)",
+      "notes": "Municipal water connection available. Pool recirculation system: variable-speed pump, sand filter, salt chlorination. Hot water: solar pre-heat with gas backup (PEMEX LP gas at site). Greywater separate from pool drain system."
+    }
+  },
+  "conditional_systems": [],
+  "all_inputs_confirmed": true,
+  "conflicts_resolved": true,
+  "engineering_notes": "Full 216 sqm design including pool. All four required engineering disciplines complete. No conditional systems (no solar PV, no AV, no separate irrigation) in scope. Pool engineering adds significant structural and MEP complexity — pool shell, filtration system, and pool electrical are all in the construction cost estimate."
+}

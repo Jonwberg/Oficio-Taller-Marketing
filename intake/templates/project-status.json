@@ -1,0 +1,77 @@
+{
+  "project_id": "",
+  "client_name": "",
+  "project_name": "",
+  "lead_id": "",
+
+  "contract": {
+    "signed": false,
+    "signed_date": "",
+    "contract_file": ""
+  },
+
+  "payments": {
+    "fase_01": {
+      "status": "pending",
+      "amount_mxn": 0,
+      "due_date": "",
+      "received_date": ""
+    },
+    "fase_02": {
+      "status": "pending",
+      "amount_mxn": 0,
+      "due_date": "",
+      "received_date": ""
+    },
+    "fase_03": {
+      "status": "pending",
+      "amount_mxn": 0,
+      "due_date": "",
+      "received_date": ""
+    }
+  },
+
+  "phases": {
+    "fase_01": {
+      "start_date": "",
+      "end_date": "",
+      "status": "blocked",
+      "spaces": [],
+      "deliverables_sent_date": "",
+      "client_feedback_due": "",
+      "client_approved_date": "",
+      "revision_count": 0
+    },
+    "fase_02": {
+      "start_date": "",
+      "end_date": "",
+      "status": "blocked",
+      "spaces": [],
+      "deliverables_sent_date": "",
+      "client_feedback_due": "",
+      "client_approved_date": "",
+      "revision_count": 0
+    },
+    "fase_03": {
+      "start_date": "",
+      "end_date": "",
+      "status": "blocked",
+      "spaces": [],
+      "deliverables_sent_date": "",
+      "client_feedback_due": "",
+      "client_approved_date": "",
+      "revision_count": 0
+    }
+  },
+
+  "construction_handoff": {
+    "ready": false,
+    "furniture_list_complete": false,
+    "carpentry_details_complete": false,
+    "lighting_session_done": false,
+    "final_presentation_date": "",
+    "handoff_date": ""
+  },
+
+  "updated_at": ""
+}

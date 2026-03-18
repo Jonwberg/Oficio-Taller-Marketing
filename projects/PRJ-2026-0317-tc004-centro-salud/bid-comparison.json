@@ -1,0 +1,58 @@
+{
+  "project_id": "PRJ-2026-0317-tc004-centro-salud",
+  "bids": [
+    {
+      "contractor": "Constructora Clínica del Pacífico S.A. de C.V.",
+      "total": 1840000,
+      "currency": "USD",
+      "line_items": [
+        { "scope": "civil work and structure", "amount": 620000 },
+        { "scope": "finishes (clinical grade)", "amount": 380000 },
+        { "scope": "MEP — electrical + backup generator", "amount": 280000 },
+        { "scope": "HVAC clinical (specialized)", "amount": 220000 },
+        { "scope": "medical gas systems", "amount": 180000 },
+        { "scope": "fire protection", "amount": 90000 },
+        { "scope": "general conditions + overhead", "amount": 70000 }
+      ],
+      "timeline": "78 weeks",
+      "notes": "Contractor has completed 4 COFEPRIS-regulated healthcare facilities in BCS and Sonora. References provided. Medical gas subcontractor has COFEPRIS certification. Clinical HVAC subcontractor specializes in healthcare.",
+      "clinical_experience": "verified"
+    },
+    {
+      "contractor": "Grupo Constructor Horizonte S.A. de C.V.",
+      "total": 1890000,
+      "currency": "USD",
+      "line_items": [
+        { "scope": "civil work and structure", "amount": 640000 },
+        { "scope": "finishes (clinical grade)", "amount": 390000 },
+        { "scope": "MEP — electrical + backup generator", "amount": 290000 },
+        { "scope": "HVAC clinical (specialized)", "amount": 230000 },
+        { "scope": "medical gas systems", "amount": 195000 },
+        { "scope": "fire protection", "amount": 95000 },
+        { "scope": "general conditions + overhead", "amount": 50000 }
+      ],
+      "timeline": "82 weeks",
+      "notes": "Contractor has completed 6 healthcare projects in Baja California peninsula. Strong COFEPRIS compliance track record — no major corrections on previous projects. Medical gas in-house certified team.",
+      "clinical_experience": "verified"
+    },
+    {
+      "contractor": "Constructora Médica Sur S.A. de C.V.",
+      "total": 1920000,
+      "currency": "USD",
+      "line_items": [
+        { "scope": "civil work and structure", "amount": 660000 },
+        { "scope": "finishes (clinical grade)", "amount": 400000 },
+        { "scope": "MEP — electrical + backup generator", "amount": 300000 },
+        { "scope": "HVAC clinical (specialized)", "amount": 240000 },
+        { "scope": "medical gas systems", "amount": 185000 },
+        { "scope": "fire protection", "amount": 85000 },
+        { "scope": "general conditions + overhead", "amount": 50000 }
+      ],
+      "timeline": "85 weeks",
+      "notes": "Newest of the three bidders; 3 healthcare facilities completed in Sinaloa. COFEPRIS experience present but less extensive than the other two contractors. Higher overall bid.",
+      "clinical_experience": "verified"
+    }
+  ],
+  "recommendation": "Constructora Clínica del Pacífico S.A. de C.V.",
+  "recommendation_rationale": "Three bids received, all from contractors with verified COFEPRIS clinical construction experience as required by the commercial_health_center SOW template. Constructora Clínica del Pacífico offers the lowest total at USD 1,840,000 with the shortest timeline (78 weeks), and has 4 prior COFEPRIS-regulated healthcare projects in BCS and Sonora — the most locally relevant experience. Their medical gas subcontractor holds COFEPRIS certification. All three bids fall within 4.3% of each other, confirming market pricing is consistent. Recommend awarding to Constructora Clínica del Pacífico."
+}

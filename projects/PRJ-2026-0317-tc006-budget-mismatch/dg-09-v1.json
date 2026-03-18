@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "phase": "G",
+  "review_item": "budget_alignment",
+  "reviewed_by": "Celia",
+  "decision": "reject",
+  "comment": "Budget misaligned. $380K contractor estimate vs $200K client budget. Redesign required: remove pool, reduce to 160sqm. Routing back to Felipe.",
+  "timestamp": "2026-03-17T14:00:00-07:00",
+  "source_channel": "instagram",
+  "next_action": "redesign_scope_reduction",
+  "route_to": "Felipe",
+  "sync_to_asana": false
+}

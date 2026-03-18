@@ -1,0 +1,18 @@
+{
+  "bids": [
+    {
+      "contractor": "Constructora Los Cabos SA",
+      "amount_mxn": 5200000,
+      "timeline_weeks": 48,
+      "notes": "Strong local track record, residential specialists"
+    },
+    {
+      "contractor": "Edificaciones del Pacífico",
+      "amount_mxn": 5450000,
+      "timeline_weeks": 44,
+      "notes": "Higher bid but faster timeline"
+    }
+  ],
+  "recommendation": "Constructora Los Cabos SA",
+  "recommendation_rationale": "Best value combination of price and experience. Timeline 48 weeks acceptable per schedule."
+}

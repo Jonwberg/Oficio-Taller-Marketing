@@ -1,0 +1,19 @@
+{
+  "meeting_notes": "Institutional client — Municipio de Los Cabos. Decision-making involves committee approval process, not individual. Project has approved budget and public mandate. Procurement follows obra pública guidelines.",
+  "assessment_dimensions": {
+    "budget_alignment": 5,
+    "site_readiness": 5,
+    "decision_clarity": 4,
+    "design_engagement": 4,
+    "project_feasibility": 5
+  },
+  "recommendation": "advance",
+  "rationale": "Strong institutional project with approved budget and public mandate. Organizational decision-making may lengthen approval cycles. Recommend advancing.",
+  "institutional_notes": {
+    "client_type": "institutional",
+    "decision_making_structure": "organizational — committee/cabildo approval required, not individual",
+    "budget_authorization": "pre-approved by cabildo — $1.5M USD for full project",
+    "procurement_type": "obra_publica — licitación pública required for contractor selection",
+    "fit_score_note": "Scores reflect institutional context. decision_clarity of 4 reflects known approval cycle complexity, not uncertainty about project viability."
+  }
+}

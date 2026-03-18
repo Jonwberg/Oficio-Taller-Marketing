@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc004-centro-salud",
+  "phase": "DG-11",
+  "review_item": "bid-comparison",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": "Approve Constructora Clínica del Pacífico — COFEPRIS experience in BCS is the deciding factor",
+  "timestamp": "2026-12-01T10:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "Dispatch Paco — initiate permit submission",
+  "route_to": "Paco",
+  "sync_to_asana": true
+}

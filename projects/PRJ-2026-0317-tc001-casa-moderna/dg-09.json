@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc001-casa-moderna",
+  "phase": "G",
+  "review_item": "budget_alignment",
+  "reviewed_by": "Celia",
+  "decision": "approve",
+  "comment": "Budget aligned. Contractor total within client budget. Advance to executive plans.",
+  "timestamp": "2026-03-17T14:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "advance_to_executive_plans",
+  "route_to": "Hugo",
+  "sync_to_asana": false
+}

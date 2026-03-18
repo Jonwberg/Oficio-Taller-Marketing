@@ -1,0 +1,125 @@
+{
+  "project_id": "PRJ-2026-0317-tc004-centro-salud",
+  "project_type": "commercial_health_center",
+  "start_date": "2026-03-24",
+  "phases": [
+    {
+      "phase_number": 1,
+      "phase_name": "Conceptual Design",
+      "start_date": "2026-03-24",
+      "end_date": "2026-05-05",
+      "duration_weeks": 6,
+      "deliverables": [
+        "Design narrative — clinical workflow and patient experience",
+        "Preliminary zone diagrams (clinical, waiting, staff, clean/dirty corridors)",
+        "Site placement and ambulance access concept",
+        "3D conceptual massing model",
+        "Material and finish direction board",
+        "Space arrangement diagram all programmed zones",
+        "COFEPRIS facility category confirmed with client",
+        "Infection control zoning concept"
+      ],
+      "milestone": "Client written approval of conceptual direction and clinical zoning concept"
+    },
+    {
+      "phase_number": 2,
+      "phase_name": "Architectural Design",
+      "start_date": "2026-05-06",
+      "end_date": "2026-07-29",
+      "duration_weeks": 12,
+      "deliverables": [
+        "Floor plans all levels (1:100)",
+        "Elevations all facades (1:100)",
+        "Building sections minimum 3 (1:100)",
+        "Roof plan",
+        "Site plan with ambulance drop-off and accessible parking",
+        "Interior design criteria document",
+        "Room-by-room clinical standards checklist",
+        "Window and door schedule",
+        "Preliminary structural coordination sketch",
+        "COFEPRIS compliance checklist Phase 2",
+        "Accessibility compliance matrix"
+      ],
+      "milestone": "Client written approval + COFEPRIS pre-consultation complete"
+    },
+    {
+      "phase_number": 3,
+      "phase_name": "Engineering Coordination",
+      "start_date": "2026-07-30",
+      "end_date": "2026-09-24",
+      "duration_weeks": 8,
+      "deliverables": [
+        "Structural engineering drawings integrated with architectural set",
+        "Electrical single-line diagram with emergency power and backup generator",
+        "Clinical lighting layout per COFEPRIS NOM standards",
+        "HVAC system design — pressure differential zoning, filtration, equipment schedules",
+        "Medical gas systems: oxygen, medical air, vacuum — piping, valves, alarms",
+        "Plumbing and hydraulic layout with medical-grade hand-washing stations",
+        "Fire suppression system design",
+        "Foundation plan and details"
+      ],
+      "milestone": "All engineering disciplines coordinated; medical gas design complete"
+    },
+    {
+      "phase_number": 4,
+      "phase_name": "Executive Plans",
+      "start_date": "2026-09-25",
+      "end_date": "2026-11-19",
+      "duration_weeks": 8,
+      "deliverables": [
+        "Fully coordinated construction drawing set",
+        "Detail sheets (wall sections, clean corridor details, lab casework, hand-washing station details)",
+        "Finish schedule with infection control surface ratings",
+        "Door and window schedule with hardware specifications",
+        "Built-in clinical millwork drawings",
+        "Medical equipment rough-in drawings",
+        "Technical specifications document",
+        "COFEPRIS permit-ready drawing package"
+      ],
+      "milestone": "COFEPRIS permit-ready executive plans delivered to client (M4 payment trigger)"
+    },
+    {
+      "phase_number": 5,
+      "phase_name": "Contractor Bidding",
+      "start_date": "2026-11-20",
+      "end_date": "2026-12-25",
+      "duration_weeks": 5,
+      "deliverables": [
+        "Bid package sent to minimum 3 contractors with COFEPRIS clinical construction experience",
+        "Bid comparison matrix with clinical experience assessment",
+        "Contractor recommendation with rationale"
+      ],
+      "milestone": "Contractor selected and approved by client"
+    },
+    {
+      "phase_number": 6,
+      "phase_name": "Permitting — Building Permit + COFEPRIS Licencia Sanitaria",
+      "start_date": "2026-12-26",
+      "end_date": "2027-06-05",
+      "duration_weeks": 23,
+      "deliverables": [
+        "Building permit application (Municipio de La Paz)",
+        "COFEPRIS sanitary license application",
+        "COFEPRIS Licencia Sanitaria package",
+        "Medical gas system COFEPRIS approval",
+        "All permit corrections managed to resolution"
+      ],
+      "milestone": "COFEPRIS Licencia Sanitaria and building permit obtained (M5 payment trigger)"
+    }
+  ],
+  "milestone_dates": {
+    "M1_contract_signing": "2026-03-24",
+    "M2_concept_approved": "2026-05-05",
+    "M3_architectural_design_approved": "2026-07-29",
+    "M4_construction_docs_delivered": "2026-11-19",
+    "M5_cofepris_permit_obtained": "2027-06-05"
+  },
+  "dependencies": {
+    "phase_2": "phase_1_complete",
+    "phase_3": "phase_2_complete",
+    "phase_4": "phase_3_complete",
+    "phase_5": "phase_4_complete",
+    "phase_6": "phase_5_complete"
+  },
+  "note": "COFEPRIS Licencia Sanitaria processing is the most variable timeline element. Phase 6 duration estimated at 23 weeks; actual timeline set by COFEPRIS delegación BCS."
+}

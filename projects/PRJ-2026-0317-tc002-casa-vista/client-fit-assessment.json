@@ -1,0 +1,23 @@
+{
+  "meeting_notes": "Video call, 60 minutes, conducted 2026-03-17T11:00:00-07:00. Agenda: Review questionnaire answers, understand project vision, assess fit. Responses from seed data (test mode). Client Patricia Reyes described a 337 sqm residence on her 1,200 sqm lot within Residencial Vista del Mar in San José del Cabo. She confirmed she has escrituras and is aware of the HOA reglamento requiring contemporary style, natural stone/stucco facade, and a 7m height limit. She expressed specific interest in solar panels, smart home automation, and a pool — all flagged in her program. Budget is USD 400,000–700,000 for construction. She mentioned no fixed timeline pressure but wants to begin design 'as soon as possible.' Assessment: Client arrived via professional referral, has a well-defined program, knows the HOA constraints, and is actively engaged with design as a discipline — not just asking about price. No red flags in communication style.",
+  "assessment_dimensions": {
+    "design_engagement": {
+      "score": 4,
+      "evidence": "Client is aware of HOA design constraints and frames them as parameters to work within creatively. She requested smart home integration and solar, showing engagement with systems design. Arrived via professional referral which typically correlates with design-engaged clients."
+    },
+    "budget_realism": {
+      "score": 5,
+      "evidence": "USD 400,000–700,000 for 337 sqm in San José del Cabo, BCS is realistic to well-above-market for this program size and quality level. Total architecture fee of USD 68,000 confirmed in seed data is approximately 10–15% of construction budget — within normal range."
+    },
+    "scope_clarity": {
+      "score": 5,
+      "evidence": "Client has defined a specific room-by-room program (4 bedrooms at 20 sqm, 4 bathrooms, kitchen 25 sqm, living/dining 55 sqm, family room 30 sqm, office 15 sqm, pool 40 sqm, 2 terraces at 20 sqm, service areas 16 sqm), confirmed site and ownership, and has the HOA reglamento available."
+    },
+    "collaborative_style": {
+      "score": 4,
+      "evidence": "Client shows curiosity about the design process, framed HOA restrictions constructively, and is receptive to creative solutions within constraints. No demanding or closed-to-input behavior observed."
+    }
+  },
+  "recommendation": "proceed",
+  "rationale": "Budget realism (5/5) and scope clarity (5/5) are the two strongest factors — client has a fully defined program, realistic budget, and confirmed site ownership. Design engagement (4/5) and collaborative style (4/5) confirm she will work well with the Oficio Taller team. Average score of 4.5 across all four dimensions exceeds the 3.5 threshold with no individual score below 2."
+}

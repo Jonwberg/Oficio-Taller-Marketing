@@ -1,0 +1,12 @@
+{
+  "total": 54000,
+  "currency": "USD",
+  "line_items": [
+    {"phase": 1, "name": "Project Development", "amount_usd": 9720},
+    {"phase": 2, "name": "Architectural Design", "amount_usd": 13500},
+    {"phase": 3, "name": "Engineering", "amount_usd": 8100},
+    {"phase": 4, "name": "Executive Plans", "amount_usd": 10800},
+    {"phase": 5, "name": "Contractor Selection", "amount_usd": 5400},
+    {"phase": 6, "name": "Construction Administration", "amount_usd": 6480}
+  ]
+}

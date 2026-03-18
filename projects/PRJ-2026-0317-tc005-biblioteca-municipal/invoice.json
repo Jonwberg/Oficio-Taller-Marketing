@@ -1,0 +1,57 @@
+{
+  "project_id": "PRJ-2026-0317-tc005-biblioteca-municipal",
+  "project_name": "Arq. Roberto Salinas — Direccion de Obras Publicas — public_civic — Cabo San Lucas, BCS",
+  "client_name": "Arq. Roberto Salinas — Direccion de Obras Publicas, Municipio de Los Cabos",
+  "rfc_client": "TEST-RFC-005",
+  "milestone_name": "M5 — Construction Start Authorized",
+  "milestone": "M5",
+  "amount": 36000,
+  "due_date": "2027-09-29",
+  "payment_instructions": "Bank transfer to Oficio Taller. Bank: [BANK_NAME]. CLABE: [CLABE — TO BE CONFIGURED IN .env]. Reference: PRJ-2026-0317-tc005-biblioteca-municipal-M5.",
+  "currency": "USD",
+  "running_total": 180000,
+  "payment_history": [
+    {
+      "milestone": "M1",
+      "name": "Contract Signing",
+      "amount": 36000,
+      "percentage": 20,
+      "status": "paid",
+      "paid_at": "2026-03-25"
+    },
+    {
+      "milestone": "M2",
+      "name": "Concept Design Approved",
+      "amount": 27000,
+      "percentage": 15,
+      "status": "paid",
+      "paid_at": "2026-05-20"
+    },
+    {
+      "milestone": "M3",
+      "name": "Architectural Design Approved",
+      "amount": 36000,
+      "percentage": 20,
+      "status": "paid",
+      "paid_at": "2026-09-09"
+    },
+    {
+      "milestone": "M4",
+      "name": "Construction Documents Delivered",
+      "amount": 45000,
+      "percentage": 25,
+      "status": "paid",
+      "paid_at": "2027-01-27"
+    },
+    {
+      "milestone": "M5",
+      "name": "Construction Start Authorized",
+      "amount": 36000,
+      "percentage": 20,
+      "status": "invoiced",
+      "invoiced_at": "2027-09-29"
+    }
+  ],
+  "payment_schedule_template": "public_civic — 20/15/20/25/20",
+  "payment_schedule_note": "public_civic template payment schedule: M1 20% ($36,000), M2 15% ($27,000), M3 20% ($36,000), M4 25% ($45,000), M5 20% ($36,000). Total: $180,000 USD. Note: seed data provided a different schedule (40/30/30) — Tomas overrode with public_civic template per protocol."
+}

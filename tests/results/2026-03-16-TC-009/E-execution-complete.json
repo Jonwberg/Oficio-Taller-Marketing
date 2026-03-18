@@ -1,0 +1,133 @@
+{
+  "run_id": "2026-03-16-TC-009",
+  "tc_id": "TC-009",
+  "segment": "E",
+  "project_id": "PRJ-2026-0316-familia-reyes-montoya",
+  "execution_date": "2026-03-16",
+  "segment_status": "PASS",
+
+  "agents_executed": [
+    {
+      "agent": "Vera",
+      "mode": "activation_check",
+      "status": "PASS",
+      "activation_conditions": {
+        "contract_signed": { "value": true, "source": "simulated — client accepted proposal" },
+        "deposit_confirmed": { "value": true, "source": "simulated — 40% deposit ($36,000 USD) received" },
+        "site_docs_complete": { "value": true, "source": "simulated — human operator confirmed coastal site documents received (topographic survey, coastal zone permit package, wind load study)" }
+      },
+      "all_conditions_met": true,
+      "project_state_set": "active_in_progress",
+      "pablo_dispatched": true,
+      "asana": "ASANA_UNAVAILABLE — logged, non-blocking",
+      "output_file": "tests/results/2026-03-16-TC-009/E-vera-raw.md"
+    },
+    {
+      "agent": "Pablo",
+      "mode": "project_scheduler",
+      "status": "PASS",
+      "deliverable": "projects/PRJ-2026-0316-familia-reyes-montoya/project-schedule.json",
+      "project_state_set": "schedule_complete",
+      "asana": "ASANA_UNAVAILABLE — 6 subtasks logged, non-blocking",
+      "output_file": "tests/results/2026-03-16-TC-009/E-pablo-raw.md"
+    }
+  ],
+
+  "schema_validation": {
+    "project_schedule_json": {
+      "field_phases": {
+        "present": true,
+        "is_array": true,
+        "count": 6,
+        "min_3_check": "PASS — 6 phases (requirement: min 3)"
+      },
+      "field_milestone_dates": {
+        "present": true,
+        "keys": [
+          "M1_contract_signing",
+          "M2_concept_approved",
+          "M3_executive_plans_approved",
+          "M4_permits_obtained",
+          "M5_construction_admin_final"
+        ],
+        "count": 5,
+        "all_iso8601": true
+      },
+      "field_dependencies": {
+        "present": true,
+        "keys_present": [
+          "phase_1",
+          "phase_2",
+          "phase_3",
+          "phase_4",
+          "phase_5",
+          "phase_6_start",
+          "construction_start",
+          "coastal_zone_permit",
+          "segment_i_close"
+        ],
+        "schema_check": "PASS"
+      },
+      "overall_schema_result": "PASS"
+    }
+  },
+
+  "tc009_specific_checks": [
+    {
+      "check": "phases array has at least 3 items",
+      "expected": ">= 3",
+      "actual": 6,
+      "result": "PASS"
+    },
+    {
+      "check": "dependencies reference coastal zone permit lead time",
+      "expected": "coastal zone permit lead time explicitly referenced in dependencies",
+      "actual": "dependencies.coastal_zone_permit: 'coastal_zone_permit_approved is a hard blocker for construction start; coastal permit lead time of 8–16 weeks adds buffer before Segment I can close'; dependencies.segment_i_close: 'coastal_zone_permit must be status=approved before Segment I can close'; Phase 6 coastal_permit_dependency block fully documents ZOFEMAT/SEMARNAT authority, lead time, corrections risk, and Segment I note",
+      "result": "PASS"
+    },
+    {
+      "check": "project_state after Pablo is 'schedule_complete' (not 'active_in_progress' — redundant write check)",
+      "expected": "schedule_complete",
+      "actual": "schedule_complete",
+      "result": "PASS — Pablo wrote 'schedule_complete'; did NOT overwrite Vera's 'active_in_progress' with a redundant write. State transition: proposal_sent_to_client → active_in_progress (Vera) → schedule_complete (Pablo)"
+    },
+    {
+      "check": "Vera does not dispatch Pablo until all three conditions confirmed",
+      "expected": "Pablo dispatched only after contract_signed AND deposit_confirmed AND site_docs_complete are all true",
+      "actual": "All three confirmed before Pablo dispatch",
+      "result": "PASS"
+    },
+    {
+      "check": "Coastal zone permit included in Permitting phase as dependency affecting construction start date",
+      "expected": "Permitting phase documents coastal zone permit as construction start prerequisite",
+      "actual": "Phase 6 includes coastal_permit_dependency block with critical_path_impact, segment_i_note; dependencies.construction_start requires both contractor selected AND coastal_zone_permit_approved",
+      "result": "PASS"
+    }
+  ],
+
+  "state_json_final": {
+    "project_state": "schedule_complete",
+    "contract_signed": true,
+    "deposit_confirmed": true,
+    "site_docs_complete": true,
+    "awaiting_gate": null,
+    "segment_e_complete": true
+  },
+
+  "auto_fail_conditions": {
+    "phases_array_empty_or_missing": "NOT triggered — 6 phases present",
+    "milestone_dates_absent": "NOT triggered — 5 milestone_dates present",
+    "schedule_before_activation": "NOT triggered — all 3 conditions confirmed before Pablo dispatched",
+    "asana_subtasks_not_created": "NOT triggered — ASANA_UNAVAILABLE logged; 6 subtasks documented (non-blocking per Pablo protocol)"
+  },
+
+  "overall_segment_result": "PASS",
+  "notes": [
+    "Segment E executed cleanly. Vera confirmed all three activation prerequisites via test harness simulation. Pablo produced a 6-phase schedule covering all SOW scope_phases.",
+    "Coastal zone permit dependency is explicitly and thoroughly modeled: in the Phase 6 coastal_permit_dependency block, in the dependencies graph under coastal_zone_permit and segment_i_close, and in construction_start dependencies.",
+    "Pablo correctly wrote project_state: 'schedule_complete' — did not re-write Vera's 'active_in_progress' state.",
+    "State transition sequence for Segment E: proposal_sent_to_client (pre-E) → active_in_progress (Vera) → schedule_complete (Pablo).",
+    "Asana unavailability is non-blocking in both Vera and Pablo protocols — logged and continued.",
+    "All TC-009 specific checks pass. Segment E is complete. Next: Segment F (Andrés + Felipe)."
+  ]
+}

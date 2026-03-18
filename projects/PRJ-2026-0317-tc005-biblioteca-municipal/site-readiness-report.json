@@ -1,0 +1,22 @@
+{
+  "required_documents": [
+    {
+      "name": "Levantamiento Topográfico",
+      "rationale": "Required for all projects — establishes site boundaries, levels, and contours. Flat municipal land; 1:500 scale minimum required.",
+      "received": false
+    },
+    {
+      "name": "Estudio de Mecánica de Suelos",
+      "rationale": "Required for all public civic projects — 2,000m² public building requires soil bearing capacity confirmation for structural engineering.",
+      "received": false
+    },
+    {
+      "name": "Escrituras / Título de Propiedad Municipal",
+      "rationale": "Municipal land title or government land use authorization confirming the contracting entity's legal authority to develop the site.",
+      "received": false
+    }
+  ],
+  "request_sent_at": "2026-03-17T17:00:00-07:00",
+  "current_status": "documents_requested",
+  "blockers": []
+}

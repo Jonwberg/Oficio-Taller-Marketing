@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc004-centro-salud",
+  "phase": "DG-01",
+  "review_item": "lead-record",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": null,
+  "timestamp": "2026-03-17T10:15:00-07:00",
+  "source_channel": "email",
+  "next_action": "Dispatch Lupe Segment B — write lead-summary.json and dispatch Elena",
+  "route_to": "Lupe",
+  "sync_to_asana": true
+}

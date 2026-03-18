@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc008-site-complications",
+  "phase": "DG-09",
+  "review_item": "budget-alignment",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": "Budget within client range. Proceed to executive plans.",
+  "timestamp": "2026-09-16T09:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "dispatch Hugo for executive plans",
+  "route_to": "Hugo",
+  "sync_to_asana": true
+}

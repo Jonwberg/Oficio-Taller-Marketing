@@ -1,0 +1,20 @@
+{
+  "plan_set_components": [
+    "Architectural plans — floor plans all levels, sections, elevations, site plan, roof plan",
+    "Structural plans — foundation plan and details, framing, connections, stepped foundation system for rolling terrain",
+    "MEP coordination drawings — electrical single-line, panel schedules, plumbing and hydraulic layout, HVAC zoned system",
+    "Lighting plans — design-led fixture layout all zones, dimming control system",
+    "Fire protection plans — sprinkler layout and design basis, fire alarm integration",
+    "AV / technology infrastructure plans — in-room AV casitas, public area AV, network backbone",
+    "Solar PV system drawings — rooftop and ground-mount array layout, battery storage, grid tie-in",
+    "Greywater recycling system drawings — collection, biofilter treatment, reuse distribution",
+    "Detail sheets — wall sections, ceiling details, lobby feature elements, casita millwork, pool surround",
+    "Finish schedule — all surfaces, all zones, all room types",
+    "FF&E specification document — room-by-room specification all 9 program zones",
+    "Technical specifications document",
+    "SECTUR permit-ready drawing package"
+  ],
+  "engineering_integration_confirmed": true,
+  "conflicts_resolved": true,
+  "client_signoff_milestone": "M3 — Executive Plans Approved"
+}

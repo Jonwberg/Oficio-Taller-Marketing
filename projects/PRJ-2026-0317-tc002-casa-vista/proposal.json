@@ -1,0 +1,49 @@
+{
+  "scope_summary": {
+    "es": "Oficio Taller propone una colaboración completa para el diseño y coordinación de su residencia en Residencial Vista del Mar, San José del Cabo — desde la concepción del partido arquitectónico hasta la obtención del permiso de construcción. El proyecto contempla 337 m² de programa: cuatro recámaras, cuatro baños, cocina, sala-comedor, sala familiar, oficina, alberca, dos terrazas y áreas de servicio.\n\nEl alcance incluye siete fases: diseño conceptual (con presentación anticipada al Comité de Revisión de Diseño del fraccionamiento), diseño arquitectónico completo con cumplimiento del reglamento de construcción de Residencial Vista del Mar, coordinación de ingeniería (estructural, eléctrica, iluminación, hidráulica, energía solar y domótica), planos ejecutivos coordinados, proceso de licitación con mínimo dos contratistas, y trámite de permiso ante el Municipio de Los Cabos.\n\nOficio Taller gestionará directamente la presentación ante la HOA y el seguimiento de la aprobación del fraccionamiento, incluyendo la checklist de cumplimiento de convenios y el paquete de presentación en el formato requerido por el desarrollo. Usted recibirá un juego de planos ejecutivos con el sello de aprobación de la HOA antes del inicio de obra.",
+    "en": "Oficio Taller proposes a full-service design and coordination engagement for your residence at Residencial Vista del Mar in San José del Cabo — from initial concept through building permit. The project encompasses a 337 sqm program: four bedrooms, four bathrooms, kitchen, dining and living areas, family room, home office, pool, two terraces, and service areas.\n\nThe scope covers seven phases: conceptual design (with early submission to the Residencial Vista del Mar design review committee), full architectural design including HOA covenant compliance, engineering coordination (structural, electrical, lighting, plumbing, solar energy, and smart home systems), fully coordinated executive plans, contractor bidding with a minimum of two bids, and permit submission to the Municipio de Los Cabos.\n\nOficio Taller will manage all HOA submission and approval coordination directly, including the covenant compliance checklist and the design package in the development's required format. You will receive a complete executive plan set bearing the HOA's approval stamp before construction begins."
+  },
+  "budget_detail": {
+    "es": "Honorarios de diseño y coordinación:\n\n• M1 — Firma de contrato: USD 27,200 (40%)\n• M2 — Diseño conceptual aprobado: USD 20,400 (30%)\n• M3 — Documentos de construcción entregados: USD 20,400 (30%)\n\nTotal honorarios de arquitectura: USD 68,000\n\nNota: Los honorarios de ingeniería (estructural, MEP, solar, domótica) se contratan directamente entre el cliente y los especialistas; Oficio Taller coordina. Los costos de construcción son independientes y se determinarán mediante el proceso de licitación en la Fase 5.",
+    "en": "Design and coordination fees:\n\n• M1 — Contract signing: USD 27,200 (40%)\n• M2 — Concept design approved: USD 20,400 (30%)\n• M3 — Construction documents delivered: USD 20,400 (30%)\n\nTotal architecture fee: USD 68,000\n\nNote: Engineering fees (structural, MEP, solar, smart home) are contracted directly between the client and specialists; Oficio Taller coordinates. Construction costs are separate and will be determined through the bidding process in Phase 5.",
+    "total": 68000,
+    "currency": "USD",
+    "line_items_ref": "budget.json"
+  },
+  "timeline_phases": [
+    {
+      "phase": "Phase 1 — Conceptual Design + HOA Early Review",
+      "duration_weeks": "4–6",
+      "key_milestone": "Client approves conceptual direction; HOA early feedback received"
+    },
+    {
+      "phase": "Phase 2 — Architectural Design + HOA Submission",
+      "duration_weeks": "8–12",
+      "key_milestone": "Client approves architectural design; written HOA approval received from Residencial Vista del Mar"
+    },
+    {
+      "phase": "Phase 3 — Engineering Coordination",
+      "duration_weeks": "4–6",
+      "key_milestone": "All engineering inputs confirmed; no coordination conflicts"
+    },
+    {
+      "phase": "Phase 4 — Executive Plans",
+      "duration_weeks": "4–6",
+      "key_milestone": "Fully coordinated construction document set delivered with HOA-approved drawings"
+    },
+    {
+      "phase": "Phase 5 — Contractor Bidding",
+      "duration_weeks": "3–4",
+      "key_milestone": "Contractor recommended with bid comparison; client selects contractor"
+    },
+    {
+      "phase": "Phase 6 — Permitting",
+      "duration_weeks": "4–16",
+      "key_milestone": "Building permit issued by Municipio de Los Cabos"
+    }
+  ],
+  "process_narrative": {
+    "es": "En Oficio Taller trabajamos de cerca con cada cliente a lo largo de todo el proceso de diseño — no como proveedores de servicio, sino como socios creativos. Desde el primer trazo hasta el último plano ejecutivo, tomamos decisiones de diseño de manera transparente: les explicamos el razonamiento detrás de cada propuesta, documentamos cada acuerdo, y nos aseguramos de que siempre estén al tanto del avance.\n\nPara un proyecto en un fraccionamiento regulado como Residencial Vista del Mar, nuestra experiencia con reglamentos de HOA es un activo real: sabemos qué espera el Comité de Revisión de Diseño, en qué formatos hay que presentar la documentación, y cómo redactar la checklist de cumplimiento de convenios para que el proceso de aprobación sea lo más ágil posible. No esperamos a la Fase 2 para dialogar con la HOA — sometemos el concepto desde la Fase 1 para anticipar cualquier observación antes de desarrollar el diseño arquitectónico completo.\n\nEl avance del proyecto se comunica a través de actualizaciones estructuradas en cada hito: reuniones de revisión, documentos formales de aprobación de fase, y disponibilidad directa del equipo para consultas. No trabajamos con genéricos ni con plantillas — cada casa que diseñamos parte del programa específico del cliente y del contexto real del sitio.\n\nAl final del proceso, usted tendrá un juego completo de planos ejecutivos coordinados con ingeniería integrada, la aprobación de la HOA obtenida, el permiso municipal en trámite o aprobado, y dos propuestas de contratista comparadas y recomendadas — listos para iniciar obra con claridad total sobre costos, alcance y proceso.",
+    "en": "At Oficio Taller, we work closely with each client throughout the entire design process — not as vendors, but as creative partners. From the first sketch to the final executive drawing, we make design decisions transparently: we explain the reasoning behind each proposal, document every agreement, and ensure you always know where the project stands.\n\nFor a project within a governed development like Residencial Vista del Mar, our experience with HOA design review processes is a genuine asset. We know what the design review committee looks for, what formats are required for submission, and how to structure the covenant compliance checklist to make the approval process as efficient as possible. We don't wait until Phase 2 to engage the HOA — we submit the concept in Phase 1 to surface any concerns before the full architectural design is developed.\n\nProject progress is communicated through structured updates at each milestone: review meetings, formal phase approval documents, and direct team availability for questions. We don't work with generic solutions or templates — every house we design starts from the client's specific program and the real conditions of the site.\n\nAt the end of the process, you will have a complete set of coordinated executive plans with integrated engineering, the HOA approval in hand, the municipal permit obtained or in process, and two contractor proposals compared and recommended — ready to begin construction with full clarity on cost, scope, and process."
+  }
+}

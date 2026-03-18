@@ -1,0 +1,20 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "client_name": "Miguel Torres",
+  "questionnaire_sent_at": "2026-03-17T10:00:00-07:00",
+  "questionnaire_thread_id": "GMAIL_UNAVAILABLE",
+  "responses": {
+    "project_location": "Los Cabos, BCS, Mexico",
+    "site_area_sqm": 800,
+    "site_conditions": "flat, no hydrology concerns",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "total_programmed_sqm": 216,
+    "special_features": ["pool"],
+    "budget_usd": 200000,
+    "timeline_preference": "12-18 months",
+    "design_style": "contemporary coastal",
+    "occupancy": "primary residence",
+    "rfc": "TEST-RFC-006"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "client_name": "Miguel Torres",
+  "project_start_date": "2026-04-01",
+  "phases": [
+    {
+      "phase_number": 1,
+      "name": "Conceptual Design",
+      "start_date": "2026-04-01",
+      "end_date": "2026-04-21",
+      "duration_weeks": 3,
+      "milestone_payment": "M1 — Contract Signed — $12,000 USD (due at contract signing, prior to Phase 1 start)"
+    },
+    {
+      "phase_number": 2,
+      "name": "Architectural Design Development",
+      "start_date": "2026-04-22",
+      "end_date": "2026-05-19",
+      "duration_weeks": 4,
+      "milestone_payment": "M2 — Concept Approved — $9,000 USD (due at DG-07 approval)"
+    },
+    {
+      "phase_number": 3,
+      "name": "Engineering Coordination",
+      "start_date": "2026-05-20",
+      "end_date": "2026-06-16",
+      "duration_weeks": 4,
+      "milestone_payment": null
+    },
+    {
+      "phase_number": 4,
+      "name": "Executive Plans (Construction Documents)",
+      "start_date": "2026-06-17",
+      "end_date": "2026-07-21",
+      "duration_weeks": 5,
+      "milestone_payment": "M3 — Executive Plans Approved — $9,000 USD (due at DG-10 approval)"
+    },
+    {
+      "phase_number": 5,
+      "name": "Permit Management",
+      "start_date": "2026-06-17",
+      "end_date": "2026-08-11",
+      "duration_weeks": 8,
+      "milestone_payment": null,
+      "notes": "Running concurrently with Phase 4. SEMARNAT review may extend timeline."
+    },
+    {
+      "phase_number": 6,
+      "name": "Construction Administration",
+      "start_date": "2026-08-12",
+      "end_date": "2027-08-11",
+      "duration_weeks": 52,
+      "milestone_payment": null,
+      "notes": "Construction duration estimate — actual per contractor schedule"
+    }
+  ],
+  "milestone_dates": {
+    "contract_signed": "2026-03-31",
+    "concept_approved": "2026-04-21",
+    "design_approved": "2026-05-19",
+    "engineering_complete": "2026-06-16",
+    "executive_plans_approved": "2026-07-21",
+    "permit_approved": "2026-08-11",
+    "construction_start": "2026-08-12",
+    "construction_complete": "2027-08-11"
+  },
+  "total_duration_months": 18
+}

@@ -1,0 +1,30 @@
+{
+  "project_id": "PRJ-2026-0317-tc002-casa-vista",
+  "client_name": "Patricia Reyes",
+  "design_set_status": "complete",
+  "concept_reflection_confirmed": true,
+  "hoa_style_constraints_applied": {
+    "style": "contemporary — confirmed",
+    "facade_materials": "natural stone (volcanic) and white stucco — confirmed on all four elevations",
+    "height_limit_m": 7,
+    "actual_ridge_height_m": 6.8,
+    "flat_roof_over_2_floors": false,
+    "notes": "All HOA constraints from Residencial Vista del Mar reflected in architectural drawing set. Ridge height 6.8m is within 7m limit. No flat roof over 2 floors. HOA design review submission package prepared."
+  },
+  "area_program_compliance": {
+    "compliant": true,
+    "deviations": [],
+    "notes": "Full 337 sqm program is represented in the architectural design set. Two-story scheme: ground floor 192 sqm (kitchen, living/dining, family room, office, service, 2 bathrooms, terrace access), upper floor 145 sqm (4 bedrooms, 4 en-suite bathrooms, terraces). Pool 40 sqm at grade. All 12 space categories from area-program.json are fully addressed with no deviations."
+  },
+  "structural_coordination_notes": "Structural engineer engagement initiated. Preliminary structural coordination sketch completed in Phase 2. Concrete moment frame system proposed for two-story scheme on slight slope. Foundation type to be confirmed by structural engineer after soil study review. No coordination conflicts identified at this stage. Final structural drawings to be delivered in Phase 3.",
+  "hoa_submission_status": "HOA design review package submitted to Residencial Vista del Mar design committee. Submission includes floor plans, elevations (all four facades), site plan, and covenant compliance checklist. Response expected within 2–4 weeks per HOA typical timeline.",
+  "covenant_compliance_checklist": {
+    "setbacks": "confirmed per site plan",
+    "maximum_height": "6.8m — within 7m limit",
+    "facade_materials": "natural volcanic stone + white stucco — compliant",
+    "parking": "2 covered spaces provided — compliant",
+    "prohibited_uses": "residential only — compliant",
+    "landscaping_requirements": "drought-tolerant planting proposed — pending HOA review",
+    "contemporary_style": "confirmed on all elevations"
+  }
+}

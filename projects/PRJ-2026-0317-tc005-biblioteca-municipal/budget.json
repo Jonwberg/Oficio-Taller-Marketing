@@ -1,0 +1,46 @@
+{
+  "project_name": "Arq. Roberto Salinas — Dirección de Obras Públicas — public_civic — Cabo San Lucas, BCS",
+  "client_name": "Arq. Roberto Salinas — Dirección de Obras Públicas",
+  "milestone_name": "M1 — Contract Signing",
+  "amount": 36000,
+  "payment_instructions": "Bank transfer to Oficio Taller. Bank: [BANK_NAME]. CLABE: [CLABE — TO BE CONFIGURED IN .env]. Reference: PRJ-2026-0317-tc005-biblioteca-municipal.",
+  "currency": "USD",
+  "total": 180000,
+  "line_items": [
+    {
+      "phase": "Phase 1 — Conceptual Design",
+      "description": "Design narrative, floor plan sketches, 3D massing, material direction, accessibility concept, sustainability/solar concept",
+      "amount": 36000,
+      "currency": "USD",
+      "percentage_of_total": 20
+    },
+    {
+      "phase": "Phase 2 — Architectural Design",
+      "description": "Full architectural drawing set, accessibility matrix, landscape architecture, irrigation plan, sustainability compliance strategy",
+      "amount": 27000,
+      "currency": "USD",
+      "percentage_of_total": 15
+    },
+    {
+      "phase": "Phase 3 — Engineering Coordination",
+      "description": "Structural, electrical, lighting, plumbing/hydraulic, HVAC, solar systems, landscape engineering, sustainability coordination",
+      "amount": 36000,
+      "currency": "USD",
+      "percentage_of_total": 20
+    },
+    {
+      "phase": "Phase 4 — Executive Plans",
+      "description": "Fully coordinated construction drawing set, technical specs, public bidding documents, sustainability package",
+      "amount": 45000,
+      "currency": "USD",
+      "percentage_of_total": 25
+    },
+    {
+      "phase": "Phase 5 & 6 — Contractor Bidding + Permitting",
+      "description": "Technical bid package, bid review + recommendation, building permit application and tracking",
+      "amount": 36000,
+      "currency": "USD",
+      "percentage_of_total": 20
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "E",
+  "tc_id": "TC-008",
+  "agents_dispatched": ["Vera", "Pablo"],
+  "schema_passes": true,
+  "notes": "Activation gate held for 6-week hydrology delay. Gate cleared after study received.",
+  "completed_at": "2026-04-28T11:00:00-07:00",
+  "project_id": "PRJ-2026-0317-tc008-site-complications",
+  "agents_executed": [
+    {
+      "agent": "Vera",
+      "role": "Activation check — FIRST PASS (blocked)",
+      "mode": "activation_check",
+      "pass_number": 1,
+      "check_performed_at": "2026-03-17T11:30:00-07:00",
+      "output_files": [
+        "projects/PRJ-2026-0317-tc008-site-complications/activation-gate.json",
+        "projects/PRJ-2026-0317-tc008-site-complications/vera-activation-blocked.json",
+        "projects/PRJ-2026-0317-tc008-site-complications/state-activation-blocked.json"
+      ],
+      "schema_pass": true,
+      "conditions_checked": {
+        "contract_signed": true,
+        "site_data_complete": false,
+        "deposit_confirmed": true
+      },
+      "site_data_pending_state_set": true,
+      "all_conditions_met": false,
+      "result": "activation_blocked",
+      "pablo_dispatched": false,
+      "blocker": "hydrologic_study_pending",
+      "tc008_check_activation_gate_blocked": true,
+      "tc008_check_site_data_pending_state_set": true,
+      "tc008_check_pablo_not_dispatched_when_blocked": true,
+      "fallbacks": ["ASANA_UNAVAILABLE: would log activation check comment to activation_gate task"]
+    },
+    {
+      "agent": "OPERATOR",
+      "role": "Operator action — 6 weeks later: hydrology study received, site_data_complete = true",
+      "action_at": "2026-04-28T10:00:00-07:00",
+      "files_written": [
+        "projects/PRJ-2026-0317-tc008-site-complications/hydrology-study-received.json",
+        "projects/PRJ-2026-0317-tc008-site-complications/site-readiness-report-resolved.json"
+      ],
+      "operator_confirms_site_data_complete_true": true
+    },
+    {
+      "agent": "Vera",
+      "role": "Activation check — SECOND PASS (approved)",
+      "mode": "activation_check",
+      "pass_number": 2,
+      "check_performed_at": "2026-04-28T11:30:00-07:00",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/vera-activation-approved.json",
+      "schema_pass": true,
+      "conditions_checked": {
+        "contract_signed": true,
+        "site_data_complete": true,
+        "deposit_confirmed": true
+      },
+      "all_conditions_met": true,
+      "result": "activation_approved",
+      "pablo_dispatched": true,
+      "tc008_check_activation_approved_after_study_received": true,
+      "fallbacks": ["ASANA_UNAVAILABLE: would complete activation_gate task"]
+    },
+    {
+      "agent": "Pablo",
+      "role": "Project schedule builder — includes 6-week hydrology delay",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/project-schedule.json",
+      "schema_pass": true,
+      "fields_validated": ["phases", "milestone_dates", "dependencies", "schedule_notes"],
+      "phase_count": 6,
+      "schedule_notes_reference_hydrology_delay": true,
+      "activation_date": "2026-04-28",
+      "original_pipeline_entry": "2026-03-17",
+      "delay_weeks": 6,
+      "fallbacks": [
+        "ASANA_UNAVAILABLE: would create 6 milestone subtasks",
+        "ASANA_UNAVAILABLE: would complete schedule task"
+      ]
+    }
+  ],
+  "tc008_checks": {
+    "vera_holds_activation_gate_until_hydrology_resolved": true,
+    "site_data_pending_state_set_before_resolution": true,
+    "activation_gate_blocked_file_written": true,
+    "hydrology_study_received_file_written": true,
+    "vera_second_pass_approved_after_hydrology_received": true,
+    "site_data_complete_true_on_operator_confirmation": true,
+    "pablo_dispatched_only_after_all_three_conditions_met": true,
+    "schedule_includes_6_week_hydrology_delay": true
+  },
+  "final_project_state": "active_in_progress",
+  "awaiting_gate": null,
+  "segment_E_complete": true,
+  "next_segment": "F",
+  "issues": []
+}

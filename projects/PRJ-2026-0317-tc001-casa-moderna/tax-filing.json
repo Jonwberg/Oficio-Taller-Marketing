@@ -1,0 +1,8 @@
+{
+  "rfc": "TEST-RFC-001",
+  "revenue_amount": 54000,
+  "tax_jurisdiction": "Mexico IVA 16%",
+  "filing_period": "2026-08",
+  "cfdi_reference": "CFDI-TC001-2026-08",
+  "deductibles": []
+}

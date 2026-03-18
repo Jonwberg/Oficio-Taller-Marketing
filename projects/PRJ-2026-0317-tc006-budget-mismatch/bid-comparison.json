@@ -1,0 +1,36 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "client_name": "Miguel Torres",
+  "bids": [
+    {
+      "contractor": "Constructora Horizonte Los Cabos",
+      "total": 192000,
+      "currency": "USD",
+      "line_items": [
+        { "scope": "Civil work — foundation, slab, masonry walls", "amount": 68000 },
+        { "scope": "Structural — roof structure, coastal tie-downs", "amount": 28000 },
+        { "scope": "Finishes — flooring, plaster, paint, tile", "amount": 42000 },
+        { "scope": "MEP — electrical, plumbing, HVAC mini-splits", "amount": 38000 },
+        { "scope": "Exterior — terrace paving, site drainage, landscaping", "amount": 16000 }
+      ],
+      "timeline": "11 months",
+      "notes": "Local contractor with 12 years in Los Cabos. Strong coastal construction experience. References available. Excludes permit fees and topographic survey."
+    },
+    {
+      "contractor": "Grupo Constructor del Pacifico",
+      "total": 198000,
+      "currency": "USD",
+      "line_items": [
+        { "scope": "Civil work — foundation, slab, masonry walls", "amount": 71000 },
+        { "scope": "Structural — roof structure, coastal tie-downs", "amount": 30000 },
+        { "scope": "Finishes — flooring, plaster, paint, tile", "amount": 44000 },
+        { "scope": "MEP — electrical, plumbing, HVAC mini-splits", "amount": 37000 },
+        { "scope": "Exterior — terrace paving, site drainage, landscaping", "amount": 16000 }
+      ],
+      "timeline": "12 months",
+      "notes": "Larger regional firm. Slightly higher cost but stronger project management structure. Excludes permit fees."
+    }
+  ],
+  "recommendation": "Constructora Horizonte Los Cabos",
+  "recommendation_rationale": "Constructora Horizonte Los Cabos at $192,000 USD is the lower bid by $6,000 and is within the client budget of $200,000 USD with a $8,000 contingency. Both bidders are qualified local contractors. Horizonte has demonstrated coastal construction experience and a competitive timeline of 11 months. Both bids confirm the revised 160 sqm no-pool scope is viable within the client's budget."
+}

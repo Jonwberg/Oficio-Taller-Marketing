@@ -1,0 +1,85 @@
+{
+  "spaces": [
+    {
+      "name": "Master Bedroom",
+      "qty": 1,
+      "size_sqm": 20,
+      "notes": "Primary suite per program; includes en-suite bathroom below"
+    },
+    {
+      "name": "Bedroom 2",
+      "qty": 1,
+      "size_sqm": 20,
+      "notes": "Guest/secondary bedroom"
+    },
+    {
+      "name": "Bedroom 3",
+      "qty": 1,
+      "size_sqm": 20,
+      "notes": "Guest/secondary bedroom"
+    },
+    {
+      "name": "Bedroom 4",
+      "qty": 1,
+      "size_sqm": 20,
+      "notes": "Guest/secondary bedroom"
+    },
+    {
+      "name": "Bathroom",
+      "qty": 4,
+      "size_sqm": 9,
+      "notes": "4 bathrooms at 9 sqm each per program; one per bedroom"
+    },
+    {
+      "name": "Kitchen",
+      "qty": 1,
+      "size_sqm": 25,
+      "notes": "Open kitchen with island; adjacent to dining/living"
+    },
+    {
+      "name": "Dining & Living Room",
+      "qty": 1,
+      "size_sqm": 55,
+      "notes": "Combined open-plan dining and living space"
+    },
+    {
+      "name": "Family Room",
+      "qty": 1,
+      "size_sqm": 30,
+      "notes": "Secondary informal living area"
+    },
+    {
+      "name": "Office",
+      "qty": 1,
+      "size_sqm": 15,
+      "notes": "Home office / study"
+    },
+    {
+      "name": "Pool",
+      "qty": 1,
+      "size_sqm": 40,
+      "notes": "Exterior pool; counts toward site area but included in total program per client request"
+    },
+    {
+      "name": "Terrace",
+      "qty": 2,
+      "size_sqm": 20,
+      "notes": "Two terraces at 20 sqm each; exterior covered areas"
+    },
+    {
+      "name": "Service Areas",
+      "qty": 1,
+      "size_sqm": 16,
+      "notes": "Laundry, utility, service circulation"
+    }
+  ],
+  "total_sqm": 337,
+  "assumptions": [
+    "Bedroom sizes of 20 sqm per unit taken directly from seed data program specification",
+    "Bathroom sizes of 9 sqm per unit taken directly from seed data program specification",
+    "Pool (40 sqm) and terraces (2 × 20 sqm = 40 sqm) are included in total sqm per client request; actual enclosed conditioned area is 257 sqm",
+    "HOA height limit of 7m is taken into account for massing — 337 sqm program distributed across two stories to stay under 7m; no three-story configuration",
+    "Service areas (16 sqm) include laundry, utility room, and service circulation; actual distribution TBD in Phase 2",
+    "Total: 4×20 (bedrooms) + 4×9 (bathrooms) + 25 (kitchen) + 55 (living/dining) + 30 (family room) + 15 (office) + 40 (pool) + 2×20 (terraces) + 16 (service) = 80+36+25+55+30+15+40+40+16 = 337 sqm — verified"
+  ]
+}

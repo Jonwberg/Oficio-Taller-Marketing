@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc003-wellness-retreat",
+  "phase": "DG-04",
+  "review_item": "scope-of-work",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": "commercial_hotel_standard_clause and hospitality_compliance_clause both confirmed. SOW approved.",
+  "timestamp": "2026-03-19T09:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "Dispatch Bruno — price the approved SOW into itemized budget.json",
+  "route_to": "Bruno",
+  "sync_to_asana": true
+}

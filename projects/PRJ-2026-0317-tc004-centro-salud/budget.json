@@ -1,0 +1,48 @@
+{
+  "project_name": "Dra. Carmen Valdez — commercial_health_center — La Paz, BCS",
+  "client_name": "Dra. Carmen Valdez",
+  "milestone_name": "M1 — Contract Signing",
+  "amount": 54000,
+  "payment_instructions": "Bank transfer to Oficio Taller. Bank: [CLABE — TO BE CONFIGURED IN .env]. Reference: PRJ-2026-0317-tc004-centro-salud-M1.",
+  "currency": "USD",
+  "total": 216000,
+  "line_items": [
+    {
+      "phase": "Phase 1 — Conceptual Design",
+      "description": "Design narrative, zone diagrams, 3D massing, material direction board, COFEPRIS facility category confirmation, infection control zoning concept",
+      "amount": 43200,
+      "currency": "USD"
+    },
+    {
+      "phase": "Phase 2 — Architectural Design",
+      "description": "Floor plans, elevations, sections, site plan, interior design criteria, clinical standards checklist, COFEPRIS compliance checklist Phase 2, accessibility compliance matrix",
+      "amount": 54000,
+      "currency": "USD"
+    },
+    {
+      "phase": "Phase 3 — Engineering Coordination",
+      "description": "Structural integration, electrical + UPS + generator, HVAC clinical design, medical gas systems (O2/air/vacuum), plumbing, fire suppression, foundation",
+      "amount": 32400,
+      "currency": "USD"
+    },
+    {
+      "phase": "Phase 4 — Executive Plans",
+      "description": "Fully coordinated construction set, detail sheets, finish schedule, equipment rough-in drawings, technical specifications, COFEPRIS permit-ready package",
+      "amount": 54000,
+      "currency": "USD"
+    },
+    {
+      "phase": "Phase 5 — Contractor Bidding",
+      "description": "Bid package preparation and distribution to minimum 3 clinical-experience contractors, bid comparison matrix, recommendation",
+      "amount": 21600,
+      "currency": "USD"
+    },
+    {
+      "phase": "Phase 6 — Permitting (Building Permit + COFEPRIS Licencia Sanitaria)",
+      "description": "Building permit application, COFEPRIS sanitary license application, COFEPRIS facility authorization package, medical gas approval, submission and correction tracking",
+      "amount": 10800,
+      "currency": "USD"
+    }
+  ],
+  "phase_allocation_note": "Architecture fee USD 216,000 allocated across phases proportionally: Ph1 20% ($43,200), Ph2 25% ($54,000), Ph3 15% ($32,400), Ph4 25% ($54,000), Ph5 10% ($21,600), Ph6 5% ($10,800). Total = $216,000."
+}

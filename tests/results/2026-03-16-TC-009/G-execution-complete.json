@@ -1,0 +1,101 @@
+{
+  "run_id": "2026-03-16-TC-009",
+  "tc_id": "TC-009",
+  "segment": "G",
+  "project_id": "PRJ-2026-0316-familia-reyes-montoya",
+  "execution_date": "2026-03-16",
+  "status": "complete",
+
+  "agents_executed": [
+    {
+      "agent": "Emilio",
+      "deliverable": "engineering-package.json",
+      "gate": "pre-DG-09",
+      "conditional_systems_included": ["solar"],
+      "conditional_systems_excluded": ["irrigation", "av"],
+      "all_inputs_confirmed": true,
+      "conflicts_resolved": true,
+      "state_before_bruno_dispatch": {
+        "project_state": "engineering_in_progress",
+        "awaiting_gate": null
+      },
+      "status": "pass"
+    },
+    {
+      "agent": "Bruno",
+      "mode": "budget_alignment",
+      "deliverable": "budget-alignment.json",
+      "gate": "DG-09",
+      "contractor_total": 795000,
+      "client_budget": 750000,
+      "variance_pct": 6.0,
+      "recommendation": "proceed",
+      "final_decision_simulated": "approve",
+      "status": "pass"
+    },
+    {
+      "agent": "Celia",
+      "gate": "DG-09",
+      "decision": "approve",
+      "route_to": "Hugo",
+      "status": "pass"
+    }
+  ],
+
+  "schema_validation": {
+    "engineering_package": {
+      "systems_status_structural": "PASS",
+      "systems_status_electrical": "PASS",
+      "systems_status_lighting": "PASS",
+      "systems_status_water": "PASS",
+      "systems_status_solar": "PASS — in scope per special_features",
+      "systems_status_irrigation_absent": "PASS — not in special_features, correctly excluded",
+      "systems_status_av_absent": "PASS — not in special_features, correctly excluded",
+      "conditional_systems": "PASS — [\"solar\"]",
+      "all_inputs_confirmed": "PASS — true",
+      "conflicts_resolved": "PASS — true",
+      "auto_fail_conditions": "NONE TRIGGERED"
+    },
+    "budget_alignment": {
+      "contractor_pricing_source": "PASS — 2 local coastal BCS contractors documented",
+      "contractor_total": "PASS — 795000",
+      "client_budget": "PASS — 750000",
+      "variance_amount": "PASS — 45000",
+      "variance_pct": "PASS — 6.0",
+      "recommendation": "PASS — proceed",
+      "all_6_fields_present": "PASS",
+      "variance_math_correct": "PASS — (795000-750000)/750000*100 = 6.0%",
+      "recommendation_matches_data": "PASS — 6.0% ≤ 10% → proceed",
+      "auto_fail_conditions": "NONE TRIGGERED"
+    },
+    "celia_dg09": {
+      "all_11_fields_present": "PASS",
+      "fields": ["project_id", "phase", "review_item", "reviewed_by", "decision", "comment", "timestamp", "source_channel", "next_action", "route_to", "sync_to_asana"],
+      "route_to_not_routed_to": "PASS",
+      "timestamp_iso8601": "PASS",
+      "decision_correct": "PASS — approve",
+      "next_agent_correct": "PASS — Hugo",
+      "comment_verbatim": "PASS",
+      "state_updated": "PASS — executive_plans_in_progress",
+      "auto_fail_conditions": "NONE TRIGGERED"
+    }
+  },
+
+  "tc009_specific_checks": {
+    "emilio_solar_in_systems_status": "PASS — solar included, in special_features",
+    "emilio_irrigation_excluded": "PASS — irrigation not in special_features, correctly excluded from systems_status",
+    "emilio_av_excluded": "PASS — av not in special_features, correctly excluded from systems_status",
+    "emilio_project_state_engineering_in_progress_before_bruno": "PASS",
+    "emilio_awaiting_gate_null_before_bruno": "PASS",
+    "bruno_contractor_total_within_10pct": "PASS — 6.0% variance",
+    "bruno_recommendation_proceed": "PASS",
+    "celia_dg09_route_to_hugo": "PASS"
+  },
+
+  "issues": [],
+
+  "final_project_state_after_segment_g": "executive_plans_in_progress",
+  "awaiting_gate_after_segment_g": null,
+  "next_segment": "H",
+  "next_agent": "Hugo"
+}

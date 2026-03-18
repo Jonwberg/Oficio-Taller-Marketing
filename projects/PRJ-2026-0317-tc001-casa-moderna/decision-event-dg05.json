@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc001-casa-moderna",
+  "phase": "DG-05",
+  "review_item": "proposal",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": null,
+  "timestamp": "2026-03-17T19:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "dispatch_rosa",
+  "route_to": "Rosa",
+  "sync_to_asana": true
+}

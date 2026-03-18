@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc005-biblioteca-municipal",
+  "phase": "DG-01",
+  "review_item": "lead-record",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": null,
+  "timestamp": "2026-03-17T09:15:00-07:00",
+  "source_channel": "gmail",
+  "next_action": "dispatch Lupe Segment B to write lead-summary and dispatch Elena",
+  "route_to": "Lupe",
+  "sync_to_asana": true
+}

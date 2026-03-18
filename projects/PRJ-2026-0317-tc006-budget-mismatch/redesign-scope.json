@@ -1,0 +1,8 @@
+{
+  "original_sqm": 216,
+  "revised_sqm": 160,
+  "removed_elements": ["pool"],
+  "feedback_type": "scope_reduction",
+  "rationale": "Per DG-09 reject: remove pool and reduce total area to fit $200K budget.",
+  "redesigned_at": "2026-03-17T14:30:00-07:00"
+}

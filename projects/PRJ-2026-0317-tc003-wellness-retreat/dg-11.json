@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc003-wellness-retreat",
+  "phase": "DG-11",
+  "review_item": "bid-comparison",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": "3 bids collected and compared. Agree with Baja Sur recommendation — best combination of price, hospitality experience, and scope completeness. Proceed to permitting.",
+  "timestamp": "2027-01-27T14:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "Dispatch Paco — manage permit submission to Municipio Todos Santos, SECTUR BCS, and COFEPRIS; Constructora Baja Sur selected",
+  "route_to": "Paco",
+  "sync_to_asana": true
+}

@@ -1,0 +1,47 @@
+{
+  "project_name": "David Chen — commercial_hotel — East Cape, BCS",
+  "client_name": "David Chen",
+  "milestone_name": "M1 — Contract Signing",
+  "amount": 120000,
+  "payment_instructions": "Bank transfer to Oficio Taller. Bank: [BANK_NAME — TO BE CONFIGURED IN .env]. CLABE: [CLABE — TO BE CONFIGURED IN .env]. Reference: PRJ-2026-0317-tc008-site-complications-M1.",
+  "currency": "USD",
+  "total": 300000,
+  "line_items": [
+    {
+      "phase": "Phase 1 — Conceptual Design",
+      "description": "Site analysis, parti diagram, 3D massing, material direction board, concept presentation",
+      "amount": 60000,
+      "currency": "USD"
+    },
+    {
+      "phase": "Phase 2 — Architectural Design Development",
+      "description": "Developed floor plans, elevations, sections, area program verification, structural coordination",
+      "amount": 75000,
+      "currency": "USD"
+    },
+    {
+      "phase": "Phase 3 — Engineering Coordination",
+      "description": "Structural, electrical, lighting, water, solar, greywater, pool hydraulics coordination",
+      "amount": 45000,
+      "currency": "USD"
+    },
+    {
+      "phase": "Phase 4 — Executive Plans",
+      "description": "Full construction document set including architectural, structural, MEP, fire protection, accessibility, specialty systems",
+      "amount": 75000,
+      "currency": "USD"
+    },
+    {
+      "phase": "Phase 5 — Permit Management",
+      "description": "Permit package assembly, municipal submission, MIA coordination, corrections management",
+      "amount": 15000,
+      "currency": "USD"
+    },
+    {
+      "phase": "Phase 6 — Construction Administration",
+      "description": "Weekly site visits, RFI response, change order management, punch list, as-builts",
+      "amount": 30000,
+      "currency": "USD"
+    }
+  ]
+}

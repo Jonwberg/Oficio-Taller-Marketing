@@ -1,0 +1,16 @@
+{
+  "project_name": "Dra. Carmen Valdez — commercial_health_center — La Paz, BCS",
+  "client_name": "Dra. Carmen Valdez",
+  "milestone_name": "M3 — Final Milestone (COFEPRIS Permit Obtained)",
+  "amount": 64800,
+  "due_date": "2027-06-09T00:00:00-07:00",
+  "payment_instructions": "Bank transfer to Oficio Taller. Bank: [CLABE — TO BE CONFIGURED IN .env]. Reference: PRJ-2026-0317-tc004-centro-salud-M3.",
+  "currency": "USD",
+  "running_total": 216000,
+  "milestone_history": [
+    { "milestone": "M1 — Contract Signing (40%)", "amount": 86400, "collected": true },
+    { "milestone": "M2 — Executive Plans Delivered (30%)", "amount": 64800, "collected": true },
+    { "milestone": "M3 — COFEPRIS Permit Obtained (30%)", "amount": 64800, "collected": true }
+  ],
+  "payment_schedule_note": "Payment schedule per seed data: M1 40% ($86,400), M2 30% ($64,800), M3 30% ($64,800). Total architecture fee: USD 216,000."
+}

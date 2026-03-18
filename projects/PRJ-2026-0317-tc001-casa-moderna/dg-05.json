@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc001-casa-moderna",
+  "phase": "D",
+  "review_item": "proposal_architect_approval",
+  "reviewed_by": "Vera",
+  "decision": "approve",
+  "comment": "Architect approved proposal. Ready to send to client.",
+  "timestamp": "2026-03-17T11:10:00-07:00",
+  "source_channel": "email",
+  "next_action": "send_proposal_to_client",
+  "route_to": "Rosa",
+  "sync_to_asana": false
+}

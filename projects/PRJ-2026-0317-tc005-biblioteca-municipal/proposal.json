@@ -1,0 +1,49 @@
+{
+  "scope_summary": {
+    "es": "Oficio Taller propone sus servicios profesionales de arquitectura para el diseño integral de la Biblioteca Municipal de Los Cabos, un edificio público de 2,000m² que se convertirá en un equipamiento de referencia para la comunidad de Cabo San Lucas, BCS.\n\nEl alcance de nuestros servicios comprende seis fases: Diseño Conceptual, Proyecto Arquitectónico, Coordinación de Ingeniería, Planos Ejecutivos, Licitación Pública (preparación técnica) y Trámites de Permisos. El programa arquitectónico incluye sala de lectura para adultos (400m²), sala de lectura infantil (200m²), acervo cerrado (300m²), sala de cómputo (150m²), sala de usos múltiples con espacio de arte cívico (200m²), administración (150m²), sanitarios accesibles (120m²), vestíbulo cívico (200m²), estacionamiento (250m²) y bodega (30m²).\n\nEl proyecto contempla cumplimiento integral de accesibilidad universal (normas IMSS/ISSSTE y NOM-001-STPS), sistemas solares, arquitectura de paisaje e irrigación incluidas por defecto, y documentación técnica de licitación pública formateada para el proceso de obra pública del Municipio de Los Cabos. Todos los trabajos se realizarán conforme a los lineamientos de la Ley de Adquisiciones y normativa de obra pública aplicable.",
+    "en": "Oficio Taller proposes its professional architecture services for the comprehensive design of the Biblioteca Municipal de Los Cabos, a 2,000m² public building that will serve as a civic landmark for the community of Cabo San Lucas, BCS.\n\nOur scope covers six phases: Conceptual Design, Architectural Design, Engineering Coordination, Executive Plans, Public Contractor Bidding (technical preparation), and Permitting. The architectural program includes an adult reading room (400m²), children's reading room (200m²), closed stacks (300m²), computer lab (150m²), multi-purpose/civic art room (200m²), administration (150m²), accessible restrooms (120m²), civic lobby (200m²), parking (250m²), and storage (30m²).\n\nThe project includes full universal accessibility compliance (IMSS/ISSSTE and NOM-001-STPS standards), solar systems, landscape architecture and irrigation (included by default for public civic projects), and technical bidding documents formatted for the Municipality of Los Cabos' obra pública procurement process. All work will be performed in accordance with applicable procurement law and public works guidelines."
+  },
+  "budget_detail": {
+    "es": "Honorarios totales de arquitectura: $180,000 USD\n\nCalendario de pagos (plantilla public_civic — 20/15/20/25/20):\n- M1 — Firma de contrato: $36,000 USD (20%)\n- M2 — Aprobación diseño conceptual: $27,000 USD (15%)\n- M3 — Aprobación proyecto arquitectónico: $36,000 USD (20%)\n- M4 — Entrega planos ejecutivos: $45,000 USD (25%)\n- M5 — Autorización de inicio de obra: $36,000 USD (20%)\n\nLos pagos están sujetos a los procesos de autorización fiscal del organismo contratante.",
+    "en": "Total architecture fee: $180,000 USD\n\nPayment schedule (public_civic template — 20/15/20/25/20):\n- M1 — Contract signing: $36,000 USD (20%)\n- M2 — Concept design approved: $27,000 USD (15%)\n- M3 — Architectural design approved: $36,000 USD (20%)\n- M4 — Construction documents delivered: $45,000 USD (25%)\n- M5 — Construction start authorized: $36,000 USD (20%)\n\nPayments are subject to the contracting entity's fiscal authorization process.",
+    "total": 180000,
+    "currency": "USD",
+    "line_items_ref": "budget.json"
+  },
+  "timeline_phases": [
+    {
+      "phase": "Phase 1 — Conceptual Design",
+      "duration_weeks": "5–8 (+ government approval time)",
+      "key_milestone": "Technical committee approval of conceptual direction"
+    },
+    {
+      "phase": "Phase 2 — Architectural Design",
+      "duration_weeks": "10–14 (+ government approval time)",
+      "key_milestone": "Contracting entity written approval (technical + budget committee)"
+    },
+    {
+      "phase": "Phase 3 — Engineering Coordination",
+      "duration_weeks": "6–10",
+      "key_milestone": "Coordinated engineering drawings complete"
+    },
+    {
+      "phase": "Phase 4 — Executive Plans",
+      "duration_weeks": "6–10",
+      "key_milestone": "Executive plan set + public bidding documents delivered"
+    },
+    {
+      "phase": "Phase 5 — Contractor Bidding (Licitación)",
+      "duration_weeks": "6–12 (contracting entity manages process)",
+      "key_milestone": "Contractor selection by contracting entity"
+    },
+    {
+      "phase": "Phase 6 — Permitting",
+      "duration_weeks": "8–20",
+      "key_milestone": "Building permit issued (public project — longer than residential timeline)"
+    }
+  ],
+  "process_narrative": {
+    "es": "En Oficio Taller entendemos que un edificio público es un acto de confianza entre la institución que lo encarga y la comunidad que lo habitará. Nuestro proceso está diseñado para honrar esa responsabilidad: trabajamos con rigor técnico y claridad comunicativa en cada etapa.\n\nTrabajamos en ciclos de diseño documentados: cada fase produce entregables concretos que el organismo contratante puede revisar, aprobar y archivar. Sabemos que los proyectos de obra pública requieren múltiples capas de aprobación — comités técnicos, comités de presupuesto, autoridades eleccionadas. Nuestros tiempos de entrega están calibrados para acomodar esos ciclos sin sacrificar la calidad del diseño.\n\nLa coordinación de ingeniería es nuestro diferenciador clave: estructural, eléctrica, hidráulica, sistemas solares, paisajismo e irrigación se desarrollan de manera integrada desde la Fase 2. Para Oficio Taller, el valor de un edificio público se demuestra no solo en su primera inauguración, sino en su mantenibilidad, accesibilidad y vida útil durante décadas. Diseñamos con esa visión.\n\nNuestro equipo tiene experiencia en los requerimientos de documentación para licitación pública en México. Preparamos el paquete técnico en el formato compatible con los procesos de obra pública del Municipio, facilitando al organismo contratante la gestión del proceso formal de licitación.",
+    "en": "At Oficio Taller, we understand that a public building is an act of trust between the institution that commissions it and the community that will inhabit it. Our process is designed to honor that responsibility — we work with technical rigor and clear communication at every stage.\n\nWe operate in documented design cycles: each phase produces concrete deliverables that the contracting entity can review, approve, and archive. We know that public works projects require multiple layers of approval — technical committees, budget committees, elected governing bodies. Our delivery timelines are calibrated to accommodate those cycles without sacrificing design quality.\n\nEngineering coordination is our key differentiator: structural, electrical, hydraulic, solar systems, landscape, and irrigation are developed in an integrated manner from Phase 2 onward. For Oficio Taller, the value of a public building is demonstrated not only at its inaugural opening, but in its maintainability, accessibility, and useful life over decades. We design with that long view in mind.\n\nOur team has experience in public procurement documentation requirements in Mexico. We prepare the technical package in a format compatible with the Municipality's obra pública process, enabling the contracting entity to manage the formal licitación pública efficiently."
+  }
+}

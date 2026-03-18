@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc003-wellness-retreat",
+  "phase": "DG-01",
+  "review_item": "lead-record",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": "Lead is well-defined. International developer with clear program and site. Proceed to discovery.",
+  "timestamp": "2026-03-17T11:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "Dispatch Lupe Segment B — write lead-summary.json and dispatch Elena for discovery questionnaire",
+  "route_to": "Lupe",
+  "sync_to_asana": true
+}

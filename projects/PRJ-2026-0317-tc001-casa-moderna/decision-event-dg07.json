@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc001-casa-moderna",
+  "phase": "DG-07",
+  "review_item": "concept-review",
+  "reviewed_by": "Marcela",
+  "decision": "pass_to_agent",
+  "comment": "Continue autonomously — concept direction is strong, proceed with minor refinements to material board before finalizing.",
+  "timestamp": "2026-04-15T10:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "dispatch_andres_continue_concept_in_progress",
+  "route_to": "Andrés",
+  "sync_to_asana": true
+}

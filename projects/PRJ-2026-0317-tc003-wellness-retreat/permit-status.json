@@ -1,0 +1,18 @@
+{
+  "submitted_at": "2027-01-28T09:00:00-07:00",
+  "jurisdiction": "Municipio de Todos Santos, BCS / SECTUR Delegación BCS / COFEPRIS Jurisdicción BCS",
+  "status": "approved",
+  "corrections": [
+    {
+      "received_at": "2027-02-28T00:00:00-07:00",
+      "description": "Municipio requested revised site plan showing exact arroyo buffer zone boundaries with dimensions and elevation marks per hydrologic study findings",
+      "resolved": true
+    },
+    {
+      "received_at": "2027-03-15T00:00:00-07:00",
+      "description": "COFEPRIS requested updated kitchen ventilation calculations and grease trap specification sheet for restaurant zone",
+      "resolved": true
+    }
+  ],
+  "approved_at": "2027-05-26T00:00:00-07:00"
+}

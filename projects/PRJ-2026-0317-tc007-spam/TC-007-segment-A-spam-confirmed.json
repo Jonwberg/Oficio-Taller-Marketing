@@ -1,0 +1,6 @@
+{
+  "project_id": "PRJ-2026-0317-tc007-spam",
+  "classification": "spam",
+  "discarded_at": "2026-03-17T19:00:05-07:00",
+  "reason": "Message offering social media follower-growth services — no project intent present. Sender identity unknown. Contains promotional link (seguidores-fake.com). Matches all spam criteria: offering a service, no location/client name/design intent, bulk/automated messaging pattern."
+}

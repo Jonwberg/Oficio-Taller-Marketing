@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc002-casa-vista",
+  "phase": "DG-07",
+  "review_item": "concept-review",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": null,
+  "timestamp": "2026-04-29T09:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "dispatch Felipe for architectural design development",
+  "route_to": "Felipe",
+  "sync_to_asana": true
+}

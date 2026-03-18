@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc005-biblioteca-municipal",
+  "phase": "DG-07",
+  "review_item": "concept-review",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": null,
+  "timestamp": "2026-04-15T10:00:00-07:00",
+  "source_channel": "gmail",
+  "next_action": "concept approved — dispatch Felipe to begin architectural design Phase 2",
+  "route_to": "Felipe",
+  "sync_to_asana": true
+}

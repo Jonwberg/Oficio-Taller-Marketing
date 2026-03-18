@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc004-centro-salud",
+  "phase": "DG-08",
+  "review_item": "architectural-design",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": null,
+  "timestamp": "2026-07-30T09:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "Dispatch Emilio — coordinate structural and systems engineering including medical gas and specialized HVAC",
+  "route_to": "Emilio",
+  "sync_to_asana": true
+}

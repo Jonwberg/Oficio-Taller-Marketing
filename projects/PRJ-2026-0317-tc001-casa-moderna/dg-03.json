@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc001-casa-moderna",
+  "phase": "C",
+  "review_item": "area_program_and_site_readiness",
+  "reviewed_by": "Celia",
+  "decision": "approve",
+  "comment": "Area program (250sqm) and site readiness report complete. No site blockers. Topographic survey requested. Advance to SOW and proposal.",
+  "timestamp": "2026-03-17T10:00:00-07:00",
+  "source_channel": "instagram",
+  "next_action": "advance_to_scope_and_proposal",
+  "route_to": "Marcela",
+  "sync_to_asana": false
+}

@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc003-wellness-retreat",
+  "phase": "DG-09",
+  "review_item": "budget-alignment",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": "Client has confirmed expanded budget commitment to cover full program. Budget aligned with engineering package scope. Proceed to executive plans.",
+  "timestamp": "2026-10-21T10:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "Dispatch Hugo — coordinate executive plans phase; all engineering coordinated; trigger DG-10 on completion",
+  "route_to": "Hugo",
+  "sync_to_asana": true
+}

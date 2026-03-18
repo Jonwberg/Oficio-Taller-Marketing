@@ -1,0 +1,21 @@
+{
+  "run_id": "2026-03-17-TC-003",
+  "segment": "I",
+  "agents": ["Ofelia", "Celia", "Paco"],
+  "result": "PASS",
+  "deliverables": ["bid-comparison.json", "permit-status.json", "dg-11.json"],
+  "completed_at": "2027-05-26T17:00:00-07:00",
+  "key_verification": {
+    "bids_collected": 3,
+    "bids_meet_minimum": true,
+    "bid_contractors": [
+      "Constructora Baja Sur, S.A. de C.V.",
+      "Desarrollos Pacífico Norte, S.A. de C.V.",
+      "Grupo Constructivo Los Cabos, S.A. de C.V."
+    ],
+    "recommendation": "Constructora Baja Sur, S.A. de C.V.",
+    "permits_status": "approved"
+  },
+  "notes": "Ofelia issued bid package to 3 contractors. All 3 responded with complete bids. Bid comparison matrix assembled. Celia routed to DG-11. Marcela approved Baja Sur recommendation. Paco managed permit submissions. 2 correction rounds resolved. All permits (building + SECTUR + COFEPRIS) approved 2027-05-26.",
+  "celia_route_to_verified": true
+}

@@ -1,0 +1,21 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "client_name": "Miguel Torres",
+  "site_location": "Los Cabos, BCS, Mexico",
+  "site_area_sqm": 800,
+  "current_status": "documents_pending",
+  "site_conditions_summary": "Flat lot with no hydrology concerns. Los Cabos coastal zone — site is within the ZOFEMAT (federal maritime zone) buffer and may require SEMARNAT environmental impact statement depending on precise distance to coastline. Local municipal building permit through H. Ayuntamiento de Los Cabos required.",
+  "required_documents": [
+    "Escritura (property title deed)",
+    "Predial (property tax certificate — current year)",
+    "Topographic survey with coordinates",
+    "SEMARNAT coastal zone clearance or environmental screening",
+    "Municipal use-of-land permit (licencia de uso de suelo)"
+  ],
+  "blockers": [
+    "SEMARNAT coastal clearance — timeline 4-8 weeks if required",
+    "Topographic survey not yet commissioned"
+  ],
+  "site_data_complete": true,
+  "site_docs_complete": null
+}

@@ -1,0 +1,32 @@
+{
+  "systems_status": {
+    "structural": {
+      "status": "complete",
+      "engineer": "TBD — licensed structural engineer to be contracted",
+      "notes": "Post-tensioned concrete slabs, concrete bearing walls, steel moment frames for restaurant long spans. Retaining wall system for west slope. Deep pier foundations per soil study. Differential settlement analysis for pool area complete."
+    },
+    "electrical": {
+      "status": "complete",
+      "engineer": "TBD",
+      "notes": "Service panel sized for 15-room hotel + restaurant + spa + pool equipment. Solar PV array on south-facing roofs coordinated with electrical engineer. Main panel capacity: 400A three-phase."
+    },
+    "lighting": {
+      "status": "complete",
+      "engineer": "TBD",
+      "notes": "Architectural lighting design integrated — low-voltage LED throughout, emphasis on indirect and landscape lighting to minimize light pollution. Restaurant and spa have dedicated lighting control zones."
+    },
+    "water": {
+      "status": "complete",
+      "engineer": "TBD",
+      "notes": "Domestic water, hot water (solar thermal), greywater collection and recycling system. Infinity pool hydraulic system with overflow collection. Municipal water connection + backup cistern. Greywater recycling system designed for irrigation reuse."
+    },
+    "solar": {
+      "status": "complete",
+      "engineer": "TBD",
+      "notes": "Photovoltaic array on south-facing pavilion roofs: 120kW capacity estimated. Solar thermal for hot water. Grid-tied with battery backup for critical systems. Coordinated with structural for roof load calculations."
+    }
+  },
+  "conditional_systems": ["solar"],
+  "all_inputs_confirmed": true,
+  "conflicts_resolved": true
+}

@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc002-casa-vista",
+  "phase": "DG-06",
+  "review_item": "client-proposal",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": null,
+  "timestamp": "2026-03-18T15:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "dispatch Legal for contract review; Rosa sends proposal email to client",
+  "route_to": "Legal",
+  "sync_to_asana": true
+}

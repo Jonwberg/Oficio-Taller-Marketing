@@ -1,0 +1,29 @@
+{
+  "project_id": "PRJ-2026-0317-tc002-casa-vista",
+  "client_name": "Patricia Reyes",
+  "deliverables_checklist": {
+    "3d_model": {
+      "status": "complete",
+      "notes": "Two-story massing model respecting 7m HOA height limit at Residencial Vista del Mar. Contemporary volumetric expression with horizontal emphasis. Site orientation optimized for prevailing breezes and pool placement on east terrace. HOA style constraints (contemporary only, no flat roofs over 2 floors) reflected in roof treatment — pitched at minimal slope."
+    },
+    "renders": {
+      "status": "complete",
+      "num_views": 4,
+      "notes": "Four views: street elevation (natural stone/stucco facade per HOA covenant), rear pool elevation, aerial massing perspective, and interior living/dining connection to terrace. All facades show HOA-compliant material palette."
+    },
+    "material_direction": {
+      "status": "complete",
+      "notes": "Primary palette: natural volcanic stone feature wall (street facade), white stucco body, dark bronze aluminum window frames, ipe wood accents on terraces. Solar panel array integrated into roof plane and visually recessed per HOA guidelines. All materials comply with Residencial Vista del Mar natural stone and stucco covenant."
+    },
+    "color_direction": {
+      "status": "complete",
+      "notes": "Neutral warm whites on stucco body; dark charcoal accents on frames and fixed elements; stone in natural earth tones. Interior palette carries exterior warmth inward — polished concrete floors with wood ceiling. Contemporary and restrained per HOA style restriction."
+    },
+    "space_arrangement": {
+      "status": "complete",
+      "notes": "Two-story scheme: ground floor — kitchen, dining/living (55 sqm open plan), family room, office, service areas, 2 bathrooms; upper floor — 4 bedrooms each with en-suite, 2 additional bathrooms. Pool and terraces at grade level. Total programmed area 337 sqm matches approved area-program.json. HOA height limit of 7m confirmed — ridge height 6.8m at peak."
+    }
+  },
+  "presentation_milestone": "M2 — Concept Design Approved",
+  "review_notes": "Concept design fully aligns with the approved 337 sqm area program — all 12 space categories are reflected in the two-story scheme with no program deviations. HOA constraints (contemporary style, natural stone/stucco facade, 7m height limit, no flat roofs over 2 floors) are addressed in every design decision: massing, material palette, and roof treatment. Solar panel array and smart home conduit routing are integrated into the concept without compromising HOA aesthetic compliance. Recommend DG-07 approval; concept is ready for architectural design development."
+}

@@ -1,0 +1,60 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "G",
+  "tc_id": "TC-008",
+  "project_id": "PRJ-2026-0317-tc008-site-complications",
+  "executed_at": "2026-09-15T09:00:00-07:00",
+  "schema_passes": true,
+  "agents_executed": [
+    {
+      "agent": "Emilio",
+      "role": "Engineering coordination",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/engineering-package.json",
+      "schema_pass": true,
+      "fields_validated": ["systems_status", "conditional_systems", "all_inputs_confirmed", "conflicts_resolved"],
+      "always_required_systems_present": ["structural", "electrical", "lighting", "water"],
+      "conditional_systems_in_scope": ["solar"],
+      "conditional_systems_excluded": ["irrigation (not in scope)", "av (not in scope)"],
+      "all_inputs_confirmed": true,
+      "conflicts_resolved": true,
+      "fallbacks": ["ASANA_UNAVAILABLE: would complete engineering task"]
+    },
+    {
+      "agent": "Bruno",
+      "role": "Budget alignment (Segment G)",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/budget-alignment.json",
+      "schema_pass": true,
+      "fields_validated": ["contractor_pricing_source", "contractor_total", "client_budget", "variance_amount", "variance_pct", "recommendation"],
+      "contractor_total_usd": 3400000,
+      "client_budget_usd": 4000000,
+      "variance_pct": -15.0,
+      "recommendation": "proceed",
+      "fallbacks": [
+        "ASANA_UNAVAILABLE: would complete budget_alignment task",
+        "GMAIL_UNAVAILABLE: would send DG-09 review request"
+      ]
+    },
+    {
+      "agent": "Celia",
+      "role": "DG-09 decision routing",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/decision-event-dg09.json",
+      "schema_pass": true,
+      "fields_validated": ["project_id", "phase", "review_item", "reviewed_by", "decision", "comment", "timestamp", "source_channel", "next_action", "route_to", "sync_to_asana"],
+      "decision": "approve",
+      "route_to": "Hugo",
+      "route_to_field_correct": true,
+      "fallbacks": ["ASANA_UNAVAILABLE: would update decision_status for DG-09"]
+    }
+  ],
+  "tc008_checks": {
+    "solar_in_conditional_systems": true,
+    "irrigation_excluded_not_in_scope": true,
+    "av_excluded_not_in_scope": true,
+    "all_celia_decision_events_use_route_to_field": true
+  },
+  "final_project_state": "executive_plans_in_progress",
+  "awaiting_gate": null,
+  "segment_G_complete": true,
+  "next_segment": "H",
+  "issues": []
+}

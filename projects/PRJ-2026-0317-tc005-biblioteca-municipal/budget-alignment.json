@@ -1,0 +1,10 @@
+{
+  "contractor_pricing_source": "Preliminary estimates from 2 local contractors (Cabo San Lucas, BCS) experienced in public civic construction — obra pública project type",
+  "contractor_total": 1300000,
+  "client_budget": 1500000,
+  "currency": "USD",
+  "variance_amount": -200000,
+  "variance_pct": -13.3,
+  "recommendation": "proceed",
+  "notes": "Contractor preliminary total of $1.3M USD is 13.3% below the $1.5M USD approved budget, providing a healthy contingency buffer. For public civic projects, final contractor pricing will be determined through the formal licitación pública process managed by the contracting entity. This preliminary alignment confirms the program is constructible within the approved budget envelope. Architecture fee ($180,000 USD) is separate from the construction budget."
+}

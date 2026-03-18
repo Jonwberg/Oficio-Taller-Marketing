@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc005-biblioteca-municipal",
+  "phase": "DG-05",
+  "review_item": "proposal",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": null,
+  "timestamp": "2026-03-18T16:00:00-07:00",
+  "source_channel": "gmail",
+  "next_action": "dispatch Vera to send proposal to architect for review",
+  "route_to": "Vera",
+  "sync_to_asana": true
+}

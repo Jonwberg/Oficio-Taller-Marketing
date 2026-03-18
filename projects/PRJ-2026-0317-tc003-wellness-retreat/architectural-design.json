@@ -1,0 +1,10 @@
+{
+  "design_set_status": "complete",
+  "concept_reflection_confirmed": true,
+  "area_program_compliance": {
+    "compliant": true,
+    "deviations": [],
+    "notes": "All programmed zones from area-program.json are represented in the architectural drawing set. Casita units total 1,200 sqm (20 × 60 sqm), spa 300 sqm, restaurant 250 sqm, reception/lobby 150 sqm, pool deck 400 sqm, staff quarters 120 sqm, back of house 200 sqm, parking 320 sqm, circulation 60 sqm — total 3,000 sqm confirmed. No deviations from approved area program."
+  },
+  "structural_coordination_notes": "Structural engineer engaged. Preliminary coordination initiated for casita foundations (rolling terrain — stepped foundation system anticipated), spa slab, restaurant column grid, and pool structure. Arroyo proximity on south boundary has been flagged to structural engineer for foundation setback review. Coordination drawing set in progress — will be completed in Phase 3 engineering coordination."
+}

@@ -1,0 +1,10 @@
+{
+  "cost_per_sqm": 20000,
+  "base_construction_cost": 5000000,
+  "architecture_fee_pct": 0.12,
+  "architecture_fee": 600000,
+  "engineering_allowance": 250000,
+  "contingency_pct": 0.05,
+  "total_estimate": 6162500,
+  "assumptions": "MXN 20,000/sqm construction cost for Los Cabos standalone residential. Pool included in program sqm. Solar as conditional system."
+}

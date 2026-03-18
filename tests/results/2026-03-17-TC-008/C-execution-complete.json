@@ -1,0 +1,84 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "C",
+  "tc_id": "TC-008",
+  "project_id": "PRJ-2026-0317-tc008-site-complications",
+  "executed_at": "2026-03-17T13:00:00-07:00",
+  "schema_passes": true,
+  "agents_executed": [
+    {
+      "agent": "Ana",
+      "role": "Area program + cost basis",
+      "output_files": [
+        "projects/PRJ-2026-0317-tc008-site-complications/area-program.json",
+        "projects/PRJ-2026-0317-tc008-site-complications/cost-basis.json"
+      ],
+      "schema_pass": true,
+      "area_program_fields_validated": ["spaces", "total_sqm", "assumptions"],
+      "total_sqm": 2000,
+      "space_count": 8,
+      "math_verified": true,
+      "cost_basis_fields_validated": ["cost_per_sqm", "base_construction_cost", "architecture_fee_pct", "architecture_fee", "engineering_allowance", "contingency_pct", "total_estimate", "assumptions"],
+      "fallbacks": ["ASANA_UNAVAILABLE: would complete area_program task"]
+    },
+    {
+      "agent": "Sol",
+      "role": "Site readiness assessment — BLOCKER IDENTIFIED",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/site-readiness-report.json",
+      "schema_pass": true,
+      "fields_validated": ["required_documents", "request_sent_at", "current_status", "blockers"],
+      "documents_requested": 4,
+      "documents_required_types": ["Levantamiento Topográfico", "Estudio Hidrológico", "Estudio de Mecánica de Suelos", "Escrituras"],
+      "tc008_check_topo_requested": true,
+      "tc008_check_hydrologic_requested": true,
+      "tc008_check_stream_present_triggers_hydrology": true,
+      "current_status": "blocked",
+      "blocker_document": "Estudio Hidrológico",
+      "blocker_timeline_weeks": 6,
+      "blocker_logged_as": "activation_delayed_by_hydrology",
+      "fallbacks": [
+        "ASANA_UNAVAILABLE: would update site_readiness task",
+        "GMAIL_UNAVAILABLE: would send document request to david.chen@test.oficio.mx"
+      ]
+    },
+    {
+      "agent": "Vera",
+      "role": "Site status update + DG-03 trigger check",
+      "mode": "site_status_update",
+      "schema_pass": true,
+      "both_parallel_flags_true": true,
+      "dg03_triggered": true,
+      "fallbacks": [
+        "ASANA_UNAVAILABLE: would update site_readiness task status",
+        "GMAIL_UNAVAILABLE: would send DG-03 review request for PRJ-2026-0317-tc008-site-complications"
+      ]
+    },
+    {
+      "agent": "Celia",
+      "role": "DG-03 decision routing",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/decision-event-dg03.json",
+      "schema_pass": true,
+      "fields_validated": ["project_id", "phase", "review_item", "reviewed_by", "decision", "comment", "timestamp", "source_channel", "next_action", "route_to", "sync_to_asana"],
+      "decision": "approve",
+      "route_to": "Tomás",
+      "route_to_field_correct": true,
+      "fallbacks": ["ASANA_UNAVAILABLE: would update decision_status for DG-03"]
+    }
+  ],
+  "tc008_checks": {
+    "sol_requests_topo_study": true,
+    "sol_requests_hydrologic_study": true,
+    "both_topo_and_hydrology_requested": true,
+    "stream_present_triggers_hydrology_requirement": true,
+    "blocker_logged_in_site_readiness_report": true,
+    "blocker_document": "Estudio Hidrológico",
+    "blocker_timeline_6_weeks": true,
+    "blocker_logged_as_activation_delayed_by_hydrology": true
+  },
+  "final_project_state": "scope_in_preparation",
+  "awaiting_gate": null,
+  "segment_C_complete": true,
+  "next_segment": "D",
+  "next_agents": ["Tomás"],
+  "issues": []
+}

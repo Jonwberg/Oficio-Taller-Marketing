@@ -1,0 +1,34 @@
+{
+  "project_id": "PRJ-2026-0317-tc004-centro-salud",
+  "project_type": "commercial_health_center",
+  "agent": "Emilio",
+  "prepared_at": "2026-09-25T10:00:00-07:00",
+  "phase": "Phase 3 — Engineering Coordination",
+  "systems_status": {
+    "structural": "complete",
+    "electrical": "complete",
+    "lighting": "complete",
+    "water": "complete",
+    "medical_gas_systems": "complete",
+    "specialized_hvac": "complete",
+    "backup_generator": "complete"
+  },
+  "conditional_systems": ["medical_gas_systems", "specialized_hvac"],
+  "all_inputs_confirmed": true,
+  "conflicts_resolved": true,
+  "system_notes": {
+    "structural": "Two-story reinforced concrete frame. Raft foundation on medium-bearing-capacity urban soil. Structural calculations coordinated with architectural set. No conflicts with medical gas routing or HVAC mechanical rooms.",
+    "electrical": "Single-line diagram and panel schedules complete. Emergency power circuits for urgencias, laboratorio, enfermería, and rayos-X confirmed. UPS for critical clinical systems. Backup generator integration complete.",
+    "lighting": "Clinical lighting layout per COFEPRIS NOM standards. Exam rooms 500 lux minimum. Urgencias 1,000 lux. LED clinical-grade fixtures throughout. Glare control in patient-facing areas.",
+    "water": "Plumbing and hydraulic layout complete. Medical-grade hand-washing stations at all clinical zones per COFEPRIS requirements. Waste flow via dedicated dirty corridor to service exit.",
+    "medical_gas_systems": "Medical gas systems design complete: O2, medical air, and vacuum. Piping layout covers consultorios (1 O2 + 1 vacuum each), urgencias (4 O2 + 4 vacuum + 2 air), laboratorio (2 air + 2 vacuum), enfermería (2 O2 + 2 vacuum). Zone valve assemblies per clinical zone. Alarm panels at nursing station and urgencias. Central supply manifold room and compressor room on ground floor. COFEPRIS medical gas approval package prepared. Requires COFEPRIS-certified medical gas engineer.",
+    "specialized_hvac": "Specialized clinical HVAC with pressure differential zoning per COFEPRIS NOM. Positive pressure: consultorios, recepción. Negative pressure: urgencias, laboratorio. HEPA filtration in urgencias and laboratorio. Air changes: consultorios 8 ACH, urgencias 12 ACH, laboratorio 12 ACH (100% exhaust). Equipment schedules complete. HVAC ventilation schedule included in COFEPRIS permit package. Requires specialist HVAC engineer with healthcare facility experience.",
+    "backup_generator": "Diesel generator 350 kVA minimum, ATS with 10-second transfer. Feeds urgencias, laboratorio, all medical gas compressors and alarms, egress lighting, and IT room. 72-hour fuel autonomy at 75% load."
+  },
+  "cofepris_engineering_submissions": {
+    "medical_gas_approval_package": "prepared",
+    "hvac_ventilation_schedule": "prepared",
+    "clinical_lighting_compliance": "confirmed"
+  },
+  "conflicts_resolution_notes": "HVAC ceiling diffuser locations coordinated with lighting layout — no conflicts. Medical gas outlet locations coordinated with electrical wall outlets — no conflicts. Structural penetrations for MEP vertical risers reviewed and approved — no conflicts. Clean/dirty air separation maintained throughout HVAC design consistent with architectural infection control zoning."
+}

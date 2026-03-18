@@ -1,0 +1,60 @@
+{
+  "project_name": "Patricia Reyes — residential_in_development — San José del Cabo, BCS",
+  "client_name": "Patricia Reyes",
+  "milestone_name": "M1 — Contract Signing",
+  "amount": 27200,
+  "payment_instructions": "Bank transfer to Oficio Taller. Bank: [BANK_NAME]. CLABE: [CLABE — TO BE CONFIGURED IN .env]. Reference: PRJ-2026-0317-tc002-casa-vista-M1.",
+  "currency": "USD",
+  "total": 68000,
+  "line_items": [
+    {
+      "phase": "Phase 1 — Conceptual Design",
+      "description": "Parti diagram, 3D massing model (HOA height-compliant), material direction board, preliminary HOA submission package",
+      "amount": 13600,
+      "currency": "USD",
+      "notes": "20% of total architecture fee — M2 milestone payment"
+    },
+    {
+      "phase": "Phase 2 — Architectural Design",
+      "description": "Full architectural drawing set, HOA design review submission, covenant compliance checklist, written HOA approval coordination",
+      "amount": 17000,
+      "currency": "USD",
+      "notes": "25% of total architecture fee — M3 milestone payment"
+    },
+    {
+      "phase": "Phase 3 — Engineering Coordination",
+      "description": "Structural, electrical, lighting, plumbing coordination; solar systems and smart home AV coordination",
+      "amount": 6800,
+      "currency": "USD",
+      "notes": "10% of total architecture fee — included within M3 scope delivery"
+    },
+    {
+      "phase": "Phase 4 — Executive Plans",
+      "description": "Fully coordinated construction drawing set with HOA-approved stamp, finish schedule, technical specifications",
+      "amount": 10200,
+      "currency": "USD",
+      "notes": "15% of total architecture fee — M4 milestone payment"
+    },
+    {
+      "phase": "Phase 5 — Contractor Bidding",
+      "description": "Bid package preparation, minimum 2 contractor bids, bid comparison matrix with recommendation",
+      "amount": 3400,
+      "currency": "USD",
+      "notes": "5% of total architecture fee — bundled within permit milestone"
+    },
+    {
+      "phase": "Phase 6 — Permitting",
+      "description": "Building permit application, submission to Municipio de Los Cabos, tracking and corrections management",
+      "amount": 3400,
+      "currency": "USD",
+      "notes": "5% of total architecture fee — M5 milestone payment"
+    },
+    {
+      "phase": "M1 — Contract Signing",
+      "description": "Initial retainer — 40% of total architecture fee due at contract signing",
+      "amount": 27200,
+      "currency": "USD",
+      "notes": "Per seed data payment schedule. Covers Phase 1 initiation and project setup."
+    }
+  ]
+}

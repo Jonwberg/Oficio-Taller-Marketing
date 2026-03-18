@@ -1,0 +1,13 @@
+{
+  "project_id": "PRJ-2026-0317-tc008-site-complications",
+  "phase": "DG-11",
+  "review_item": "bid-comparison",
+  "reviewed_by": "Marcela",
+  "decision": "approve",
+  "comment": "Approve Constructora del Cabo. Good value, local experience.",
+  "timestamp": "2026-11-18T09:00:00-07:00",
+  "source_channel": "email",
+  "next_action": "dispatch Paco for permit management",
+  "route_to": "Paco",
+  "sync_to_asana": true
+}

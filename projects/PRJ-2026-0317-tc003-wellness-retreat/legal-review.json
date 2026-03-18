@@ -1,0 +1,14 @@
+{
+  "reviewed_by": "Legal",
+  "reviewed_at": "2026-03-19T14:00:00-07:00",
+  "ip_rights_status": "clear",
+  "compliance_flags": [
+    {
+      "flag": "FF&E procurement boundary is specified in scope-of-work.json project_type_clauses (ffe_scope_boundary clause) but should be more prominently referenced in the proposal scope_summary to prevent client misunderstanding",
+      "clause_reference": "proposal.json scope_summary — FF&E specification vs. procurement",
+      "proposed_resolution": "Advisory only — clause is present verbatim in scope-of-work.json. Ensure Rosa's client communication delivery email references that full SOW clauses govern.",
+      "severity": "advisory"
+    }
+  ],
+  "approval_status": "approved_with_advisory"
+}

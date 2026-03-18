@@ -1,0 +1,3 @@
+# Segment G — Emilio (Engineering Coordination)
+
+Emilio coordinated all seven engineering systems for Casa Vista: structural (concrete moment frame on slight slope), electrical (200A panel with solar interconnect), lighting (interior recessed LED + pool/terrace exterior lighting), water/plumbing (4 bathrooms + pool + cistern system), irrigation (drip zones with smart home zone control), solar (approx. 8kW grid-tied PV array with HOA-recessed panel layout), and AV/smart home (structured wiring, home automation, lighting control, pool/irrigation automation). conditional_systems: ["irrigation", "solar", "av"]. All inputs confirmed; no coordination conflicts.

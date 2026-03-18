@@ -1,0 +1,193 @@
+{
+  "scope_phases": [
+    {
+      "phase_number": 1,
+      "phase_name": "Conceptual Design",
+      "deliverables": [
+        "Site analysis and parti diagram",
+        "3D massing and volumetric study",
+        "Floor plan schematic layout",
+        "Material and texture direction board",
+        "Color and finish direction board",
+        "Concept presentation (3–5 views)"
+      ],
+      "duration_weeks": 6
+    },
+    {
+      "phase_number": 2,
+      "phase_name": "Architectural Design Development",
+      "deliverables": [
+        "Developed floor plans (all levels)",
+        "Elevations and sections",
+        "Detailed area program verification",
+        "Material specifications (preliminary)",
+        "Structural system coordination"
+      ],
+      "duration_weeks": 8
+    },
+    {
+      "phase_number": 3,
+      "phase_name": "Engineering Coordination",
+      "deliverables": [
+        "Structural engineering coordination package",
+        "Electrical and lighting engineering",
+        "Plumbing and water systems",
+        "Solar and greywater recycling systems",
+        "Infinity pool structural and hydraulic design",
+        "Conflict resolution report"
+      ],
+      "duration_weeks": 6
+    },
+    {
+      "phase_number": 4,
+      "phase_name": "Executive Plans (Construction Documents)",
+      "deliverables": [
+        "Full architectural plan set (plans, sections, elevations, details)",
+        "Structural plans and calculations",
+        "MEP coordination drawings",
+        "Fire protection and life safety drawings",
+        "Accessibility compliance drawings",
+        "Specialty systems (solar, greywater, pool hydraulics)",
+        "Construction specifications"
+      ],
+      "duration_weeks": 8
+    },
+    {
+      "phase_number": 5,
+      "phase_name": "Permit Management",
+      "deliverables": [
+        "Permit application package compilation",
+        "Municipal building permit submission — Los Cabos",
+        "Environmental impact authorization (MIA) coordination",
+        "Permit tracking and corrections management",
+        "Approved permit set"
+      ],
+      "duration_weeks": 12
+    },
+    {
+      "phase_number": 6,
+      "phase_name": "Construction Administration",
+      "deliverables": [
+        "Weekly site visits and progress reports",
+        "RFI response and change order management",
+        "Contractor coordination",
+        "Final punch list and project closeout",
+        "As-built documentation"
+      ],
+      "duration_weeks": 52
+    }
+  ],
+  "payment_schedule": [
+    {
+      "milestone": "M1",
+      "name": "Contract Signing",
+      "percentage": 40,
+      "amount": 120000,
+      "currency": "USD",
+      "trigger_event": "Signed SOW + first payment received"
+    },
+    {
+      "milestone": "M2",
+      "name": "Concept Approved",
+      "percentage": 30,
+      "amount": 90000,
+      "currency": "USD",
+      "trigger_event": "DG-07 Concept design approved by Marcela and client"
+    },
+    {
+      "milestone": "M3",
+      "name": "Executive Plans Approved",
+      "percentage": 30,
+      "amount": 90000,
+      "currency": "USD",
+      "trigger_event": "DG-10 Executive plans approved + construction documents delivered"
+    }
+  ],
+  "responsibilities_matrix": [
+    {
+      "deliverable": "Topographic survey",
+      "responsible_party": "Client / third-party surveyor",
+      "reviewed_by": "Oficio Taller"
+    },
+    {
+      "deliverable": "Hydrologic study",
+      "responsible_party": "Client / licensed hydrologist",
+      "reviewed_by": "Oficio Taller"
+    },
+    {
+      "deliverable": "Soil study (mecánica de suelos)",
+      "responsible_party": "Client / licensed geotechnical engineer",
+      "reviewed_by": "Oficio Taller"
+    },
+    {
+      "deliverable": "Architectural design set",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Marcela / Client"
+    },
+    {
+      "deliverable": "Structural engineering",
+      "responsible_party": "Oficio Taller (coordinated with licensed structural engineer)",
+      "reviewed_by": "Marcela"
+    },
+    {
+      "deliverable": "MEP engineering",
+      "responsible_party": "Oficio Taller (coordinated with licensed MEP engineer)",
+      "reviewed_by": "Marcela"
+    },
+    {
+      "deliverable": "Permit applications",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Client / Marcela"
+    },
+    {
+      "deliverable": "Construction administration",
+      "responsible_party": "Oficio Taller",
+      "reviewed_by": "Client / Contractor"
+    }
+  ],
+  "exclusions": [
+    "Furniture, fixtures, and equipment (FF&E) procurement and installation",
+    "Interior design and decorating beyond architectural finish specifications",
+    "Landscape architecture design (may be contracted separately)",
+    "Hotel operating software (PMS, booking systems)",
+    "Signage and branding design",
+    "Food service equipment specification",
+    "Pool operator licensing",
+    "Environmental remediation if stream impacts are identified beyond design setbacks",
+    "Off-site infrastructure improvements (road access, utility connections beyond property line)",
+    "Cost of hydrologic study, topographic survey, and soil study (client responsibility)"
+  ],
+  "revision_assumptions": {
+    "phase_1": "2 rounds included. Additional rounds: USD 5,000 per round",
+    "phase_2": "2 rounds included. Additional rounds: USD 5,000 per round",
+    "phase_3": "1 round included. Engineering changes driven by permit corrections handled via change order.",
+    "phase_4": "1 round included. Post-approval changes require change order at USD 8,000 minimum."
+  },
+  "project_type_clauses": [
+    {
+      "clause": "CH-001",
+      "title": "Hospitality Compliance Coordination",
+      "text": "Oficio Taller will coordinate with applicable hospitality licensing authorities (Secretaría de Turismo, municipal tourism office) to ensure the architectural program meets operational licensing requirements for boutique hotel classification. Client is responsible for obtaining the operating license; Oficio Taller provides the architectural compliance documentation required for submission."
+    },
+    {
+      "clause": "CH-002",
+      "title": "Brand Standards and Guest Experience",
+      "text": "Where the client has specified guest room sizes, amenity program, and experiential intent, Oficio Taller will design to those standards. Any future brand affiliation requirements (franchisor standards, international flag standards) imposed after contract signing will constitute a scope change requiring a written change order."
+    },
+    {
+      "clause": "CH-003",
+      "title": "Environmental Impact Authorization (MIA)",
+      "text": "Commercial hotel projects in BCS coastal zones require an environmental impact authorization (Manifestación de Impacto Ambiental) from SEMARNAT. Oficio Taller will prepare the architectural input documentation for the MIA. The MIA submission, environmental consultant fees, and SEMARNAT process timeline are outside Oficio Taller's control; delays in MIA approval do not constitute a breach of this agreement."
+    },
+    {
+      "clause": "CH-004",
+      "title": "Hydrologic Setback Compliance",
+      "text": "The presence of a stream on the property requires compliance with federal riparian zone regulations (Zona Federal Maritimo Terrestre and/or federal stream setbacks per CNA/CONAGUA). Oficio Taller will design to the setback boundaries established by the hydrologic study. Any program elements displaced by required setbacks will be resolved via design adaptation at no additional fee for one revision cycle."
+    },
+    {
+      "clause": "CH-005",
+      "title": "IP Rights — Hospitality Project",
+      "text": "Architectural drawings, renderings, and design documentation produced by Oficio Taller remain the intellectual property of Oficio Taller until all milestone payments under this agreement are received in full. Upon final payment, the client receives a perpetual, non-exclusive license to use the construction documents for the construction and operation of the specific hotel project described herein. Client may not reproduce or adapt the design for additional projects without a new agreement."
+    }
+  ]
+}

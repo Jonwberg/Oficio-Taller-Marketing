@@ -1,0 +1,38 @@
+{
+  "project_id": "PRJ-2026-0317-tc002-casa-vista",
+  "client_name": "Patricia Reyes",
+  "bids": [
+    {
+      "contractor": "Constructora Los Cabos S.A. de C.V.",
+      "total": 590000,
+      "currency": "USD",
+      "line_items": [
+        { "scope": "Civil and structural work", "amount": 175000 },
+        { "scope": "Finishes and interior", "amount": 148000 },
+        { "scope": "MEP (electrical, plumbing, HVAC)", "amount": 88000 },
+        { "scope": "Pool and terraces", "amount": 58000 },
+        { "scope": "Solar and smart home systems", "amount": 72000 },
+        { "scope": "Exterior and site work", "amount": 49000 }
+      ],
+      "timeline": "13 months",
+      "notes": "Established contractor with 3 completed projects in Residencial Vista del Mar. Pre-approved by development. Quoted includes HOA compliance documentation support. Minor concern: timeline of 13 months is on the longer end but reflects quality focus."
+    },
+    {
+      "contractor": "BCS Builders Group",
+      "total": 635000,
+      "currency": "USD",
+      "line_items": [
+        { "scope": "Civil and structural work", "amount": 192000 },
+        { "scope": "Finishes and interior", "amount": 162000 },
+        { "scope": "MEP (electrical, plumbing, HVAC)", "amount": 95000 },
+        { "scope": "Pool and terraces", "amount": 63000 },
+        { "scope": "Solar and smart home systems", "amount": 75000 },
+        { "scope": "Exterior and site work", "amount": 48000 }
+      ],
+      "timeline": "11 months",
+      "notes": "Faster timeline (11 months) and higher finishes quality rating per references. Development pre-approval status: pending verification with Residencial Vista del Mar. Higher bid but includes more comprehensive MEP and finishes package."
+    }
+  ],
+  "recommendation": "Constructora Los Cabos S.A. de C.V.",
+  "recommendation_rationale": "Constructora Los Cabos S.A. de C.V. is recommended at USD 590,000 — USD 45,000 below BCS Builders Group. Both bids fall within the client's budget range (USD 400,000–700,000). The recommended contractor has verified pre-approval from Residencial Vista del Mar (3 completed projects in the development), which is a significant advantage for a project with strict HOA requirements. The 2-month longer timeline is a manageable tradeoff for the cost savings and the reduced HOA compliance risk. BCS Builders Group's development pre-approval is unconfirmed, which introduces coordination risk at a critical stage. Recommend proceeding with Constructora Los Cabos."
+}

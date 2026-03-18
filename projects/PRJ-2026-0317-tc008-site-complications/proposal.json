@@ -1,0 +1,49 @@
+{
+  "scope_summary": {
+    "es": "Oficio Taller propone acompañar el desarrollo del Hotel Boutique East Cape desde la concepción hasta la administración de obra, en un proceso de seis fases diseñado para proyectos de hospitalidad de alta calidad en el contexto costero de Baja California Sur.\n\nEl alcance incluye: diseño conceptual (análisis de sitio, partido arquitectónico, volumetría, dirección de materiales y paleta cromática); desarrollo arquitectónico con verificación del programa de áreas; coordinación de ingeniería (estructural, eléctrica, iluminación, hidráulica, sistemas solares y reciclaje de aguas grises, diseño hidráulico de alberca infinity); planos ejecutivos completos (set de construcción con todas las disciplinas integradas); gestión de permisos ante el municipio de Los Cabos y coordinación con SEMARNAT para la Manifestación de Impacto Ambiental; y administración de obra durante la construcción.\n\nEl proyecto contempla 2,000m² de programa en 15 habitaciones (55m² prom.), restaurante (200m²), alberca infinity con deck (300m²), spa (200m²), recepción (100m²), área de servicio (150m²), instalaciones de personal (80m²) y circulaciones (145m²). Los sistemas de energía solar y reciclaje de aguas grises son parte integral del alcance de coordinación de ingeniería.",
+    "en": "Oficio Taller proposes to guide the East Cape Boutique Hotel from conception through construction administration, following a six-phase process tailored to high-quality hospitality projects in the Baja California Sur coastal context.\n\nThe scope covers: conceptual design (site analysis, architectural parti, massing study, material direction, color palette); architectural design development with area program verification; engineering coordination (structural, electrical, lighting, hydraulics, solar and greywater recycling systems, infinity pool hydraulic design); complete executive construction documents with all disciplines integrated; permit management with the Municipality of Los Cabos and SEMARNAT coordination for the Environmental Impact Authorization; and construction administration throughout the build.\n\nThe project programs 2,000sqm across 15 guest rooms (55sqm avg), restaurant (200sqm), infinity pool and deck (300sqm), spa (200sqm), reception (100sqm), back of house (150sqm), staff facilities (80sqm), and circulation (145sqm). Solar energy and greywater recycling systems are integral components of the engineering coordination scope."
+  },
+  "budget_detail": {
+    "es": "Honorarios totales de arquitectura y coordinación: USD $300,000\n\nFase 1 — Diseño Conceptual: USD $60,000\nFase 2 — Desarrollo Arquitectónico: USD $75,000\nFase 3 — Coordinación de Ingeniería: USD $45,000\nFase 4 — Planos Ejecutivos: USD $75,000\nFase 5 — Gestión de Permisos: USD $15,000\nFase 6 — Administración de Obra: USD $30,000\n\nCalendario de pagos:\nM1 — Firma de contrato: 40% = USD $120,000\nM2 — Concepto aprobado: 30% = USD $90,000\nM3 — Planos ejecutivos aprobados: 30% = USD $90,000",
+    "en": "Total architecture and coordination fees: USD $300,000\n\nPhase 1 — Conceptual Design: USD $60,000\nPhase 2 — Architectural Design Development: USD $75,000\nPhase 3 — Engineering Coordination: USD $45,000\nPhase 4 — Executive Plans: USD $75,000\nPhase 5 — Permit Management: USD $15,000\nPhase 6 — Construction Administration: USD $30,000\n\nPayment schedule:\nM1 — Contract signing: 40% = USD $120,000\nM2 — Concept approved: 30% = USD $90,000\nM3 — Executive plans approved: 30% = USD $90,000",
+    "total": 300000,
+    "currency": "USD",
+    "line_items_ref": "budget.json"
+  },
+  "timeline_phases": [
+    {
+      "phase": "Phase 1 — Conceptual Design",
+      "duration_weeks": 6,
+      "key_milestone": "Concept design client approval (M2)"
+    },
+    {
+      "phase": "Phase 2 — Architectural Design Development",
+      "duration_weeks": 8,
+      "key_milestone": "Design development complete"
+    },
+    {
+      "phase": "Phase 3 — Engineering Coordination",
+      "duration_weeks": 6,
+      "key_milestone": "All engineering inputs confirmed"
+    },
+    {
+      "phase": "Phase 4 — Executive Plans",
+      "duration_weeks": 8,
+      "key_milestone": "Executive plans approved + construction documents delivered (M3)"
+    },
+    {
+      "phase": "Phase 5 — Permit Management",
+      "duration_weeks": 12,
+      "key_milestone": "Building permit approved"
+    },
+    {
+      "phase": "Phase 6 — Construction Administration",
+      "duration_weeks": 52,
+      "key_milestone": "Project closeout and as-builts delivered"
+    }
+  ],
+  "process_narrative": {
+    "es": "En Oficio Taller trabajamos con un número reducido de proyectos simultáneos, lo que nos permite involucrarnos genuinamente en cada obra — no como administradores de proceso, sino como co-creadores de espacios que importan. El proceso comienza con un análisis profundo del sitio y del programa: entendemos el lugar antes de proponer cualquier forma.\n\nCada fase de diseño incluye revisiones estructuradas donde presentamos opciones y razonamientos, no solo resultados. Creemos que las mejores decisiones de diseño emergen del diálogo entre el equipo del estudio y el cliente. Su participación activa en las revisiones de concepto y desarrollo es parte esencial del proceso, no un trámite.\n\nLa coordinación de ingeniería es interna — no subcontratamos la coordinación a terceros. Esto significa que los planos ejecutivos llegan a obra sin conflictos entre disciplinas, y que los cambios durante construcción son mínimos. Nuestra tasa de órdenes de cambio es significativamente menor al promedio de la industria.\n\nCuando el proyecto entra a obra, nuestra presencia no disminuye. Las visitas semanales de supervisión y la respuesta rápida a RFIs protegen la calidad de lo diseñado. Entregamos los planos as-built al cierre para que el hotel cuente con documentación precisa de lo construido.",
+    "en": "At Oficio Taller, we work with a small number of concurrent projects — which means each project receives genuine attention from the principals, not delegation down a hierarchy. Our process begins with a thorough site and program analysis: we understand the place before proposing any form.\n\nEach design phase includes structured review sessions where we present options and reasoning, not just outcomes. We believe the best design decisions emerge from dialogue between the studio team and the client. Your active participation in concept and development reviews is an essential part of the process, not a formality.\n\nEngineering coordination is managed internally — we do not outsource the coordination function to third parties. This means construction documents arrive on site without inter-discipline conflicts, and change orders during construction are minimized. Our change order rate is significantly below industry average.\n\nWhen the project enters construction, our presence does not diminish. Weekly site visits and rapid RFI responses protect the quality of what was designed. We deliver as-built documentation at project close, ensuring the hotel has an accurate record of what was built."
+  }
+}

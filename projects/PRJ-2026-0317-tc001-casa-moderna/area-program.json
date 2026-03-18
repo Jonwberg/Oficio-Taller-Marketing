@@ -1,0 +1,16 @@
+{
+  "spaces": [
+    {"name": "Master Bedroom", "qty": 1, "sqm": 25},
+    {"name": "Guest Bedrooms", "qty": 2, "sqm": 18},
+    {"name": "Bathrooms", "qty": 3, "sqm": 8},
+    {"name": "Kitchen", "qty": 1, "sqm": 20},
+    {"name": "Dining/Living", "qty": 1, "sqm": 45},
+    {"name": "Office", "qty": 1, "sqm": 12},
+    {"name": "Pool", "qty": 1, "sqm": 35},
+    {"name": "Patio", "qty": 1, "sqm": 40},
+    {"name": "Rooftop Terrace", "qty": 1, "sqm": 5},
+    {"name": "Service Areas", "qty": 1, "sqm": 15}
+  ],
+  "total_sqm": 250,
+  "assumptions": "Program matches seed data exactly at 250sqm. Flat site allows single-level or two-level layout."
+}

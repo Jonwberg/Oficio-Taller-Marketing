@@ -1,0 +1,113 @@
+{
+  "phases": [
+    {
+      "phase_number": 1,
+      "phase_name": "Conceptual Design",
+      "start_date": "2026-04-29",
+      "end_date": "2026-06-09",
+      "duration_weeks": 6,
+      "deliverables": [
+        "Site analysis and parti diagram",
+        "3D massing and volumetric study",
+        "Floor plan schematic layout (incorporating 15m stream setback)",
+        "Material and texture direction board",
+        "Color and finish direction board",
+        "Concept presentation (3–5 views)"
+      ],
+      "milestone": "M2 — Concept design client approval"
+    },
+    {
+      "phase_number": 2,
+      "phase_name": "Architectural Design Development",
+      "start_date": "2026-06-10",
+      "end_date": "2026-08-04",
+      "duration_weeks": 8,
+      "deliverables": [
+        "Developed floor plans (all levels)",
+        "Elevations and sections",
+        "Detailed area program verification",
+        "Material specifications (preliminary)",
+        "Structural system coordination"
+      ],
+      "milestone": "Design development complete"
+    },
+    {
+      "phase_number": 3,
+      "phase_name": "Engineering Coordination",
+      "start_date": "2026-08-05",
+      "end_date": "2026-09-15",
+      "duration_weeks": 6,
+      "deliverables": [
+        "Structural engineering coordination package",
+        "Electrical and lighting engineering",
+        "Plumbing and water systems",
+        "Solar and greywater recycling systems",
+        "Infinity pool structural and hydraulic design",
+        "Conflict resolution report"
+      ],
+      "milestone": "All engineering inputs confirmed"
+    },
+    {
+      "phase_number": 4,
+      "phase_name": "Executive Plans",
+      "start_date": "2026-09-16",
+      "end_date": "2026-11-10",
+      "duration_weeks": 8,
+      "deliverables": [
+        "Full architectural plan set (plans, sections, elevations, details)",
+        "Structural plans and calculations",
+        "MEP coordination drawings",
+        "Fire protection and life safety drawings",
+        "Accessibility compliance drawings",
+        "Specialty systems (solar, greywater, pool hydraulics)",
+        "Construction specifications"
+      ],
+      "milestone": "M3 — Executive plans approved + construction documents delivered"
+    },
+    {
+      "phase_number": 5,
+      "phase_name": "Permit Management",
+      "start_date": "2026-11-11",
+      "end_date": "2027-02-09",
+      "duration_weeks": 12,
+      "deliverables": [
+        "Permit application package",
+        "Municipal building permit submission — Los Cabos",
+        "MIA coordination with SEMARNAT",
+        "Corrections management and resubmission",
+        "Approved permit set"
+      ],
+      "milestone": "Building permit approved"
+    },
+    {
+      "phase_number": 6,
+      "phase_name": "Construction Administration",
+      "start_date": "2027-02-10",
+      "end_date": "2028-02-09",
+      "duration_weeks": 52,
+      "deliverables": [
+        "Weekly site visits and progress reports",
+        "RFI response and change order management",
+        "Contractor coordination",
+        "Final punch list and project closeout",
+        "As-built documentation"
+      ],
+      "milestone": "Project closeout and as-builts delivered"
+    }
+  ],
+  "milestone_dates": {
+    "M1_contract_signing": "2026-04-28",
+    "M2_concept_approved": "2026-06-09",
+    "M3_executive_plans_approved": "2026-11-10",
+    "M4_permit_approved": "2027-02-09",
+    "M5_construction_admin_final": "2028-02-09"
+  },
+  "dependencies": {
+    "phase_2": "phase_1_complete",
+    "phase_3": "phase_2_complete",
+    "phase_4": "phase_3_complete",
+    "phase_5": "phase_4_complete",
+    "phase_6": "phase_5_complete"
+  },
+  "schedule_notes": "Start date delayed from original pipeline entry (2026-03-17) by 6 weeks pending hydrologic study (activation_blocked). Effective activation date: 2026-04-28. Infinity pool siting adjusted in Phase 1 to respect 15m stream setback per hydrologic study findings."
+}

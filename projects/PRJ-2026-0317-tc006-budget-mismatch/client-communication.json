@@ -1,0 +1,33 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "client_name": "Miguel Torres",
+  "communications": [
+    {
+      "type": "proposal_delivery",
+      "channel": "instagram_dm",
+      "sent_at": "2026-03-17T16:30:00-07:00",
+      "subject": "Propuesta Oficio Taller — Casa Los Cabos",
+      "summary": "Bilingual proposal delivered to Miguel Torres via Instagram DM. Proposal covers standalone residential 216sqm, Los Cabos. Architecture fee $30,000 USD. Payment: M1 40%, M2 30%, M3 30%. Budget constraint noted."
+    },
+    {
+      "type": "proposal_accepted",
+      "channel": "instagram_dm",
+      "received_at": "2026-03-17T17:00:00-07:00",
+      "summary": "Client confirmed acceptance of proposal. Contract signing and M1 deposit ($12,000 USD) to proceed."
+    },
+    {
+      "type": "redesign_notice",
+      "channel": "instagram_dm",
+      "sent_at": "2026-03-17T14:45:00-07:00",
+      "subject": "Ajuste de programa — presupuesto de construcción",
+      "summary": "Client notified that contractor pricing at $380K exceeds $200K budget. Scope reduction proposed: remove pool, reduce to 160sqm. Client approval requested before proceeding."
+    },
+    {
+      "type": "redesign_accepted",
+      "channel": "instagram_dm",
+      "received_at": "2026-03-17T15:30:00-07:00",
+      "summary": "Client accepted scope reduction: pool removed, program reduced to 160sqm at revised $195K contractor estimate within budget."
+    }
+  ],
+  "sync_to_gmail": false
+}

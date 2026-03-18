@@ -1,0 +1,9 @@
+{
+  "contractor_pricing_source": "revised_estimate_post_redesign",
+  "contractor_total": 195000,
+  "client_budget": 200000,
+  "variance_amount": -5000,
+  "variance_pct": -2.5,
+  "recommendation": "proceed",
+  "notes": "After scope reduction (pool removed, 216sqm to 160sqm), contractor total $195K within $200K budget."
+}

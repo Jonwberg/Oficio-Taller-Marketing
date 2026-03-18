@@ -1,0 +1,59 @@
+{
+  "run_id": "2026-03-17-TC-008",
+  "segment": "I",
+  "tc_id": "TC-008",
+  "project_id": "PRJ-2026-0317-tc008-site-complications",
+  "executed_at": "2026-11-18T09:00:00-07:00",
+  "schema_passes": true,
+  "agents_executed": [
+    {
+      "agent": "Ofelia",
+      "role": "Bidding and contractor selection + DG-11",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/bid-comparison.json",
+      "schema_pass": true,
+      "fields_validated": ["bids", "recommendation", "recommendation_rationale"],
+      "bids_received": 2,
+      "single_bid_escalation_rule": "N/A — 2 bids received, no escalation needed",
+      "recommended_contractor": "Constructora del Cabo S.A. de C.V.",
+      "recommendation_total_usd": 3350000,
+      "fallbacks": [
+        "ASANA_UNAVAILABLE: would complete bidding task",
+        "GMAIL_UNAVAILABLE: would send DG-11 review request"
+      ]
+    },
+    {
+      "agent": "Celia",
+      "role": "DG-11 decision routing",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/decision-event-dg11.json",
+      "schema_pass": true,
+      "fields_validated": ["project_id", "phase", "review_item", "reviewed_by", "decision", "comment", "timestamp", "source_channel", "next_action", "route_to", "sync_to_asana"],
+      "decision": "approve",
+      "route_to": "Paco",
+      "route_to_field_correct": true,
+      "fallbacks": ["ASANA_UNAVAILABLE: would update decision_status for DG-11"]
+    },
+    {
+      "agent": "Paco",
+      "role": "Permit management",
+      "output_file": "projects/PRJ-2026-0317-tc008-site-complications/permit-status.json",
+      "schema_pass": true,
+      "fields_validated": ["submitted_at", "jurisdiction", "status", "corrections", "approved_at"],
+      "final_status": "approved",
+      "corrections_received": 1,
+      "corrections_resolved": 1,
+      "corrections_detail": "Authority required hydrologic study addendum with CONAGUA approval letter — resolved 2026-12-22",
+      "approved_at": "2027-02-07T14:00:00-07:00",
+      "tc008_note": "Permit correction required supplemental hydrology documentation — stream setback certification. This is consistent with TC-008 hydrology edge case theme.",
+      "fallbacks": ["ASANA_UNAVAILABLE: would update permit_status field and complete permitting task"]
+    }
+  ],
+  "tc008_checks": {
+    "all_celia_decision_events_use_route_to_field": true,
+    "permit_correction_hydrology_related": true
+  },
+  "final_project_state": "contractor_selected",
+  "awaiting_gate": null,
+  "segment_I_complete": true,
+  "next_segment": "J",
+  "issues": []
+}

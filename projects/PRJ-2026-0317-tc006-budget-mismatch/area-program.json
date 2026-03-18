@@ -1,0 +1,20 @@
+{
+  "project_id": "PRJ-2026-0317-tc006-budget-mismatch",
+  "client_name": "Miguel Torres",
+  "project_type": "standalone_residential",
+  "total_sqm": 216,
+  "spaces": [
+    { "name": "Bedroom 1 (Primary)", "sqm": 18, "notes": "Primary suite with en-suite bathroom" },
+    { "name": "Bedroom 2", "sqm": 18, "notes": "Guest bedroom" },
+    { "name": "Bedroom 3", "sqm": 18, "notes": "Guest bedroom" },
+    { "name": "Bathroom 1 (Primary En-Suite)", "sqm": 8, "notes": "En-suite primary bath" },
+    { "name": "Bathroom 2", "sqm": 8, "notes": "Shared guest bath" },
+    { "name": "Bathroom 3 (Pool Bath)", "sqm": 8, "notes": "Pool-adjacent exterior bath" },
+    { "name": "Kitchen", "sqm": 18, "notes": "Open kitchen with island" },
+    { "name": "Dining / Living", "sqm": 40, "notes": "Open-plan great room with ocean views" },
+    { "name": "Pool", "sqm": 35, "notes": "Infinity pool — coastal setting" },
+    { "name": "Patio / Terrace", "sqm": 30, "notes": "Covered exterior terrace adjacent to pool" },
+    { "name": "Service Areas / Utility", "sqm": 15, "notes": "Laundry, storage, mechanical room" }
+  ],
+  "area_program_complete": true
+}

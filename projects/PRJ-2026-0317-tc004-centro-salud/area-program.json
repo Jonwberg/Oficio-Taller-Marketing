@@ -1,0 +1,79 @@
+{
+  "spaces": [
+    {
+      "name": "Consultorio",
+      "qty": 10,
+      "size_sqm": 20,
+      "notes": "Standard consultation rooms per COFEPRIS NOM minimum dimensions"
+    },
+    {
+      "name": "Área de Urgencias",
+      "qty": 1,
+      "size_sqm": 120,
+      "notes": "Emergency area with ambulance access; includes triage and treatment bays"
+    },
+    {
+      "name": "Laboratorio Clínico",
+      "qty": 1,
+      "size_sqm": 80,
+      "notes": "Clinical laboratory; medical gas and specialized ventilation required"
+    },
+    {
+      "name": "Farmacia",
+      "qty": 1,
+      "size_sqm": 60,
+      "notes": "Pharmacy with controlled substance storage; COFEPRIS regulated"
+    },
+    {
+      "name": "Recepción y Sala de Espera",
+      "qty": 1,
+      "size_sqm": 150,
+      "notes": "Combined reception and waiting; accessible route compliance required"
+    },
+    {
+      "name": "Rayos X",
+      "qty": 1,
+      "size_sqm": 40,
+      "notes": "Diagnostic imaging room — radiation shielding required; flagged as specialist exclusion per template unless confirmed in scope"
+    },
+    {
+      "name": "Enfermería",
+      "qty": 1,
+      "size_sqm": 60,
+      "notes": "Nursing station with medical gas, medication storage, hand-washing stations"
+    },
+    {
+      "name": "Administración",
+      "qty": 1,
+      "size_sqm": 80,
+      "notes": "Administrative offices; non-clinical zone"
+    },
+    {
+      "name": "Sanitarios",
+      "qty": 4,
+      "size_sqm": 15,
+      "notes": "Includes accessible restrooms per COFEPRIS; separate staff and patient facilities"
+    },
+    {
+      "name": "Estacionamiento",
+      "qty": 1,
+      "size_sqm": 400,
+      "notes": "Surface parking including accessible spaces per NOM requirements"
+    },
+    {
+      "name": "Circulación y Corredores",
+      "qty": 1,
+      "size_sqm": 250,
+      "notes": "Clean/dirty corridor separation per COFEPRIS infection control zoning; includes vertical circulation"
+    }
+  ],
+  "total_sqm": 1590,
+  "assumptions": [
+    "Total sqm calculation: 10 consultorios × 20 sqm = 200; urgencias 120; laboratorio 80; farmacia 60; recepción/sala espera 150; rayos-X 40; enfermería 60; administración 80; 4 sanitarios × 15 sqm = 60; estacionamiento 400; circulación 250 — sum = 1,500 sqm programmed area, with 90 sqm estimated for mechanical/utility rooms and medical gas system rooms (not itemized in seed data) bringing total to 1,590 sqm",
+    "Rayos-X room included in program per seed data — radiation shielding design flagged as specialist add-on service per SOW template exclusions; rough-in coordination included in scope",
+    "Landscape, irrigation, and solar excluded by default per commercial_health_center template",
+    "Backup generator included in MEP scope as special feature per seed data",
+    "Medical gas systems (oxygen, medical air, vacuum) required for consultorios, urgencias, laboratorio, and enfermería per clinical program",
+    "Specialized HVAC with pressure differential zoning required per COFEPRIS NOM standards"
+  ]
+}

@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oficio Taller — Agent Flow & Interaction Map</title>
+<style>
+  :root {
+    --sand:       #f4f1eb;
+    --warm-white: #faf8f4;
+    --ink:        #1c1c1a;
+    --ink-light:  #5a5750;
+    --rule:       #d8d2c8;
+
+    --entrega:    #c8a26a;
+    --entrega-bg: #fdf6ec;
+    --entrega-border: #c8a26a;
+
+    --admin:      #5a7a8a;
+    --admin-bg:   #eef4f6;
+    --admin-border: #5a7a8a;
+
+    --marketing:  #7a9a8a;
+    --marketing-bg: #eef4f0;
+    --marketing-border: #7a9a8a;
+
+    --alma:       #8a6a9a;
+    --alma-bg:    #f4f0f8;
+    --alma-border:#8a6a9a;
+
+    --human:      #1c1c1a;
+    --human-bg:   #e8e6e2;
+
+    --gap:        #c0392b;
+    --gap-bg:     #fdf0ef;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: var(--sand);
+    color: var(--ink);
+    padding: 2rem;
+    min-width: 1100px;
+  }
+
+  /* ── Header ── */
+  .header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .header h1 {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 0.4rem;
+  }
+  .header h2 {
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-family: Georgia, serif;
+  }
+  .header p {
+    font-size: 0.8rem;
+    color: var(--ink-light);
+    margin-top: 0.4rem;
+  }
+
+  /* ── Legend ── */
+  .legend {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+    padding: 1rem 1.25rem;
+    background: var(--warm-white);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+  }
+  .legend-dot {
+    width: 12px; height: 12px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  /* ── Phase ── */
+  .phase {
+    margin-bottom: 1.5rem;
+  }
+  .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.9rem;
+  }
+  .phase-number {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    background: var(--warm-white);
+    border: 1px solid var(--rule);
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .phase-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .phase-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ── Phase body ── */
+  .phase-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--rule);
+  }
+
+  /* ── Row ── */
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  /* ── Agent card ── */
+  .agent {
+    display: flex;
+    flex-direction: column;
+    padding: 0.55rem 0.85rem;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    min-width: 110px;
+    position: relative;
+    cursor: default;
+    transition: box-shadow 0.15s;
+  }
+  .agent:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+  .agent-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .agent-role {
+    font-size: 0.65rem;
+    opacity: 0.75;
+    margin-top: 0.15rem;
+    line-height: 1.3;
+  }
+
+  .agent.entrega   { background: var(--entrega-bg);   border-color: var(--entrega);   color: #5a3a10; }
+  .agent.admin     { background: var(--admin-bg);     border-color: var(--admin);     color: #1a3a4a; }
+  .agent.marketing { background: var(--marketing-bg); border-color: var(--marketing); color: #1a3a2a; }
+  .agent.alma-card { background: var(--alma-bg);      border-color: var(--alma);      color: #3a1a4a; }
+  .agent.human     { background: var(--human-bg);     border-color: var(--human);     color: var(--ink); }
+  .agent.channel   { background: #e8e4dc;             border-color: #b0a898;          color: var(--ink-light); }
+
+  /* ── Arrow ── */
+  .arrow {
+    font-size: 1rem;
+    color: var(--ink-light);
+    flex-shrink: 0;
+    padding: 0 0.1rem;
+  }
+  .arrow.down {
+    display: block;
+    text-align: center;
+    margin: 0.1rem 0 0.1rem 1rem;
+    color: var(--ink-light);
+  }
+  .arrow.cross {
+    font-size: 0.7rem;
+    color: var(--ink-light);
+    border: 1px dashed var(--rule);
+    padding: 0.2rem 0.4rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  /* ── Gap annotation ── */
+  .gap-flag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--gap-bg);
+    border: 1px dashed var(--gap);
+    color: var(--gap);
+    font-size: 0.65rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+  .gap-flag::before { content: "⚠ GAP —"; }
+
+  /* ── Handoff note ── */
+  .handoff-note {
+    font-size: 0.68rem;
+    color: var(--ink-light);
+    padding: 0.25rem 0.6rem;
+    background: var(--warm-white);
+    border-left: 2px solid var(--rule);
+    margin-left: 0.5rem;
+    font-style: italic;
+  }
+
+  /* ── Alma overlay section ── */
+  .alma-section {
+    margin-top: 2rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--alma-bg);
+    border: 1px dashed var(--alma);
+    border-radius: 4px;
+  }
+  .alma-section h3 {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--alma);
+    margin-bottom: 0.75rem;
+  }
+  .alma-monitors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+  }
+  .alma-tag {
+    font-size: 0.65rem;
+    background: #fff;
+    border: 1px solid var(--alma);
+    color: var(--alma);
+    padding: 0.15rem 0.45rem;
+    border-radius: 2px;
+  }
+  .alma-reports {
+    font-size: 0.72rem;
+    color: #3a1a4a;
+  }
+
+  /* ── Gaps summary ── */
+  .gaps-section {
+    margin-top: 2.5rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--gap-bg);
+    border: 1px solid var(--gap);
+    border-radius: 4px;
+  }
+  .gaps-section h3 {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gap);
+    margin-bottom: 1rem;
+  }
+  .gap-item {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+  .gap-num {
+    font-weight: 700;
+    color: var(--gap);
+    flex-shrink: 0;
+    width: 1.2rem;
+  }
+  .gap-desc strong { color: var(--gap); }
+  .gap-desc { color: var(--ink); }
+
+  /* ── Cross-team handoffs table ── */
+  .handoffs-section {
+    margin-top: 2.5rem;
+  }
+  .handoffs-section h3 {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 1rem;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.76rem;
+  }
+  th {
+    text-align: left;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    padding: 0.4rem 0.75rem;
+    border-bottom: 1px solid var(--rule);
+    background: var(--warm-white);
+  }
+  td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  tr:hover td { background: var(--warm-white); }
+
+  .badge {
+    display: inline-block;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.1rem 0.4rem;
+    border-radius: 2px;
+    font-weight: 600;
+  }
+  .badge.entrega   { background: var(--entrega-bg);   color: #5a3a10; border: 1px solid var(--entrega); }
+  .badge.admin     { background: var(--admin-bg);     color: #1a3a4a; border: 1px solid var(--admin); }
+  .badge.marketing { background: var(--marketing-bg); color: #1a3a2a; border: 1px solid var(--marketing); }
+  .badge.human     { background: var(--human-bg);     color: var(--ink); border: 1px solid var(--human); }
+  .badge.alma-b    { background: var(--alma-bg);      color: #3a1a4a; border: 1px solid var(--alma); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Oficio Taller</h1>
+  <h2>Agent Flow &amp; Interaction Map</h2>
+  <p>23 agents · 4 pods · Full business flow from lead to metrics · March 2026 — gaps resolved</p>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#c8a26a;"></div> Entrega Pod</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#5a7a8a;"></div> Admin Pod</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#7a9a8a;"></div> Marketing Pod</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#8a6a9a;"></div> Alma — Performance</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#1c1c1a;"></div> Human checkpoint</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#c0392b; border-radius:0;"></div> Gap identified</div>
+  <div class="legend-item" style="font-style:italic;color:var(--ink-light);">* = human decision required</div>
+</div>
+
+
+<!-- ── PHASE 1 ── -->
+<div class="phase">
+  <div class="phase-header">
+    <div class="phase-number">Phase 1</div>
+    <div class="phase-title">Lead Generation &amp; Qualification</div>
+    <div class="phase-rule"></div>
+  </div>
+  <div class="phase-body">
+    <div class="row">
+      <div class="agent channel">
+        <div class="agent-name">Channels</div>
+        <div class="agent-role">Instagram · Email · Web · Referral</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="agent entrega">
+        <div class="agent-name">Lupe</div>
+        <div class="agent-role">Inbound Intelligence — leads · speaking invites · collaborations · press · spam filter</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="agent human">
+        <div class="agent-name">Marcela *</div>
+        <div class="agent-role">Owner — qualifies &amp; responds to leads</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="handoff-note">Marcela signals Elena when a lead is ready for intake</div>
+    </div>
+    <div class="gap-flag">No CRM — leads not tracked between Lupe and Marcela's response. Risk of leads falling through.</div>
+  </div>
+</div>
+
+
+<!-- ── PHASE 2 ── -->
+<div class="phase">
+  <div class="phase-header">
+    <div class="phase-number">Phase 2</div>
+    <div class="phase-title">Client Intake &amp; Discovery</div>
+    <div class="phase-rule"></div>
+  </div>
+  <div class="phase-body">
+    <div class="row">
+      <div class="agent entrega">
+        <div class="agent-name">Elena</div>
+        <div class="agent-role">Intake — client vision, site, budget, life context</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="agent entrega">
+        <div class="agent-name">Rosa</div>
+        <div class="agent-role">Client Comms — confirmation, updates, follow-ups (Marcela approves before send)</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="handoff-note">Rosa stays active through project completion</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── PHASE 3 ── -->
+<div class="phase">
+  <div class="phase-header">
+    <div class="phase-number">Phase 3</div>
+    <div class="phase-title">Scope of Work &amp; Budget</div>
+    <div class="phase-rule"></div>
+  </div>
+  <div class="phase-body">
+    <div class="row">
+      <div class="agent entrega">
+        <div class="agent-name">Tomás</div>
+        <div class="agent-role">Scope Writer — deliverables, phases, exclusions</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="agent human">
+        <div class="agent-name">Architect SOW Review *</div>
+        <div class="agent-role">24–48h gate — approve or flag scope via email</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="agent entrega">
+        <div class="agent-name">Bruno</div>
+        <div class="agent-role">Cost Estimator — itemized budget + payment schedule</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="handoff-note">SOW + budget + payment schedule → Renata</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── PHASE 4 ── -->
+<div class="phase">
+  <div class="phase-header">
+    <div class="phase-number">Phase 4</div>
+    <div class="phase-title">Proposal, Legal Review &amp; Architect Gate</div>
+    <div class="phase-rule"></div>
+  </div>
+  <div class="phase-body">
+    <div class="row">
+      <div class="agent entrega">
+        <div class="agent-name">Renata</div>
+        <div class="agent-role">Proposal Writer — bilingual client-facing proposal</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="agent admin">
+        <div class="agent-name">Legal</div>
+        <div class="agent-role">Reviews contract clauses &amp; risk</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="agent human">
+        <div class="agent-name">Architect Gate *</div>
+        <div class="agent-role">Architects approve before sending to client</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="handoff-note">Approved proposal sent to client</div>
+    </div>
+    <div class="gap-flag">Revision loop undefined — if client rejects or negotiates the proposal, who manages the revision cycle? Goes back to Bruno? Tomás? Who tracks client feedback?</div>
+  </div>
+</div>
+
+
+<!-- ── PHASE 5 ── -->
+<div class="phase">
+  <div class="phase-header">
+    <div class="phase-number">Phase 5</div>
+    <div class="phase-title">Contract &amp; Project Setup</div>
+    <div class="phase-rule"></div>
+  </div>
+  <div class="phase-body">
+    <div class="row">
+      <div class="agent admin">
+        <div class="agent-name">Legal</div>
+        <div class="agent-role">Final contract — signature ready</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="agent admin">
+        <div class="agent-name">CFO</div>
+        <div class="agent-role">Payment schedule — milestone invoicing plan</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="agent entrega">
+        <div class="agent-name">Pablo</div>
+        <div class="agent-role">Scheduler — milestone map, Asana project built</div>
+      </div>
+    </div>
+    <div class="gap-flag">Payment milestones not yet defined — when does Controller invoice? At signing? Phase completion? % of project? CFO needs a milestone payment schedule agreed before Pablo builds the timeline.</div>
+  </div>
+</div>
+
+
+<!-- ── PHASE 6 ── -->
+<div class="phase">
+  <div class="phase-header">
+    <div class="phase-number">Phase 6</div>
+    <div class="phase-title">Active Project — Design &amp; Construction</div>
+    <div class="phase-rule"></div>
+  </div>
+  <div class="phase-body">
+    <div class="row">
+      <div class="agent entrega">
+        <div class="agent-name">Vera</div>
+        <div class="agent-role">Project Tracker — monitors schedule vs. plan, flags delays</div>
+      </div>
+      <div class="arrow">↔</div>
+      <div class="agent admin">
+        <div class="agent-name">Finance Ops</div>
+        <div class="agent-role">Day-to-day payments &amp; transactions</div>
+      </div>
+      <div class="arrow">↔</div>
+      <div class="agent admin">
+        <div class="agent-name">COO</div>
+        <div class="agent-role">Cross-team blockers &amp; resource conflicts</div>
+      </div>
+    </div>
+    <div class="row" style="margin-top:0.4rem;">
+      <div class="agent admin">
+        <div class="agent-name">Controller</div>
+        <div class="agent-role">Milestone invoicing — issues invoices per Pablo's schedule</div>
+      </div>
+      <div class="arrow">↔</div>
+      <div class="agent admin">
+        <div class="agent-name">CFO</div>
+        <div class="agent-role">Budget oversight — flags overruns</div>
+      </div>
+    </div>
+    <div class="gap-flag">Architect interface — how do the architects access and interact with Asana? Do they receive task notifications? Who is their primary point of contact in the system during active design?</div>
+  </div>
+</div>
+
+
+<!-- ── PHASE 7 ── -->
+<div class="phase">
+  <div class="phase-header">
+    <div class="phase-number">Phase 7</div>
+    <div class="phase-title">Project Completion &amp; Handoffs</div>
+    <div class="phase-rule"></div>
+  </div>
+  <div class="phase-body">
+    <div class="row">
+      <div class="agent entrega">
+        <div class="agent-name">Vera</div>
+        <div class="agent-role">Closes project in Asana — triggers downstream</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="agent admin">
+        <div class="agent-name">Controller</div>
+        <div class="agent-role">Final invoice</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="agent admin">
+        <div class="agent-name">Tax</div>
+        <div class="agent-role">Tax filing for project revenue</div>
+      </div>
+    </div>
+    <div class="row" style="margin-top:0.4rem;">
+      <div class="agent entrega">
+        <div class="agent-name">Vera</div>
+        <div class="agent-role">Triggers marketing</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="agent marketing">
+        <div class="agent-name">Arquitecto</div>
+        <div class="agent-role">Marketing intake — architects provide assets &amp; sensory notes</div>
+      </div>
+      <div class="handoff-note">Marketing campaign opens in parallel or at completion</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── PHASE 8 ── -->
+<div class="phase">
+  <div class="phase-header">
+    <div class="phase-number">Phase 8</div>
+    <div class="phase-title">Marketing Campaign Pipeline</div>
+    <div class="phase-rule"></div>
+  </div>
+  <div class="phase-body">
+    <div class="row" style="flex-wrap:wrap;">
+      <div class="agent marketing"><div class="agent-name">Arquitecto</div><div class="agent-role">Intake &amp; brief</div></div>
+      <div class="arrow">→</div>
+      <div class="agent marketing"><div class="agent-name">Lucía</div><div class="agent-role">Audience analysis</div></div>
+      <div class="arrow">→</div>
+      <div class="agent marketing"><div class="agent-name">Marco</div><div class="agent-role">Creative brief</div></div>
+      <div class="arrow">→</div>
+      <div class="agent marketing"><div class="agent-name">Sofía</div><div class="agent-role">Strategy &amp; calendar</div></div>
+      <div class="arrow">→</div>
+      <div class="agent marketing"><div class="agent-name">Diego</div><div class="agent-role">Bilingual copy</div></div>
+      <div class="arrow">→</div>
+      <div class="agent marketing"><div class="agent-name">Ileana</div><div class="agent-role">Visual plan</div></div>
+      <div class="arrow">→</div>
+      <div class="agent marketing"><div class="agent-name">Valentina</div><div class="agent-role">CMO review</div></div>
+      <div class="arrow">→</div>
+      <div class="agent human"><div class="agent-name">CEO Gate *</div><div class="agent-role">Marcela approves</div></div>
+      <div class="arrow">→</div>
+      <div class="agent marketing"><div class="agent-name">Canal</div><div class="agent-role">Publisher</div></div>
+    </div>
+    <div class="row" style="margin-top:0.4rem;">
+      <div class="handoff-note">On CEO approval → CFO gets budget confirm task</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── PHASE 9 ── -->
+<div class="phase">
+  <div class="phase-header">
+    <div class="phase-number">Phase 9</div>
+    <div class="phase-title">Metrics, Learning &amp; Quarterly Review</div>
+    <div class="phase-rule"></div>
+  </div>
+  <div class="phase-body">
+    <div class="row">
+      <div class="agent marketing"><div class="agent-name">Rafael</div><div class="agent-role">Metrics analyst</div></div>
+      <div class="arrow">→</div>
+      <div class="agent marketing"><div class="agent-name">Carmen</div><div class="agent-role">Learning brief → back to Lucía</div></div>
+      <div class="arrow">→</div>
+      <div class="handoff-note">Closes loop — next campaign cycle</div>
+    </div>
+    <div class="row" style="margin-top:0.5rem;">
+      <div class="agent admin"><div class="agent-name">FP&amp;A</div><div class="agent-role">Quarterly forecast</div></div>
+      <div class="arrow">+</div>
+      <div class="agent admin"><div class="agent-name">Tax</div><div class="agent-role">Quarterly filings</div></div>
+      <div class="arrow">→</div>
+      <div class="agent admin"><div class="agent-name">CFO</div><div class="agent-role">Quarterly review</div></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── ALMA ── -->
+<div class="alma-section">
+  <h3>Alma — Performance Monitor (cross-pod, always active)</h3>
+  <div class="alma-monitors">
+    <span class="alma-tag">Lupe</span><span class="alma-tag">Elena</span><span class="alma-tag">Rosa</span><span class="alma-tag">Tomás</span>
+    <span class="alma-tag">Bruno</span><span class="alma-tag">Renata</span><span class="alma-tag">Pablo</span>
+    <span class="alma-tag">Vera</span><span class="alma-tag">Legal</span><span class="alma-tag">CFO</span>
+    <span class="alma-tag">Controller</span><span class="alma-tag">FP&amp;A</span><span class="alma-tag">Finance Ops</span>
+    <span class="alma-tag">Tax</span><span class="alma-tag">COO</span><span class="alma-tag">Arquitecto</span>
+    <span class="alma-tag">Lucía</span><span class="alma-tag">Marco</span><span class="alma-tag">Sofía</span>
+    <span class="alma-tag">Diego</span><span class="alma-tag">Ileana</span><span class="alma-tag">Valentina</span>
+    <span class="alma-tag">Canal</span><span class="alma-tag">Rafael</span><span class="alma-tag">Carmen</span>
+  </div>
+  <div class="alma-reports">
+    Logs: task completion timestamps · rejection events · revision loops · cross-pod delay patterns<br>
+    Reports to: <strong>COO</strong> (real-time flags) + <strong>Monthly performance digest</strong> (all agents)<br>
+    Escalates to: Marcela when COO cannot resolve a systemic issue
+  </div>
+</div>
+
+
+<!-- ── CROSS-TEAM HANDOFFS ── -->
+<div class="handoffs-section">
+  <h3>Cross-Team Handoff Triggers</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>Triggered by</th>
+        <th>Creates task for</th>
+        <th>Pod</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Project inquiry received</td><td>Lupe</td><td>Marcela → Elena</td><td><span class="badge human">Human</span> <span class="badge entrega">Entrega</span></td></tr>
+      <tr><td>Speaking / conference invite</td><td>Lupe</td><td>Marcela (priority flag + deadline)</td><td><span class="badge human">Human</span></td></tr>
+      <tr><td>Collaboration proposal</td><td>Lupe</td><td>Marcela (summarized offer + fit assessment)</td><td><span class="badge human">Human</span></td></tr>
+      <tr><td>Press / editorial inquiry</td><td>Lupe</td><td>Valentina (marketing pod)</td><td><span class="badge marketing">Marketing</span></td></tr>
+      <tr><td>Spam detected</td><td>Lupe</td><td>Discarded — no notification</td><td>—</td></tr>
+      <tr><td>Proposal approved by architects</td><td>Architect Gate</td><td>Legal (contract), CFO (payment schedule), Pablo (kickoff)</td><td><span class="badge admin">Admin</span> <span class="badge entrega">Entrega</span></td></tr>
+      <tr><td>Contract signed</td><td>Legal</td><td>CFO, Pablo, Vera</td><td><span class="badge admin">Admin</span> <span class="badge entrega">Entrega</span></td></tr>
+      <tr><td>Milestone reached</td><td>Vera</td><td>Controller (invoice)</td><td><span class="badge admin">Admin</span></td></tr>
+      <tr><td>Project complete</td><td>Vera</td><td>Controller (final invoice), Tax, Arquitecto (marketing)</td><td><span class="badge admin">Admin</span> <span class="badge marketing">Marketing</span></td></tr>
+      <tr><td>Campaign CEO-approved</td><td>CEO Gate</td><td>CFO (budget confirm)</td><td><span class="badge admin">Admin</span></td></tr>
+      <tr><td>Quarter end (cron)</td><td>System</td><td>FP&amp;A, Tax, Carmen (learning brief)</td><td><span class="badge admin">Admin</span> <span class="badge marketing">Marketing</span></td></tr>
+      <tr><td>Agent underperforming</td><td>Alma</td><td>COO (flag task)</td><td><span class="badge admin">Admin</span></td></tr>
+      <tr><td>Systemic issue unresolved</td><td>COO</td><td>Marcela (escalation)</td><td><span class="badge human">Human</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- ── GAPS SUMMARY ── -->
+<div class="gaps-section">
+  <h3>Gaps Identified — Needs Resolution Before Build</h3>
+  <div class="gap-item">
+    <div class="gap-num">1</div>
+    <div class="gap-desc">
+      <strong>No CRM / lead tracking</strong> — Between Lupe consolidating leads and Marcela responding, there's no persistent record. Leads can be lost.<br>
+      <span style="color:#1a6a2a;font-weight:600;">→ Solution:</span> Lupe creates one Asana task per inbound message in a permanent <em>Leads</em> project. Each task includes: source channel, category (project / speaking / collaboration / press), summary, date received, and status (new → Marcela reviewing → responded → qualified / discarded). Nothing falls through — every inbound has a record.
+    </div>
+  </div>
+  <div class="gap-item">
+    <div class="gap-num">2</div>
+    <div class="gap-desc">
+      <strong>Client communication agent missing</strong> — Who sends updates, confirmations, and follow-ups to the client? Elena collects, Renata proposes, but no agent owns ongoing client communication.<br>
+      <span style="color:#1a6a2a;font-weight:600;">→ Solution:</span> Add <strong>Rosa — Client Communications agent</strong> to the Entrega pod. Rosa owns all outbound client contact: intake confirmation (after Elena), status updates at each phase gate, proposal delivery (after Renata), revision acknowledgements, and project milestone updates. She is active from first qualified lead through project completion. Marcela reviews Rosa's messages before they send — Rosa drafts, Marcela approves.
+    </div>
+  </div>
+  <div class="gap-item">
+    <div class="gap-num">3</div>
+    <div class="gap-desc">
+      <strong>Proposal revision loop undefined</strong> — If client negotiates or rejects the proposal, who manages revisions? Who tracks client feedback?<br>
+      <span style="color:#1a6a2a;font-weight:600;">→ Solution:</span> Rosa receives client feedback and classifies it: scope objection (→ Tomás), budget objection (→ Bruno), or contract clause (→ Legal). The relevant agent revises, Renata reassembles, Legal re-reviews, Architect Gate re-approves. Vera tracks revision count — if more than 2 full cycles occur, she flags to COO and Marcela. Maximum 3 revision cycles before Marcela steps in directly.
+    </div>
+  </div>
+  <div class="gap-item">
+    <div class="gap-num">4</div>
+    <div class="gap-desc">
+      <strong>Architect input missing in scope phase</strong> — Tomás writes scope and Bruno prices it before architect review. Risk of scoping work the architects can't or won't deliver.<br>
+      <span style="color:#1a6a2a;font-weight:600;">→ Solution:</span> Add a lightweight <strong>Architect SOW Review gate</strong> between Tomás and Bruno. Architects receive an Asana task with Tomás's scope document and two options: Approve or Flag with notes. This is not a full review — 24–48h turnaround expected. Bruno only prices an architect-approved scope. This gate prevents the most common source of proposal rework.
+    </div>
+  </div>
+  <div class="gap-item">
+    <div class="gap-num">5</div>
+    <div class="gap-desc">
+      <strong>Payment milestones not defined</strong> — CFO needs an agreed payment schedule before Pablo builds the timeline. No agent currently owns the milestone-to-invoice mapping.<br>
+      <span style="color:#1a6a2a;font-weight:600;">→ Solution:</span> Bruno owns a <strong>payment schedule template</strong> as part of the budget deliverable — not just total cost, but when each payment is due (% at signing, % at design completion, % at construction start, % at delivery). CFO reviews and approves the schedule. Controller uses it throughout the project to issue invoices automatically when Vera logs each milestone. No manual invoicing decisions needed mid-project.
+    </div>
+  </div>
+  <div class="gap-item">
+    <div class="gap-num">6</div>
+    <div class="gap-desc">
+      <strong>Architect interface with Asana undefined</strong> — Architects are human. How do they receive tasks, approve deliverables, and interact with the system during active projects?<br>
+      <span style="color:#1a6a2a;font-weight:600;">→ Solution:</span> Architects interact via <strong>Asana email notifications only</strong> — no requirement to use the Asana UI actively. When their input is needed (SOW review, proposal approval, active project decisions), they receive a formatted email with the document and a single-action reply (Approve / Flag with notes). For Phase 1 this is sufficient. When humans join the workspace fully, architects get Asana seats and can participate directly. Vera owns the task of keeping architect-facing tasks clear, concise, and infrequent — no notification overload.
+    </div>
+  </div>
+  <div class="gap-item">
+    <div class="gap-num">7</div>
+    <div class="gap-desc">
+      <strong>Marketing trigger timing undefined</strong> — Does Arquitecto fire at project completion only, or in parallel during active projects?<br>
+      <span style="color:#1a6a2a;font-weight:600;">→ Solution:</span> Two formal trigger types: (a) <strong>In-process trigger</strong> — Marcela manually signals Arquitecto when architects have enough material (site documentation, process photos) regardless of completion status. This enables Habitar-series in-process campaigns like Casa Horizonte. (b) <strong>Completion trigger</strong> — Vera automatically signals Arquitecto when a project closes, for final campaign with full asset library. Both coexist. Arquitecto checks which trigger type fired and adjusts the brief accordingly — in-process campaigns use process documentation; completion campaigns use final photography.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

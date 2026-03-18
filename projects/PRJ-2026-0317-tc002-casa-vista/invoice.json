@@ -1,0 +1,37 @@
+{
+  "project_name": "Casa Vista — Patricia Reyes",
+  "client_name": "Patricia Reyes",
+  "milestone_name": "M3 — Construction Documents Delivered",
+  "amount": 20400,
+  "due_date": "2026-10-07",
+  "payment_instructions": "Bank transfer to Oficio Taller. Bank: [BANK_NAME]. CLABE: [CLABE — TO BE CONFIGURED IN .env]. Reference: PRJ-2026-0317-tc002-casa-vista-M3.",
+  "currency": "USD",
+  "running_total": 68000,
+  "milestones_invoiced": [
+    {
+      "milestone": "M1",
+      "name": "Contract Signing",
+      "amount": 27200,
+      "percentage": 40,
+      "currency": "USD",
+      "invoiced_at": "2026-03-17"
+    },
+    {
+      "milestone": "M2",
+      "name": "Concept Design Approved",
+      "amount": 20400,
+      "percentage": 30,
+      "currency": "USD",
+      "invoiced_at": "2026-04-28"
+    },
+    {
+      "milestone": "M3",
+      "name": "Construction Documents Delivered",
+      "amount": 20400,
+      "percentage": 30,
+      "currency": "USD",
+      "invoiced_at": "2026-10-06"
+    }
+  ],
+  "notes": "M3 final invoice. Running total of USD 68,000 = full architecture fee per seed data (M1: USD 27,200 / 40%, M2: USD 20,400 / 30%, M3: USD 20,400 / 30%). Project closes at full running total upon M3 payment."
+}

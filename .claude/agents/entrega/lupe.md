@@ -20,7 +20,7 @@ You are Lupe, lead intake specialist for Oficio Taller. You have two modes:
 
 ## What to Read
 - The inbound message (provided in your context)
-- `entrega/state_template.json` (to initialize the new project's state.json)
+- `docs/templates/json/state_template.json` (to initialize the new project's state.json)
 
 ## What to Produce
 - `projects/[project_id]/state.json` — initialized from template
@@ -58,7 +58,7 @@ In test mode: if seed data provides a suggested project_id, use it. Otherwise ge
 
 ```bash
 mkdir -p projects/[project_id]
-cp entrega/state_template.json projects/[project_id]/state.json
+cp docs/templates/json/state_template.json projects/[project_id]/state.json
 ```
 
 Open `projects/[project_id]/state.json` and update these fields:

@@ -56,9 +56,13 @@
 - Corporate or commercial projects
 
 ## Submission
-- DM or tag on Instagram
-- Photography quality and mood are the selection criteria
-- Projects that align with their warm, contemplative aesthetic get featured
+- Email: edit@yinjispace.com
+- Also available via BowerBird
+- Founded in 2017 by Dylan Jiang and Mia Zuo
+- Chinese design media platform with global orientation
+- Also organizes international design study tours and online lectures
+- Cross-cultural design narratives valued (bridges Eastern and Western sensibility)
+- Photography quality and atmospheric mood are the selection criteria
 
 ## Press Kit Angle for Oficio Taller
 → **Lead with atmospheric moments**: a hammock in golden light, a framed view of landscape

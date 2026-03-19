@@ -53,9 +53,12 @@
 - Text-heavy content
 
 ## Submission
-- DM or tag @architecture_hunter
-- Feature-based curation — they select what fits their feed aesthetic
+- Submit free at architecturehunter.com/get-published
+- Email: edit@architecturehunter.com
+- Founded by Amanda Ferber (2013) — champions "slow content" and lesser-known projects
+- Up to 20 photos (max 5MB each), submission in English
 - Photography quality is the primary selection criterion
+- Followed by Norman Foster, Jean Nouvel, Marcio Kogan
 
 ## Press Kit Angle for Oficio Taller
 → **Lead with the hero shot**: the single most visually striking image

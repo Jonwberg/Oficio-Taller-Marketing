@@ -54,8 +54,11 @@
 
 ## Submission
 - Email: hello@yellowtrace.com.au
-- Curated selection — not everything gets featured
-- Strong visual narrative is the gateway
+- Editorial Placements available as paid curated service (2-3 week turnaround)
+- Also publishes projects pro bono that they want to champion
+- 10% bundle discount for 3+ projects
+- Audience: 89% Australian, 86% hold degrees, 70% work in design industry
+- Book paid placements via their Self-Service Advertising Shop
 
 ## Press Kit Angle for Oficio Taller
 → **Lead with the sensorial**: light, texture, silence, the feeling of inhabiting the space

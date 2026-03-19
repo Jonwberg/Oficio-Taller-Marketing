@@ -54,9 +54,13 @@
 - Styled/staged photography without authenticity
 
 ## Submission
-- Contact via website
-- Process documentation is a significant differentiator
-- Video content gets priority
+- Email: [email protected] (also available via BowerBird)
+- **Geographic scope: Australia, New Zealand, and North America ONLY**
+- Minimum 10 professional images (10-30 ideal), with rights to share
+- Video-ready content is a strong plus (leading YouTube channel for architecture)
+- Founded by Aidan Anderson (furniture maker), grown to 46-person media company
+- Named Publication of the Year at Mumbrella Publish Awards 2023
+- Response not guaranteed due to high submission volume
 
 ## Press Kit Angle for Oficio Taller
 → **Lead with process and materials**: how the project was conceived, what materials were chosen and why

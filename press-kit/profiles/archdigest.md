@@ -59,10 +59,13 @@
 - Small or modest-scale projects (unless architecturally significant)
 
 ## Submission
-- Highly selective — often works through established PR channels
-- Architect reputation and project scale matter
-- Exclusive content preferred (not previously published)
-- PR representation recommended
+- Subject line: "PROJECT SUBMISSION" (in caps)
+- **Exclusivity is critical** — project should NOT be published elsewhere
+- When accepted, AD sends its own photographer and writer (7-month process)
+- Identify the right editor for your project type (home tour vs. product vs. emerging designer)
+- Digital presence matters: editors will check website and social media
+- Response time: 2-4 weeks; follow up politely by email only
+- PR representation recommended but not required
 
 ## Press Kit Angle for Oficio Taller
 → **Lead with the architect's vision and the project's cultural significance**

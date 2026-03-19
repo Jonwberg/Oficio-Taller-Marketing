@@ -58,8 +58,12 @@
 - Overly minimalist descriptions without narrative
 
 ## Submission
-- Editorial team contact through admagazine.com
+- Subject line: "Project Submission" (in caps)
+- Published by Condé Nast since 2000 (11 issues/year, ~152 pages)
+- Contact editors directly; check Muck Rack for current editorial contacts
 - PR agencies often mediate submissions
+- Exclusivity preferred — pitch one project to one publication at a time
+- Also available via BowerBird
 - AD100 listing is a significant credential
 
 ## Press Kit Angle for Oficio Taller

@@ -48,10 +48,14 @@
 - Client lifestyle stories
 
 ## Submission
-- Submit via archdaily.com/submit
-- Include all drawings and high-res photography
-- Provide full project credits
-- Projects must be built and completed
+- Submit via archdaily.com/submit-a-project (two-step form)
+- Minimum 15 high-resolution images (**2880px+ width**) by professional photographers
+- Clean architectural drawings without construction labels
+- 300-500 word project description
+- Include all technical specs and full project credits
+- Projects must be built and completed (last 5 years preferred)
+- Curation is region-specific
+- Published projects eligible for annual Building of the Year Award
 
 ## Press Kit Angle for Oficio Taller
 → **Lead with the technical**: structural system, material palette, climate response

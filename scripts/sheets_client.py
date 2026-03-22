@@ -9,6 +9,7 @@ Reads GOOGLE_SHEETS_ID and GOOGLE_CREDENTIALS_PATH from environment.
 import os
 import sys
 import json
+from pathlib import Path
 
 import gspread
 from google.oauth2.service_account import Credentials
@@ -56,7 +57,8 @@ SHEET_HEADERS = {
 class SheetsClient:
     def __init__(self):
         load_dotenv()  # Load here, not at module level, so tests can monkeypatch env first
-        creds_path = os.environ.get("GOOGLE_CREDENTIALS_PATH", "credentials.json")
+        _project_root = Path(__file__).parent.parent
+        creds_path = os.environ.get("GOOGLE_CREDENTIALS_PATH", str(_project_root / "credentials.json"))
         sheet_id = os.environ.get("GOOGLE_SHEETS_ID")
         if not sheet_id:
             raise EnvironmentError("GOOGLE_SHEETS_ID environment variable not set")

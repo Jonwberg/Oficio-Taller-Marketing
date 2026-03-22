@@ -202,7 +202,7 @@ def build_financial_project(project_row: dict, milestone_rows: list[dict]) -> di
     scope_signed_date = project_row.get("scope_signed_date", "")
     scope_year = project_row.get("scope_year", "")
 
-    for idx, m in enumerate(milestone_rows):
+    for idx, m in enumerate(milestone_rows[:4]):
         # Use sheet amount_mxn if set, otherwise calculated
         try:
             amount = int(float(m.get("amount_mxn") or calc_amounts[idx]))
@@ -219,7 +219,7 @@ def build_financial_project(project_row: dict, milestone_rows: list[dict]) -> di
             "amount_mxn": amount,
             "trigger": m["trigger"],
             "estimated_date": est_date,
-            "status": calc_statuses[idx],
+            "status": m.get("status") or calc_statuses[idx],
         })
 
     record = {
@@ -265,10 +265,11 @@ def build_timeline_project(project_row: dict) -> dict:
         "fy27": _parse_bool(project_row.get("fy27", "")),
         "drive_id": project_row.get("drive_id") or None,
         "phases": phases,
-        "notes": project_row.get("notes", ""),
     }
     if project_row.get("last_known_activity"):
         record["last_known_activity"] = project_row["last_known_activity"]
+    if project_row.get("notes"):
+        record["notes"] = project_row["notes"]
     return record
 
 
@@ -307,7 +308,8 @@ def sync():
     financial_projects = []
     for proj in projects:
         proj_milestones = milestone_map.get(proj["id"], [])
-        # Sort milestones M1→M4
+        # Filter out rows with missing milestone_id, then sort M1→M4
+        proj_milestones = [m for m in proj_milestones if m.get("milestone_id", "").startswith("M")]
         proj_milestones.sort(key=lambda m: int(m.get("milestone_id", "M0")[1:] or 0))
         financial_projects.append(build_financial_project(proj, proj_milestones))
 

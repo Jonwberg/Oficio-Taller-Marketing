@@ -1,0 +1,4 @@
+# Python 3.10+ required (uses list[dict] type hints and match syntax)
+gspread==6.1.2
+google-auth==2.29.0
+python-dotenv==1.0.1

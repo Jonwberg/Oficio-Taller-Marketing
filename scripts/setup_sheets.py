@@ -34,8 +34,8 @@ def create_sheets(client: SheetsClient) -> None:
             ws = spreadsheet.add_worksheet(title=sheet_name, rows=500, cols=len(headers))
         else:
             ws = spreadsheet.worksheet(sheet_name)
-        # Write header row
-        ws.update("A1", [headers])
+        # Write header row (values first — gspread 6.x argument order)
+        ws.update([headers], "A1")
         print(f"→ {sheet_name}: created with {len(headers)} columns")
 
     # Delete default Sheet1 if present (Google creates it automatically)
@@ -44,17 +44,18 @@ def create_sheets(client: SheetsClient) -> None:
 
 
 def seed_projects(client: SheetsClient) -> None:
-    """Seed Projects and Milestones sheets from existing JSON files."""
+    """Seed Projects and Milestones sheets from existing JSON files (batch writes)."""
     with open(FINANCIAL_MODEL_PATH, encoding="utf-8") as f:
         financial = json.load(f)
     with open(TIMELINES_PATH, encoding="utf-8") as f:
         timelines = json.load(f)
 
-    # Build a lookup from project id → timelines data
     timeline_map = {p["id"]: p for p in timelines["projects"]}
 
-    projects_written = 0
-    milestones_written = 0
+    proj_headers = SHEET_HEADERS["Projects"]
+    ms_headers = SHEET_HEADERS["Milestones"]
+    project_rows = []
+    milestone_rows = []
 
     for proj in financial["projects"]:
         pid = proj["id"]
@@ -90,11 +91,10 @@ def seed_projects(client: SheetsClient) -> None:
             "last_known_activity": tl.get("last_known_activity", "") or "",
             "notes": tl.get("notes", "") or "",
         }
-        client.append_row("Projects", row)
-        projects_written += 1
+        project_rows.append([str(row.get(h, "")) for h in proj_headers])
 
         for m in proj.get("milestones", []):
-            milestone_row = {
+            ms_row = {
                 "project_id": pid,
                 "milestone_id": m["id"],
                 "label": m["label"],
@@ -105,11 +105,14 @@ def seed_projects(client: SheetsClient) -> None:
                 "actual_date": "",
                 "status": m["status"],
             }
-            client.append_row("Milestones", milestone_row)
-            milestones_written += 1
+            milestone_rows.append([str(ms_row.get(h, "")) for h in ms_headers])
 
-    print(f"→ Seeding Projects: {projects_written} rows written")
-    print(f"→ Seeding Milestones: {milestones_written} rows written")
+    # Batch write — 2 API calls instead of 170
+    client._spreadsheet.worksheet("Projects").append_rows(project_rows, value_input_option="USER_ENTERED")
+    print(f"→ Seeding Projects: {len(project_rows)} rows written")
+
+    client._spreadsheet.worksheet("Milestones").append_rows(milestone_rows, value_input_option="USER_ENTERED")
+    print(f"→ Seeding Milestones: {len(milestone_rows)} rows written")
 
 
 if __name__ == "__main__":

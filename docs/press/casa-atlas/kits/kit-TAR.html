@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Architectural Review — Casa Atlas — Oficio Taller</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:     #EBEBEB;
+      --paper:  #F8F8F6;
+      --ink:    #111110;
+      --mid:    #636360;
+      --rule:   #CACAC6;
+    }
+    body {
+      background: var(--bg);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      padding: 3rem 1rem;
+    }
+    .wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--paper);
+      border: 1px solid var(--rule);
+    }
+
+    /* ── EMAIL ── */
+    .email-bar {
+      padding: 0.5rem 2.5rem;
+      background: #E2E2E0;
+      font-size: 0.57rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+    .email-head {
+      padding: 2rem 2.5rem 1.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .email-meta {
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+      color: var(--mid);
+      line-height: 2.2;
+    }
+    .email-meta strong { color: var(--ink); font-weight: 400; }
+    .email-subject {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-top: 1.2rem;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+    .email-body {
+      padding: 2rem 2.5rem 2.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .email-body p {
+      font-size: 0.87rem;
+      line-height: 1.95;
+      color: var(--ink);
+      margin-bottom: 1.2em;
+      max-width: 570px;
+    }
+    .email-body p:last-child { margin-bottom: 0; }
+    .email-sig {
+      margin-top: 1.8rem;
+      font-size: 0.8rem;
+      line-height: 2;
+      color: var(--mid);
+    }
+
+    /* ── DIVIDER — TAR uses a thin rule, not a black bar ── */
+    .kit-divider {
+      background: var(--ink);
+      padding: 0.85rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .kit-divider span {
+      font-size: 0.55rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(248,248,246,0.45);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      width: 100%;
+      height: 62vh;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(0.9);
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 45%, rgba(17,17,16,0.5) 100%);
+    }
+    .hero-cap {
+      position: absolute;
+      bottom: 1.8rem;
+      left: 2.5rem;
+      z-index: 1;
+      font-size: 0.57rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(248,248,246,0.55);
+    }
+
+    /* ── KIT ── */
+    .kit { padding: 3.5rem 2.5rem; }
+
+    .project-head {
+      margin-bottom: 3.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .project-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4.2rem;
+      font-weight: 300;
+      line-height: 0.9;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.6rem;
+    }
+    .project-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--mid);
+      margin-bottom: 2.2rem;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1.4rem 2.5rem;
+    }
+    .meta-label {
+      font-size: 0.53rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 0.25rem;
+    }
+    .meta-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.88rem;
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    /* ── SEC LABEL ── */
+    .sec-label {
+      font-size: 0.55rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .sec-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+
+    /* ── NARRATIVE ── */
+    .narrative-wrap { margin-bottom: 3.5rem; }
+    .narrative p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.18rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--ink);
+      margin-bottom: 1.5em;
+      max-width: 620px;
+    }
+    .narrative p.lede {
+      font-size: 1.55rem;
+      font-weight: 400;
+      line-height: 1.38;
+      margin-bottom: 2.2rem;
+    }
+    .narrative p:last-child { margin-bottom: 0; }
+
+    /* ── IMAGE LAYOUTS ── */
+    .img-full {
+      width: 100%;
+      height: 58vh;
+      overflow: hidden;
+      margin-bottom: 3px;
+    }
+    .img-full img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(0.88);
+    }
+    .img-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      margin-bottom: 3px;
+    }
+    .img-2-cell { overflow: hidden; height: 40vh; }
+    .img-2-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(0.88);
+    }
+    .img-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 3px;
+      margin-bottom: 3px;
+    }
+    .img-3-cell { overflow: hidden; height: 30vh; }
+    .img-3-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(0.88);
+    }
+    .img-cap {
+      font-size: 0.54rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--mid);
+      padding: 0.4rem 0 2rem;
+    }
+    .photo-credit {
+      font-size: 0.55rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* ── PLANS ── */
+    .plans-wrap {
+      border: 1px solid var(--rule);
+      padding: 1.8rem 2rem;
+      margin-bottom: 0;
+    }
+    .plans-title {
+      font-size: 0.55rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 1.4rem;
+    }
+    .plans-list { list-style: none; }
+    .plans-list li {
+      font-size: 0.82rem;
+      color: var(--ink);
+      line-height: 2.3;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .plans-list li::before { content: '—'; color: var(--mid); }
+
+    /* ── FOOTER ── */
+    .kit-foot {
+      padding: 1.8rem 2.5rem;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .foot-studio {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+    .foot-handle {
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- EMAIL BAR -->
+  <div class="email-bar">Editorial submission — The Architectural Review — Phase 1 / Print élite</div>
+
+  <!-- EMAIL HEADER -->
+  <div class="email-head">
+    <div class="email-meta">
+      <div><strong>From:</strong> Marcela González Veloz — Oficio Taller</div>
+      <div><strong>To:</strong> Editorial team — The Architectural Review / architectural-review.com</div>
+      <div><strong>Subject:</strong></div>
+    </div>
+    <div class="email-subject">Submission — Casa Atlas — Topography, section, and the inhabited dune / Cerritos, Mexico, 2025</div>
+  </div>
+
+  <!-- EMAIL BODY -->
+  <div class="email-body">
+    <p>Dear editorial team,</p>
+    <p>I would like to submit Casa Atlas for The Architectural Review's consideration — a private residence completed in 2025 in Cerritos, Baja California Sur, Mexico, designed by Oficio Taller.</p>
+    <p>The project begins with a premise I believe is relevant to the conversation AR has sustained about architecture and territory: the coastal dune is not backdrop — it is ground and shelter. The house positions itself behind the dune and accepts its topographic condition as the primary architectural argument. The dune is not an obstacle resolved; it is the principle that organizes plan, section, and program.</p>
+    <p>The site presented a specific challenge: depth. Not every space could have a direct relationship with the ocean frontage. The answer was sectional — a series of level changes that ensures the horizon remains visible from every space in the house, including those set furthest from the shore. The sea is not a privilege reserved for the primary facades; it is a condition of habitation throughout. I think this is an architectural problem worth publishing.</p>
+    <p>The house was designed for a chef and his family, and functions as a node connecting local producers, fishermen, and farmers from the region. Architecture as infrastructure for a practice of living rooted in territory.</p>
+    <p>Photography by Andrea San Román (architecture) and Sofía Pollano (interiors). Full high-resolution set, floor plans, sections, and technical documentation available. I would be glad to discuss an exclusive feature.</p>
+    <div class="email-sig">
+      Marcela González Veloz<br>
+      Oficio Taller<br>
+      @oficiotaller · Cerritos, Baja California Sur, México
+    </div>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="kit-divider">
+    <span>Press kit — editorial</span>
+    <span>Casa Atlas — Oficio Taller — 2025</span>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <img src="../photos/ATLAS FINAL-1.jpg" alt="Casa Atlas — exterior, coastal dune, Cerritos BCS">
+    <p class="hero-cap">Casa Atlas — Cerritos, Baja California Sur · Photography: Andrea San Román</p>
+  </div>
+
+  <!-- KIT -->
+  <div class="kit">
+
+    <!-- PROJECT HEAD -->
+    <div class="project-head">
+      <h1 class="project-name">Casa<br>Atlas</h1>
+      <p class="project-sub">Topography, section, and the inhabited dune</p>
+      <div class="meta-grid">
+        <div>
+          <p class="meta-label">Location</p>
+          <p class="meta-value">Cerritos, Baja California Sur, México</p>
+        </div>
+        <div>
+          <p class="meta-label">Area</p>
+          <p class="meta-value">458 m² + 90 m² terraces</p>
+        </div>
+        <div>
+          <p class="meta-label">Year</p>
+          <p class="meta-value">2025</p>
+        </div>
+        <div>
+          <p class="meta-label">Architecture</p>
+          <p class="meta-value">Oficio Taller<br>Marcela González Veloz</p>
+        </div>
+        <div>
+          <p class="meta-label">Project team</p>
+          <p class="meta-value">Andrea San Román, Diego Tamayo,<br>Nuria Ramírez, Gerardo Ramírez</p>
+        </div>
+        <div>
+          <p class="meta-label">Interiors</p>
+          <p class="meta-value">Oficio Taller +<br>Estudio Homística</p>
+        </div>
+        <div>
+          <p class="meta-label">Landscape</p>
+          <p class="meta-value">Brenda Landeros</p>
+        </div>
+        <div>
+          <p class="meta-label">Construction</p>
+          <p class="meta-value">Unterbau</p>
+        </div>
+        <div>
+          <p class="meta-label">Photography</p>
+          <p class="meta-value">Andrea San Román<br>Sofía Pollano</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- NARRATIVE -->
+    <div class="narrative-wrap">
+      <div class="sec-label"><span>Project text</span></div>
+      <div class="narrative">
+        <p class="lede">Atlas begins with a premise: the coastal dune is not backdrop but ground and shelter.</p>
+        <p>The house is positioned behind it, accepting the dune's topographic condition as an architectural argument — not an obstacle to resolve, but an organizing principle for plan, section, and program. The dune provides natural shelter from prevailing winds and becomes the first move: volumes step with its geometry, patios open between them to frame the landscape without capturing it.</p>
+        <p>The site's challenge was depth. Not every space could have a direct relationship with the ocean frontage. The answer was sectional. A series of level changes ensures the horizon is visible from every space in the house — including those set back from the primary facade. The sea is not a privilege reserved for the front rooms; it is a condition of habitation throughout. This was not a view problem. It was a sectional argument.</p>
+        <p>Volumes separate to produce intermediate patios: thresholds that belong neither fully to interior nor exterior. This strategy is not formal — it is climatic. The patios manage wind, shadow, and light in a territory where midday flattens everything and evening transforms it. They are the climate system of the house.</p>
+        <p>The materials — concrete, local wood, clay — are not finishes: they are the site in other forms. They anchor the house to the ground and age alongside it. Light is the transforming agent: morning activates the entrance facade and the edible garden, afternoon penetrates the bedrooms, night turns the terraces into instruments of sky observation.</p>
+        <p>The house was designed for a chef and his family. Two kitchens are the heart of the program — the upper opens to the terrace, pool, and Pacific; the lower connects to an edible garden and outdoor dining oriented toward the dune. The architecture follows the life that was going to happen in it. It also functions as a node in a network of local producers, fishermen, and farmers: a space open to the exchange of knowledge, produce, and table. Architecture as infrastructure for a practice of inhabiting territory.</p>
+      </div>
+    </div>
+
+    <!-- IMAGES -->
+    <div class="sec-label"><span>Photography — Andrea San Román</span></div>
+
+    <!-- Full width: concrete wall -->
+    <div class="img-full">
+      <img src="../photos/ATLAS FINAL-22.jpg" alt="Concrete wall — palm shadow">
+    </div>
+    <p class="img-cap">Concrete wall — earth-toned mass, palm shadow · Photography: Andrea San Román</p>
+
+    <!-- 2-panel: entrance + pool terrace -->
+    <div class="img-2">
+      <div class="img-2-cell">
+        <img src="../photos/ATLAS FINAL-25.jpg" alt="Entrance threshold — compression and release">
+      </div>
+      <div class="img-2-cell">
+        <img src="../photos/ATLAS FINAL-38.jpg" alt="Pool terrace — horizontal plane, shadow">
+      </div>
+    </div>
+    <p class="img-cap">Entrance threshold — compression and aperture &nbsp;·&nbsp; Pool terrace — horizontal datum</p>
+
+    <!-- Full width: kitchen -->
+    <div class="img-full" style="height:50vh;">
+      <img src="../photos/ATLAS FINAL-29.jpg" alt="Upper kitchen — Pacific view">
+    </div>
+    <p class="img-cap">Upper kitchen — facing the Pacific · Photography: Andrea San Román</p>
+
+    <p class="photo-credit">Photography: Andrea San Román (architecture) · Sofía Pollano (interiors) · Full high-resolution sets available on request</p>
+
+    <!-- PLANS -->
+    <div class="plans-wrap">
+      <p class="plans-title">Architectural documentation — attached / available on request</p>
+      <ul class="plans-list">
+        <li>Site plan — dune relationship and orientation</li>
+        <li>Floor plans — all levels</li>
+        <li>Cross-sections — sectional strategy, level changes, horizon sightlines</li>
+        <li>Elevations</li>
+        <li>Technical documentation — materials, construction system, climate strategy</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="kit-foot">
+    <p class="foot-studio">Oficio Taller</p>
+    <div class="foot-handle">
+      <p>@oficiotaller</p>
+      <p>Cerritos, Baja California Sur · 2025</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

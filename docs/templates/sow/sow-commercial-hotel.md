@@ -17,7 +17,7 @@ Hotel projects differ from residential in the following critical ways:
 
 ## Phase Structure
 
-### Phase 1 — Conceptual Design (Diseño Conceptual)
+### Phase 1 — Estudios Previos y Conceptual (Preliminary Studies & Conceptual Design)
 **Deliverables:**
 - Parti diagram and design narrative (2–4 pages for hotel; includes guest experience narrative)
 - Preliminary floor plan sketches by functional zone (guest room floors, public areas, back-of-house, site)
@@ -35,7 +35,7 @@ Hotel projects differ from residential in the following critical ways:
 
 ---
 
-### Phase 2 — Architectural Design (Proyecto Arquitectónico)
+### Phase 2 — Anteproyecto / Concepto (Schematic Design)
 **Deliverables:**
 - Floor plans all levels (1:100 scale) — all functional zones
 - Elevations all facades (1:100)

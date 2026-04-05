@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casa Atlas — Habitar la duna — Oficio Taller</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --paper:   #F7F4EF;
+      --ink:     #1C1814;
+      --mid:     #6B5F52;
+      --rule:    #D4C9BC;
+      --sand:    #C8B89A;
+      --concrete:#A09688;
+      --accent:  #8B6F4E;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── COVER ── */
+    .cover {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: 10vw 8vw 6vw;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(168,146,120,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 80% at 20% 80%, rgba(144,128,112,0.10) 0%, transparent 60%);
+      z-index: 0;
+    }
+
+    .cover-content { position: relative; z-index: 1; }
+
+    .studio-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 12vw;
+    }
+
+    .cover-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(4rem, 10vw, 8rem);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 2rem;
+    }
+
+    .cover-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      color: var(--accent);
+      letter-spacing: 0.02em;
+    }
+
+    .cover-meta {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-top: 4rem;
+      border-top: 1px solid var(--rule);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    /* ── HERO IMAGE ── */
+    .hero-image {
+      width: 100%;
+      height: 85vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 3rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-image::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(28,24,20,0.45) 100%);
+      z-index: 1;
+    }
+
+    .hero-caption {
+      position: relative;
+      z-index: 2;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(247,244,239,0.75);
+    }
+
+    /* ── SECTION WRAPPER ── */
+    .section {
+      padding: 8vw 8vw;
+    }
+
+    .section + .section {
+      padding-top: 0;
+    }
+
+    /* ── RULE ── */
+    .rule {
+      width: 100%;
+      height: 1px;
+      background: var(--rule);
+      margin: 6rem 0;
+    }
+
+    .rule-label {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin: 5rem 0;
+    }
+    .rule-label span {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mid);
+      white-space: nowrap;
+    }
+    .rule-label::before, .rule-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    /* ── NARRATIVE ── */
+    .narrative {
+      max-width: 680px;
+    }
+
+    .narrative p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--ink);
+      margin-bottom: 1.8em;
+    }
+
+    .narrative p:first-child {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--accent);
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── BILINGUAL SPLIT ── */
+    .bilingual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6vw;
+      align-items: start;
+    }
+
+    .bilingual .lang-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 720px) {
+      .bilingual { grid-template-columns: 1fr; }
+    }
+
+    /* ── IMAGE GRID ── */
+    .image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 50vh 50vh;
+      gap: 3px;
+    }
+
+    .image-grid .img-block {
+      position: relative;
+      overflow: hidden;
+      background: #B0A090;
+    }
+
+    .image-grid .img-block:first-child {
+      grid-row: span 2;
+    }
+
+    .image-grid .img-block img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .image-grid .img-block::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 60%, rgba(28,24,20,0.3) 100%);
+      z-index: 1;
+    }
+
+    .image-grid .img-caption {
+      position: absolute;
+      bottom: 1.2rem;
+      left: 1.5rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(247,244,239,0.8);
+      z-index: 2;
+    }
+
+    /* Single tall image */
+    .image-tall {
+      width: 100%;
+      height: 75vh;
+      position: relative;
+      overflow: hidden;
+      background: #A09080;
+    }
+
+    .image-tall img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .image-tall::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 60%, rgba(28,24,20,0.25) 100%);
+      z-index: 1;
+    }
+
+    .image-tall-caption {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 2rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(247,244,239,0.75);
+      z-index: 2;
+    }
+
+    /* ── SPECS TABLE ── */
+    .specs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2.5rem 4rem;
+      padding: 3rem 0;
+    }
+
+    .spec-item {}
+    .spec-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 0.5rem;
+    }
+    .spec-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    /* ── ABOUT ── */
+    .about-block {
+      max-width: 580px;
+    }
+
+    .about-block .about-name {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+    }
+
+    .about-block p {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--mid);
+    }
+
+    /* ── PHOTO CREDIT ── */
+    .photo-credit {
+      padding: 3rem 8vw;
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--concrete);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 5rem 8vw 4rem;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-studio {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      color: var(--ink);
+    }
+
+    .footer-contact {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: var(--mid);
+      text-align: right;
+      line-height: 2;
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      .hero-image { height: 60vh; }
+      .cover { min-height: auto; padding: 4cm 3cm 2cm; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- COVER -->
+  <section class="cover">
+    <div class="cover-bg"></div>
+    <div class="cover-content">
+      <p class="studio-label">Oficio Taller — Press</p>
+      <h1 class="cover-title">Casa<br>Atlas</h1>
+      <p class="cover-subtitle">Habitar la duna</p>
+    </div>
+    <div class="cover-meta">
+      <span>Cerritos, Baja California Sur, México</span>
+      <span>458 m² + 90 m² terrazas</span>
+      <span>Concreto y madera</span>
+      <span>Construida · 2025</span>
+    </div>
+  </section>
+
+  <!-- HERO IMAGE -->
+  <div class="hero-image">
+    <img src="photos/ATLAS FINAL-1.jpg" alt="Casa Atlas — vista exterior, Cerritos BCS">
+    <p class="hero-caption">Vista exterior — Cerritos, Baja California Sur · Fotografía: Andrea San Román</p>
+  </div>
+
+  <!-- NARRATIVE ES -->
+  <section class="section">
+    <div class="rule-label"><span>Proyecto / Project</span></div>
+    <div class="narrative">
+      <p>La duna entra a la casa.</p>
+      <p>No hay un momento preciso en que el exterior se convierte en interior — solo un cambio gradual en la luz y en la temperatura del aire. Casa Atlas está en Cerritos, Baja California Sur, sobre una duna que el proyecto no intenta dominar sino habitar. La duna es carga, es geometría, es clima: determina la planta, orienta los espacios, dicta cómo corre el viento y desde dónde llega el sonido del mar.</p>
+      <p>El programa nació de una pregunta sobre cómo vive realmente quien va a vivir aquí: un chef y su familia. La cocina es el corazón de la casa — hay dos. La cocina alta se abre hacia la terraza, la alberca y el horizonte del mar. La cocina baja conecta con el jardín comestible. La mesa es el eje de todo. Alrededor de ella se organiza la vida: el comedor exterior, el fire pit, los camastros, el cuarto de surf. Una casa que se usa, que huele a sal, a leña y a pan recién horneado.</p>
+      <p>Los materiales son concreto y madera, tierra y artesanía. El concreto absorbe el calor del día y lo guarda hasta después de la puesta de sol. La madera cede, se mueve con la humedad salina, cambia de tono con los años. Los tejidos de tejedoras locales, los cántaros de barro, las lámparas de piedra y madera — cada objeto fue elegido en conversación con el territorio, no contra él.</p>
+      <p>El interior fue desarrollado junto con Estudio Homística — una colaboración entre el lenguaje arquitectónico de Oficio Taller y la curaduría de Homística. El paisaje exterior lo diseñó Brenda Landeros. Cada capa — la arquitectura, el objeto, la luz natural, el textil — responde a la misma pregunta: cómo se vive en este lugar.</p>
+      <p>Vivir en Atlas es caminar descalzo, respirar sal, leña y pan recién horneado.</p>
+    </div>
+  </section>
+
+  <!-- IMAGE GRID -->
+  <div class="image-grid">
+    <div class="img-block">
+      <img src="photos/ATLAS FINAL-38.jpg" alt="Alberca — Casa Atlas">
+      <p class="img-caption">Alberca</p>
+    </div>
+    <div class="img-block">
+      <img src="photos/ATLAS FINAL-8.jpg" alt="Recámara — vista al mar">
+      <p class="img-caption">Recámara principal</p>
+    </div>
+    <div class="img-block">
+      <img src="photos/ATLAS FINAL-5.jpg" alt="Comedor exterior al atardecer">
+      <p class="img-caption">Comedor exterior</p>
+    </div>
+  </div>
+
+  <!-- NARRATIVE EN -->
+  <section class="section">
+    <div class="rule-label"><span>English</span></div>
+    <div class="narrative">
+      <p>The dune enters the house.</p>
+      <p>There is no clear moment where outside becomes inside — only a gradual shift in light and the temperature of the air. Casa Atlas sits on a dune in Cerritos, Baja California Sur, and the project does not attempt to dominate that dune but to inhabit it. The dune is load, geometry, and climate: it determines the floor plan, orients the spaces, and dictates how the wind moves and from what direction the ocean arrives.</p>
+      <p>The program was born from a question about how the people who live here actually live: a chef and a family. The kitchen is the heart of the house — there are two. The upper kitchen opens toward the terrace, the pool, and the ocean horizon. The lower kitchen connects with the edible garden. The table is the axis of everything. Around it, life organizes itself: the outdoor dining, the fire pit, the sunbed deck, the surf room. A house that is used — that smells of salt, of firewood, of bread from the oven.</p>
+      <p>The materials are concrete and wood, earth and craft. The concrete absorbs the heat of the day and holds it after sunset. The wood yields, moves with the salt humidity, changes tone over years. The textiles from local weavers, the clay vessels, the stone and wood lamps — each object chosen in conversation with the territory, not against it.</p>
+      <p>The interiors were developed in collaboration with Estudio Homística — a conversation between Oficio Taller's architectural language and Homística's curation. The landscape was designed by Brenda Landeros. Every layer — the architecture, the object, the natural light, the textile — responds to the same question: how do you actually live in this place.</p>
+      <p>To live in Atlas is to walk barefoot, to breathe salt, firewood, and fresh bread.</p>
+    </div>
+  </section>
+
+  <!-- TALL IMAGE -->
+  <div class="image-tall">
+    <img src="photos/ATLAS FINAL-29.jpg" alt="Cocina — vista al mar — Casa Atlas">
+    <p class="image-tall-caption">Cocina alta — vista al Pacífico · Fotografía: Andrea San Román</p>
+  </div>
+
+  <!-- SPECS -->
+  <section class="section">
+    <div class="rule-label"><span>Datos del proyecto / Project data</span></div>
+    <div class="specs">
+      <div class="spec-item">
+        <p class="spec-label">Proyecto / Project</p>
+        <p class="spec-value">Casa Atlas</p>
+      </div>
+      <div class="spec-item">
+        <p class="spec-label">Subtítulo</p>
+        <p class="spec-value">Habitar la duna</p>
+      </div>
+      <div class="spec-item">
+        <p class="spec-label">Ubicación / Location</p>
+        <p class="spec-value">Cerritos, Baja California Sur, México</p>
+      </div>
+      <div class="spec-item">
+        <p class="spec-label">Tipología / Type</p>
+        <p class="spec-value">Residencial privada<br>Private residence</p>
+      </div>
+      <div class="spec-item">
+        <p class="spec-label">Superficie / Area</p>
+        <p class="spec-value">458 m² + 90 m² terrazas</p>
+      </div>
+      <div class="spec-item">
+        <p class="spec-label">Materiales / Materials</p>
+        <p class="spec-value">Concreto y madera<br>Concrete and wood</p>
+      </div>
+      <div class="spec-item">
+        <p class="spec-label">Año / Year</p>
+        <p class="spec-value">2025</p>
+      </div>
+      <div class="spec-item">
+        <p class="spec-label">Estado / Status</p>
+        <p class="spec-value">Construida / Built</p>
+      </div>
+      <div class="spec-item">
+        <p class="spec-label">Arquitectura / Architecture</p>
+        <p class="spec-value">Oficio Taller<br>Marcela González Veloz</p>
+      </div>
+      <div class="spec-item">
+        <p class="spec-label">Equipo / Team</p>
+        <p class="spec-value">Andrea San Román, Diego Tamayo,<br>Nuria Ramírez, Gerardo Ramírez,<br>Agustina Maza, Rocio Sepúlveda,<br>Gabriela Salinas</p>
+      </div>
+      <div class="spec-item">
+        <p class="spec-label">Diseño de interiores / Interiors</p>
+        <p class="spec-value">Oficio Taller +<br>Estudio Homística<br>Mónica Lee, Melissa Ramírez</p>
+      </div>
+      <div class="spec-item">
+        <p class="spec-label">Paisajismo / Landscape</p>
+        <p class="spec-value">Brenda Landeros</p>
+      </div>
+      <div class="spec-item">
+        <p class="spec-label">Construcción / Construction</p>
+        <p class="spec-value">Unterbau</p>
+      </div>
+      <div class="spec-item">
+        <p class="spec-label">Fotografía / Photography</p>
+        <p class="spec-value">Sofía Pollano<br>Andrea San Román</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule" style="margin: 0 8vw;"></div>
+
+  <!-- ABOUT -->
+  <section class="section">
+    <div class="bilingual">
+      <div class="about-block">
+        <p class="about-name">Oficio Taller</p>
+        <p>Somos un taller de arquitectura en constante búsqueda y aprendizaje. Creemos en las tradiciones del oficio y en el valor de la mano de obra. Trabajamos con los materiales y el territorio como punto de partida — no como telón de fondo — para generar atmósferas genuinas que reflejen la esencia de lo local y la vida cotidiana de quien habita. Fundado por Marcela González Veloz, el estudio opera desde Baja California Sur con proyectos en México y el extranjero.</p>
+      </div>
+      <div class="about-block">
+        <p class="about-name">Oficio Taller</p>
+        <p>An architecture studio in constant search and learning. We believe in the traditions of craft and in the value of labor. We work with materials and territory as a starting point — not as backdrop — to generate genuine atmospheres that reflect the essence of the local and the daily life of those who inhabit. Founded by Marcela González Veloz, the studio is based in Baja California Sur with projects across Mexico and internationally.</p>
+      </div>
+    </div>
+
+    <div class="rule-label" style="margin-top: 5rem;"><span>Colaboradores / Collaborators</span></div>
+
+    <div class="bilingual">
+      <div class="about-block">
+        <p class="about-name">Estudio Homística — Diseño de interiores</p>
+        <p>Estudio especializado en mobiliario y styling residencial y comercial. Fundado por Mónica Lee y Melissa Ramírez, el estudio trabaja en estrecha colaboración con los arquitectos para que cada espacio sea funcional, coherente y habitable en todas sus capas.</p>
+      </div>
+      <div class="about-block">
+        <p class="about-name">Estudio Homística — Interior design</p>
+        <p>Specializing in residential and commercial furniture and styling. Founded by Mónica Lee and Melissa Ramírez, the studio works in close collaboration with the project architects to ensure each space is functional, coherent, and fully livable at every layer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO CREDIT -->
+  <p class="photo-credit">Fotografía / Photography — Sofía Pollano · Andrea San Román · Agosto 2025</p>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-studio">Oficio Taller</p>
+    <div class="footer-contact">
+      <p>@oficiotaller</p>
+      <p>Cerritos, Baja California Sur</p>
+    </div>
+  </footer>
+
+</body>
+</html>

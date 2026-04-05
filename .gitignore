@@ -11,3 +11,5 @@ campaigns/published/*/assets/
 publisher/bin/
 # tests/results/ tracked — run history
 entrega/gmail-credentials.json
+.playwright-mcp/
+.claude/settings.local.json

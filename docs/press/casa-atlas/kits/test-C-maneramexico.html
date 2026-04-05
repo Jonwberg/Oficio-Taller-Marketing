@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>maneramexico — Casa Atlas — Oficio Taller</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:        #EDE8E2;
+      --paper:     #F9F6F2;
+      --ink:       #1C1714;
+      --mid:       #7A6558;
+      --rule:      #D4C9BC;
+      --terra:     #9B5A3C;
+      --terra-lt:  #C8876A;
+      --sand:      #E8DDD3;
+    }
+    body {
+      background: var(--bg);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      padding: 3rem 1rem;
+    }
+    .wrapper {
+      max-width: 820px;
+      margin: 0 auto;
+      background: var(--paper);
+      border: 1px solid var(--rule);
+    }
+
+    /* ── EMAIL ── */
+    .email-bar {
+      padding: 0.5rem 2.5rem;
+      background: var(--sand);
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+    .email-head {
+      padding: 2rem 2.5rem 1.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .email-meta {
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      color: var(--mid);
+      line-height: 2.1;
+    }
+    .email-meta strong { color: var(--ink); font-weight: 400; }
+    .email-subject {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-top: 1.2rem;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+    .email-body {
+      padding: 2rem 2.5rem 2.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .email-body p {
+      font-size: 0.88rem;
+      line-height: 1.95;
+      color: var(--ink);
+      margin-bottom: 1.2em;
+      max-width: 580px;
+    }
+    .email-body p:last-child { margin-bottom: 0; }
+    .email-sig {
+      margin-top: 1.8rem;
+      font-size: 0.82rem;
+      line-height: 1.9;
+      color: var(--mid);
+    }
+
+    /* ── KIT DIVIDER ── */
+    .kit-divider {
+      background: var(--terra);
+      padding: 0.9rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .kit-divider span {
+      font-size: 0.56rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(249,246,242,0.65);
+    }
+
+    /* ── COVER IMAGE ── */
+    .cover {
+      width: 100%;
+      height: 65vh;
+      overflow: hidden;
+      position: relative;
+    }
+    .cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .cover::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 30%, rgba(28,23,20,0.6) 100%);
+    }
+    .cover-text {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 2.5rem;
+      right: 2.5rem;
+      z-index: 1;
+    }
+    .cover-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.8rem;
+      font-weight: 300;
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+      color: rgba(249,246,242,0.95);
+    }
+    .cover-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: rgba(249,246,242,0.7);
+      margin-top: 0.6rem;
+    }
+    .cover-cap {
+      font-size: 0.57rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(249,246,242,0.45);
+      margin-top: 1.2rem;
+    }
+
+    /* ── KIT CONTENT ── */
+    .kit { padding: 3rem 2.5rem; }
+
+    /* ── SECTION LABEL ── */
+    .sec-label {
+      font-size: 0.56rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .sec-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+
+    /* ── NARRATIVE ── */
+    .narrative-wrap { margin-bottom: 3rem; }
+    .narrative p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.22rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--ink);
+      margin-bottom: 1.5em;
+      max-width: 600px;
+    }
+    .narrative p.lede {
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 1.35;
+      margin-bottom: 2rem;
+      color: var(--terra);
+    }
+    .narrative p:last-child { margin-bottom: 0; }
+
+    /* ── FULL-WIDTH IMAGE ── */
+    .img-full {
+      width: 100%;
+      height: 52vh;
+      overflow: hidden;
+      margin-bottom: 3px;
+    }
+    .img-full img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .img-cap {
+      font-size: 0.56rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid);
+      padding: 0.4rem 0 2rem;
+    }
+
+    /* ── 2-PANEL ── */
+    .img-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      margin-bottom: 3px;
+    }
+    .img-2-cell {
+      overflow: hidden;
+      height: 38vh;
+    }
+    .img-2-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── 3-PANEL ── */
+    .img-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 3px;
+      margin-bottom: 3px;
+    }
+    .img-3-cell {
+      overflow: hidden;
+      height: 30vh;
+    }
+    .img-3-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── PHOTO CREDIT ── */
+    .photo-credit {
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* ── CREDITS BLOCK ── */
+    .credits {
+      margin-bottom: 0;
+    }
+    .credits-title {
+      font-size: 0.56rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 1.2rem;
+    }
+    .credits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1.2rem 2rem;
+    }
+    .credit-item {}
+    .credit-label {
+      font-size: 0.54rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 0.2rem;
+    }
+    .credit-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.88rem;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    /* ── FOOTER ── */
+    .kit-foot {
+      padding: 1.8rem 2.5rem;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .foot-studio {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+    .foot-right {
+      text-align: right;
+    }
+    .foot-handle {
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+    .foot-terra {
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--terra-lt);
+      margin-top: 0.2rem;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- EMAIL BAR -->
+  <div class="email-bar">Mensaje directo — @maneramexico — Categoría C Lifestyle / Cultura</div>
+
+  <!-- EMAIL HEADER -->
+  <div class="email-head">
+    <div class="email-meta">
+      <div><strong>De:</strong> Marcela González Veloz — Oficio Taller</div>
+      <div><strong>Para:</strong> María Alcocer — @maneramexico</div>
+      <div><strong>Asunto:</strong></div>
+    </div>
+    <div class="email-subject">Casa Atlas — una casa que vive, no que se exhibe</div>
+  </div>
+
+  <!-- EMAIL BODY -->
+  <div class="email-body">
+    <p>Hola María,</p>
+    <p>Te escribo para compartirte Casa Atlas — un proyecto terminado en 2025 en Cerritos, BCS, que creo puede resonar con la forma en que Mánera habla de México: desde adentro, desde lo que se hace con las manos y desde las personas que lo habitan.</p>
+    <p>La casa fue diseñada para un chef y su familia, que querían una casa que viviera — que oliera a sal y a leña y a pan recién horneado. Dos cocinas, un jardín comestible, un comedor exterior que mira a la duna. La arquitectura siguió a la vida, no al revés.</p>
+    <p>Lo que más me gustaría que Mánera viera no es solo la arquitectura: es la red que la habita. Productores locales, pescadores, campesinos de la región, artesanas que tejieron las piezas de los muros. Atlas existe en esa comunidad y para ella.</p>
+    <p>Tenemos fotografía de alta resolución de Andrea San Román lista para compartir. ¿Te puedo enviar el paquete completo?</p>
+    <div class="email-sig">
+      Con gusto,<br>
+      Marcela González Veloz<br>
+      Oficio Taller<br>
+      @oficiotaller · Cerritos, BCS
+    </div>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="kit-divider">
+    <span>Material de prensa</span>
+    <span>Casa Atlas — Oficio Taller — 2025</span>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <img src="../photos/ATLAS FINAL-5.jpg" alt="Casa Atlas — comedor exterior, atardecer">
+    <div class="cover-text">
+      <h1 class="cover-title">Casa<br>Atlas</h1>
+      <p class="cover-sub">Una casa que vive</p>
+      <p class="cover-cap">Cerritos, Baja California Sur · Fotografía: Andrea San Román</p>
+    </div>
+  </div>
+
+  <!-- KIT -->
+  <div class="kit">
+
+    <!-- NARRATIVE -->
+    <div class="narrative-wrap">
+      <div class="sec-label"><span>El proyecto</span></div>
+      <div class="narrative">
+        <p class="lede">Marcela González Veloz de Oficio Taller no diseñó Atlas como un objeto. La diseñó como un encuentro.</p>
+        <p>La casa está en Cerritos, BCS, frente al mar — y fue pensada para un chef y su familia que querían una casa que viviera, no que se exhibiera. Una casa que oliera a sal y a leña y a pan recién horneado. Una casa donde la cocina no fuera un cuarto más sino el centro de todo.</p>
+        <p>En Oficio Taller se escucha antes de proponer. El programa de Atlas nació de entender cómo vive realmente esta familia: cultivar, cosechar, cocinar, reunir. Dos cocinas — la alta con vista al Pacífico, la baja conectada al jardín comestible y el comedor exterior orientado a la duna — son el resultado directo de esa escucha. La arquitectura siguió a la vida, no al revés.</p>
+        <p>El espacio trasciende lo doméstico. Atlas es también un punto de convergencia entre productores locales, pescadores, campesinos y chefs de la región: un espacio abierto al intercambio de saberes, productos y mesa. Tradición y hospitalidad se entrelazan.</p>
+        <p>Los detalles son mexicanos de origen: jarrones de barro modelados a mano, maderas locales con vetas que celebran la imperfección, luminarias de piedra de diseñadores mexicanos, textiles tejidos por mujeres artesanas de la región. Cada pieza tiene una historia y un lugar de donde viene.</p>
+        <p>Diseñar en BCS para Marcela no es diseñar para el paisaje — es diseñar desde él. La duna no es decorado. Es el suelo de la casa.</p>
+      </div>
+    </div>
+
+    <!-- IMAGES -->
+    <div class="sec-label"><span>Fotografía</span></div>
+
+    <!-- Full-width: exterior -->
+    <div class="img-full">
+      <img src="../photos/ATLAS FINAL-1.jpg" alt="Vista exterior — duna y volúmenes">
+    </div>
+    <p class="img-cap">Vista exterior — la duna como primer gesto arquitectónico</p>
+
+    <!-- 2-panel: kitchen + bedroom -->
+    <div class="img-2">
+      <div class="img-2-cell">
+        <img src="../photos/ATLAS FINAL-29.jpg" alt="Cocina alta — vista al Pacífico">
+      </div>
+      <div class="img-2-cell">
+        <img src="../photos/ATLAS FINAL-8.jpg" alt="Habitación — ventana al océano">
+      </div>
+    </div>
+    <p class="img-cap">Cocina alta — vista al Pacífico &nbsp;·&nbsp; Habitación con ventana al océano</p>
+
+    <!-- 3-panel: craft + terrace -->
+    <div class="img-3">
+      <div class="img-3-cell">
+        <img src="../photos/ATLAS FINAL-13.jpg" alt="Piezas artesanales mexicanas">
+      </div>
+      <div class="img-3-cell">
+        <img src="../photos/ATLAS FINAL-11.jpg" alt="Lámpara tejida, luz cálida">
+      </div>
+      <div class="img-3-cell">
+        <img src="../photos/ATLAS FINAL-38.jpg" alt="Terraza y alberca">
+      </div>
+    </div>
+    <p class="img-cap">Artesanía mexicana · Textiles de la región · Terraza, alberca y sombra</p>
+
+    <p class="photo-credit">Fotografía: Andrea San Román · Set completo en alta resolución disponible</p>
+
+    <!-- CREDITS -->
+    <div class="credits">
+      <p class="credits-title">Ficha del proyecto</p>
+      <div class="credits-grid">
+        <div class="credit-item">
+          <p class="credit-label">Ubicación</p>
+          <p class="credit-value">Cerritos, Baja California Sur, México</p>
+        </div>
+        <div class="credit-item">
+          <p class="credit-label">Año</p>
+          <p class="credit-value">2025</p>
+        </div>
+        <div class="credit-item">
+          <p class="credit-label">Arquitectura</p>
+          <p class="credit-value">Oficio Taller<br>Marcela González Veloz</p>
+        </div>
+        <div class="credit-item">
+          <p class="credit-label">Interiores</p>
+          <p class="credit-value">Oficio Taller +<br>Estudio Homística</p>
+        </div>
+        <div class="credit-item">
+          <p class="credit-label">Paisajismo</p>
+          <p class="credit-value">Brenda Landeros</p>
+        </div>
+        <div class="credit-item">
+          <p class="credit-label">Fotografía</p>
+          <p class="credit-value">Andrea San Román<br>Sofía Pollano</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="kit-foot">
+    <p class="foot-studio">Oficio Taller</p>
+    <div class="foot-right">
+      <p class="foot-handle">@oficiotaller · Cerritos, Baja California Sur · 2025</p>
+      <p class="foot-terra">arquitectura · interiores · territorio</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -6,16 +6,29 @@
 
 ## Phase Structure
 
-### Phase 1 — Conceptual Design (Diseño Conceptual)
+### Phase 1 — Estudios Previos y Conceptual (Preliminary Studies & Conceptual Design)
 **Deliverables:**
+
+*Estudios Previos:*
+- Site photographic survey and analysis
+- Physical feasibility study (soil, topography, existing structures)
+- Solar study and dominant wind analysis
+- Program and needs study (client interview document)
+- Review of topographic survey and arborist report provided by client
+- Municipal restrictions and setback review
+- Analysis of similar reference projects
+- Entregable: Documento con la información recopilada
+
+*Diseño Conceptual / Plan Maestro:*
 - Parti diagram and design narrative (1–2 pages)
-- Preliminary floor plan sketches (1:200 scale minimum)
-- Site placement / orientation concept
+- Site placement / orientation concept with master plan diagram
+- General sections and reference imagery
+- Zoning and phase development diagram
+- Preliminary material and landscape palette board
 - 3D conceptual massing model
-- Material and color direction board (preliminary)
 - Space arrangement diagram showing all programmed spaces
 
-**Collaborators required:** None at this phase. Structural and systems engineers join Phase 2.
+**Collaborators required:** None at this phase. Structural and systems engineers join Phase 3.
 
 **Revision assumptions:** 2 rounds of client revision included. Each additional round billed at MXN 8,000/day.
 
@@ -23,13 +36,26 @@
 
 ---
 
-### Phase 2 — Architectural Design (Proyecto Arquitectónico)
+### Phase 2 — Anteproyecto / Concepto (Schematic Design)
 **Deliverables:**
-- Floor plans all levels (1:100 scale)
-- Elevations all four facades (1:100)
-- Building sections minimum 2 (1:100)
-- Roof plan
-- Site plan with property boundaries, setbacks, access, parking
+
+*Stage A — Schematic:*
+- Formal intentions log: materiality, color references, landscape references
+- Color and material palette boards
+- Schematic floor plans (all levels)
+- Schematic sections (where needed)
+- Furniture layout and area distribution per space
+- Study model and/or computer-generated 3D model
+
+*Stage B — Architectural Development:*
+- Architectural floor plans all levels (1:100 scale)
+- Architectural sections minimum 2 (1:100)
+- Architectural elevations all facades (1:100)
+- Computer perspectives and renderings
+- Lighting design and luminaire selection
+- Built-furniture visualizations (kitchen, closets)
+- Bathroom accessories selection
+- General decoration direction
 - Interior design criteria document
 - Window and door schedule
 - Preliminary structural coordination sketch (Oficio Taller coordinates with structural engineer)
@@ -39,13 +65,13 @@
 - Electrical engineer (Oficio Taller coordinates)
 - Plumbing / hydraulic engineer (Oficio Taller coordinates)
 
-**Revision assumptions:** 2 rounds of client revision included. Each additional round billed at MXN 10,000/day.
+**Revision assumptions:** 2 rounds of client revision included. Each additional round billed at MXN 10,000/day. Solo se retrabajar una vez la propuesta conceptual — second request for full redesign is billed separately.
 
-**Milestone trigger:** Phase 2 complete when client provides written approval of architectural design.
+**Milestone trigger:** Phase 2 complete when client provides written approval of anteproyecto.
 
 ---
 
-### Phase 3 — Engineering Coordination (Coordinación de Ingeniería)
+### Phase 3 — Coordinación de Ingeniería (Engineering Coordination)
 **Deliverables:**
 - Structural engineering drawings integrated with architectural set
 - Electrical single-line diagram and panel schedules
@@ -64,13 +90,21 @@
 
 ---
 
-### Phase 4 — Executive Plans (Planos Ejecutivos)
+### Phase 4 — Ejecutivo / Planos Constructivos (Executive Plans)
 **Deliverables:**
 - Fully coordinated construction drawing set (architectural + structural + MEP)
-- Detail sheets: wall sections, stairs, roof details, openings
-- Finish schedule (all surfaces, all rooms)
-- Door and window schedule with specifications
-- Built-in furniture drawings (kitchen, closets, built-in shelving)
+- Facade sections and wall layout plans (desplante de muros / trazo)
+- Finish plans (planos de acabados) — all surfaces, all rooms
+- Electrical layout (sembrado eléctrico: contacts, switches, lighting outlets)
+- Hardware / metalwork drawings (herrería, cancelería)
+- Stair plans and detail sheets
+- Built-in carpentry and millwork bid drawings (fijas y muebles a fabricar)
+- Final material and finish selections for built furniture
+- Interior upholstery and finish samples
+- Fabrication coordination and supplier selection
+- Art and décor direction
+- Furniture and luminaire production drawings
+- Fixed carpentry production drawings
 - Technical specifications document
 
 **Collaborators required:** All engineers from Phase 3 must deliver coordinated final drawings.
@@ -101,7 +135,7 @@
 
 ---
 
-### Phase 7 — Construction Administration (Supervisión Arquitectónica)
+### Phase 7 — Asesoría en la Construcción (Construction Supervision)
 **Status:** Optional — included only if client adds supervision scope.
 **Deliverables (if included):**
 - Weekly site visit reports
@@ -115,17 +149,17 @@
 
 | Milestone | Name | Percentage | Amount (TBD) | Trigger Event |
 |---|---|---|---|---|
-| M1 | Contract Signing | 30% | — | Signed SOW + first payment received |
-| M2 | Concept Design Approved | 20% | — | Client written approval of Phase 1 |
-| M3 | Construction Documents Delivered | 25% | — | Executive plans package delivered to client |
-| M4 | Building Permit Obtained | 15% | — | Permit document delivered to client |
-| M5 | Construction Administration Final | 10% | — | Final site visit report delivered (if supervision in scope) |
+| M1 | Anticipo — Contract Signing | 30% | — | Signed SOW + first payment received |
+| M2 | Conceptual Entregado | 20% | — | Client written approval of Phase 1 (conceptual direction) |
+| M3 | Anteproyecto Entregado | 20% | — | Client written approval of Phase 2 (anteproyecto) |
+| M4 | Ejecutivo Entregado | 30% | — | Executive plans package (Phase 4) delivered to client |
 
-Note: If supervision is not in scope, M5 triggers at construction start instead.
+Note: Phases 5 (Contractor Bidding), 6 (Permitting), and 7 (Construction Supervision) are billed separately. Bidding and supervision fees are added to scope at contract signing if applicable. Permitting filing fees (government charges) are always excluded from architecture fees. Supervision is billed per visit (Supervisión de Obra Arquitectónica fee set at contract signing).
 
-Amounts are calculated by Bruno using `cost-basis.json` total_estimate × percentages above.
+Amounts are calculated by Bruno using `cost-basis.json` architecture_fee × milestone percentages above.
 Payment currency: MXN unless otherwise agreed in writing.
 Payment method: Bank transfer to Oficio Taller CLABE account (provided in invoice).
+All amounts are + IVA.
 
 ---
 
@@ -211,7 +245,7 @@ The following are explicitly **not included** in this scope:
 
 When producing `scope-of-work.json` from this template:
 1. Read `area-program.json` to determine actual program size and spaces
-2. Read `cost-basis.json` to populate payment milestone amounts (M1–M5 × percentages)
+2. Read `cost-basis.json` to populate payment milestone amounts (M1–M4 × percentages: 30/20/20/30)
 3. Set `project_type_clauses` from the JSON block above verbatim
 4. Adjust phase deliverables to reflect actual project scope (e.g., if irrigation is not in scope, mark as excluded)
 5. Set `revision_assumptions` per phase as specified above

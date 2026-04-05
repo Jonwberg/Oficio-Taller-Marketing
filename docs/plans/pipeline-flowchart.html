@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entrega Pipeline — Document Flow</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0f0f0f;
+    color: #e5e7eb;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    padding: 32px 24px;
+  }
+  h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #f9fafb;
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+  .subtitle {
+    font-size: 0.82rem;
+    color: #6b7280;
+    margin-bottom: 28px;
+  }
+
+  /* ── Legend ── */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #1a1a1a;
+    border: 1px solid #2d2d2d;
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 0.78rem;
+    color: #9ca3af;
+  }
+  .legend-dot {
+    width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+  }
+
+  /* ── Document Key ── */
+  .doc-key {
+    background: #111827;
+    border: 1px solid #1f2937;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 28px;
+  }
+  .doc-key h2 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 14px;
+  }
+  .doc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 6px;
+  }
+  .doc-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.78rem;
+    padding: 4px 0;
+    border-bottom: 1px solid #1f2937;
+  }
+  .doc-row:last-child { border-bottom: none; }
+  .doc-name {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    color: #60a5fa;
+    white-space: nowrap;
+    min-width: 220px;
+  }
+  .doc-desc { color: #6b7280; }
+
+  /* ── Diagram container ── */
+  .diagram-wrap {
+    background: #111;
+    border: 1px solid #1f2937;
+    border-radius: 12px;
+    padding: 24px;
+    overflow-x: auto;
+  }
+  .mermaid {
+    display: flex;
+    justify-content: center;
+    min-width: 900px;
+  }
+  .mermaid svg {
+    background: transparent !important;
+  }
+</style>
+</head>
+<body>
+
+<h1>Entrega Pipeline — Document Flow</h1>
+<p class="subtitle">Each agent shows 📥 input documents and 📤 output documents. Gates (🔵) are Marcela decision points. Legal now appears in both Seg D (proposal review) and Seg F (contract generation).</p>
+
+<!-- ── Legend ── -->
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#f97316"></div> Lupe (Lead)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#3b82f6"></div> Elena (Discovery)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#22c55e"></div> Ana (Program)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#eab308"></div> Sol (Site)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#a855f7"></div> Tomás / Renata (Scope)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#f97316"></div> Bruno (Budget)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#ec4899"></div> Rosa (Client Comms)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#6b7280"></div> Legal</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#06b6d4"></div> Pablo (Schedule)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#d97706"></div> Design Agents</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#0284c7"></div> Ofelia / Paco (Bid & Permit)</div>
+  <div class="legend-item" style="border-color:#3b82f6;color:#60a5fa;font-weight:600;">🔵 DG-01 → DG-11 Marcela Gates</div>
+</div>
+
+<!-- ── Document reference key ── -->
+<div class="doc-key">
+  <h2>📄 Document Reference — all files in projects/[project_id]/</h2>
+  <div class="doc-grid">
+    <div class="doc-row"><span class="doc-name">state.json</span><span class="doc-desc">Single source of truth — project state &amp; metadata</span></div>
+    <div class="doc-row"><span class="doc-name">lead-record.json</span><span class="doc-desc">Lupe A: raw classified lead</span></div>
+    <div class="doc-row"><span class="doc-name">lead-summary.json</span><span class="doc-desc">Lupe B: enriched lead context for downstream agents</span></div>
+    <div class="doc-row"><span class="doc-name">discovery-questionnaire.json</span><span class="doc-desc">Elena: 9-question client questionnaire (ES or EN)</span></div>
+    <div class="doc-row"><span class="doc-name">client-fit-assessment.json</span><span class="doc-desc">Elena: 4-dimension fit score → proceed/decline/more-info</span></div>
+    <div class="doc-row"><span class="doc-name">area-program.json</span><span class="doc-desc">Ana: room-by-room matrix, m² + sqft, section totals</span></div>
+    <div class="doc-row"><span class="doc-name">cost-basis.json</span><span class="doc-desc">Ana: preliminary MXN cost estimate (MXN/sqm benchmark)</span></div>
+    <div class="doc-row"><span class="doc-name">site-readiness-report.json</span><span class="doc-desc">Sol: required docs checklist, receipt status, blockers</span></div>
+    <div class="doc-row"><span class="doc-name">scope-of-work.json</span><span class="doc-desc">Tomás: phases, deliverables, payment schedule M1–M4</span></div>
+    <div class="doc-row"><span class="doc-name">budget.json</span><span class="doc-desc">Bruno D: itemized budget, milestone amounts, CLABE</span></div>
+    <div class="doc-row"><span class="doc-name">proposal.json</span><span class="doc-desc">Renata: bilingual ES+EN client proposal</span></div>
+    <div class="doc-row"><span class="doc-name">legal-review.json</span><span class="doc-desc">Legal: IP/clause compliance review of proposal</span></div>
+    <div class="doc-row"><span class="doc-name">client-communication.json</span><span class="doc-desc">Rosa: drafted outbound client message</span></div>
+    <div class="doc-row"><span class="doc-name">contract-mx.md / contract-us-ca.md</span><span class="doc-desc">Templates in docs/templates/contracts/ — inputs to Legal</span></div>
+    <div class="doc-row"><span class="doc-name">contract-signed.pdf</span><span class="doc-desc">Legal: executed contract (Exhibit A = scope-of-work)</span></div>
+    <div class="doc-row"><span class="doc-name">milestone-signoff-M[N].pdf</span><span class="doc-desc">Legal: client sign-off + change freeze at M1–M4</span></div>
+    <div class="doc-row"><span class="doc-name">project-schedule.json</span><span class="doc-desc">Pablo: phase dates, milestones, Asana subtasks</span></div>
+    <div class="doc-row"><span class="doc-name">concept-review.json</span><span class="doc-desc">Andrés: conceptual design checklist + presentation date</span></div>
+    <div class="doc-row"><span class="doc-name">architectural-design-package.json</span><span class="doc-desc">Felipe: full architectural drawing set reference</span></div>
+    <div class="doc-row"><span class="doc-name">engineering-package.json</span><span class="doc-desc">Emilio: structural + MEP integrated drawings</span></div>
+    <div class="doc-row"><span class="doc-name">budget-alignment.json</span><span class="doc-desc">Bruno G: variance analysis vs. original cost basis</span></div>
+    <div class="doc-row"><span class="doc-name">executive-plans-package.json</span><span class="doc-desc">Hugo: construction document set, specs, finishes</span></div>
+    <div class="doc-row"><span class="doc-name">bid-comparison-matrix.json</span><span class="doc-desc">Ofelia: contractor bid comparison + recommendation</span></div>
+    <div class="doc-row"><span class="doc-name">permits-package.json</span><span class="doc-desc">Paco: permit submissions, submitted_at + approved_at</span></div>
+  </div>
+</div>
+
+<!-- ── Diagram ── -->
+<div class="diagram-wrap">
+<div class="mermaid">
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor':'#1e293b','primaryTextColor':'#e2e8f0','primaryBorderColor':'#334155','lineColor':'#64748b','secondaryColor':'#0f172a','tertiaryColor':'#1e293b','background':'#0f0f0f','nodeBorder':'#475569','clusterBkg':'#111827','titleColor':'#94a3b8','edgeLabelBackground':'#1e293b'}}}%%
+flowchart TD
+    IN([📩 Inbound Message]) --> LUPE_A
+
+    subgraph SEG_A ["SEGMENT A — Lead Intake"]
+        LUPE_A["🟠 Lupe A<br/>Classify + create project<br/>📥 inbound msg · state_template.json<br/>📤 state.json · lead-record.json"]
+        LUPE_A -->|spam| DISCARD([🗑 Discarded · TC-007 written])
+        LUPE_A -->|not spam| DG01_SEND[Send DG-01 email to Marcela]
+    end
+
+    DG01_SEND --> DG01
+
+    DG01{{"🔵 DG-01<br/>Lead Review"}}
+    DG01 -->|Reject| ARCHIVE([📁 Lead Archived])
+    DG01 -->|Approve| LUPE_B
+    DG01 -->|Pass to Agent| ELENA
+
+    subgraph SEG_B ["SEGMENT B — Discovery"]
+        LUPE_B["🟠 Lupe B<br/>📥 lead-record.json<br/>📤 lead-summary.json"]
+        LUPE_B --> ELENA
+        ELENA["🔵 Elena<br/>Questionnaire → Meeting<br/>📥 lead-summary.json · state.json<br/>📤 discovery-questionnaire.json<br/>📤 client-fit-assessment.json"]
+    end
+
+    ELENA --> DG02
+
+    DG02{{"🔵 DG-02<br/>Fit Decision"}}
+    DG02 -->|Reject| ROSA_DECLINE["🌸 Rosa<br/>Polite decline email"]
+    DG02 -->|Pass to Agent| ELENA
+    DG02 -->|Approve| PARALLEL_START
+
+    PARALLEL_START(( ))
+
+    subgraph SEG_C ["SEGMENT C — Program & Site  ⟨parallel⟩"]
+        direction LR
+        ANA["🟢 Ana<br/>📥 client-fit-assessment.json<br/>📥 area-estimation-defaults.json<br/>📤 area-program.json<br/>📤 cost-basis.json"]
+        SOL["🟡 Sol<br/>📥 state.json · lead-summary.json<br/>📤 site-readiness-report.json"]
+    end
+
+    PARALLEL_START --> ANA
+    PARALLEL_START --> SOL
+    ANA -->|both flags true<br/>Ana triggers| DG03
+    SOL -.->|sets site_data_complete| ANA
+
+    DG03{{"🔵 DG-03<br/>Cost Basis"}}
+    DG03 -->|Reject| ANA
+    DG03 -->|Approve / Pass| TOMAS
+
+    subgraph SEG_D ["SEGMENT D — Scope, Budget & Proposal"]
+        TOMAS["🟠 Tomás<br/>📥 area-program.json · cost-basis.json<br/>📥 sow-[project_type].md template<br/>📤 scope-of-work.json"]
+        TOMAS --> DG04
+        DG04{{"🔵 DG-04<br/>SOW Architect Gate"}}
+        DG04 -->|Reject| TOMAS
+        DG04 -->|Approve / Pass| BRUNO_D
+        BRUNO_D["🟠 Bruno D<br/>📥 scope-of-work.json · cost-basis.json<br/>📤 budget.json"]
+        BRUNO_D --> RENATA
+        RENATA["🟣 Renata<br/>📥 scope-of-work.json · budget.json<br/>📥 area-program.json<br/>📤 proposal.json ⚠ bilingual ES+EN"]
+        RENATA --> LEGAL_D
+        LEGAL_D["⚖ Legal — Proposal Review<br/>📥 proposal.json · scope-of-work.json<br/>📤 legal-review.json"]
+        LEGAL_D --> ROSA_DRAFT
+        ROSA_DRAFT["🌸 Rosa<br/>📥 proposal.json · legal-review.json<br/>📤 client-communication.json<br/>status: draft"]
+    end
+
+    ROSA_DRAFT --> DG05
+
+    DG05{{"🔵 DG-05<br/>Proposal Architect Gate"}}
+    DG05 -->|Reject — copy| RENATA
+    DG05 -->|Reject — scope| TOMAS
+    DG05 -->|Reject — budget| BRUNO_D
+    DG05 -->|Approve / Pass| ROSA_SEND
+
+    subgraph SEG_E ["SEGMENT E — Client Proposal"]
+        ROSA_SEND["🌸 Rosa<br/>Send proposal to client<br/>📥 client-communication.json<br/>📤 email → client"]
+    end
+
+    ROSA_SEND --> DG06
+
+    DG06{{"🔵 DG-06<br/>Client Decision"}}
+    DG06 -->|Pass to Agent| ROSA_SEND
+    DG06 -->|Reject < 3 revisions| ROSA_REV["🌸 Rosa<br/>Revision round<br/>📤 client-communication.json updated"]
+    ROSA_REV --> DG06
+    DG06 -->|Reject ≥ 3| ESCALATE(["⚠ Escalate<br/>to Marcela"])
+    DG06 -->|Approve| LEGAL_F
+
+    subgraph SEG_F ["SEGMENT F — Contract & Activation"]
+        LEGAL_F["⚖ Legal — Contract<br/>📥 scope-of-work.json · budget.json<br/>📥 contract-mx.md OR contract-us-ca.md<br/>📤 contract-signed.pdf<br/>📤 milestone-signoff-M1.pdf"]
+        LEGAL_F --> CONTRACT["✅ Contract Signed<br/>Deposit Confirmed"]
+        CONTRACT --> PABLO["📅 Pablo<br/>📥 scope-of-work.json · area-program.json<br/>📤 project-schedule.json"]
+    end
+
+    PABLO --> ANDRES
+
+    subgraph SEG_G ["SEGMENT G — Concept Design"]
+        ANDRES["✏ Andrés<br/>📥 area-program.json · scope-of-work.json<br/>📥 project-schedule.json<br/>📤 concept-review.json + presentation_date"]
+    end
+
+    ANDRES --> DG07
+
+    DG07{{"🔵 DG-07<br/>Concept Review"}}
+    DG07 -->|Reject<br/>decision_type: reject| ANDRES
+    DG07 -->|Pass to Agent<br/>state: concept_in_progress| ANDRES
+    DG07 -->|Approve| FELIPE
+
+    subgraph SEG_H ["SEGMENT H — Architectural Design"]
+        FELIPE["📐 Felipe<br/>📥 concept-review.json · area-program.json<br/>📤 architectural-design-package.json"]
+    end
+
+    FELIPE --> DG08
+
+    DG08{{"🔵 DG-08<br/>Architectural Design Gate"}}
+    DG08 -->|Reject| FELIPE
+    DG08 -->|Approve / Pass| EMILIO
+
+    subgraph SEG_I ["SEGMENT I — Engineering & Budget Alignment"]
+        EMILIO["⚙ Emilio<br/>📥 architectural-design-package.json<br/>📤 engineering-package.json"]
+        EMILIO --> BRUNO_G
+        BRUNO_G["🟠 Bruno G<br/>📥 engineering-package.json · cost-basis.json<br/>📤 budget-alignment.json<br/>variance % + recommendation"]
+    end
+
+    BRUNO_G --> DG09
+
+    DG09{{"🔵 DG-09<br/>Budget Alignment Gate"}}
+    DG09 -->|Reject — scope| FELIPE
+    DG09 -->|Reject — budget| EMILIO
+    DG09 -->|Approve / Pass| HUGO
+
+    subgraph SEG_J ["SEGMENT J — Executive Plans"]
+        HUGO["📋 Hugo<br/>📥 budget-alignment.json · scope-of-work.json<br/>📤 executive-plans-package.json<br/>📤 milestone-signoff-M4.pdf"]
+    end
+
+    HUGO --> DG10
+
+    DG10{{"🔵 DG-10<br/>Executive Plans Gate"}}
+    DG10 -->|Reject| HUGO
+    DG10 -->|Approve / Pass| OFELIA
+
+    subgraph SEG_K ["SEGMENT K — Bidding & Permitting"]
+        OFELIA["📊 Ofelia<br/>📥 executive-plans-package.json<br/>📤 bid-comparison-matrix.json"]
+        OFELIA --> DG11
+        DG11{{"🔵 DG-11<br/>Bid Comparison Gate"}}
+        DG11 -->|Reject / Pass| OFELIA
+        DG11 -->|Approve| PACO
+        PACO["🏛 Paco<br/>📥 bid-comparison-matrix.json<br/>📤 permits-package.json<br/>submitted_at + approved_at + jurisdiction"]
+    end
+
+    PACO --> CONSTRUCTION([🏗 Construction Begins])
+
+    style SEG_A fill:#1a0f00,stroke:#f97316
+    style SEG_B fill:#0c1929,stroke:#3b82f6
+    style SEG_C fill:#0a1f0a,stroke:#22c55e
+    style SEG_D fill:#1a0a1f,stroke:#a855f7
+    style SEG_E fill:#1f0a1a,stroke:#ec4899
+    style SEG_F fill:#0a1f12,stroke:#16a34a
+    style SEG_G fill:#1f1a00,stroke:#f59e0b
+    style SEG_H fill:#1a1200,stroke:#d97706
+    style SEG_I fill:#1a0f00,stroke:#ea580c
+    style SEG_J fill:#0c0c29,stroke:#6366f1
+    style SEG_K fill:#001f29,stroke:#0284c7
+
+    style DISCARD fill:#2d0a0a,stroke:#ef4444
+    style ARCHIVE fill:#2d0a0a,stroke:#ef4444
+    style ROSA_DECLINE fill:#2d001a,stroke:#ec4899
+    style ESCALATE fill:#2d2200,stroke:#f59e0b
+    style CONSTRUCTION fill:#0a2d12,stroke:#16a34a
+</div>
+</div>
+
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'dark',
+    flowchart: { htmlLabels: true, curve: 'basis', nodeSpacing: 50, rankSpacing: 60 },
+    themeVariables: {
+      primaryColor: '#1e293b',
+      primaryTextColor: '#e2e8f0',
+      primaryBorderColor: '#334155',
+      lineColor: '#64748b',
+      secondaryColor: '#0f172a',
+      background: '#0f0f0f',
+      nodeBorder: '#475569',
+      clusterBkg: '#111827',
+      titleColor: '#94a3b8',
+      edgeLabelBackground: '#1e293b',
+      fontSize: '13px'
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,745 @@
+{
+  "_schema": "1.0",
+  "_last_updated": "2026-03-23",
+  "_data_sources": [
+    "Google Drive folder metadata (02. PROYECTOS)",
+    "ALCANCE_BASE.docx (Dec 2020) — phase duration targets",
+    "Drive search results for ALCANCE documents",
+    "Entrega pipeline decision-event.json (future projects)"
+  ],
+  "_confidence_notes": {
+    "migration_feb_2018": "Feb 21, 2018 Drive dates across pre-2019 projects = mass migration event. Not actual work dates. Pre-2019 project durations estimated.",
+    "migration_oct_2021": "Oct 4, 2021 dates across Casa Pomona subfolders = second migration event. Reliable data resumes Jan 27, 2022.",
+    "estimated_dates": "Scope dates estimated at (Drive last-modified date minus estimated project duration). Confidence: low."
+  },
+  "benchmarks": {
+    "source": "ALCANCE_BASE.docx (Dec 16, 2020) + Casa Pomona confirmed data",
+    "payment_schedule": {
+      "advance_pct": 30,
+      "at_conceptual_pct": 20,
+      "at_anteproyecto_pct": 20,
+      "at_ejecutivo_pct": 30
+    },
+    "phases": {
+      "estudios_previos": {
+        "min_wks": 2,
+        "avg_wks": 3,
+        "max_wks": 6,
+        "note": "Site analysis, topographic review, solar study, program interview, sensory documentation"
+      },
+      "conceptual_anteproyecto": {
+        "min_wks": 8,
+        "avg_wks": 10,
+        "max_wks": 14,
+        "note": "ALCANCE_BASE: 8–12 semanas hábiles. Max 2 revision rounds included."
+      },
+      "ejecutivo": {
+        "min_wks": 10,
+        "avg_wks": 12,
+        "max_wks": 18,
+        "note": "ALCANCE_BASE: 12 semanas hábiles from approved anteproyecto + structural received."
+      },
+      "total_design": {
+        "min_wks": 20,
+        "avg_wks": 28,
+        "max_wks": 40,
+        "note": "Estudios + Conceptual + Ejecutivo combined. Calendar weeks."
+      },
+      "delivery_to_construction_end": {
+        "min_mos": 12,
+        "avg_mos": 18,
+        "max_mos": 30,
+        "note": "Casa Pomona: Jan 2022 → Mar 2023 = 14 months. Based on 1 confirmed data point."
+      },
+      "delivery_to_press": {
+        "min_mos": 24,
+        "avg_mos": 36,
+        "max_mos": 60,
+        "note": "Casa Pomona: Jan 2022 → Dec 2025 = 47 months. Based on 1 confirmed data point."
+      }
+    }
+  },
+  "projects": [
+    {
+      "id": "35-santiago",
+      "name": "35_SANTIAGO",
+      "number": 35,
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2016-05-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      },
+      "notes": "Earliest project in Drive. Only scope folder visible."
+    },
+    {
+      "id": "07-colibri",
+      "name": "07_COLIBRI",
+      "number": 7,
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2016-08-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      },
+      "notes": "oficiotaller account. Two ALCANCE versions."
+    },
+    {
+      "id": "16-haciendas",
+      "name": "16_HACIENDAS",
+      "number": 16,
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2016-08-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      },
+      "notes": "oficiotaller account."
+    },
+    {
+      "id": "00-15demayo",
+      "name": "00_15 DE MAYO",
+      "number": 0,
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2016-09-01",
+          "confidence": "medium",
+          "note": ""
+        },
+        "delivery": {
+          "date": "2017-09-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      },
+      "notes": "Drive date Feb 21, 2018 = mass migration. Dates estimated."
+    },
+    {
+      "id": "01-alhambra",
+      "name": "01_ALHAMBRA",
+      "number": 1,
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2016-10-01",
+          "confidence": "medium",
+          "note": ""
+        },
+        "delivery": {
+          "date": "2017-10-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "03-durango",
+      "name": "03_CASA DURANGO",
+      "number": 3,
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2016-11-01",
+          "confidence": "medium",
+          "note": ""
+        },
+        "delivery": {
+          "date": "2017-11-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "04-greco",
+      "name": "04_CASA GRECO",
+      "number": 4,
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2017-01-01",
+          "confidence": "medium",
+          "note": ""
+        },
+        "delivery": {
+          "date": "2018-01-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "08-contry",
+      "name": "08_CONTRY SUR",
+      "number": 8,
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2017-01-01",
+          "confidence": "medium",
+          "note": ""
+        },
+        "delivery": {
+          "date": "2017-10-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "17-liveout",
+      "name": "17_LIVEOUT",
+      "number": 17,
+      "type": "commercial",
+      "status": "built",
+      "fy27": false,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2017-01-01",
+          "confidence": "medium",
+          "note": ""
+        },
+        "delivery": {
+          "date": "2017-12-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "19-labola",
+      "name": "19_LA BOLA",
+      "number": 19,
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2017-03-01",
+          "confidence": "medium",
+          "note": ""
+        },
+        "delivery": {
+          "date": "2018-01-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "21-lomas",
+      "name": "21_LOMAS",
+      "number": 21,
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2017-06-01",
+          "confidence": "medium",
+          "note": ""
+        },
+        "delivery": {
+          "date": "2018-04-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "26-olmo",
+      "name": "26_OLMO 14B",
+      "number": 26,
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2017-08-01",
+          "confidence": "medium",
+          "note": ""
+        },
+        "delivery": {
+          "date": "2018-06-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "28-29-palnorte",
+      "name": "28-29_PAL'NORTE",
+      "number": 28,
+      "type": "commercial",
+      "status": "built",
+      "fy27": false,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2017-10-01",
+          "confidence": "medium",
+          "note": ""
+        },
+        "delivery": {
+          "date": "2018-09-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "37-tecate",
+      "name": "37_TECATE / 39_VIP",
+      "number": 37,
+      "type": "commercial",
+      "status": "built",
+      "fy27": false,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2018-03-01",
+          "confidence": "medium",
+          "note": ""
+        },
+        "delivery": {
+          "date": "2019-04-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "43-maravilla",
+      "name": "43_VILLA MARAVILLA",
+      "number": 43,
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2018-05-01",
+          "confidence": "medium",
+          "note": ""
+        },
+        "delivery": {
+          "date": "2019-02-21",
+          "confidence": "medium",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "44-hindie",
+      "name": "44_HINDIE",
+      "number": 44,
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2019-06-01",
+          "confidence": "medium",
+          "note": ""
+        },
+        "delivery": {
+          "date": "2020-04-30",
+          "confidence": "medium",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "los-cielos",
+      "name": "LOS CIELOS",
+      "number": "None",
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2020-12-01",
+          "confidence": "medium",
+          "note": ""
+        },
+        "delivery": {
+          "date": "2021-07-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "las-estancias",
+      "name": "LAS ESTANCIAS",
+      "number": "None",
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2021-04-19",
+          "confidence": "medium",
+          "note": ""
+        },
+        "delivery": {
+          "date": "2021-11-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "55-pomona",
+      "name": "55_CASA POMONA",
+      "number": 55,
+      "type": "residential",
+      "status": "built",
+      "fy27": true,
+      "drive_id": "1BS7rT5J5EydTYvMqkTpthhYfSBtjiDNC",
+      "phases": {
+        "scope_signed": {
+          "date": "2021-10-04",
+          "confidence": "medium",
+          "note": ""
+        },
+        "delivery": {
+          "date": "2022-01-27",
+          "confidence": "medium",
+          "note": ""
+        },
+        "construction_end": {
+          "date": "2023-03-27",
+          "confidence": "medium",
+          "note": ""
+        },
+        "press": {
+          "date": "2025-12-05",
+          "confidence": "medium",
+          "note": ""
+        }
+      },
+      "notes": "Most complete historical data. Scope start date unreliable (migration artifact). All post-delivery dates confirmed. ~4 year total lifecycle."
+    },
+    {
+      "id": "57-luz",
+      "name": "57_CASA LUZ",
+      "number": 57,
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2021-08-01",
+          "confidence": "medium",
+          "note": ""
+        },
+        "delivery": {
+          "date": "2022-02-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "59-atlas",
+      "name": "59_CASA ATLAS",
+      "number": 59,
+      "type": "residential",
+      "status": "built",
+      "fy27": true,
+      "drive_id": "1YCxTh_yoW7AxRvth3JOwT33s7kyEAcjV",
+      "phases": {
+        "scope_signed": {
+          "date": "2021-05-01",
+          "confidence": "medium",
+          "note": ""
+        },
+        "delivery": {
+          "date": "2022-02-17",
+          "confidence": "medium",
+          "note": ""
+        },
+        "press": {
+          "date": "2022-07-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      },
+      "notes": "Habitar series — YouTube film exists. FY27 backlog anchor."
+    },
+    {
+      "id": "44-cascara",
+      "name": "44_LA CASCARA",
+      "number": "44C",
+      "type": "residential",
+      "status": "in_process",
+      "fy27": false,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2019-03-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      },
+      "last_known_activity": "2019-09-01",
+      "notes": "Drive last mod Mar 2019. Habitar series candidate (La Cáscara)."
+    },
+    {
+      "id": "54-cueva",
+      "name": "54_LA CUEVA",
+      "number": 54,
+      "type": "residential",
+      "status": "in_process",
+      "fy27": true,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2019-06-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      },
+      "last_known_activity": "2022-12-01",
+      "notes": "Drive last mod Dec 2022. Habitar series — 19K views baseline already. FY27 priority."
+    },
+    {
+      "id": "58-horizonte",
+      "name": "58_CASA HORIZONTE",
+      "number": 58,
+      "type": "residential",
+      "status": "in_process",
+      "fy27": true,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2022-03-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      },
+      "last_known_activity": "2023-09-01",
+      "notes": "Drive last mod Sep 2023. FY27 Habitar series. Campaign completed Mar 2026."
+    },
+    {
+      "id": "60-61-encanto",
+      "name": "60_ENCANTO / 61_CUCUNUMIC",
+      "number": "60-61",
+      "type": "residential",
+      "status": "in_process",
+      "fy27": false,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2021-09-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      },
+      "last_known_activity": "2022-03-01",
+      "notes": "Drive last mod Mar 2022. Dual project."
+    },
+    {
+      "id": "62-jardin",
+      "name": "62_JARDÍN MAR",
+      "number": 62,
+      "type": "residential",
+      "status": "in_process",
+      "fy27": true,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2022-01-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      },
+      "last_known_activity": "2022-07-01",
+      "notes": "Drive last mod Jul 2022. FY27 Habitar series candidate."
+    },
+    {
+      "id": "64-vida",
+      "name": "64_VIDA A LOS AÑOS",
+      "number": 64,
+      "type": "residential",
+      "status": "in_process",
+      "fy27": false,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2022-05-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      },
+      "last_known_activity": "2022-11-01",
+      "notes": "Drive last mod Nov 2022."
+    },
+    {
+      "id": "65-yucas",
+      "name": "65_LAS YUCAS",
+      "number": 65,
+      "type": "residential",
+      "status": "in_process",
+      "fy27": false,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2022-07-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      },
+      "last_known_activity": "2023-01-01",
+      "notes": "Drive last mod Jan 2023."
+    },
+    {
+      "id": "67-oasis",
+      "name": "67_OASIS",
+      "number": 67,
+      "type": "residential",
+      "status": "in_process",
+      "fy27": true,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2023-01-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      },
+      "last_known_activity": "2023-07-01",
+      "notes": "Drive last mod Jul 2023. FY27 Habitar — Casa Oasis."
+    },
+    {
+      "id": "69-pescadero",
+      "name": "69_PESCADERO SURF HOUSE",
+      "number": 69,
+      "type": "residential",
+      "status": "in_process",
+      "fy27": true,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2023-11-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      },
+      "last_known_activity": "2024-05-01",
+      "notes": "Drive last mod May 2024. FY27 Habitar — Surfhouse. Already on website."
+    },
+    {
+      "id": "70-leonora",
+      "name": "70_LEONORA",
+      "number": 70,
+      "type": "residential",
+      "status": "in_process",
+      "fy27": true,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2024-02-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      },
+      "last_known_activity": "2024-08-01",
+      "notes": "Drive last mod Aug 2024. Potential FY27."
+    },
+    {
+      "id": "71-drama",
+      "name": "71_DRAMA",
+      "number": 71,
+      "type": "residential",
+      "status": "in_process",
+      "fy27": true,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2024-03-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      },
+      "last_known_activity": "2024-09-01",
+      "notes": "Drive last mod Sep 2024. Potential FY27."
+    },
+    {
+      "id": "72-gokotta",
+      "name": "72_GÖKOTTA",
+      "number": 72,
+      "type": "residential",
+      "status": "in_process",
+      "fy27": true,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2025-03-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      },
+      "last_known_activity": "2025-09-01",
+      "notes": "Drive last mod Sep 2025. FY27 Q1 candidate."
+    },
+    {
+      "id": "73-barra",
+      "name": "73_BARRA PRIETA",
+      "number": 73,
+      "type": "residential",
+      "status": "in_process",
+      "fy27": true,
+      "drive_id": null,
+      "phases": {
+        "scope_signed": {
+          "date": "2025-07-01",
+          "confidence": "medium",
+          "note": ""
+        }
+      },
+      "last_known_activity": "2026-01-01",
+      "notes": "Drive last mod Jan 2026. Most current active project. FY27 Q1 launch candidate."
+    }
+  ]
+}

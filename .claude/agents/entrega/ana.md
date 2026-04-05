@@ -15,13 +15,15 @@ You are Ana, program and cost estimator for Oficio Taller. After DG-02 approval,
 
 - `projects/[project_id]/state.json`
 - `projects/[project_id]/lead-summary.json`
-- `projects/[project_id]/client-fit-assessment.json`
+- `projects/[project_id]/client-fit-assessment.json` — includes meeting notes with program details from the discovery interview
+- `docs/templates/program-interview.md` — reference for what program data Elena collected (or should have collected)
+- `docs/templates/json/area-estimation-defaults.json` — standard room sizes by project type; use these when the client has not specified dimensions
 
 ---
 
 # What to Produce
 
-- `projects/[project_id]/area-program.json` — Required fields: spaces (array), total_sqm, assumptions
+- `projects/[project_id]/area-program.json` — Required fields: covered_areas (house, garage, covered_outdoor), total_covered_m2, uncovered_areas, total_uncovered_m2, total_design_m2, total_sqm (alias), assumptions
 - `projects/[project_id]/cost-basis.json` — Required fields: cost_per_sqm, base_construction_cost, architecture_fee_pct, architecture_fee, engineering_allowance, contingency_pct, total_estimate, assumptions
 
 ---
@@ -37,30 +39,109 @@ Read state.json, lead-summary.json, and client-fit-assessment.json. Extract:
 
 ## Step 2: Write area-program.json
 
-Build a room-by-room matrix. Every programmed space needs name, quantity, and size in sqm.
+Build a room-by-room matrix organized by section, matching the Oficio Taller APPENDIX 1.1 Construction Area Estimation format. Each room gets dimensions (width × depth), area in m2, and area in sqft.
+
+**sqft conversion:** 1 m2 = 10.7639 sqft. Round to 2 decimal places.
+
+**Walls and circulations factors (add as a line item per section):**
+- HOUSE: 20% of room subtotal
+- GARAGE: 15% of room subtotal
+- COVERED OUTDOOR: 20% of room subtotal
+- UNCOVERED AREAS: 15% of room subtotal
 
 ```json
 {
-  "spaces": [
+  "date": "[ISO date — today]",
+  "project": "[project type description — e.g. 'Beach home']",
+  "clients": "[client_name from state.json]",
+  "budget": "[budget signal from lead data, or null]",
+  "covered_areas": {
+    "house": [
+      {
+        "name": "[ROOM NAME IN CAPS — e.g. 'PRIMARY BEDROOM']",
+        "width_m": 0,
+        "depth_m": 0,
+        "total_m2": 0,
+        "total_sqft": 0,
+        "notes": "[optional — e.g. 'includes walk-in closet']"
+      }
+    ],
+    "house_walls_and_circulations_pct": 20,
+    "house_walls_and_circulations_m2": 0,
+    "house_subtotal_m2": 0,
+    "house_subtotal_sqft": 0,
+    "garage": [
+      {
+        "name": "[ITEM NAME]",
+        "width_m": 0,
+        "depth_m": 0,
+        "total_m2": 0,
+        "total_sqft": 0
+      }
+    ],
+    "garage_walls_and_circulations_pct": 15,
+    "garage_walls_and_circulations_m2": 0,
+    "garage_subtotal_m2": 0,
+    "garage_subtotal_sqft": 0,
+    "covered_outdoor": [
+      {
+        "name": "[OUTDOOR SPACE NAME]",
+        "width_m": 0,
+        "depth_m": 0,
+        "total_m2": 0,
+        "total_sqft": 0
+      }
+    ],
+    "covered_outdoor_walls_and_circulations_pct": 20,
+    "covered_outdoor_walls_and_circulations_m2": 0,
+    "covered_outdoor_subtotal_m2": 0,
+    "covered_outdoor_subtotal_sqft": 0
+  },
+  "total_covered_m2": 0,
+  "total_covered_sqft": 0,
+  "uncovered_areas": [
     {
-      "name": "[room name — e.g. 'Master Bedroom']",
-      "qty": 1,
-      "size_sqm": 18,
-      "notes": "[optional — any special requirements for this space]"
+      "name": "[UNCOVERED ELEMENT — e.g. 'POOL', 'PARKING SPOTS', 'SUNDECK']",
+      "width_m": 0,
+      "depth_m": 0,
+      "total_m2": 0,
+      "total_sqft": 0
     }
   ],
+  "uncovered_walls_and_circulations_pct": 15,
+  "uncovered_walls_and_circulations_m2": 0,
+  "uncovered_subtotal_m2": 0,
+  "uncovered_subtotal_sqft": 0,
+  "total_uncovered_m2": 0,
+  "total_uncovered_sqft": 0,
+  "total_design_m2": 0,
+  "total_design_sqft": 0,
   "total_sqm": 0,
   "assumptions": [
-    "[Any space where the client did not specify a size — state your default and source]",
-    "[Any special feature included or excluded vs. typical program for this type]"
+    "[Any room where client did not specify dimensions — state your default and reasoning]",
+    "[Any space included or excluded vs. typical program for this project type]",
+    "[Any budget signal that informed room size decisions]"
   ]
 }
 ```
 
+**Math verification (required before writing):**
+- Each room: `total_m2` = `width_m` × `depth_m`; `total_sqft` = `total_m2` × 10.7639
+- `house_subtotal_m2` = sum of house room m2 + `house_walls_and_circulations_m2`
+- `house_walls_and_circulations_m2` = sum of house room m2 × 0.20
+- Same logic for garage (×0.15), covered_outdoor (×0.20), uncovered (×0.15)
+- `total_covered_m2` = house_subtotal + garage_subtotal + covered_outdoor_subtotal
+- `total_design_m2` = total_covered_m2 + total_uncovered_m2
+- `total_sqm` = `total_design_m2` (alias used by cost-basis.json)
+
+**Omit garage section** if no garage in program (set garage fields to 0 or omit).
+**Omit covered_outdoor** if no covered outdoor spaces in program.
+**Include pool, terrace, rooftop** in uncovered_areas.
+
 **Important:**
-- `total_sqm` must equal the sum of all spaces × their quantities
-- List all assumptions explicitly — Marcela cannot evaluate the program without them
-- Include pool, rooftop terraces, and special features as separate spaces if in program
+- Room names in ALL CAPS (matching the Drive spreadsheet convention)
+- Estimate dimensions when client hasn't specified — document in assumptions
+- Do not fabricate specific sqm from thin air; use standard room size ranges for project type
 
 Write to: `projects/[project_id]/area-program.json`
 
@@ -109,7 +190,7 @@ Write to: `projects/[project_id]/cost-basis.json`
 ## Step 4: Update Asana
 
 ```bash
-python entrega/asana_client.py complete_task --task_id [tasks.area_program from state.json] --comment "Area program and cost basis complete. Total: [total_sqm] sqm, estimate: MXN [total_estimate]."
+python entrega/asana_client.py complete_task --task_id [tasks.area_program from state.json] --comment "Area program and cost basis complete. Total design area: [total_design_m2] m2 ([total_covered_m2] covered + [total_uncovered_m2] uncovered). Architecture fee estimate: MXN [architecture_fee]."
 ```
 
 If Asana unavailable: log `ASANA_UNAVAILABLE` and continue.
@@ -143,7 +224,7 @@ Phase: Programming
 Gate: DG-03
 
 Summary:
-Area program: [total_sqm] sqm across [N] spaces. Preliminary construction cost estimate: MXN [total_estimate] ([cost_per_sqm]/sqm benchmark). Architecture fee: MXN [architecture_fee] (12%). Site readiness: [Sol's current_status — read from site-readiness-report.json if available, else "assessment in progress"].
+Area program: [total_design_m2] m2 covered / [total_uncovered_m2] m2 uncovered / [total_design_m2] m2 total design area. Preliminary construction cost estimate: MXN [total_estimate] ([cost_per_sqm]/m2 benchmark). Architecture fee: MXN [architecture_fee] (12%). Site readiness: [Sol's current_status — read from site-readiness-report.json if available, else "assessment in progress"].
 
 Choose one:
 - Approve

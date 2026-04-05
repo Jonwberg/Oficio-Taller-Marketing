@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contract Templates Review — Oficio Taller</title>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0f0f0f;
+    color: #e5e7eb;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    padding: 0;
+  }
+
+  /* ── Top bar ── */
+  .topbar {
+    background: #111;
+    border-bottom: 1px solid #1f2937;
+    padding: 16px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .topbar h1 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f9fafb;
+    letter-spacing: -0.02em;
+    flex: 1;
+    min-width: 200px;
+  }
+  .topbar .badge {
+    font-size: 0.72rem;
+    color: #6b7280;
+    background: #1f2937;
+    padding: 3px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  /* ── Tabs ── */
+  .tabs {
+    display: flex;
+    gap: 4px;
+    background: #111;
+    border-bottom: 1px solid #1f2937;
+    padding: 0 24px;
+    overflow-x: auto;
+  }
+  .tab {
+    padding: 12px 18px;
+    font-size: 0.82rem;
+    color: #6b7280;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: color 0.15s, border-color 0.15s;
+    user-select: none;
+  }
+  .tab:hover { color: #d1d5db; }
+  .tab.active {
+    color: #60a5fa;
+    border-bottom-color: #60a5fa;
+    font-weight: 500;
+  }
+
+  /* ── Content panels ── */
+  .panel {
+    display: none;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+  .panel.active { display: block; }
+
+  /* ── Metadata strip ── */
+  .meta-strip {
+    background: #111827;
+    border: 1px solid #1f2937;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .meta-item { font-size: 0.78rem; }
+  .meta-label { color: #4b5563; margin-right: 4px; }
+  .meta-val { color: #d1d5db; font-weight: 500; }
+
+  /* ── Clause pills ── */
+  .clause-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 28px;
+  }
+  .clause-pill {
+    background: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 5px;
+    padding: 4px 10px;
+    font-size: 0.72rem;
+    color: #9ca3af;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .clause-pill:hover { background: #374151; color: #e5e7eb; }
+
+  /* ── Markdown rendered content ── */
+  .md-body {
+    line-height: 1.75;
+    font-size: 0.9rem;
+    color: #d1d5db;
+  }
+  .md-body h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #f9fafb;
+    margin: 0 0 6px;
+    letter-spacing: -0.02em;
+    border-bottom: 1px solid #1f2937;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  .md-body h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #e5e7eb;
+    margin: 36px 0 12px;
+    padding: 10px 14px;
+    background: #111827;
+    border-left: 3px solid #60a5fa;
+    border-radius: 0 6px 6px 0;
+  }
+  .md-body h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #d1d5db;
+    margin: 24px 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #9ca3af;
+  }
+  .md-body p {
+    margin: 10px 0;
+    color: #d1d5db;
+  }
+  .md-body strong { color: #f3f4f6; }
+  .md-body em { color: #9ca3af; }
+  .md-body blockquote {
+    border-left: 3px solid #f59e0b;
+    background: #1a1500;
+    padding: 12px 16px;
+    border-radius: 0 6px 6px 0;
+    margin: 16px 0;
+    font-size: 0.82rem;
+    color: #fbbf24;
+  }
+  .md-body blockquote strong { color: #fcd34d; }
+  .md-body code {
+    background: #1f2937;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.82em;
+    color: #60a5fa;
+  }
+  .md-body pre {
+    background: #111827;
+    border: 1px solid #1f2937;
+    border-radius: 8px;
+    padding: 16px;
+    overflow-x: auto;
+    margin: 16px 0;
+  }
+  .md-body pre code {
+    background: none;
+    padding: 0;
+    font-size: 0.82rem;
+    color: #a3e635;
+  }
+  .md-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 0.82rem;
+  }
+  .md-body th {
+    background: #1f2937;
+    color: #9ca3af;
+    font-weight: 600;
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid #374151;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .md-body td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #1f2937;
+    color: #d1d5db;
+    vertical-align: top;
+  }
+  .md-body tr:hover td { background: #111827; }
+  .md-body ul, .md-body ol {
+    padding-left: 20px;
+    margin: 8px 0;
+  }
+  .md-body li { margin: 4px 0; }
+  .md-body hr {
+    border: none;
+    border-top: 1px solid #1f2937;
+    margin: 28px 0;
+  }
+
+  /* ── Highlight fills for placeholders ── */
+  .placeholder-highlight {
+    background: #422006;
+    color: #fb923c;
+    padding: 0 4px;
+    border-radius: 3px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.82em;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>Contract Templates — Oficio Taller</h1>
+  <span class="badge">v1.0 · March 2026</span>
+  <span class="badge">docs/templates/contracts/</span>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="showTab('mx')">🇲🇽 contract-mx.md — Mexican Client</div>
+  <div class="tab" onclick="showTab('usca')">🇺🇸🇨🇦 contract-us-ca.md — US/CA Client</div>
+  <div class="tab" onclick="showTab('signoff')">✍️ milestone-signoff.md — Sign-Off</div>
+  <div class="tab" onclick="showTab('diff')">⚖️ MX vs US/CA Key Differences</div>
+</div>
+
+<!-- ── MX Panel ── -->
+<div class="panel active" id="panel-mx">
+  <div class="meta-strip">
+    <div class="meta-item"><span class="meta-label">File</span><span class="meta-val">docs/templates/contracts/contract-mx.md</span></div>
+    <div class="meta-item"><span class="meta-label">Law</span><span class="meta-val">Código Civil Federal + Código Civil CDMX</span></div>
+    <div class="meta-item"><span class="meta-label">Currency</span><span class="meta-val">MXN + IVA 16%</span></div>
+    <div class="meta-item"><span class="meta-label">Signature</span><span class="meta-val">NOM-151-SCFI (Mifiel)</span></div>
+    <div class="meta-item"><span class="meta-label">Dispute</span><span class="meta-val">CANACO / CAM arbitration → CDMX courts</span></div>
+  </div>
+  <div class="clause-list">
+    <span class="clause-pill">1. Objeto del Contrato</span>
+    <span class="clause-pill">2. Honorarios y Pago</span>
+    <span class="clause-pill">3. IVA + CFDI 4.0</span>
+    <span class="clause-pill">4. Plazo y Programa</span>
+    <span class="clause-pill">5. Derechos de Autor (LFDA)</span>
+    <span class="clause-pill">6. Caso Fortuito (CCF 2111)</span>
+    <span class="clause-pill">7. Limitación de Responsabilidad</span>
+    <span class="clause-pill">8. Suspensión y Rescisión</span>
+    <span class="clause-pill">9. Confidencialidad</span>
+    <span class="clause-pill">10. Obligaciones del Cliente</span>
+    <span class="clause-pill">11. Firma Electrónica</span>
+    <span class="clause-pill">12. Legislación y Arbitraje</span>
+  </div>
+  <div class="md-body" id="content-mx">Loading…</div>
+</div>
+
+<!-- ── US/CA Panel ── -->
+<div class="panel" id="panel-usca">
+  <div class="meta-strip">
+    <div class="meta-item"><span class="meta-label">File</span><span class="meta-val">docs/templates/contracts/contract-us-ca.md</span></div>
+    <div class="meta-item"><span class="meta-label">Law</span><span class="meta-val">Mexican law (elected) — common law framing</span></div>
+    <div class="meta-item"><span class="meta-label">Currency</span><span class="meta-val">USD (or CAD) — SWIFT wire</span></div>
+    <div class="meta-item"><span class="meta-label">Signature</span><span class="meta-val">DocuSign / Adobe Sign (ESIGN Act / PIPEDA)</span></div>
+    <div class="meta-item"><span class="meta-label">Dispute</span><span class="meta-val">ICC or AAA International arbitration — NY Convention</span></div>
+  </div>
+  <div class="clause-list">
+    <span class="clause-pill">Art 1. Scope of Services</span>
+    <span class="clause-pill">Art 2. Compensation + SWIFT</span>
+    <span class="clause-pill">Art 3. Schedule</span>
+    <span class="clause-pill">Art 4. IP / Instruments of Service</span>
+    <span class="clause-pill">Art 5. Limitation of Liability</span>
+    <span class="clause-pill">Art 6. Force Majeure</span>
+    <span class="clause-pill">Art 7. Suspension + Termination</span>
+    <span class="clause-pill">Art 8. Confidentiality</span>
+    <span class="clause-pill">Art 9. Client Obligations</span>
+    <span class="clause-pill">Art 10. Governing Law + ICC Arbitration</span>
+    <span class="clause-pill">Art 11. Insurance</span>
+    <span class="clause-pill">Art 12. General Provisions</span>
+  </div>
+  <div class="md-body" id="content-usca">Loading…</div>
+</div>
+
+<!-- ── Sign-Off Panel ── -->
+<div class="panel" id="panel-signoff">
+  <div class="meta-strip">
+    <div class="meta-item"><span class="meta-label">File</span><span class="meta-val">docs/templates/contracts/milestone-signoff.md</span></div>
+    <div class="meta-item"><span class="meta-label">Language</span><span class="meta-val">Bilingual ES / EN (parallel)</span></div>
+    <div class="meta-item"><span class="meta-label">Used at</span><span class="meta-val">M1 (contract signing) · M2 (conceptual) · M3 (schematic) · M4 (executive plans)</span></div>
+    <div class="meta-item"><span class="meta-label">Effect</span><span class="meta-val">Change freeze — post-signature modifications require paid change order</span></div>
+  </div>
+  <div class="clause-list">
+    <span class="clause-pill">Part A — Deliverables Table</span>
+    <span class="clause-pill">Part B — Design Decisions Confirmed</span>
+    <span class="clause-pill">Part C — Client Declaration</span>
+    <span class="clause-pill">Part D — Registered Comments</span>
+    <span class="clause-pill">Part E — Payment Authorization</span>
+    <span class="clause-pill">Appendix — Change Order Policy</span>
+  </div>
+  <div class="md-body" id="content-signoff">Loading…</div>
+</div>
+
+<!-- ── Diff Panel ── -->
+<div class="panel" id="panel-diff">
+  <div class="md-body">
+    <h1>MX vs US/CA — Key Differences</h1>
+
+    <h2>Currency & Payment</h2>
+    <table>
+      <tr><th>Issue</th><th>🇲🇽 Mexican Client</th><th>🇺🇸🇨🇦 US/CA Client</th></tr>
+      <tr><td>Currency</td><td>MXN</td><td>USD (or CAD)</td></tr>
+      <tr><td>Tax</td><td>+16% IVA; CFDI 4.0; SAT code 859101</td><td>0% IVA if qualifies as export of services (Ley del IVA Art. 29)</td></tr>
+      <tr><td>Withholding</td><td>Retenciones apply if client is persona moral</td><td>Client grosses up if their jurisdiction requires withholding</td></tr>
+      <tr><td>Payment method</td><td>SPEI / transfer to CLABE</td><td>SWIFT international wire transfer</td></tr>
+      <tr><td>Payment window</td><td>5 business days per invoice</td><td>10 business days per invoice</td></tr>
+      <tr><td>Late interest</td><td>2% per month</td><td>1.5% per month (18% per annum)</td></tr>
+    </table>
+
+    <h2>Intellectual Property</h2>
+    <table>
+      <tr><th>Issue</th><th>🇲🇽 Mexican Client</th><th>🇺🇸🇨🇦 US/CA Client</th></tr>
+      <tr><td>Legal basis</td><td>LFDA Arts. 13, 21, 92</td><td>AIA B101-2017 / Copyright Act / 17 U.S.C.</td></tr>
+      <tr><td>Moral rights</td><td>Inalienable — cannot be waived by any clause</td><td>No equivalent in US; Canada allows moral rights waiver by contract</td></tr>
+      <tr><td>Client gets</td><td>Licencia de uso — project-specific, non-transferable</td><td>Limited license — conditional on substantial payment</td></tr>
+      <tr><td>Termination for convenience</td><td>Work in progress non-refundable; license suspended until paid</td><td>Licensing fee owed if client continues project with another architect</td></tr>
+      <tr><td>Owner modifications</td><td>LFDA Art. 92 — client may modify built work without consent</td><td>No statutory rule; license defines limits</td></tr>
+    </table>
+
+    <h2>Dispute Resolution</h2>
+    <table>
+      <tr><th>Step</th><th>🇲🇽 Mexican Client</th><th>🇺🇸🇨🇦 US/CA Client</th></tr>
+      <tr><td>1. Negotiation</td><td>15 days direct negotiation</td><td>30 days direct negotiation</td></tr>
+      <tr><td>2. Mediation</td><td>CANACO CDMX or CAM</td><td>ICDR/AAA or CAM</td></tr>
+      <tr><td>3. Arbitration</td><td>CANACO or CAM rules; CDMX seat; Spanish</td><td>ICC or AAA International rules; CDMX seat; English; NY Convention</td></tr>
+      <tr><td>Governing law</td><td>Código Civil CDMX + CCF</td><td>Mexican law (elected) — protects LFDA moral rights</td></tr>
+    </table>
+
+    <h2>Signatures</h2>
+    <table>
+      <tr><th>Issue</th><th>🇲🇽 Mexican Client</th><th>🇺🇸🇨🇦 US/CA Client</th></tr>
+      <tr><td>Standard</td><td>NOM-151-SCFI-2016 (Mifiel, Firel/SAT)</td><td>ESIGN Act (US) / PIPEDA (Canada) — DocuSign, Adobe Sign</td></tr>
+      <tr><td>Date stamp</td><td>Certified PSC timestamp required for NOM-151</td><td>Platform timestamp sufficient</td></tr>
+    </table>
+
+    <h2>Force Majeure</h2>
+    <table>
+      <tr><th>Issue</th><th>🇲🇽 Mexican Client</th><th>🇺🇸🇨🇦 US/CA Client</th></tr>
+      <tr><td>Statutory backstop</td><td>CCF Art. 2111 applies even without a clause</td><td>No statutory backstop — clause is essential</td></tr>
+      <tr><td>Termination trigger</td><td>60 days of event continuing</td><td>90 days of event continuing</td></tr>
+    </table>
+
+    <h2>Termination by Client</h2>
+    <table>
+      <tr><th>Issue</th><th>🇲🇽 Mexican Client</th><th>🇺🇸🇨🇦 US/CA Client</th></tr>
+      <tr><td>Notice</td><td>7 calendar days written notice</td><td>7 calendar days written notice</td></tr>
+      <tr><td>WIP refund</td><td>Not refundable</td><td>Not refundable</td></tr>
+      <tr><td>Licensing fee</td><td>License suspended until paid — no explicit licensing fee</td><td>Licensing fee owed if client continues project with new architect (AIA B101 §7.3 equivalent)</td></tr>
+    </table>
+
+    <h2>Key Legal Citations</h2>
+    <table>
+      <tr><th>Topic</th><th>MX Citation</th><th>US/CA Citation</th></tr>
+      <tr><td>Professional services</td><td>CCF Arts. 2606–2615</td><td>AIA B101-2017</td></tr>
+      <tr><td>Force majeure</td><td>CCF Art. 2111</td><td>Contractual only (frustration doctrine is narrow)</td></tr>
+      <tr><td>Copyright</td><td>LFDA Arts. 13, 21, 92</td><td>17 U.S.C. / Copyright Act R.S.C. 1985</td></tr>
+      <tr><td>Electronic signatures</td><td>NOM-151-SCFI-2016</td><td>ESIGN Act / PIPEDA</td></tr>
+      <tr><td>Rescission for breach</td><td>CCF Art. 1949</td><td>Common law breach of contract</td></tr>
+      <tr><td>Arbitration enforcement</td><td>Mexican law; CANACO/CAM rules</td><td>New York Convention (US + CA + MX all signatories)</td></tr>
+    </table>
+
+    <hr>
+    <p><em>Both contracts elect Mexican governing law. Both contracts route disputes to arbitration before litigation. Both protect the Architect's IP through a conditional license — not a transfer of ownership. The SOW (scope-of-work.json) attaches as Exhibit A / Anexo A in both versions.</em></p>
+  </div>
+</div>
+
+<script>
+  // ── Load contract markdown files ──
+  const files = {
+    mx:      '../../../docs/templates/contracts/contract-mx.md',
+    usca:    '../../../docs/templates/contracts/contract-us-ca.md',
+    signoff: '../../../docs/templates/contracts/milestone-signoff.md'
+  };
+
+  // Since we're opening as a local file, fetch() won't work cross-origin on file://
+  // We'll embed the content directly instead.
+
+  const contentMX = document.getElementById('content-mx');
+  const contentUSCA = document.getElementById('content-usca');
+  const contentSignoff = document.getElementById('content-signoff');
+
+  // Try fetch first; fall back to placeholder if blocked by file:// restrictions
+  async function loadMd(url, el) {
+    try {
+      const r = await fetch(url);
+      if (!r.ok) throw new Error('fetch failed');
+      const text = await r.text();
+      el.innerHTML = marked.parse(text);
+    } catch(e) {
+      el.innerHTML = '<p style="color:#6b7280;font-style:italic">To view rendered content, open this file from a local server (e.g. <code>python -m http.server</code>), or view the raw .md file directly.<br><br>File path: <code>' + url + '</code></p>';
+    }
+  }
+
+  // Relative paths from this HTML file location
+  loadMd('contract-mx.md', contentMX);
+  loadMd('contract-us-ca.md', contentUSCA);
+  loadMd('milestone-signoff.md', contentSignoff);
+
+  // ── Tab switching ──
+  function showTab(name) {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('panel-' + name).classList.add('active');
+    event.target.classList.add('active');
+  }
+</script>
+</body>
+</html>

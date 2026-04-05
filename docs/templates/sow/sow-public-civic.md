@@ -17,7 +17,7 @@ Public civic projects differ from private commercial projects in the following c
 
 ## Phase Structure
 
-### Phase 1 — Conceptual Design (Diseño Conceptual)
+### Phase 1 — Estudios Previos y Conceptual (Preliminary Studies & Conceptual Design)
 **Deliverables:**
 - Design narrative addressing public program, community benefit, and civic character (2–4 pages)
 - Preliminary floor plan sketches (1:200 scale minimum)
@@ -37,7 +37,7 @@ Public civic projects differ from private commercial projects in the following c
 
 ---
 
-### Phase 2 — Architectural Design (Proyecto Arquitectónico)
+### Phase 2 — Anteproyecto / Concepto (Schematic Design)
 **Deliverables:**
 - Floor plans all levels (1:100 scale)
 - Elevations all facades (1:100)

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>_arquine — Casa Atlas — Oficio Taller</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:     #ECEAE4;
+      --paper:  #F8F7F3;
+      --ink:    #1A1714;
+      --mid:    #6A5E52;
+      --rule:   #C8C0B4;
+    }
+    body {
+      background: var(--bg);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      padding: 3rem 1rem;
+    }
+    .wrapper {
+      max-width: 820px;
+      margin: 0 auto;
+      background: var(--paper);
+      border: 1px solid var(--rule);
+    }
+
+    /* ── EMAIL ── */
+    .email-bar {
+      padding: 0.5rem 2.5rem;
+      background: #E4E2DC;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+    .email-head {
+      padding: 2rem 2.5rem 1.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .email-meta {
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      color: var(--mid);
+      line-height: 2.1;
+    }
+    .email-meta strong { color: var(--ink); font-weight: 400; }
+    .email-subject {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-top: 1.2rem;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+    .email-body {
+      padding: 2rem 2.5rem 2.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .email-body p {
+      font-size: 0.88rem;
+      line-height: 1.9;
+      color: var(--ink);
+      margin-bottom: 1.2em;
+      max-width: 580px;
+    }
+    .email-body p:last-child { margin-bottom: 0; }
+    .email-sig {
+      margin-top: 1.8rem;
+      font-size: 0.82rem;
+      line-height: 1.9;
+      color: var(--mid);
+    }
+
+    /* ── KIT DIVIDER ── */
+    .kit-divider {
+      background: var(--ink);
+      padding: 1rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .kit-divider span {
+      font-size: 0.58rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(248,247,243,0.55);
+    }
+
+    /* ── KIT CONTENT ── */
+    .kit { padding: 3.5rem 2.5rem; }
+
+    .project-head { margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); }
+    .project-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      font-weight: 300;
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.6rem;
+    }
+    .project-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--mid);
+      margin-bottom: 2rem;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1.5rem 2.5rem;
+    }
+    .meta-label {
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 0.3rem;
+    }
+    .meta-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.92rem;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    /* ── SECTION LABEL ── */
+    .sec-label {
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .sec-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+
+    /* ── NARRATIVE ── */
+    .narrative-wrap { margin-bottom: 3.5rem; }
+    .narrative p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--ink);
+      margin-bottom: 1.5em;
+      max-width: 600px;
+    }
+    .narrative p.lede {
+      font-size: 1.55rem;
+      font-style: italic;
+      line-height: 1.45;
+      margin-bottom: 2rem;
+    }
+    .narrative p:last-child { margin-bottom: 0; }
+
+    /* ── IMAGES — Documentary grid ── */
+    .images-wrap { margin-bottom: 3.5rem; }
+    .img-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+    }
+    .img-cell { position: relative; overflow: hidden; background: #B0A898; }
+    .img-cell img {
+      width: 100%;
+      height: 30vh;
+      object-fit: cover;
+      display: block;
+      filter: saturate(0.85);
+    }
+    .img-lbl {
+      font-size: 0.56rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid);
+      padding: 0.5rem 0 1.2rem;
+    }
+    .photo-credit {
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-top: 0.5rem;
+    }
+
+    /* ── PLANS ── */
+    .plans-wrap {
+      border: 1px solid var(--rule);
+      padding: 1.8rem 2rem;
+      margin-bottom: 1rem;
+    }
+    .plans-title {
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 1.2rem;
+    }
+    .plans-list { list-style: none; }
+    .plans-list li {
+      font-size: 0.82rem;
+      color: var(--ink);
+      line-height: 2.2;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .plans-list li::before { content: '—'; color: var(--mid); }
+
+    /* ── FOOTER ── */
+    .kit-foot {
+      padding: 1.8rem 2.5rem;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .foot-studio {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+    .foot-handle {
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- EMAIL BAR -->
+  <div class="email-bar">Correo electrónico — @_arquine — Categoría A1 Crítica Arquitectónica</div>
+
+  <!-- EMAIL HEADER -->
+  <div class="email-head">
+    <div class="email-meta">
+      <div><strong>De:</strong> Marcela González Veloz — Oficio Taller</div>
+      <div><strong>Para:</strong> Equipo editorial — @_arquine / arquine.com</div>
+      <div><strong>Asunto:</strong></div>
+    </div>
+    <div class="email-subject">Propuesta de publicación — Casa Atlas, Cerritos BCS — Oficio Taller</div>
+  </div>
+
+  <!-- EMAIL BODY -->
+  <div class="email-body">
+    <p>Estimado equipo de Arquine,</p>
+    <p>Les comparto Casa Atlas, una residencia privada terminada en 2025 en Cerritos, Baja California Sur, diseñada por Oficio Taller.</p>
+    <p>El proyecto nace de una premisa que me parece relevante para la conversación que Arquine sostiene sobre arquitectura y territorio en México: la duna costera no es telón de fondo — es suelo y cobijo. La casa se desplanta detrás de ella, aceptando su condición topográfica como argumento arquitectónico, no como obstáculo a resolver. Los volúmenes se separan para generar patios intermedios que gestionan el clima del lugar, y una estrategia seccional asegura que el horizonte sea visible desde cada espacio, incluyendo los más profundos del sitio. El mar no es privilegio de las fachadas principales.</p>
+    <p>Adjunto fotografía de alta resolución de Andrea San Román y Sofía Pollano, planos de planta y alzados, y la narrativa del proyecto en español. Todo el material está listo para revisión editorial.</p>
+    <div class="email-sig">
+      Atentamente,<br>
+      Marcela González Veloz<br>
+      Oficio Taller<br>
+      @oficiotaller · Cerritos, BCS
+    </div>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="kit-divider">
+    <span>Material de prensa adjunto</span>
+    <span>Casa Atlas — Oficio Taller — 2025</span>
+  </div>
+
+  <!-- KIT -->
+  <div class="kit">
+
+    <div class="project-head">
+      <h1 class="project-name">Casa<br>Atlas</h1>
+      <p class="project-sub">Habitar la duna</p>
+      <div class="meta-grid">
+        <div>
+          <p class="meta-label">Ubicación</p>
+          <p class="meta-value">Cerritos, Baja California Sur, México</p>
+        </div>
+        <div>
+          <p class="meta-label">Superficie</p>
+          <p class="meta-value">458 m² + 90 m² terrazas</p>
+        </div>
+        <div>
+          <p class="meta-label">Año</p>
+          <p class="meta-value">2025</p>
+        </div>
+        <div>
+          <p class="meta-label">Arquitectura</p>
+          <p class="meta-value">Oficio Taller<br>Marcela González Veloz</p>
+        </div>
+        <div>
+          <p class="meta-label">Equipo</p>
+          <p class="meta-value">Andrea San Román, Diego Tamayo,<br>Nuria Ramírez, Gerardo Ramírez</p>
+        </div>
+        <div>
+          <p class="meta-label">Interiores</p>
+          <p class="meta-value">Oficio Taller +<br>Estudio Homística</p>
+        </div>
+        <div>
+          <p class="meta-label">Paisajismo</p>
+          <p class="meta-value">Brenda Landeros</p>
+        </div>
+        <div>
+          <p class="meta-label">Construcción</p>
+          <p class="meta-value">Unterbau</p>
+        </div>
+        <div>
+          <p class="meta-label">Fotografía</p>
+          <p class="meta-value">Andrea San Román<br>Sofía Pollano</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- NARRATIVE -->
+    <div class="narrative-wrap">
+      <div class="sec-label"><span>Texto del proyecto</span></div>
+      <div class="narrative">
+        <p class="lede">Atlas parte de una premisa: la duna costera no es telón de fondo — es suelo y cobijo.</p>
+        <p>La casa se desplanta detrás de ella, aceptando su condición topográfica como punto de partida arquitectónico. No como obstáculo a resolver, sino como argumento que organiza la planta, la sección y el programa.</p>
+        <p>Los volúmenes se separan para generar patios intermedios — umbrales que no pertenecen del todo al interior ni al exterior, espacios de transición que enmarcan el paisaje sin capturarlo. Esta estrategia no es formal: es climática. Los patios gestionan el viento, la sombra y la luz de un territorio donde el mediodía aplana todo y el atardecer lo transforma.</p>
+        <p>El reto del sitio era la profundidad: no todos los espacios tienen relación directa con el frente marítimo. La respuesta fue seccional. Distintos juegos de nivel permiten que el horizonte sea visible desde cada espacio — incluso los posteriores. El mar no es privilegio de las fachadas principales; es una condición del habitar en su totalidad.</p>
+        <p>Los materiales — concreto, madera, barro — no son acabados: son el sitio en otras formas. Anclan la casa al suelo y envejecen con él. La luz los transforma a lo largo del día: la mañana activa la fachada y el huerto, la tarde penetra en las habitaciones, la noche convierte las terrazas en instrumentos de observación del cielo.</p>
+        <p>En Atlas, la arquitectura es un marco que potencia lo que ocurre dentro. Lo que ocurre — cocinar, reunir, contemplar — es consecuencia del territorio.</p>
+      </div>
+    </div>
+
+    <!-- IMAGES -->
+    <div class="images-wrap">
+      <div class="sec-label"><span>Selección fotográfica</span></div>
+      <div class="img-grid">
+        <div class="img-cell">
+          <img src="../photos/ATLAS FINAL-1.jpg" alt="Vista exterior — relación con la duna">
+          <p class="img-lbl">Vista exterior — relación con la duna</p>
+        </div>
+        <div class="img-cell">
+          <img src="../photos/ATLAS FINAL-38.jpg" alt="Alberca — plano horizontal y sombra">
+          <p class="img-lbl">Alberca — plano y sombra</p>
+        </div>
+        <div class="img-cell">
+          <img src="../photos/ATLAS FINAL-25.jpg" alt="Umbral de entrada — compresión y apertura">
+          <p class="img-lbl">Umbral de entrada</p>
+        </div>
+        <div class="img-cell">
+          <img src="../photos/ATLAS FINAL-22.jpg" alt="Muro de concreto — sombra de palma">
+          <p class="img-lbl">Muro de concreto — sombra</p>
+        </div>
+      </div>
+      <p class="photo-credit">Fotografía: Andrea San Román · Set completo disponible en alta resolución</p>
+    </div>
+
+    <!-- PLANS -->
+    <div class="plans-wrap">
+      <p class="plans-title">Documentación arquitectónica — archivos PDF adjuntos</p>
+      <ul class="plans-list">
+        <li>CASA ATLAS_PRESS_PLANTAS.pdf — Planos de planta (todos los niveles)</li>
+        <li>CASA ATLAS_PRESS_ALZADOS.pdf — Alzados / elevaciones</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="kit-foot">
+    <p class="foot-studio">Oficio Taller</p>
+    <p class="foot-handle">@oficiotaller · Cerritos, Baja California Sur · 2025</p>
+  </div>
+
+</div>
+</body>
+</html>

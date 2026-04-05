@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domus — Casa Atlas — Oficio Taller</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:     #E9E6DF;
+      --paper:  #F6F4EF;
+      --ink:    #18150F;
+      --mid:    #6B5E50;
+      --rule:   #CEC5B6;
+      --warm:   #8C7355;
+    }
+    body {
+      background: var(--bg);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      padding: 3rem 1rem;
+    }
+    .wrapper {
+      max-width: 880px;
+      margin: 0 auto;
+      background: var(--paper);
+      border: 1px solid var(--rule);
+    }
+
+    /* ── EMAIL ── */
+    .email-bar {
+      padding: 0.5rem 2.5rem;
+      background: #E0DDD6;
+      font-size: 0.57rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+    .email-head {
+      padding: 2rem 2.5rem 1.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .email-meta {
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+      color: var(--mid);
+      line-height: 2.2;
+    }
+    .email-meta strong { color: var(--ink); font-weight: 400; }
+    .email-subject {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-top: 1.2rem;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+    .email-body {
+      padding: 2rem 2.5rem 2.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .email-body p {
+      font-size: 0.87rem;
+      line-height: 1.95;
+      color: var(--ink);
+      margin-bottom: 1.2em;
+      max-width: 570px;
+    }
+    .email-body p:last-child { margin-bottom: 0; }
+    .email-sig {
+      margin-top: 1.8rem;
+      font-size: 0.8rem;
+      line-height: 2;
+      color: var(--mid);
+    }
+
+    /* ── DIVIDER ── */
+    .kit-divider {
+      background: var(--ink);
+      padding: 0.9rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .kit-divider span {
+      font-size: 0.55rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(246,244,239,0.5);
+    }
+
+    /* ── HERO — full bleed ── */
+    .hero {
+      width: 100%;
+      height: 70vh;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(24,21,15,0.5) 100%);
+    }
+    .hero-cap {
+      position: absolute;
+      bottom: 1.8rem;
+      left: 2.5rem;
+      z-index: 1;
+      font-size: 0.57rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(246,244,239,0.6);
+    }
+
+    /* ── KIT ── */
+    .kit { padding: 3.5rem 2.5rem; }
+
+    .project-head {
+      margin-bottom: 3.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .project-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4.5rem;
+      font-weight: 300;
+      line-height: 0.88;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.7rem;
+    }
+    .project-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--mid);
+      margin-bottom: 2.2rem;
+    }
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 3rem;
+    }
+    .meta-item {}
+    .meta-label {
+      font-size: 0.54rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 0.2rem;
+    }
+    .meta-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.88rem;
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    /* ── SEC LABEL ── */
+    .sec-label {
+      font-size: 0.55rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .sec-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+
+    /* ── NARRATIVE ── */
+    .narrative-wrap { margin-bottom: 3.5rem; }
+    .narrative p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 300;
+      line-height: 1.88;
+      color: var(--ink);
+      margin-bottom: 1.5em;
+      max-width: 640px;
+    }
+    .narrative p.lede {
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 1.38;
+      font-style: italic;
+      margin-bottom: 2.2rem;
+    }
+    .narrative p:last-child { margin-bottom: 0; }
+
+    /* ── IMAGE LAYOUTS ── */
+    .img-full {
+      width: 100%;
+      height: 58vh;
+      overflow: hidden;
+      margin-bottom: 3px;
+    }
+    .img-full img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .img-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      margin-bottom: 3px;
+    }
+    .img-2-cell { overflow: hidden; height: 42vh; }
+    .img-2-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .img-2-asym {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 3px;
+      margin-bottom: 3px;
+    }
+    .img-asym-cell { overflow: hidden; height: 46vh; }
+    .img-asym-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .img-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 3px;
+      margin-bottom: 3px;
+    }
+    .img-3-cell { overflow: hidden; height: 32vh; }
+    .img-3-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .img-cap {
+      font-size: 0.54rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--mid);
+      padding: 0.45rem 0 2rem;
+    }
+    .photo-credit {
+      font-size: 0.56rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* ── PLANS ── */
+    .plans-wrap {
+      border: 1px solid var(--rule);
+      padding: 1.8rem 2rem;
+      margin-bottom: 0;
+    }
+    .plans-title {
+      font-size: 0.56rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 1.2rem;
+    }
+    .plans-list { list-style: none; }
+    .plans-list li {
+      font-size: 0.82rem;
+      color: var(--ink);
+      line-height: 2.3;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .plans-list li::before { content: '—'; color: var(--mid); }
+
+    /* ── FOOTER ── */
+    .kit-foot {
+      padding: 1.8rem 2.5rem;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .foot-studio {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+    .foot-handle {
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- EMAIL BAR -->
+  <div class="email-bar">Editorial submission — Domus — Phase 1 / Print élite</div>
+
+  <!-- EMAIL HEADER -->
+  <div class="email-head">
+    <div class="email-meta">
+      <div><strong>From:</strong> Marcela González Veloz — Oficio Taller</div>
+      <div><strong>To:</strong> Editorial team — Domus / domusweb.it</div>
+      <div><strong>Subject:</strong></div>
+    </div>
+    <div class="email-subject">Editorial proposal — Casa Atlas — Architecture, Mexican craft, and the inhabited dune — Cerritos, BCS, 2025</div>
+  </div>
+
+  <!-- EMAIL BODY -->
+  <div class="email-body">
+    <p>Dear Domus editorial team,</p>
+    <p>I would like to propose Casa Atlas for your consideration — a private residence completed in 2025 in Cerritos, Baja California Sur, Mexico, designed by Oficio Taller in collaboration with Estudio Homística on interiors.</p>
+    <p>The project sits behind a coastal dune and accepts its topographic condition as an architectural argument. But what I believe may interest Domus most is how the house was built with — and for — a culture of making. The interiors are a conversation with Mexican artisans: hand-thrown clay vessels, local wood furniture with irregular grain that openly celebrates imperfection, stone lamps by Mexican designers, walls dressed in textiles woven by artisan women from the region. The kitchen — there are two — is the center of the program. The house was designed for a chef whose practice connects producers, fishermen, and farmers from the territory.</p>
+    <p>The architecture and the objects inside it are part of the same argument: that building well in this part of Mexico means building from it — from the materials, the landscape, the people who inhabit it.</p>
+    <p>Photography by Sofía Pollano (interiors/Homística session) and Andrea San Román (architectural). Full high-resolution set, floor plans, sections, and technical documentation available. I am happy to discuss an exclusive feature.</p>
+    <div class="email-sig">
+      Marcela González Veloz<br>
+      Oficio Taller<br>
+      @oficiotaller · Cerritos, Baja California Sur, México
+    </div>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="kit-divider">
+    <span>Press kit — editorial</span>
+    <span>Casa Atlas — Oficio Taller — 2025</span>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <img src="../photos-sofia/09082025-SofiaPollano_CasaAtlas_Homistica-39.jpg" alt="Casa Atlas — dining room, courtyard patio threshold">
+    <p class="hero-cap">Casa Atlas — Cerritos, Baja California Sur · Photography: Sofía Pollano</p>
+  </div>
+
+  <!-- KIT -->
+  <div class="kit">
+
+    <!-- PROJECT HEAD -->
+    <div class="project-head">
+      <h1 class="project-name">Casa<br>Atlas</h1>
+      <p class="project-sub">Architecture and the culture of making, Cerritos, BCS</p>
+      <div class="meta-row">
+        <div class="meta-item">
+          <p class="meta-label">Location</p>
+          <p class="meta-value">Cerritos, Baja California Sur, México</p>
+        </div>
+        <div class="meta-item">
+          <p class="meta-label">Area</p>
+          <p class="meta-value">458 m² + 90 m² terraces</p>
+        </div>
+        <div class="meta-item">
+          <p class="meta-label">Year</p>
+          <p class="meta-value">2025</p>
+        </div>
+        <div class="meta-item">
+          <p class="meta-label">Architecture</p>
+          <p class="meta-value">Oficio Taller — Marcela González Veloz</p>
+        </div>
+        <div class="meta-item">
+          <p class="meta-label">Interiors</p>
+          <p class="meta-value">Oficio Taller + Estudio Homística<br>Mónica Lee, Melissa Ramírez</p>
+        </div>
+        <div class="meta-item">
+          <p class="meta-label">Landscape</p>
+          <p class="meta-value">Brenda Landeros</p>
+        </div>
+        <div class="meta-item">
+          <p class="meta-label">Construction</p>
+          <p class="meta-value">Unterbau</p>
+        </div>
+        <div class="meta-item">
+          <p class="meta-label">Photography</p>
+          <p class="meta-value">Sofía Pollano · Andrea San Román</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- NARRATIVE -->
+    <div class="narrative-wrap">
+      <div class="sec-label"><span>Project text</span></div>
+      <div class="narrative">
+        <p class="lede">Casa Atlas was designed to hold what its inhabitants bring to it: the salt, the fire, the bread.</p>
+        <p>The house sits behind a coastal dune in Cerritos, Baja California Sur. The dune is not scenography — it is structure, shelter, and the first architectural move. Volumes step with its topography, patios open between them to frame the landscape, and a sectional strategy ensures the ocean horizon is visible from every space in the house, including those furthest from the shore.</p>
+        <p>The interiors, developed with Estudio Homística, are a sustained conversation with Mexican material culture. Hand-thrown clay vessels from Oaxacan potters, local wood furniture whose irregular grain openly celebrates the beauty of imperfection, stone lamps carved by Mexican designers, walls dressed in textiles woven by artisan women from the Sierra. Every object has a place of origin and a story. The accumulation is not decorative — it is an argument about how a house in this territory should be furnished.</p>
+        <p>The program was conceived for a chef and his family. Two kitchens are at the heart of it: the upper opens entirely to the terrace, the pool, and the Pacific — you cook facing the ocean. The lower connects to an edible garden and an outdoor dining space oriented toward the dune. The house also functions as a node in a local network of producers, fishermen, and farmers from the region. Tradition and hospitality are structural conditions, not gestures.</p>
+        <p>The materials throughout — concrete, local wood, clay, stone — are calibrated to age with the territory. They are the site in other forms. Light moves through the house across the day: morning activates the entrance and the garden, afternoon settles into the rooms, evening turns the terraces into an observatory of open sky. The concrete holds the warmth of the day and releases it after sunset.</p>
+      </div>
+    </div>
+
+    <!-- IMAGES -->
+    <div class="sec-label"><span>Photography — Sofía Pollano</span></div>
+
+    <!-- Full width: living room + wall pieces -->
+    <div class="img-full">
+      <img src="../photos-sofia/09082025-SofiaPollano_CasaAtlas_Homistica-38.jpg" alt="Living room — sculptural wall pieces, Pacific beyond">
+    </div>
+    <p class="img-cap">Living room — Mexican craft wall pieces, Pacific horizon · Photography: Sofía Pollano</p>
+
+    <!-- 2-panel: courtyard + kitchen -->
+    <div class="img-2-asym">
+      <div class="img-asym-cell">
+        <img src="../photos-sofia/10082025-SofiaPollano_CasaAtlas_Homistica-19.jpg" alt="Interior looking out to courtyard terrace">
+      </div>
+      <div class="img-asym-cell">
+        <img src="../photos-sofia/09082025-SofiaPollano_CasaAtlas_Homistica-2.jpg" alt="Upper kitchen — bar, woman, pendants">
+      </div>
+    </div>
+    <p class="img-cap">Courtyard terrace — interior threshold, concrete volumes, sky &nbsp;·&nbsp; Upper kitchen — concrete bar</p>
+
+    <!-- Full width: bedroom -->
+    <div class="img-full" style="height:48vh;">
+      <img src="../photos-sofia/10082025-SofiaPollano_CasaAtlas_Homistica-35.jpg" alt="Bedroom — woven pendant, Pacific through floor-to-ceiling window">
+    </div>
+    <p class="img-cap">Bedroom — woven pendant lamp, Pacific horizon · Photography: Sofía Pollano</p>
+
+    <!-- 3-panel: bathroom + craft + detail -->
+    <div class="img-3">
+      <div class="img-3-cell">
+        <img src="../photos-sofia/10082025-SofiaPollano_CasaAtlas_Homistica-13.jpg" alt="Bathroom — concrete vanity, palm fronds, pendants">
+      </div>
+      <div class="img-3-cell">
+        <img src="../photos-sofia/09082025-SofiaPollano_CasaAtlas_Homistica-17.jpg" alt="Kitchen shelf — ceramics, citrus, stove">
+      </div>
+      <div class="img-3-cell">
+        <img src="../photos-sofia/10082025-SofiaPollano_CasaAtlas_Homistica-14.jpg" alt="Bathroom — lava stone pendant detail">
+      </div>
+    </div>
+    <p class="img-cap">Bathroom — concrete vanity, palm, lava stone pendants &nbsp;·&nbsp; Kitchen shelf — ceramics and citrus</p>
+
+    <p class="photo-credit">Photography: Sofía Pollano (interiors) · Andrea San Román (architecture) · Full high-resolution sets available</p>
+
+    <!-- PLANS -->
+    <div class="plans-wrap">
+      <p class="plans-title">Architectural documentation — available on request</p>
+      <ul class="plans-list">
+        <li>Floor plans — all levels</li>
+        <li>Sections — cross-sectional strategy (depth / horizon)</li>
+        <li>Site plan — dune relationship</li>
+        <li>Technical documentation — materials, systems, construction</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="kit-foot">
+    <p class="foot-studio">Oficio Taller</p>
+    <div class="foot-handle">
+      <p>@oficiotaller</p>
+      <p>Cerritos, Baja California Sur · 2025</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,1779 @@
+{
+  "_schema": "1.0",
+  "_last_updated": "2026-03-23",
+  "_description": "Studio financial model — all figures estimated from fee formulas, not accounting records.",
+  "_data_disclaimer": "Fees derived from tier defaults (m² × construction cost × 12% arch fee). Update estimated_fee_mxn per project to refine. Milestone dates estimated from Drive phase data.",
+  "assumptions": {
+    "architecture_fee_pct": 12,
+    "construction_cost_per_sqm_mxn": {
+      "residential_low": 15000,
+      "residential_mid": 20000,
+      "residential_high": 28000,
+      "commercial": 22000
+    },
+    "payment_schedule_pct": [
+      30,
+      20,
+      20,
+      30
+    ],
+    "payment_schedule_labels": [
+      "Advance at signing",
+      "At conceptual delivery",
+      "At anteproyecto delivery",
+      "At ejecutivo delivery"
+    ],
+    "phase_duration_weeks": {
+      "estudios_previos": 3,
+      "conceptual_anteproyecto": 10,
+      "ejecutivo": 12
+    },
+    "tier_defaults": {
+      "small_residential": {
+        "sqm_range": "150–200",
+        "fee_min": 350000,
+        "fee_max": 600000,
+        "fee_default": 475000
+      },
+      "mid_residential": {
+        "sqm_range": "250–400",
+        "fee_min": 650000,
+        "fee_max": 1200000,
+        "fee_default": 925000
+      },
+      "large_residential": {
+        "sqm_range": "400+",
+        "fee_min": 1200000,
+        "fee_max": 2500000,
+        "fee_default": 1850000
+      },
+      "commercial": {
+        "sqm_range": "varies",
+        "fee_min": 1500000,
+        "fee_max": 3500000,
+        "fee_default": 2500000
+      }
+    }
+  },
+  "projects": [
+    {
+      "id": "35-santiago",
+      "name": "35_SANTIAGO",
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "tier": "mid_residential",
+      "estimated_fee_mxn": 925000,
+      "scope_year": 2016,
+      "delivery_year": null,
+      "current_phase": "complete",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2016-05",
+          "status": "collected"
+        },
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2016-05",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2016-08",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2016-08",
+          "status": "collected"
+        }
+      ],
+      "notes": "Earliest project in Drive. Only scope folder visible."
+    },
+    {
+      "id": "07-colibri",
+      "name": "07_COLIBRI",
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "tier": "mid_residential",
+      "estimated_fee_mxn": 925000,
+      "scope_year": 2016,
+      "delivery_year": 2017,
+      "current_phase": "complete",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2016-08",
+          "status": "collected"
+        },
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2016-08",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2016-11",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2016-11",
+          "status": "collected"
+        }
+      ],
+      "notes": "oficiotaller account. Two ALCANCE versions."
+    },
+    {
+      "id": "16-haciendas",
+      "name": "16_HACIENDAS",
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "tier": "mid_residential",
+      "estimated_fee_mxn": 925000,
+      "scope_year": 2016,
+      "delivery_year": 2017,
+      "current_phase": "complete",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2016-08",
+          "status": "collected"
+        },
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2016-08",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2016-11",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2016-11",
+          "status": "collected"
+        }
+      ],
+      "notes": "oficiotaller account."
+    },
+    {
+      "id": "00-15demayo",
+      "name": "00_15 DE MAYO",
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "tier": "mid_residential",
+      "estimated_fee_mxn": 925000,
+      "scope_year": 2016,
+      "delivery_year": 2017,
+      "current_phase": "complete",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2016-09",
+          "status": "collected"
+        },
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2016-09",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2016-12",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2016-12",
+          "status": "collected"
+        }
+      ],
+      "notes": "Drive date Feb 21, 2018 = mass migration. Dates estimated."
+    },
+    {
+      "id": "01-alhambra",
+      "name": "01_ALHAMBRA",
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "tier": "mid_residential",
+      "estimated_fee_mxn": 925000,
+      "scope_year": 2016,
+      "delivery_year": 2017,
+      "current_phase": "complete",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2016-10",
+          "status": "collected"
+        },
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2016-10",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2017-01",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2017-01",
+          "status": "collected"
+        }
+      ]
+    },
+    {
+      "id": "03-durango",
+      "name": "03_CASA DURANGO",
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "tier": "mid_residential",
+      "estimated_fee_mxn": 925000,
+      "scope_year": 2016,
+      "delivery_year": 2017,
+      "current_phase": "complete",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2016-11",
+          "status": "collected"
+        },
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2016-11",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2017-02",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2017-02",
+          "status": "collected"
+        }
+      ]
+    },
+    {
+      "id": "04-greco",
+      "name": "04_CASA GRECO",
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "tier": "mid_residential",
+      "estimated_fee_mxn": 925000,
+      "scope_year": 2017,
+      "delivery_year": 2018,
+      "current_phase": "complete",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2017-01",
+          "status": "collected"
+        },
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2017-01",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2017-04",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2017-04",
+          "status": "collected"
+        }
+      ]
+    },
+    {
+      "id": "08-contry",
+      "name": "08_CONTRY SUR",
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "tier": "mid_residential",
+      "estimated_fee_mxn": 925000,
+      "scope_year": 2017,
+      "delivery_year": 2017,
+      "current_phase": "complete",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2017-01",
+          "status": "collected"
+        },
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2017-01",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2017-04",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2017-04",
+          "status": "collected"
+        }
+      ]
+    },
+    {
+      "id": "17-liveout",
+      "name": "17_LIVEOUT",
+      "type": "commercial",
+      "status": "built",
+      "fy27": false,
+      "tier": "commercial",
+      "estimated_fee_mxn": 2500000,
+      "scope_year": 2017,
+      "delivery_year": 2017,
+      "current_phase": "complete",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 750000,
+          "trigger": "scope_signed",
+          "estimated_date": "2017-01",
+          "status": "collected"
+        },
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 750000,
+          "trigger": "scope_signed",
+          "estimated_date": "2017-01",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 500000,
+          "trigger": "conceptual",
+          "estimated_date": "2017-04",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 500000,
+          "trigger": "conceptual",
+          "estimated_date": "2017-04",
+          "status": "collected"
+        }
+      ]
+    },
+    {
+      "id": "19-labola",
+      "name": "19_LA BOLA",
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "tier": "small_residential",
+      "estimated_fee_mxn": 475000,
+      "scope_year": 2017,
+      "delivery_year": 2018,
+      "current_phase": "complete",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 142500,
+          "trigger": "scope_signed",
+          "estimated_date": "2017-03",
+          "status": "collected"
+        },
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 142500,
+          "trigger": "scope_signed",
+          "estimated_date": "2017-03",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 95000,
+          "trigger": "conceptual",
+          "estimated_date": "2017-06",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 95000,
+          "trigger": "conceptual",
+          "estimated_date": "2017-06",
+          "status": "collected"
+        }
+      ]
+    },
+    {
+      "id": "21-lomas",
+      "name": "21_LOMAS",
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "tier": "mid_residential",
+      "estimated_fee_mxn": 925000,
+      "scope_year": 2017,
+      "delivery_year": 2018,
+      "current_phase": "complete",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2017-06",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2017-09",
+          "status": "collected"
+        },
+        {
+          "id": "M3",
+          "label": "Anteproyecto",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "anteproyecto",
+          "estimated_date": "2017-12",
+          "status": "collected"
+        },
+        {
+          "id": "M4",
+          "label": "Ejecutivo",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "ejecutivo",
+          "estimated_date": "2018-03",
+          "status": "collected"
+        }
+      ]
+    },
+    {
+      "id": "26-olmo",
+      "name": "26_OLMO 14B",
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "tier": "small_residential",
+      "estimated_fee_mxn": 475000,
+      "scope_year": 2017,
+      "delivery_year": 2018,
+      "current_phase": "complete",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 142500,
+          "trigger": "scope_signed",
+          "estimated_date": "2017-08",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 95000,
+          "trigger": "conceptual",
+          "estimated_date": "2017-11",
+          "status": "collected"
+        },
+        {
+          "id": "M3",
+          "label": "Anteproyecto",
+          "pct": 20,
+          "amount_mxn": 95000,
+          "trigger": "anteproyecto",
+          "estimated_date": "2018-02",
+          "status": "collected"
+        },
+        {
+          "id": "M4",
+          "label": "Ejecutivo",
+          "pct": 30,
+          "amount_mxn": 142500,
+          "trigger": "ejecutivo",
+          "estimated_date": "2018-05",
+          "status": "collected"
+        }
+      ]
+    },
+    {
+      "id": "28-29-palnorte",
+      "name": "28-29_PAL'NORTE",
+      "type": "commercial",
+      "status": "built",
+      "fy27": false,
+      "tier": "commercial",
+      "estimated_fee_mxn": 2500000,
+      "scope_year": 2017,
+      "delivery_year": 2018,
+      "current_phase": "complete",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 750000,
+          "trigger": "scope_signed",
+          "estimated_date": "2017-10",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 500000,
+          "trigger": "conceptual",
+          "estimated_date": "2018-01",
+          "status": "collected"
+        },
+        {
+          "id": "M3",
+          "label": "Anteproyecto",
+          "pct": 20,
+          "amount_mxn": 500000,
+          "trigger": "anteproyecto",
+          "estimated_date": "2018-04",
+          "status": "collected"
+        },
+        {
+          "id": "M4",
+          "label": "Ejecutivo",
+          "pct": 30,
+          "amount_mxn": 750000,
+          "trigger": "ejecutivo",
+          "estimated_date": "2018-08",
+          "status": "collected"
+        }
+      ]
+    },
+    {
+      "id": "37-tecate",
+      "name": "37_TECATE / 39_VIP",
+      "type": "commercial",
+      "status": "built",
+      "fy27": false,
+      "tier": "commercial",
+      "estimated_fee_mxn": 2500000,
+      "scope_year": 2018,
+      "delivery_year": 2019,
+      "current_phase": "complete",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 750000,
+          "trigger": "scope_signed",
+          "estimated_date": "2018-03",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 500000,
+          "trigger": "conceptual",
+          "estimated_date": "2018-06",
+          "status": "collected"
+        },
+        {
+          "id": "M3",
+          "label": "Anteproyecto",
+          "pct": 20,
+          "amount_mxn": 500000,
+          "trigger": "anteproyecto",
+          "estimated_date": "2018-09",
+          "status": "collected"
+        },
+        {
+          "id": "M4",
+          "label": "Ejecutivo",
+          "pct": 30,
+          "amount_mxn": 750000,
+          "trigger": "ejecutivo",
+          "estimated_date": "2019-03",
+          "status": "collected"
+        }
+      ]
+    },
+    {
+      "id": "43-maravilla",
+      "name": "43_VILLA MARAVILLA",
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "tier": "large_residential",
+      "estimated_fee_mxn": 1850000,
+      "scope_year": 2018,
+      "delivery_year": 2019,
+      "current_phase": "complete",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 555000,
+          "trigger": "scope_signed",
+          "estimated_date": "2018-05",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 370000,
+          "trigger": "conceptual",
+          "estimated_date": "2018-08",
+          "status": "collected"
+        },
+        {
+          "id": "M3",
+          "label": "Anteproyecto",
+          "pct": 20,
+          "amount_mxn": 370000,
+          "trigger": "anteproyecto",
+          "estimated_date": "2018-11",
+          "status": "collected"
+        },
+        {
+          "id": "M4",
+          "label": "Ejecutivo",
+          "pct": 30,
+          "amount_mxn": 555000,
+          "trigger": "ejecutivo",
+          "estimated_date": "2019-01",
+          "status": "collected"
+        }
+      ]
+    },
+    {
+      "id": "44-hindie",
+      "name": "44_HINDIE",
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "tier": "mid_residential",
+      "estimated_fee_mxn": 925000,
+      "scope_year": 2019,
+      "delivery_year": 2020,
+      "current_phase": "complete",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2019-06",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2019-09",
+          "status": "collected"
+        },
+        {
+          "id": "M3",
+          "label": "Anteproyecto",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "anteproyecto",
+          "estimated_date": "2019-12",
+          "status": "collected"
+        },
+        {
+          "id": "M4",
+          "label": "Ejecutivo",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "ejecutivo",
+          "estimated_date": "2020-03",
+          "status": "collected"
+        }
+      ]
+    },
+    {
+      "id": "los-cielos",
+      "name": "LOS CIELOS",
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "tier": "large_residential",
+      "estimated_fee_mxn": 1850000,
+      "scope_year": 2020,
+      "delivery_year": 2021,
+      "current_phase": "complete",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 555000,
+          "trigger": "scope_signed",
+          "estimated_date": "2020-12",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 370000,
+          "trigger": "conceptual",
+          "estimated_date": "2021-03",
+          "status": "collected"
+        },
+        {
+          "id": "M3",
+          "label": "Anteproyecto",
+          "pct": 20,
+          "amount_mxn": 370000,
+          "trigger": "anteproyecto",
+          "estimated_date": "2021-05",
+          "status": "collected"
+        },
+        {
+          "id": "M4",
+          "label": "Ejecutivo",
+          "pct": 30,
+          "amount_mxn": 555000,
+          "trigger": "ejecutivo",
+          "estimated_date": "2021-07",
+          "status": "collected"
+        }
+      ]
+    },
+    {
+      "id": "las-estancias",
+      "name": "LAS ESTANCIAS",
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "tier": "mid_residential",
+      "estimated_fee_mxn": 925000,
+      "scope_year": 2021,
+      "delivery_year": 2021,
+      "current_phase": "complete",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2021-04",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2021-07",
+          "status": "collected"
+        },
+        {
+          "id": "M3",
+          "label": "Anteproyecto",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "anteproyecto",
+          "estimated_date": "2021-09",
+          "status": "collected"
+        },
+        {
+          "id": "M4",
+          "label": "Ejecutivo",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "ejecutivo",
+          "estimated_date": "2021-11",
+          "status": "collected"
+        }
+      ]
+    },
+    {
+      "id": "55-pomona",
+      "name": "55_CASA POMONA",
+      "type": "residential",
+      "status": "built",
+      "fy27": true,
+      "tier": "mid_residential",
+      "estimated_fee_mxn": 925000,
+      "scope_year": 2021,
+      "delivery_year": 2022,
+      "current_phase": "complete",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2021-10",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2021-11",
+          "status": "collected"
+        },
+        {
+          "id": "M3",
+          "label": "Anteproyecto",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "anteproyecto",
+          "estimated_date": "2021-12",
+          "status": "collected"
+        },
+        {
+          "id": "M4",
+          "label": "Ejecutivo",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "ejecutivo",
+          "estimated_date": "2022-01",
+          "status": "collected"
+        }
+      ],
+      "notes": "Most complete historical data. Scope start date unreliable (migration artifact). All post-delivery dates confirmed. ~4 year total lifecycle."
+    },
+    {
+      "id": "57-luz",
+      "name": "57_CASA LUZ",
+      "type": "residential",
+      "status": "built",
+      "fy27": false,
+      "tier": "mid_residential",
+      "estimated_fee_mxn": 925000,
+      "scope_year": 2021,
+      "delivery_year": 2022,
+      "current_phase": "complete",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2021-08",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2021-11",
+          "status": "collected"
+        },
+        {
+          "id": "M3",
+          "label": "Anteproyecto",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "anteproyecto",
+          "estimated_date": "2022-01",
+          "status": "collected"
+        },
+        {
+          "id": "M4",
+          "label": "Ejecutivo",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "ejecutivo",
+          "estimated_date": "2022-02",
+          "status": "collected"
+        }
+      ]
+    },
+    {
+      "id": "59-atlas",
+      "name": "59_CASA ATLAS",
+      "type": "residential",
+      "status": "built",
+      "fy27": true,
+      "tier": "mid_residential",
+      "estimated_fee_mxn": 925000,
+      "scope_year": 2021,
+      "delivery_year": 2022,
+      "current_phase": "complete",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2021-05",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2021-08",
+          "status": "collected"
+        },
+        {
+          "id": "M3",
+          "label": "Anteproyecto",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "anteproyecto",
+          "estimated_date": "2021-11",
+          "status": "collected"
+        },
+        {
+          "id": "M4",
+          "label": "Ejecutivo",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "ejecutivo",
+          "estimated_date": "2022-02",
+          "status": "collected"
+        }
+      ],
+      "notes": "Habitar series — YouTube film exists. FY27 backlog anchor."
+    },
+    {
+      "id": "44-cascara",
+      "name": "44_LA CASCARA",
+      "type": "residential",
+      "status": "in_process",
+      "fy27": false,
+      "tier": "small_residential",
+      "estimated_fee_mxn": 475000,
+      "scope_year": 2019,
+      "delivery_year": null,
+      "current_phase": "conceptual",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 142500,
+          "trigger": "scope_signed",
+          "estimated_date": "2019-03",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 95000,
+          "trigger": "conceptual",
+          "estimated_date": "2019-06",
+          "status": "collected"
+        },
+        {
+          "id": "M3",
+          "label": "Anteproyecto",
+          "pct": 20,
+          "amount_mxn": 95000,
+          "trigger": "anteproyecto",
+          "estimated_date": "2026-09",
+          "status": "projected"
+        },
+        {
+          "id": "M4",
+          "label": "Ejecutivo",
+          "pct": 30,
+          "amount_mxn": 142500,
+          "trigger": "ejecutivo",
+          "estimated_date": "2026-12",
+          "status": "projected"
+        }
+      ],
+      "notes": "Drive last mod Mar 2019. Habitar series candidate (La Cáscara)."
+    },
+    {
+      "id": "54-cueva",
+      "name": "54_LA CUEVA",
+      "type": "residential",
+      "status": "in_process",
+      "fy27": true,
+      "tier": "mid_residential",
+      "estimated_fee_mxn": 925000,
+      "scope_year": 2019,
+      "delivery_year": null,
+      "current_phase": "anteproyecto",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2019-06",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2019-09",
+          "status": "collected"
+        },
+        {
+          "id": "M3",
+          "label": "Anteproyecto",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "anteproyecto",
+          "estimated_date": "2019-12",
+          "status": "collected"
+        },
+        {
+          "id": "M4",
+          "label": "Ejecutivo",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "ejecutivo",
+          "estimated_date": "2026-06",
+          "status": "projected"
+        }
+      ],
+      "notes": "Drive last mod Dec 2022. Habitar series — 19K views baseline already. FY27 priority."
+    },
+    {
+      "id": "58-horizonte",
+      "name": "58_CASA HORIZONTE",
+      "type": "residential",
+      "status": "in_process",
+      "fy27": true,
+      "tier": "mid_residential",
+      "estimated_fee_mxn": 925000,
+      "scope_year": 2022,
+      "delivery_year": null,
+      "current_phase": "anteproyecto",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2022-03",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2022-06",
+          "status": "collected"
+        },
+        {
+          "id": "M3",
+          "label": "Anteproyecto",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "anteproyecto",
+          "estimated_date": "2022-09",
+          "status": "collected"
+        },
+        {
+          "id": "M4",
+          "label": "Ejecutivo",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "ejecutivo",
+          "estimated_date": "2026-06",
+          "status": "projected"
+        }
+      ],
+      "notes": "Drive last mod Sep 2023. FY27 Habitar series. Campaign completed Mar 2026."
+    },
+    {
+      "id": "60-61-encanto",
+      "name": "60_ENCANTO / 61_CUCUNUMIC",
+      "type": "residential",
+      "status": "in_process",
+      "fy27": false,
+      "tier": "mid_residential",
+      "estimated_fee_mxn": 925000,
+      "scope_year": 2021,
+      "delivery_year": null,
+      "current_phase": "conceptual",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2021-09",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2022-01",
+          "status": "collected"
+        },
+        {
+          "id": "M3",
+          "label": "Anteproyecto",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "anteproyecto",
+          "estimated_date": "2026-07",
+          "status": "projected"
+        },
+        {
+          "id": "M4",
+          "label": "Ejecutivo",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "ejecutivo",
+          "estimated_date": "2026-10",
+          "status": "projected"
+        }
+      ],
+      "notes": "Drive last mod Mar 2022. Dual project."
+    },
+    {
+      "id": "62-jardin",
+      "name": "62_JARDÍN MAR",
+      "type": "residential",
+      "status": "in_process",
+      "fy27": true,
+      "tier": "mid_residential",
+      "estimated_fee_mxn": 925000,
+      "scope_year": 2022,
+      "delivery_year": null,
+      "current_phase": "conceptual",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2022-01",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2022-04",
+          "status": "collected"
+        },
+        {
+          "id": "M3",
+          "label": "Anteproyecto",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "anteproyecto",
+          "estimated_date": "2026-09",
+          "status": "projected"
+        },
+        {
+          "id": "M4",
+          "label": "Ejecutivo",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "ejecutivo",
+          "estimated_date": "2027-01",
+          "status": "projected"
+        }
+      ],
+      "notes": "Drive last mod Jul 2022. FY27 Habitar series candidate."
+    },
+    {
+      "id": "64-vida",
+      "name": "64_VIDA A LOS AÑOS",
+      "type": "residential",
+      "status": "in_process",
+      "fy27": false,
+      "tier": "mid_residential",
+      "estimated_fee_mxn": 925000,
+      "scope_year": 2022,
+      "delivery_year": null,
+      "current_phase": "conceptual",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2022-05",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2022-08",
+          "status": "collected"
+        },
+        {
+          "id": "M3",
+          "label": "Anteproyecto",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "anteproyecto",
+          "estimated_date": "2026-10",
+          "status": "projected"
+        },
+        {
+          "id": "M4",
+          "label": "Ejecutivo",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "ejecutivo",
+          "estimated_date": "2027-02",
+          "status": "projected"
+        }
+      ],
+      "notes": "Drive last mod Nov 2022."
+    },
+    {
+      "id": "65-yucas",
+      "name": "65_LAS YUCAS",
+      "type": "residential",
+      "status": "in_process",
+      "fy27": false,
+      "tier": "mid_residential",
+      "estimated_fee_mxn": 925000,
+      "scope_year": 2022,
+      "delivery_year": null,
+      "current_phase": "conceptual",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2022-07",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2022-10",
+          "status": "collected"
+        },
+        {
+          "id": "M3",
+          "label": "Anteproyecto",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "anteproyecto",
+          "estimated_date": "2026-11",
+          "status": "projected"
+        },
+        {
+          "id": "M4",
+          "label": "Ejecutivo",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "ejecutivo",
+          "estimated_date": "2027-03",
+          "status": "projected"
+        }
+      ],
+      "notes": "Drive last mod Jan 2023."
+    },
+    {
+      "id": "67-oasis",
+      "name": "67_OASIS",
+      "type": "residential",
+      "status": "in_process",
+      "fy27": true,
+      "tier": "mid_residential",
+      "estimated_fee_mxn": 925000,
+      "scope_year": 2023,
+      "delivery_year": null,
+      "current_phase": "conceptual",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2023-01",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2023-04",
+          "status": "collected"
+        },
+        {
+          "id": "M3",
+          "label": "Anteproyecto",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "anteproyecto",
+          "estimated_date": "2026-08",
+          "status": "projected"
+        },
+        {
+          "id": "M4",
+          "label": "Ejecutivo",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "ejecutivo",
+          "estimated_date": "2026-11",
+          "status": "projected"
+        }
+      ],
+      "notes": "Drive last mod Jul 2023. FY27 Habitar — Casa Oasis."
+    },
+    {
+      "id": "69-pescadero",
+      "name": "69_PESCADERO SURF HOUSE",
+      "type": "residential",
+      "status": "in_process",
+      "fy27": true,
+      "tier": "large_residential",
+      "estimated_fee_mxn": 1850000,
+      "scope_year": 2023,
+      "delivery_year": null,
+      "current_phase": "conceptual",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 555000,
+          "trigger": "scope_signed",
+          "estimated_date": "2023-11",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 370000,
+          "trigger": "conceptual",
+          "estimated_date": "2024-02",
+          "status": "collected"
+        },
+        {
+          "id": "M3",
+          "label": "Anteproyecto",
+          "pct": 20,
+          "amount_mxn": 370000,
+          "trigger": "anteproyecto",
+          "estimated_date": "2026-09",
+          "status": "projected"
+        },
+        {
+          "id": "M4",
+          "label": "Ejecutivo",
+          "pct": 30,
+          "amount_mxn": 555000,
+          "trigger": "ejecutivo",
+          "estimated_date": "2027-01",
+          "status": "projected"
+        }
+      ],
+      "notes": "Drive last mod May 2024. FY27 Habitar — Surfhouse. Already on website."
+    },
+    {
+      "id": "70-leonora",
+      "name": "70_LEONORA",
+      "type": "residential",
+      "status": "in_process",
+      "fy27": true,
+      "tier": "mid_residential",
+      "estimated_fee_mxn": 925000,
+      "scope_year": 2024,
+      "delivery_year": null,
+      "current_phase": "conceptual",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2024-02",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2024-05",
+          "status": "collected"
+        },
+        {
+          "id": "M3",
+          "label": "Anteproyecto",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "anteproyecto",
+          "estimated_date": "2026-10",
+          "status": "projected"
+        },
+        {
+          "id": "M4",
+          "label": "Ejecutivo",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "ejecutivo",
+          "estimated_date": "2027-02",
+          "status": "projected"
+        }
+      ],
+      "notes": "Drive last mod Aug 2024. Potential FY27."
+    },
+    {
+      "id": "71-drama",
+      "name": "71_DRAMA",
+      "type": "residential",
+      "status": "in_process",
+      "fy27": true,
+      "tier": "mid_residential",
+      "estimated_fee_mxn": 925000,
+      "scope_year": 2024,
+      "delivery_year": null,
+      "current_phase": "conceptual",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2024-03",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2024-06",
+          "status": "collected"
+        },
+        {
+          "id": "M3",
+          "label": "Anteproyecto",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "anteproyecto",
+          "estimated_date": "2026-11",
+          "status": "projected"
+        },
+        {
+          "id": "M4",
+          "label": "Ejecutivo",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "ejecutivo",
+          "estimated_date": "2027-03",
+          "status": "projected"
+        }
+      ],
+      "notes": "Drive last mod Sep 2024. Potential FY27."
+    },
+    {
+      "id": "72-gokotta",
+      "name": "72_GÖKOTTA",
+      "type": "residential",
+      "status": "in_process",
+      "fy27": true,
+      "tier": "mid_residential",
+      "estimated_fee_mxn": 925000,
+      "scope_year": 2025,
+      "delivery_year": null,
+      "current_phase": "anteproyecto",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "scope_signed",
+          "estimated_date": "2025-03",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "conceptual",
+          "estimated_date": "2025-06",
+          "status": "collected"
+        },
+        {
+          "id": "M3",
+          "label": "Anteproyecto",
+          "pct": 20,
+          "amount_mxn": 185000,
+          "trigger": "anteproyecto",
+          "estimated_date": "2025-09",
+          "status": "collected"
+        },
+        {
+          "id": "M4",
+          "label": "Ejecutivo",
+          "pct": 30,
+          "amount_mxn": 277500,
+          "trigger": "ejecutivo",
+          "estimated_date": "2026-03",
+          "status": "projected"
+        }
+      ],
+      "notes": "Drive last mod Sep 2025. FY27 Q1 candidate."
+    },
+    {
+      "id": "73-barra",
+      "name": "73_BARRA PRIETA",
+      "type": "residential",
+      "status": "in_process",
+      "fy27": true,
+      "tier": "large_residential",
+      "estimated_fee_mxn": 1850000,
+      "scope_year": 2025,
+      "delivery_year": null,
+      "current_phase": "anteproyecto",
+      "milestones": [
+        {
+          "id": "M1",
+          "label": "Advance",
+          "pct": 30,
+          "amount_mxn": 555000,
+          "trigger": "scope_signed",
+          "estimated_date": "2025-07",
+          "status": "collected"
+        },
+        {
+          "id": "M2",
+          "label": "Conceptual",
+          "pct": 20,
+          "amount_mxn": 370000,
+          "trigger": "conceptual",
+          "estimated_date": "2025-10",
+          "status": "collected"
+        },
+        {
+          "id": "M3",
+          "label": "Anteproyecto",
+          "pct": 20,
+          "amount_mxn": 370000,
+          "trigger": "anteproyecto",
+          "estimated_date": "2026-01",
+          "status": "collected"
+        },
+        {
+          "id": "M4",
+          "label": "Ejecutivo",
+          "pct": 30,
+          "amount_mxn": 555000,
+          "trigger": "ejecutivo",
+          "estimated_date": "2026-04",
+          "status": "projected"
+        }
+      ],
+      "notes": "Drive last mod Jan 2026. Most current active project. FY27 Q1 launch candidate."
+    }
+  ]
+}

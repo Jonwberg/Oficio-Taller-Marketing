@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oficio Taller — Financial Model</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0a0a0a; color: #e5e5e5; font-family: 'JetBrains Mono', 'Fira Mono', monospace; font-size: 12px; }
+  header { padding: 18px 24px 12px; border-bottom: 1px solid #1f1f1f; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  h1 { font-size: 14px; color: #f5f5f5; letter-spacing: 0.05em; }
+  .badges { display: flex; gap: 8px; flex-wrap: wrap; }
+  .badge { background: #141414; border: 1px solid #2a2a2a; border-radius: 4px; padding: 4px 10px; font-size: 10px; color: #888; white-space: nowrap; }
+  .badge span { color: #e5e5e5; margin-left: 4px; }
+  nav { padding: 0 24px; border-bottom: 1px solid #1f1f1f; display: flex; gap: 0; }
+  nav button { background: none; border: none; color: #555; font-family: inherit; font-size: 11px; padding: 12px 16px; cursor: pointer; border-bottom: 2px solid transparent; letter-spacing: 0.04em; transition: color 0.15s; }
+  nav button:hover { color: #aaa; }
+  nav button.active { color: #f5f5f5; border-bottom-color: #4ade80; }
+  #content { padding: 24px; min-height: calc(100vh - 120px); }
+  .disclaimer { background: #0f1a14; border: 1px solid #1a3a24; border-radius: 6px; padding: 10px 14px; color: #4ade80; font-size: 10px; margin-bottom: 20px; opacity: 0.8; }
+  .section-title { font-size: 10px; color: #555; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
+
+  /* History tab */
+  .history-chart { margin-bottom: 28px; }
+  .year-row { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
+  .year-label { width: 38px; color: #666; font-size: 10px; text-align: right; flex-shrink: 0; }
+  .year-bar-wrap { flex: 1; background: #111; border-radius: 2px; height: 20px; position: relative; }
+  .year-bar { height: 100%; border-radius: 2px; background: #4ade80; transition: width 0.4s ease; display: flex; align-items: center; padding-left: 8px; }
+  .year-bar.dim { background: #2a6040; }
+  .year-bar-amt { font-size: 9px; color: #e5e5e5; white-space: nowrap; }
+  .project-table { width: 100%; border-collapse: collapse; font-size: 10px; }
+  .project-table th { color: #555; text-align: left; padding: 6px 10px; border-bottom: 1px solid #1f1f1f; letter-spacing: 0.06em; font-weight: normal; }
+  .project-table td { padding: 6px 10px; border-bottom: 1px solid #111; }
+  .project-table tr:hover td { background: #111; }
+  .fy27-tag { color: #f59e0b; font-size: 9px; margin-left: 4px; }
+  .tier-badge { font-size: 9px; padding: 2px 6px; border-radius: 3px; background: #1a1a1a; color: #888; }
+  .tier-badge.commercial { background: #1a1228; color: #a78bfa; }
+  .tier-badge.large { background: #1a1a28; color: #60a5fa; }
+  .tier-badge.small { background: #1a1814; color: #86efac; }
+
+  /* Pipeline tab */
+  .pipeline-summary { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+  .pipeline-stat { background: #111; border: 1px solid #1f1f1f; border-radius: 6px; padding: 12px 16px; flex: 1; min-width: 160px; }
+  .pipeline-stat .ps-val { font-size: 20px; color: #f5f5f5; margin-bottom: 2px; }
+  .pipeline-stat .ps-label { font-size: 10px; color: #555; }
+  .pipeline-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 12px; }
+  .project-card { background: #111; border: 1px solid #1f1f1f; border-radius: 6px; padding: 14px; }
+  .project-card.fy27 { border-color: #2a2010; }
+  .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+  .card-name { font-size: 11px; color: #e5e5e5; }
+  .card-fee { font-size: 16px; color: #f5f5f5; margin-bottom: 6px; }
+  .progress-wrap { background: #1a1a1a; border-radius: 2px; height: 6px; margin-bottom: 8px; display: flex; overflow: hidden; }
+  .progress-collected { background: #4ade80; height: 100%; }
+  .progress-outstanding { background: #f97316; height: 100%; }
+  .milestones-row { display: flex; gap: 6px; }
+  .ms { font-size: 9px; padding: 3px 6px; border-radius: 3px; border: 1px solid #222; }
+  .ms.collected { background: #0f1a14; color: #4ade80; border-color: #1a3a24; }
+  .ms.projected { background: #1a120a; color: #f97316; border-color: #3a2010; }
+
+  /* Cash Flow tab */
+  .cf-chart { margin-bottom: 24px; }
+  .cf-bars { display: flex; align-items: flex-end; gap: 8px; height: 200px; padding-bottom: 24px; position: relative; }
+  .cf-bar-wrap { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; position: relative; }
+  .cf-bar { width: 100%; border-radius: 2px 2px 0 0; position: relative; min-height: 2px; }
+  .cf-q-label { position: absolute; bottom: -20px; font-size: 9px; color: #555; white-space: nowrap; left: 50%; transform: translateX(-50%); }
+  .cf-q-amt { position: absolute; top: -18px; font-size: 9px; color: #888; white-space: nowrap; left: 50%; transform: translateX(-50%); }
+  .cf-table { width: 100%; border-collapse: collapse; font-size: 10px; }
+  .cf-table th { color: #555; text-align: left; padding: 6px 10px; border-bottom: 1px solid #1f1f1f; letter-spacing: 0.06em; font-weight: normal; }
+  .cf-table td { padding: 5px 10px; border-bottom: 1px solid #111; }
+  .cf-table tr:hover td { background: #111; }
+
+  /* KPI tab */
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+  .kpi-card { background: #111; border: 1px solid #1f1f1f; border-radius: 8px; padding: 20px; }
+  .kpi-val { font-size: 28px; color: #f5f5f5; margin-bottom: 4px; }
+  .kpi-val.green { color: #4ade80; }
+  .kpi-val.orange { color: #f97316; }
+  .kpi-val.blue { color: #60a5fa; }
+  .kpi-val.yellow { color: #f59e0b; }
+  .kpi-label { font-size: 10px; color: #888; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px; }
+  .kpi-note { font-size: 9px; color: #444; border-top: 1px solid #1a1a1a; padding-top: 8px; margin-top: 8px; }
+
+  /* Assumptions tab */
+  .assume-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 700px) { .assume-grid { grid-template-columns: 1fr; } }
+  .assume-block { background: #111; border: 1px solid #1f1f1f; border-radius: 6px; padding: 16px; }
+  .assume-block h3 { font-size: 10px; color: #555; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+  .assume-row { display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid #161616; font-size: 10px; }
+  .assume-row:last-child { border-bottom: none; }
+  .assume-key { color: #666; }
+  .assume-val { color: #e5e5e5; }
+  .pay-schedule { display: flex; gap: 8px; margin-top: 4px; }
+  .pay-block { flex: 1; text-align: center; background: #0a0a0a; border: 1px solid #222; border-radius: 4px; padding: 10px 4px; }
+  .pay-pct { font-size: 18px; color: #4ade80; }
+  .pay-label { font-size: 8px; color: #555; margin-top: 4px; }
+  .tier-table { width: 100%; border-collapse: collapse; font-size: 10px; }
+  .tier-table th { color: #555; font-weight: normal; text-align: left; padding: 5px 8px; border-bottom: 1px solid #1f1f1f; letter-spacing: 0.05em; font-size: 9px; }
+  .tier-table td { padding: 6px 8px; border-bottom: 1px solid #111; }
+
+  /* Loading */
+  #loading { color: #444; padding: 40px; text-align: center; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Oficio Taller — Financial Model</h1>
+  <div class="badges">
+    <div class="badge">Portfolio est.<span id="b-total">—</span></div>
+    <div class="badge">Collected est.<span id="b-collected">—</span></div>
+    <div class="badge">Outstanding<span id="b-outstanding">—</span></div>
+    <div class="badge">FY27 pipeline<span id="b-fy27">—</span></div>
+  </div>
+</header>
+
+<nav>
+  <button class="active" onclick="switchTab('history',this)">📊 Revenue History</button>
+  <button onclick="switchTab('pipeline',this)">🔶 Pipeline Value</button>
+  <button onclick="switchTab('cashflow',this)">💸 Cash Flow</button>
+  <button onclick="switchTab('kpis',this)">📈 KPIs</button>
+  <button onclick="switchTab('assumptions',this)">⚙ Assumptions</button>
+</nav>
+
+<div id="content">
+  <div id="loading">Loading financial model…</div>
+</div>
+
+<script>
+let MODEL = null;
+let activeTab = 'history';
+
+const PROJECT_COLORS = [
+  '#4ade80','#60a5fa','#f59e0b','#a78bfa','#f472b6',
+  '#34d399','#fb923c','#818cf8','#e879f9','#38bdf8',
+  '#84cc16','#fbbf24','#c084fc'
+];
+
+async function init() {
+  try {
+    const res = await fetch('/data/financial-model.json');
+    MODEL = await res.json();
+    updateBadges();
+    renderTab('history');
+  } catch(e) {
+    document.getElementById('content').innerHTML =
+      '<div style="color:#f87171;padding:40px">Failed to load financial-model.json. Make sure the HTTP server is running at port 8787.</div>';
+  }
+}
+
+function mxn(n, decimals) {
+  if (n >= 1000000) return `MXN ${(n/1000000).toFixed(decimals !== undefined ? decimals : 1)}M`;
+  if (n >= 1000)    return `MXN ${(n/1000).toFixed(0)}K`;
+  return `MXN ${n.toLocaleString()}`;
+}
+
+function updateBadges() {
+  const projects = MODEL.projects;
+  const allMs = projects.flatMap(p => p.milestones);
+  const total     = projects.reduce((s,p) => s + p.estimated_fee_mxn, 0);
+  const collected = allMs.filter(m => m.status==='collected').reduce((s,m) => s + m.amount_mxn, 0);
+  const outstanding = allMs.filter(m => m.status==='projected').reduce((s,m) => s + m.amount_mxn, 0);
+  const fy27      = projects.filter(p => p.fy27).reduce((s,p) => s + p.estimated_fee_mxn, 0);
+  document.getElementById('b-total').textContent      = ' ' + mxn(total);
+  document.getElementById('b-collected').textContent  = ' ' + mxn(collected);
+  document.getElementById('b-outstanding').textContent= ' ' + mxn(outstanding);
+  document.getElementById('b-fy27').textContent       = ' ' + mxn(fy27);
+}
+
+function switchTab(name, btn) {
+  activeTab = name;
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderTab(name);
+}
+
+function renderTab(name) {
+  const el = document.getElementById('content');
+  if      (name==='history')     el.innerHTML = renderHistory();
+  else if (name==='pipeline')    el.innerHTML = renderPipeline();
+  else if (name==='cashflow')    el.innerHTML = renderCashFlow();
+  else if (name==='kpis')        el.innerHTML = renderKPIs();
+  else if (name==='assumptions') el.innerHTML = renderAssumptions();
+}
+
+// ─── TAB 1: Revenue History ───────────────────────────────────────────────────
+function renderHistory() {
+  const built = MODEL.projects.filter(p => p.status === 'built');
+  const byYear = {};
+  for (const p of built) {
+    if (!p.delivery_year) continue;
+    byYear[p.delivery_year] = byYear[p.delivery_year] || [];
+    byYear[p.delivery_year].push(p);
+  }
+  const years = Object.keys(byYear).map(Number).sort();
+  const maxRev = Math.max(...years.map(y => byYear[y].reduce((s,p) => s+p.estimated_fee_mxn, 0)));
+
+  let chartHtml = '';
+  for (const y of years) {
+    const rev = byYear[y].reduce((s,p) => s+p.estimated_fee_mxn, 0);
+    const pct = Math.round((rev/maxRev)*100);
+    const dim = pct < 50 ? ' dim' : '';
+    chartHtml += `
+      <div class="year-row">
+        <div class="year-label">${y}</div>
+        <div class="year-bar-wrap">
+          <div class="year-bar${dim}" style="width:${pct}%">
+            <span class="year-bar-amt">${mxn(rev)} · ${byYear[y].length} project${byYear[y].length>1?'s':''}</span>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  let tableRows = '';
+  const sorted = [...built].sort((a,b) => (b.delivery_year||0)-(a.delivery_year||0));
+  for (const p of sorted) {
+    const tierClass = p.tier==='commercial'?'commercial':p.tier==='large_residential'?'large':p.tier==='small_residential'?'small':'';
+    const tierLabel = p.tier==='mid_residential'?'mid':p.tier==='small_residential'?'small':p.tier==='large_residential'?'large':'commercial';
+    tableRows += `
+      <tr>
+        <td>${p.name}${p.fy27?'<span class="fy27-tag">★</span>':''}</td>
+        <td><span class="tier-badge ${tierClass}">${tierLabel}</span></td>
+        <td style="color:#4ade80">${mxn(p.estimated_fee_mxn)}</td>
+        <td style="color:#888">${p.delivery_year||'—'}</td>
+        <td style="color:#444">${p.type}</td>
+      </tr>`;
+  }
+
+  const totalBuilt = built.reduce((s,p) => s+p.estimated_fee_mxn, 0);
+
+  return `
+    <div class="disclaimer">⚠ All figures are estimates derived from fee tier defaults — not accounting records. Update data/financial-model.json to refine.</div>
+    <div class="section-title">Estimated revenue by delivery year — 21 built projects</div>
+    <div class="history-chart">${chartHtml}</div>
+    <div class="section-title">Project breakdown — total est. ${mxn(totalBuilt)}</div>
+    <table class="project-table">
+      <thead><tr><th>Project</th><th>Tier</th><th>Est. Fee</th><th>Delivered</th><th>Type</th></tr></thead>
+      <tbody>${tableRows}</tbody>
+    </table>`;
+}
+
+// ─── TAB 2: Pipeline Value ────────────────────────────────────────────────────
+function renderPipeline() {
+  const active = MODEL.projects.filter(p => p.status === 'in_process');
+  const totalPipeline   = active.reduce((s,p) => s+p.estimated_fee_mxn, 0);
+  const totalCollected  = active.flatMap(p=>p.milestones).filter(m=>m.status==='collected').reduce((s,m)=>s+m.amount_mxn,0);
+  const totalOutstanding= active.flatMap(p=>p.milestones).filter(m=>m.status==='projected').reduce((s,m)=>s+m.amount_mxn,0);
+
+  const sorted = [...active].sort((a,b) => {
+    if (a.fy27 !== b.fy27) return a.fy27 ? -1 : 1;
+    const aOut = a.milestones.filter(m=>m.status==='projected').reduce((s,m)=>s+m.amount_mxn,0);
+    const bOut = b.milestones.filter(m=>m.status==='projected').reduce((s,m)=>s+m.amount_mxn,0);
+    return bOut - aOut;
+  });
+
+  const summaryHtml = `
+    <div class="pipeline-summary">
+      <div class="pipeline-stat"><div class="ps-val">${mxn(totalPipeline)}</div><div class="ps-label">Total pipeline value</div></div>
+      <div class="pipeline-stat"><div class="ps-val" style="color:#4ade80">${mxn(totalCollected)}</div><div class="ps-label">Estimated collected</div></div>
+      <div class="pipeline-stat"><div class="ps-val" style="color:#f97316">${mxn(totalOutstanding)}</div><div class="ps-label">Outstanding</div></div>
+      <div class="pipeline-stat"><div class="ps-val" style="color:#f59e0b">${active.filter(p=>p.fy27).length}</div><div class="ps-label">FY27 priority projects</div></div>
+    </div>`;
+
+  let cardsHtml = '';
+  for (const p of sorted) {
+    const col  = p.milestones.filter(m=>m.status==='collected').reduce((s,m)=>s+m.amount_mxn,0);
+    const out  = p.milestones.filter(m=>m.status==='projected').reduce((s,m)=>s+m.amount_mxn,0);
+    const colPct = Math.round((col/p.estimated_fee_mxn)*100);
+    const outPct = 100 - colPct;
+    const msHtml = p.milestones.map(m =>
+      `<div class="ms ${m.status}" title="${m.label}: ${mxn(m.amount_mxn)} · ${m.estimated_date||'date TBD'}">${m.id} ${m.status==='collected'?'✓':'◷'}</div>`
+    ).join('');
+    cardsHtml += `
+      <div class="project-card${p.fy27?' fy27':''}">
+        <div class="card-header">
+          <div class="card-name">${p.name}${p.fy27?'<span class="fy27-tag"> ★ FY27</span>':''}</div>
+          <div style="font-size:9px;color:#555">${p.current_phase}</div>
+        </div>
+        <div class="card-fee">${mxn(p.estimated_fee_mxn)}</div>
+        <div class="progress-wrap">
+          <div class="progress-collected" style="width:${colPct}%"></div>
+          <div class="progress-outstanding" style="width:${outPct}%"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:9px;color:#555;margin-bottom:8px">
+          <span style="color:#4ade80">✓ ${mxn(col)} collected</span>
+          <span style="color:#f97316">◷ ${mxn(out)} outstanding</span>
+        </div>
+        <div class="milestones-row">${msHtml}</div>
+      </div>`;
+  }
+
+  return `
+    <div class="disclaimer">⚠ Estimates only. Collected/projected status based on current_phase field in financial-model.json.</div>
+    ${summaryHtml}
+    <div class="section-title">13 in-process projects · sorted: FY27 first, then by outstanding amount</div>
+    <div class="pipeline-grid">${cardsHtml}</div>`;
+}
+
+// ─── TAB 3: Cash Flow ─────────────────────────────────────────────────────────
+function renderCashFlow() {
+  const quarters = ['Q1 2026','Q2 2026','Q3 2026','Q4 2026','Q1 2027','Q2 2027','Q3 2027','Q4 2027'];
+  const qKey = d => {
+    if (!d) return null;
+    const [y, m] = d.split('-').map(Number);
+    if (y < 2026 || y > 2027) return null;
+    return `Q${Math.ceil(m/3)} ${y}`;
+  };
+
+  const inProcess = MODEL.projects.filter(p => p.status==='in_process');
+  const payments = [];
+  inProcess.forEach((p, pi) => {
+    p.milestones.forEach(m => {
+      if (m.status !== 'projected') return;
+      const q = qKey(m.estimated_date);
+      if (!q) return;
+      payments.push({ project: p.name, fy27: p.fy27, milestone: m.label, amount: m.amount_mxn, quarter: q, color: PROJECT_COLORS[pi % PROJECT_COLORS.length] });
+    });
+  });
+
+  const byQ = {};
+  quarters.forEach(q => { byQ[q] = []; });
+  payments.forEach(pay => { if (byQ[pay.quarter]) byQ[pay.quarter].push(pay); });
+
+  const qTotals = quarters.map(q => byQ[q].reduce((s,p) => s+p.amount, 0));
+  const maxQ = Math.max(...qTotals, 1);
+
+  // Bar chart
+  let barsHtml = '';
+  quarters.forEach((q, i) => {
+    const total = qTotals[i];
+    const pct = Math.round((total/maxQ)*100);
+    let segHtml = '';
+    let offset = 0;
+    byQ[q].forEach(pay => {
+      const h = Math.round((pay.amount/maxQ)*200);
+      segHtml = `<div class="cf-bar" style="height:${h}px;background:${pay.color}" title="${pay.project} — ${pay.milestone}: ${mxn(pay.amount)}"></div>` + segHtml;
+    });
+    barsHtml += `
+      <div class="cf-bar-wrap">
+        ${total>0?`<div class="cf-q-amt">${mxn(total)}</div>`:''}
+        <div style="width:100%;display:flex;flex-direction:column;justify-content:flex-end;height:200px">
+          ${byQ[q].map(pay => {
+            const h = Math.round((pay.amount/maxQ)*180);
+            return `<div style="width:100%;height:${h}px;background:${pay.color};border-radius:${byQ[q].indexOf(pay)===0?'2px 2px':'0'} 0 0" title="${pay.project} — ${pay.milestone}: ${mxn(pay.amount)}"></div>`;
+          }).reverse().join('')}
+        </div>
+        <div class="cf-q-label">${q}</div>
+      </div>`;
+  });
+
+  // Table
+  let tableRows = '';
+  const allPay = payments.sort((a,b) => a.quarter.localeCompare(b.quarter));
+  if (allPay.length === 0) {
+    tableRows = '<tr><td colspan="4" style="color:#444;padding:16px">No projected milestones with dates in 2026–2027.</td></tr>';
+  } else {
+    allPay.forEach(pay => {
+      tableRows += `<tr>
+        <td style="color:#888">${pay.quarter}</td>
+        <td>${pay.project}${pay.fy27?'<span class="fy27-tag"> ★</span>':''}</td>
+        <td style="color:#888">${pay.milestone}</td>
+        <td style="color:#f97316">${mxn(pay.amount)}</td>
+      </tr>`;
+    });
+  }
+
+  const totalFwd = payments.reduce((s,p) => s+p.amount, 0);
+
+  return `
+    <div class="disclaimer">⚠ Projected milestones only. Dates estimated from phase progression — not confirmed payment schedules.</div>
+    <div class="section-title">Projected collections Q1 2026 – Q4 2027 · total: ${mxn(totalFwd)}</div>
+    <div class="cf-chart">
+      <div class="cf-bars">${barsHtml}</div>
+    </div>
+    <div class="section-title" style="margin-top:12px">Payment detail</div>
+    <table class="cf-table">
+      <thead><tr><th>Quarter</th><th>Project</th><th>Milestone</th><th>Amount (MXN)</th></tr></thead>
+      <tbody>${tableRows}</tbody>
+    </table>`;
+}
+
+// ─── TAB 4: KPIs ─────────────────────────────────────────────────────────────
+function renderKPIs() {
+  const projects = MODEL.projects;
+  const allMs = projects.flatMap(p => p.milestones);
+  const built = projects.filter(p => p.status==='built');
+  const inProcess = projects.filter(p => p.status==='in_process');
+
+  const totalFee  = projects.reduce((s,p) => s+p.estimated_fee_mxn, 0);
+  const avgFee    = Math.round(totalFee / projects.length);
+  const collected = allMs.filter(m=>m.status==='collected').reduce((s,m)=>s+m.amount_mxn,0);
+  const outstanding = allMs.filter(m=>m.status==='projected').reduce((s,m)=>s+m.amount_mxn,0);
+  const fy27Total = projects.filter(p=>p.fy27).reduce((s,p)=>s+p.estimated_fee_mxn,0);
+
+  // Peak revenue year
+  const byYear = {};
+  for (const p of built) {
+    if (!p.delivery_year) continue;
+    byYear[p.delivery_year] = (byYear[p.delivery_year]||0) + p.estimated_fee_mxn;
+  }
+  const peakYear = Object.entries(byYear).sort((a,b)=>b[1]-a[1])[0];
+
+  // Most valuable active project (by outstanding)
+  const mostValuable = [...inProcess].sort((a,b) => {
+    const aOut = a.milestones.filter(m=>m.status==='projected').reduce((s,m)=>s+m.amount_mxn,0);
+    const bOut = b.milestones.filter(m=>m.status==='projected').reduce((s,m)=>s+m.amount_mxn,0);
+    return bOut - aOut;
+  })[0];
+  const mvOut = mostValuable ? mostValuable.milestones.filter(m=>m.status==='projected').reduce((s,m)=>s+m.amount_mxn,0) : 0;
+
+  return `
+    <div class="disclaimer">⚠ All figures are estimates derived from fee tier defaults — not accounting records.</div>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">Avg Fee per Project</div>
+        <div class="kpi-val">${mxn(avgFee)}</div>
+        <div class="kpi-note">Across all ${projects.length} projects. Range: MXN 475K (small res.) → MXN 2.5M (commercial).</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Total Studio Revenue Est.</div>
+        <div class="kpi-val green">${mxn(collected)}</div>
+        <div class="kpi-note">Sum of all collected milestones 2016–2026. Includes estimated amounts for pre-2019 projects.</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Active Pipeline Value</div>
+        <div class="kpi-val orange">${mxn(outstanding)}</div>
+        <div class="kpi-note">Outstanding projected milestones across ${inProcess.length} in-process projects. Subject to project reactivation.</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Peak Revenue Year</div>
+        <div class="kpi-val blue">${peakYear ? peakYear[0] : '—'}</div>
+        <div class="kpi-note">${peakYear ? `${mxn(peakYear[1])} estimated — driven by ${Object.entries(byYear).filter(([y])=>Number(y)===Number(peakYear[0])).length > 0 ? 'commercial projects in portfolio' : 'project mix'}.` : 'No delivery years confirmed.'}</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Most Valuable Active Project</div>
+        <div class="kpi-val" style="font-size:18px;color:#f5f5f5">${mostValuable ? mostValuable.name : '—'}</div>
+        <div class="kpi-note">${mostValuable ? `${mxn(mvOut)} outstanding · ${mostValuable.fy27?'★ FY27 priority':'not FY27'} · ${mostValuable.current_phase} phase` : ''}</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">FY27 Campaign Pipeline</div>
+        <div class="kpi-val yellow">${mxn(fy27Total)}</div>
+        <div class="kpi-note">${projects.filter(p=>p.fy27).length} FY27 priority projects · ${projects.filter(p=>p.fy27&&p.status==='built').length} built, ${projects.filter(p=>p.fy27&&p.status==='in_process').length} in process.</div>
+      </div>
+    </div>`;
+}
+
+// ─── TAB 5: Assumptions ───────────────────────────────────────────────────────
+function renderAssumptions() {
+  const a = MODEL.assumptions;
+  const tiers = a.tier_defaults;
+  const tierRows = Object.entries(tiers).map(([key, t]) => {
+    const label = key.replace('_', ' ').replace('residential','res.');
+    return `<tr>
+      <td>${label}</td>
+      <td style="color:#888">${t.sqm_range} m²</td>
+      <td style="color:#60a5fa">${mxn(t.fee_min)} – ${mxn(t.fee_max)}</td>
+      <td style="color:#4ade80">${mxn(t.fee_default)}</td>
+    </tr>`;
+  }).join('');
+
+  const payLabels = a.payment_schedule_labels;
+  const payPcts   = a.payment_schedule_pct;
+  const payHtml = payPcts.map((pct, i) =>
+    `<div class="pay-block"><div class="pay-pct">${pct}%</div><div class="pay-label">${payLabels[i]}</div></div>`
+  ).join('');
+
+  return `
+    <div class="disclaimer">⚠ These are the assumptions driving all estimates. Edit data/financial-model.json to update. None of this is accounting data.</div>
+    <div class="assume-grid">
+      <div class="assume-block">
+        <h3>Fee Tiers</h3>
+        <table class="tier-table">
+          <thead><tr><th>Tier</th><th>m²</th><th>Fee range</th><th>Default</th></tr></thead>
+          <tbody>${tierRows}</tbody>
+        </table>
+      </div>
+      <div class="assume-block">
+        <h3>Payment Schedule</h3>
+        <div class="pay-schedule">${payHtml}</div>
+      </div>
+      <div class="assume-block">
+        <h3>Architecture Fee</h3>
+        <div class="assume-row"><span class="assume-key">Fee percentage</span><span class="assume-val">${a.architecture_fee_pct}% of construction cost</span></div>
+        <div class="assume-row"><span class="assume-key">Residential low</span><span class="assume-val">MXN ${a.construction_cost_per_sqm_mxn.residential_low.toLocaleString()}/m²</span></div>
+        <div class="assume-row"><span class="assume-key">Residential mid</span><span class="assume-val">MXN ${a.construction_cost_per_sqm_mxn.residential_mid.toLocaleString()}/m²</span></div>
+        <div class="assume-row"><span class="assume-key">Residential high</span><span class="assume-val">MXN ${a.construction_cost_per_sqm_mxn.residential_high.toLocaleString()}/m²</span></div>
+        <div class="assume-row"><span class="assume-key">Commercial</span><span class="assume-val">MXN ${a.construction_cost_per_sqm_mxn.commercial.toLocaleString()}/m²</span></div>
+      </div>
+      <div class="assume-block">
+        <h3>Phase Durations (target)</h3>
+        <div class="assume-row"><span class="assume-key">Estudios previos</span><span class="assume-val">${a.phase_duration_weeks.estudios_previos} weeks avg</span></div>
+        <div class="assume-row"><span class="assume-key">Conceptual + Anteproyecto</span><span class="assume-val">${a.phase_duration_weeks.conceptual_anteproyecto} weeks avg</span></div>
+        <div class="assume-row"><span class="assume-key">Ejecutivo (CDs)</span><span class="assume-val">${a.phase_duration_weeks.ejecutivo} weeks avg</span></div>
+        <div class="assume-row"><span class="assume-key">Total design phase</span><span class="assume-val">~28 weeks avg</span></div>
+      </div>
+    </div>`;
+}
+
+init();
+</script>
+</body>
+</html>

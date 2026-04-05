@@ -82,10 +82,10 @@ def generate_page(campaign_id: str) -> Path:
     photos_base = f"../../campaigns/pending/{campaign_id}/photos"
 
     def extract_filename(value: str) -> str:
-        """Pull the first _DSC*.JPG (or similar) filename from a cover_asset string."""
+        """Pull the first recognized image filename from a cover_asset string."""
         if not value:
             return ""
-        m = re.search(r'_DSC\d+\.JPG', value, re.IGNORECASE)
+        m = re.search(r'(_DSC\d+\.JPG|VISTA\d+[^.\s]*\.jpe?g)', value, re.IGNORECASE)
         return m.group(0) if m else value.strip()
 
     # Merge copy posts and visual posts by sequence number

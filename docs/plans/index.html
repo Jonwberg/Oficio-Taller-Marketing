@@ -130,6 +130,12 @@
       text-overflow: ellipsis;
     }
 
+    .nav-item.external .label::after {
+      content: ' ↗';
+      font-size: 9px;
+      opacity: 0.4;
+    }
+
     /* Sidebar footer */
     #sidebar-footer {
       color: #222;
@@ -204,6 +210,13 @@
       <div class="nav-item" data-hash="#financial" onclick="navigate('#financial')">
         <span class="dot">○</span>
         <span class="label">Financial Model</span>
+      </div>
+
+      <div class="nav-group-label">MARKETING</div>
+
+      <div class="nav-item external" onclick="window.open('https://drive.google.com/drive/folders/1HTRAYvyOo9oqBFo8yNmRXhkstZc-DKPA','_blank')">
+        <span class="dot">○</span>
+        <span class="label">Press Kits</span>
       </div>
 
     </div>

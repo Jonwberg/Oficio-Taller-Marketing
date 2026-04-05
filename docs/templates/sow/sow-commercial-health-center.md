@@ -17,7 +17,7 @@ Health center projects differ from other commercial types in the following criti
 
 ## Phase Structure
 
-### Phase 1 — Conceptual Design (Diseño Conceptual)
+### Phase 1 — Estudios Previos y Conceptual (Preliminary Studies & Conceptual Design)
 **Deliverables:**
 - Design narrative focused on clinical workflow and patient experience (2–4 pages)
 - Preliminary zone diagrams: clinical areas, waiting, staff areas, clean/dirty service corridors, reception
@@ -36,7 +36,7 @@ Health center projects differ from other commercial types in the following criti
 
 ---
 
-### Phase 2 — Architectural Design (Proyecto Arquitectónico)
+### Phase 2 — Anteproyecto / Concepto (Schematic Design)
 **Deliverables:**
 - Floor plans all levels (1:100 scale) — all clinical and support zones
 - Elevations all facades (1:100)

@@ -42,8 +42,21 @@
     { "name": "6", "drive_id": null, "notes": "Oct 2023", "url": null },
     { "name": "RENDERS", "drive_id": "1jjr9cnjWVHtfW3CeS_RxB81YjHRyISQy", "notes": "Renders — Oct 2023", "url": "https://drive.google.com/drive/folders/1jjr9cnjWVHtfW3CeS_RxB81YjHRyISQy" }
   ],
+  "renders": [
+    { "filename": "VISTA01_FRONT FACADE.jpg", "drive_file_id": "1Gt5EFeS5lNAFDTQu6z5phO_0U9lne7DY", "description": "Front facade render — exterior approach view showing the project's relationship to the site and horizon.", "notes": "Downloaded 2026-03-29 from RENDERS HORIZONTE subfolder (1TkxAWpvGoC3aRN7H0aePNBjHn3jJN4TG)" },
+    { "filename": "VISTA02_CENTRAL PATIO.jpg", "drive_file_id": "1Csi2cU_WrehfkLpr-Ct9IZjGXAZC-rNC", "description": "Central patio render.", "notes": "Downloaded 2026-03-29" },
+    { "filename": "VISTA03_LIVING.jpg", "drive_file_id": "1xfSBRsU0fTaaSbWz6kLK6wLAZmF99J77", "description": "Living area render.", "notes": "Downloaded 2026-03-29" },
+    { "filename": "VISTA04_DINING.jpg", "drive_file_id": "1HFaM9AjLondH9uEhwbUprANUVhQyMRhN", "description": "Dining area render.", "notes": "Downloaded 2026-03-29" },
+    { "filename": "VISTA041_DINING 2.jpg", "drive_file_id": "1xdmxDsD-yHneNGlyrxvBEwlBroRo6YFI", "description": "Dining area render — alternate angle.", "notes": "Downloaded 2026-03-29" },
+    { "filename": "VISTA05_MASTER BEDROOM.jpg", "drive_file_id": "19KiQDP16KEqaiihPdbUyr-GuYvHsnLaI", "description": "Master bedroom render.", "notes": "Downloaded 2026-03-29" },
+    { "filename": "VISTA06_POOL.jpg", "drive_file_id": "1OUyhckDpHSELaMpS8BFGvvMFwrq7iyW0", "description": "Pool area render.", "notes": "Downloaded 2026-03-29" },
+    { "filename": "VISTA07_FIREPIT.jpg", "drive_file_id": "1mhoToc46FIuSSCa2ir8WAoDNyVmytOQO", "description": "Firepit area render.", "notes": "Downloaded 2026-03-29" },
+    { "filename": "VISTA08_BACK FACADE.jpg", "drive_file_id": "1ldtRqlpm1G2gC4JCMy1dzKkPLyCt01hz", "description": "Back facade render — exterior rear view.", "notes": "Downloaded 2026-03-29" }
+  ],
+  "renders_folder_id": "1TkxAWpvGoC3aRN7H0aePNBjHn3jJN4TG",
+  "renders_source_folder": "1HTRAYvyOo9oqBFo8yNmRXhkstZc-DKPA",
   "video_files": [],
   "process_images": [],
-  "asset_notes": "All site photos are from the January–February 2023 documentation sessions. Subfolders 1–6 likely correspond to the 6 published posts documented in HORIZONTES TEXTOS PUBLI. Renders folder available for architectural visualization. No video files confirmed yet — check 10. OTROS (modified Aug 2025) and 09. CONSTRUCCIÓN (modified Jun 2024) for construction progress footage.",
+  "asset_notes": "All site photos are from the January–February 2023 documentation sessions. Subfolders 1–6 likely correspond to the 6 published posts documented in HORIZONTES TEXTOS PUBLI. Renders confirmed 2026-03-29: 9 files downloaded from RENDERS HORIZONTE subfolder (VISTA01–VISTA08 + VISTA041). No video files confirmed yet — check 10. OTROS (modified Aug 2025) and 09. CONSTRUCCIÓN (modified Jun 2024) for construction progress footage.",
   "textos_publi_url": "https://docs.google.com/document/d/1I1RLtao_7q_nYv4N5bKJPw_oYkUJXsi2wjpofVCLh7k/edit"
 }

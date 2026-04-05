@@ -116,7 +116,7 @@ python entrega/gmail_client.py read_client_reply --thread "[client_questionnaire
 
 ## Step 5: Document the first meeting
 
-After receiving questionnaire responses (or seed data), document the first meeting:
+After receiving questionnaire responses (or seed data), document the first meeting. If the client's responses include room-level program details, use `docs/templates/program-interview.md` as a reference for what to capture in meeting_notes — the more specific the room data, the better Ana can build the area program.
 
 ```json
 {

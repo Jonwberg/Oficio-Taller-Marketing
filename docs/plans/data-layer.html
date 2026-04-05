@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Layer Architecture — Oficio Taller Entrega</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #080c10; color: #c9d1d9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+
+/* ── TOP BAR ── */
+.topbar { background: #0d1117; border-bottom: 1px solid #21262d; padding: 14px 24px; display: flex; align-items: center; gap: 12px; position: sticky; top: 0; z-index: 200; }
+.topbar h1 { font-size: 1rem; font-weight: 600; color: #f0f6fc; letter-spacing: -.02em; flex: 1; }
+.badge { font-size: .72rem; background: #161b22; border: 1px solid #30363d; color: #8b949e; padding: 3px 8px; border-radius: 4px; white-space: nowrap; }
+
+/* ── TABS ── */
+.tabs { background: #0d1117; border-bottom: 1px solid #21262d; padding: 0 24px; display: flex; overflow-x: auto; }
+.tab { padding: 12px 16px; font-size: .82rem; color: #8b949e; cursor: pointer; border-bottom: 2px solid transparent; white-space: nowrap; transition: color .15s, border-color .15s; }
+.tab:hover { color: #c9d1d9; }
+.tab.active { color: #58a6ff; border-bottom-color: #58a6ff; font-weight: 500; }
+
+/* ── PANELS ── */
+.panel { display: none; padding: 32px 24px 80px; max-width: 1200px; margin: 0 auto; }
+.panel.active { display: block; }
+
+/* ── SECTION HEADER ── */
+.section-hd { font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: #484f58; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.section-gap { margin-top: 40px; }
+
+/* ── STORAGE CARDS ── */
+.storage-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 16px; margin-bottom: 40px; }
+.storage-card { background: #0d1117; border: 1px solid #21262d; border-radius: 10px; padding: 20px; }
+.storage-card .sys-name { font-size: .95rem; font-weight: 600; color: #f0f6fc; margin-bottom: 4px; }
+.storage-card .sys-path { font-family: 'SF Mono', monospace; font-size: .72rem; color: #58a6ff; margin-bottom: 12px; }
+.storage-card .sys-badge { display: inline-block; font-size: .68rem; padding: 2px 7px; border-radius: 4px; margin-bottom: 12px; font-weight: 600; }
+.badge-primary   { background: #0d2d6b; color: #58a6ff; }
+.badge-secondary { background: #1c2a1c; color: #3fb950; }
+.badge-comms     { background: #2d1c1c; color: #f85149; }
+.badge-archive   { background: #2a2218; color: #d29922; }
+.storage-card .doc-list { font-size: .75rem; color: #8b949e; }
+.storage-card .doc-list li { padding: 2px 0; list-style: none; }
+.storage-card .doc-list li::before { content: "—  "; color: #30363d; }
+.storage-card .sys-stat { margin-top: 12px; font-size: .72rem; color: #484f58; border-top: 1px solid #21262d; padding-top: 10px; display: flex; gap: 12px; }
+.storage-card .sys-stat span { color: #8b949e; }
+
+/* ── DOC INVENTORY ── */
+.filter-bar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+.filter-btn { background: #161b22; border: 1px solid #30363d; color: #8b949e; padding: 5px 12px; border-radius: 5px; font-size: .75rem; cursor: pointer; transition: all .15s; }
+.filter-btn:hover, .filter-btn.active { background: #1f6feb20; border-color: #58a6ff; color: #58a6ff; }
+
+.doc-table { width: 100%; border-collapse: collapse; font-size: .78rem; }
+.doc-table th { background: #161b22; color: #8b949e; text-transform: uppercase; letter-spacing: .06em; font-size: .68rem; padding: 8px 12px; text-align: left; border-bottom: 1px solid #21262d; white-space: nowrap; }
+.doc-table td { padding: 8px 12px; border-bottom: 1px solid #161b22; vertical-align: top; }
+.doc-table tr:hover td { background: #0d1117; }
+.doc-table tr.hidden { display: none; }
+
+.doc-name { font-family: 'SF Mono', monospace; color: #58a6ff; }
+.layer-pill { display: inline-block; font-size: .65rem; padding: 2px 7px; border-radius: 10px; font-weight: 600; white-space: nowrap; }
+.l0 { background: #1c1c2a; color: #8b949e; }
+.l1 { background: #1c2518; color: #56d364; }
+.l2 { background: #0d2d6b20; color: #79c0ff; }
+.l3 { background: #1c2518; color: #3fb950; }
+.l4 { background: #2d1f2d; color: #d2a8ff; }
+.l5 { background: #0d2d0d; color: #56d364; }
+.l6 { background: #2a1c10; color: #d29922; }
+.l7 { background: #10222d; color: #39d0d8; }
+.l8 { background: #2d1c1c; color: #f85149; }
+.agent-tag { display: inline-block; background: #161b22; border: 1px solid #30363d; color: #c9d1d9; padding: 1px 7px; border-radius: 3px; font-size: .68rem; margin: 1px; white-space: nowrap; }
+.gate-tag { display: inline-block; background: #0d2d6b20; border: 1px solid #1f6feb40; color: #58a6ff; padding: 1px 7px; border-radius: 3px; font-size: .68rem; white-space: nowrap; }
+.gate-none { color: #484f58; font-size: .72rem; }
+.fields-list { font-family: 'SF Mono', monospace; font-size: .68rem; color: #8b949e; line-height: 1.8; }
+
+/* ── LINEAGE ── */
+.lineage-wrap { overflow-x: auto; }
+.lineage-grid { display: flex; gap: 0; min-width: 900px; }
+.lineage-col { flex: 1; min-width: 130px; }
+.lineage-col-hd { font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; padding: 6px 10px; margin-bottom: 8px; border-radius: 4px; text-align: center; }
+.lineage-col-body { display: flex; flex-direction: column; gap: 6px; padding: 0 4px; }
+.lineage-doc { background: #0d1117; border: 1px solid #21262d; border-radius: 6px; padding: 8px 10px; font-size: .68rem; position: relative; cursor: default; transition: border-color .15s; }
+.lineage-doc:hover { border-color: #58a6ff; z-index: 10; }
+.lineage-doc .ld-name { font-family: 'SF Mono', monospace; color: #58a6ff; margin-bottom: 3px; word-break: break-all; }
+.lineage-doc .ld-agent { color: #484f58; font-size: .62rem; }
+.lineage-doc .ld-gate { font-size: .62rem; color: #1f6feb; margin-top: 3px; }
+.lineage-doc.event { border-color: #f85149; }
+.lineage-doc.event .ld-name { color: #f85149; }
+.lineage-doc.template { border-style: dashed; border-color: #d29922; }
+.lineage-doc.template .ld-name { color: #d29922; }
+.lineage-arrow { color: #30363d; font-size: .9rem; text-align: center; margin: 4px 0; }
+.lineage-state { background: #161b22; border: 1px solid #58a6ff; border-radius: 6px; padding: 8px 10px; font-size: .68rem; text-align: center; margin-bottom: 8px; }
+.lineage-state .ld-name { font-family: 'SF Mono', monospace; color: #58a6ff; font-weight: 600; }
+.lineage-state .ld-agent { color: #8b949e; font-size: .62rem; }
+
+/* ── GOVERNANCE ── */
+.gov-table { width: 100%; border-collapse: collapse; font-size: .76rem; }
+.gov-table th { background: #161b22; color: #8b949e; font-size: .68rem; text-transform: uppercase; letter-spacing: .05em; padding: 8px 12px; text-align: left; border-bottom: 1px solid #21262d; }
+.gov-table td { padding: 7px 12px; border-bottom: 1px solid #161b22; vertical-align: middle; }
+.gov-table tr:hover td { background: #0d1117; }
+.gov-w  { color: #3fb950; font-weight: 600; }
+.gov-r  { color: #79c0ff; }
+.gov-rw { color: #d2a8ff; font-weight: 600; }
+.immutable { color: #484f58; font-size: .68rem; font-style: italic; }
+.depends { font-size: .68rem; color: #8b949e; }
+
+/* ── ANALYTICS ── */
+.schema-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+.schema-card { background: #0d1117; border: 1px solid #21262d; border-radius: 8px; padding: 16px; }
+.schema-card .sc-type { font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #484f58; margin-bottom: 6px; }
+.schema-card .sc-name { font-size: .88rem; font-weight: 600; color: #f0f6fc; margin-bottom: 12px; font-family: 'SF Mono', monospace; }
+.schema-card .sc-fields { font-size: .72rem; font-family: 'SF Mono', monospace; }
+.schema-card .field-row { display: flex; gap: 8px; padding: 3px 0; border-bottom: 1px solid #161b22; }
+.schema-card .field-row:last-child { border-bottom: none; }
+.field-name { color: #79c0ff; flex: 1; }
+.field-type { color: #484f58; }
+.field-pk   { color: #f85149; font-weight: 700; }
+.field-fk   { color: #d29922; }
+.field-src  { font-size: .62rem; color: #484f58; margin-left: auto; }
+
+.metrics-table { width: 100%; border-collapse: collapse; font-size: .78rem; }
+.metrics-table th { background: #161b22; color: #8b949e; font-size: .68rem; text-transform: uppercase; letter-spacing: .05em; padding: 8px 12px; text-align: left; }
+.metrics-table td { padding: 8px 12px; border-bottom: 1px solid #161b22; vertical-align: top; }
+.metric-name { color: #d2a8ff; font-weight: 600; font-family: 'SF Mono', monospace; }
+.metric-formula { color: #8b949e; font-size: .72rem; font-family: 'SF Mono', monospace; }
+.metric-src { color: #484f58; font-size: .72rem; }
+
+/* ── ENTITY DIAGRAM ── */
+.erd-wrap { overflow-x: auto; }
+.erd { display: flex; gap: 32px; align-items: flex-start; flex-wrap: wrap; min-width: 900px; }
+.erd-entity { background: #0d1117; border: 1px solid #21262d; border-radius: 8px; min-width: 180px; }
+.erd-entity .ent-hd { background: #161b22; padding: 8px 12px; border-radius: 8px 8px 0 0; font-size: .78rem; font-weight: 600; font-family: 'SF Mono', monospace; }
+.erd-entity .ent-hd.fact { color: #3fb950; border-bottom: 2px solid #3fb950; }
+.erd-entity .ent-hd.dim  { color: #58a6ff; border-bottom: 2px solid #58a6ff; }
+.erd-entity .ent-hd.event{ color: #f85149; border-bottom: 2px solid #f85149; }
+.erd-entity .ent-body { padding: 8px 12px; }
+.erd-entity .ent-field { font-size: .72rem; font-family: 'SF Mono', monospace; padding: 2px 0; display: flex; gap: 8px; }
+.erd-entity .ent-field.pk { color: #f85149; }
+.erd-entity .ent-field.fk { color: #d29922; }
+.erd-entity .ent-field.reg{ color: #8b949e; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>Data Layer Architecture — Entrega Pipeline</h1>
+  <span class="badge">25 documents</span>
+  <span class="badge">4 storage systems</span>
+  <span class="badge">11 gate events</span>
+  <span class="badge">8 data layers</span>
+</div>
+
+<div class="tabs">
+  <div class="tab active"  onclick="showTab('storage')">🗄 Storage Systems</div>
+  <div class="tab"         onclick="showTab('inventory')">📋 Document Inventory</div>
+  <div class="tab"         onclick="showTab('lineage')">🔀 Data Lineage</div>
+  <div class="tab"         onclick="showTab('governance')">🔒 Governance Matrix</div>
+  <div class="tab"         onclick="showTab('schema')">📊 Analytics Schema</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ TAB 1: STORAGE -->
+<div class="panel active" id="panel-storage">
+  <div class="section-hd">Storage Systems — where data lives</div>
+
+  <div class="storage-grid">
+
+    <div class="storage-card">
+      <div class="sys-name">📁 Local Filesystem</div>
+      <div class="sys-path">projects/[project_id]/</div>
+      <div class="sys-badge badge-primary">PRIMARY OPERATIONAL STORE</div>
+      <ul class="doc-list">
+        <li>state.json — master state machine</li>
+        <li>lead-record.json</li>
+        <li>lead-summary.json</li>
+        <li>discovery-questionnaire.json</li>
+        <li>client-fit-assessment.json</li>
+        <li>area-program.json</li>
+        <li>cost-basis.json</li>
+        <li>site-readiness-report.json</li>
+        <li>decision-event.json (×11 per project)</li>
+        <li>scope-of-work.json</li>
+        <li>budget.json</li>
+        <li>proposal.json</li>
+        <li>legal-review.json</li>
+        <li>client-communication.json</li>
+        <li>contract-signed.pdf</li>
+        <li>milestone-signoff-M[1-4].pdf</li>
+        <li>project-schedule.json</li>
+        <li>concept-review.json</li>
+        <li>architectural-design-package.json</li>
+        <li>engineering-package.json</li>
+        <li>budget-alignment.json</li>
+        <li>executive-plans-package.json</li>
+        <li>bid-comparison-matrix.json</li>
+        <li>permits-package.json</li>
+      </ul>
+      <div class="sys-stat">
+        <div><span>Format:</span> JSON + PDF</div>
+        <div><span>Access:</span> Direct file read</div>
+        <div><span>Key:</span> project_id</div>
+      </div>
+    </div>
+
+    <div class="storage-card">
+      <div class="sys-name">✅ Asana</div>
+      <div class="sys-path">asana_project_id → tasks{}</div>
+      <div class="sys-badge badge-secondary">TEAM TRACKING / GATE STATUS</div>
+      <ul class="doc-list">
+        <li>Project board (one per project)</li>
+        <li>Sections: Intake · Discovery · Programming · Scope · Proposal · Contract · Design · Procurement</li>
+        <li>Gates section: DG-01 through DG-11 tasks</li>
+        <li>Custom field: decision_status (awaiting / approved / rejected)</li>
+        <li>Subtasks: phase milestones with due dates (Pablo)</li>
+        <li>Task IDs stored in state.json tasks{} object</li>
+      </ul>
+      <div class="sys-stat">
+        <div><span>Writers:</span> Celia, Vera, all agents</div>
+        <div><span>Readers:</span> Marcela + team</div>
+      </div>
+    </div>
+
+    <div class="storage-card">
+      <div class="sys-name">📧 Gmail</div>
+      <div class="sys-path">thread_id fields in state.json</div>
+      <div class="sys-badge badge-comms">CLIENT COMMS + AUDIT TRAIL</div>
+      <ul class="doc-list">
+        <li>DG-01 review thread (lead → Marcela)</li>
+        <li>Client questionnaire thread (Elena → client)</li>
+        <li>DG-02 review thread (fit → Marcela)</li>
+        <li>DG-03 review thread (cost basis → Marcela)</li>
+        <li>DG-04 review thread (SOW → architect)</li>
+        <li>DG-05 review thread (proposal → architect)</li>
+        <li>Client proposal thread (Rosa → client)</li>
+        <li>DG-06 reply thread (client → Rosa)</li>
+        <li>Thread IDs: review_thread_id, client_questionnaire_thread_id</li>
+      </ul>
+      <div class="sys-stat">
+        <div><span>API:</span> gmail_client.py</div>
+        <div><span>Governance:</span> Celia reads; agents send</div>
+      </div>
+    </div>
+
+    <div class="storage-card">
+      <div class="sys-name">☁️ Google Drive</div>
+      <div class="sys-path">OFICIO → Proyectos → [project_id]/</div>
+      <div class="sys-badge badge-archive">DELIVERABLES + SIGNED DOCS</div>
+      <ul class="doc-list">
+        <li>contract-signed.pdf (original + client copy)</li>
+        <li>milestone-signoff-M[1-4].pdf</li>
+        <li>Deliverable packages (concept, architectural, executive)</li>
+        <li>01.13 ESTIMACIÓN ÁREAS (Excel source)</li>
+        <li>ALCANCE_BASE.docx (SOW source template)</li>
+        <li>Client-provided docs: escrituras, topographic surveys</li>
+        <li>Photos: WhatsApp site images</li>
+      </ul>
+      <div class="sys-stat">
+        <div><span>Access:</span> Manual upload + Drive API</div>
+        <div><span>Governance:</span> Marcela + Legal manage</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-hd section-gap">State.json — master state machine fields</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;">
+    <div class="schema-card">
+      <div class="sc-type">Identity</div>
+      <div class="sc-name">state.json</div>
+      <div class="sc-fields">
+        <div class="field-row"><span class="field-name field-pk">project_id</span><span class="field-type">string PK</span></div>
+        <div class="field-row"><span class="field-name">client_name</span><span class="field-type">string</span></div>
+        <div class="field-row"><span class="field-name">client_email</span><span class="field-type">string</span></div>
+        <div class="field-row"><span class="field-name">project_type</span><span class="field-type">enum</span></div>
+        <div class="field-row"><span class="field-name">project_state</span><span class="field-type">enum</span></div>
+        <div class="field-row"><span class="field-name">awaiting_gate</span><span class="field-type">DG-01..11|null</span></div>
+        <div class="field-row"><span class="field-name">contract_currency</span><span class="field-type">MXN|USD|CAD</span></div>
+      </div>
+    </div>
+    <div class="schema-card">
+      <div class="sc-type">External IDs</div>
+      <div class="sc-name">state.json — thread IDs</div>
+      <div class="sc-fields">
+        <div class="field-row"><span class="field-name">review_thread_id</span><span class="field-type">Gmail</span></div>
+        <div class="field-row"><span class="field-name">client_questionnaire_thread_id</span><span class="field-type">Gmail</span></div>
+        <div class="field-row"><span class="field-name">asana_project_id</span><span class="field-type">Asana</span></div>
+        <div class="field-row"><span class="field-name">tasks.lead_review</span><span class="field-type">Asana task</span></div>
+        <div class="field-row"><span class="field-name">tasks.fit_gate</span><span class="field-type">Asana task</span></div>
+        <div class="field-row"><span class="field-name">tasks.cost_basis_gate</span><span class="field-type">Asana task</span></div>
+        <div class="field-row"><span class="field-name">tasks.proposal_gate</span><span class="field-type">Asana task</span></div>
+      </div>
+    </div>
+    <div class="schema-card">
+      <div class="sc-type">Pipeline flags</div>
+      <div class="sc-name">state.json — booleans</div>
+      <div class="sc-fields">
+        <div class="field-row"><span class="field-name">area_program_complete</span><span class="field-type">bool</span></div>
+        <div class="field-row"><span class="field-name">site_data_complete</span><span class="field-type">bool</span></div>
+        <div class="field-row"><span class="field-name">milestone_M1_signed</span><span class="field-type">bool</span></div>
+        <div class="field-row"><span class="field-name">milestone_M2_signed</span><span class="field-type">bool</span></div>
+        <div class="field-row"><span class="field-name">milestone_M3_signed</span><span class="field-type">bool</span></div>
+        <div class="field-row"><span class="field-name">milestone_M4_signed</span><span class="field-type">bool</span></div>
+        <div class="field-row"><span class="field-name">contract_signed_at</span><span class="field-type">ISO-8601|null</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ TAB 2: INVENTORY -->
+<div class="panel" id="panel-inventory">
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterDocs('all', this)">All (25)</button>
+    <button class="filter-btn" onclick="filterDocs('system', this)">System</button>
+    <button class="filter-btn" onclick="filterDocs('ingest', this)">Ingest</button>
+    <button class="filter-btn" onclick="filterDocs('discovery', this)">Discovery</button>
+    <button class="filter-btn" onclick="filterDocs('program', this)">Program</button>
+    <button class="filter-btn" onclick="filterDocs('commercial', this)">Commercial</button>
+    <button class="filter-btn" onclick="filterDocs('contract', this)">Contract</button>
+    <button class="filter-btn" onclick="filterDocs('execution', this)">Execution</button>
+    <button class="filter-btn" onclick="filterDocs('procurement', this)">Procurement</button>
+    <button class="filter-btn" onclick="filterDocs('event', this)">Event Log</button>
+  </div>
+
+  <table class="doc-table" id="docTable">
+    <thead>
+      <tr>
+        <th>Document</th>
+        <th>Layer</th>
+        <th>Storage</th>
+        <th>Written By</th>
+        <th>Key Fields</th>
+        <th>Locked After</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-layer="system">
+        <td><span class="doc-name">state.json</span></td>
+        <td><span class="layer-pill l0">System</span></td>
+        <td>Local FS</td>
+        <td><span class="agent-tag">Lupe A (init)</span> <span class="agent-tag">All agents (update)</span></td>
+        <td class="fields-list">project_id · project_state · awaiting_gate<br>area_program_complete · site_data_complete<br>asana_project_id · review_thread_id<br>milestone_M[N]_signed · contract_signed_at</td>
+        <td><span class="gate-none">Never — always current</span></td>
+      </tr>
+      <tr data-layer="event">
+        <td><span class="doc-name">decision-event.json</span></td>
+        <td><span class="layer-pill l8">Event Log</span></td>
+        <td>Local FS</td>
+        <td><span class="agent-tag">Celia</span> (×11 per project)</td>
+        <td class="fields-list">project_id · phase · review_item<br>decision · comment · timestamp<br>source_channel · next_action · route_to<br>sync_to_asana</td>
+        <td><span class="gate-none">Append-only — never modified</span></td>
+      </tr>
+      <tr data-layer="ingest">
+        <td><span class="doc-name">lead-record.json</span></td>
+        <td><span class="layer-pill l1">Ingest</span></td>
+        <td>Local FS</td>
+        <td><span class="agent-tag">Lupe A</span></td>
+        <td class="fields-list">source_channel · category · received_at<br>summary · status</td>
+        <td><span class="gate-tag">DG-01</span></td>
+      </tr>
+      <tr data-layer="discovery">
+        <td><span class="doc-name">lead-summary.json</span></td>
+        <td><span class="layer-pill l2">Discovery</span></td>
+        <td>Local FS</td>
+        <td><span class="agent-tag">Lupe B</span></td>
+        <td class="fields-list">client context · project type signal<br>initial assessment · language detected</td>
+        <td><span class="gate-tag">DG-02</span></td>
+      </tr>
+      <tr data-layer="discovery">
+        <td><span class="doc-name">discovery-questionnaire.json</span></td>
+        <td><span class="layer-pill l2">Discovery</span></td>
+        <td>Local FS + Gmail</td>
+        <td><span class="agent-tag">Elena</span></td>
+        <td class="fields-list">sent_to · sent_at · questionnaire_language<br>project_type_question · budget_question<br>timeline_question · location_question<br>special_requirements_question<br>design_style_question · site_ownership_question</td>
+        <td><span class="gate-tag">DG-02</span></td>
+      </tr>
+      <tr data-layer="discovery">
+        <td><span class="doc-name">client-fit-assessment.json</span></td>
+        <td><span class="layer-pill l2">Discovery</span></td>
+        <td>Local FS</td>
+        <td><span class="agent-tag">Elena</span></td>
+        <td class="fields-list">meeting_notes<br>design_engagement{score 1-5, evidence}<br>budget_realism{score 1-5, evidence}<br>scope_clarity{score 1-5, evidence}<br>collaborative_style{score 1-5, evidence}<br>recommendation · rationale</td>
+        <td><span class="gate-tag">DG-02</span></td>
+      </tr>
+      <tr data-layer="program">
+        <td><span class="doc-name">area-program.json</span></td>
+        <td><span class="layer-pill l3">Program</span></td>
+        <td>Local FS</td>
+        <td><span class="agent-tag">Ana</span></td>
+        <td class="fields-list">date · project · clients · budget<br>covered_areas{house[], garage[], covered_outdoor[]}<br>house/garage/outdoor subtotals + walls %<br>uncovered_areas[] · uncovered subtotals<br>total_covered_m2 · total_uncovered_m2<br>total_design_m2 · total_sqm · assumptions[]</td>
+        <td><span class="gate-tag">DG-03</span></td>
+      </tr>
+      <tr data-layer="program">
+        <td><span class="doc-name">cost-basis.json</span></td>
+        <td><span class="layer-pill l3">Program</span></td>
+        <td>Local FS</td>
+        <td><span class="agent-tag">Ana</span></td>
+        <td class="fields-list">cost_per_sqm · base_construction_cost<br>architecture_fee_pct · architecture_fee<br>engineering_allowance · contingency_pct<br>total_estimate · assumptions[]</td>
+        <td><span class="gate-tag">DG-03</span></td>
+      </tr>
+      <tr data-layer="program">
+        <td><span class="doc-name">site-readiness-report.json</span></td>
+        <td><span class="layer-pill l3">Program</span></td>
+        <td>Local FS</td>
+        <td><span class="agent-tag">Sol</span></td>
+        <td class="fields-list">required_documents · request_sent_at<br>current_status · blockers</td>
+        <td><span class="gate-tag">DG-03</span></td>
+      </tr>
+      <tr data-layer="commercial">
+        <td><span class="doc-name">scope-of-work.json</span></td>
+        <td><span class="layer-pill l4">Commercial</span></td>
+        <td>Local FS</td>
+        <td><span class="agent-tag">Tomás</span></td>
+        <td class="fields-list">scope_phases[] · payment_schedule[]<br>responsibilities_matrix · exclusions[]<br>revision_assumptions · project_type_clauses[]</td>
+        <td><span class="gate-tag">DG-04</span></td>
+      </tr>
+      <tr data-layer="commercial">
+        <td><span class="doc-name">budget.json</span></td>
+        <td><span class="layer-pill l4">Commercial</span></td>
+        <td>Local FS</td>
+        <td><span class="agent-tag">Bruno D</span></td>
+        <td class="fields-list">project_name · client_name<br>milestone_name · amount · currency<br>payment_instructions · line_items[]</td>
+        <td><span class="gate-tag">DG-05</span></td>
+      </tr>
+      <tr data-layer="commercial">
+        <td><span class="doc-name">proposal.json</span></td>
+        <td><span class="layer-pill l4">Commercial</span></td>
+        <td>Local FS</td>
+        <td><span class="agent-tag">Renata</span></td>
+        <td class="fields-list">scope_summary{es, en}<br>budget_detail · timeline_phases<br>process_narrative{es, en}</td>
+        <td><span class="gate-tag">DG-05</span></td>
+      </tr>
+      <tr data-layer="commercial">
+        <td><span class="doc-name">legal-review.json</span></td>
+        <td><span class="layer-pill l4">Commercial</span></td>
+        <td>Local FS</td>
+        <td><span class="agent-tag">Legal</span></td>
+        <td class="fields-list">reviewed_by · reviewed_at<br>ip_rights_status · compliance_flags[]<br>approval_status</td>
+        <td><span class="gate-tag">DG-05</span></td>
+      </tr>
+      <tr data-layer="commercial">
+        <td><span class="doc-name">client-communication.json</span></td>
+        <td><span class="layer-pill l4">Commercial</span></td>
+        <td>Local FS + Gmail</td>
+        <td><span class="agent-tag">Rosa</span></td>
+        <td class="fields-list">channel · message_body<br>project_reference · status (draft|sent)</td>
+        <td><span class="gate-tag">DG-06</span></td>
+      </tr>
+      <tr data-layer="contract">
+        <td><span class="doc-name">contract-signed.pdf</span></td>
+        <td><span class="layer-pill l5">Contract</span></td>
+        <td>Local FS + Drive</td>
+        <td><span class="agent-tag">Legal</span></td>
+        <td class="fields-list">Populated from contract-mx.md OR contract-us-ca.md<br>Exhibit A = scope-of-work.json rendered<br>All [field] tokens populated from state.json + budget.json</td>
+        <td><span class="gate-none">Client signature — immutable</span></td>
+      </tr>
+      <tr data-layer="contract">
+        <td><span class="doc-name">milestone-signoff-M[N].pdf</span></td>
+        <td><span class="layer-pill l5">Contract</span></td>
+        <td>Local FS + Drive</td>
+        <td><span class="agent-tag">Legal</span> (×4)</td>
+        <td class="fields-list">deliverables_table · design_decisions<br>client_declaration · registered_comments<br>payment_authorization · change_order_policy</td>
+        <td><span class="gate-none">Client signature — immutable</span></td>
+      </tr>
+      <tr data-layer="execution">
+        <td><span class="doc-name">project-schedule.json</span></td>
+        <td><span class="layer-pill l6">Execution</span></td>
+        <td>Local FS + Asana</td>
+        <td><span class="agent-tag">Pablo</span></td>
+        <td class="fields-list">phases[] · milestone_dates · dependencies</td>
+        <td><span class="gate-tag">DG-07</span></td>
+      </tr>
+      <tr data-layer="execution">
+        <td><span class="doc-name">concept-review.json</span></td>
+        <td><span class="layer-pill l6">Execution</span></td>
+        <td>Local FS</td>
+        <td><span class="agent-tag">Andrés</span></td>
+        <td class="fields-list">deliverables_checklist · presentation_milestone<br>review_notes · presentation_date</td>
+        <td><span class="gate-tag">DG-07</span></td>
+      </tr>
+      <tr data-layer="execution">
+        <td><span class="doc-name">architectural-design-package.json</span></td>
+        <td><span class="layer-pill l6">Execution</span></td>
+        <td>Local FS</td>
+        <td><span class="agent-tag">Felipe</span></td>
+        <td class="fields-list">design_set_status · concept_reflection_confirmed<br>area_program_compliance<br>structural_coordination_notes</td>
+        <td><span class="gate-tag">DG-08</span></td>
+      </tr>
+      <tr data-layer="execution">
+        <td><span class="doc-name">engineering-package.json</span></td>
+        <td><span class="layer-pill l6">Execution</span></td>
+        <td>Local FS</td>
+        <td><span class="agent-tag">Emilio</span></td>
+        <td class="fields-list">systems_status · conditional_systems<br>all_inputs_confirmed · conflicts_resolved</td>
+        <td><span class="gate-tag">DG-09</span></td>
+      </tr>
+      <tr data-layer="execution">
+        <td><span class="doc-name">budget-alignment.json</span></td>
+        <td><span class="layer-pill l6">Execution</span></td>
+        <td>Local FS</td>
+        <td><span class="agent-tag">Bruno G</span></td>
+        <td class="fields-list">variance_pct · recommendation<br>original_estimate (from cost-basis.json)<br>updated_estimate</td>
+        <td><span class="gate-tag">DG-09</span></td>
+      </tr>
+      <tr data-layer="execution">
+        <td><span class="doc-name">executive-plans-package.json</span></td>
+        <td><span class="layer-pill l6">Execution</span></td>
+        <td>Local FS + Drive</td>
+        <td><span class="agent-tag">Hugo</span></td>
+        <td class="fields-list">plan_set_components · engineering_integration_confirmed<br>conflicts_resolved · client_signoff_milestone</td>
+        <td><span class="gate-tag">DG-10</span></td>
+      </tr>
+      <tr data-layer="procurement">
+        <td><span class="doc-name">bid-comparison-matrix.json</span></td>
+        <td><span class="layer-pill l7">Procurement</span></td>
+        <td>Local FS</td>
+        <td><span class="agent-tag">Ofelia</span></td>
+        <td class="fields-list">bids[] · recommendation · recommendation_rationale</td>
+        <td><span class="gate-tag">DG-11</span></td>
+      </tr>
+      <tr data-layer="procurement">
+        <td><span class="doc-name">permits-package.json</span></td>
+        <td><span class="layer-pill l7">Procurement</span></td>
+        <td>Local FS + Drive</td>
+        <td><span class="agent-tag">Paco</span></td>
+        <td class="fields-list">submitted_at · jurisdiction · status<br>corrections[] · approved_at</td>
+        <td><span class="gate-none">Project completion</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ TAB 3: LINEAGE -->
+<div class="panel" id="panel-lineage">
+  <p style="font-size:.78rem;color:#484f58;margin-bottom:24px;">Documents are organized by data layer. Arrows show derivation — which documents are inputs to which agents. The event log (decision-event.json) reads everything at every gate.</p>
+  <div class="lineage-wrap">
+  <div class="lineage-grid">
+
+    <div class="lineage-col">
+      <div class="lineage-col-hd" style="background:#1c2518;color:#56d364">L0 System</div>
+      <div class="lineage-col-body">
+        <div class="lineage-state">
+          <div class="ld-name">state.json</div>
+          <div class="ld-agent">All agents read + write</div>
+        </div>
+        <div style="margin-top:8px;">
+          <div class="lineage-col-hd" style="background:#2d1c1c;color:#f85149;font-size:.6rem">L8 Event Log</div>
+          <div class="lineage-doc event">
+            <div class="ld-name">decision-event.json</div>
+            <div class="ld-agent">Celia · ×11 per project</div>
+            <div class="ld-gate">append-only</div>
+          </div>
+        </div>
+        <div style="margin-top:8px;">
+          <div class="lineage-col-hd" style="background:#2a1f1a;color:#d29922;font-size:.6rem">Templates (inputs)</div>
+          <div class="lineage-doc template">
+            <div class="ld-name">contract-mx.md</div>
+            <div class="ld-agent">docs/templates/contracts/</div>
+          </div>
+          <div class="lineage-doc template">
+            <div class="ld-name">contract-us-ca.md</div>
+            <div class="ld-agent">docs/templates/contracts/</div>
+          </div>
+          <div class="lineage-doc template">
+            <div class="ld-name">sow-[type].md</div>
+            <div class="ld-agent">docs/templates/sow/</div>
+          </div>
+          <div class="lineage-doc template">
+            <div class="ld-name">area-estimation-defaults.json</div>
+            <div class="ld-agent">docs/templates/json/</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lineage-col">
+      <div class="lineage-col-hd" style="background:#1c2518;color:#3fb950">L1 Ingest</div>
+      <div class="lineage-col-body">
+        <div class="lineage-doc">
+          <div class="ld-name">lead-record.json</div>
+          <div class="ld-agent">Lupe A</div>
+          <div class="ld-gate">→ DG-01</div>
+        </div>
+        <div class="lineage-arrow">↓</div>
+        <div class="lineage-col-hd" style="background:#0d2d6b20;color:#79c0ff;font-size:.6rem">L2 Discovery</div>
+        <div class="lineage-doc">
+          <div class="ld-name">lead-summary.json</div>
+          <div class="ld-agent">Lupe B</div>
+          <div class="ld-gate">→ DG-02</div>
+        </div>
+        <div class="lineage-arrow">↓</div>
+        <div class="lineage-doc">
+          <div class="ld-name">discovery-questionnaire.json</div>
+          <div class="ld-agent">Elena</div>
+          <div class="ld-gate">→ DG-02</div>
+        </div>
+        <div class="lineage-arrow">↓</div>
+        <div class="lineage-doc">
+          <div class="ld-name">client-fit-assessment.json</div>
+          <div class="ld-agent">Elena</div>
+          <div class="ld-gate">→ DG-02</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lineage-col">
+      <div class="lineage-col-hd" style="background:#1c2518;color:#3fb950">L3 Program</div>
+      <div class="lineage-col-body">
+        <div class="lineage-doc">
+          <div class="ld-name">area-program.json</div>
+          <div class="ld-agent">Ana ← fit-assessment + defaults</div>
+          <div class="ld-gate">→ DG-03</div>
+        </div>
+        <div class="lineage-arrow">↓</div>
+        <div class="lineage-doc">
+          <div class="ld-name">cost-basis.json</div>
+          <div class="ld-agent">Ana ← area-program</div>
+          <div class="ld-gate">→ DG-03</div>
+        </div>
+        <div class="lineage-arrow" style="color:#484f58">‖ parallel</div>
+        <div class="lineage-doc">
+          <div class="ld-name">site-readiness-report.json</div>
+          <div class="ld-agent">Sol ← state.json</div>
+          <div class="ld-gate">→ DG-03</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lineage-col">
+      <div class="lineage-col-hd" style="background:#2d1f2d;color:#d2a8ff">L4 Commercial</div>
+      <div class="lineage-col-body">
+        <div class="lineage-doc">
+          <div class="ld-name">scope-of-work.json</div>
+          <div class="ld-agent">Tomás ← area-prog + cost-basis + sow template</div>
+          <div class="ld-gate">→ DG-04</div>
+        </div>
+        <div class="lineage-arrow">↓</div>
+        <div class="lineage-doc">
+          <div class="ld-name">budget.json</div>
+          <div class="ld-agent">Bruno D ← scope-of-work + cost-basis</div>
+          <div class="ld-gate">→ DG-05</div>
+        </div>
+        <div class="lineage-arrow">↓</div>
+        <div class="lineage-doc">
+          <div class="ld-name">proposal.json</div>
+          <div class="ld-agent">Renata ← sow + budget + area-prog</div>
+          <div class="ld-gate">→ DG-05</div>
+        </div>
+        <div class="lineage-arrow">↓</div>
+        <div class="lineage-doc">
+          <div class="ld-name">legal-review.json</div>
+          <div class="ld-agent">Legal ← proposal + sow</div>
+          <div class="ld-gate">→ DG-05</div>
+        </div>
+        <div class="lineage-arrow">↓</div>
+        <div class="lineage-doc">
+          <div class="ld-name">client-communication.json</div>
+          <div class="ld-agent">Rosa ← proposal + legal-review</div>
+          <div class="ld-gate">→ DG-06</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lineage-col">
+      <div class="lineage-col-hd" style="background:#0d2d0d;color:#56d364">L5 Contract</div>
+      <div class="lineage-col-body">
+        <div class="lineage-doc">
+          <div class="ld-name">contract-signed.pdf</div>
+          <div class="ld-agent">Legal ← contract template + sow + budget</div>
+          <div class="ld-gate">client signature</div>
+        </div>
+        <div class="lineage-arrow">↓</div>
+        <div class="lineage-doc">
+          <div class="ld-name">milestone-signoff-M1.pdf</div>
+          <div class="ld-agent">Legal ← signoff template</div>
+          <div class="ld-gate">M1 payment trigger</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lineage-col">
+      <div class="lineage-col-hd" style="background:#2a1c10;color:#d29922">L6 Execution</div>
+      <div class="lineage-col-body">
+        <div class="lineage-doc">
+          <div class="ld-name">project-schedule.json</div>
+          <div class="ld-agent">Pablo ← sow + area-prog</div>
+          <div class="ld-gate">→ DG-07</div>
+        </div>
+        <div class="lineage-arrow">↓</div>
+        <div class="lineage-doc">
+          <div class="ld-name">concept-review.json</div>
+          <div class="ld-agent">Andrés ← area-prog + sow</div>
+          <div class="ld-gate">→ DG-07</div>
+        </div>
+        <div class="lineage-arrow">↓</div>
+        <div class="lineage-doc">
+          <div class="ld-name">architectural-design-package.json</div>
+          <div class="ld-agent">Felipe ← concept-review + area-prog</div>
+          <div class="ld-gate">→ DG-08</div>
+        </div>
+        <div class="lineage-arrow">↓</div>
+        <div class="lineage-doc">
+          <div class="ld-name">engineering-package.json</div>
+          <div class="ld-agent">Emilio ← arch-design</div>
+          <div class="ld-gate">→ DG-09</div>
+        </div>
+        <div class="lineage-arrow">↓</div>
+        <div class="lineage-doc">
+          <div class="ld-name">budget-alignment.json</div>
+          <div class="ld-agent">Bruno G ← eng-pkg + cost-basis</div>
+          <div class="ld-gate">→ DG-09</div>
+        </div>
+        <div class="lineage-arrow">↓</div>
+        <div class="lineage-doc">
+          <div class="ld-name">executive-plans-package.json</div>
+          <div class="ld-agent">Hugo ← budget-alignment + sow</div>
+          <div class="ld-gate">→ DG-10</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lineage-col">
+      <div class="lineage-col-hd" style="background:#10222d;color:#39d0d8">L7 Procurement</div>
+      <div class="lineage-col-body">
+        <div class="lineage-doc">
+          <div class="ld-name">bid-comparison-matrix.json</div>
+          <div class="ld-agent">Ofelia ← executive-plans</div>
+          <div class="ld-gate">→ DG-11</div>
+        </div>
+        <div class="lineage-arrow">↓</div>
+        <div class="lineage-doc">
+          <div class="ld-name">permits-package.json</div>
+          <div class="ld-agent">Paco ← bid-matrix</div>
+          <div class="ld-gate">project completion</div>
+        </div>
+        <div class="lineage-arrow">↓</div>
+        <div style="text-align:center;padding:12px;color:#3fb950;font-size:.75rem;font-weight:600;">🏗 Construction Begins</div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ TAB 4: GOVERNANCE -->
+<div class="panel" id="panel-governance">
+
+  <p style="font-size:.78rem;color:#484f58;margin-bottom:20px;">W = write · R = read · — = no access. Immutable column shows when a document is permanently locked. Downstream shows what breaks if this document changes.</p>
+
+  <table class="gov-table">
+    <thead>
+      <tr>
+        <th>Document</th>
+        <th>Layer</th>
+        <th>Lupe</th>
+        <th>Elena</th>
+        <th>Ana / Sol</th>
+        <th>Tomás / Bruno / Renata / Legal / Rosa</th>
+        <th>Pablo → Hugo</th>
+        <th>Ofelia / Paco</th>
+        <th>Celia</th>
+        <th>Marcela</th>
+        <th>Immutable after</th>
+        <th>Downstream impact if changed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="doc-name">state.json</span></td>
+        <td><span class="layer-pill l0">System</span></td>
+        <td class="gov-rw">RW</td><td class="gov-rw">RW</td><td class="gov-rw">RW</td>
+        <td class="gov-rw">RW</td><td class="gov-rw">RW</td><td class="gov-rw">RW</td>
+        <td class="gov-rw">RW</td><td class="gov-r">R</td>
+        <td><span class="gate-none">Never</span></td>
+        <td class="depends">All agents depend on it</td>
+      </tr>
+      <tr>
+        <td><span class="doc-name">decision-event.json</span></td>
+        <td><span class="layer-pill l8">Event</span></td>
+        <td>—</td><td>—</td><td>—</td><td>—</td><td class="gov-r">R</td><td class="gov-r">R</td>
+        <td class="gov-w">W (append)</td><td class="gov-r">R</td>
+        <td><span class="gate-none">Append-only</span></td>
+        <td class="depends">Audit trail — never change</td>
+      </tr>
+      <tr>
+        <td><span class="doc-name">lead-record.json</span></td>
+        <td><span class="layer-pill l1">Ingest</span></td>
+        <td class="gov-w">W</td><td class="gov-r">R</td><td>—</td><td>—</td><td>—</td><td>—</td>
+        <td class="gov-r">R</td><td class="gov-r">R</td>
+        <td><span class="gate-tag">DG-01</span></td>
+        <td class="depends">lead-summary.json</td>
+      </tr>
+      <tr>
+        <td><span class="doc-name">lead-summary.json</span></td>
+        <td><span class="layer-pill l2">Discovery</span></td>
+        <td class="gov-w">W</td><td class="gov-r">R</td><td class="gov-r">R</td><td>—</td><td>—</td><td>—</td>
+        <td class="gov-r">R</td><td class="gov-r">R</td>
+        <td><span class="gate-tag">DG-02</span></td>
+        <td class="depends">Elena's questionnaire · Ana's program · Sol's site report</td>
+      </tr>
+      <tr>
+        <td><span class="doc-name">client-fit-assessment.json</span></td>
+        <td><span class="layer-pill l2">Discovery</span></td>
+        <td>—</td><td class="gov-w">W</td><td class="gov-r">R</td><td>—</td><td>—</td><td>—</td>
+        <td class="gov-r">R</td><td class="gov-r">R</td>
+        <td><span class="gate-tag">DG-02</span></td>
+        <td class="depends">area-program.json · cost-basis.json</td>
+      </tr>
+      <tr>
+        <td><span class="doc-name">area-program.json</span></td>
+        <td><span class="layer-pill l3">Program</span></td>
+        <td>—</td><td>—</td><td class="gov-w">W</td><td class="gov-r">R</td><td class="gov-r">R</td><td>—</td>
+        <td class="gov-r">R</td><td class="gov-r">R</td>
+        <td><span class="gate-tag">DG-03</span></td>
+        <td class="depends">cost-basis · scope-of-work · budget · proposal</td>
+      </tr>
+      <tr>
+        <td><span class="doc-name">cost-basis.json</span></td>
+        <td><span class="layer-pill l3">Program</span></td>
+        <td>—</td><td>—</td><td class="gov-w">W</td><td class="gov-r">R</td><td class="gov-r">R</td><td>—</td>
+        <td class="gov-r">R</td><td class="gov-r">R</td>
+        <td><span class="gate-tag">DG-03</span></td>
+        <td class="depends">budget.json · budget-alignment.json</td>
+      </tr>
+      <tr>
+        <td><span class="doc-name">scope-of-work.json</span></td>
+        <td><span class="layer-pill l4">Commercial</span></td>
+        <td>—</td><td>—</td><td>—</td><td class="gov-w">W (Tomás)</td><td class="gov-r">R</td><td>—</td>
+        <td class="gov-r">R</td><td class="gov-r">R</td>
+        <td><span class="gate-tag">DG-04</span></td>
+        <td class="depends">budget · proposal · contract (Exhibit A)</td>
+      </tr>
+      <tr>
+        <td><span class="doc-name">budget.json</span></td>
+        <td><span class="layer-pill l4">Commercial</span></td>
+        <td>—</td><td>—</td><td>—</td><td class="gov-w">W (Bruno D)</td><td>—</td><td>—</td>
+        <td class="gov-r">R</td><td class="gov-r">R</td>
+        <td><span class="gate-tag">DG-05</span></td>
+        <td class="depends">proposal.json · contract amounts</td>
+      </tr>
+      <tr>
+        <td><span class="doc-name">proposal.json</span></td>
+        <td><span class="layer-pill l4">Commercial</span></td>
+        <td>—</td><td>—</td><td>—</td><td class="gov-w">W (Renata)</td><td>—</td><td>—</td>
+        <td class="gov-r">R</td><td class="gov-r">R</td>
+        <td><span class="gate-tag">DG-05</span></td>
+        <td class="depends">client-communication.json</td>
+      </tr>
+      <tr>
+        <td><span class="doc-name">contract-signed.pdf</span></td>
+        <td><span class="layer-pill l5">Contract</span></td>
+        <td>—</td><td>—</td><td>—</td><td class="gov-w">W (Legal)</td><td class="gov-r">R</td><td>—</td>
+        <td class="gov-r">R</td><td class="gov-r">R</td>
+        <td><span class="gate-none">Client signature</span></td>
+        <td class="depends">All execution phases depend on this</td>
+      </tr>
+      <tr>
+        <td><span class="doc-name">milestone-signoff-M[N].pdf</span></td>
+        <td><span class="layer-pill l5">Contract</span></td>
+        <td>—</td><td>—</td><td>—</td><td class="gov-w">W (Legal)</td><td class="gov-r">R</td><td>—</td>
+        <td class="gov-r">R</td><td class="gov-r">R</td>
+        <td><span class="gate-none">Client signature</span></td>
+        <td class="depends">Change orders required for any post-signoff modification</td>
+      </tr>
+      <tr>
+        <td><span class="doc-name">executive-plans-package.json</span></td>
+        <td><span class="layer-pill l6">Execution</span></td>
+        <td>—</td><td>—</td><td>—</td><td>—</td><td class="gov-w">W (Hugo)</td><td class="gov-r">R</td>
+        <td class="gov-r">R</td><td class="gov-r">R</td>
+        <td><span class="gate-tag">DG-10</span></td>
+        <td class="depends">bid-comparison-matrix.json · permits-package.json</td>
+      </tr>
+      <tr>
+        <td><span class="doc-name">permits-package.json</span></td>
+        <td><span class="layer-pill l7">Procurement</span></td>
+        <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="gov-w">W (Paco)</td>
+        <td class="gov-r">R</td><td class="gov-r">R</td>
+        <td><span class="gate-none">Project completion</span></td>
+        <td class="depends">Construction start condition</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ TAB 5: ANALYTICS -->
+<div class="panel" id="panel-schema">
+
+  <div class="section-hd">Entity Model — operational tables (extracted from JSON)</div>
+  <div class="schema-grid" style="margin-bottom:36px;">
+
+    <div class="schema-card">
+      <div class="sc-type">dimension</div>
+      <div class="sc-name">dim_project</div>
+      <div class="sc-fields">
+        <div class="field-row"><span class="field-name field-pk">project_id</span><span class="field-type">string PK</span></div>
+        <div class="field-row"><span class="field-name">project_type</span><span class="field-type">enum</span><span class="field-src">state.json</span></div>
+        <div class="field-row"><span class="field-name">client_language</span><span class="field-type">es|en</span><span class="field-src">questionnaire</span></div>
+        <div class="field-row"><span class="field-name">contract_currency</span><span class="field-type">MXN|USD|CAD</span><span class="field-src">state.json</span></div>
+        <div class="field-row"><span class="field-name">total_design_m2</span><span class="field-type">float</span><span class="field-src">area-program</span></div>
+        <div class="field-row"><span class="field-name">total_covered_m2</span><span class="field-type">float</span><span class="field-src">area-program</span></div>
+        <div class="field-row"><span class="field-name">architecture_fee</span><span class="field-type">decimal</span><span class="field-src">cost-basis</span></div>
+        <div class="field-row"><span class="field-name">lead_received_at</span><span class="field-type">timestamp</span><span class="field-src">lead-record</span></div>
+        <div class="field-row"><span class="field-name">contract_signed_at</span><span class="field-type">timestamp</span><span class="field-src">state.json</span></div>
+        <div class="field-row"><span class="field-name">project_state</span><span class="field-type">enum</span><span class="field-src">state.json</span></div>
+      </div>
+    </div>
+
+    <div class="schema-card">
+      <div class="sc-type">dimension</div>
+      <div class="sc-name">dim_client</div>
+      <div class="sc-fields">
+        <div class="field-row"><span class="field-name field-pk">project_id</span><span class="field-type">string PK/FK</span></div>
+        <div class="field-row"><span class="field-name">client_name</span><span class="field-type">string</span><span class="field-src">state.json</span></div>
+        <div class="field-row"><span class="field-name">client_email</span><span class="field-type">string</span><span class="field-src">state.json</span></div>
+        <div class="field-row"><span class="field-name">fit_design_engagement</span><span class="field-type">int 1-5</span><span class="field-src">fit-assessment</span></div>
+        <div class="field-row"><span class="field-name">fit_budget_realism</span><span class="field-type">int 1-5</span><span class="field-src">fit-assessment</span></div>
+        <div class="field-row"><span class="field-name">fit_scope_clarity</span><span class="field-type">int 1-5</span><span class="field-src">fit-assessment</span></div>
+        <div class="field-row"><span class="field-name">fit_collaborative_style</span><span class="field-type">int 1-5</span><span class="field-src">fit-assessment</span></div>
+        <div class="field-row"><span class="field-name">fit_avg_score</span><span class="field-type">float</span><span class="field-src">derived</span></div>
+        <div class="field-row"><span class="field-name">fit_recommendation</span><span class="field-type">enum</span><span class="field-src">fit-assessment</span></div>
+      </div>
+    </div>
+
+    <div class="schema-card">
+      <div class="sc-type">fact — event log</div>
+      <div class="sc-name">fact_gate_decision</div>
+      <div class="sc-fields">
+        <div class="field-row"><span class="field-name field-pk">decision_id</span><span class="field-type">string PK</span></div>
+        <div class="field-row"><span class="field-name field-fk">project_id</span><span class="field-type">string FK</span></div>
+        <div class="field-row"><span class="field-name">gate_id</span><span class="field-type">DG-01..DG-11</span><span class="field-src">decision-event</span></div>
+        <div class="field-row"><span class="field-name">phase</span><span class="field-type">string</span><span class="field-src">decision-event</span></div>
+        <div class="field-row"><span class="field-name">decision</span><span class="field-type">approve|reject|pass</span><span class="field-src">decision-event</span></div>
+        <div class="field-row"><span class="field-name">decided_at</span><span class="field-type">timestamp</span><span class="field-src">decision-event</span></div>
+        <div class="field-row"><span class="field-name">days_in_stage</span><span class="field-type">float</span><span class="field-src">derived</span></div>
+        <div class="field-row"><span class="field-name">revision_round</span><span class="field-type">int</span><span class="field-src">derived (pass count)</span></div>
+        <div class="field-row"><span class="field-name">route_to</span><span class="field-type">string</span><span class="field-src">decision-event</span></div>
+      </div>
+    </div>
+
+    <div class="schema-card">
+      <div class="sc-type">fact — financial</div>
+      <div class="sc-name">fact_payment</div>
+      <div class="sc-fields">
+        <div class="field-row"><span class="field-name field-pk">payment_id</span><span class="field-type">string PK</span></div>
+        <div class="field-row"><span class="field-name field-fk">project_id</span><span class="field-type">string FK</span></div>
+        <div class="field-row"><span class="field-name">milestone_id</span><span class="field-type">M1|M2|M3|M4</span><span class="field-src">budget.json</span></div>
+        <div class="field-row"><span class="field-name">milestone_name</span><span class="field-type">string</span><span class="field-src">budget.json</span></div>
+        <div class="field-row"><span class="field-name">percentage</span><span class="field-type">int</span><span class="field-src">budget.json</span></div>
+        <div class="field-row"><span class="field-name">amount_mxn</span><span class="field-type">decimal</span><span class="field-src">budget.json</span></div>
+        <div class="field-row"><span class="field-name">amount_usd</span><span class="field-type">decimal</span><span class="field-src">budget.json</span></div>
+        <div class="field-row"><span class="field-name">currency</span><span class="field-type">MXN|USD|CAD</span><span class="field-src">state.json</span></div>
+        <div class="field-row"><span class="field-name">triggered_at</span><span class="field-type">timestamp</span><span class="field-src">signoff PDF</span></div>
+        <div class="field-row"><span class="field-name">paid_at</span><span class="field-type">timestamp|null</span><span class="field-src">manual entry</span></div>
+      </div>
+    </div>
+
+    <div class="schema-card">
+      <div class="sc-type">fact — rooms</div>
+      <div class="sc-name">fact_area_room</div>
+      <div class="sc-fields">
+        <div class="field-row"><span class="field-name field-pk">room_id</span><span class="field-type">string PK</span></div>
+        <div class="field-row"><span class="field-name field-fk">project_id</span><span class="field-type">string FK</span></div>
+        <div class="field-row"><span class="field-name">section</span><span class="field-type">house|garage|covered_outdoor|uncovered</span></div>
+        <div class="field-row"><span class="field-name">room_name</span><span class="field-type">string CAPS</span><span class="field-src">area-program</span></div>
+        <div class="field-row"><span class="field-name">width_m</span><span class="field-type">float</span><span class="field-src">area-program</span></div>
+        <div class="field-row"><span class="field-name">depth_m</span><span class="field-type">float</span><span class="field-src">area-program</span></div>
+        <div class="field-row"><span class="field-name">total_m2</span><span class="field-type">float</span><span class="field-src">area-program</span></div>
+        <div class="field-row"><span class="field-name">total_sqft</span><span class="field-type">float</span><span class="field-src">area-program</span></div>
+      </div>
+    </div>
+
+    <div class="schema-card">
+      <div class="sc-type">fact — procurement</div>
+      <div class="sc-name">fact_bid</div>
+      <div class="sc-fields">
+        <div class="field-row"><span class="field-name field-pk">bid_id</span><span class="field-type">string PK</span></div>
+        <div class="field-row"><span class="field-name field-fk">project_id</span><span class="field-type">string FK</span></div>
+        <div class="field-row"><span class="field-name">contractor_name</span><span class="field-type">string</span><span class="field-src">bid-comparison</span></div>
+        <div class="field-row"><span class="field-name">bid_total</span><span class="field-type">decimal</span><span class="field-src">bid-comparison</span></div>
+        <div class="field-row"><span class="field-name">timeline_weeks</span><span class="field-type">int</span><span class="field-src">bid-comparison</span></div>
+        <div class="field-row"><span class="field-name">is_recommended</span><span class="field-type">boolean</span><span class="field-src">bid-comparison</span></div>
+        <div class="field-row"><span class="field-name">bid_per_m2</span><span class="field-type">decimal</span><span class="field-src">derived</span></div>
+        <div class="field-row"><span class="field-name">vs_estimate_pct</span><span class="field-type">float</span><span class="field-src">derived</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-hd section-gap">Key Business Metrics</div>
+  <table class="metrics-table">
+    <thead>
+      <tr><th>Metric</th><th>Definition</th><th>Formula</th><th>Source Tables</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="metric-name">lead_to_contract_rate</td>
+        <td>% of leads that become signed contracts</td>
+        <td class="metric-formula">COUNT(projects WHERE contract_signed_at IS NOT NULL) / COUNT(projects)</td>
+        <td class="metric-src">dim_project</td>
+      </tr>
+      <tr>
+        <td class="metric-name">days_ingest_to_contract</td>
+        <td>Calendar days from first contact to contract signature</td>
+        <td class="metric-formula">contract_signed_at − lead_received_at</td>
+        <td class="metric-src">dim_project</td>
+      </tr>
+      <tr>
+        <td class="metric-name">avg_days_per_gate</td>
+        <td>Average days Marcela review sits before a decision, per gate</td>
+        <td class="metric-formula">AVG(days_in_stage) GROUP BY gate_id</td>
+        <td class="metric-src">fact_gate_decision</td>
+      </tr>
+      <tr>
+        <td class="metric-name">revision_rate_per_phase</td>
+        <td>Average number of pass_to_agent decisions before approval, per gate</td>
+        <td class="metric-formula">AVG(revision_round) GROUP BY gate_id</td>
+        <td class="metric-src">fact_gate_decision</td>
+      </tr>
+      <tr>
+        <td class="metric-name">fee_per_sqm</td>
+        <td>Architecture fee per m² of designed area</td>
+        <td class="metric-formula">architecture_fee / total_design_m2</td>
+        <td class="metric-src">dim_project</td>
+      </tr>
+      <tr>
+        <td class="metric-name">budget_variance_pct</td>
+        <td>% difference between original cost estimate and engineering-phase update</td>
+        <td class="metric-formula">(updated_estimate − base_construction_cost) / base_construction_cost × 100</td>
+        <td class="metric-src">dim_project + budget-alignment.json</td>
+      </tr>
+      <tr>
+        <td class="metric-name">fit_score_to_close_rate</td>
+        <td>Correlation between avg fit score at DG-02 and eventual contract signing</td>
+        <td class="metric-formula">CORR(fit_avg_score, contract_signed_at IS NOT NULL)</td>
+        <td class="metric-src">dim_client + dim_project</td>
+      </tr>
+      <tr>
+        <td class="metric-name">payment_collection_lag</td>
+        <td>Days between milestone trigger and payment received, per milestone</td>
+        <td class="metric-formula">AVG(paid_at − triggered_at) GROUP BY milestone_id</td>
+        <td class="metric-src">fact_payment</td>
+      </tr>
+      <tr>
+        <td class="metric-name">pipeline_velocity</td>
+        <td>Active projects in each segment at a point in time</td>
+        <td class="metric-formula">COUNT(projects) GROUP BY awaiting_gate WHERE project_state = 'active'</td>
+        <td class="metric-src">dim_project</td>
+      </tr>
+      <tr>
+        <td class="metric-name">bid_vs_estimate</td>
+        <td>Contractor bids vs. Oficio's original cost estimate</td>
+        <td class="metric-formula">bid_total / (cost_per_sqm × total_design_m2)</td>
+        <td class="metric-src">fact_bid + dim_project</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="section-hd section-gap">Data Collection Path — how to get analytics-ready data</div>
+  <div class="schema-grid">
+    <div class="schema-card">
+      <div class="sc-type">Step 1</div>
+      <div class="sc-name">Extract from JSON</div>
+      <div class="sc-fields" style="font-size:.72rem;color:#8b949e;font-family:inherit;line-height:1.7;">
+        <div>Loop over projects/*/state.json</div>
+        <div>Loop over projects/*/decision-event.json</div>
+        <div>Loop over projects/*/area-program.json</div>
+        <div>Loop over projects/*/budget.json</div>
+        <div>Loop over projects/*/client-fit-assessment.json</div>
+        <div>Loop over projects/*/bid-comparison-matrix.json</div>
+      </div>
+    </div>
+    <div class="schema-card">
+      <div class="sc-type">Step 2</div>
+      <div class="sc-name">Load to SQLite / DuckDB</div>
+      <div class="sc-fields" style="font-size:.72rem;color:#8b949e;font-family:inherit;line-height:1.7;">
+        <div>CREATE TABLE dim_project (...)</div>
+        <div>CREATE TABLE fact_gate_decision (...)</div>
+        <div>CREATE TABLE fact_area_room (...)</div>
+        <div>CREATE TABLE fact_payment (...)</div>
+        <div>CREATE TABLE fact_bid (...)</div>
+        <div>CREATE TABLE dim_client (...)</div>
+      </div>
+    </div>
+    <div class="schema-card">
+      <div class="sc-type">Step 3</div>
+      <div class="sc-name">Visualization tools</div>
+      <div class="sc-fields" style="font-size:.72rem;color:#8b949e;font-family:inherit;line-height:1.7;">
+        <div>Metabase — pipeline funnel dashboard</div>
+        <div>Observable / D3 — custom charts</div>
+        <div>Google Looker Studio — client-facing</div>
+        <div>Excel / Google Sheets — ad hoc analysis</div>
+        <div>Python (pandas + plotly) — data science</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function showTab(name) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('panel-' + name).classList.add('active');
+  event.target.classList.add('active');
+}
+
+function filterDocs(layer, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#docTable tbody tr').forEach(row => {
+    if (layer === 'all' || row.dataset.layer === layer) {
+      row.classList.remove('hidden');
+    } else {
+      row.classList.add('hidden');
+    }
+  });
+}
+</script>
+</body>
+</html>

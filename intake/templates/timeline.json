@@ -1,0 +1,40 @@
+{
+  "_schema": "1.0",
+  "_description": "Per-project timeline file. Written by Entrega pipeline agents at each gate. Lives at projects/[project_id]/timeline.json",
+  "project_id": null,
+  "project_name": null,
+  "number": null,
+  "type": "standalone_residential | residential_in_development | commercial_hotel | commercial_health_center | public_civic",
+  "started_at": null,
+  "current_gate": null,
+  "current_phase": null,
+  "gates": {
+    "DG-01": { "label": "Lead Review",        "opened_at": null, "decided_at": null, "decision": null, "days_in_gate": null },
+    "DG-02": { "label": "Fit Decision",       "opened_at": null, "decided_at": null, "decision": null, "days_in_gate": null },
+    "DG-03": { "label": "Cost Basis",         "opened_at": null, "decided_at": null, "decision": null, "days_in_gate": null },
+    "DG-04": { "label": "SOW Gate",           "opened_at": null, "decided_at": null, "decision": null, "days_in_gate": null },
+    "DG-05": { "label": "Proposal Gate",      "opened_at": null, "decided_at": null, "decision": null, "days_in_gate": null },
+    "DG-06": { "label": "Client Decision",    "opened_at": null, "decided_at": null, "decision": null, "days_in_gate": null },
+    "DG-07": { "label": "Concept Review",     "opened_at": null, "decided_at": null, "decision": null, "days_in_gate": null },
+    "DG-08": { "label": "Arch Design Gate",   "opened_at": null, "decided_at": null, "decision": null, "days_in_gate": null },
+    "DG-09": { "label": "Budget Alignment",   "opened_at": null, "decided_at": null, "decision": null, "days_in_gate": null },
+    "DG-10": { "label": "Executive Plans",    "opened_at": null, "decided_at": null, "decision": null, "days_in_gate": null },
+    "DG-11": { "label": "Bid Comparison",     "opened_at": null, "decided_at": null, "decision": null, "days_in_gate": null }
+  },
+  "phases": {
+    "scope_signed":      { "date": null, "confidence": "high | medium | low", "note": null },
+    "conceptual_start":  { "date": null, "confidence": "high", "note": null },
+    "anteproyecto_end":  { "date": null, "confidence": "high", "note": null },
+    "ejecutivo_end":     { "date": null, "confidence": "high", "note": null },
+    "delivery":          { "date": null, "confidence": "high", "note": null },
+    "construction_end":  { "date": null, "confidence": "high", "note": null },
+    "press":             { "date": null, "confidence": "high", "note": null }
+  },
+  "benchmarks": {
+    "conceptual_target_weeks": 10,
+    "ejecutivo_target_weeks": 12,
+    "total_design_target_weeks": 28
+  },
+  "projected_delivery": null,
+  "notes": null
+}

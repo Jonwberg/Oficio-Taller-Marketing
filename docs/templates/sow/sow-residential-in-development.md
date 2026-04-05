@@ -17,8 +17,8 @@ This template is identical to `sow-standalone-residential.md` with the following
 
 ## Phase Structure
 
-### Phase 1 — Conceptual Design (same as standalone residential)
-**Additional deliverable:** Preliminary concept submitted to HOA design review committee for early feedback.
+### Phase 1 — Estudios Previos y Conceptual (same as standalone residential)
+**Additional deliverable:** Preliminary concept submitted to HOA design review committee for early feedback. HOA/development setback, height limit, and style guideline constraints documented in Estudios Previos.
 All other deliverables identical to standalone residential template.
 
 **Revision assumptions:** 2 rounds of client revision included. Each additional round billed at MXN 8,000/day.
@@ -27,7 +27,7 @@ All other deliverables identical to standalone residential template.
 
 ---
 
-### Phase 2 — Architectural Design
+### Phase 2 — Anteproyecto / Concepto (Schematic Design)
 **Deliverables (all standalone residential deliverables plus):**
 - Floor plans all levels (1:100 scale)
 - Elevations all four facades (1:100)
@@ -169,11 +169,12 @@ Note: HOA review adds 2–4 weeks vs. standalone residential. Durations are typi
 
 | Milestone | Name | Percentage | Amount (TBD) | Trigger Event |
 |---|---|---|---|---|
-| M1 | Contract Signing | 30% | — | Signed SOW + first payment received |
-| M2 | Concept Design Approved | 20% | — | Client written approval of Phase 1 (and HOA early feedback received) |
-| M3 | Construction Documents Delivered | 25% | — | Executive plans package + HOA-approved drawing set delivered |
-| M4 | Building Permit Obtained | 15% | — | Municipal permit document delivered to client |
-| M5 | Construction Administration Final | 10% | — | Final site visit report delivered (if supervision in scope); otherwise triggers at construction start |
+| M1 | Anticipo — Contract Signing | 30% | — | Signed SOW + first payment received |
+| M2 | Conceptual Entregado | 20% | — | Client written approval of Phase 1 (and HOA early feedback received) |
+| M3 | Anteproyecto Entregado | 20% | — | Client written approval of Phase 2 + HOA design review submission package delivered |
+| M4 | Ejecutivo Entregado | 30% | — | Executive plans package + HOA-approved drawing set delivered to client |
+
+Note: Phases 5 (Bidding), 6 (Permitting), and 7 (Construction Supervision) billed separately. HOA review fees (if any) are client responsibility. All amounts + IVA.
 
 Note: If HOA review process causes delays, milestone dates adjust accordingly. Payment triggers are based on deliverable completion, not calendar date.
 
@@ -255,7 +256,7 @@ The following are explicitly **not included** in this scope:
 
 When producing `scope-of-work.json` from this template:
 1. Read `area-program.json` to determine actual program size and spaces
-2. Read `cost-basis.json` to populate payment milestone amounts (M1–M5 × percentages)
+2. Read `cost-basis.json` to populate payment milestone amounts (M1–M4 × percentages: 30/20/20/30)
 3. Set `project_type_clauses` to include `hoa_coordination` and `covenant_review` clauses verbatim
 4. Adjust phase deliverables to reflect actual project scope (e.g., if irrigation is not in scope, mark as excluded)
 5. Set `revision_assumptions` per phase as specified above

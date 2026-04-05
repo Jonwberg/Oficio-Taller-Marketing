@@ -1,0 +1,125 @@
+{
+  "_description": "Default room dimensions used by Ana when the client has not specified a size. Derived from Oficio Taller real project data (01.13 ESTIMACIÓN ÁREAS). All dimensions in meters. Adjust based on program interview responses.",
+  "_last_updated": "2026-03-19",
+  "_source": "Oficio Taller Drive — 01.13 ESTIMACIÓN ÁREAS (Jocelyn & David beach home, Sep 2025; Zipolite, Aug 2025; CALETA 80, Aug 2025)",
+
+  "walls_and_circulations": {
+    "house_pct": 20,
+    "garage_pct": 15,
+    "covered_outdoor_pct": 20,
+    "uncovered_pct": 15,
+    "_note": "Add this percentage to the sum of programmed spaces in each section to get the section subtotal. Do not add walls % to uncovered areas that are open hardscape (parking, pool deck) — use 15% for service/access paths only."
+  },
+
+  "sqft_conversion_factor": 10.7639,
+
+  "standalone_residential": {
+    "_note": "Use for private houses on individually owned lots. Adjust sizes up for high-end projects, down for compact/affordable.",
+
+    "house": {
+      "entry_circulation": [
+        { "name": "LOBBY", "default_width_m": 3.0, "default_depth_m": 3.0, "notes": "Scale up to 4x4 for large/formal homes" },
+        { "name": "STAIRCASE", "default_width_m": 2.0, "default_depth_m": 5.0, "notes": "Single staircase; add second if program requires" },
+        { "name": "ELEVATOR", "default_width_m": 1.5, "default_depth_m": 2.0, "notes": "Include only if client requests or accessibility requires" }
+      ],
+      "social": [
+        { "name": "INTERIOR LIVING", "default_width_m": 6.0, "default_depth_m": 6.0, "notes": "Open-plan: merge with dining" },
+        { "name": "DINING ROOM", "default_width_m": 5.0, "default_depth_m": 5.0, "notes": "Formal dining; reduce to 4x4 if open-plan" },
+        { "name": "FAMILY ROOM", "default_width_m": 4.0, "default_depth_m": 6.0, "notes": "Include if client wants separate TV/casual space" },
+        { "name": "STUDY / LIBRARY", "default_width_m": 3.5, "default_depth_m": 4.0, "notes": "Optional; can double as home office" }
+      ],
+      "kitchen_service": [
+        { "name": "KITCHEN", "default_width_m": 5.0, "default_depth_m": 6.0, "notes": "Open kitchen; reduce to 4x5 if closed" },
+        { "name": "PANTRY / BUTLERS KITCHEN", "default_width_m": 2.5, "default_depth_m": 4.0, "notes": "Include if client wants full pantry or separate prep area" },
+        { "name": "POWDER ROOM", "default_width_m": 2.0, "default_depth_m": 2.5, "notes": "Social half-bath; always include" },
+        { "name": "LAUNDRY", "default_width_m": 3.0, "default_depth_m": 4.0, "notes": "Standalone room; can reduce to 2.5x3 if compact" },
+        { "name": "SERVICE QUARTER", "default_width_m": 3.0, "default_depth_m": 3.5, "notes": "Bedroom + bath for live-in staff; include only if requested" },
+        { "name": "STORAGE", "default_width_m": 2.0, "default_depth_m": 3.0, "notes": "General utility storage; scale to program" }
+      ],
+      "primary_suite": [
+        { "name": "PRIMARY BEDROOM", "default_width_m": 5.0, "default_depth_m": 5.0, "notes": "Standard primary; increase to 5x6 for large suite" },
+        { "name": "BATHROOM (PRIMARY)", "default_width_m": 2.5, "default_depth_m": 5.0, "notes": "Full ensuite with double vanity, shower, tub" },
+        { "name": "WALK IN CLOSET (PRIMARY)", "default_width_m": 2.5, "default_depth_m": 4.0, "notes": "Scale up to 3x5 for large closets" }
+      ],
+      "secondary_bedrooms": [
+        { "name": "BEDROOM", "default_width_m": 4.0, "default_depth_m": 4.5, "notes": "Standard secondary bedroom; children's rooms often 3.5x4.0" },
+        { "name": "BATHROOM (SHARED)", "default_width_m": 2.5, "default_depth_m": 3.5, "notes": "Shared bath between 2 bedrooms; add jack-and-jill note if applicable" },
+        { "name": "GUEST BEDROOM", "default_width_m": 4.0, "default_depth_m": 5.0, "notes": "Guest rooms typically larger than secondary; include sitting area if client wants" },
+        { "name": "GUEST BATHROOM", "default_width_m": 2.5, "default_depth_m": 4.0, "notes": "Ensuite for guest room" }
+      ],
+      "special_spaces": [
+        { "name": "HOME OFFICE", "default_width_m": 3.5, "default_depth_m": 4.0, "notes": "Private office; double size if 2 workstations" },
+        { "name": "GYM", "default_width_m": 4.0, "default_depth_m": 5.0, "notes": "Include if client requests; minimum 4x4 for basic equipment" },
+        { "name": "HOME THEATER", "default_width_m": 4.5, "default_depth_m": 6.0, "notes": "Include only if explicitly requested" },
+        { "name": "WINE CELLAR", "default_width_m": 2.0, "default_depth_m": 3.0, "notes": "Small cellar; scale up if serious collector" }
+      ]
+    },
+
+    "garage": [
+      { "name": "ENCLOSED GARAGE (1 CAR)", "default_width_m": 3.0, "default_depth_m": 6.0, "notes": "Single car; add 3m width per additional car" },
+      { "name": "ENCLOSED GARAGE (2 CARS)", "default_width_m": 6.0, "default_depth_m": 6.0, "notes": "Standard double garage" },
+      { "name": "ENCLOSED GARAGE (3 CARS)", "default_width_m": 9.0, "default_depth_m": 6.0, "notes": "Three-car garage" },
+      { "name": "STORAGE (GARAGE)", "default_width_m": 3.0, "default_depth_m": 4.0, "notes": "Bikes, sports equipment, surfboards, etc." }
+    ],
+
+    "covered_outdoor": [
+      { "name": "OUTDOOR LIVING", "default_width_m": 5.0, "default_depth_m": 6.0, "notes": "Covered outdoor seating area" },
+      { "name": "OUTDOOR DINING", "default_width_m": 4.0, "default_depth_m": 5.0, "notes": "Covered outdoor dining; can merge with living" },
+      { "name": "GRILL / ASADOR / BAR", "default_width_m": 3.0, "default_depth_m": 5.0, "notes": "Built-in grill area; scale to program" },
+      { "name": "COVERED TERRACE", "default_width_m": 4.0, "default_depth_m": 5.0, "notes": "General covered terrace; use when client doesn't specify living vs dining" },
+      { "name": "OUTDOOR BATHROOMS", "default_width_m": 2.0, "default_depth_m": 4.0, "notes": "Pool-side bathrooms; include if outdoor entertaining is in scope" },
+      { "name": "DRESSING ROOMS", "default_width_m": 2.0, "default_depth_m": 4.0, "notes": "Pool-side dressing/changing rooms" }
+    ],
+
+    "uncovered_areas": [
+      { "name": "POOL", "default_width_m": 4.0, "default_depth_m": 10.0, "notes": "Standard pool; infinity edge or lap pool may be larger. Plunge pool: 3x5" },
+      { "name": "JACUZZI / HOT TUB", "default_width_m": 2.5, "default_depth_m": 2.5, "notes": "Standalone jacuzzi; may be integrated into pool" },
+      { "name": "SUNDECK", "default_width_m": 5.0, "default_depth_m": 6.0, "notes": "Open deck around pool" },
+      { "name": "FIRE PIT WITH LIVING AREA", "default_width_m": 5.0, "default_depth_m": 5.0, "notes": "Outdoor fire pit + seating circle" },
+      { "name": "ROOF DECK", "default_width_m": 5.0, "default_depth_m": 5.0, "notes": "Rooftop terrace; size per roof availability" },
+      { "name": "EXTERIOR PARKING SPOTS", "default_width_m": 3.0, "default_depth_m": 6.0, "notes": "Per space; multiply by number of spots" },
+      { "name": "CHILDREN PLAY AREA", "default_width_m": 4.0, "default_depth_m": 5.0, "notes": "Outdoor play zone" },
+      { "name": "VEGETABLE GARDEN / HUERTO", "default_width_m": 3.0, "default_depth_m": 4.0, "notes": "Raised bed garden; scale to client preference" }
+    ]
+  },
+
+  "residential_in_development": {
+    "_note": "Same room defaults as standalone_residential. Covered outdoor areas may be smaller due to HOA setback requirements. Confirm pool size with HOA guidelines.",
+    "_inherits": "standalone_residential",
+    "_overrides": {
+      "covered_outdoor.OUTDOOR LIVING.default_depth_m": 5.0,
+      "_reason": "HOA developments often have tighter setbacks; reduce covered terraces slightly"
+    }
+  },
+
+  "commercial_hotel": {
+    "_note": "Hotel room sizes per SECTUR classification. Use these for typical guestrooms. Lobby, F&B, and amenities are project-specific — document in assumptions.",
+    "guestroom_by_category": {
+      "standard_1_2_star_m2": 18,
+      "standard_3_star_m2": 24,
+      "standard_4_star_m2": 30,
+      "standard_5_star_m2": 40,
+      "boutique_suite_m2": 50,
+      "_note": "Area per guestroom (bedroom + bathroom + circulation). For suites, multiply by 1.5–2x."
+    },
+    "public_areas": {
+      "lobby_per_key_m2": 1.5,
+      "fb_per_seat_m2": 2.0,
+      "back_of_house_pct_of_total": 20,
+      "_note": "Rules of thumb for hotel programming. Actual sizes must be confirmed per program interview."
+    }
+  },
+
+  "commercial_health_center": {
+    "_note": "COFEPRIS-compliant minimum room sizes. See NOM-197-SSA1 and related NOMs for regulatory minimums.",
+    "clinical_spaces": {
+      "consultation_room_min_m2": 9.0,
+      "procedure_room_min_m2": 16.0,
+      "waiting_room_per_seat_m2": 1.5,
+      "reception_min_m2": 12.0,
+      "clean_utility_min_m2": 6.0,
+      "dirty_utility_min_m2": 4.0,
+      "accessible_bathroom_min_m2": 4.0
+    }
+  }
+}
